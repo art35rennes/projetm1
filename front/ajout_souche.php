@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html lang="fr">
 	<head>
 		<?php
 		   include "ressource/html/ressource.html"
@@ -15,25 +15,28 @@
         
         <div class="container">
            <form id="addForm" class="pagination-container" >
-               <h4 class="display-4">Ajout d'une souche</h5>
+               <h4 class="display-4">Ajout d'une souche</h4>
                 <div data-page="1" >
                     <h4>Collection bactérienne</h4>
                     <br>
-                    <div class="form-group row">
-						<label for="" class="col-sm-3 col-form-label">Origine de la collection :</label>
-						<div class="col-sm-5">
-							<input type="text" class="form-control" id="" placeholder="...">
+                    <!-- Collection !-->
+                    <section>
+						<div class="form-group row">
+							<h6 class="col-sm-3 col-form-label">Origine de la collection :</h6>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" id="collectionDesc" name="collectionDesc" placeholder="...">
+							</div>
 						</div>
-					</div>
-               
+               		</section>
+
                		<h4>Description de la souche</h4>
                     <br>
                     <!-- Macroscopique !-->
-                    <section alt="Macroscopie">
+                    <section>
 						<div class="form-group row">
-							<label for="inputEmail3" class="col-sm-3 col-form-label">Observation macroscopique :</label>
+							<h6 class="col-sm-3 col-form-label">Observation macroscopique :</h6>
 							<div class="col-sm-5">
-								<textarea class="form-control"></textarea>
+								<textarea class="form-control" name="macroDesc"></textarea>
 							</div>
 						</div>
 						<div class="input-group col-sm-6">
@@ -41,19 +44,19 @@
 							<span class="input-group-text">Ajouter une image</span>
 						</div>
 						<div class="custom-file">
-							<input type="text" class="custom-file-input" id="">
-							<label class="custom-file-label" for="">Selectionner un fichier</label>
+							<input type="file" class="custom-file-input" id="macroFile" name="macroFile">
+							<label class="custom-file-label" for="macroFile">Selectionner un fichier</label>
 						</div>
 					</div>
               		</section>
                		
                		<br>
                		<!-- Microscopique !-->
-               		<section alt="Microscopie">
+               		<section>
 						<div class="form-group row">
-							<label for="inputEmail3" class="col-sm-3 col-form-label">Observation microscopique :</label>
+							<h6 class="col-sm-3 col-form-label">Observation microscopique :</h6>
 							<div class="col-sm-5">
-								<textarea class="form-control"></textarea>
+								<textarea class="form-control" name="microDesc"></textarea>
 							</div>
 						</div>
 						<div class="input-group col-sm-6">
@@ -61,38 +64,68 @@
 								<span class="input-group-text">Ajouter une image</span>
 							</div>
 							<div class="custom-file">
-								<input type="text" class="custom-file-input" id="">
-								<label class="custom-file-label" for="">Selectionner un fichier</label>
+								<input type="file" class="custom-file-input" id="microFile">
+								<label class="custom-file-label" for="microFile">Selectionner un fichier</label>
 							</div>
 						</div>
               		</section>
                		
                		<br>
-               		<!-- Biologue !-->
-               		<section alt="Biologue">
+               		<!-- API !-->
+               		<section>
 						<div class="form-group row">
-						<label for="" class="col-sm-3 col-form-label">Etude Biologue :</label>
+						<h6 class="col-sm-3 col-form-label">Galerie API :</h6>
 							<div class="form-check form-check-inline col-sm-5">
-								<label class="form-check-label" for="">Effectué&nbsp;</label>
-								<input class="form-check-input" type="checkbox" name="biolog" id="boxBiolog" value="option1">
+								<label class="form-check-label" for="boxApi">Effectué&nbsp;</label>
+								<input class="form-check-input" type="checkbox" name="boxApi" id="boxApi" value="1">
+							</div>
+						</div>
+						<div class="input-group col-sm-6" id="divApi">
+							<div class="p-3 mb-2 bg-warning text-dark font-weight-bold font-italic"><br><p>Type d'info ?</p><br></div>
+						</div>
+             		</section>
+              		
+              		<br>
+               		<!-- Biolog !-->
+               		<section>
+						<div class="form-group row">
+						<h6 class="col-sm-3 col-form-label">Galerie Biolog :</h6>
+							<div class="form-check form-check-inline col-sm-5">
+								<label class="form-check-label" for="boxBiolog">Effectué&nbsp;</label>
+								<input class="form-check-input" type="checkbox" name="boxBiolog" id="boxBiolog" value="1">
 							</div>
 						</div>
 						<div class="input-group col-sm-6" id="divBiolog">
-							<label for="" class="col-sm-3 col-form-label">Référence :</label>
+							<div class="p-3 mb-2 bg-warning text-dark font-weight-bold font-italic"><br><p>Type d'info ?</p><br></div>
+						</div>
+             		</section>
+               		
+               		<br>
+               		<!-- Embl !-->
+               		<section>
+						<div class="form-group row">
+						<h6 class="col-sm-3 col-form-label">Etude Embl :</h6>
+							<div class="form-check form-check-inline col-sm-5">
+								<label class="form-check-label" for="boxEmbl">Effectué&nbsp;</label>
+								<input class="form-check-input" type="checkbox" name="Embl" id="boxEmbl" value="1">
+							</div>
+						</div>
+						<div class="input-group col-sm-6" id="divEmbl">
+							<label for="emblRef" class="col-sm-6 col-form-label">Référence :</label>
 							<div class="col-sm-5">
-								<input type="text" class="form-control" id="inputEmail3" placeholder="...">
+								<input type="text" class="form-control" id="emblRef" placeholder="...">
 							</div>
 						</div>
              		</section>
               		
                		<br>
                		<!-- ARN 16S !-->
-               		<section alt="ARN 16S">
+               		<section>
 						<div class="form-group row">
-						<label for="" class="col-sm-3 col-form-label">Etude ARN 16S :</label>
+						<h6 class="col-sm-3 col-form-label">Etude ARN 16S :</h6>
 							<div class="form-check form-check-inline col-sm-5">
-								<label class="form-check-label" for="">Effectué&nbsp;</label>
-								<input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="boxArn" value="option1">
+								<label class="form-check-label" for="boxArn">Effectué&nbsp;</label>
+								<input class="form-check-input" type="checkbox" name="boxArn" id="boxArn" value="1">
 							</div>
 						</div>
 						<div class="input-group col-sm-6" id="divArn">
@@ -100,12 +133,64 @@
 								<span class="input-group-text">Ajouter un fichier</span>
 							</div>
 							<div class="custom-file">
-								<input type="text" class="custom-file-input" id="">
-								<label class="custom-file-label" for="">Selectionner un fichier</label>
+								<input type="text" class="custom-file-input" id="arn16sFile" name="arn16sFile">
+								<label class="custom-file-label" for="arn16sFile">Selectionner un fichier</label>
 							</div>
 						</div>
              		</section>
-              		
+             		
+             		<br>
+               		<!-- Blast !-->
+               		<section>
+						<div class="form-group row">
+						<h6 class="col-sm-3 col-form-label">Etude BLAST :</h6>
+							<div class="form-check form-check-inline col-sm-5">
+								<label class="form-check-label" for="boxBlast">Effectué&nbsp;</label>
+								<input class="form-check-input" type="checkbox" name="boxBlast" id="boxBlast" value="option1">
+							</div>
+						</div>
+						<div class="input-group col-sm-6" id="divBlast">
+							<div class="input-group-prepend">
+								<span class="input-group-text">Ajouter un fichier</span>
+							</div>
+							<div class="custom-file">
+								<input type="text" class="custom-file-input" id="blastFile" name="blastFile">
+								<label class="custom-file-label" for="blastFile">Selectionner un fichier</label>
+							</div>
+						</div>
+             		</section>
+             		
+             		<!-- Arbre !-->
+               		<section>
+						<div class="form-group row">
+						<h6 class="col-sm-3 col-form-label">Arbre phylogénétique :</h6>
+							<div class="form-check form-check-inline col-sm-5">
+								<label class="form-check-label" for="boxArbre">Effectué&nbsp;</label>
+								<input class="form-check-input" type="checkbox" name="boxArbre" id="boxArbre" value="1">
+							</div>
+						</div>
+						<div class="input-group col-sm-6" id="divArbre">
+							<div class="p-3 mb-2 bg-warning text-dark font-weight-bold font-italic"><br><p>Type d'info ?</p><br></div>
+						</div>
+             		</section>
+             		
+              		<br>
+               		<!-- Pasteur !-->
+               		<section>
+						<div class="form-group row">
+						<h6 class="col-sm-3 col-form-label">Enregistrment institut Pasteur :</h6>
+							<div class="form-check form-check-inline col-sm-5">
+								<label class="form-check-label" for="boxPasteur">Effectué&nbsp;</label>
+								<input class="form-check-input" type="checkbox" name="boxPasteur" id="boxPasteur" value="option1">
+							</div>
+						</div>
+						<div class="input-group col-sm-6" id="divPasteur">
+							<label for="pasteurNum" class="col-sm-6 col-form-label">Numéro d'enregistrement&nbsp;:</label>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" id="pasteurNum" name="pasteurNum" placeholder="...">
+							</div>
+						</div>
+             		</section>
                
                 </div>
                 <div data-page="2" style="display:none;">
@@ -163,11 +248,23 @@
 			//checkbox 
 			$(function() {
   
+  			  var boxArbre = $("#boxArbre");
+			  var divArbre = $("#divArbre");
+			  divArbre.hide();
+			  boxArbre.change(function() {
+			 	console.log("change");
+				if (boxArbre.is(':checked')) {
+				  divArbre.show();
+				  console.log("la");
+				} else {
+				  divArbre.hide();
+				  console.log("ici");
+				}
+			  });
+  				
 			  var boxArn = $("#boxArn");
 			  var divArn = $("#divArn");
-
 			  divArn.hide();
-
 			  boxArn.change(function() {
 			 	console.log("change");
 				if (boxArn.is(':checked')) {
@@ -179,16 +276,58 @@
 				}
 			  });
 			  
-			  var boxBiolog = $("#boxBiolog");
+			  var boxEmbl = $("#boxEmbl");
+			  var divEmbl = $("#divEmbl");
+			  divEmbl.hide();
+			  boxEmbl.change(function() {
+				if (boxEmbl.is(':checked')) {
+				  divEmbl.show();
+				} else {
+				  divEmbl.hide();
+				}
+			  });
+			  
+			  var boxBlast = $("#boxBlast");
+			  var divBlast = $("#divBlast");
+			  divBlast.hide();
+			  boxBlast.change(function() {
+				if (boxBlast.is(':checked')) {
+				  divBlast.show();
+				} else {
+				  divBlast.hide();
+				}
+			  });
+			  
+			  var boxPasteur = $("#boxPasteur");
+			  var divPasteur = $("#divPasteur");
+			  divPasteur.hide();
+			  boxPasteur.change(function() {
+				if (boxPasteur.is(':checked')) {
+				  divPasteur.show();
+				} else {
+				  divPasteur.hide();
+				}
+			  });
+			  
+			   var boxBiolog = $("#boxBiolog");
 			  var divBiolog = $("#divBiolog");
-
 			  divBiolog.hide();
-
 			  boxBiolog.change(function() {
 				if (boxBiolog.is(':checked')) {
 				  divBiolog.show();
 				} else {
 				  divBiolog.hide();
+				}
+			  });
+			  
+			  var boxApi = $("#boxApi");
+			  var divApi = $("#divApi");
+			  divApi.hide();
+			  boxApi.change(function() {
+				if (boxApi.is(':checked')) {
+				  divApi.show();
+				} else {
+				  divApi.hide();
 				}
 			  });
 			});
@@ -226,11 +365,12 @@
             $( document ).ready( paginationHandler );
         </script>
         
+        <footer>
+			<?php
+			   include "ressource/html/footer.html"
+			?>
+		</footer>
 	</body>
 	
-	<footer>
-	    <?php
-		   include "ressource/html/footer.html"
-		?>
-	</footer>
+	
 </html>
