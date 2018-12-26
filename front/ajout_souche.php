@@ -15,8 +15,98 @@
         
         <div class="container">
            <form id="addForm" class="pagination-container" >
+               <h4 class="display-4">Ajout d'une souche</h5>
                 <div data-page="1" >
-                    <p>Content for Div Number 1</p>
+                    <h4>Collection bactérienne</h4>
+                    <br>
+                    <div class="form-group row">
+						<label for="" class="col-sm-3 col-form-label">Origine de la collection :</label>
+						<div class="col-sm-5">
+							<input type="text" class="form-control" id="" placeholder="...">
+						</div>
+					</div>
+               
+               		<h4>Description de la souche</h4>
+                    <br>
+                    <!-- Macroscopique !-->
+                    <section alt="Macroscopie">
+						<div class="form-group row">
+							<label for="inputEmail3" class="col-sm-3 col-form-label">Observation macroscopique :</label>
+							<div class="col-sm-5">
+								<textarea class="form-control"></textarea>
+							</div>
+						</div>
+						<div class="input-group col-sm-6">
+						<div class="input-group-prepend">
+							<span class="input-group-text">Ajouter une image</span>
+						</div>
+						<div class="custom-file">
+							<input type="text" class="custom-file-input" id="">
+							<label class="custom-file-label" for="">Selectionner un fichier</label>
+						</div>
+					</div>
+              		</section>
+               		
+               		<br>
+               		<!-- Microscopique !-->
+               		<section alt="Microscopie">
+						<div class="form-group row">
+							<label for="inputEmail3" class="col-sm-3 col-form-label">Observation microscopique :</label>
+							<div class="col-sm-5">
+								<textarea class="form-control"></textarea>
+							</div>
+						</div>
+						<div class="input-group col-sm-6">
+							<div class="input-group-prepend">
+								<span class="input-group-text">Ajouter une image</span>
+							</div>
+							<div class="custom-file">
+								<input type="text" class="custom-file-input" id="">
+								<label class="custom-file-label" for="">Selectionner un fichier</label>
+							</div>
+						</div>
+              		</section>
+               		
+               		<br>
+               		<!-- Biologue !-->
+               		<section alt="Biologue">
+						<div class="form-group row">
+						<label for="" class="col-sm-3 col-form-label">Etude Biologue :</label>
+							<div class="form-check form-check-inline col-sm-5">
+								<label class="form-check-label" for="">Effectué&nbsp;</label>
+								<input class="form-check-input" type="checkbox" name="biolog" id="boxBiolog" value="option1">
+							</div>
+						</div>
+						<div class="input-group col-sm-6" id="divBiolog">
+							<label for="" class="col-sm-3 col-form-label">Référence :</label>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" id="inputEmail3" placeholder="...">
+							</div>
+						</div>
+             		</section>
+              		
+               		<br>
+               		<!-- ARN 16S !-->
+               		<section alt="ARN 16S">
+						<div class="form-group row">
+						<label for="" class="col-sm-3 col-form-label">Etude ARN 16S :</label>
+							<div class="form-check form-check-inline col-sm-5">
+								<label class="form-check-label" for="">Effectué&nbsp;</label>
+								<input class="form-check-input" type="checkbox" name="inlineRadioOptions" id="boxArn" value="option1">
+							</div>
+						</div>
+						<div class="input-group col-sm-6" id="divArn">
+							<div class="input-group-prepend">
+								<span class="input-group-text">Ajouter un fichier</span>
+							</div>
+							<div class="custom-file">
+								<input type="text" class="custom-file-input" id="">
+								<label class="custom-file-label" for="">Selectionner un fichier</label>
+							</div>
+						</div>
+             		</section>
+              		
+               
                 </div>
                 <div data-page="2" style="display:none;">
                     <p>Content for Div Number 2</p>
@@ -39,6 +129,8 @@
                 <div data-page="8" style="display:none;">
                     <p>Content for Div Number 8</p>
                 </div>
+                
+                <br><br>
                 
                 <div class="justify-content-end">
                     <button class="btn btn-info" type="submit">Ajouter à la base</button>
@@ -67,6 +159,42 @@
 		   include "ressource/html/script.html"
 		?>
         <script>
+
+			//checkbox 
+			$(function() {
+  
+			  var boxArn = $("#boxArn");
+			  var divArn = $("#divArn");
+
+			  divArn.hide();
+
+			  boxArn.change(function() {
+			 	console.log("change");
+				if (boxArn.is(':checked')) {
+				  divArn.show();
+				  console.log("la");
+				} else {
+				  divArn.hide();
+				  console.log("ici");
+				}
+			  });
+			  
+			  var boxBiolog = $("#boxBiolog");
+			  var divBiolog = $("#divBiolog");
+
+			  divBiolog.hide();
+
+			  boxBiolog.change(function() {
+				if (boxBiolog.is(':checked')) {
+				  divBiolog.show();
+				} else {
+				  divBiolog.hide();
+				}
+			  });
+			});
+			
+			
+			//pagination
             var paginationHandler = function(){
                 // store pagination container so we only select it once
                 var $paginationContainer = $(".pagination-container"),
