@@ -15,16 +15,45 @@
         
         <div class="container">
            <form id="addForm" class="pagination-container" >
-               <h4 class="display-4">Ajout d'une souche</h4>
-                <div data-page="1" >
+           		<h4 class="display-4">Ajout d'une souche</h4>
+               	
+               	<!-- Collection et description -->
+                <div data-page="1" id="page1">
+                	<br>
+                	<section>
+						<div class="form-group row">
+						<h6 class="col-sm-3 col-form-label">Nouvelle souche<span class="font-weight-bold text-danger"> *</span> :</h6>
+							<div class="form-check form-check-inline col-sm-5">
+								<label class="form-check-label" for="radioOui">oui&nbsp;</label>
+								<input class="form-check-input" type="radio" name="nvSouche" id="radioOui" value="1" required>
+								<label class="form-check-label" for="radioNon">non&nbsp;</label>
+								<input class="form-check-input" type="radio" name="nvSouche" id="radioNon" value="0">
+							</div>
+						</div>
+						<div class="input-group col-sm-6" id="divNon">
+							<label for="registerNum" class="col-sm-7 col-form-label">Ancien numéro d'enregistrement&nbsp;:</label>
+							<div class="col-sm-5">
+								<input type="text" class="form-control" id="registerNum" name="registerNum" placeholder="..." pattern="^(eps|pha|EPS|PHA)(\w|-)*$">
+							</div>
+						</div>
+            			<div class="input-group col-sm-6" id="divOui">
+							<label class="col-sm-6 col-form-label">Type&nbsp;:</label>
+							<div class="form-check form-check-inline col-sm-5">
+								<label class="form-check-label" for="radioSha">PHA&nbsp;</label>
+								<input class="form-check-input" type="radio" name="radioType" id="radioSha" value="1">
+								<label class="form-check-label" for="radioEps">EPS&nbsp;</label>
+								<input class="form-check-input" type="radio" name="radioType" id="radioEps" value="0">
+							</div>
+						</div>
+             		</section>
                     <h4>Collection bactérienne</h4>
                     <br>
                     <!-- Collection !-->
                     <section>
 						<div class="form-group row">
-							<h6 class="col-sm-3 col-form-label">Origine de la collection :</h6>
+							<h6 class="col-sm-3 col-form-label">Origine de la collection<span class="font-weight-bold text-danger"> *</span> :</h6>
 							<div class="col-sm-5">
-								<input type="text" class="form-control" id="collectionDesc" name="collectionDesc" placeholder="...">
+									<input name="collectionDesc" type="text" required="required" class="form-control" id="collectionDesc" placeholder="...">
 							</div>
 						</div>
                		</section>
@@ -36,7 +65,7 @@
 						<div class="form-group row">
 							<h6 class="col-sm-3 col-form-label">Observation macroscopique :</h6>
 							<div class="col-sm-5">
-								<textarea class="form-control" name="macroDesc"></textarea>
+								<textarea name="macroDesc" class="form-control" placeholder="..."></textarea>
 							</div>
 						</div>
 						<div class="input-group col-sm-6">
@@ -56,7 +85,7 @@
 						<div class="form-group row">
 							<h6 class="col-sm-3 col-form-label">Observation microscopique :</h6>
 							<div class="col-sm-5">
-								<textarea class="form-control" name="microDesc"></textarea>
+								<textarea name="microDesc" class="form-control" placeholder="..."></textarea>
 							</div>
 						</div>
 						<div class="input-group col-sm-6">
@@ -160,6 +189,7 @@
 						</div>
              		</section>
              		
+             		<br>
              		<!-- Arbre !-->
                		<section>
 						<div class="form-group row">
@@ -193,27 +223,173 @@
              		</section>
                
                 </div>
-                <div data-page="2" style="display:none;">
-                    <p>Content for Div Number 2</p>
+                
+                <!-- Culture -->
+                <div data-page="2" id="page2" style="display:none;">
+                    <h4>Culture des bactéries</h4>
+                    <br>
+                    <!-- Température !-->
+                    <section>
+						<div class="form-group row">
+							<h6 class="col-sm-3 col-form-label">Température de culture :</h6>
+							<div class="col-sm-5">
+									<input name="temperature" type="numeric" class="form-control" id="temperature" placeholder="...">
+							</div>
+						</div>
+               		</section>
+               		
+               		<br>
+                    <!-- pH !-->
+                    <section>
+						<div class="form-group row">
+							<h6 class="col-sm-3 col-form-label">pH de culture :</h6>
+							<div class="col-sm-5">
+									<input name="pH" type="numeric" class="form-control" id="pH" placeholder="...">
+							</div>
+						</div>
+               		</section>
+               		
+               		<br>
+                    <!-- Salinité !-->
+                    <section>
+						<div class="form-group row">
+							<h6 class="col-sm-3 col-form-label">Température de culture :</h6>
+							<div class="col-sm-5">
+									<input name="salinite" type="numeric" class="form-control" id="salinite" placeholder="...">
+							</div>
+						</div>
+               		</section>
+               		
+               		<br>
+                    <!-- Oxygénation !-->
+                    <section>
+						<div class="form-group row">
+							<h6 class="col-sm-3 col-form-label">Oxygénation :</h6>
+							<div class="col-sm-5">
+									<input name="oxy" type="numeric" class="form-control" id="oxy" placeholder="...">
+							</div>
+						</div>
+               		</section>
+               		
+               		<br>
+               		<!-- Optimisation !-->
+               		<section>
+						<div class="form-group row">
+						<h6 class="col-sm-3 col-form-label">Optimisation des conditions de croissance :</h6>
+							<div class="form-check form-check-inline col-sm-5">
+								<label class="form-check-label" for="boxOpti">Effectué&nbsp;</label>
+								<input class="form-check-input" type="checkbox" name="boxOpti" id="boxOpti" value="option1">
+							</div>
+						</div>
+						<div class="input-group col-sm-6" id="divOpti">
+							<div class="input-group-prepend">
+								<span class="input-group-text">Ajouter un fichier</span>
+							</div>
+							<div class="custom-file">
+								<input type="text" class="custom-file-input" id="optiFile" name="optiFile">
+								<label class="custom-file-label" for="optiFile">Selectionner un fichier</label>
+							</div>
+						</div>
+             		</section>
                 </div>
-                <div data-page="3" style="display:none;">
-                    <p>Content for Div Number 3</p>
+                
+                <!-- EPS || SHA -->
+                <div data-page="3" id="page3" style="display:none;">
+                    <div id="criblageEps">
+                    	<h4>Criblage :</h4>
+                    	
+                    	<br>
+                    	<!-- Condition !-->
+                    	<section>
+							<div class="form-group row">
+								<h6 class="col-sm-3 col-form-label">Condition :</h6>
+								<div class="col-sm-5">
+										<input name="condition" type="text" class="form-control" id="condition" placeholder="...">
+								</div>
+							</div>
+						</section>
+                   		
+                   		<br>
+                    	<!-- Resultat !-->
+                    	<section>
+							<div class="form-group row">
+								<h6 class="col-sm-3 col-form-label">Resultat :</h6>
+								<div class="col-sm-5">
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="production" id="production0" value="0">
+										<label class="form-check-label" for="production0">Pas productrice</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="production" id="production1" value="1">
+										<label class="form-check-label" for="production1">Peu productrice</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="production" id="production2" value="2">
+										<label class="form-check-label" for="production2">Moyennement productrice</label>
+									</div>
+									<div class="form-check">
+										<input class="form-check-input" type="radio" name="production" id="production3" value="3">
+										<label class="form-check-label" for="production3">Trés productrice</label>
+									</div>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<div class="form-check form-check-inline col-sm-5">
+									<label class="form-check-label" for="boxImg">Joindre une image&nbsp;</label>
+									<input class="form-check-input" type="checkbox" name="boxImg" id="boxImg" value="1">
+								</div>
+							</div>
+							<div class="input-group col-sm-6" id="divImg">
+								<div class="input-group-prepend">
+									<span class="input-group-text">Ajouter une image</span>
+								</div>
+								<div class="custom-file">
+									<input type="text" class="custom-file-input" id="imgFile" name="imgFile">
+									<label class="custom-file-label" for="imgFile">Selectionner un fichier</label>
+								</div>
+							</div>
+							
+						</section>
+                   
+                   		<br>
+                    	<!-- Rendement !-->
+                    	<section>
+							<div class="form-group row">
+								<h6 class="col-sm-3 col-form-label">Rendement :</h6>
+								<div class="col-sm-5">
+										<input name="rendement" type="text" class="form-control" id="rendement" placeholder="...">
+								</div>
+							</div>
+						</section>
+                    </div>
+                    
+                    <div>
+                    	
+                    </div>
                 </div>
-                <div data-page="4" style="display:none;">
+                
+                <div data-page="4" id="page4" style="display:none;">
                     <p>Content for Div Number 4</p>
                 </div>
-                <div data-page="5" style="display:none;">
+                
+                <div data-page="5" id="page5" style="display:none;">
                     <p>Content for Div Number 5</p>
                 </div>
-                <div data-page="6" style="display:none;">
+                
+                <div data-page="6" id="page6" style="display:none;">
                     <p>Content for Div Number 6</p>
                 </div>
-                <div data-page="7" style="display:none;">
+                
+                <div data-page="7" id="page7" style="display:none;">
                     <p>Content for Div Number 7</p>
                 </div>
-                <div data-page="8" style="display:none;">
+                
+                <div data-page="8" id="page8" style="display:none;">
                     <p>Content for Div Number 8</p>
                 </div>
+                
+                <meta name="description"/>
                 
                 <br><br>
                 
@@ -225,16 +401,16 @@
 
                 <div class="pagination pagination-centered justify-content-center">
                     <ul class="pagination ">
-                        <li class="page-item" data-page="-"><a class="page-link bg-dark text-white" href="#addForm" >Pr&eacute;c&eacute;dent</a></li>
-                        <li class="page-item" data-page="1"><a class="page-link" href="#addForm" >Description</a></li>
-                        <li class="page-item" data-page="2"><a class="page-link" href="#addForm" >Culture</a></li>
-                        <li class="page-item" data-page="3"><a class="page-link" href="#addForm" >Type</a></li>
-                        <li class="page-item" data-page="4"><a class="page-link" href="#addForm" >Caractérisation</a></li>
-                        <li class="page-item" data-page="5"><a class="page-link" href="#addForm" >Hémi&nbsp;Synthése</a></li>
-                        <li class="page-item" data-page="6"><a class="page-link" href="#addForm" >Activité</a></li>
-                        <li class="page-item" data-page="7"><a class="page-link" href="#addForm" >Industrie</a></li>
-                        <li class="page-item" data-page="8"><a class="page-link" href="#addForm" >Publication</a></li>
-                        <li class="page-item" data-page="+"><a class="page-link bg-dark text-white" href="#addForm" >Suivant</a></li>
+                        <li class="page-item" id="previous" data-page="-"><a class="page-link bg-dark text-white" href="#addForm" >Pr&eacute;c&eacute;dent</a></li>
+                        <li class="page-item active" id="bPage1" data-page="1"><a class="page-link" href="#addForm" >Description</a></li>
+                        <li class="page-item" id="bPage2" data-page="2"><a class="page-link" href="#addForm" >Culture</a></li>
+                        <li class="page-item" id="bPage3" data-page="3"><a class="page-link" href="#addForm" id="aPage3">Type</a></li>
+                        <li class="page-item" id="bPage4" data-page="4"><a class="page-link" href="#addForm" >Caractérisation</a></li>
+                        <li class="page-item" id="bPage5" data-page="5"><a class="page-link" href="#addForm" >Hémi&nbsp;Synthése</a></li>
+                        <li class="page-item" id="bPage6" data-page="6"><a class="page-link" href="#addForm" >Activité</a></li>
+                        <li class="page-item" id="bPage7" data-page="7"><a class="page-link" href="#addForm" >Industrie</a></li>
+                        <li class="page-item" id="bPage8" data-page="8"><a class="page-link" href="#addForm" >Publication</a></li>
+                        <li class="page-item" id="next" data-page="+"><a class="page-link bg-dark text-white" href="#addForm" >Suivant</a></li>
                     </ul>
                 </div>
             </form>
@@ -243,127 +419,6 @@
         <?php
 		   include "ressource/html/script.html"
 		?>
-        <script>
-
-			//checkbox 
-			$(function() {
-  
-  			  var boxArbre = $("#boxArbre");
-			  var divArbre = $("#divArbre");
-			  divArbre.hide();
-			  boxArbre.change(function() {
-			 	console.log("change");
-				if (boxArbre.is(':checked')) {
-				  divArbre.show();
-				  console.log("la");
-				} else {
-				  divArbre.hide();
-				  console.log("ici");
-				}
-			  });
-  				
-			  var boxArn = $("#boxArn");
-			  var divArn = $("#divArn");
-			  divArn.hide();
-			  boxArn.change(function() {
-			 	console.log("change");
-				if (boxArn.is(':checked')) {
-				  divArn.show();
-				  console.log("la");
-				} else {
-				  divArn.hide();
-				  console.log("ici");
-				}
-			  });
-			  
-			  var boxEmbl = $("#boxEmbl");
-			  var divEmbl = $("#divEmbl");
-			  divEmbl.hide();
-			  boxEmbl.change(function() {
-				if (boxEmbl.is(':checked')) {
-				  divEmbl.show();
-				} else {
-				  divEmbl.hide();
-				}
-			  });
-			  
-			  var boxBlast = $("#boxBlast");
-			  var divBlast = $("#divBlast");
-			  divBlast.hide();
-			  boxBlast.change(function() {
-				if (boxBlast.is(':checked')) {
-				  divBlast.show();
-				} else {
-				  divBlast.hide();
-				}
-			  });
-			  
-			  var boxPasteur = $("#boxPasteur");
-			  var divPasteur = $("#divPasteur");
-			  divPasteur.hide();
-			  boxPasteur.change(function() {
-				if (boxPasteur.is(':checked')) {
-				  divPasteur.show();
-				} else {
-				  divPasteur.hide();
-				}
-			  });
-			  
-			   var boxBiolog = $("#boxBiolog");
-			  var divBiolog = $("#divBiolog");
-			  divBiolog.hide();
-			  boxBiolog.change(function() {
-				if (boxBiolog.is(':checked')) {
-				  divBiolog.show();
-				} else {
-				  divBiolog.hide();
-				}
-			  });
-			  
-			  var boxApi = $("#boxApi");
-			  var divApi = $("#divApi");
-			  divApi.hide();
-			  boxApi.change(function() {
-				if (boxApi.is(':checked')) {
-				  divApi.show();
-				} else {
-				  divApi.hide();
-				}
-			  });
-			});
-			
-			
-			//pagination
-            var paginationHandler = function(){
-                // store pagination container so we only select it once
-                var $paginationContainer = $(".pagination-container"),
-                    $pagination = $paginationContainer.find('.pagination ul');
-                // click event
-                $pagination.find("li a").on('click.pageChange',function(e){
-                    e.preventDefault();
-                    // get parent li's data-page attribute and current page
-                var parentLiPage = $(this).parent('li').data("page"),
-                currentPage = parseInt( $(".pagination-container div[data-page]:visible").data('page') ),
-                numPages = $paginationContainer.find("div[data-page]").length;
-                // make sure they aren't clicking the current page
-                if ( parseInt(parentLiPage) !== parseInt(currentPage) ) {
-                // hide the current page
-                $paginationContainer.find("div[data-page]:visible").hide();
-                if ( parentLiPage === '+' ) {
-                            // next page
-                    $paginationContainer.find("div[data-page="+( currentPage+1>numPages ? numPages : currentPage+1 )+"]").show();
-                } else if ( parentLiPage === '-' ) {
-                            // previous page
-                    $paginationContainer.find("div[data-page="+( currentPage-1<1 ? 1 : currentPage-1 )+"]").show();
-                } else {
-                    // specific page
-                    $paginationContainer.find("div[data-page="+parseInt(parentLiPage)+"]").show();
-                        }
-                    }
-                });
-            };
-            $( document ).ready( paginationHandler );
-        </script>
         
         <footer>
 			<?php
