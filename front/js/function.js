@@ -1,91 +1,96 @@
-//page 1
-$("#page1").on('hide',function(){
-	//console.log("1");
-	$("#bPage1").removeClass('active');
-});
-$("#page1").on('show',function(){
-	//console.log("2");
-	$("#bPage1").addClass('active');
+var $type;
+
+$("#registerNum").keyup(function(){
+    console.log("update");
+	if(($("#registerNum").val()).length > 2){
+		$type = (($("#registerNum").val()).slice(0,3)).toUpperCase();
+		switchType();
+	}
 });
 
-//page 2
-$("#page2").on('hide',function(){
-	//console.log("11");
-	$("#bPage2").removeClass('active');
+$("#radioPha").click(function(){
+	$type = "PHA";
+	switchType();
 });
-$("#page2").on('show',function(){
-	//console.log("22");
-	$("#bPage2").addClass('active');
-});
-
-//page3
-$("#page3").on('hide',function(){
-	//console.log("111");
-	$("#bPage3").removeClass('active');
-});
-$("#page3").on('show',function(){
-	//console.log("222");
-	$("#bPage3").addClass('active');
+$("#radioEps").click(function(){
+	$type = "EPS";
+	switchType();
 });
 
-//page 4
-$("#page4").on('hide',function(){
-	//console.log("1111");
-	$("#bPage4").removeClass('active');
-});
-$("#page4").on('show',function(){
-	//console.log("2222");
-	$("#bPage4").addClass('active');
-});
+function switchType(){
+	$("#aPage3").text($type);
+	if($type==="PHA"){
+		console.log("Pha");
+		$("#criblagePha").show();
+		$("#caracterisationPha").show();
+		$("#hemiPha").show();
+		$("#actiPha").show();
 
-//page 5
-$("#page5").on('hide',function(){
-	//console.log("11111");
-	$("#bPage5").removeClass('active');
-});
-$("#page5").on('show',function(){
-	//console.log("22222");
-	$("#bPage5").addClass('active');
-});
+		$("#criblageEps").hide();
+		$("#caracterisationEps").hide();
+		$("#hemiEps").hide();
+		$("#actiEps").hide();
+	}else{
+		console.log("no Pha: "+$type);
+		if($type==="EPS"){
+			console.log("Eps");
+			$("#criblagePha").hide();
+			$("#caracterisationPha").hide();
+			$("#hemiPha").hide();
+			$("#actiPha").hide();
 
-//page 6
-$("#page6").on('hide',function(){
-	//console.log("111");
-	$("#bPage6").removeClass('active');
-});
-$("#page6").on('show',function(){
-	//console.log("222");
-	$("#bPage6").addClass('active');
-});
+			$("#criblageEps").show();
+			$("#caracterisationEps").show();
+			$("#hemiEps").show();
+			$("#actiEps").show();
+		}
+	}
+}
 
-//page 7
-$("#page7").on('hide',function(){
-	//console.log("1111");
-	$("#bPage7").removeClass('active');
-});
-$("#page7").on('show',function(){
-	//console.log("2222");
-	$("#bPage7").addClass('active');
-});
-
-//page 8
-$("#page8").on('hide',function(){
-	//console.log("11111");
-	$("#bPage8").removeClass('active');
-});
-$("#page8").on('show',function(){
-	//console.log("22222");
-	$("#bPage8").addClass('active');
-});
 //
 //------------------------------------------------
 //
 
-$("#registerNum").keypress(function(){
-    console.log("update");
-	if(($("#registerNum").val()).length > 2){
-		$("#aPage3").text((($("#registerNum").val()).slice(0,3)).toUpperCase());
+$("#domaineDivIndustrie").hide();
+$("#domaineIndustrie").change(function(){
+	if($("#domaineIndustrie").val()=="new"){
+		$("#domaineDivIndustrie").show();
 	}
+	else{
+		$("#domaineDivIndustrie").hide();
+	}
+});
+
+$("#activiteDivBrevet").hide();
+$("#activiteBrevet").change(function(){
+	if($("#activiteBrevet").val()=="new"){
+		$("#activiteDivBrevet").show();
+	}
+	else{
+		$("#activiteDivBrevet").hide();
+	}
+});
+
+$("#activiteDivLettre").hide();
+$("#activiteLettre").change(function(){
+	if($("#activiteLettre").val()=="new"){
+		$("#activiteDivLettre").show();
+	}
+	else{
+		$("#activiteDivLettre").hide();
+	}
+});
+
+//
+//------------------------------------------------
+//
+
+$("#pasteurNum").keyup(function(){
+	$("#pasteurNumBis").val($("#pasteurNum").val());
+});
+
+$("#pasteurNumBis").keyup(function(){
+	$("#pasteurNum").val($("#pasteurNumBis").val());
 });
 
 //
@@ -144,12 +149,31 @@ $(function() {
   boxPasteur.change(function() {
 	if (boxPasteur.is(':checked')) {
 	  divPasteur.show();
+	  divPasteurBis.show();
+	  $("#boxPasteurBis").prop('checked', true);
 	} else {
 	  divPasteur.hide();
+	  divPasteurBis.hide();
+	  $("#boxPasteurBis").prop('checked', false);
+	}
+  });
+  
+  var boxPasteurBis = $("#boxPasteurBis");
+  var divPasteurBis = $("#divPasteurBis");
+  divPasteurBis.hide();
+  boxPasteurBis.change(function() {
+	if (boxPasteurBis.is(':checked')) {
+	  divPasteurBis.show();
+	  divPasteur.show();
+	  $("#boxPasteur").prop('checked', true);
+	} else {
+	  divPasteurBis.hide();
+	  divPasteur.hide();
+	  $("#boxPasteur").prop('checked', false);
 	}
   });
 
-   var boxBiolog = $("#boxBiolog");
+  var boxBiolog = $("#boxBiolog");
   var divBiolog = $("#divBiolog");
   divBiolog.hide();
   boxBiolog.change(function() {
@@ -208,20 +232,147 @@ $(function() {
 	}
   });
   
-  var boxImg = $("#boxImg");
-  var divImg = $("#divImg");
-  divImg.hide();
-  boxImg.change(function() {
-	if (boxImg.is(':checked')) {
-	  divImg.show();
+  var boxImgEps = $("#boxImgEps");
+  var divImgEps = $("#divImgEps");
+  divImgEps.hide();
+  boxImgEps.change(function() {
+	if (boxImgEps.is(':checked')) {
+	  divImgEps.show();
 	} else {
-	  divImg.hide();
+	  divImgEps.hide();
+	}
+  });
+  
+  var boxImgPha = $("#boxImgPha");
+  var divImgPha = $("#divImgPha");
+  divImgPha.hide();
+  boxImgPha.change(function() {
+	if (boxImgPha.is(':checked')) {
+	  divImgPha.show();
+	} else {
+	  divImgPha.hide();
+	}
+  });
+  
+  var boxSpectroEps = $("#boxSpectroEps");
+  var divSpectroEps = $("#divSpectroEps");
+  divSpectroEps.hide();
+  boxSpectroEps.change(function() {
+	if (boxSpectroEps.is(':checked')) {
+	  divSpectroEps.show();
+	} else {
+	  divSpectroEps.hide();
+	}
+  });
+  
+  var boxOsidiqueEps = $("#boxOsidiqueEps");
+  var divOsidiqueEps1 = $("#divOsidiqueEps1");
+  var divOsidiqueEps2 = $("#divOsidiqueEps2");
+  divOsidiqueEps1.hide();
+  divOsidiqueEps2.hide();
+  boxOsidiqueEps.change(function() {
+	if (boxOsidiqueEps.is(':checked')) {
+	  divOsidiqueEps1.show();
+	  divOsidiqueEps2.show();
+	} else {
+	  divOsidiqueEps1.hide();
+	  divOsidiqueEps2.hide();
+	}
+  });
+  
+  var boxAnalyseEps = $("#boxAnalyseEps");
+  var divAnalyseEps = $("#divAnalyseEps");
+  divAnalyseEps.hide();
+  boxAnalyseEps.change(function() {
+	if (boxAnalyseEps.is(':checked')) {
+	  divAnalyseEps.show();
+	} else {
+	  divAnalyseEps.hide();
+	}
+  });
+  
+  var boxRmnEps = $("#boxRmnEps");
+  var divRmnEps = $("#divRmnEps");
+  divRmnEps.hide();
+  boxRmnEps.change(function() {
+	if (boxRmnEps.is(':checked')) {
+	  divRmnEps.show();
+	} else {
+	  divRmnEps.hide();
+	}
+  });
+  
+  var boxRmnPha = $("#boxRmnPha");
+  var divRmnPha = $("#divRmnPha");
+  divRmnPha.hide();
+  boxRmnPha.change(function() {
+	if (boxRmnPha.is(':checked')) {
+	  divRmnPha.show();
+	} else {
+	  divRmnPha.hide();
+	}
+  });
+  
+  var boxHplcEps = $("#boxHplcEps");
+  var divHplcEps1 = $("#divHplcEps1");
+  var divHplcEps2 = $("#divHplcEps2");
+  divHplcEps1.hide();
+  divHplcEps2.hide();
+  boxHplcEps.change(function() {
+	if (boxHplcEps.is(':checked')) {
+	  divHplcEps1.show();
+	  divHplcEps2.show();
+	} else {
+	  divHplcEps1.hide();
+	  divHplcEps2.hide();
+	}
+  });
+  
+  var boxIsisEps = $("#boxIsisEps");
+  var divIsisEps = $("#divIsisEps");
+  divIsisEps.hide();
+  boxIsisEps.change(function() {
+	if (boxIsisEps.is(':checked')) {
+	  divIsisEps.show();
+	} else {
+	  divIsisEps.hide();
+	}
+  });
+  
+  var boxIsisPha = $("#boxIsisPha");
+  var divIsisPha = $("#divIsisPha");
+  divIsisPha.hide();
+  boxIsisPha.change(function() {
+	if (boxIsisPha.is(':checked')) {
+	  divIsisPha.show();
+	} else {
+	  divIsisPha.hide();
+	}
+  });
+  
+  var industrielRadioOui = $("#industrielRadioOui");
+  var industrielDivOui = $("#industrielDivOui");
+  industrielDivOui.hide();
+  industrielRadioOui.change(function() {
+	if (industrielRadioOui.is(':checked')) {
+	  industrielDivOui.show();
+	} else {
+	  industrielDivOui.hide();
+	}
+  });
+  
+  var industrielRadioNon = $("#industrielRadioNon");
+  industrielDivOui.hide();
+  industrielRadioNon.change(function() {
+	if (industrielRadioNon.is(':checked')) {
+	  industrielDivOui.hide();
 	}
   });
   
 });
-
-
+//
+//------------------------------------------------
+//
 
 (function ($) {
   $.each(['show', 'hide'], function (i, ev) {
@@ -232,6 +383,7 @@ $(function() {
 	};
   });
 })(jQuery);
+
 //
 //------------------------------------------------
 //
@@ -244,22 +396,26 @@ var paginationHandler = function(){
 	$pagination.find("li a").on('click.pageChange',function(e){
 		e.preventDefault();
 		// get parent li's data-page attribute and current page
-	var parentLiPage = $(this).parent('li').data("page"),
-	currentPage = parseInt( $(".pagination-container div[data-page]:visible").data('page') ),
-	numPages = $paginationContainer.find("div[data-page]").length;
-	// make sure they aren't clicking the current page
-	if ( parseInt(parentLiPage) !== parseInt(currentPage) ) {
-	// hide the current page
-	$paginationContainer.find("div[data-page]:visible").hide();
-	if ( parentLiPage === '+' ) {
-				// next page
-		$paginationContainer.find("div[data-page="+( currentPage+1>numPages ? numPages : currentPage+1 )+"]").show();
-	} else if ( parentLiPage === '-' ) {
-				// previous page
-		$paginationContainer.find("div[data-page="+( currentPage-1<1 ? 1 : currentPage-1 )+"]").show();
-	} else {
-		// specific page
-		$paginationContainer.find("div[data-page="+parseInt(parentLiPage)+"]").show();
+		var parentLiPage = $(this).parent('li').data("page"),
+		currentPage = parseInt( $(".pagination-container div[data-page]:visible").data('page') ),
+		numPages = $paginationContainer.find("div[data-page]").length;
+		// make sure they aren't clicking the current page
+		if ( parseInt(parentLiPage) !== parseInt(currentPage) ) {
+			// hide the current page
+			$paginationContainer.find("div[data-page]:visible").hide();
+			$("#bPage"+currentPage).toggleClass("active");
+			if ( parentLiPage === '+' ) {
+						// next page
+				$paginationContainer.find("div[data-page="+( currentPage+1>numPages ? numPages : currentPage+1 )+"]").show();
+				$("#bPage"+( currentPage+1>numPages ? numPages : currentPage+1 )).toggleClass("active");
+			} else if ( parentLiPage === '-' ) {
+						// previous page
+				$paginationContainer.find("div[data-page="+( currentPage-1<1 ? 1 : currentPage-1 )+"]").show();
+				$("#bPage"+( currentPage-1<1 ? 1 : currentPage-1 )).toggleClass("active");
+			} else {
+				// specific page
+				$paginationContainer.find("div[data-page="+parseInt(parentLiPage)+"]").show();
+				$("#bPage"+parseInt(parentLiPage)).toggleClass("active");
 			}
 		}
 	});
