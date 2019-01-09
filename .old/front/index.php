@@ -2,13 +2,13 @@
 <html>
 	<head>
 		<?php
-		   include "ressource/html/ressource.html"
+        include "ressource/html/ressource.html"
 		?>
 	</head>
 
     <body>
 		<?php
-		   include "ressource/html/navbar.html"
+        include "ressource/html/navbar.html"
 		?>
 		
 		<br>
@@ -175,14 +175,14 @@
 	</div>
 		
 	    <?php
-		   include "ressource/html/script.html"
+        include "ressource/html/script.html"
 		?>
 
 	</body>
 	
 	<footer>
 	    <?php
-		   include "ressource/html/footer.html"
+        include "ressource/html/footer.html"
 		?>
 	</footer>
 </html>
