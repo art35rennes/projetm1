@@ -1,25 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fbd90ef4-95b8-4103-bd48-18525024d8be" name="Default Changelist" comment="" />
+    <list default="true" id="fbd90ef4-95b8-4103-bd48-18525024d8be" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/souchoteque/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/routes/web.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ComposerSettings" doNotAsk="true">
+    <pharConfigPath>$PROJECT_DIR$/souchoteque/composer.json</pharConfigPath>
+  </component>
+  <component name="DockManager">
+    <window id="2">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="236">
+                    <caret line="101" column="44" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
+                    <folding>
+                      <element signature="e#197#1365#0#HTML" />
+                      <element signature="e#306#2036#0#HTML" />
+                      <element signature="e#411#779#0#HTML" />
+                      <element signature="e#1408#1698#0#HTML" />
+                      <element signature="e#1723#2009#0#HTML" />
+                      <element signature="e#4234#5006#0#HTML" />
+                      <element signature="e#4157#4798#0#HTML" />
+                      <element signature="e#5997#6094#0#HTML" />
+                      <element signature="e#6170#6176#0#HTML" expanded="true" />
+                      <element signature="e#7013#7780#0#HTML" />
+                      <element signature="e#8194#8200#0#HTML" expanded="true" />
+                      <element signature="e#2625#2748#0#HTML" />
+                      <element signature="e#2699#4929#0#HTML" />
+                      <element signature="e#2824#3272#0#HTML" />
+                      <element signature="e#3394#3583#0#HTML" />
+                      <element signature="e#3632#3814#0#HTML" />
+                      <element signature="e#3863#4045#0#HTML" />
+                      <element signature="e#4141#4491#0#HTML" />
+                      <element signature="e#4536#4882#0#HTML" />
+                      <element signature="e#2949#4339#0#HTML" />
+                      <element signature="e#4503#5889#0#HTML" />
+                      <element signature="e#5903#7292#0#HTML" />
+                      <element signature="e#7454#8843#0#HTML" />
+                      <element signature="e#8902#10291#0#HTML" />
+                      <element signature="e#10354#11743#0#HTML" />
+                      <element signature="e#11806#13195#0#HTML" />
+                      <element signature="e#13253#14642#0#HTML" />
+                      <element signature="e#14697#16086#0#HTML" />
+                      <element signature="e#16141#17530#0#HTML" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5694444">
+    <splitter split-orientation="horizontal" split-proportion="0.61811024">
       <split-first>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/front/ajout_souche_v2.php">
+            <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/home.blade.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="508">
-                  <caret line="42" column="108" lean-forward="true" selection-start-line="42" selection-start-column="108" selection-end-line="42" selection-end-column="108" />
+                <state relative-caret-position="340">
+                  <caret line="20" column="25" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="20" selection-end-column="25" />
                   <folding>
-                    <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                    <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                    <element signature="e#307#313#0#HTML" expanded="true" />
+                    <element signature="e#585#591#0#HTML" expanded="true" />
+                    <element signature="e#873#879#0#HTML" expanded="true" />
+                    <element signature="e#1267#1273#0#HTML" expanded="true" />
+                    <element signature="e#1619#1625#0#HTML" expanded="true" />
+                    <element signature="e#1329#1335#0#HTML" expanded="true" />
+                    <element signature="e#2246#2252#0#HTML" expanded="true" />
+                    <element signature="e#2585#2591#0#HTML" expanded="true" />
+                    <element signature="e#2941#2947#0#HTML" expanded="true" />
+                    <element signature="e#2974#2980#1#HTML" expanded="true" />
+                    <element signature="e#3029#3035#1#HTML" expanded="true" />
+                    <element signature="e#3084#3090#1#HTML" expanded="true" />
+                    <element signature="e#3139#3145#1#HTML" expanded="true" />
+                    <element signature="e#3194#3200#1#HTML" expanded="true" />
+                    <element signature="e#3249#3255#1#HTML" expanded="true" />
+                    <element signature="e#3304#3310#1#HTML" expanded="true" />
+                    <element signature="e#3359#3365#1#HTML" expanded="true" />
+                    <element signature="e#3536#3542#1#HTML" expanded="true" />
+                    <element signature="e#3590#3596#1#HTML" expanded="true" />
+                    <element signature="e#3644#3650#1#HTML" expanded="true" />
+                    <element signature="e#3698#3704#1#HTML" expanded="true" />
+                    <element signature="e#3752#3758#1#HTML" expanded="true" />
+                    <element signature="e#3806#3812#1#HTML" expanded="true" />
+                    <element signature="e#3860#3866#1#HTML" expanded="true" />
+                    <element signature="e#3914#3920#1#HTML" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -28,67 +107,187 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/front/ajout_souche.php">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="79">
-                  <caret line="47" column="30" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="47" selection-end-column="30" />
-                  <folding>
-                    <element signature="n#head#0;n#html#0;n#!!top" />
-                    <element signature="e#43#48#0#PHP" />
-                    <element signature="e#122#127#0#PHP" />
-                    <element signature="n#section#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#section#1;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#section#2;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#section#3;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#section#4;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#section#5;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#section#6;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#section#7;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#section#8;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#section#9;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#section#10;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#2;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#4;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#5;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#7;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="n#div#9;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="e#46067#46072#0#PHP" />
-                    <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
-                    <element signature="e#46149#46154#0#PHP" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
+        <splitter split-orientation="vertical" split-proportion="0.5656425">
+          <split-first>
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/layout.blade.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="221">
+                      <caret line="31" column="74" lean-forward="true" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="74" />
+                      <folding>
+                        <element signature="n#style#0;n#hr#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                        <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                        <element signature="n#style#0;n#hr#1;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/.old/front/fiche.html">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="92">
+                      <caret line="64" column="16" lean-forward="true" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+                      <folding>
+                        <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/souchoteque/routes/web.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="133">
+                      <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+                      <folding>
+                        <element signature="e#7#389#0#PHP" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
       </split-second>
     </splitter>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>One</find>
+      <find>accordionExample</find>
+      <find>Two</find>
+      <find>Three</find>
+      <find>EPS</find>
+      <find>PHA</find>
+      <find>ExampleIndicators</find>
+      <find>inputGroup-sizing-sm</find>
+      <find>Sizing example input</find>
+      <find>inp</find>
+      <find>exampleFormControlSelect1</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/front/ajout_souche_v2.php" />
+        <option value="$PROJECT_DIR$/souchoteque/resources/views/souche/home.blade.php" />
+        <option value="$PROJECT_DIR$/souchoteque/routes/web.php" />
+        <option value="$PROJECT_DIR$/souchoteque/resources/views/layout.blade.php" />
+        <option value="$PROJECT_DIR$/souchoteque/resources/views/home.blade.php" />
+        <option value="$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
     <include_path>
       <path value="$PROJECT_DIR$" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/beyondcode/laravel-dump-server" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/dragonmantank/cron-expression" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/psr/container" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/psr/simple-cache" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/laravel/tinker" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/laravel/nexmo-notification-channel" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/laravel/slack-notification-channel" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/hamcrest/hamcrest-php" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/mockery/mockery" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/zendframework/zend-diactoros" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/phar-io/manifest" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/symfony/var-dumper" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/phar-io/version" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/symfony/polyfill-php72" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/jakub-onderka/php-console-highlighter" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/symfony/contracts" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/jakub-onderka/php-console-color" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/nexmo/client" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/php-http/guzzle6-adapter" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/php-http/httplug" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/php-http/promise" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/dnoegel/php-xdg-base-dir" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/psy/psysh" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/egulias/email-validator" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/nunomaduro/collision" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/fideloper/proxy" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/theseer/tokenizer" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/erusev/parsedown" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/league/flysystem" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/guzzlehttp/guzzle" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/guzzlehttp/promises" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/composer" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/ramsey/uuid" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/sebastian/object-reflector" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/souchoteque/vendor/tijsverkoyen/css-to-inline-styles" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-208" />
-    <option name="y" value="-20" />
-    <option name="width" value="3500" />
-    <option name="height" value="1985" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-1413" />
+    <option name="y" value="-10" />
+    <option name="width" value="4375" />
+    <option name="height" value="2195" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -106,7 +305,29 @@
             <path>
               <item name="projetm1" type="b2602c69:ProjectViewProjectNode" />
               <item name="projetm1" type="462c0819:PsiDirectoryNode" />
-              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="souchoteque" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projetm1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projetm1" type="462c0819:PsiDirectoryNode" />
+              <item name="souchoteque" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projetm1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projetm1" type="462c0819:PsiDirectoryNode" />
+              <item name="souchoteque" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projetm1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="projetm1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="bcb0276e:PhpExternalLibrariesNodePatcher$PatchedExternalLibrariesNode" />
+              <item name="PHP" type="5114b859:PhpExternalLibrariesNodePatcher$PatchedLibraryNode" />
             </path>
           </expand>
           <select />
@@ -116,8 +337,14 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="C:/wamp64/bin/php/php7.2.10/php.exe" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/fr.dic" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.spelling" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Users\Arthur\Documents\GitHub\projetm1\souchoteque\resources\views" />
+      <recent name="D:\Users\Arthur\Documents\GitHub\projetm1\.old" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -131,6 +358,7 @@
       </list>
     </option>
   </component>
+  <component name="SpellCheckerSettings" BundledDictionaries="0" Folders="1" Folder0="C:\Users\Arthur\Desktop" CustomDictionaries="1" CustomDictionary0="C:\Users\Arthur\Desktop\fr.dic" Dictionaries="0" CorrectionsLimit="5" DefaultDictionary="project-level" UseSingleDictionary="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -142,21 +370,26 @@
       <option name="presentableId" value="Default" />
       <updated>1546959627277</updated>
       <workItem from="1546959630217" duration="2222000" />
+      <workItem from="1547041502921" duration="773000" />
+      <workItem from="1547112663607" duration="6664000" />
+      <workItem from="1547125660542" duration="10718000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2222000" />
+    <option name="totallyTimeSpent" value="20377000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="3832" y="-8" width="1936" height="1066" extended-state="6" />
+    <frame x="-6" y="-6" width="1549" height="846" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.1307847" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.14755198" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" />
+      <window_info anchor="bottom" id="Command Line Tools Console" weight="0.32960895" />
+      <window_info anchor="bottom" id="Terminal" order="0" weight="0.32960895" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.32960895" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.3282123" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="5" />
@@ -171,73 +404,182 @@
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.1307847" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="0" />
-      <window_info anchor="bottom" id="Database Changes" order="1" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.32960895" />
-      <window_info anchor="bottom" id="Version Control" order="3" />
-      <window_info anchor="bottom" id="Docker" order="4" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Message" order="5" />
-      <window_info anchor="bottom" id="Find" order="6" />
-      <window_info anchor="bottom" id="Run" order="7" />
-      <window_info anchor="bottom" id="Debug" order="8" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="right" id="Database" order="0" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/front/ajout_souche.php">
+    <entry file="file://$PROJECT_DIR$/.old/front/ajout_souche_v2.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="47" column="30" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="47" selection-end-column="30" />
+        <state relative-caret-position="508">
+          <caret line="42" column="108" selection-start-line="42" selection-start-column="108" selection-end-line="42" selection-end-column="108" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/welcome.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1326">
+          <caret line="81" column="33" selection-start-line="81" selection-start-column="33" selection-end-line="81" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.old/front/ressource/html/ressource.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="8" lean-forward="true" selection-start-column="8" selection-end-line="5" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.old/front/ressource/html/navbar.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="34" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.old/front/ressource/html/footer.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.old/front/ressource/html/script.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="3" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.old/front/ajout_souche.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
           <folding>
-            <element signature="n#head#0;n#html#0;n#!!top" />
             <element signature="e#43#48#0#PHP" />
-            <element signature="e#122#127#0#PHP" />
-            <element signature="n#section#0;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#section#1;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#section#2;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#section#3;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#section#4;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#section#5;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#section#6;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#section#7;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#section#8;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#section#9;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#section#10;n#div#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#2;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#3;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#4;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#5;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#6;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#7;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="n#div#9;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="e#46067#46072#0#PHP" />
-            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
-            <element signature="e#46149#46154#0#PHP" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/front/ajout_souche_v2.php">
+    <entry file="file://$PROJECT_DIR$/souchoteque/config/filesystems.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="508">
-          <caret line="42" column="108" lean-forward="true" selection-start-line="42" selection-start-column="108" selection-end-line="42" selection-end-column="108" />
+        <state relative-caret-position="-306" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/souchoteque/config/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-46" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/souchoteque/public/index.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.old/front/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
           <folding>
-            <element signature="n#style#0;n#div#1;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.old/front/fiche.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="64" column="16" lean-forward="true" selection-start-line="64" selection-start-column="16" selection-end-line="64" selection-end-column="16" />
+          <folding>
+            <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/souchoteque/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="31" column="74" lean-forward="true" selection-start-line="31" selection-start-column="55" selection-end-line="31" selection-end-column="74" />
+          <folding>
+            <element signature="n#style#0;n#hr#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#hr#1;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="25" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="20" selection-end-column="25" />
+          <folding>
+            <element signature="e#307#313#0#HTML" expanded="true" />
+            <element signature="e#585#591#0#HTML" expanded="true" />
+            <element signature="e#873#879#0#HTML" expanded="true" />
+            <element signature="e#1267#1273#0#HTML" expanded="true" />
+            <element signature="e#1619#1625#0#HTML" expanded="true" />
+            <element signature="e#1329#1335#0#HTML" expanded="true" />
+            <element signature="e#2246#2252#0#HTML" expanded="true" />
+            <element signature="e#2585#2591#0#HTML" expanded="true" />
+            <element signature="e#2941#2947#0#HTML" expanded="true" />
+            <element signature="e#2974#2980#1#HTML" expanded="true" />
+            <element signature="e#3029#3035#1#HTML" expanded="true" />
+            <element signature="e#3084#3090#1#HTML" expanded="true" />
+            <element signature="e#3139#3145#1#HTML" expanded="true" />
+            <element signature="e#3194#3200#1#HTML" expanded="true" />
+            <element signature="e#3249#3255#1#HTML" expanded="true" />
+            <element signature="e#3304#3310#1#HTML" expanded="true" />
+            <element signature="e#3359#3365#1#HTML" expanded="true" />
+            <element signature="e#3536#3542#1#HTML" expanded="true" />
+            <element signature="e#3590#3596#1#HTML" expanded="true" />
+            <element signature="e#3644#3650#1#HTML" expanded="true" />
+            <element signature="e#3698#3704#1#HTML" expanded="true" />
+            <element signature="e#3752#3758#1#HTML" expanded="true" />
+            <element signature="e#3806#3812#1#HTML" expanded="true" />
+            <element signature="e#3860#3866#1#HTML" expanded="true" />
+            <element signature="e#3914#3920#1#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="101" column="44" selection-start-line="101" selection-start-column="44" selection-end-line="101" selection-end-column="44" />
+          <folding>
+            <element signature="e#197#1365#0#HTML" />
+            <element signature="e#306#2036#0#HTML" />
+            <element signature="e#411#779#0#HTML" />
+            <element signature="e#1408#1698#0#HTML" />
+            <element signature="e#1723#2009#0#HTML" />
+            <element signature="e#4234#5006#0#HTML" />
+            <element signature="e#4157#4798#0#HTML" />
+            <element signature="e#5997#6094#0#HTML" />
+            <element signature="e#6170#6176#0#HTML" expanded="true" />
+            <element signature="e#7013#7780#0#HTML" />
+            <element signature="e#8194#8200#0#HTML" expanded="true" />
+            <element signature="e#2625#2748#0#HTML" />
+            <element signature="e#2699#4929#0#HTML" />
+            <element signature="e#2824#3272#0#HTML" />
+            <element signature="e#3394#3583#0#HTML" />
+            <element signature="e#3632#3814#0#HTML" />
+            <element signature="e#3863#4045#0#HTML" />
+            <element signature="e#4141#4491#0#HTML" />
+            <element signature="e#4536#4882#0#HTML" />
+            <element signature="e#2949#4339#0#HTML" />
+            <element signature="e#4503#5889#0#HTML" />
+            <element signature="e#5903#7292#0#HTML" />
+            <element signature="e#7454#8843#0#HTML" />
+            <element signature="e#8902#10291#0#HTML" />
+            <element signature="e#10354#11743#0#HTML" />
+            <element signature="e#11806#13195#0#HTML" />
+            <element signature="e#13253#14642#0#HTML" />
+            <element signature="e#14697#16086#0#HTML" />
+            <element signature="e#16141#17530#0#HTML" />
           </folding>
         </state>
       </provider>
