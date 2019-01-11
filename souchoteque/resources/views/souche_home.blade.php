@@ -41,7 +41,7 @@
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec nunc commodo, mollis ligula volutpat, eleifend mauris. Quisque et dui pretium, pharetra mauris nec, elementum ipsum. Pellentesque nulla mauris, sollicitudin in bibendum sed, convallis ac ex. Maecenas consequat lectus ac.
                         </p>
 
-                        <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
+                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>&nbsp;&nbsp;<i class="fas fa-times text-danger"></i></p>
                         <p>
                             <span class="h6">Stock Cryotubes:&nbsp;</span>
                             <span class="badge badge-primary" title="Stock Polymaris">4</span>
@@ -66,7 +66,7 @@
                                 </button>
                             </h2>
                         </div>
-                        <div id="collapseOrigine" class="collapse show" aria-labelledby="headingOrigine" data-parent="#accordionMenu">
+                        <div id="collapseOrigine" class="collapse" aria-labelledby="headingOrigine" data-parent="#accordionMenu">
                             <div class="card-body">
                                 <div class="row">
                                     <!-- Colonne gauche-->
@@ -97,7 +97,7 @@
                                             </div>
                                         </div>
 
-                                        <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
+                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>&nbsp;&nbsp;<i class="fas fa-times text-danger"></i></p>
 
                                         <hr>
 
@@ -143,8 +143,29 @@
                                             </div>
                                         </div>
 
-                                        <p><a href="#" class="font-italic text-danger"><i class="fas fa-file-alt"></i> autorisation_hcb.pdf</a></p>
-                                        <p><a href="#" class="font-italic text-danger"><i class="fas fa-file-alt"></i> texte_hcb.pdf</a></p>
+                                        <p>
+                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> autorisation_hcb.pdf</a>&nbsp;&nbsp;<i class="fas fa-times text-danger"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte_hcb.pdf</a>&nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                        </p>
+
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <select class="form-control" id="">
+                                                    <option>Texte HCB</option>
+                                                    <option>Autorisation</option>
+                                                </select>
+                                            </div>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="fileHcb" lang="fr">
+                                                <label class="custom-file-label" for="fileHcb">Ajouter un fichier</label>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    <i class="fas fa-plus"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+
                                     </div>
 
                                     <!-- Colonne droite-->
@@ -187,7 +208,19 @@
                                                 <span class="sr-only">Suivant</span>
                                             </a>
                                         </div>
-                                    </div>
+
+                                        <div class="input-group mb-3 mt-1">
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="fileDescription">
+                                                <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter une image</label>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    <i class="fas fa-plus"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -204,7 +237,86 @@
                         </div>
                         <div id="collapseDescription" class="collapse" aria-labelledby="headingDescription" data-parent="#accordionMenu">
                             <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                <div class="row">
+                                    <!-- Gauche -->
+                                    <div class="col-xl-7">
+                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>&nbsp;&nbsp;<i class="fas fa-times text-danger"></i></p>
+
+                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> coloration_gram.pdf</a>&nbsp;&nbsp;<i class="fas fa-times text-danger"></i></p>
+
+                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt text-success"></i> API.xls</a>&nbsp;&nbsp;<i class="fas fa-times text-danger"></i></p>
+
+                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt text-warning"></i> rapport_analyse-2018.data</a>&nbsp;&nbsp;<i class="fas fa-times text-danger"></i></p>
+
+                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt"></i> protocole.docx</a>&nbsp;&nbsp;<i class="fas fa-times text-danger"></i></p>
+
+                                    </div>
+                                    <!-- Droite -->
+                                    <div class="col-xl-5">
+                                        <div id="carouselBoite" class="carousel slide" data-ride="carousel">
+                                            <ol class="carousel-indicators">
+                                                <li data-target="#carouselBoite" data-slide-to="0" class="active"></li>
+                                                <li data-target="#carouselBoite" data-slide-to="1"></li>
+                                                <li data-target="#carouselBoite" data-slide-to="2"></li>
+                                            </ol>
+                                            <div class="carousel-inner">
+                                                <div class="carousel-item active">
+                                                    <img src="https://via.placeholder.com/250" class="d-block w-100">
+                                                    <div class="carousel-caption d-none d-md-block">
+                                                        <h5>Photo sur boite</h5>
+                                                        <p>Description 1</p>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="https://via.placeholder.com/300" class="d-block w-100">
+                                                    <div class="carousel-caption d-none d-md-block">
+                                                        <h5>Photo microscopie</h5>
+                                                        <p>Description 2</p>
+                                                    </div>
+                                                </div>
+                                                <div class="carousel-item">
+                                                    <img src="https://via.placeholder.com/400" class="d-block w-100">
+                                                    <div class="carousel-caption d-none d-md-block">
+                                                        <h5>Photo sur boite</h5>
+                                                        <p>Description 3</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a class="carousel-control-prev" href="#carouselBoite" role="button" data-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Précédent</span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#carouselBoite" role="button" data-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                <span class="sr-only">Suivant</span>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <!-- Bas -->
+                                    <div class="input-group mb-3 mt-3 col-md-9">
+                                        <div class="input-group-prepend">
+                                            <input type="text" list="dataDescription" placeholder="Type..." class="form-control" id="">
+                                            <datalist id="dataDescription">
+                                                <option>Photo sur boite</option>
+                                                <option>Photo microscopie</option>
+                                                <option>Description</option>
+                                                <option>Coloration Gram</option>
+                                                <option>Galerie API</option>
+                                                <option>Galerie Biolog</option>
+                                            </datalist>
+                                        </div>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="fileDescription">
+                                            <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter un fichier </label>
+                                        </div>
+                                        <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    <i class="fas fa-plus"></i>
+                                                </span>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -218,9 +330,68 @@
                                 </button>
                             </h2>
                         </div>
-                        <div id="collapseIdentification" class="collapse" aria-labelledby="headingIdentification" data-parent="#accordionMenu">
+                        <div id="collapseIdentification" class="collapse show" aria-labelledby="headingIdentification" data-parent="#accordionMenu">
                             <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                <table class="table text-center">
+                                    <tbody>
+                                        <tr>
+                                            <th>Type</th>
+                                            <th>Sequence</th>
+                                            <th>Arbre Phylogénétique</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Un type</td>
+                                            <td>
+                                                <p>
+                                                    <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
+                                                    &nbsp;&nbsp;<i class="fas fa-pen fa-sm"></i>&nbsp;<i class="fas fa-times text-danger"></i>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                <p>
+                                                    <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> arbre.pdf</a>
+                                                    &nbsp;&nbsp;<i class="fas fa-pen fa-sm"></i>&nbsp;<i class="fas fa-times text-danger"></i>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Un autre type</td>
+                                            <td>
+                                                &nbsp;
+                                            </td>
+                                            <td>
+                                                <p>
+                                                    <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> arbre.pdf</a>
+                                                    &nbsp;&nbsp;<i class="fas fa-pen fa-sm"></i>&nbsp;<i class="fas fa-times text-danger"></i>
+                                                </p>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Encore un type</td>
+                                            <td>
+                                                <p>
+                                                    <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
+                                                    &nbsp;&nbsp;<i class="fas fa-pen fa-sm"></i>&nbsp;<i class="fas fa-times text-danger"></i>
+                                                </p>
+                                            </td>
+                                            <td>
+                                                &nbsp;
+                                            </td>
+                                        </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="text" class="input-group" list="dataIdentification" placeholder="Type...">
+                                            <datalist id="dataIdentification">
+                                                <option>un type</option>
+                                                <option>un autre type</option>
+                                                <option>encore un type</option>
+                                            </datalist>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
