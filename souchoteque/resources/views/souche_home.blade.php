@@ -4,6 +4,11 @@
     <br>
     <div class="container">
         <h4 class="display-4">Souche n°2012</h4>
+        <div class="custom-control custom-checkbox text-sm-right mb-2">
+            <input type="checkbox" class="custom-control-input" id="customCheck1">
+            <label class="custom-control-label" for="customCheck1">Mode Edition</label>
+            <i class="fas fa-pen"></i>
+        </div>
         <div class="row">
             <!-- Colonne Gauche -->
             <div class="col-xl-4 bg-light">
@@ -330,7 +335,7 @@
                                 </button>
                             </h2>
                         </div>
-                        <div id="collapseIdentification" class="collapse show" aria-labelledby="headingIdentification" data-parent="#accordionMenu">
+                        <div id="collapseIdentification" class="collapse" aria-labelledby="headingIdentification" data-parent="#accordionMenu">
                             <div class="card-body">
                                 <table class="table text-center">
                                     <tbody>
@@ -344,14 +349,17 @@
                                             <td>
                                                 <p>
                                                     <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
-                                                    &nbsp;&nbsp;<i class="fas fa-pen fa-sm"></i>&nbsp;<i class="fas fa-times text-danger"></i>
+                                                    &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
                                                 </p>
                                             </td>
                                             <td>
                                                 <p>
                                                     <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> arbre.pdf</a>
-                                                    &nbsp;&nbsp;<i class="fas fa-pen fa-sm"></i>&nbsp;<i class="fas fa-times text-danger"></i>
+                                                    &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
                                                 </p>
+                                            </td>
+                                            <td>
+                                                <i class="fas fa-pen"></i>
                                             </td>
                                         </tr>
                                         <tr>
@@ -362,8 +370,11 @@
                                             <td>
                                                 <p>
                                                     <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> arbre.pdf</a>
-                                                    &nbsp;&nbsp;<i class="fas fa-pen fa-sm"></i>&nbsp;<i class="fas fa-times text-danger"></i>
+                                                    &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
                                                 </p>
+                                            </td>
+                                            <td>
+                                                <i class="fas fa-pen"></i>
                                             </td>
                                         </tr>
                                         <tr>
@@ -371,14 +382,17 @@
                                             <td>
                                                 <p>
                                                     <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
-                                                    &nbsp;&nbsp;<i class="fas fa-pen fa-sm"></i>&nbsp;<i class="fas fa-times text-danger"></i>
+                                                    &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
                                                 </p>
                                             </td>
                                             <td>
                                                 &nbsp;
                                             </td>
+                                            <td>
+                                                <i class="fas fa-pen"></i>
+                                            </td>
                                         </tr>
-                                    <tr>
+                                        <tr>
                                         <td>
                                             <input type="text" class="input-group" list="dataIdentification" placeholder="Type...">
                                             <datalist id="dataIdentification">
@@ -387,8 +401,21 @@
                                                 <option>encore un type</option>
                                             </datalist>
                                         </td>
-                                        <td></td>
-                                        <td></td>
+                                        <td>
+                                            <div class="custom-file text-left">
+                                                <input type="file" class="custom-file-input" id="customFile">
+                                                <label class="custom-file-label" for="customFile">Ajouter description</label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-file text-left">
+                                                <input type="file" class="custom-file-input" id="customFile">
+                                                <label class="custom-file-label" for="customFile">Ajouter arbre</label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <i class="fas fa-check"></i>
+                                        </td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -407,7 +434,92 @@
                         </div>
                         <div id="collapsePasteur" class="collapse" aria-labelledby="headingPasteur" data-parent="#accordionMenu">
                             <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                <table class="table text-center table-hover">
+                                    <tbody>
+                                    <tr>
+                                        <th style="width: 10%;">#</th>
+                                        <th style="width: 20%;">Dépot</th>
+                                        <th style="width: 20%;">Numéro</th>
+                                        <th style="width: 30%;">Dossier</th>
+                                        <th style="width: 10%;">Stock</th>
+                                        <th style="width: 10%;">&nbsp;</th>
+                                    </tr>
+                                    <tr class="accordion-toggle"  data-toggle="collapse" data-target="#collapseRow1">
+                                        <td data-toggle="collapse" data-target="collapseRow1">
+                                            <p>1</p>
+                                        </td>
+                                        <td>
+                                            <p>20/12/1997</p>
+                                        </td>
+                                        <td>
+                                            <p>20121997</p>
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> dépot.pdf</a>
+                                                &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                            </p>
+                                        </td>
+                                        <td>2</td>
+                                        <td>
+                                            <i class="fas fa-pen"></i>
+                                        </td>
+                                    <tr id="collapseRow1" class="collapse in">
+                                        <td colspan="2">
+                                            <img width="70%" src="https://via.placeholder.com/250">
+                                        </td>
+                                        <td colspan="2">
+                                            <p>
+                                                <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> validation.pdf</a>
+                                                &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                            </p>
+                                        </td>
+                                    </tr>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>2</p>
+                                        </td>
+                                        <td>
+                                            <p>20/12/1997</p>
+                                        </td>
+                                        <td>
+                                            <p>20121997</p>
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> dépot.pdf</a>
+                                                &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                            </p>
+                                        </td>
+                                        <td>2</td>
+                                        <td>
+                                            <i class="fas fa-pen"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>
+                                            <input class="form-control" type="date" class="input-group">
+                                        </td>
+                                        <td>
+                                            <input class="form-control" type="text" class="input-group">
+                                        </td>
+                                        <td>
+                                            <div class="custom-file text-left">
+                                                <input type="file" class="custom-file-input" id="customFile">
+                                                <label class="custom-file-label" for="customFile">Ajouter</label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <input class="form-control" type="text" class="input-group">
+                                        </td>
+                                        <td>
+                                            <i class="fas fa-check"></i>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -417,13 +529,112 @@
                         <div class="card-header" id="headingBrevets">
                             <h2 class="mb-0">
                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseBrevets" aria-expanded="false" aria-controls="collapseBrevets">
-                                    Brevets
+                                    Brevets / Soleau
                                 </button>
                             </h2>
                         </div>
                         <div id="collapseBrevets" class="collapse" aria-labelledby="headingBrevets" data-parent="#accordionMenu">
                             <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                <table class="table table-sm text-center table-hover">
+                                    <tbody>
+                                    <tr>
+                                        <th style="width: 3%;">#</th>
+                                        <th style="width: 15%;">Type</th>
+                                        <th style="width: 17.5%;">Demande</th>
+                                        <th style="width: 17.5%;">Secteur</th>
+                                        <th style="width: 22.5%;">Texte</th>
+                                        <th style="width: 22.5%;">INPI</th>
+                                        <th style="width: 2%;">&nbsp;</th>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>1</p>
+                                        </td>
+                                        <td>
+                                            <p>Brevet</p>
+                                        </td>
+                                        <td>
+                                            <p>20/12/1997</p>
+                                        </td>
+                                        <td>
+                                            <p>Cosmétique</p>
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte.pdf</a>
+                                                &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> inpi.pdf</a>
+                                                &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <i class="fas fa-pen"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <p>2</p>
+                                        </td>
+                                        <td>
+                                            <p>Soleau</p>
+                                        </td>
+                                        <td>
+                                            <p>20/12/1997</p>
+                                        </td>
+                                        <td>
+                                            <p>Médicale</p>
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> dépot.pdf</a>
+                                                &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                            </p>
+                                        </td>
+                                        <td>&nbsp;</td>
+                                        <td>
+                                            <i class="fas fa-pen"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>
+                                            <select class="form-control form-control-sm">
+                                                <option>Brevet</option>
+                                                <option>Soleau</option>
+                                            </select>
+                                        </td>
+                                        <td>
+                                            <input class="form-control form-control-sm" type="text" class="input-group">
+                                        </td>
+                                        <td>
+                                            <input class="form-control form-control-sm" type="text" class="input-group" list="dataSecteur">
+                                            <datalist id="dataSecteur">
+                                                <option>Cosmétique</option>
+                                                <option>Médicale</option>
+                                            </datalist>
+                                        </td>
+                                        <td>
+                                            <div class="custom-file text-left form-control-sm">
+                                                <input type="file" class="custom-file-input" id="customFile">
+                                                <label class="custom-file-label" for="customFile"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="custom-file text-left form-control-sm">
+                                                <input type="file" class="custom-file-input" id="customFile">
+                                                <label class="custom-file-label" for="customFile"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <i class="fas fa-check"></i>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -439,7 +650,40 @@
                         </div>
                         <div id="collapsePublication" class="collapse" aria-labelledby="headingPublication" data-parent="#accordionMenu">
                             <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                <table class="table">
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Date</th>
+                                        <th>Fiche</th>
+                                        <th>&nbsp;</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>20/12/1997</td>
+                                        <td>
+                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> document.pdf</a>
+                                            &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                        </td>
+                                        <td>
+                                            <i class="fas fa-pen"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>
+                                            <input class="form-control" type="date">
+                                        </td>
+                                        <td>
+                                            <div class="custom-file text-left">
+                                                <input type="file" class="custom-file-input" id="customFile">
+                                                <label class="custom-file-label" for="customFile"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <i class="fas fa-check"></i>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -455,7 +699,52 @@
                         </div>
                         <div id="collapseExclusivite" class="collapse" aria-labelledby="headingExclusivite" data-parent="#accordionMenu">
                             <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                <table class="table">
+                                    <tr>
+                                        <th style="width: 2.5%">#</th>
+                                        <th style="width: 20%">Début</th>
+                                        <th style="width: 20%">Fin</th>
+                                        <th style="width: 25%">Partenaire</th>
+                                        <th style="width: 25%">Secteur</th>
+                                        <th style="width: 2.5%">&nbsp;</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>20/12/1997</td>
+                                        <td>15/01/2019</td>
+                                        <td>EDF</td>
+                                        <td>Médicale</td>
+                                        <td>
+                                            <i class="fas fa-pen"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>
+                                            <input class="form-control" type="text">
+                                        </td>
+                                        <td>
+                                            <input class="form-control" type="text">
+                                        </td>
+                                        <td>
+                                            <input class="form-control" type="text" list="dataPart">
+                                            <datalist id="dataPart">
+                                                <option>EDF</option>
+                                                <option>L'oréal</option>
+                                            </datalist>
+                                        </td>
+                                        <td>
+                                            <input class="form-control" type="text" class="input-group" list="dataSecteur">
+                                            <datalist id="dataSecteur">
+                                                <option>Cosmétique</option>
+                                                <option>Médicale</option>
+                                            </datalist>
+                                        </td>
+                                        <td>
+                                            <i class="fas fa-check"></i>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div>
@@ -469,9 +758,62 @@
                                 </button>
                             </h2>
                         </div>
-                        <div id="collapseProjet" class="collapse" aria-labelledby="headingProjet" data-parent="#accordionMenu">
+                        <div id="collapseProjet" class="collapse show" aria-labelledby="headingProjet" data-parent="#accordionMenu">
                             <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                <table class="table">
+                                    <tr>
+                                        <th style="width: 2.5%">#</th>
+                                        <th style="width: 20%">Date</th>
+                                        <th style="width: 20%">Partenaire</th>
+                                        <th style="width: 25%">Secteur</th>
+                                        <th style="width: 25%">Document</th>
+                                        <th style="width: 2.5%">&nbsp;</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>20/12/1997</td>
+                                        <td>EDF</td>
+                                        <td>Médicale</td>
+                                        <td>
+                                            <p>
+                                                <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte.pdf</a>
+                                                &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <i class="fas fa-pen"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>&nbsp;</td>
+                                        <td>
+                                            <input class="form-control" type="text">
+                                        </td>
+                                        <td>
+                                            <input class="form-control" type="text" list="dataPart">
+                                            <datalist id="dataPart">
+                                                <option>EDF</option>
+                                                <option>L'oréal</option>
+                                            </datalist>
+                                        </td>
+                                        <td>
+                                            <input class="form-control" type="text" class="input-group" list="dataSecteur">
+                                            <datalist id="dataSecteur">
+                                                <option>Cosmétique</option>
+                                                <option>Médicale</option>
+                                            </datalist>
+                                        </td>
+                                        <td>
+                                            <div class="custom-file text-left">
+                                                <input type="file" class="custom-file-input" id="customFile">
+                                                <label class="custom-file-label" for="customFile"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <i class="fas fa-check"></i>
+                                        </td>
+                                    </tr>
+                                </table>
                             </div>
                         </div>
                     </div>

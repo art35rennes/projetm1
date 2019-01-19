@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link href="/projetm1/front/css/index.css" rel="stylesheet">
     <link rel="icon" href="/projetm1/favicon.ico">
+
 </head>
 
 <body>
