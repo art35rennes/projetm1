@@ -834,7 +834,6 @@
             <div class="tab-content" id="nav-tabContent">
                 <div class="tab-pane fade show active bg-white border rounded p-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                     <div>
-
                         <!-- Filtre affichage -->
                         <div>
                             <h6>Afficher :</h6>
@@ -1176,6 +1175,69 @@
                                 </tr>
                             </table>
                         </div>
+
+                        <!-- Criblage -->
+                        <div>
+                            <h4>Criblage n°1</h4>
+                            <hr class="w-50" align="left">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div>
+                                        <table class="table text-center">
+                                            <tbody>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Condition</th>
+                                                    <th>Rapport</th>
+                                                </tr>
+                                                <tr>
+                                                    <td>1</td>
+                                                    <td>
+                                                        <p>
+                                                            <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
+                                                            &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <p>
+                                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> rapport.pdf</a>
+                                                            &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                        </p>
+                                                    </td>
+                                                    <td>
+                                                        <i class="fas fa-pen"></i>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        &nbsp;
+                                                    </td>
+                                                    <td>
+                                                        <div class="custom-file text-left">
+                                                            <input type="file" class="custom-file-input" id="customFile">
+                                                            <label class="custom-file-label" for="customFile">Ajouter description</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="custom-file text-left">
+                                                            <input type="file" class="custom-file-input" id="customFile">
+                                                            <label class="custom-file-label" for="customFile">Ajouter rapport</label>
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <i class="fas fa-check"></i>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <br>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <hr>
@@ -1193,8 +1255,556 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade bg-white border rounded p-2" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">2</div>
-                <div class="tab-pane fade bg-white border rounded p-2" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">3</div>
+                <div class="tab-pane fade bg-white border rounded p-2" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <div>
+                        <!-- Filtre affichage -->
+                        <div>
+                            <h6>Afficher :</h6>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="checkCaracterisation" checked>
+                                    <label class="form-check-label" for="checkCaracterisation">Caractérisation</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="checkObjectivation" checked>
+                                    <label class="form-check-label" for="checkObjectivation">Objectivation</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="checkCondition" checked>
+                                    <label class="form-check-label" for="checkCondition">Condition de culture</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="checkCriblage" checked>
+                                    <label class="form-check-label" for="checkCriblage">Criblage</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="checkProductionIndu" checked>
+                                    <label class="form-check-label" for="checkProductionIndu">Production Industriel</label>
+                                </div>
+                            </div>
+                            <hr class="w-75">
+                        </div>
+
+                        <!-- Projet -->
+                        <div class="">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><h6 class="font-italic">Projet associé :</h6></li>
+                                <li class="list-inline-item"><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte_projet1.pdf</a></li>
+                                <li class="list-inline-item"><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte_projet2.pdf</a></li>
+                                <li class="list-inline-item"><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte_projet3.pdf</a></li>
+                                <li class="list-inline-item">
+                                    <input class="form-control w-75 d-inline" type="text" list="dataProjet">
+                                    <datalist id="dataProjet">
+                                        <option>projet1</option>
+                                        <option>projet2</option>
+                                        <option>projet3</option>
+                                    </datalist>
+                                    &nbsp;<i class="fas fa-check d-inline"></i>
+                                </li>
+                            </ul>
+                            <hr class="w-75">
+                        </div>
+
+                        <!-- Carac -->
+                        <div>
+                            <h4>Caractérisation n°1</h4>
+                            <hr class="w-50" align="left">
+                            <ul class="list-unstyled list-inline">
+                                <li class="list-inline-item m-1">
+                                    <a href="#" class="font-italic"><i class="fas fa-file-alt text-primary"></i> Substituant.docx</a>
+                                </li>
+                                <li class="list-inline-item m-1">
+                                    <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> ratio.pdf</a>
+                                </li>
+                                <li class="list-inline-item m-1">
+                                    <a href="#" class="font-italic"><i class="fas fa-file-alt text-warning"></i> rmn.data</a>
+                                </li>
+                                <li class="list-inline-item m-1">
+                                    <a href="#" class="font-italic"><i class="fas fa-file-alt text-warning"></i> spectreRmn.data</a>
+                                </li>
+                                <li class="list-inline-item m-1">
+                                    <a href="#" class="font-italic"><i class="fas fa-file-alt text-secondary"></i> spectre.png</a>
+                                </li>
+                                <li class="list-inline-item m-1">
+                                    <a href="#" class="font-italic"><i class="fas fa-file-alt text-secondary"></i> spectre HPLC.png</a>
+                                </li>
+                                <li class="list-inline-item m-1">
+                                    <a href="#" class="font-italic"><i class="fas fa-file-alt text-success"></i> tableau.xls</a>
+                                </li>
+                            </ul>
+                            <div class="input-group col-8 text-left">
+                                <div class="input-group-prepend">
+                                    <input type="text" list="dataCaracterisation" placeholder="Type..." class="form-control" id="">
+                                    <datalist id="dataCaracterisation">
+                                        <option>Ratio monosaccharidiques</option>
+                                        <option>RMN</option>
+                                        <option>Spectre RMN</option>
+                                        <option>Substituants</option>
+                                        <option>Spectre HPLC</option>
+                                        <option>Spectre HPSec</option>
+                                    </datalist>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="fileDescription">
+                                    <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter un fichier </label>
+                                </div>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-plus"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+
+                        <!-- Objecti -->
+                        <div>
+                            <h4>Objectivation n°1</h4>
+                            <hr class="w-50" align="left">
+
+                            <table class="table">
+                                <tr>
+                                    <th>Essaie</th>
+                                    <th>Protocole</th>
+                                    <th>Résultat</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                                <tr>
+                                    <td>Essaie n°1</td>
+                                    <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> rapport.pdf</a></td>
+                                    <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-success"></i> data.xls</a></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input class="form-control" type="text">
+                                    </td>
+                                    <td>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="fileDescription">
+                                            <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter un fichier </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="fileDescription">
+                                            <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter un fichier </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <i class="fas fa-check"></i>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!-- Projet Indu -->
+                        <div>
+                            <h4>Projet industriel n°1</h4>
+                            <hr class="w-50" align="left">
+
+                            <table class="table">
+                                <tr>
+                                    <th>Production</th>
+                                    <th>Date</th>
+                                    <th>Lieu</th>
+                                    <th>Protocole</th>
+                                    <th>Résultat</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                                <tr>
+                                    <td>Production n°1</td>
+                                    <td>20/12/1997</td>
+                                    <td>Brest</td>
+                                    <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> rapport.pdf</a></td>
+                                    <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-success"></i> data.xls</a></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input class="form-control" type="text">
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="date">
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text" list="dataLieu">
+                                        <datalist id="dataLieu">
+                                            <option>Brest</option>
+                                            <option>Rennes</option>
+                                        </datalist>
+                                    </td>
+                                    <td>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="fileDescription">
+                                            <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="fileDescription">
+                                            <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <i class="fas fa-check"></i>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!-- Criblage -->
+                        <div>
+                            <h4>Criblage n°1</h4>
+                            <hr class="w-50" align="left">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div>
+                                        <table class="table text-center">
+                                            <tbody>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Condition</th>
+                                                <th>Rapport</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>
+                                                    <p>
+                                                        <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
+                                                        &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p>
+                                                        <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> rapport.pdf</a>
+                                                        &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <i class="fas fa-pen"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    &nbsp;
+                                                </td>
+                                                <td>
+                                                    <div class="custom-file text-left">
+                                                        <input type="file" class="custom-file-input" id="customFile">
+                                                        <label class="custom-file-label" for="customFile">Ajouter description</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="custom-file text-left">
+                                                        <input type="file" class="custom-file-input" id="customFile">
+                                                        <label class="custom-file-label" for="customFile">Ajouter rapport</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <i class="fas fa-check"></i>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <br>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="input-group col-4">
+                        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                            <option></option>
+                            <option>Caractérisation</option>
+                            <option>Condition de culture</option>
+                            <option>Criblage</option>
+                            <option>Production industriel</option>
+                            <option>Objectivation</option>
+                        </select>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-success" type="button"><i class="fas fa-plus"></i>&nbsp;Ajouter</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade bg-white border rounded p-2" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <div>
+                        <!-- Filtre affichage -->
+                        <div>
+                            <h6>Afficher :</h6>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="checkCaracterisation" checked>
+                                    <label class="form-check-label" for="checkCaracterisation">Caractérisation</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="checkObjectivation" checked>
+                                    <label class="form-check-label" for="checkObjectivation">Objectivation</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="checkCondition" checked>
+                                    <label class="form-check-label" for="checkCondition">Condition de culture</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="checkCriblage" checked>
+                                    <label class="form-check-label" for="checkCriblage">Criblage</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="checkProductionIndu" checked>
+                                    <label class="form-check-label" for="checkProductionIndu">Production Industriel</label>
+                                </div>
+                            </div>
+                            <hr class="w-75">
+                        </div>
+
+                        <!-- Projet -->
+                        <div class="">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><h6 class="font-italic">Projet associé :</h6></li>
+                                <li class="list-inline-item"><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte_projet1.pdf</a></li>
+                                <li class="list-inline-item"><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte_projet2.pdf</a></li>
+                                <li class="list-inline-item"><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte_projet3.pdf</a></li>
+                                <li class="list-inline-item">
+                                    <input class="form-control w-75 d-inline" type="text" list="dataProjet">
+                                    <datalist id="dataProjet">
+                                        <option>projet1</option>
+                                        <option>projet2</option>
+                                        <option>projet3</option>
+                                    </datalist>
+                                    &nbsp;<i class="fas fa-check d-inline"></i>
+                                </li>
+                            </ul>
+                            <hr class="w-75">
+                        </div>
+
+                        <!-- Carac -->
+                        <div>
+                            <h4>Caractérisation n°1</h4>
+                            <hr class="w-50" align="left">
+                            <ul class="list-unstyled list-inline">
+                                <li class="list-inline-item m-1">
+                                    <a href="#" class="font-italic"><i class="fas fa-file-alt text-primary"></i> Substituant.docx</a>
+                                </li>
+                                <li class="list-inline-item m-1">
+                                    <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> ratio.pdf</a>
+                                </li>
+                                <li class="list-inline-item m-1">
+                                    <a href="#" class="font-italic"><i class="fas fa-file-alt text-warning"></i> rmn.data</a>
+                                </li>
+                                <li class="list-inline-item m-1">
+                                    <a href="#" class="font-italic"><i class="fas fa-file-alt text-warning"></i> spectreRmn.data</a>
+                                </li>
+                                <li class="list-inline-item m-1">
+                                    <a href="#" class="font-italic"><i class="fas fa-file-alt text-secondary"></i> spectre.png</a>
+                                </li>
+                                <li class="list-inline-item m-1">
+                                    <a href="#" class="font-italic"><i class="fas fa-file-alt text-secondary"></i> spectre HPLC.png</a>
+                                </li>
+                                <li class="list-inline-item m-1">
+                                    <a href="#" class="font-italic"><i class="fas fa-file-alt text-success"></i> tableau.xls</a>
+                                </li>
+                            </ul>
+                            <div class="input-group col-8 text-left">
+                                <div class="input-group-prepend">
+                                    <input type="text" list="dataCaracterisation" placeholder="Type..." class="form-control" id="">
+                                    <datalist id="dataCaracterisation">
+                                        <option>Ratio monosaccharidiques</option>
+                                        <option>RMN</option>
+                                        <option>Spectre RMN</option>
+                                        <option>Substituants</option>
+                                        <option>Spectre HPLC</option>
+                                        <option>Spectre HPSec</option>
+                                    </datalist>
+                                </div>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="fileDescription">
+                                    <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter un fichier </label>
+                                </div>
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="fas fa-plus"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+
+                        <!-- Objecti -->
+                        <div>
+                            <h4>Objectivation n°1</h4>
+                            <hr class="w-50" align="left">
+
+                            <table class="table">
+                                <tr>
+                                    <th>Essaie</th>
+                                    <th>Protocole</th>
+                                    <th>Résultat</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                                <tr>
+                                    <td>Essaie n°1</td>
+                                    <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> rapport.pdf</a></td>
+                                    <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-success"></i> data.xls</a></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input class="form-control" type="text">
+                                    </td>
+                                    <td>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="fileDescription">
+                                            <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter un fichier </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="fileDescription">
+                                            <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter un fichier </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <i class="fas fa-check"></i>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!-- Projet Indu -->
+                        <div>
+                            <h4>Projet industriel n°1</h4>
+                            <hr class="w-50" align="left">
+
+                            <table class="table">
+                                <tr>
+                                    <th>Production</th>
+                                    <th>Date</th>
+                                    <th>Lieu</th>
+                                    <th>Protocole</th>
+                                    <th>Résultat</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                                <tr>
+                                    <td>Production n°1</td>
+                                    <td>20/12/1997</td>
+                                    <td>Brest</td>
+                                    <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> rapport.pdf</a></td>
+                                    <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-success"></i> data.xls</a></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input class="form-control" type="text">
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="date">
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text" list="dataLieu">
+                                        <datalist id="dataLieu">
+                                            <option>Brest</option>
+                                            <option>Rennes</option>
+                                        </datalist>
+                                    </td>
+                                    <td>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="fileDescription">
+                                            <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="fileDescription">
+                                            <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <i class="fas fa-check"></i>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!-- Criblage -->
+                        <div>
+                            <h4>Criblage n°1</h4>
+                            <hr class="w-50" align="left">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div>
+                                        <table class="table text-center">
+                                            <tbody>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Condition</th>
+                                                <th>Rapport</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>
+                                                    <p>
+                                                        <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
+                                                        &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p>
+                                                        <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> rapport.pdf</a>
+                                                        &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <i class="fas fa-pen"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    &nbsp;
+                                                </td>
+                                                <td>
+                                                    <div class="custom-file text-left">
+                                                        <input type="file" class="custom-file-input" id="customFile">
+                                                        <label class="custom-file-label" for="customFile">Ajouter description</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="custom-file text-left">
+                                                        <input type="file" class="custom-file-input" id="customFile">
+                                                        <label class="custom-file-label" for="customFile">Ajouter rapport</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <i class="fas fa-check"></i>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <br>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="input-group col-4">
+                        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                            <option></option>
+                            <option>Caractérisation</option>
+                            <option>Condition de culture</option>
+                            <option>Criblage</option>
+                            <option>Production industriel</option>
+                            <option>Objectivation</option>
+                        </select>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-success" type="button"><i class="fas fa-plus"></i>&nbsp;Ajouter</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
