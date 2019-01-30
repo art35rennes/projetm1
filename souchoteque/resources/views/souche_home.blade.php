@@ -2,7 +2,7 @@
 
 @section('body')
     <br>
-    <div class="container">
+    <div class="container bg-light pb-3">
         <h4 class="display-4">Souche n°2012</h4>
         <div class="custom-control custom-checkbox text-sm-right mb-2">
             <input type="checkbox" class="custom-control-input" id="customCheck1">
@@ -11,7 +11,7 @@
         </div>
         <div class="row">
             <!-- Colonne Gauche -->
-            <div class="col-xl-4 bg-light">
+            <div class="col-xl-4">
                 <br>
                 <div class="card" >
                     <div id="carouselSouche" class="carousel slide" data-ride="carousel">
@@ -55,10 +55,11 @@
 
                     </div>
                 </div>
+                <br>
             </div>
 
             <!-- Colonne Droite -->
-            <div class="col-xl-8 bg-light">
+            <div class="col-xl-8">
                 <br>
                 <div class="accordion" id="accordionMenu">
 
@@ -758,7 +759,7 @@
                                 </button>
                             </h2>
                         </div>
-                        <div id="collapseProjet" class="collapse show" aria-labelledby="headingProjet" data-parent="#accordionMenu">
+                        <div id="collapseProjet" class="collapse" aria-labelledby="headingProjet" data-parent="#accordionMenu">
                             <div class="card-body">
                                 <table class="table">
                                     <tr>
@@ -817,56 +818,383 @@
                             </div>
                         </div>
                     </div>
+                    <br>
+                </div>
+            </div>
+        </div>
 
-                    <!-- EPS -->
-                    <div class="card">
-                        <div class="card-header" id="headingEps">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseEps" aria-expanded="false" aria-controls="collapseEps">
-                                    Synthèse Eps
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseEps" class="collapse" aria-labelledby="headingEps" data-parent="#accordionMenu">
-                            <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+        <div class="m-3">
+            <nav>
+                <div class="nav nav-tabs border-bottom-0" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Synthèse Eps</a>
+                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Synthèse Pha</a>
+                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Synthèse autre</a>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active bg-white border rounded p-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <div>
+
+                        <!-- Filtre affichage -->
+                        <div>
+                            <h6>Afficher :</h6>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="checkCaracterisation" checked>
+                                    <label class="form-check-label" for="checkCaracterisation">Caractérisation</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="checkObjectivation" checked>
+                                    <label class="form-check-label" for="checkObjectivation">Objectivation</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="checkCondition" checked>
+                                    <label class="form-check-label" for="checkCondition">Condition de culture</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="checkCriblage" checked>
+                                    <label class="form-check-label" for="checkCriblage">Criblage</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" id="checkProductionIndu" checked>
+                                    <label class="form-check-label" for="checkProductionIndu">Production Industriel</label>
+                                </div>
                             </div>
+                            <hr class="w-75">
+                        </div>
+
+                        <!-- Projet -->
+                        <div class="">
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><h6 class="font-italic">Projet associé :</h6></li>
+                                <li class="list-inline-item"><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte_projet1.pdf</a></li>
+                                <li class="list-inline-item"><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte_projet2.pdf</a></li>
+                                <li class="list-inline-item"><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte_projet3.pdf</a></li>
+                                <li class="list-inline-item">
+                                    <input class="form-control w-75 d-inline" type="text" list="dataProjet">
+                                    <datalist id="dataProjet">
+                                        <option>projet1</option>
+                                        <option>projet2</option>
+                                        <option>projet3</option>
+                                    </datalist>
+                                    &nbsp;<i class="fas fa-check d-inline"></i>
+                                </li>
+                            </ul>
+                            <hr class="w-75">
+                        </div>
+
+                        <!-- Carac -->
+                        <div>
+                            <h4>Caractérisation n°1</h4>
+                            <hr class="w-50" align="left">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div class="row">
+                                        <div class="col-md-4 font-italic">
+                                            <h6>Oses neutres :</h6>
+                                            <div class="button-group d-inline-block">
+                                                <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Ajouter...</button>
+                                                <ul class="dropdown-menu p-3 pre-scrollable">
+                                                    <li>
+                                                        <input class="form-control w-75" type="text">
+                                                    </li>
+                                                    <li>
+                                                        <label>&nbsp;Option 1</label>
+                                                        <input type="checkbox">
+                                                    </li>
+                                                    <li>
+                                                        <label>&nbsp;Option 2</label>
+                                                        <input type="checkbox">
+                                                    </li>
+                                                    <li>
+                                                        <label>&nbsp;Option 3</label>
+                                                        <input type="checkbox">
+                                                    </li>
+                                                    <li>
+                                                        <label>&nbsp;Option 4</label>
+                                                        <input type="checkbox">
+                                                    </li>
+                                                    <li>
+                                                        <label>&nbsp;Option 5</label>
+                                                        <input type="checkbox">
+                                                    </li>
+                                                    <li>
+                                                        <label>&nbsp;Option 6</label>
+                                                        <input type="checkbox">
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <i class="fas fa-plus"></i>
+
+                                            <ul class="list-unstyled mt-3 ">
+                                                <li>Glucose&nbsp;<i class="fas fa-trash-alt"></i></li>
+                                                <li>Galactose&nbsp;<i class="fas fa-trash-alt"></i></li>
+                                                <li>Mannose&nbsp;<i class="fas fa-trash-alt"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4 font-italic">
+                                            <h6>Oses acides :</h6>
+                                            <div class="button-group d-inline-block">
+                                                <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Ajouter...</button>
+                                                <ul class="dropdown-menu p-3 pre-scrollable">
+                                                    <li>
+                                                        <input class="form-control w-75" type="text">
+                                                    </li>
+                                                    <li>
+                                                        <label>&nbsp;Option 1</label>
+                                                        <input type="checkbox">
+                                                    </li>
+                                                    <li>
+                                                        <label>&nbsp;Option 2</label>
+                                                        <input type="checkbox">
+                                                    </li>
+                                                    <li>
+                                                        <label>&nbsp;Option 3</label>
+                                                        <input type="checkbox">
+                                                    </li>
+                                                    <li>
+                                                        <label>&nbsp;Option 4</label>
+                                                        <input type="checkbox">
+                                                    </li>
+                                                    <li>
+                                                        <label>&nbsp;Option 5</label>
+                                                        <input type="checkbox">
+                                                    </li>
+                                                    <li>
+                                                        <label>&nbsp;Option 6</label>
+                                                        <input type="checkbox">
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <i class="fas fa-plus"></i>
+
+                                            <ul class="list-unstyled mt-3">
+                                                <li>Acide glucuronique&nbsp;<i class="fas fa-trash-alt"></i></li>
+                                                <li>Acide galacturonique&nbsp;<i class="fas fa-trash-alt"></i></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-4 font-italic">
+                                            <h6>Osamines :</h6>
+                                            <div class="button-group d-inline-block">
+                                                <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Ajouter...</button>
+                                                <ul class="dropdown-menu p-3 pre-scrollable">
+                                                    <li>
+                                                        <input class="form-control w-75" type="text">
+                                                    </li>
+                                                    <li>
+                                                        <label>&nbsp;Option 1</label>
+                                                        <input type="checkbox">
+                                                    </li>
+                                                    <li>
+                                                        <label>&nbsp;Option 2</label>
+                                                        <input type="checkbox">
+                                                    </li>
+                                                    <li>
+                                                        <label>&nbsp;Option 3</label>
+                                                        <input type="checkbox">
+                                                    </li>
+                                                    <li>
+                                                        <label>&nbsp;Option 4</label>
+                                                        <input type="checkbox">
+                                                    </li>
+                                                    <li>
+                                                        <label>&nbsp;Option 5</label>
+                                                        <input type="checkbox">
+                                                    </li>
+                                                    <li>
+                                                        <label>&nbsp;Option 6</label>
+                                                        <input type="checkbox">
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <i class="fas fa-plus"></i>
+
+                                            <ul class="list-unstyled mt-3">
+                                                <li>Glucosamine&nbsp;<i class="fas fa-trash-alt"></i></li>
+                                                <li>Galactosamine&nbsp;<i class="fas fa-trash-alt"></i></li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="input-group col-8 text-left">
+                                            <div class="input-group-prepend">
+                                                <input type="text" list="dataCaracterisation" placeholder="Type..." class="form-control" id="">
+                                                <datalist id="dataCaracterisation">
+                                                    <option>Ratio monosaccharidiques</option>
+                                                    <option>RMN</option>
+                                                    <option>Spectre RMN</option>
+                                                    <option>Substituants</option>
+                                                    <option>Spectre HPLC</option>
+                                                    <option>Spectre HPSec</option>
+                                                </datalist>
+                                            </div>
+                                            <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="fileDescription">
+                                                <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter un fichier </label>
+                                            </div>
+                                            <div class="input-group-append">
+                                                <span class="input-group-text">
+                                                    <i class="fas fa-plus"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <ul class="list-unstyled ">
+                                        <li class="m-1">
+                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-primary"></i> Substituant.docx</a>
+                                        </li>
+                                        <li class="m-1">
+                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> ratio.pdf</a>
+                                        </li>
+                                        <li class="m-1">
+                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-warning"></i> rmn.data</a>
+                                        </li>
+                                        <li class="m-1">
+                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-warning"></i> spectreRmn.data</a>
+                                        </li>
+                                        <li class="m-1">
+                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-secondary"></i> spectre.png</a>
+                                        </li>
+                                        <li class="m-1">
+                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-secondary"></i> spectre HPLC.png</a>
+                                        </li>
+                                        <li class="m-1">
+                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-success"></i> tableau.xls</a>
+                                        </li>
+                                        <li class="m-1">
+                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-success"></i> planning.xls</a>
+                                        </li>
+                                        <li class="m-1">
+                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte.pdf</a>
+                                        </li>
+                                        <li class="m-1">
+                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> scan.pdf</a>
+                                        </li>
+                                        <li class="m-1">
+                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-primary"></i> formulaire.docx</a>
+                                        </li>
+                                        <li class="m-1">
+                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte_projet1.pdf</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Objecti -->
+                        <div>
+                            <h4>Objectivation n°1</h4>
+                            <hr class="w-50" align="left">
+
+                            <table class="table">
+                                <tr>
+                                    <th>Essaie</th>
+                                    <th>Protocole</th>
+                                    <th>Résultat</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                                <tr>
+                                    <td>Essaie n°1</td>
+                                    <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> rapport.pdf</a></td>
+                                    <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-success"></i> data.xls</a></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input class="form-control" type="text">
+                                    </td>
+                                    <td>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="fileDescription">
+                                            <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter un fichier </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="fileDescription">
+                                            <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter un fichier </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <i class="fas fa-check"></i>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                        <!-- Projet Indu -->
+                        <div>
+                            <h4>Projet industriel n°1</h4>
+                            <hr class="w-50" align="left">
+
+                            <table class="table">
+                                <tr>
+                                    <th>Production</th>
+                                    <th>Date</th>
+                                    <th>Lieu</th>
+                                    <th>Protocole</th>
+                                    <th>Résultat</th>
+                                    <th>&nbsp;</th>
+                                </tr>
+                                <tr>
+                                    <td>Production n°1</td>
+                                    <td>20/12/1997</td>
+                                    <td>Brest</td>
+                                    <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> rapport.pdf</a></td>
+                                    <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-success"></i> data.xls</a></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input class="form-control" type="text">
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="date">
+                                    </td>
+                                    <td>
+                                        <input class="form-control" type="text" list="dataLieu">
+                                        <datalist id="dataLieu">
+                                            <option>Brest</option>
+                                            <option>Rennes</option>
+                                        </datalist>
+                                    </td>
+                                    <td>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="fileDescription">
+                                            <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="custom-file">
+                                            <input type="file" class="custom-file-input" id="fileDescription">
+                                            <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <i class="fas fa-check"></i>
+                                    </td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
 
-                    <!-- PHA -->
-                    <div class="card">
-                        <div class="card-header" id="headingPha">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsePha" aria-expanded="false" aria-controls="collapsePha">
-                                    Synthèse Pha
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapsePha" class="collapse" aria-labelledby="headingPha" data-parent="#accordionMenu">
-                            <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Autre -->
-                    <div class="card">
-                        <div class="card-header" id="headingAutre">
-                            <h2 class="mb-0">
-                                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseAutre" aria-expanded="false" aria-controls="collapseAutre">
-                                    Synthèse Autre
-                                </button>
-                            </h2>
-                        </div>
-                        <div id="collapseAutre" class="collapse" aria-labelledby="headingAutre" data-parent="#accordionMenu">
-                            <div class="card-body">
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                            </div>
+                    <hr>
+                    <div class="input-group col-4">
+                        <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+                            <option></option>
+                            <option>Caractérisation</option>
+                            <option>Condition de culture</option>
+                            <option>Criblage</option>
+                            <option>Production industriel</option>
+                            <option>Objectivation</option>
+                        </select>
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-success" type="button"><i class="fas fa-plus"></i>&nbsp;Ajouter</button>
                         </div>
                     </div>
                 </div>
-                <br>
+                <div class="tab-pane fade bg-white border rounded p-2" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">2</div>
+                <div class="tab-pane fade bg-white border rounded p-2" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">3</div>
             </div>
         </div>
 
