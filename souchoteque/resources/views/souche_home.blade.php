@@ -832,7 +832,7 @@
                 </div>
             </nav>
             <div class="tab-content" id="nav-tabContent">
-                <div class="tab-pane fade show active bg-white border rounded p-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="tab-pane show active bg-white border rounded p-3" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                     <div>
                         <!-- Filtre affichage -->
                         <div>
@@ -1255,7 +1255,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade bg-white border rounded p-2" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <div class="tab-pane bg-white border rounded p-3" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
                     <div>
                         <!-- Filtre affichage -->
                         <div>
@@ -1530,7 +1530,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="tab-pane fade bg-white border rounded p-2" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <div class="tab-pane bg-white border rounded p-3" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                     <div>
                         <!-- Filtre affichage -->
                         <div>
