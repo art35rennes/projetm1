@@ -31,5 +31,9 @@ class SoucheController extends BaseController
         return view('souche_home');
     }
 
+    public function Add(){
+
+    }
+
 
 }

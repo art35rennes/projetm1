@@ -98,14 +98,14 @@
                 @foreach ($souches as $souche)
                     <tr>
                         <td><a href="souche/{{$souche->ref}}" class="badge badge-info">{{$souche->ref}}</a></td>
-                        <td class="font-weight-bold @if(!$souche->identification) bg-danger text-white @endif">{{$souche->identification}}</td>
-                        <td class="font-weight-bold @if(!$souche->EPS) bg-danger text-white @endif"">{{$souche->EPS}}</td>
-                        <td class="font-weight-bold @if(!$souche->PHA) bg-danger text-white @endif">{{$souche->PHA}}</td>
-                        <td class="font-weight-bold @if(!$souche->Autre) bg-danger text-white @endif">{{$souche->Autre}}</td>
-                        <td class="font-weight-bold @if(!$souche->pasteur) bg-danger text-white @endif">{{$souche->pasteur}}</td>
-                        <td class="font-weight-bold @if(!$souche->brevet) bg-danger text-white @endif">{{$souche->brevet}}</td>
-                        <td class="font-weight-bold @if(!$souche->identification) bg-danger text-white @endif">-</td>
-                        <td class="font-weight-bold @if(!$souche->publication) bg-danger text-white @endif">{{$souche->publication}}</td>
+                        <td class="font-italic @if(!$souche->identification) bg-danger text-white @endif">{{$souche->identification}}</td>
+                        <td class="font-italic @if(!$souche->EPS) bg-danger text-white @endif"">{{$souche->EPS}}</td>
+                        <td class="font-italic @if(!$souche->PHA) bg-danger text-white @endif">{{$souche->PHA}}</td>
+                        <td class="font-italic @if(!$souche->Autre) bg-danger text-white @endif">{{$souche->Autre}}</td>
+                        <td class="font-italic @if(!$souche->pasteur) bg-danger text-white @endif">{{$souche->pasteur}}</td>
+                        <td class="font-italic @if(!$souche->brevet) bg-danger text-white @endif">{{$souche->brevet}}</td>
+                        <td class="font-italic @if(!$souche->identification) bg-danger text-white @endif">-</td>
+                        <td class="font-italic @if(!$souche->publication) bg-danger text-white @endif">{{$souche->publication}}</td>
                     </tr>
                 @endforeach
             </tbody>
