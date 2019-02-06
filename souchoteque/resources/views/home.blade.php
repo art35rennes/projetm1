@@ -97,29 +97,17 @@
                 </tr>
                 @foreach ($souches as $souche)
                     <tr>
-                        <td><a href="souche/{{$souche['ref']}}" class="badge badge-info">{{$souche['ref']}}</a></td>
-                        <td class="bg-danger">{{$souche['identification']}}</td>
-                        <td class="bg-danger">{{$souche['EPS']}}</td>
-                        <td class="bg-danger">{{$souche['PHA']}}</td>
-                        <td class="bg-danger">{{$souche['Autre']}}</td>
-                        <td class="bg-danger">{{$souche['pasteur']}}</td>
-                        <td class="bg-danger">{{$souche['brevet']}}</td>
-                        <td class="bg-danger"></td>
-                        <td class="bg-danger">{{$souche['publication']}}</td>
+                        <td><a href="souche/{{$souche->ref}}" class="badge badge-info">{{$souche->ref}}</a></td>
+                        <td class="font-italic @if(!$souche->identification) bg-danger text-white @endif">{{$souche->identification}}</td>
+                        <td class="font-italic @if(!$souche->EPS) bg-danger text-white @endif"">{{$souche->EPS}}</td>
+                        <td class="font-italic @if(!$souche->PHA) bg-danger text-white @endif">{{$souche->PHA}}</td>
+                        <td class="font-italic @if(!$souche->Autre) bg-danger text-white @endif">{{$souche->Autre}}</td>
+                        <td class="font-italic @if(!$souche->pasteur) bg-danger text-white @endif">{{$souche->pasteur}}</td>
+                        <td class="font-italic @if(!$souche->brevet) bg-danger text-white @endif">{{$souche->brevet}}</td>
+                        <td class="font-italic @if(!$souche->identification) bg-danger text-white @endif">-</td>
+                        <td class="font-italic @if(!$souche->publication) bg-danger text-white @endif">{{$souche->publication}}</td>
                     </tr>
                 @endforeach
-                <tr>
-                    <td><a href="#" class="badge badge-info">1024</a></td>
-                    <td class="bg-danger">&nbsp;</td>
-                    <td class="bg-danger">&nbsp;</td>
-                    <td class="bg-danger">&nbsp;</td>
-                    <td class="bg-danger">&nbsp;</td>
-                    <td class="bg-danger">&nbsp;</td>
-                    <td class="bg-danger">&nbsp;</td>
-                    <td class="bg-danger">&nbsp;</td>
-                    <td class="bg-danger">&nbsp;</td>
-                </tr>
-
             </tbody>
         </table>
     </div>

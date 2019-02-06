@@ -17,9 +17,9 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@show');
 
-/*Route::get('/home', function () {
-    return view('home');
-});*/
+Route::get('/souche/ajout', function () {
+    return view('souche_ajout');
+});
 
 Route::get('/souche/{id}', 'SoucheController@show');
 
