@@ -13,7 +13,7 @@ class HomeController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     public function show(){
-        $souches = DB::table('home')->select('*');
+        $souches = DB::table('home')->select('*')->get();
         //var_dump($souches);
         return view('home', ['souches' => $souches]);
     }
