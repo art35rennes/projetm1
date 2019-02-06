@@ -15,12 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
+Route::get('/home', 'HomeController@show');
 
-Route::get('/souche/{id}', function () {
-    return view('souche_home');
-});
+/*Route::get('/home', function () {
+    return view('home');
+});*/
+
+Route::get('/souche/{id}', 'SoucheController@show');
 
 

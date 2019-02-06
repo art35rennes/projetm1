@@ -226,7 +226,7 @@
                                                 </span>
                                             </div>
                                         </div>
-                                </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -340,60 +340,60 @@
                             <div class="card-body">
                                 <table class="table text-center">
                                     <tbody>
-                                        <tr>
-                                            <th>Type</th>
-                                            <th>Sequence</th>
-                                            <th>Arbre Phylogénétique</th>
-                                        </tr>
-                                        <tr>
-                                            <td>Un type</td>
-                                            <td>
-                                                <p>
-                                                    <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
-                                                    &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
-                                                </p>
-                                            </td>
-                                            <td>
-                                                <p>
-                                                    <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> arbre.pdf</a>
-                                                    &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
-                                                </p>
-                                            </td>
-                                            <td>
-                                                <i class="fas fa-pen"></i>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Un autre type</td>
-                                            <td>
-                                                &nbsp;
-                                            </td>
-                                            <td>
-                                                <p>
-                                                    <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> arbre.pdf</a>
-                                                    &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
-                                                </p>
-                                            </td>
-                                            <td>
-                                                <i class="fas fa-pen"></i>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Encore un type</td>
-                                            <td>
-                                                <p>
-                                                    <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
-                                                    &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
-                                                </p>
-                                            </td>
-                                            <td>
-                                                &nbsp;
-                                            </td>
-                                            <td>
-                                                <i class="fas fa-pen"></i>
-                                            </td>
-                                        </tr>
-                                        <tr>
+                                    <tr>
+                                        <th>Type</th>
+                                        <th>Sequence</th>
+                                        <th>Arbre Phylogénétique</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Un type</td>
+                                        <td>
+                                            <p>
+                                                <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
+                                                &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> arbre.pdf</a>
+                                                &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <i class="fas fa-pen"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Un autre type</td>
+                                        <td>
+                                            &nbsp;
+                                        </td>
+                                        <td>
+                                            <p>
+                                                <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> arbre.pdf</a>
+                                                &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            <i class="fas fa-pen"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Encore un type</td>
+                                        <td>
+                                            <p>
+                                                <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
+                                                &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                            </p>
+                                        </td>
+                                        <td>
+                                            &nbsp;
+                                        </td>
+                                        <td>
+                                            <i class="fas fa-pen"></i>
+                                        </td>
+                                    </tr>
+                                    <tr>
                                         <td>
                                             <input type="text" class="input-group" list="dataIdentification" placeholder="Type...">
                                             <datalist id="dataIdentification">
@@ -1185,49 +1185,49 @@
                                     <div>
                                         <table class="table text-center">
                                             <tbody>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Condition</th>
-                                                    <th>Rapport</th>
-                                                </tr>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>
-                                                        <p>
-                                                            <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
-                                                            &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
-                                                        </p>
-                                                    </td>
-                                                    <td>
-                                                        <p>
-                                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> rapport.pdf</a>
-                                                            &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
-                                                        </p>
-                                                    </td>
-                                                    <td>
-                                                        <i class="fas fa-pen"></i>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        &nbsp;
-                                                    </td>
-                                                    <td>
-                                                        <div class="custom-file text-left">
-                                                            <input type="file" class="custom-file-input" id="customFile">
-                                                            <label class="custom-file-label" for="customFile">Ajouter description</label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="custom-file text-left">
-                                                            <input type="file" class="custom-file-input" id="customFile">
-                                                            <label class="custom-file-label" for="customFile">Ajouter rapport</label>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <i class="fas fa-check"></i>
-                                                    </td>
-                                                </tr>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Condition</th>
+                                                <th>Rapport</th>
+                                            </tr>
+                                            <tr>
+                                                <td>1</td>
+                                                <td>
+                                                    <p>
+                                                        <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
+                                                        &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <p>
+                                                        <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> rapport.pdf</a>
+                                                        &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                    </p>
+                                                </td>
+                                                <td>
+                                                    <i class="fas fa-pen"></i>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    &nbsp;
+                                                </td>
+                                                <td>
+                                                    <div class="custom-file text-left">
+                                                        <input type="file" class="custom-file-input" id="customFile">
+                                                        <label class="custom-file-label" for="customFile">Ajouter description</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="custom-file text-left">
+                                                        <input type="file" class="custom-file-input" id="customFile">
+                                                        <label class="custom-file-label" for="customFile">Ajouter rapport</label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <i class="fas fa-check"></i>
+                                                </td>
+                                            </tr>
                                             </tbody>
                                         </table>
                                         <br>

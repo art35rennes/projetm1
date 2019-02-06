@@ -95,17 +95,19 @@
                     <th>Licence</th>
                     <th>Publication</th>
                 </tr>
-                <tr>
-                    <td><a href="souche/2012" class="badge badge-info">2012</a></td>
-                    <td class="bg-danger">&nbsp;</td>
-                    <td class="bg-danger">&nbsp;</td>
-                    <td class="bg-danger">&nbsp;</td>
-                    <td class="bg-danger">&nbsp;</td>
-                    <td class="bg-danger">&nbsp;</td>
-                    <td class="bg-danger">&nbsp;</td>
-                    <td class="bg-danger">&nbsp;</td>
-                    <td class="bg-danger">&nbsp;</td>
-                </tr>
+                @foreach ($souches as $souche)
+                    <tr>
+                        <td><a href="souche/{{$souche['ref']}}" class="badge badge-info">{{$souche['ref']}}</a></td>
+                        <td class="bg-danger">{{$souche['identification']}}</td>
+                        <td class="bg-danger">{{$souche['EPS']}}</td>
+                        <td class="bg-danger">{{$souche['PHA']}}</td>
+                        <td class="bg-danger">{{$souche['Autre']}}</td>
+                        <td class="bg-danger">{{$souche['pasteur']}}</td>
+                        <td class="bg-danger">{{$souche['brevet']}}</td>
+                        <td class="bg-danger"></td>
+                        <td class="bg-danger">{{$souche['publication']}}</td>
+                    </tr>
+                @endforeach
                 <tr>
                     <td><a href="#" class="badge badge-info">1024</a></td>
                     <td class="bg-danger">&nbsp;</td>
