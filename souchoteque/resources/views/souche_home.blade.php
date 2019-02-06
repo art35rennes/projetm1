@@ -5,8 +5,8 @@
     <div class="container bg-light pb-3">
         <h4 class="display-4">Souche n°2012</h4>
         <div class="custom-control custom-checkbox text-sm-right mb-2">
-            <input type="checkbox" class="custom-control-input" id="customCheck1">
-            <label class="custom-control-label" for="customCheck1">Mode Edition</label>
+            <input type="checkbox" class="custom-control-input" id="editMode">
+            <label class="custom-control-label" for="editMode">Mode Edition</label>
             <i class="fas fa-pen"></i>
         </div>
         <div class="row">
@@ -46,7 +46,7 @@
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec nunc commodo, mollis ligula volutpat, eleifend mauris. Quisque et dui pretium, pharetra mauris nec, elementum ipsum. Pellentesque nulla mauris, sollicitudin in bibendum sed, convallis ac ex. Maecenas consequat lectus ac.
                         </p>
 
-                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>&nbsp;&nbsp;<i class="fas fa-times text-danger"></i></p>
+                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i></p>
                         <p>
                             <span class="h6">Stock Cryotubes:&nbsp;</span>
                             <span class="badge badge-primary" title="Stock Polymaris">4</span>
@@ -84,9 +84,9 @@
                                                 <span class="input-group-text">Lieu d'origine</span>
                                             </div>
                                             <input type="text" class="form-control" readonly value="Plougastel">
-                                            <div class="input-group-append">
+                                            <div class="input-group-append editZone">
                                                 <span class="input-group-text">
-                                                    <i class="fas fa-edit"></i>
+                                                    <i class="editButton fas fa-edit"></i>
                                                 </span>
                                             </div>
                                         </div>
@@ -96,14 +96,14 @@
                                                 <span class="input-group-text">Année de collecte</span>
                                             </div>
                                             <input type="date" class="form-control" readonly value="2016-10-12">
-                                            <div class="input-group-append">
+                                            <div class="input-group-append  editZone">
                                                 <span class="input-group-text">
-                                                    <i class="fas fa-edit"></i>
+                                                    <i class="editButton fas fa-edit"></i>
                                                 </span>
                                             </div>
                                         </div>
 
-                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>&nbsp;&nbsp;<i class="fas fa-times text-danger"></i></p>
+                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i></p>
 
                                         <hr>
 
@@ -115,9 +115,9 @@
                                                 <option>Oui</option>
                                                 <option>Non</option>
                                             </select>
-                                            <div class="input-group-append">
+                                            <div class="input-group-append editZone">
                                                 <span class="input-group-text">
-                                                    <i class="fas fa-edit"></i>
+                                                    <i class="editButton fas fa-edit"></i>
                                                 </span>
                                             </div>
                                         </div>
@@ -127,9 +127,9 @@
                                                 <span class="input-group-text">Année de création</span>
                                             </div>
                                             <input type="date" class="form-control" readonly value="2018-10-12">
-                                            <div class="input-group-append">
+                                            <div class="input-group-append editZone">
                                                 <span class="input-group-text">
-                                                    <i class="fas fa-edit"></i>
+                                                    <i class="editButton fas fa-edit"></i>
                                                 </span>
                                             </div>
                                         </div>
@@ -142,19 +142,19 @@
                                                 <option>Oui</option>
                                                 <option>Non</option>
                                             </select>
-                                            <div class="input-group-append">
+                                            <div class="input-group-append editZone">
                                                 <span class="input-group-text">
-                                                    <i class="fas fa-edit"></i>
+                                                    <i class="editButton fas fa-edit"></i>
                                                 </span>
                                             </div>
                                         </div>
 
                                         <p>
-                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> autorisation_hcb.pdf</a>&nbsp;&nbsp;<i class="fas fa-times text-danger"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte_hcb.pdf</a>&nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> autorisation_hcb.pdf</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte_hcb.pdf</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
                                         </p>
 
-                                        <div class="input-group mb-3">
+                                        <div class="input-group mb-3 editZone">
                                             <div class="input-group-prepend">
                                                 <select class="form-control" id="">
                                                     <option>Texte HCB</option>
@@ -167,7 +167,7 @@
                                             </div>
                                             <div class="input-group-append">
                                                 <span class="input-group-text">
-                                                    <i class="fas fa-plus"></i>
+                                                    <i class="editButton fas fa-plus"></i>
                                                 </span>
                                             </div>
                                         </div>
@@ -215,14 +215,14 @@
                                             </a>
                                         </div>
 
-                                        <div class="input-group mb-3 mt-1">
+                                        <div class="input-group mb-3 mt-1 editZone">
                                             <div class="custom-file">
                                                 <input type="file" class="custom-file-input" id="fileDescription">
                                                 <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter une image</label>
                                             </div>
                                             <div class="input-group-append">
                                                 <span class="input-group-text">
-                                                    <i class="fas fa-plus"></i>
+                                                    <i class="editButton fas fa-plus"></i>
                                                 </span>
                                             </div>
                                         </div>
@@ -246,15 +246,15 @@
                                 <div class="row">
                                     <!-- Gauche -->
                                     <div class="col-xl-7">
-                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>&nbsp;&nbsp;<i class="fas fa-times text-danger"></i></p>
+                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i></p>
 
-                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> coloration_gram.pdf</a>&nbsp;&nbsp;<i class="fas fa-times text-danger"></i></p>
+                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> coloration_gram.pdf</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i></p>
 
-                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt text-success"></i> API.xls</a>&nbsp;&nbsp;<i class="fas fa-times text-danger"></i></p>
+                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt text-success"></i> API.xls</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i></p>
 
-                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt text-warning"></i> rapport_analyse-2018.data</a>&nbsp;&nbsp;<i class="fas fa-times text-danger"></i></p>
+                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt text-warning"></i> rapport_analyse-2018.data</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i></p>
 
-                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt"></i> protocole.docx</a>&nbsp;&nbsp;<i class="fas fa-times text-danger"></i></p>
+                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt"></i> protocole.docx</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i></p>
 
                                     </div>
                                     <!-- Droite -->
@@ -300,7 +300,7 @@
                                     </div>
 
                                     <!-- Bas -->
-                                    <div class="input-group mb-3 mt-3 col-md-9">
+                                    <div class="input-group mb-3 mt-3 col-md-9 editZone">
                                         <div class="input-group-prepend">
                                             <input type="text" list="dataDescription" placeholder="Type..." class="form-control" id="">
                                             <datalist id="dataDescription">
@@ -318,7 +318,7 @@
                                         </div>
                                         <div class="input-group-append">
                                                 <span class="input-group-text">
-                                                    <i class="fas fa-plus"></i>
+                                                    <i class="editButton fas fa-plus"></i>
                                                 </span>
                                         </div>
                                     </div>
@@ -350,17 +350,17 @@
                                         <td>
                                             <p>
                                                 <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
-                                                &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
                                             </p>
                                         </td>
                                         <td>
                                             <p>
                                                 <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> arbre.pdf</a>
-                                                &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
                                             </p>
                                         </td>
                                         <td>
-                                            <i class="fas fa-pen"></i>
+                                            <i class="editButton fas fa-pen"></i>
                                         </td>
                                     </tr>
                                     <tr>
@@ -371,11 +371,11 @@
                                         <td>
                                             <p>
                                                 <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> arbre.pdf</a>
-                                                &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
                                             </p>
                                         </td>
                                         <td>
-                                            <i class="fas fa-pen"></i>
+                                            <i class="editButton fas fa-pen"></i>
                                         </td>
                                     </tr>
                                     <tr>
@@ -383,17 +383,17 @@
                                         <td>
                                             <p>
                                                 <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
-                                                &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
                                             </p>
                                         </td>
                                         <td>
                                             &nbsp;
                                         </td>
                                         <td>
-                                            <i class="fas fa-pen"></i>
+                                            <i class="editButton fas fa-pen"></i>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr class="editZone">
                                         <td>
                                             <input type="text" class="input-group" list="dataIdentification" placeholder="Type...">
                                             <datalist id="dataIdentification">
@@ -415,7 +415,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <i class="fas fa-check"></i>
+                                            <i class="editButton fas fa-check"></i>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -458,12 +458,12 @@
                                         <td>
                                             <p>
                                                 <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> dépot.pdf</a>
-                                                &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
                                             </p>
                                         </td>
                                         <td>2</td>
                                         <td>
-                                            <i class="fas fa-pen"></i>
+                                            <i class="editButton fas fa-pen"></i>
                                         </td>
                                     <tr id="collapseRow1" class="collapse in">
                                         <td colspan="2">
@@ -472,7 +472,7 @@
                                         <td colspan="2">
                                             <p>
                                                 <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> validation.pdf</a>
-                                                &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
                                             </p>
                                         </td>
                                     </tr>
@@ -490,15 +490,15 @@
                                         <td>
                                             <p>
                                                 <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> dépot.pdf</a>
-                                                &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
                                             </p>
                                         </td>
                                         <td>2</td>
                                         <td>
-                                            <i class="fas fa-pen"></i>
+                                            <i class="editButton fas fa-pen"></i>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr class="editZone">
                                         <td>&nbsp;</td>
                                         <td>
                                             <input class="form-control" type="date" class="input-group">
@@ -516,7 +516,7 @@
                                             <input class="form-control" type="text" class="input-group">
                                         </td>
                                         <td>
-                                            <i class="fas fa-check"></i>
+                                            <i class="editButton fas fa-check"></i>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -563,17 +563,17 @@
                                         <td>
                                             <p>
                                                 <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte.pdf</a>
-                                                &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
                                             </p>
                                         </td>
                                         <td>
                                             <p>
                                                 <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> inpi.pdf</a>
-                                                &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
                                             </p>
                                         </td>
                                         <td>
-                                            <i class="fas fa-pen"></i>
+                                            <i class="editButton fas fa-pen"></i>
                                         </td>
                                     </tr>
                                     <tr>
@@ -592,15 +592,15 @@
                                         <td>
                                             <p>
                                                 <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> dépot.pdf</a>
-                                                &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
                                             </p>
                                         </td>
                                         <td>&nbsp;</td>
                                         <td>
-                                            <i class="fas fa-pen"></i>
+                                            <i class="editButton fas fa-pen"></i>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr class="editZone">
                                         <td>&nbsp;</td>
                                         <td>
                                             <select class="form-control form-control-sm">
@@ -631,7 +631,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <i class="fas fa-check"></i>
+                                            <i class="editButton fas fa-check"></i>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -663,13 +663,13 @@
                                         <td>20/12/1997</td>
                                         <td>
                                             <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> document.pdf</a>
-                                            &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                            &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
                                         </td>
                                         <td>
-                                            <i class="fas fa-pen"></i>
+                                            <i class="editButton fas fa-pen"></i>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr class="editZone">
                                         <td>&nbsp;</td>
                                         <td>
                                             <input class="form-control" type="date">
@@ -681,7 +681,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <i class="fas fa-check"></i>
+                                            <i class="editButton fas fa-check"></i>
                                         </td>
                                     </tr>
                                 </table>
@@ -716,10 +716,10 @@
                                         <td>EDF</td>
                                         <td>Médicale</td>
                                         <td>
-                                            <i class="fas fa-pen"></i>
+                                            <i class="editButton fas fa-pen"></i>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr class="editZone">
                                         <td>&nbsp;</td>
                                         <td>
                                             <input class="form-control" type="text">
@@ -742,7 +742,7 @@
                                             </datalist>
                                         </td>
                                         <td>
-                                            <i class="fas fa-check"></i>
+                                            <i class="editButton fas fa-check"></i>
                                         </td>
                                     </tr>
                                 </table>
@@ -778,14 +778,14 @@
                                         <td>
                                             <p>
                                                 <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte.pdf</a>
-                                                &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
                                             </p>
                                         </td>
                                         <td>
-                                            <i class="fas fa-pen"></i>
+                                            <i class="editButton fas fa-pen"></i>
                                         </td>
                                     </tr>
-                                    <tr>
+                                    <tr class="editZone">
                                         <td>&nbsp;</td>
                                         <td>
                                             <input class="form-control" type="text">
@@ -811,7 +811,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <i class="fas fa-check"></i>
+                                            <i class="editButton fas fa-check"></i>
                                         </td>
                                     </tr>
                                 </table>
@@ -839,24 +839,24 @@
                             <h6>Afficher :</h6>
                             <div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="checkCaracterisation" checked>
-                                    <label class="form-check-label" for="checkCaracterisation">Caractérisation</label>
+                                    <input class="form-check-input" type="checkbox" id="checkCaracterisationEps" name="checkCaracterisationEps" checked>
+                                    <label class="form-check-label" for="checkCaracterisationEps">Caractérisation</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="checkObjectivation" checked>
-                                    <label class="form-check-label" for="checkObjectivation">Objectivation</label>
+                                    <input class="form-check-input" type="checkbox" id="checkObjectivationEps" name="checkObjectivationEps" checked>
+                                    <label class="form-check-label" for="checkObjectivationEps">Objectivation</label>
+                                </div>
+                                <div class="form-check form-check-inline d-none">
+                                    <input class="form-check-input" type="checkbox" id="checkConditionEps" name="checkConditionEps" checked>
+                                    <label class="form-check-label" for="checkConditionEps">Condition de culture</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="checkCondition" checked>
-                                    <label class="form-check-label" for="checkCondition">Condition de culture</label>
+                                    <input class="form-check-input" type="checkbox" id="checkCriblageEps" name="checkCriblageEps" checked>
+                                    <label class="form-check-label" for="checkCriblageEps">Criblage</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="checkCriblage" checked>
-                                    <label class="form-check-label" for="checkCriblage">Criblage</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="checkProductionIndu" checked>
-                                    <label class="form-check-label" for="checkProductionIndu">Production Industriel</label>
+                                    <input class="form-check-input" type="checkbox" id="checkProductionInduEps" name="checkProductionInduEps" checked>
+                                    <label class="form-check-label" for="checkProductionInduEps">Production Industriel</label>
                                 </div>
                             </div>
                             <hr class="w-75">
@@ -869,21 +869,21 @@
                                 <li class="list-inline-item"><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte_projet1.pdf</a></li>
                                 <li class="list-inline-item"><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte_projet2.pdf</a></li>
                                 <li class="list-inline-item"><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte_projet3.pdf</a></li>
-                                <li class="list-inline-item">
+                                <li class="list-inline-item editZone">
                                     <input class="form-control w-75 d-inline" type="text" list="dataProjet">
                                     <datalist id="dataProjet">
                                         <option>projet1</option>
                                         <option>projet2</option>
                                         <option>projet3</option>
                                     </datalist>
-                                    &nbsp;<i class="fas fa-check d-inline"></i>
+                                    &nbsp;<i class="editButton fas fa-check d-inline"></i>
                                 </li>
                             </ul>
                             <hr class="w-75">
                         </div>
 
                         <!-- Carac -->
-                        <div>
+                        <div class="CaracterisationEps">
                             <h4>Caractérisation n°1</h4>
                             <hr class="w-50" align="left">
                             <div class="row">
@@ -892,7 +892,7 @@
                                         <div class="col-md-4 font-italic">
                                             <h6>Oses neutres :</h6>
                                             <div class="button-group d-inline-block">
-                                                <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Ajouter...</button>
+                                                <button type="button" class="btn btn-default btn-sm dropdown-toggle editZone" data-toggle="dropdown">Ajouter...</button>
                                                 <ul class="dropdown-menu p-3 pre-scrollable">
                                                     <li>
                                                         <input class="form-control w-75" type="text">
@@ -923,18 +923,18 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <i class="fas fa-plus"></i>
+                                            <i class="editButton fas fa-plus"></i>
 
                                             <ul class="list-unstyled mt-3 ">
-                                                <li>Glucose&nbsp;<i class="fas fa-trash-alt"></i></li>
-                                                <li>Galactose&nbsp;<i class="fas fa-trash-alt"></i></li>
-                                                <li>Mannose&nbsp;<i class="fas fa-trash-alt"></i></li>
+                                                <li>Glucose&nbsp;<i class="editButton fas fa-trash-alt"></i></li>
+                                                <li>Galactose&nbsp;<i class="editButton fas fa-trash-alt"></i></li>
+                                                <li>Mannose&nbsp;<i class="editButton fas fa-trash-alt"></i></li>
                                             </ul>
                                         </div>
                                         <div class="col-md-4 font-italic">
                                             <h6>Oses acides :</h6>
                                             <div class="button-group d-inline-block">
-                                                <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Ajouter...</button>
+                                                <button type="button" class="btn btn-default btn-sm dropdown-toggle editZone" data-toggle="dropdown">Ajouter...</button>
                                                 <ul class="dropdown-menu p-3 pre-scrollable">
                                                     <li>
                                                         <input class="form-control w-75" type="text">
@@ -965,17 +965,17 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <i class="fas fa-plus"></i>
+                                            <i class="editButton fas fa-plus"></i>
 
                                             <ul class="list-unstyled mt-3">
-                                                <li>Acide glucuronique&nbsp;<i class="fas fa-trash-alt"></i></li>
-                                                <li>Acide galacturonique&nbsp;<i class="fas fa-trash-alt"></i></li>
+                                                <li>Acide glucuronique&nbsp;<i class="editButton fas fa-trash-alt"></i></li>
+                                                <li>Acide galacturonique&nbsp;<i class="editButton fas fa-trash-alt"></i></li>
                                             </ul>
                                         </div>
                                         <div class="col-md-4 font-italic">
                                             <h6>Osamines :</h6>
                                             <div class="button-group d-inline-block">
-                                                <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Ajouter...</button>
+                                                <button type="button" class="btn btn-default btn-sm dropdown-toggle editZone" data-toggle="dropdown">Ajouter...</button>
                                                 <ul class="dropdown-menu p-3 pre-scrollable">
                                                     <li>
                                                         <input class="form-control w-75" type="text">
@@ -1006,15 +1006,15 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <i class="fas fa-plus"></i>
+                                            <i class="editButton fas fa-plus"></i>
 
                                             <ul class="list-unstyled mt-3">
-                                                <li>Glucosamine&nbsp;<i class="fas fa-trash-alt"></i></li>
-                                                <li>Galactosamine&nbsp;<i class="fas fa-trash-alt"></i></li>
+                                                <li>Glucosamine&nbsp;<i class="editButton fas fa-trash-alt"></i></li>
+                                                <li>Galactosamine&nbsp;<i class="editButton fas fa-trash-alt"></i></li>
                                             </ul>
                                         </div>
 
-                                        <div class="input-group col-8 text-left">
+                                        <div class="input-group col-8 text-left editZone">
                                             <div class="input-group-prepend">
                                                 <input type="text" list="dataCaracterisation" placeholder="Type..." class="form-control" id="">
                                                 <datalist id="dataCaracterisation">
@@ -1032,7 +1032,7 @@
                                             </div>
                                             <div class="input-group-append">
                                                 <span class="input-group-text">
-                                                    <i class="fas fa-plus"></i>
+                                                    <i class="editButton fas fa-plus"></i>
                                                 </span>
                                             </div>
                                         </div>
@@ -1083,7 +1083,7 @@
                         </div>
 
                         <!-- Objecti -->
-                        <div>
+                        <div class="ObjectivationEps">
                             <h4>Objectivation n°1</h4>
                             <hr class="w-50" align="left">
 
@@ -1099,7 +1099,7 @@
                                     <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> rapport.pdf</a></td>
                                     <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-success"></i> data.xls</a></td>
                                 </tr>
-                                <tr>
+                                <tr class="editZone">
                                     <td>
                                         <input class="form-control" type="text">
                                     </td>
@@ -1116,14 +1116,14 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <i class="fas fa-check"></i>
+                                        <i class="editButton fas fa-check"></i>
                                     </td>
                                 </tr>
                             </table>
                         </div>
 
                         <!-- Projet Indu -->
-                        <div>
+                        <div class="ProductionInduEps">
                             <h4>Projet industriel n°1</h4>
                             <hr class="w-50" align="left">
 
@@ -1143,7 +1143,7 @@
                                     <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> rapport.pdf</a></td>
                                     <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-success"></i> data.xls</a></td>
                                 </tr>
-                                <tr>
+                                <tr class="editZone">
                                     <td>
                                         <input class="form-control" type="text">
                                     </td>
@@ -1157,7 +1157,7 @@
                                             <option>Rennes</option>
                                         </datalist>
                                     </td>
-                                    <td>
+                                    <td class="editZone">
                                         <div class="custom-file">
                                             <input type="file" class="custom-file-input" id="fileDescription">
                                             <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter </label>
@@ -1170,14 +1170,14 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <i class="fas fa-check"></i>
+                                        <i class="editButton fas fa-check"></i>
                                     </td>
                                 </tr>
                             </table>
                         </div>
 
                         <!-- Criblage -->
-                        <div>
+                        <div class="CriblageEps">
                             <h4>Criblage n°1</h4>
                             <hr class="w-50" align="left">
                             <div class="row">
@@ -1195,20 +1195,20 @@
                                                 <td>
                                                     <p>
                                                         <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
-                                                        &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                        &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
                                                     </p>
                                                 </td>
                                                 <td>
                                                     <p>
                                                         <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> rapport.pdf</a>
-                                                        &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                        &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
                                                     </p>
                                                 </td>
                                                 <td>
-                                                    <i class="fas fa-pen"></i>
+                                                    <i class="editButton fas fa-pen"></i>
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <tr class="editZone">
                                                 <td>
                                                     &nbsp;
                                                 </td>
@@ -1225,7 +1225,7 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <i class="fas fa-check"></i>
+                                                    <i class="editButton fas fa-check"></i>
                                                 </td>
                                             </tr>
                                             </tbody>
@@ -1241,7 +1241,7 @@
                     </div>
 
                     <hr>
-                    <div class="input-group col-4">
+                    <div class="input-group col-4 editZone">
                         <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
                             <option></option>
                             <option>Caractérisation</option>
@@ -1251,7 +1251,7 @@
                             <option>Objectivation</option>
                         </select>
                         <div class="input-group-append">
-                            <button class="btn btn-outline-success" type="button"><i class="fas fa-plus"></i>&nbsp;Ajouter</button>
+                            <button class="btn btn-outline-success" type="button"><i class="editButton fas fa-plus"></i>&nbsp;Ajouter</button>
                         </div>
                     </div>
                 </div>
@@ -1262,24 +1262,24 @@
                             <h6>Afficher :</h6>
                             <div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="checkCaracterisation" checked>
-                                    <label class="form-check-label" for="checkCaracterisation">Caractérisation</label>
+                                    <input class="form-check-input" type="checkbox" id="checkCaracterisationPha" name="checkCaracterisationPha" checked>
+                                    <label class="form-check-label" for="checkCaracterisationPha">Caractérisation</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="checkObjectivation" checked>
-                                    <label class="form-check-label" for="checkObjectivation">Objectivation</label>
+                                    <input class="form-check-input" type="checkbox" id="checkObjectivationPha" name="checkObjectivationPha" checked>
+                                    <label class="form-check-label" for="checkObjectivationPha">Objectivation</label>
+                                </div>
+                                <div class="form-check form-check-inline d-none">
+                                    <input class="form-check-input" type="checkbox" id="checkConditionPha" name="checkConditionPha" checked>
+                                    <label class="form-check-label" for="checkConditionPha">Condition de culture</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="checkCondition" checked>
-                                    <label class="form-check-label" for="checkCondition">Condition de culture</label>
+                                    <input class="form-check-input" type="checkbox" id="checkCriblagePha" name="checkCriblagePha" checked>
+                                    <label class="form-check-label" for="checkCriblagePha">Criblage</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="checkCriblage" checked>
-                                    <label class="form-check-label" for="checkCriblage">Criblage</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="checkProductionIndu" checked>
-                                    <label class="form-check-label" for="checkProductionIndu">Production Industriel</label>
+                                    <input class="form-check-input" type="checkbox" id="checkProductionInduPha" name="checkProductionInduPha" checked>
+                                    <label class="form-check-label" for="checkProductionInduPha">Production Industriel</label>
                                 </div>
                             </div>
                             <hr class="w-75">
@@ -1292,21 +1292,21 @@
                                 <li class="list-inline-item"><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte_projet1.pdf</a></li>
                                 <li class="list-inline-item"><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte_projet2.pdf</a></li>
                                 <li class="list-inline-item"><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte_projet3.pdf</a></li>
-                                <li class="list-inline-item">
+                                <li class="list-inline-item editZone">
                                     <input class="form-control w-75 d-inline" type="text" list="dataProjet">
                                     <datalist id="dataProjet">
                                         <option>projet1</option>
                                         <option>projet2</option>
                                         <option>projet3</option>
                                     </datalist>
-                                    &nbsp;<i class="fas fa-check d-inline"></i>
+                                    &nbsp;<i class="editButton fas fa-check d-inline"></i>
                                 </li>
                             </ul>
                             <hr class="w-75">
                         </div>
 
                         <!-- Carac -->
-                        <div>
+                        <div class="CaracterisationPha">
                             <h4>Caractérisation n°1</h4>
                             <hr class="w-50" align="left">
                             <ul class="list-unstyled list-inline">
@@ -1332,7 +1332,7 @@
                                     <a href="#" class="font-italic"><i class="fas fa-file-alt text-success"></i> tableau.xls</a>
                                 </li>
                             </ul>
-                            <div class="input-group col-8 text-left">
+                            <div class="input-group col-8 text-left editZone">
                                 <div class="input-group-prepend">
                                     <input type="text" list="dataCaracterisation" placeholder="Type..." class="form-control" id="">
                                     <datalist id="dataCaracterisation">
@@ -1350,7 +1350,7 @@
                                 </div>
                                 <div class="input-group-append">
                                     <span class="input-group-text">
-                                        <i class="fas fa-plus"></i>
+                                        <i class="editButton fas fa-plus"></i>
                                     </span>
                                 </div>
                             </div>
@@ -1358,7 +1358,7 @@
                         </div>
 
                         <!-- Objecti -->
-                        <div>
+                        <div class="ObjectivationPha">
                             <h4>Objectivation n°1</h4>
                             <hr class="w-50" align="left">
 
@@ -1374,7 +1374,7 @@
                                     <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> rapport.pdf</a></td>
                                     <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-success"></i> data.xls</a></td>
                                 </tr>
-                                <tr>
+                                <tr class="editZone">
                                     <td>
                                         <input class="form-control" type="text">
                                     </td>
@@ -1391,14 +1391,14 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <i class="fas fa-check"></i>
+                                        <i class="editButton fas fa-check"></i>
                                     </td>
                                 </tr>
                             </table>
                         </div>
 
                         <!-- Projet Indu -->
-                        <div>
+                        <div class="ProductionInduPha">
                             <h4>Projet industriel n°1</h4>
                             <hr class="w-50" align="left">
 
@@ -1418,7 +1418,7 @@
                                     <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> rapport.pdf</a></td>
                                     <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-success"></i> data.xls</a></td>
                                 </tr>
-                                <tr>
+                                <tr class="editZone">
                                     <td>
                                         <input class="form-control" type="text">
                                     </td>
@@ -1445,14 +1445,14 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <i class="fas fa-check"></i>
+                                        <i class="editButton fas fa-check"></i>
                                     </td>
                                 </tr>
                             </table>
                         </div>
 
                         <!-- Criblage -->
-                        <div>
+                        <div class="CriblagePha">
                             <h4>Criblage n°1</h4>
                             <hr class="w-50" align="left">
                             <div class="row">
@@ -1470,20 +1470,20 @@
                                                 <td>
                                                     <p>
                                                         <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
-                                                        &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                        &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
                                                     </p>
                                                 </td>
                                                 <td>
                                                     <p>
                                                         <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> rapport.pdf</a>
-                                                        &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                        &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
                                                     </p>
                                                 </td>
                                                 <td>
-                                                    <i class="fas fa-pen"></i>
+                                                    <i class="editButton fas fa-pen"></i>
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <tr class="editZone">
                                                 <td>
                                                     &nbsp;
                                                 </td>
@@ -1500,7 +1500,7 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <i class="fas fa-check"></i>
+                                                    <i class="editButton fas fa-check"></i>
                                                 </td>
                                             </tr>
                                             </tbody>
@@ -1516,7 +1516,7 @@
                     </div>
 
                     <hr>
-                    <div class="input-group col-4">
+                    <div class="input-group col-4 editZone">
                         <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
                             <option></option>
                             <option>Caractérisation</option>
@@ -1526,7 +1526,7 @@
                             <option>Objectivation</option>
                         </select>
                         <div class="input-group-append">
-                            <button class="btn btn-outline-success" type="button"><i class="fas fa-plus"></i>&nbsp;Ajouter</button>
+                            <button class="btn btn-outline-success" type="button"><i class="editButton fas fa-plus"></i>&nbsp;Ajouter</button>
                         </div>
                     </div>
                 </div>
@@ -1537,24 +1537,24 @@
                             <h6>Afficher :</h6>
                             <div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="checkCaracterisation" checked>
-                                    <label class="form-check-label" for="checkCaracterisation">Caractérisation</label>
+                                    <input class="form-check-input" type="checkbox" id="checkCaracterisationAutre" name="checkCaracterisationAutre" checked>
+                                    <label class="form-check-label" for="checkCaracterisationAutre">Caractérisation</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="checkObjectivation" checked>
-                                    <label class="form-check-label" for="checkObjectivation">Objectivation</label>
+                                    <input class="form-check-input" type="checkbox" id="checkObjectivationAutre" name="checkObjectivationAutre" checked>
+                                    <label class="form-check-label" for="checkObjectivationAutre">Objectivation</label>
+                                </div>
+                                <div class="form-check form-check-inline d-none">
+                                    <input class="form-check-input" type="checkbox" id="checkConditionAutre" name="checkConditionAutre" checked>
+                                    <label class="form-check-label" for="checkConditionAutre">Condition de culture</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="checkCondition" checked>
-                                    <label class="form-check-label" for="checkCondition">Condition de culture</label>
+                                    <input class="form-check-input" type="checkbox" id="checkCriblageAutre" name="checkCriblageAutre" checked>
+                                    <label class="form-check-label" for="checkCriblageAutre">Criblage</label>
                                 </div>
                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="checkCriblage" checked>
-                                    <label class="form-check-label" for="checkCriblage">Criblage</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" id="checkProductionIndu" checked>
-                                    <label class="form-check-label" for="checkProductionIndu">Production Industriel</label>
+                                    <input class="form-check-input" type="checkbox" id="checkProductionInduAutre" name="checkProductionInduAutre" checked>
+                                    <label class="form-check-label" for="checkProductionInduAutre">Production Industriel</label>
                                 </div>
                             </div>
                             <hr class="w-75">
@@ -1567,21 +1567,21 @@
                                 <li class="list-inline-item"><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte_projet1.pdf</a></li>
                                 <li class="list-inline-item"><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte_projet2.pdf</a></li>
                                 <li class="list-inline-item"><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte_projet3.pdf</a></li>
-                                <li class="list-inline-item">
+                                <li class="list-inline-item editZone">
                                     <input class="form-control w-75 d-inline" type="text" list="dataProjet">
                                     <datalist id="dataProjet">
                                         <option>projet1</option>
                                         <option>projet2</option>
                                         <option>projet3</option>
                                     </datalist>
-                                    &nbsp;<i class="fas fa-check d-inline"></i>
+                                    &nbsp;<i class="editButton fas fa-check d-inline"></i>
                                 </li>
                             </ul>
                             <hr class="w-75">
                         </div>
 
                         <!-- Carac -->
-                        <div>
+                        <div class="CaracterisationAutre">
                             <h4>Caractérisation n°1</h4>
                             <hr class="w-50" align="left">
                             <ul class="list-unstyled list-inline">
@@ -1607,7 +1607,7 @@
                                     <a href="#" class="font-italic"><i class="fas fa-file-alt text-success"></i> tableau.xls</a>
                                 </li>
                             </ul>
-                            <div class="input-group col-8 text-left">
+                            <div class="input-group col-8 text-left editZone">
                                 <div class="input-group-prepend">
                                     <input type="text" list="dataCaracterisation" placeholder="Type..." class="form-control" id="">
                                     <datalist id="dataCaracterisation">
@@ -1625,7 +1625,7 @@
                                 </div>
                                 <div class="input-group-append">
                                     <span class="input-group-text">
-                                        <i class="fas fa-plus"></i>
+                                        <i class="editButton fas fa-plus"></i>
                                     </span>
                                 </div>
                             </div>
@@ -1633,7 +1633,7 @@
                         </div>
 
                         <!-- Objecti -->
-                        <div>
+                        <div class="ObjectivationAutre">
                             <h4>Objectivation n°1</h4>
                             <hr class="w-50" align="left">
 
@@ -1649,7 +1649,7 @@
                                     <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> rapport.pdf</a></td>
                                     <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-success"></i> data.xls</a></td>
                                 </tr>
-                                <tr>
+                                <tr class="editZone">
                                     <td>
                                         <input class="form-control" type="text">
                                     </td>
@@ -1666,14 +1666,14 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <i class="fas fa-check"></i>
+                                        <i class="editButton fas fa-check"></i>
                                     </td>
                                 </tr>
                             </table>
                         </div>
 
                         <!-- Projet Indu -->
-                        <div>
+                        <div class="ProductionInduAutre">
                             <h4>Projet industriel n°1</h4>
                             <hr class="w-50" align="left">
 
@@ -1693,7 +1693,7 @@
                                     <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> rapport.pdf</a></td>
                                     <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-success"></i> data.xls</a></td>
                                 </tr>
-                                <tr>
+                                <tr class="editZone">
                                     <td>
                                         <input class="form-control" type="text">
                                     </td>
@@ -1720,14 +1720,14 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <i class="fas fa-check"></i>
+                                        <i class="editButton fas fa-check"></i>
                                     </td>
                                 </tr>
                             </table>
                         </div>
 
                         <!-- Criblage -->
-                        <div>
+                        <div class="CriblageAutre">
                             <h4>Criblage n°1</h4>
                             <hr class="w-50" align="left">
                             <div class="row">
@@ -1745,20 +1745,20 @@
                                                 <td>
                                                     <p>
                                                         <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
-                                                        &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                        &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
                                                     </p>
                                                 </td>
                                                 <td>
                                                     <p>
                                                         <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> rapport.pdf</a>
-                                                        &nbsp;&nbsp;<i class="fas fa-times text-danger"></i>
+                                                        &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
                                                     </p>
                                                 </td>
                                                 <td>
-                                                    <i class="fas fa-pen"></i>
+                                                    <i class="editButton fas fa-pen"></i>
                                                 </td>
                                             </tr>
-                                            <tr>
+                                            <tr class="editZone">
                                                 <td>
                                                     &nbsp;
                                                 </td>
@@ -1775,7 +1775,7 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <i class="fas fa-check"></i>
+                                                    <i class="editButton fas fa-check"></i>
                                                 </td>
                                             </tr>
                                             </tbody>
@@ -1791,7 +1791,7 @@
                     </div>
 
                     <hr>
-                    <div class="input-group col-4">
+                    <div class="input-group col-4 editZone">
                         <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
                             <option></option>
                             <option>Caractérisation</option>
@@ -1801,7 +1801,7 @@
                             <option>Objectivation</option>
                         </select>
                         <div class="input-group-append">
-                            <button class="btn btn-outline-success" type="button"><i class="fas fa-plus"></i>&nbsp;Ajouter</button>
+                            <button class="btn btn-outline-success" type="button"><i class="editButton fas fa-plus"></i>&nbsp;Ajouter</button>
                         </div>
                     </div>
                 </div>

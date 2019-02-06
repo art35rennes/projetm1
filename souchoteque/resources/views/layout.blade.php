@@ -5,15 +5,15 @@
     <title>Maquette souchothèque</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
-    <link href="/projetm1/front/css/index.css" rel="stylesheet">
-    <link rel="icon" href="/projetm1/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/souche.css')}}"/>
+    <link rel="icon" href="{{asset('ressources/favicon.ico')}}">
 
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="/home">
-            <img src="ressource/chevron.ico" width="30" height="30" alt="chevron">
+            <img src="{{asset('ressources/favicon.ico')}}" width="30" height="30" alt="chevron">
             Souchotèque
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,7 +52,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-    <script src="/projetm1/front/js/function.js"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/souche.js') }}"></script>
 
     <footer class="page-footer font-small indigo">
 
