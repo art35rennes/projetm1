@@ -69,7 +69,6 @@
 @endsection
 @section('customJs')
     <script>
-
         refs = [
             @foreach($souches as $souche)
             "{{$souche->ref}}",

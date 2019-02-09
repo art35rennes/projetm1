@@ -13,7 +13,21 @@ class SoucheController extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function getData($id){
-        foreach (['souche', 'identification', 'pasteur', 'publication', 'brevet_soleau', 'photo_souche', 'exclusivite'] as $table)
+        foreach (['souche',
+                     'identification',
+                     'pasteur',
+                     'publication',
+                     'brevet_soleau',
+                     'photo_souche',
+                     'exclusivite',
+                     'caracterisation',
+                     'objectivation',
+                     'criblage',
+                     'production',
+                     'description',
+                     'photo_souche',
+                     'fichier_caracterisation',
+                     ] as $table)
             $souche[$table] = DB::table($table)
                 ->select(DB::raw('*'))
                 ->where('ref','=', $id)
@@ -26,6 +40,10 @@ class SoucheController extends BaseController
                 ->where('type', '=', $prod)
                 ->get();
 
+        $souche['projet'] = DB::table("projet")
+            ->join("souche_projet", "projet.nom", "=", "souche_projet.projet")
+            ->select()
+            ->where("souche_projet.ref", "=", $id)->get();
         return $souche;
     }
 
@@ -39,8 +57,11 @@ class SoucheController extends BaseController
     }
 
     public function dump($id){
-        $souche = $this->getData($id);
-        dd($souche);
+        dump($this->getData($id));
+    }
+
+    public function dd($id){
+        dd($this->getData($id));
     }
 
     public function ajout(){
