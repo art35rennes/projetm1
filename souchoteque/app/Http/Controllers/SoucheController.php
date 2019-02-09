@@ -40,12 +40,10 @@ class SoucheController extends BaseController
 
     public function dump($id){
         $souche = $this->getData($id);
-        var_dump($souche);
+        dd($souche);
     }
 
     public function add(){
 
     }
-
-
 }
