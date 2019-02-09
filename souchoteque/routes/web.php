@@ -26,6 +26,7 @@ Route::post('/souche/ajout', 'SoucheController@ajoutPost');
 //View
 Route::get('/souche/{ref}', 'SoucheController@show');
 Route::get('/souche/{ref}/dump', 'SoucheController@dump');
+Route::get('/souche/{ref}/dd', 'SoucheController@dd');
 
 //Update
 Route::post('/souche/{ref}', 'SoucheController@update');
