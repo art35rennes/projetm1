@@ -1,10 +1,9 @@
 @extends('layout')
 
 @section('body')
-    <div>{{$souche['souche']}}</div>
     <br>
     <div class="container bg-light pb-3">
-        <h4 class="display-4">Souche n°{{ $souche['souche'] }}</h4>
+        <h4 class="display-4">Souche n°2012</h4>
         <div class="custom-control custom-checkbox text-sm-right mb-2">
             <input type="checkbox" class="custom-control-input" id="editMode">
             <label class="custom-control-label" for="editMode">Mode Edition</label>
@@ -1810,8 +1809,4 @@
         </div>
 
     </div>
-@endsection
-
-@section('customJs')
-    <script type="text/javascript" src="{{ URL::asset('js/souche.js') }}"></script>
 @endsection
