@@ -30,7 +30,7 @@ class SoucheController extends BaseController
     }
 
     public function show($id){
-        $souche = getData($id);
+        $souche = $this->getData($id);
 
         //gestion projet a faire
 
@@ -39,7 +39,7 @@ class SoucheController extends BaseController
     }
 
     public function dump($id){
-        $souche = getData($id);
+        $souche = $this->getData($id);
         var_dump($souche);
     }
 
