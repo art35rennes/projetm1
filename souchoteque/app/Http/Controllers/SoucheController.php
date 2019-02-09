@@ -12,7 +12,7 @@ class SoucheController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    private function get($id){
+    public function getData($id){
         foreach (['souche', 'identification', 'pasteur', 'publication', 'brevet_soleau', 'photo_souche', 'exclusivite'] as $table)
             $souche[$table] = DB::table($table)
                 ->select(DB::raw('*'))
@@ -30,7 +30,7 @@ class SoucheController extends BaseController
     }
 
     public function show($id){
-        $souche = get($id);
+        $souche = getData($id);
 
         //gestion projet a faire
 
@@ -39,7 +39,7 @@ class SoucheController extends BaseController
     }
 
     public function dump($id){
-        $souche = get($id);
+        $souche = getData($id);
         var_dump($souche);
     }
 
