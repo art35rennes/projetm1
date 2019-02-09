@@ -1,10 +1,36 @@
 @extends('layout')
 
 @section('body')
-    <div>{{$souche['souche']}}</div>
+    <div class="collapse" id="collapseExample">
+        <div class="card card-body">
+            <ul>
+                @foreach($souche as $S => $s)
+                    <li>
+                        {{$S}}
+                        <ul>
+                            @foreach($s as $data => $d)
+                                <li>
+                                    {{$data}}
+                                    <ul>
+                                        @foreach($d as $key => $value)
+                                            <li>{{$key}} : {{$value}}</li>
+                                        @endforeach
+                                    </ul>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+    </div>
+    <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Souche Tab
+    </button>
+
     <br>
     <div class="container bg-light pb-3">
-        <h4 class="display-4">Souche n°{{ $souche['souche'] }}</h4>
+        <h4 class="display-4">Souche n°{{ $souche['souche'][0]->ref}}</h4>
         <div class="custom-control custom-checkbox text-sm-right mb-2">
             <input type="checkbox" class="custom-control-input" id="editMode">
             <label class="custom-control-label" for="editMode">Mode Edition</label>
@@ -15,7 +41,7 @@
             <div class="col-xl-4">
                 <br>
                 <div class="card" >
-                    <div id="carouselSouche" class="carousel slide" data-ride="carousel">
+                    <div id="carouselSouche" class="carousel slide border-warning border" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li data-target="#carouselSouche" data-slide-to="0" class="active"></li>
                             <li data-target="#carouselSouche" data-slide-to="1"></li>
@@ -42,16 +68,18 @@
                         </a>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Souche sur pétrie</h5>
-                        <p class="card-text">
+                        <h5 class="card-title border border-warning">Souche sur pétrie</h5>
+                        <p class="card-text border border-warning">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec nunc commodo, mollis ligula volutpat, eleifend mauris. Quisque et dui pretium, pharetra mauris nec, elementum ipsum. Pellentesque nulla mauris, sollicitudin in bibendum sed, convallis ac ex. Maecenas consequat lectus ac.
                         </p>
 
-                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i></p>
+                        <a href="{{asset('souches/'.$souche['souche'][0]->description)}}" class="font-italic"><i class="fas fa-file-alt mb-2"></i> {{$souche['souche'][0]->description}}</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
                         <p>
                             <span class="h6">Stock Cryotubes:&nbsp;</span>
-                            <span class="badge badge-primary" title="Stock Polymaris">4</span>
-                            <span class="badge badge-secondary" title="Stock Pasteur n°X">2</span>
+                            <span class="badge badge-primary" title="Stock Polymaris">{{$souche['souche'][0]->stock}}</span>
+                            @foreach($souche['pasteur'] as $p)
+                                <span class="badge badge-secondary" title="Stock Pasteur n°{{$p->numero}}">{{$p->stock}}</span>
+                            @endforeach
                         </p>
 
                     </div>
@@ -84,7 +112,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Lieu d'origine</span>
                                             </div>
-                                            <input type="text" class="form-control" readonly value="Plougastel">
+                                            <input type="text" class="form-control" readonly value="{{$souche['souche'][0]->origine}}">
                                             <div class="input-group-append editZone">
                                                 <span class="input-group-text">
                                                     <i class="editButton fas fa-edit"></i>
@@ -96,7 +124,7 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Année de collecte</span>
                                             </div>
-                                            <input type="date" class="form-control" readonly value="2016-10-12">
+                                            <input type="number" class="form-control" size="4" readonly value="{{$souche['souche'][0]->annee_collecte}}">
                                             <div class="input-group-append  editZone">
                                                 <span class="input-group-text">
                                                     <i class="editButton fas fa-edit"></i>
@@ -104,7 +132,7 @@
                                             </div>
                                         </div>
 
-                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i></p>
+                                        <a href="{{asset('souches/'.$souche['souche'][0]->description)}}" class="font-italic"><i class="fas fa-file-alt" mb-3></i> {{$souche['souche'][0]->description}}</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
 
                                         <hr>
 
@@ -113,8 +141,8 @@
                                                 <span class="input-group-text" id="">OGM&nbsp;</span>
                                             </div>
                                             <select class="form-control col-sm-3" id="" disabled>
-                                                <option>Oui</option>
-                                                <option>Non</option>
+                                                <option @if($souche['souche'][0]->annee_creation) selected @endif>Oui</option>
+                                                <option @if(!$souche['souche'][0]->annee_creation) selected @endif>Non</option>
                                             </select>
                                             <div class="input-group-append editZone">
                                                 <span class="input-group-text">
@@ -123,11 +151,12 @@
                                             </div>
                                         </div>
 
+                                        @if($souche['souche'][0]->annee_creation)
                                         <div class="input-group mb-3">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text">Année de création</span>
                                             </div>
-                                            <input type="date" class="form-control" readonly value="2018-10-12">
+                                            <input type="text" size="4" class="form-control" readonly value="{{$souche['souche'][0]->annee_creation}}">
                                             <div class="input-group-append editZone">
                                                 <span class="input-group-text">
                                                     <i class="editButton fas fa-edit"></i>
@@ -140,8 +169,8 @@
                                                 <span class="input-group-text" id="">Dépot HCB&nbsp;</span>
                                             </div>
                                             <select class="form-control col-sm-3" id="" disabled>
-                                                <option>Oui</option>
-                                                <option>Non</option>
+                                                <option @if($souche['souche'][0]->validation_hcb) selected @endif>Oui</option>
+                                                <option @if(!$souche['souche'][0]->validation_hcb) selected @endif>Non</option>
                                             </select>
                                             <div class="input-group-append editZone">
                                                 <span class="input-group-text">
@@ -150,10 +179,12 @@
                                             </div>
                                         </div>
 
-                                        <p>
-                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> autorisation_hcb.pdf</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte_hcb.pdf</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
-                                        </p>
+                                            @if($souche['souche'][0]->validation_hcb)
+                                                <a href="{{$souche['souche'][0]->validation_hcb}}" class="font-italic"><i class="mt-3 fas fa-file-alt text-danger"></i> validation_hcb.pdf</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            @endif
+                                            @if($souche['souche'][0]->texte_hcb)
+                                                <a href="{{$souche['souche'][0]->texte_hcb}}" class="font-italic"><i class="mb-3 fas fa-file-alt text-danger"></i> texte_hcb.pdf</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
+                                            @endif
 
                                         <div class="input-group mb-3 editZone">
                                             <div class="input-group-prepend">
@@ -172,12 +203,12 @@
                                                 </span>
                                             </div>
                                         </div>
-
+                                        @endif
                                     </div>
 
                                     <!-- Colonne droite-->
                                     <div class="col-md-5">
-                                        <div id="carouselLieu" class="carousel slide" data-ride="carousel">
+                                        <div id="carouselLieu" class="carousel slide border border-warning" data-ride="carousel">
                                             <ol class="carousel-indicators">
                                                 <li data-target="#carouselLieu" data-slide-to="0" class="active"></li>
                                                 <li data-target="#carouselLieu" data-slide-to="1"></li>
@@ -234,7 +265,7 @@
                     </div>
 
                     <!-- Description -->
-                    <div class="card">
+                    <div class="card border border-warning">
                         <div class="card-header" id="headingDescription">
                             <h2 class="mb-0">
                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseDescription" aria-expanded="false" aria-controls="collapseDescription">
@@ -329,7 +360,7 @@
                     </div>
 
                     <!-- Identification -->
-                    <div class="card">
+                    <div class="card border border-warning">
                         <div class="card-header" id="headingIdentification">
                             <h2 class="mb-0">
                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseIdentification" aria-expanded="false" aria-controls="collapseIdentification">
@@ -426,7 +457,7 @@
                     </div>
 
                     <!-- Pasteur -->
-                    <div class="card">
+                    <div class="card border border-info">
                         <div class="card-header" id="headingPasteur">
                             <h2 class="mb-0">
                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsePasteur" aria-expanded="false" aria-controls="collapsePasteur">
@@ -436,6 +467,7 @@
                         </div>
                         <div id="collapsePasteur" class="collapse" aria-labelledby="headingPasteur" data-parent="#accordionMenu">
                             <div class="card-body">
+                                <p class="lead font-italic">Cliquer sur les lignes pour plus d'info</p>
                                 <table class="table text-center table-hover">
                                     <tbody>
                                     <tr>
@@ -447,58 +479,41 @@
                                         <th style="width: 10%;">&nbsp;</th>
                                     </tr>
                                     <tr class="accordion-toggle"  data-toggle="collapse" data-target="#collapseRow1">
+                                        @foreach($souche['pasteur'] as $p)
                                         <td data-toggle="collapse" data-target="collapseRow1">
-                                            <p>1</p>
+                                            {{$loop->index+1}}
                                         </td>
                                         <td>
-                                            <p>20/12/1997</p>
+                                            {{$p->date_depot}}
                                         </td>
                                         <td>
-                                            <p>20121997</p>
+                                            {{$p->numero}}
                                         </td>
                                         <td>
                                             <p>
-                                                <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> dépot.pdf</a>
+                                                <a href="{{$p->dossier_depot}}" class="font-italic"><i class="fas fa-file-alt text-danger"></i> dépot.pdf</a>
                                                 &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
                                             </p>
                                         </td>
-                                        <td>2</td>
+                                        <td>
+                                            {{$p->stock}}
+                                        </td>
                                         <td>
                                             <i class="editButton fas fa-pen"></i>
                                         </td>
-                                    <tr id="collapseRow1" class="collapse in">
-                                        <td colspan="2">
-                                            <img width="70%" src="https://via.placeholder.com/250">
-                                        </td>
-                                        <td colspan="2">
-                                            <p>
-                                                <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> validation.pdf</a>
-                                                &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
-                                            </p>
-                                        </td>
+                                        <tr id="collapseRow1" class="collapse in">
+                                            <td colspan="2">
+                                                <img class="border-warning border" width="70%" src="https://via.placeholder.com/250">
+                                            </td>
+                                            <td colspan="2">
+                                                <p>
+                                                    <a href="{{$p->scan_validation}}" class="font-italic"><i class="fas fa-file-alt text-danger"></i> validation.pdf</a>
+                                                    &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
+                                                </p>
+                                            </td>
+                                        </tr>
                                     </tr>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <p>2</p>
-                                        </td>
-                                        <td>
-                                            <p>20/12/1997</p>
-                                        </td>
-                                        <td>
-                                            <p>20121997</p>
-                                        </td>
-                                        <td>
-                                            <p>
-                                                <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> dépot.pdf</a>
-                                                &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
-                                            </p>
-                                        </td>
-                                        <td>2</td>
-                                        <td>
-                                            <i class="editButton fas fa-pen"></i>
-                                        </td>
-                                    </tr>
+                                    @endforeach
                                     <tr class="editZone">
                                         <td>&nbsp;</td>
                                         <td>
@@ -527,7 +542,7 @@
                     </div>
 
                     <!-- Brevets -->
-                    <div class="card">
+                    <div class="card border border-warning">
                         <div class="card-header" id="headingBrevets">
                             <h2 class="mb-0">
                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseBrevets" aria-expanded="false" aria-controls="collapseBrevets">
@@ -656,20 +671,22 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Date</th>
-                                        <th>Fiche</th>
+                                        <th>Document</th>
                                         <th>&nbsp;</th>
                                     </tr>
+                                    @foreach($souche['publication'] as $p)
                                     <tr>
-                                        <td>1</td>
-                                        <td>20/12/1997</td>
+                                        <td>{{$loop->index+1}}</td>
+                                        <td>{{$p->date}}</td>
                                         <td>
-                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> document.pdf</a>
+                                            <a href="{{$p->fichier}}" class="font-italic"><i class="fas fa-file-alt text-danger"></i> {{$p->nom}}</a>
                                             &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
                                         </td>
                                         <td>
                                             <i class="editButton fas fa-pen"></i>
                                         </td>
                                     </tr>
+                                    @endforeach
                                     <tr class="editZone">
                                         <td>&nbsp;</td>
                                         <td>
@@ -691,7 +708,7 @@
                     </div>
 
                     <!-- Exclusivité -->
-                    <div class="card">
+                    <div class="card border border-warning">
                         <div class="card-header" id="headingExclusivite">
                             <h2 class="mb-0">
                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseExclusivite" aria-expanded="false" aria-controls="collapseExclusivite">
@@ -752,7 +769,7 @@
                     </div>
 
                     <!-- Projet -->
-                    <div class="card">
+                    <div class="card border border-warning">
                         <div class="card-header" id="headingProjet">
                             <h2 class="mb-0">
                                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseProjet" aria-expanded="false" aria-controls="collapseProjet">

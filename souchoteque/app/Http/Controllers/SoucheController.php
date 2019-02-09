@@ -57,7 +57,7 @@ class SoucheController extends BaseController
     }
 
     public function dump($id){
-        dump($this->getData($id));
+        var_dump($this->getData($id));
     }
 
     public function dd($id){
