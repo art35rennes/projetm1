@@ -23,4 +23,7 @@ Route::get('/souche/ajout', function () {
 
 Route::get('/souche/{id}', 'SoucheController@show');
 
+Route::get('/souche/{id}/dump', 'SoucheController@dump');
+
+
 
