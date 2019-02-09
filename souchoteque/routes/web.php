@@ -11,19 +11,23 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
+//HomeController
+
+Route::get('/', 'HomeController@show');
 Route::get('/home', 'HomeController@show');
 
-Route::get('/souche/ajout', function () {
-    return view('souche_ajout');
-});
+//SoucheController
 
-Route::get('/souche/{id}', 'SoucheController@show');
+//Add
+Route::get('/souche/ajout', 'SoucheController@ajout');
+Route::post('/souche/ajout', 'SoucheController@ajoutPost');
 
-Route::get('/souche/{id}/dump', 'SoucheController@dump');
+//View
+Route::get('/souche/{ref}', 'SoucheController@show');
+Route::get('/souche/{ref}/dump', 'SoucheController@dump');
 
+//Update
+Route::post('/souche/{ref}', 'SoucheController@update');
 
 

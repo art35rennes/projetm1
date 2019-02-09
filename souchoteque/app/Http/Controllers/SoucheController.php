@@ -43,7 +43,12 @@ class SoucheController extends BaseController
         dd($souche);
     }
 
-    public function add(){
+    public function ajout(){
+        $souches = DB::table('souche')->select('ref')->get();
+        return view('souche_ajout', ['souches'=> $souches]);
+    }
+
+    public function ajoutPost(){
 
     }
 }
