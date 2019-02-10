@@ -31,4 +31,5 @@ Route::get('/souche/{ref}/dd', 'SoucheController@dd');
 //Update
 Route::post('/souche/{ref}', 'SoucheController@update');
 
-
+//Delete
+Route::post('/souche/{ref}/suppr', 'SoucheController@suppr');
