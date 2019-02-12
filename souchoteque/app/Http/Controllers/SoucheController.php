@@ -74,7 +74,7 @@ class SoucheController extends BaseController
     public function ajoutPost(Request $request){
 
         //-----------------Ref---------------------
-        $ref = $request->post("ref");
+        $insert["ref"] = $request->post("ref");
 
         //--------------Description----------------
         if (!$request->hasFile("description")) {
@@ -84,36 +84,56 @@ class SoucheController extends BaseController
             return view('souche_feedback', ['error' => true, 'message' => 'Une erreur est survenu sur la description']);
         }
         else {
-            $path = Storage::putFileAs($request->post("ref"), $request->file("description"), date("Y-m-d_H-i-s") . "_description." . $request->file("description")->extension());
+            $insert["description"] = Storage::putFileAs($request->post("ref"),
+                $request->file("description"),
+                date("Y-m-d_H-i-s") . "_description." . $request->file("description")->extension());
         }
-        echo $path;
-        /*
-        if (request("isOGM")){
-            $insert = DB::insert("INSERT INTO souche (ref, stock, annee_creation, description, texte_hcb, validation_hcb, schema_plasmique)",
-                [
-                    request("ref"),
-                    request("stock"),
-                    request("annee_creation"),
-                    request("ref")+"/description.docx",
-                    request("texte_hcb"),
-                    request("validation_hcb"),
-                    request("schema_plasmique")
-                ]);
-        }else{
-            $insert = DB::insert("INSERT INTO souche (ref, origine, stock, annee_collecte, description)",
-                [
-                    request("ref"),
-                    request("origine"),
-                    request("stock"),
-                    request("annee_collecte"),
-                    request("ref")+"/description.docx",
-                ]);
-        }
-        */
 
+        $insert["stock"] = $request->post("stock");
+
+        if (request("isOGM")){
+
+            $insert["annee_creation"] = $request->post("annee_creation");
+
+            if ($request->hasFile("texte_hcb")) {
+                $insert["texte_hcb"] = Storage::putFileAs($request->post("ref"),
+                    $request->file("texte_hcb"),
+                    date("Y-m-d_H-i-s") . "_texte_hcb." . $request->file("texte_hcb")->extension());
+            }
+
+            if ($request->hasFile("validation_hcb")) {
+                $insert["validation_hcb"] = Storage::putFileAs($request->post("ref"),
+                    $request->file("validation_hcb"),
+                    date("Y-m-d_H-i-s") . "_validation_hcb." . $request->file("validation_hcb")->extension());
+            }else{
+                $validation_hcb = "";
+            }
+
+            if ($request->hasFile("schema_plasmique")) {
+                $insert["schema_plasmique"] = Storage::putFileAs($request->post("ref"),
+                    $request->file("schema_plasmique"),
+                    date("Y-m-d_H-i-s") . "_schema_plasmique." . $request->file("schema_plasmique")->extension());
+            }
+
+        }else{
+
+            $insert["origine"] = $request->post("origine");
+            $insert["annee_collecte"] = $request->post("annee_collecte");
+
+        }
+
+        $insert = DB::table("souche")->insert($insert);
+
+        if ($insert == true){
+            return view('souche_feedback', ['error' => false, 'message' => 'Ajout de la souche réussi']);
+        }else{
+            return view('souche_feedback', ['error' => true, 'message' => 'Ajout de la souche raté']);
+        }
     }
 
     public function suppr($id){
-
+        DB::table('souche')
+            ->where('ref', "=", $id)
+            ->update(['desactive' => 1]);
     }
 }
