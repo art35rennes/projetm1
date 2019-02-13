@@ -1,0 +1,12 @@
+.editButton, .checkPostRow{
+    cursor: pointer;
+}
+.fa-times:hover, .fa-lock:hover{
+    color: red;
+}
+.fa-check:hover, .fa-plus:hover, .fa-unlock:hover{
+    color: green;
+}
+td>.fa-pen:hover{
+    color: orange;
+}

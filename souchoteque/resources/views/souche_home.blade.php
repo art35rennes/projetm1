@@ -73,7 +73,7 @@
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec nunc commodo, mollis ligula volutpat, eleifend mauris. Quisque et dui pretium, pharetra mauris nec, elementum ipsum. Pellentesque nulla mauris, sollicitudin in bibendum sed, convallis ac ex. Maecenas consequat lectus ac.
                         </p>
 
-                        <a href="{{asset('souches/'.$souche['souche'][0]->description)}}" class="font-italic"><i class="fas fa-file-alt mb-2"></i> {{$souche['souche'][0]->description}}</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
+                        <a href="{{asset('souches/'.$souche['souche'][0]->description)}}" class="font-italic"><i class="fas fa-file-alt mb-2"></i> {{$souche['souche'][0]->description}}</a><i class="editButton fas fa-times deleteCross ml-2"></i>
                         <p>
                             <span class="h6">Stock Cryotubes:&nbsp;</span>
                             <span class="badge badge-primary" title="Stock Polymaris">{{$souche['souche'][0]->stock}}</span>
@@ -115,7 +115,7 @@
                                             <input type="text" class="form-control" readonly value="{{$souche['souche'][0]->origine}}">
                                             <div class="input-group-append editZone">
                                                 <span class="input-group-text">
-                                                    <i class="editButton fas fa-edit"></i>
+                                                    <i class="editButton fas fa-lock unlockEdit"></i>
                                                 </span>
                                             </div>
                                         </div>
@@ -127,83 +127,85 @@
                                             <input type="number" class="form-control" size="4" readonly value="{{$souche['souche'][0]->annee_collecte}}">
                                             <div class="input-group-append  editZone">
                                                 <span class="input-group-text">
-                                                    <i class="editButton fas fa-edit"></i>
+                                                    <i class="editButton fas fa-lock unlockEdit"></i>
                                                 </span>
                                             </div>
                                         </div>
 
-                                        <a href="{{asset('souches/'.$souche['souche'][0]->description)}}" class="font-italic"><i class="fas fa-file-alt" mb-3></i> {{$souche['souche'][0]->description}}</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
+                                        <a href="{{asset('souches/'.$souche['souche'][0]->description)}}" class="font-italic"><i class="fas fa-file-alt" mb-3></i> {{$souche['souche'][0]->description}}</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
 
                                         <hr>
 
-                                        <div class="input-group mb-3">
+                                        <div class="input-group mb-3" id="ogm">
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text" id="">OGM&nbsp;</span>
                                             </div>
-                                            <select class="form-control col-sm-3" id="" disabled>
+                                            <select class="form-control col-sm-3 showSelect" id="isOgm" disabled>
                                                 <option @if($souche['souche'][0]->annee_creation) selected @endif>Oui</option>
                                                 <option @if(!$souche['souche'][0]->annee_creation) selected @endif>Non</option>
                                             </select>
                                             <div class="input-group-append editZone">
                                                 <span class="input-group-text">
-                                                    <i class="editButton fas fa-edit"></i>
+                                                    <i class="editButton fas fa-lock unlockEdit"></i>
                                                 </span>
                                             </div>
                                         </div>
 
-                                        @if($souche['souche'][0]->annee_creation)
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">Année de création</span>
+                                        <div id="ogmPlus">
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text">Année de création</span>
+                                                </div>
+                                                <input type="text" size="4" class="form-control" readonly value="{{$souche['souche'][0]->annee_creation}}">
+                                                <div class="input-group-append editZone">
+                                                    <span class="input-group-text">
+                                                        <i class="editButton fas fa-lock unlockEdit"></i>
+                                                    </span>
+                                                </div>
                                             </div>
-                                            <input type="text" size="4" class="form-control" readonly value="{{$souche['souche'][0]->annee_creation}}">
-                                            <div class="input-group-append editZone">
-                                                <span class="input-group-text">
-                                                    <i class="editButton fas fa-edit"></i>
-                                                </span>
-                                            </div>
-                                        </div>
 
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text" id="">Dépot HCB&nbsp;</span>
-                                            </div>
-                                            <select class="form-control col-sm-3" id="" disabled>
-                                                <option @if($souche['souche'][0]->validation_hcb) selected @endif>Oui</option>
-                                                <option @if(!$souche['souche'][0]->validation_hcb) selected @endif>Non</option>
-                                            </select>
-                                            <div class="input-group-append editZone">
-                                                <span class="input-group-text">
-                                                    <i class="editButton fas fa-edit"></i>
-                                                </span>
-                                            </div>
-                                        </div>
-
-                                            @if($souche['souche'][0]->validation_hcb)
-                                                <a href="{{$souche['souche'][0]->validation_hcb}}" class="font-italic"><i class="mt-3 fas fa-file-alt text-danger"></i> validation_hcb.pdf</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>&nbsp;&nbsp;&nbsp;&nbsp;
-                                            @endif
-                                            @if($souche['souche'][0]->texte_hcb)
-                                                <a href="{{$souche['souche'][0]->texte_hcb}}" class="font-italic"><i class="mb-3 fas fa-file-alt text-danger"></i> texte_hcb.pdf</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
-                                            @endif
-
-                                        <div class="input-group mb-3 editZone">
-                                            <div class="input-group-prepend">
-                                                <select class="form-control" id="">
-                                                    <option>Texte HCB</option>
-                                                    <option>Autorisation</option>
+                                            <div class="input-group mb-3" id="hcb">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="">Dépot HCB&nbsp;</span>
+                                                </div>
+                                                <select class="form-control col-sm- showSelect" id="isHcb" disabled>
+                                                    <option @if($souche['souche'][0]->validation_hcb) selected @endif>Oui</option>
+                                                    <option @if(!$souche['souche'][0]->validation_hcb) selected @endif>Non</option>
                                                 </select>
+                                                <div class="input-group-append editZone">
+                                                    <span class="input-group-text">
+                                                        <i class="editButton fas fa-lock unlockEdit"></i>
+                                                    </span>
+                                                </div>
                                             </div>
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="fileHcb" lang="fr">
-                                                <label class="custom-file-label" for="fileHcb">Ajouter un fichier</label>
-                                            </div>
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">
-                                                    <i class="editButton fas fa-plus"></i>
-                                                </span>
-                                            </div>
+
+                                                @if($souche['souche'][0]->validation_hcb)
+                                                    <a href="{{$souche['souche'][0]->validation_hcb}}" class="font-italic"><i class="mt-3 fas fa-file-alt text-danger"></i> validation_hcb.pdf</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                @endif
+                                                @if($souche['souche'][0]->texte_hcb)
+                                                    <a href="{{$souche['souche'][0]->texte_hcb}}" class="font-italic"><i class="mb-3 fas fa-file-alt text-danger"></i> texte_hcb.pdf</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
+                                                @endif
+
+                                            <form action="souche/{{$souche['souche'][0]->ref}}/maj" method="post" enctype="multipart/form-data">
+                                                <div class="input-group mb-3 editZone" id="hcbAdd">
+                                                    <div class="input-group-prepend">
+                                                        <select class="form-control" id="souche.hcb.type" name="souche.hcb.type">
+                                                            <option>Texte HCB</option>
+                                                            <option>Autorisation</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="custom-file">
+                                                        <input type="file" class="custom-file-input" id="souche.hcb" name="souche.hcb.doc">
+                                                        <label class="custom-file-label" for="souche.hcb">Ajouter un fichier</label>
+                                                    </div>
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text">
+                                                            <i class="editButton fas fa-plus faForm"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </form>
                                         </div>
-                                        @endif
                                     </div>
 
                                     <!-- Colonne droite-->
@@ -247,17 +249,19 @@
                                             </a>
                                         </div>
 
-                                        <div class="input-group mb-3 mt-1 editZone">
-                                            <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="fileDescription">
-                                                <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter une image</label>
+                                        <form method="post" action="souche/{{$souche['souche'][0]->ref}}/maj" enctype="multipart/form-data">
+                                            <div class="input-group mb-3 mt-1 editZone">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="desription.image" name="desription.image">
+                                                    <label class="custom-file-label" for="desription.image" data-browse="A">Ajouter une image</label>
+                                                </div>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="editButton fas fa-plus faForm"></i>
+                                                    </span>
+                                                </div>
                                             </div>
-                                            <div class="input-group-append">
-                                                <span class="input-group-text">
-                                                    <i class="editButton fas fa-plus"></i>
-                                                </span>
-                                            </div>
-                                        </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -278,15 +282,15 @@
                                 <div class="row">
                                     <!-- Gauche -->
                                     <div class="col-xl-7">
-                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i></p>
+                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i></p>
 
-                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> coloration_gram.pdf</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i></p>
+                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> coloration_gram.pdf</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i></p>
 
-                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt text-success"></i> API.xls</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i></p>
+                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt text-success"></i> API.xls</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i></p>
 
-                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt text-warning"></i> rapport_analyse-2018.data</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i></p>
+                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt text-warning"></i> rapport_analyse-2018.data</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i></p>
 
-                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt"></i> protocole.docx</a>&nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i></p>
+                                        <p><a href="#" class="font-italic"><i class="fas fa-file-alt"></i> protocole.docx</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i></p>
 
                                     </div>
                                     <!-- Droite -->
@@ -332,28 +336,32 @@
                                     </div>
 
                                     <!-- Bas -->
-                                    <div class="input-group mb-3 mt-3 col-md-9 editZone">
-                                        <div class="input-group-prepend">
-                                            <input type="text" list="dataDescription" placeholder="Type..." class="form-control" id="">
-                                            <datalist id="dataDescription">
-                                                <option>Photo sur boite</option>
-                                                <option>Photo microscopie</option>
-                                                <option>Description</option>
-                                                <option>Coloration Gram</option>
-                                                <option>Galerie API</option>
-                                                <option>Galerie Biolog</option>
-                                            </datalist>
+                                    <form action="{{$souche['souche'][0]->ref}}/maj" method="post" enctype="multipart/form-data">
+                                        <div class="input-group mb-3 mt-3 col-md-9 editZone">
+                                            <div class="input-group-prepend">
+                                                <input type="text" list="dataDescription" placeholder="Type..." class="form-control" name="description.type">
+                                                <datalist id="dataDescription">
+                                                    <option>Photo sur boite</option>
+                                                    <option>Photo microscopie</option>
+                                                    <option>Description</option>
+                                                    <option>Coloration Gram</option>
+                                                    <option>Galerie API</option>
+                                                    <option>Galerie Biolog</option>
+                                                </datalist>
+                                            </div>
+                                            <form method="post" enctype="multipart/form-data" action="souche/{{$souche['souche'][0]->ref}}/maj">
+                                                <div class="custom-file">
+                                                    <input type="file" class="custom-file-input" id="description.file" name="description.file">
+                                                    <label class="custom-file-label" for="description.file"></label>
+                                                </div>
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="editButton fas fa-plus faForm"></i>
+                                                    </span>
+                                                </div>
+                                            </form>
                                         </div>
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="fileDescription">
-                                            <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter un fichier </label>
-                                        </div>
-                                        <div class="input-group-append">
-                                                <span class="input-group-text">
-                                                    <i class="editButton fas fa-plus"></i>
-                                                </span>
-                                        </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -372,84 +380,77 @@
                             <div class="card-body">
                                 <table class="table text-center">
                                     <tbody>
-                                    <tr>
-                                        <th>Type</th>
-                                        <th>Sequence</th>
-                                        <th>Arbre Phylogénétique</th>
-                                    </tr>
-                                    <tr>
-                                        <td>Un type</td>
-                                        <td>
-                                            <p>
+                                        <tr>
+                                            <th style="width: 3%">#</th>
+                                            <th>Type</th>
+                                            <th>Sequence</th>
+                                            <th>Arbre Phylogénétique</th>
+                                        </tr>
+                                        <tr>
+                                            <td><span>1</span></td>
+                                            <td class="1"><p>Un type</p></td>
+                                            <td class="2">
                                                 <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
-                                                &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
-                                            </p>
-                                        </td>
-                                        <td>
-                                            <p>
+                                                &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
+                                            </td>
+                                            <td class="3">
                                                 <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> arbre.pdf</a>
-                                                &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
-                                            </p>
-                                        </td>
-                                        <td>
-                                            <i class="editButton fas fa-pen"></i>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Un autre type</td>
-                                        <td>
-                                            &nbsp;
-                                        </td>
-                                        <td>
-                                            <p>
+                                                &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
+                                            </td>
+                                            <td class="4">
+                                                <i class="editButton fas fa-pen"></i>
+                                                <i class='fas fa-check checkPostRow'></i>
+                                                <i class='fas fa-check checkPostRow'></i>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td><span>2</span></td>
+                                            <td class="1"><p>Un autre type</p></td>
+                                            <td class="2">
+                                                &nbsp;
+                                            </td>
+                                            <td class="3">
                                                 <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> arbre.pdf</a>
-                                                &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
-                                            </p>
-                                        </td>
-                                        <td>
-                                            <i class="editButton fas fa-pen"></i>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>Encore un type</td>
-                                        <td>
-                                            <p>
-                                                <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
-                                                &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
-                                            </p>
-                                        </td>
-                                        <td>
-                                            &nbsp;
-                                        </td>
-                                        <td>
-                                            <i class="editButton fas fa-pen"></i>
-                                        </td>
-                                    </tr>
-                                    <tr class="editZone">
-                                        <td>
-                                            <input type="text" class="input-group" list="dataIdentification" placeholder="Type...">
-                                            <datalist id="dataIdentification">
-                                                <option>un type</option>
-                                                <option>un autre type</option>
-                                                <option>encore un type</option>
-                                            </datalist>
-                                        </td>
-                                        <td>
-                                            <div class="custom-file text-left">
-                                                <input type="file" class="custom-file-input" id="customFile">
-                                                <label class="custom-file-label" for="customFile">Ajouter description</label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <div class="custom-file text-left">
-                                                <input type="file" class="custom-file-input" id="customFile">
-                                                <label class="custom-file-label" for="customFile">Ajouter arbre</label>
-                                            </div>
-                                        </td>
-                                        <td>
-                                            <i class="editButton fas fa-check"></i>
-                                        </td>
-                                    </tr>
+                                                &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
+                                            </td>
+                                            <td class="4">
+                                                <i class="editButton fas fa-pen"></i>
+                                                <i class='fas fa-check checkPostRow'></i>
+                                            </td>
+                                        </tr>
+
+
+                                            <tr class="editZone">
+                                                <td>&nbsp;</td>
+                                                <td>
+                                                    <div>
+                                                        <form action="/maj" method="post" enctype="multipart/form-data" id="identification.form">
+                                                        <input type="text" class="input-group" list="dataIdentification" placeholder="Type..." name="identification.type">
+                                                        <datalist id="dataIdentification">
+                                                            <option>un type</option>
+                                                            <option>un autre type</option>
+                                                            <option>encore un type</option>
+                                                        </datalist>
+                                                        </form>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="custom-file text-left">
+                                                        <input type="file" class="custom-file-input" id="identification.sequence" name="identification.sequence">
+                                                        <label class="custom-file-label" for="identification.sequence"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="custom-file text-left">
+                                                        <input type="file" class="custom-file-input" id="identification.arbre" name="identification.arbre">
+                                                        <label class="custom-file-label" for="identification.arbre"></label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <i class="editButton fas fa-check faForm"></i>
+                                                </td>
+                                            </tr>
+
                                     </tbody>
                                 </table>
                             </div>
@@ -481,25 +482,24 @@
                                     <tr class="accordion-toggle"  data-toggle="collapse" data-target="#collapseRow1">
                                         @foreach($souche['pasteur'] as $p)
                                         <td data-toggle="collapse" data-target="collapseRow1">
-                                            {{$loop->index+1}}
+                                            <span>{{$loop->index+1}}</span>
                                         </td>
                                         <td>
-                                            {{$p->date_depot}}
+                                            <p>{{$p->date_depot}}</p>
                                         </td>
                                         <td>
-                                            {{$p->numero}}
+                                            <p>{{$p->numero}}</p>
                                         </td>
                                         <td>
-                                            <p>
-                                                <a href="{{$p->dossier_depot}}" class="font-italic"><i class="fas fa-file-alt text-danger"></i> dépot.pdf</a>
-                                                &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
-                                            </p>
+                                            <a href="{{$p->dossier_depot}}" class="font-italic"><i class="fas fa-file-alt text-danger"></i> dépot.pdf</a>
+                                            &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
                                         </td>
                                         <td>
-                                            {{$p->stock}}
+                                            <p>{{$p->stock}}</p>
                                         </td>
                                         <td>
                                             <i class="editButton fas fa-pen"></i>
+                                            <i class='fas fa-check checkPostRow'></i>
                                         </td>
                                         <tr id="collapseRow1" class="collapse in">
                                             <td colspan="2">
@@ -508,7 +508,7 @@
                                             <td colspan="2">
                                                 <p>
                                                     <a href="{{$p->scan_validation}}" class="font-italic"><i class="fas fa-file-alt text-danger"></i> validation.pdf</a>
-                                                    &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
+                                                    &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
                                                 </p>
                                             </td>
                                         </tr>
@@ -517,10 +517,14 @@
                                     <tr class="editZone">
                                         <td>&nbsp;</td>
                                         <td>
-                                            <input class="form-control" type="date" class="input-group">
+                                            <div>
+                                                <input class="form-control" type="date" class="input-group">
+                                            </div>
                                         </td>
                                         <td>
-                                            <input class="form-control" type="text" class="input-group">
+                                            <div>
+                                                <input class="form-control" type="text" class="input-group">
+                                            </div>
                                         </td>
                                         <td>
                                             <div class="custom-file text-left">
@@ -529,10 +533,12 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <input class="form-control" type="text" class="input-group">
+                                            <div>
+                                                <input class="form-control" type="text" class="input-group">
+                                            </div>
                                         </td>
                                         <td>
-                                            <i class="editButton fas fa-check"></i>
+                                            <i class="editButton fas fa-check faForm"></i>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -552,7 +558,7 @@
                         </div>
                         <div id="collapseBrevets" class="collapse" aria-labelledby="headingBrevets" data-parent="#accordionMenu">
                             <div class="card-body">
-                                <table class="table table-sm text-center table-hover">
+                                <table class="table table-sm text-center">
                                     <tbody>
                                     <tr>
                                         <th style="width: 3%;">#</th>
@@ -565,7 +571,7 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                            <p>1</p>
+                                            <span>1</span>
                                         </td>
                                         <td>
                                             <p>Brevet</p>
@@ -577,19 +583,16 @@
                                             <p>Cosmétique</p>
                                         </td>
                                         <td>
-                                            <p>
-                                                <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte.pdf</a>
-                                                &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
-                                            </p>
+                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte.pdf</a>
+                                            &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
                                         </td>
                                         <td>
-                                            <p>
-                                                <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> inpi.pdf</a>
-                                                &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
-                                            </p>
+                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> inpi.pdf</a>
+                                            &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
                                         </td>
                                         <td>
                                             <i class="editButton fas fa-pen"></i>
+                                            <i class='fas fa-check checkPostRow'></i>
                                         </td>
                                     </tr>
                                     <tr>
@@ -606,38 +609,37 @@
                                             <p>Médicale</p>
                                         </td>
                                         <td>
-                                            <p>
-                                                <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> dépot.pdf</a>
-                                                &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
-                                            </p>
+                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> dépot.pdf</a>
+                                            &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
                                         </td>
                                         <td>&nbsp;</td>
                                         <td>
                                             <i class="editButton fas fa-pen"></i>
+                                            <i class='fas fa-check checkPostRow'></i>
                                         </td>
                                     </tr>
                                     <tr class="editZone">
                                         <td>&nbsp;</td>
                                         <td>
-                                            <select class="form-control form-control-sm">
-                                                <option>Brevet</option>
-                                                <option>Soleau</option>
-                                            </select>
+                                            <div>
+                                                <select class="form-control form-control-sm">
+                                                    <option>Brevet</option>
+                                                    <option>Soleau</option>
+                                                </select>
+                                            </div>
                                         </td>
                                         <td>
-                                            <input class="form-control form-control-sm" type="text" class="input-group">
+                                            <div>
+                                                <input class="form-control form-control-sm" type="text" class="input-group">
+                                            </div>
                                         </td>
                                         <td>
-                                            <input class="form-control form-control-sm" type="text" class="input-group" list="dataSecteur">
-                                            <datalist id="dataSecteur">
-                                                <option>Cosmétique</option>
-                                                <option>Médicale</option>
-                                            </datalist>
-                                        </td>
-                                        <td>
-                                            <div class="custom-file text-left form-control-sm">
-                                                <input type="file" class="custom-file-input" id="customFile">
-                                                <label class="custom-file-label" for="customFile"></label>
+                                            <div>
+                                                <input class="form-control form-control-sm" type="text" class="input-group" list="dataSecteur">
+                                                <datalist id="dataSecteur">
+                                                    <option>Cosmétique</option>
+                                                    <option>Médicale</option>
+                                                </datalist>
                                             </div>
                                         </td>
                                         <td>
@@ -647,7 +649,13 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <i class="editButton fas fa-check"></i>
+                                            <div class="custom-file text-left form-control-sm">
+                                                <input type="file" class="custom-file-input" id="customFile">
+                                                <label class="custom-file-label" for="customFile"></label>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <i class="editButton fas fa-check faForm"></i>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -676,21 +684,24 @@
                                     </tr>
                                     @foreach($souche['publication'] as $p)
                                     <tr>
-                                        <td>{{$loop->index+1}}</td>
-                                        <td>{{$p->date}}</td>
+                                        <td><span>{{$loop->index+1}}</span></td>
+                                        <td><p>{{$p->date}}</p></td>
                                         <td>
                                             <a href="{{$p->fichier}}" class="font-italic"><i class="fas fa-file-alt text-danger"></i> {{$p->nom}}</a>
-                                            &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
+                                            &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
                                         </td>
                                         <td>
                                             <i class="editButton fas fa-pen"></i>
+                                            <i class='fas fa-check checkPostRow'></i>
                                         </td>
                                     </tr>
                                     @endforeach
                                     <tr class="editZone">
                                         <td>&nbsp;</td>
                                         <td>
-                                            <input class="form-control" type="date">
+                                            <div>
+                                                <input class="form-control" type="date">
+                                            </div>
                                         </td>
                                         <td>
                                             <div class="custom-file text-left">
@@ -699,7 +710,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <i class="editButton fas fa-check"></i>
+                                            <i class="editButton fas fa-check faForm"></i>
                                         </td>
                                     </tr>
                                 </table>
@@ -728,39 +739,48 @@
                                         <th style="width: 2.5%">&nbsp;</th>
                                     </tr>
                                     <tr>
-                                        <td>1</td>
-                                        <td>20/12/1997</td>
-                                        <td>15/01/2019</td>
-                                        <td>EDF</td>
-                                        <td>Médicale</td>
+                                        <td><span>1</span></td>
+                                        <td><p>20/12/1997</p></td>
+                                        <td><p>15/01/2019</p></td>
+                                        <td><p>EDF</p></td>
+                                        <td><p>Médicale</p></td>
                                         <td>
                                             <i class="editButton fas fa-pen"></i>
+                                            <i class='fas fa-check checkPostRow'></i>
                                         </td>
                                     </tr>
                                     <tr class="editZone">
                                         <td>&nbsp;</td>
                                         <td>
-                                            <input class="form-control" type="text">
+                                            <div>
+                                                <input class="form-control" type="text">
+                                            </div>
                                         </td>
                                         <td>
-                                            <input class="form-control" type="text">
+                                            <div>
+                                                <input class="form-control" type="text">
+                                            </div>
                                         </td>
                                         <td>
-                                            <input class="form-control" type="text" list="dataPart">
-                                            <datalist id="dataPart">
-                                                <option>EDF</option>
-                                                <option>L'oréal</option>
-                                            </datalist>
+                                            <div>
+                                                <input class="form-control" type="text" list="dataPart">
+                                                <datalist id="dataPart">
+                                                    <option>EDF</option>
+                                                    <option>L'oréal</option>
+                                                </datalist>
+                                            </div>
                                         </td>
                                         <td>
-                                            <input class="form-control" type="text" class="input-group" list="dataSecteur">
-                                            <datalist id="dataSecteur">
-                                                <option>Cosmétique</option>
-                                                <option>Médicale</option>
-                                            </datalist>
+                                            <div>
+                                                <input class="form-control" type="text" class="input-group" list="dataSecteur">
+                                                <datalist id="dataSecteur">
+                                                    <option>Cosmétique</option>
+                                                    <option>Médicale</option>
+                                                </datalist>
+                                            </div>
                                         </td>
                                         <td>
-                                            <i class="editButton fas fa-check"></i>
+                                            <i class="editButton fas fa-check faForm"></i>
                                         </td>
                                     </tr>
                                 </table>
@@ -789,38 +809,43 @@
                                         <th style="width: 2.5%">&nbsp;</th>
                                     </tr>
                                     <tr>
-                                        <td>1</td>
-                                        <td>20/12/1997</td>
-                                        <td>EDF</td>
-                                        <td>Médicale</td>
+                                        <td><span>1</span></td>
+                                        <td><p>20/12/1997</p></td>
+                                        <td><p>EDF</p></td>
+                                        <td><p>Médicale</p></td>
                                         <td>
-                                            <p>
-                                                <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte.pdf</a>
-                                                &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
-                                            </p>
+                                            <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> texte.pdf</a>
+                                            &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
                                         </td>
                                         <td>
                                             <i class="editButton fas fa-pen"></i>
+                                            <i class='fas fa-check checkPostRow'></i>
                                         </td>
                                     </tr>
                                     <tr class="editZone">
                                         <td>&nbsp;</td>
                                         <td>
-                                            <input class="form-control" type="text">
+                                            <div>
+                                                <input class="form-control" type="text">
+                                            </div>
                                         </td>
                                         <td>
-                                            <input class="form-control" type="text" list="dataPart">
-                                            <datalist id="dataPart">
-                                                <option>EDF</option>
-                                                <option>L'oréal</option>
-                                            </datalist>
+                                            <div>
+                                                <input class="form-control" type="text" list="dataPart">
+                                                <datalist id="dataPart">
+                                                    <option>EDF</option>
+                                                    <option>L'oréal</option>
+                                                </datalist>
+                                            </div>
                                         </td>
                                         <td>
-                                            <input class="form-control" type="text" class="input-group" list="dataSecteur">
-                                            <datalist id="dataSecteur">
-                                                <option>Cosmétique</option>
-                                                <option>Médicale</option>
-                                            </datalist>
+                                            <div>
+                                                <input class="form-control" type="text" class="input-group" list="dataSecteur">
+                                                <datalist id="dataSecteur">
+                                                    <option>Cosmétique</option>
+                                                    <option>Médicale</option>
+                                                </datalist>
+                                            </div>
                                         </td>
                                         <td>
                                             <div class="custom-file text-left">
@@ -829,7 +854,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <i class="editButton fas fa-check"></i>
+                                            <i class="editButton fas fa-check faForm"></i>
                                         </td>
                                     </tr>
                                 </table>
@@ -941,7 +966,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <i class="editButton fas fa-plus"></i>
+                                            <i class="editButton fas fa-plus faForm"></i>
 
                                             <ul class="list-unstyled mt-3 ">
                                                 <li>Glucose&nbsp;<i class="editButton fas fa-trash-alt"></i></li>
@@ -983,7 +1008,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <i class="editButton fas fa-plus"></i>
+                                            <i class="editButton fas fa-plus faForm"></i>
 
                                             <ul class="list-unstyled mt-3">
                                                 <li>Acide glucuronique&nbsp;<i class="editButton fas fa-trash-alt"></i></li>
@@ -1024,7 +1049,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-                                            <i class="editButton fas fa-plus"></i>
+                                            <i class="editButton fas fa-plus faForm"></i>
 
                                             <ul class="list-unstyled mt-3">
                                                 <li>Glucosamine&nbsp;<i class="editButton fas fa-trash-alt"></i></li>
@@ -1050,7 +1075,7 @@
                                             </div>
                                             <div class="input-group-append">
                                                 <span class="input-group-text">
-                                                    <i class="editButton fas fa-plus"></i>
+                                                    <i class="editButton fas fa-plus faForm"></i>
                                                 </span>
                                             </div>
                                         </div>
@@ -1134,7 +1159,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <i class="editButton fas fa-check"></i>
+                                        <i class="editButton fas fa-check faForm"></i>
                                     </td>
                                 </tr>
                             </table>
@@ -1188,7 +1213,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <i class="editButton fas fa-check"></i>
+                                        <i class="editButton fas fa-check faForm"></i>
                                     </td>
                                 </tr>
                             </table>
@@ -1213,17 +1238,18 @@
                                                 <td>
                                                     <p>
                                                         <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
-                                                        &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
+                                                        &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
                                                     </p>
                                                 </td>
                                                 <td>
                                                     <p>
                                                         <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> rapport.pdf</a>
-                                                        &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
+                                                        &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
                                                     </p>
                                                 </td>
                                                 <td>
                                                     <i class="editButton fas fa-pen"></i>
+                                                    <i class='fas fa-check checkPostRow'></i>
                                                 </td>
                                             </tr>
                                             <tr class="editZone">
@@ -1243,7 +1269,7 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <i class="editButton fas fa-check"></i>
+                                                    <i class="editButton fas fa-check faForm"></i>
                                                 </td>
                                             </tr>
                                             </tbody>
@@ -1269,7 +1295,7 @@
                             <option>Objectivation</option>
                         </select>
                         <div class="input-group-append">
-                            <button class="btn btn-outline-success" type="button"><i class="editButton fas fa-plus"></i>&nbsp;Ajouter</button>
+                            <button class="btn btn-outline-success" type="button"><i class="editButton fas fa-plus faForm"></i>&nbsp;Ajouter</button>
                         </div>
                     </div>
                 </div>
@@ -1368,7 +1394,7 @@
                                 </div>
                                 <div class="input-group-append">
                                     <span class="input-group-text">
-                                        <i class="editButton fas fa-plus"></i>
+                                        <i class="editButton fas fa-plus faForm"></i>
                                     </span>
                                 </div>
                             </div>
@@ -1409,7 +1435,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <i class="editButton fas fa-check"></i>
+                                        <i class="editButton fas fa-check faForm"></i>
                                     </td>
                                 </tr>
                             </table>
@@ -1463,7 +1489,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <i class="editButton fas fa-check"></i>
+                                        <i class="editButton fas fa-check faForm"></i>
                                     </td>
                                 </tr>
                             </table>
@@ -1488,17 +1514,18 @@
                                                 <td>
                                                     <p>
                                                         <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
-                                                        &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
+                                                        &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
                                                     </p>
                                                 </td>
                                                 <td>
                                                     <p>
                                                         <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> rapport.pdf</a>
-                                                        &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
+                                                        &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
                                                     </p>
                                                 </td>
                                                 <td>
                                                     <i class="editButton fas fa-pen"></i>
+                                                    <i class='fas fa-check checkPostRow'></i>
                                                 </td>
                                             </tr>
                                             <tr class="editZone">
@@ -1518,7 +1545,7 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <i class="editButton fas fa-check"></i>
+                                                    <i class="editButton fas fa-check faForm"></i>
                                                 </td>
                                             </tr>
                                             </tbody>
@@ -1544,7 +1571,7 @@
                             <option>Objectivation</option>
                         </select>
                         <div class="input-group-append">
-                            <button class="btn btn-outline-success" type="button"><i class="editButton fas fa-plus"></i>&nbsp;Ajouter</button>
+                            <button class="btn btn-outline-success" type="button"><i class="editButton fas fa-plus faForm"></i>&nbsp;Ajouter</button>
                         </div>
                     </div>
                 </div>
@@ -1643,7 +1670,7 @@
                                 </div>
                                 <div class="input-group-append">
                                     <span class="input-group-text">
-                                        <i class="editButton fas fa-plus"></i>
+                                        <i class="editButton fas fa-plus faForm"></i>
                                     </span>
                                 </div>
                             </div>
@@ -1684,7 +1711,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <i class="editButton fas fa-check"></i>
+                                        <i class="editButton fas fa-check faForm"></i>
                                     </td>
                                 </tr>
                             </table>
@@ -1738,7 +1765,7 @@
                                         </div>
                                     </td>
                                     <td>
-                                        <i class="editButton fas fa-check"></i>
+                                        <i class="editButton fas fa-check faForm"></i>
                                     </td>
                                 </tr>
                             </table>
@@ -1763,17 +1790,18 @@
                                                 <td>
                                                     <p>
                                                         <a href="#" class="font-italic"><i class="fas fa-file-alt"></i> description.docx</a>
-                                                        &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
+                                                        &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
                                                     </p>
                                                 </td>
                                                 <td>
                                                     <p>
                                                         <a href="#" class="font-italic"><i class="fas fa-file-alt text-danger"></i> rapport.pdf</a>
-                                                        &nbsp;&nbsp;<i class="editButton fas fa-times text-danger"></i>
+                                                        &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
                                                     </p>
                                                 </td>
                                                 <td>
                                                     <i class="editButton fas fa-pen"></i>
+                                                    <i class='fas fa-check checkPostRow'></i>
                                                 </td>
                                             </tr>
                                             <tr class="editZone">
@@ -1793,7 +1821,7 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <i class="editButton fas fa-check"></i>
+                                                    <i class="editButton fas fa-check faForm"></i>
                                                 </td>
                                             </tr>
                                             </tbody>
@@ -1819,16 +1847,18 @@
                             <option>Objectivation</option>
                         </select>
                         <div class="input-group-append">
-                            <button class="btn btn-outline-success" type="button"><i class="editButton fas fa-plus"></i>&nbsp;Ajouter</button>
+                            <button class="btn btn-outline-success" type="button"><i class="editButton fas fa-plus faForm"></i>&nbsp;Ajouter</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+        {{ csrf_field() }}
+
     </div>
 @endsection
 
 @section('customJs')
-    <script type="text/javascript" src="{{ URL::asset('js/souche.js') }}"></script>
+<script type="text/javascript" src="{{ URL::asset('js/souche.js') }}"></script>
 @endsection
