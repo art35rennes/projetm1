@@ -19,15 +19,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SoucheController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="73" column="48" selection-start-line="73" selection-start-column="48" selection-end-line="73" selection-end-column="48" />
+            <state relative-caret-position="344">
+              <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
               <folding>
                 <element signature="e#40#85#0#PHP" expanded="true" />
                 <element signature="e#474#1721#0#PHP" />
+                <element signature="e#1727#1921#0#PHP" />
                 <element signature="e#1927#1998#0#PHP" />
                 <element signature="e#2004#2067#0#PHP" />
                 <element signature="e#2073#2226#0#PHP" />
                 <element signature="e#2232#4765#0#PHP" />
+                <element signature="e#4771#4911#0#PHP" />
               </folding>
             </state>
           </provider>
@@ -37,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/souche_home.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="449">
-              <caret line="1832" column="22" selection-start-line="1832" selection-end-line="1833" />
+              <caret line="1862" column="18" selection-start-line="1862" selection-end-line="1863" />
             </state>
           </provider>
         </entry>
@@ -195,7 +197,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
@@ -213,69 +215,6 @@
             <path>
               <item name="souchoteque" type="b2602c69:ProjectViewProjectNode" />
               <item name="souchoteque" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="souchoteque" type="b2602c69:ProjectViewProjectNode" />
-              <item name="souchoteque" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="souchoteque" type="b2602c69:ProjectViewProjectNode" />
-              <item name="souchoteque" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Console" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="souchoteque" type="b2602c69:ProjectViewProjectNode" />
-              <item name="souchoteque" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Exceptions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="souchoteque" type="b2602c69:ProjectViewProjectNode" />
-              <item name="souchoteque" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="souchoteque" type="b2602c69:ProjectViewProjectNode" />
-              <item name="souchoteque" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Http" type="462c0819:PsiDirectoryNode" />
-              <item name="Controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="souchoteque" type="b2602c69:ProjectViewProjectNode" />
-              <item name="souchoteque" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="Providers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="souchoteque" type="b2602c69:ProjectViewProjectNode" />
-              <item name="souchoteque" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="souchoteque" type="b2602c69:ProjectViewProjectNode" />
-              <item name="souchoteque" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="souchoteque" type="b2602c69:ProjectViewProjectNode" />
-              <item name="souchoteque" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="souchoteque" type="b2602c69:ProjectViewProjectNode" />
-              <item name="souchoteque" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="souchoteque" type="b2602c69:ProjectViewProjectNode" />
-              <item name="souchoteque" type="462c0819:PsiDirectoryNode" />
-              <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -330,12 +269,12 @@
       <workItem from="1548863372792" duration="2000" />
       <workItem from="1548865196006" duration="21980000" />
       <workItem from="1549802212121" duration="9931000" />
-      <workItem from="1549897504579" duration="4166000" />
+      <workItem from="1549897504579" duration="5440000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45088000" />
+    <option name="totallyTimeSpent" value="46362000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -347,8 +286,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49429658" visible="true" weight="0.20457797" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -557,7 +495,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/souche_home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="449">
-          <caret line="1832" column="22" selection-start-line="1832" selection-end-line="1833" />
+          <caret line="1862" column="18" selection-start-line="1862" selection-end-line="1863" />
         </state>
       </provider>
     </entry>
@@ -573,15 +511,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SoucheController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="73" column="48" selection-start-line="73" selection-start-column="48" selection-end-line="73" selection-end-column="48" />
+        <state relative-caret-position="344">
+          <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
           <folding>
             <element signature="e#40#85#0#PHP" expanded="true" />
             <element signature="e#474#1721#0#PHP" />
+            <element signature="e#1727#1921#0#PHP" />
             <element signature="e#1927#1998#0#PHP" />
             <element signature="e#2004#2067#0#PHP" />
             <element signature="e#2073#2226#0#PHP" />
             <element signature="e#2232#4765#0#PHP" />
+            <element signature="e#4771#4911#0#PHP" />
           </folding>
         </state>
       </provider>
