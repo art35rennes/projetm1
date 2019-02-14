@@ -52,8 +52,6 @@ class SoucheController extends BaseController
     public function show($id){
         $souche = $this->getData($id);
 
-        //gestion projet a faire
-
         //var_dump($souche);
         return view('souche_home', ['souche' => $souche]);
     }
@@ -137,7 +135,7 @@ class SoucheController extends BaseController
             ->update(['desactive' => 1]);
     }
 
-    public function maj(){
-        dd($_POST);
+    public function update($id, Request $request){
+        
     }
 }
