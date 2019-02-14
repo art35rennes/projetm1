@@ -112,7 +112,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Lieu d'origine</span>
                                                 </div>
-                                                <input type="text" class="form-control" readonly value="{{$souche['souche'][0]->origine}}">
+                                                <input type="text" class="form-control" readonly value="{{$souche['souche'][0]->origine}}" name="souche.origine">
                                                 <div class="input-group-append editZone">
                                                 <span class="input-group-text">
                                                     <i class="editButton fas fa-lock unlockEdit"></i>
@@ -124,7 +124,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Année de collecte</span>
                                                 </div>
-                                                <input type="number" class="form-control" size="4" readonly value="{{$souche['souche'][0]->annee_collecte}}">
+                                                <input type="number" class="form-control" size="4" readonly value="{{$souche['souche'][0]->annee_collecte}}" name="souche.annee_collecte">
                                                 <div class="input-group-append  editZone">
                                                 <span class="input-group-text">
                                                     <i class="editButton fas fa-lock unlockEdit"></i>
@@ -156,7 +156,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">Année de création</span>
                                                     </div>
-                                                    <input type="text" size="4" class="form-control" readonly value="{{$souche['souche'][0]->annee_creation}}">
+                                                    <input type="text" size="4" class="form-control" readonly value="{{$souche['souche'][0]->annee_creation}}" name="souche.annee_creation">
                                                     <div class="input-group-append editZone">
                                                     <span class="input-group-text">
                                                         <i class="editButton fas fa-lock unlockEdit"></i>
@@ -249,8 +249,8 @@
 
                                             <div class="input-group mb-3 mt-1 editZone">
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="desription.image" name="desription.image">
-                                                    <label class="custom-file-label" for="desription.image" data-browse="A">Ajouter une image</label>
+                                                    <input type="file" class="custom-file-input" id="description.image" name="description.image">
+                                                    <label class="custom-file-label" for="description.image" data-browse="A">Ajouter une image</label>
                                                 </div>
                                                 <div class="input-group-append">
                                                 <span class="input-group-text">
@@ -507,23 +507,23 @@
                                             <td>&nbsp;</td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="date" class="input-group">
+                                                    <input class="form-control" type="date" class="input-group" name="pasteur.date_depot">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" class="input-group">
+                                                    <input class="form-control" type="text" class="input-group" name="pasteur.numero">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="custom-file text-left">
-                                                    <input type="file" class="custom-file-input" id="customFile">
-                                                    <label class="custom-file-label" for="customFile">Ajouter</label>
+                                                    <input type="file" class="custom-file-input" id="pasteur.dossier_depot" name="pasteur.dossier_depot">
+                                                    <label class="custom-file-label" for="pasteur.dossier_depot">Ajouter</label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" class="input-group">
+                                                    <input class="form-control" type="text" class="input-group" name="pasteur.stock">
                                                 </div>
                                             </td>
                                             <td>

@@ -136,6 +136,6 @@ class SoucheController extends BaseController
     }
 
     public function update($id, Request $request){
-        
+
     }
 }
