@@ -1,5 +1,10 @@
-$(".editButton").hide();
-$(".editZone").hide();
+function submitMaj(){
+    $("#majForm").submit();
+}
+
+
+//$(".editButton").hide();
+//$(".editZone").hide();
 
 $("#editMode").click( function(){
     $(".editButton").toggle();
@@ -60,7 +65,7 @@ $("#checkCriblageAutre").click(function(){
 //Delete file
 $("i.deleteCross").click(function (){
    var $link = $(this).prev().attr("href");
-   $.post( window.location.pathname+"/suppr", { file: $link, _token:$('#_token').val()} );
+   $.post( window.location.pathname+"/suppr", { "file": $link, "_token":$('#_token').val()} );
 });
 
 //Unlock Edit
@@ -76,7 +81,7 @@ $('i.unlockEdit').click(function () {
         }
         else{
             $input.prop('readonly', true);
-            $.post( window.location.pathname+"/maj", { dataName: $input.name ,data: $input.val(), _token:$('#_token').val()} );
+            submitMaj();
         }
     }
     else {
@@ -84,15 +89,9 @@ $('i.unlockEdit').click(function () {
             $input.prop('disabled', false);
         } else {
             $input.prop('disabled', true);
-            $.post( window.location.pathname+"/maj", { dataName: $input.name ,data: $input.val(), _token:$('#_token').val()} );
+            submitMaj();
         }
     }
-});
-
-$('.faForm').click(function () {
-    var $form = $(this);
-    console.log();
-    $(this).parent().parent().children(":first-child").next().children().children().submit();
 });
 
 //OGM
@@ -142,11 +141,11 @@ $('.fa-pen').click(function () {
             }
             else {
                 if ($value.is("p")){
-                    //console.log("p");
+                    console.log("p "+$value.text());
                     $data.empty()
                     $data.append($lastdata.children().clone());
                     $data.children().children("input").val($value.text());
-                    //console.log($lastdata.children());
+                    console.log($data.children().children("input"));
                 }
                 else {
                     if ($value.is("i")){
@@ -171,7 +170,13 @@ $('.fa-pen').click(function () {
 });
 
 $(".checkPostRow").hide();
-$('.checkPostRow').click(function () {
+$(".checkPostRow").click(function () {
+    submitMaj();
+});
+$('.faForm').click(function () {
+    submitMaj();
+});
+/*$('.checkPostRow').click(function () {
     //console.log("post row");
 
     var $lastrow = $(this).parent().parent().next();
@@ -207,7 +212,7 @@ $('.checkPostRow').click(function () {
         $data=$data.prev();
         $lastdata=$lastdata.prev();
     }
-    var $dataPost = {_token:$('#_token').val()};
+    var $dataPost = {"_token":$('#_token').val()};
 
     //console.log($form);
     for (var $i=0; $i<$form.size;$i++){
@@ -215,4 +220,4 @@ $('.checkPostRow').click(function () {
     }
 
     $.post( window.location.pathname+"/maj",  $dataPost);
-});
+});*/
