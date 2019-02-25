@@ -14,6 +14,28 @@ class SoucheController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    public function getActivite(){
+        $in = DB::table("activite")->select()->get();
+        $out = array();
+        foreach ($in as $value) $out[] = $value->nom;
+        return $out;
+    }
+    public function activite($activite){
+        if (!in_array($activite, $this->getActivite()))
+            DB::table("activite")->insert($activite);
+    }
+
+    public function getPartenaire(){
+        $in = DB::table("partenaire")->select()->get();
+        $out = array();
+        foreach ($in as $value) $out[] = $value->nom;
+        return $out;
+    }
+    public function partenaire($partenaire){
+        if (!in_array($partenaire, $this->getPartenaire()))
+            DB::table("partenaire")->insert($partenaire);
+    }
+
     public function getData($id){
         foreach (['souche',
                      'identification',
@@ -47,15 +69,15 @@ class SoucheController extends BaseController
             ->select()
             ->where("souche_projet.ref", "=", $id)->get();
 
-        $souche['projet'] = DB::table("projet")->select()->get();
-
-        $souche['activite'] = DB::table("activite")->select()->get();
-        
-        $souche['oses'] = DB::table("oses")->select()->get();
-
         $souche['caracterisation_oses'] = DB::table('caracterisation_oses')
             ->join('oses', 'caracterisation_oses.oses', '=', 'oses.nom')
             ->select()->where("caracterisation_oses.ref" ,"=", $id)->get();
+
+        $souche['projet'] = DB::table("projet")->select()->get();
+        $souche['oses'] = DB::table("oses")->select()->get();
+
+        $souche['activite'] = DB::table("activite")->select()->get();
+        $souche['partenaire'] = DB::table("partenaire")->select()->get();
 
         return $souche;
     }
@@ -78,13 +100,13 @@ class SoucheController extends BaseController
         return view('souche_ajout', ['souches'=> $souches]);
     }
 
-    public function ajoutFile($chemin, $nom, $fichier){
+    public function ajoutFile($chemin, $nom, $fichier) {
         if (!$fichier->isValid()) {
             return false;
         }
         else {
             Storage::putFileAs($chemin, $fichier, $nom.".".$fichier->extension());
-            return true;
+            return $chemin."/".$nom.".".$fichier->extension();
         }
     }
 
@@ -115,8 +137,10 @@ class SoucheController extends BaseController
 
             foreach (["texte_hcb", "validation_hcb", "schema_plasmique"] as $nom){
                 if ($request->hasFile($nom)) {
-                    $this->ajoutFile($chemin, $request->file($nom), $date.$nom);
-                    $insert[$nom] = $chemin."/".$date.$nom.".".$request->file($nom)->extension();
+                    $insert[$nom] = $this->ajoutFile($chemin, $request->file($nom), $date.$nom);
+                    if ($insert[$nom] == false)
+                        return view('souche_feedback', ['error' => true, 'message' => 'Une erreur est survenue avec le fichier '.$nom]);
+
                 }
             }
 
@@ -134,12 +158,6 @@ class SoucheController extends BaseController
         }else{
             return view('souche_feedback', ['error' => true, 'message' => 'Ajout de la souche raté']);
         }
-    }
-
-    public function suppr($id){
-        DB::table('souche')
-            ->where('ref', "=", $id)
-            ->update(['desactive' => 1]);
     }
 
     public function update($id, Request $request){
@@ -168,6 +186,9 @@ class SoucheController extends BaseController
 
                     break;
                 case "oses":
+
+                    break;
+                case "oses_new":
 
                     break;
                 case "fichier_caracterisation":
@@ -201,5 +222,11 @@ class SoucheController extends BaseController
             }
         }
         dd($posts);
+    }
+
+    public function suppr($id){
+        DB::table('souche')
+            ->where('ref', "=", $id)
+            ->update(['desactive' => 1]);
     }
 }
