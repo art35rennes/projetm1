@@ -49,6 +49,8 @@ class SoucheController extends BaseController
 
         $souche['projet'] = DB::table("projet")->select()->get();
 
+        $souche['activite'] = DB::table("activite")->select()->get();
+        
         $souche['oses'] = DB::table("oses")->select()->get();
 
         $souche['caracterisation_oses'] = DB::table('caracterisation_oses')
@@ -76,18 +78,20 @@ class SoucheController extends BaseController
         return view('souche_ajout', ['souches'=> $souches]);
     }
 
-    public function ajoutFile($chemin, $fichier){
-        if ($fichier->isValid()) {
-            return view('souche_feedback', ['error' => true, 'message' => 'Une erreur est survenu sur la description']);
+    public function ajoutFile($chemin, $nom, $fichier){
+        if (!$fichier->isValid()) {
+            return false;
         }
         else {
-            $insert["description"] = Storage::putFileAs($request->post("ref"),
-                $request->file("description"),
-                date("Y-m-d_H-i-s") . "_description." . $request->file("description")->extension());
+            Storage::putFileAs($chemin, $fichier, $nom.".".$fichier->extension());
+            return true;
         }
     }
 
     public function ajoutPost(Request $request){
+
+        $chemin = $request->post("ref")."/souche";
+        $date = date("Y-m-d_H-i-s_");
 
         //-----------------Ref---------------------
         $insert["ref"] = $request->post("ref");
@@ -96,39 +100,24 @@ class SoucheController extends BaseController
         if (!$request->hasFile("description")) {
             return view('souche_feedback', ['error' => true, 'message' => 'Veuillez ajouter une description']);
         }
-        elseif (!$request->file("description")->isValid()) {
-            return view('souche_feedback', ['error' => true, 'message' => 'Une erreur est survenu sur la description']);
-        }
-        else {
-            $insert["description"] = Storage::putFileAs($request->post("ref"),
-                $request->file("description"),
-                date("Y-m-d_H-i-s") . "_description." . $request->file("description")->extension());
+        if (!$this->ajoutFile($chemin, $request->file("description"), $date."description")){
+            return view('souche_feedback', ['error' => true, 'message' => 'Veuillez ajouter une description']);
+        }else{
+            $insert["description"] = $chemin."/".$date."description.".$request->file("description")->extension();
         }
 
+        //------------------Stock------------------
         $insert["stock"] = $request->post("stock");
 
         if (request("isOGM")){
 
             $insert["annee_creation"] = $request->post("annee_creation");
 
-            if ($request->hasFile("texte_hcb")) {
-                $insert["texte_hcb"] = Storage::putFileAs($request->post("ref"),
-                    $request->file("texte_hcb"),
-                    date("Y-m-d_H-i-s") . "_texte_hcb." . $request->file("texte_hcb")->extension());
-            }
-
-            if ($request->hasFile("validation_hcb")) {
-                $insert["validation_hcb"] = Storage::putFileAs($request->post("ref"),
-                    $request->file("validation_hcb"),
-                    date("Y-m-d_H-i-s") . "_validation_hcb." . $request->file("validation_hcb")->extension());
-            }else{
-                $validation_hcb = "";
-            }
-
-            if ($request->hasFile("schema_plasmique")) {
-                $insert["schema_plasmique"] = Storage::putFileAs($request->post("ref"),
-                    $request->file("schema_plasmique"),
-                    date("Y-m-d_H-i-s") . "_schema_plasmique." . $request->file("schema_plasmique")->extension());
+            foreach (["texte_hcb", "validation_hcb", "schema_plasmique"] as $nom){
+                if ($request->hasFile($nom)) {
+                    $this->ajoutFile($chemin, $request->file($nom), $date.$nom);
+                    $insert[$nom] = $chemin."/".$date.$nom.".".$request->file($nom)->extension();
+                }
             }
 
         }else{
@@ -154,13 +143,12 @@ class SoucheController extends BaseController
     }
 
     public function update($id, Request $request){
+        $souche = $this->getData($id);
         $posts = $request->all();
+
         foreach ($posts as $key => $value) {
             $key = explode("/", $key);
-            switch ($key){
-                case "activite":
-
-                    break;
+            switch ($key[0]){
                 case "brevet_soleau":
 
                     break;
