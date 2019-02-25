@@ -2,8 +2,8 @@ function submitMaj(){
     $("#majForm").submit();
 }
 
-//$(".editButton").hide();
-//$(".editZone").hide();
+$(".editButton").hide();
+$(".editZone").hide();
 
 $("#editMode").click( function(){
     $(".editButton").toggle();
@@ -175,50 +175,3 @@ $(".checkPostRow").click(function () {
 $('.faForm').click(function () {
     submitMaj();
 });
-/*$('.checkPostRow').click(function () {
-    //console.log("post row");
-
-    var $lastrow = $(this).parent().parent().next();
-
-    while($lastrow[0].className != "editZone"){
-        $lastrow=$lastrow.next();
-    }
-    var $lastdata = $lastrow.children(":last-child");
-
-    var $form = new FormData();
-    var $data=$(this).parent();
-
-    while ($data.is("td")){
-        var $value = $data.children(":first-child");
-
-        if (!$value.is("span") && !$value.is("i") && !$value.is("a")){
-
-            $value=$value.children(":first-child");
-            if(!$value.is("input")){
-                $value=$value.children(":first-child");
-            }
-            //console.log($value.attr('name')+"  "+$value.attr('type'));
-            //console.log($value);
-
-            if($value.attr('type')=="file"){
-                $form.append($value.attr('name'), $value[0].files[0]);
-            }
-            else{
-                $form.append($value.attr('name'), $value.val());
-            }
-        }
-
-        $data=$data.prev();
-        $lastdata=$lastdata.prev();
-    }
-    var $dataPost = {"_token":$('#_token').val()};
-
-    //console.log($form);
-    for (var $i=0; $i<$form.size;$i++){
-        $dataPost.append($form[$i]);
-    }
-
-    $.post( window.location.pathname+"/maj",  $dataPost);
-});*/
-
-$("input").val("denis=pute");
