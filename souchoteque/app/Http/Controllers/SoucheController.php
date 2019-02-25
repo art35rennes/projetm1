@@ -47,9 +47,9 @@ class SoucheController extends BaseController
             ->select()
             ->where("souche_projet.ref", "=", $id)->get();
 
-        $souche['projet'] = DB::table("projet")->select(DB::raw('*'))->get();
+        $souche['projet'] = DB::table("projet")->select()->get();
 
-        $souche['oses'] = DB::table("oses")->select(DB::raw("*"))->get();
+        $souche['oses'] = DB::table("oses")->select()->get();
 
         $souche['caracterisation_oses'] = DB::table('caracterisation_oses')
             ->join('oses', 'caracterisation_oses.oses', '=', 'oses.nom')
@@ -60,8 +60,6 @@ class SoucheController extends BaseController
 
     public function show($id){
         $souche = $this->getData($id);
-
-        //var_dump($souche);
         return view('souche_home', ['souche' => $souche]);
     }
 
@@ -76,6 +74,17 @@ class SoucheController extends BaseController
     public function ajout(){
         $souches = DB::table('souche')->select('ref')->get();
         return view('souche_ajout', ['souches'=> $souches]);
+    }
+
+    public function ajoutFile($chemin, $fichier){
+        if ($fichier->isValid()) {
+            return view('souche_feedback', ['error' => true, 'message' => 'Une erreur est survenu sur la description']);
+        }
+        else {
+            $insert["description"] = Storage::putFileAs($request->post("ref"),
+                $request->file("description"),
+                date("Y-m-d_H-i-s") . "_description." . $request->file("description")->extension());
+        }
     }
 
     public function ajoutPost(Request $request){
@@ -145,7 +154,64 @@ class SoucheController extends BaseController
     }
 
     public function update($id, Request $request){
+        $posts = $request->all();
+        foreach ($posts as $key => $value) {
+            $key = explode("/", $key);
+            switch ($key){
+                case "activite":
 
-        dd($request);
+                    break;
+                case "brevet_soleau":
+
+                    break;
+                case "capacite_production":
+
+                    break;
+                case "caracterisation":
+
+                    break;
+                case "criblage":
+
+                    break;
+                case "description":
+
+                    break;
+                case "exclusivite":
+
+                    break;
+                case "oses":
+
+                    break;
+                case "fichier_caracterisation":
+
+                    break;
+                case "identification":
+
+                    break;
+                case "objectivation":
+
+                    break;
+                case "pasteur":
+
+                    break;
+                case "photo_souche":
+
+                    break;
+                case "production":
+
+                    break;
+                case "projet":
+
+                    break;
+                case "publication":
+
+                    break;
+                case "souche":
+
+                    break;
+
+            }
+        }
+        dd($posts);
     }
 }
