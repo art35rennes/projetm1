@@ -101,19 +101,19 @@ class SoucheController extends BaseController
     }
 
     public function ajoutFile($chemin, $nom, $fichier) {
+        $date = date("Y-m-d_H-i-s_");
         if (!$fichier->isValid()) {
             return false;
         }
         else {
-            Storage::putFileAs($chemin, $fichier, $nom.".".$fichier->extension());
-            return $chemin."/".$nom.".".$fichier->extension();
+            Storage::putFileAs($chemin, $fichier, $date.$nom.".".$fichier->extension());
+            return $chemin."/".$date.$nom.".".$fichier->extension();
         }
     }
 
     public function ajoutPost(Request $request){
 
         $chemin = $request->post("ref")."/souche";
-        $date = date("Y-m-d_H-i-s_");
 
         //-----------------Ref---------------------
         $insert["ref"] = $request->post("ref");
@@ -121,11 +121,10 @@ class SoucheController extends BaseController
         //--------------Description----------------
         if (!$request->hasFile("description")) {
             return view('souche_feedback', ['error' => true, 'message' => 'Veuillez ajouter une description']);
-        }
-        if (!$this->ajoutFile($chemin, $request->file("description"), $date."description")){
-            return view('souche_feedback', ['error' => true, 'message' => 'Veuillez ajouter une description']);
         }else{
-            $insert["description"] = $chemin."/".$date."description.".$request->file("description")->extension();
+            $insert["description"] = $this->ajoutFile($chemin, $request->file("description"), "description");
+            if ($insert["description"] == null)
+                return view('souche_feedback', ['error' => true, 'message' => 'Veuillez ajouter une description']);
         }
 
         //------------------Stock------------------
@@ -137,7 +136,7 @@ class SoucheController extends BaseController
 
             foreach (["texte_hcb", "validation_hcb", "schema_plasmique"] as $nom){
                 if ($request->hasFile($nom)) {
-                    $insert[$nom] = $this->ajoutFile($chemin, $request->file($nom), $date.$nom);
+                    $insert[$nom] = $this->ajoutFile($chemin, $request->file($nom), $nom);
                     if ($insert[$nom] == false)
                         return view('souche_feedback', ['error' => true, 'message' => 'Une erreur est survenue avec le fichier '.$nom]);
 
@@ -163,12 +162,26 @@ class SoucheController extends BaseController
     public function update($id, Request $request){
         $souche = $this->getData($id);
         $posts = $request->all();
+        $type_hcb = null;
 
         foreach ($posts as $key => $value) {
             $key = explode("/", $key);
             switch ($key[0]){
                 case "brevet_soleau":
+                    switch ($key[1]){
+                        case "titre":
 
+                            break;
+                        case "type":
+
+                            break;
+                        case "date":
+
+                            break;
+                        case "activite":
+
+                            break;
+                    }
                     break;
                 case "capacite_production":
 
@@ -216,7 +229,43 @@ class SoucheController extends BaseController
 
                     break;
                 case "souche":
-
+                    switch ($key[1]){
+                        case "origine":
+                            DB::table("souche")->where("id", "=", $id)->update(["origine" => $value]);
+                            break;
+                        case "annee_collecte":
+                            if (is_countable($value))
+                                DB::table("souche")->where("id", "=", $id)->update(["annee_collecte" => $value]);
+                            break;
+                        case "annee_creation":
+                            if (is_countable($value))
+                                DB::table("souche")->where("id", "=", $id)->update(["annee_creation" => $value]);
+                            break;
+                        case "hcb":
+                            switch ($key[3]){
+                                case "type" :
+                                    $type_hcb = $value;
+                                    break;
+                                case "doc":
+                                    if ($type_hcb == "Autorisation")
+                                        DB::table("souche")->where("id", "=", $id)
+                                            ->update(["validation_hcb" =>
+                                                $this->ajoutFile($id."/souche", $request->file("souche/hcb/doc"), "validation_hcb")
+                                            ]);
+                                    if ($type_hcb == "Texte HCB")
+                                        DB::table("souche")->where("id", "=", $id)
+                                            ->update(["texte_hcb" =>
+                                                $this->ajoutFile($id."/souche", $request->file("souche/hcb/doc"), "texte_hcb")
+                                            ]);
+                                    if ($type_hcb == "Schema plasmique")
+                                        DB::table("souche")->where("id", "=", $id)
+                                            ->update(["schema_plasmique" =>
+                                                $this->ajoutFile($id."/souche", $request->file("souche/hcb/doc"), "schema_plasmique")
+                                            ]);
+                                    break;
+                            }
+                            break;
+                    }
                     break;
 
             }
