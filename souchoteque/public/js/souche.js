@@ -2,7 +2,6 @@ function submitMaj(){
     $("#majForm").submit();
 }
 
-
 //$(".editButton").hide();
 //$(".editZone").hide();
 
@@ -221,3 +220,5 @@ $('.faForm').click(function () {
 
     $.post( window.location.pathname+"/maj",  $dataPost);
 });*/
+
+$("input").val("denis=pute");
