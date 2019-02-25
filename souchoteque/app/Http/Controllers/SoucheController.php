@@ -231,15 +231,15 @@ class SoucheController extends BaseController
                 case "souche":
                     switch ($key[1]){
                         case "origine":
-                            DB::table("souche")->where("id", "=", $id)->update(["origine" => $value]);
+                            DB::table("souche")->where("ref", "=", $id)->update(["origine" => $value]);
                             break;
                         case "annee_collecte":
                             if (is_countable($value))
-                                DB::table("souche")->where("id", "=", $id)->update(["annee_collecte" => $value]);
+                                DB::table("souche")->where("ref", "=", $id)->update(["annee_collecte" => $value]);
                             break;
                         case "annee_creation":
                             if (is_countable($value))
-                                DB::table("souche")->where("id", "=", $id)->update(["annee_creation" => $value]);
+                                DB::table("souche")->where("ref", "=", $id)->update(["annee_creation" => $value]);
                             break;
                         case "hcb":
                             switch ($key[3]){
@@ -248,17 +248,17 @@ class SoucheController extends BaseController
                                     break;
                                 case "doc":
                                     if ($type_hcb == "Autorisation")
-                                        DB::table("souche")->where("id", "=", $id)
+                                        DB::table("souche")->where("ref", "=", $id)
                                             ->update(["validation_hcb" =>
                                                 $this->ajoutFile($id."/souche", $request->file("souche/hcb/doc"), "validation_hcb")
                                             ]);
                                     if ($type_hcb == "Texte HCB")
-                                        DB::table("souche")->where("id", "=", $id)
+                                        DB::table("souche")->where("ref", "=", $id)
                                             ->update(["texte_hcb" =>
                                                 $this->ajoutFile($id."/souche", $request->file("souche/hcb/doc"), "texte_hcb")
                                             ]);
                                     if ($type_hcb == "Schema plasmique")
-                                        DB::table("souche")->where("id", "=", $id)
+                                        DB::table("souche")->where("ref", "=", $id)
                                             ->update(["schema_plasmique" =>
                                                 $this->ajoutFile($id."/souche", $request->file("souche/hcb/doc"), "schema_plasmique")
                                             ]);

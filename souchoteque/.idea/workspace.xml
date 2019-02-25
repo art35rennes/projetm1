@@ -18,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SoucheController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="262" column="131" selection-start-line="262" selection-start-column="131" selection-end-line="262" selection-end-column="131" />
+            <state relative-caret-position="276">
+              <caret line="260" column="71" selection-start-line="260" selection-start-column="71" selection-end-line="260" selection-end-column="71" />
               <folding>
                 <element signature="e#40#85#0#PHP" expanded="true" />
               </folding>
@@ -291,12 +291,12 @@
       <workItem from="1550236904818" duration="49000" />
       <workItem from="1550236997910" duration="1247000" />
       <workItem from="1551096629267" duration="439000" />
-      <workItem from="1551104708165" duration="13499000" />
+      <workItem from="1551104708165" duration="13737000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61681000" />
+    <option name="totallyTimeSpent" value="61919000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -532,8 +532,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SoucheController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="262" column="131" selection-start-line="262" selection-start-column="131" selection-end-line="262" selection-end-column="131" />
+        <state relative-caret-position="276">
+          <caret line="260" column="71" selection-start-line="260" selection-start-column="71" selection-end-line="260" selection-end-column="71" />
           <folding>
             <element signature="e#40#85#0#PHP" expanded="true" />
           </folding>
