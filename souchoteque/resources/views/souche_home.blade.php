@@ -73,7 +73,7 @@
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec nunc commodo, mollis ligula volutpat, eleifend mauris. Quisque et dui pretium, pharetra mauris nec, elementum ipsum. Pellentesque nulla mauris, sollicitudin in bibendum sed, convallis ac ex. Maecenas consequat lectus ac.
                             </p>
 
-                            <a href="{{asset('souches/'.$souche['souche'][0]->description)}}" class="font-italic"><i class="fas fa-file-alt mb-2"></i> {{$souche['souche'][0]->description}}</a><i class="editButton fas fa-times deleteCross ml-2"></i>
+                            @isset($souche['souche'][0])<a href="{{asset('souches/'.$souche['souche'][0]->description)}}" class="font-italic"><i class="fas fa-file-alt mb-2"></i> {{$souche['souche'][0]->description}}</a><i class="editButton fas fa-times deleteCross ml-2"></i>@endisset
                             <p>
                                 <span class="h6">Stock Cryotubes:&nbsp;</span>
                                 <span class="badge badge-primary" title="Stock Polymaris">{{$souche['souche'][0]->stock}}</span>
@@ -111,7 +111,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Lieu d'origine</span>
                                                 </div>
-                                                <input type="text" class="form-control" readonly value="{{$souche['souche'][0]->origine}}" name="souche/origine">
+                                                @isset($souche['souche'][0])<input type="text" class="form-control" readonly value="{{$souche['souche'][0]->origine}}" name="souche/origine">@endisset
                                                 <div class="input-group-append editZone">
                                                 <span class="input-group-text">
                                                     <i class="editButton fas fa-lock unlockEdit"></i>
@@ -123,7 +123,7 @@
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text">Année de collecte</span>
                                                 </div>
-                                                <input type="number" class="form-control" size="4" readonly value="{{$souche['souche'][0]->annee_collecte}}" name="souche/annee_collecte">
+                                                @isset($souche['souche'][0])<input type="number" class="form-control" size="4" readonly value="{{$souche['souche'][0]->annee_collecte}}" name="souche/annee_collecte">@endisset
                                                 <div class="input-group-append  editZone">
                                                 <span class="input-group-text">
                                                     <i class="editButton fas fa-lock unlockEdit"></i>
@@ -131,7 +131,7 @@
                                                 </div>
                                             </div>
 
-                                            <a href="{{asset('souches/'.$souche['souche'][0]->description)}}" class="font-italic"><i class="fas fa-file-alt" mb-3></i> {{$souche['souche'][0]->description}}</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
+                                            @isset($souche['souche'][0])<a href="{{asset('souches/'.$souche['souche'][0]->description)}}" class="font-italic"><i class="fas fa-file-alt" mb-3></i> {{$souche['souche'][0]->description}}</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>@endisset
 
                                             <hr>
 
@@ -155,7 +155,7 @@
                                                     <div class="input-group-prepend">
                                                         <span class="input-group-text">Année de création</span>
                                                     </div>
-                                                    <input type="text" size="4" class="form-control" readonly value="{{$souche['souche'][0]->annee_creation}}" name="souche/annee_creation">
+                                                    @isset($souche['souche'][0])<input type="text" size="4" class="form-control" readonly value="{{$souche['souche'][0]->annee_creation}}" name="souche/annee_creation">@endisset
                                                     <div class="input-group-append editZone">
                                                     <span class="input-group-text">
                                                         <i class="editButton fas fa-lock unlockEdit"></i>
@@ -860,6 +860,7 @@
                                 </div>
 
                             <!-- Carac -->
+                            @isset($souche['caracterisation'][0])
                             @if($souche['caracterisation'][0]->type=="EPS")
                                 <div class="CaracterisationEps">
                                     <h4>Caractérisation n°{{$loop->iteration}}</h4>
@@ -994,6 +995,7 @@
                                     </div>
                                 </div>
                             @endif
+                            @endisset
                             </div>
                         </div>
                     </div>
