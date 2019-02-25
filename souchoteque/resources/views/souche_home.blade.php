@@ -188,8 +188,9 @@
                                                 <div class="input-group mb-3 editZone" id="hcbAdd">
                                                     <div class="input-group-prepend">
                                                         <select class="form-control" id="souche/hcb/type" name="souche/hcb/type">
-                                                            <option>Texte HCB</option>
-                                                            <option>Autorisation</option>
+                                                            <option value="texte_hcb">Texte HCB</option>
+                                                            <option value="validation_hcb">Autorisation</option>
+                                                            <option value="shema_plasmique">Schéma plasmique</option>
                                                         </select>
                                                     </div>
                                                     <div class="custom-file">
@@ -573,17 +574,9 @@
                                                     <input class="form-control form-control-sm" type="text" class="input-group" name="brevet_soleau/numero">
                                                 </div>
                                             </td>
-                                            <td>
+                                            <td colspan="2">
                                                 <div>
                                                     <input class="form-control form-control-sm" type="text" class="input-group" name="brevet_soleau/titre">
-                                                </div>
-                                            </td>
-                                            <td>
-                                                <div>
-                                                    <select class="form-control form-control-sm" name="brevet_soleau/type">
-                                                        <option>Brevet</option>
-                                                        <option>Soleau</option>
-                                                    </select>
                                                 </div>
                                             </td>
                                             <td>
