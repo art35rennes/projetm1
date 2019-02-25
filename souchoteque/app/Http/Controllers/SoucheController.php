@@ -29,10 +29,9 @@ class SoucheController extends BaseController
                      'description',
                      'photo_souche',
                      'fichier_caracterisation',
-                     'caracterisation_oses'
                      ] as $table)
             $souche[$table] = DB::table($table)
-                ->select(DB::raw('*'))
+                ->select()
                 ->where('ref','=', $id)
                 ->get();
 
@@ -51,6 +50,10 @@ class SoucheController extends BaseController
         $souche['projet'] = DB::table("projet")->select(DB::raw('*'))->get();
 
         $souche['oses'] = DB::table("oses")->select(DB::raw("*"))->get();
+
+        $souche['caracterisation_oses'] = DB::table('caracterisation_oses')
+            ->join('oses', 'caracterisation_oses.oses', '=', 'oses.nom')
+            ->select()->where("caracterisation_oses.ref" ,"=", $id)->get();
 
         return $souche;
     }
@@ -142,6 +145,7 @@ class SoucheController extends BaseController
     }
 
     public function update($id, Request $request){
+
         dd($request);
     }
 }
