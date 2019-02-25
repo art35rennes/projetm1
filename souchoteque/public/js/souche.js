@@ -140,11 +140,12 @@ $('.fa-pen').click(function () {
             }
             else {
                 if ($value.is("p")){
-                    console.log("p "+$value.text());
+                    //console.log("p "+$value.text());
                     $data.empty()
                     $data.append($lastdata.children().clone());
                     $data.children().children("input").val($value.text());
-                    console.log($data.children().children("input"));
+                    $data.children().children("input").attr("name",$data.children().children("input").attr("name")+"/"+$data.parent().index());
+                    //console.log($data.children().children("input"));
                 }
                 else {
                     if ($value.is("i")){
@@ -157,6 +158,7 @@ $('.fa-pen').click(function () {
                             //console.log('vide')
                             $data.empty()
                             $data.append($lastdata.children().clone());
+                            $data.children().children().children().attr("name",$data.children().children().children().attr("name")+"/"+$data.parent().index());
                             //console.log($lastdata.children());
                         }
                     }

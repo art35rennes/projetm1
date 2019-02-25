@@ -522,16 +522,20 @@
                                     <table class="table table-sm text-center">
                                         <tbody>
                                         <tr>
-                                            <th style="width: 3%;">#</th>
+                                            <th style="width: 5%;">Numero</th>
+                                            <th style="width: 3%;">Titre</th>
                                             <th style="width: 15%;">Type</th>
                                             <th style="width: 17.5%;">Demande</th>
                                             <th style="width: 17.5%;">Secteur</th>
-                                            <th style="width: 22.5%;">Texte</th>
-                                            <th style="width: 22.5%;">INPI</th>
+                                            <th style="width: 20%;">Texte</th>
+                                            <th style="width: 20%;">INPI</th>
                                             <th style="width: 2%;">&nbsp;</th>
                                         </tr>
                                         @foreach($souche['brevet_soleau'] as $brevet)
                                         <tr>
+                                            <td>
+                                                <p>{{$brevet->numero}}</p>
+                                            </td>
                                             <td>
                                                 <p>{{$brevet->titre}}</p>
                                             </td>
@@ -546,13 +550,13 @@
                                             </td>
                                             <td>
                                                 @if($brevet->scan!="")
-                                                <a href="{{$brevet->scan}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$brevet->scan}}</a>
+                                                <a href="{{$brevet->scan}}" class="font-italic">{{$brevet->scan}}</a>
                                                 <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                 @endif
                                             </td>
                                             <td>
                                                 @if($brevet->inpi!="")
-                                                <a href="{{$brevet->inpi}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$brevet->inpi}}</a>
+                                                <a href="{{$brevet->inpi}}" class="font-italic">{{$brevet->inpi}}</a>
                                                 <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                 @endif
                                             </td>
@@ -564,6 +568,11 @@
                                         @endforeach
 
                                         <tr class="editZone">
+                                            <td>
+                                                <div>
+                                                    <input class="form-control form-control-sm" type="text" class="input-group" name="brevet_soleau/numero">
+                                                </div>
+                                            </td>
                                             <td>
                                                 <div>
                                                     <input class="form-control form-control-sm" type="text" class="input-group" name="brevet_soleau/titre">
