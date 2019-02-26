@@ -31,11 +31,11 @@ class SoucheController extends BaseController
         ],
         "capacite_production" => [
             "nom" => "string",
-            "type" => "PHA/EPS/Autre",
+            "type" => "type",
             "fichier" => "file"
         ],
         "caracterisation" => [
-            "type" => "PHA/EPS/Autre",
+            "type" => "type",
             "poids_moleculaire" => "float"
         ],
         "criblage" => [
@@ -189,6 +189,14 @@ class SoucheController extends BaseController
             return $act;
         DB::table(partenaire)->insert(['nom' => $act]);
         return $act;
+    }
+
+    public function ajoutType($type){
+        if (in_array($type, ['PHA', 'EPS', 'Autre'])){
+            return $type;
+        }
+        return view('souche_feedback', ['error' => true, 'message' => "Un type (PHA, EPS, Autre) que vous avez saisi a une erreur"]);
+
     }
 
     ///////////////////////////////////Activite///////////////////////////////////////
@@ -350,16 +358,18 @@ class SoucheController extends BaseController
             unset($temp);
         }
 
+        dd($data);
+
         foreach ($data as $table => $lines){
             switch ($table) {
                 case "souche":
-                    $db = DB::table("souche")->where("ref", "=", $id);
+                    /*$db = DB::table("souche")->where("ref", "=", $id);
                     if ($this->SandNN($data[$table][$lines])){
                         $db->update(["origine" => $data["souche"]["origine"]]);
                     }
                     if ($this->SandNN($data["souche"]["annee_collecte"]) && is_int($data["souche"]["annee_collecte"])){
                         $db->update(["annee_collecte" => $data["souche"]["annee_collecte"]]);
-                    }
+                    }*/
                     break;
                 case "oses":
 
@@ -370,7 +380,7 @@ class SoucheController extends BaseController
                 default :
                     foreach ($data[$table] as $rows) {
                         if (DB::table($table)
-                                ->where($this->dbCle[$table], "=", $data[$table][$this->dbCle[$table]])
+                                ->where($this->dbCle[$table], "=", $rows[$this->dbCle[$table]])
                                 ->where("ref", "=", $id)
                                 ->count() == 1) {
                             $update = [];
@@ -394,6 +404,9 @@ class SoucheController extends BaseController
                                             break;
                                         case "partenaire":
                                             $update[$row] = $this->ajoutPartenaire($value);
+                                            break;
+                                        case "type":
+                                            $update[$row] = $this->ajoutType($value);
                                             break;
 
                                     }
@@ -424,6 +437,9 @@ class SoucheController extends BaseController
                                             break;
                                         case "partenaire":
                                             $insert[$row] = $this->ajoutPartenaire($value);
+                                            break;
+                                        case "type":
+                                            $insert[$row] = $this->ajoutType($value);
                                             break;
                                     }
                             }
