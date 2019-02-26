@@ -21,10 +21,12 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="227">
-                    <caret line="177" column="68" selection-start-line="177" selection-start-column="63" selection-end-line="177" selection-end-column="68" />
+                  <state relative-caret-position="92">
+                    <caret line="864" column="61" selection-start-line="864" selection-start-column="61" selection-end-line="864" selection-end-column="61" />
                     <folding>
                       <element signature="e#41#895#0#HTML" />
+                      <element signature="e#1724#5152#0#HTML" />
+                      <element signature="e#5404#20524#0#HTML" />
                       <element signature="e#19092#25050#0#HTML" />
                       <element signature="e#24150#29309#0#HTML" />
                       <element signature="e#30378#36955#0#HTML" />
@@ -41,9 +43,7 @@
                       <element signature="e#44388#47921#0#HTML" />
                       <element signature="e#47992#52740#0#HTML" />
                       <element signature="e#52806#58016#0#HTML" />
-                      <element signature="e#57491#86118#0#HTML" />
-                      <element signature="e#58969#60719#0#HTML" />
-                      <element signature="e#0#109221#0#Blade" />
+                      <element signature="e#70999#74730#0#HTML" />
                       <element signature="e#86165#106070#0#HTML" />
                       <element signature="e#86415#86820#0#HTML" />
                       <element signature="e#86669#88132#0#HTML" />
@@ -424,12 +424,12 @@
       <workItem from="1550344632576" duration="9048000" />
       <workItem from="1550409017301" duration="4052000" />
       <workItem from="1550413742701" duration="7051000" />
-      <workItem from="1551090500519" duration="48059000" />
+      <workItem from="1551090500519" duration="48610000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="229714000" />
+    <option name="totallyTimeSpent" value="230265000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -629,10 +629,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="177" column="68" selection-start-line="177" selection-start-column="63" selection-end-line="177" selection-end-column="68" />
+        <state relative-caret-position="92">
+          <caret line="864" column="61" selection-start-line="864" selection-start-column="61" selection-end-line="864" selection-end-column="61" />
           <folding>
             <element signature="e#41#895#0#HTML" />
+            <element signature="e#1724#5152#0#HTML" />
+            <element signature="e#5404#20524#0#HTML" />
             <element signature="e#19092#25050#0#HTML" />
             <element signature="e#24150#29309#0#HTML" />
             <element signature="e#30378#36955#0#HTML" />
@@ -649,9 +651,7 @@
             <element signature="e#44388#47921#0#HTML" />
             <element signature="e#47992#52740#0#HTML" />
             <element signature="e#52806#58016#0#HTML" />
-            <element signature="e#57491#86118#0#HTML" />
-            <element signature="e#58969#60719#0#HTML" />
-            <element signature="e#0#109221#0#Blade" />
+            <element signature="e#70999#74730#0#HTML" />
             <element signature="e#86165#106070#0#HTML" />
             <element signature="e#86415#86820#0#HTML" />
             <element signature="e#86669#88132#0#HTML" />
