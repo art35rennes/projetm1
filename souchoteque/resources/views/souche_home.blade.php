@@ -50,7 +50,7 @@
                             <div class="carousel-inner">
                             @foreach($souche['photo_souche'] as $photo)
                                 <div class="carousel-item @if($loop->index==0) active @endif">
-                                    <img src="/{{$photo->fichier}}" class="d-block w-100">
+                                    <img src="/storage/{{$photo->fichier}}" class="d-block w-100">
                                 </div>
                             @endforeach
                             </div>
@@ -213,7 +213,7 @@
                                                 <div class="carousel-inner">
                                                     @foreach($souche['photo_souche'] as $photo)
                                                     <div class="carousel-item @if($loop->index==0) active @endif">
-                                                        <img src="/{{$photo->fichier}}" class="d-block w-100">
+                                                        <img src="/storage/{{$photo->fichier}}" class="d-block w-100">
                                                         <div class="carousel-caption d-none d-md-block">
                                                             <p class="small">{{$photo->description}}</p>
                                                         </div>

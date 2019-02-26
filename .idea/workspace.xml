@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbd90ef4-95b8-4103-bd48-18525024d8be" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,12 +22,10 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="92">
-                    <caret line="864" column="61" selection-start-line="864" selection-start-column="61" selection-end-line="864" selection-end-column="61" />
+                  <state relative-caret-position="272">
+                    <caret line="215" column="75" selection-start-line="215" selection-start-column="75" selection-end-line="215" selection-end-column="75" />
                     <folding>
                       <element signature="e#41#895#0#HTML" />
-                      <element signature="e#1724#5152#0#HTML" />
-                      <element signature="e#5404#20524#0#HTML" />
                       <element signature="e#19092#25050#0#HTML" />
                       <element signature="e#24150#29309#0#HTML" />
                       <element signature="e#30378#36955#0#HTML" />
@@ -424,12 +423,12 @@
       <workItem from="1550344632576" duration="9048000" />
       <workItem from="1550409017301" duration="4052000" />
       <workItem from="1550413742701" duration="7051000" />
-      <workItem from="1551090500519" duration="48610000" />
+      <workItem from="1551090500519" duration="49145000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230265000" />
+    <option name="totallyTimeSpent" value="230800000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -629,12 +628,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="864" column="61" selection-start-line="864" selection-start-column="61" selection-end-line="864" selection-end-column="61" />
+        <state relative-caret-position="272">
+          <caret line="215" column="75" selection-start-line="215" selection-start-column="75" selection-end-line="215" selection-end-column="75" />
           <folding>
             <element signature="e#41#895#0#HTML" />
-            <element signature="e#1724#5152#0#HTML" />
-            <element signature="e#5404#20524#0#HTML" />
             <element signature="e#19092#25050#0#HTML" />
             <element signature="e#24150#29309#0#HTML" />
             <element signature="e#30378#36955#0#HTML" />
