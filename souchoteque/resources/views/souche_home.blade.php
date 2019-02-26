@@ -355,7 +355,7 @@
                                             <td>&nbsp;</td>
                                             <td>
                                                 <div>
-                                                    <input type="text" class="form-control border border-info" list="dataIdentification" placeholder="Type..." name="identification/type" isKey="true">
+                                                    <input type="text" class="form-control border border-info" list="dataIdentification" placeholder="Type..." name="identification/0/type" isKey="true">
                                                     <datalist id="dataIdentification">
                                                     @foreach($souche['identification'] as $id)
                                                         <option>{{$id->type}}</option>
@@ -366,14 +366,14 @@
                                             <td>
                                                 <div class="custom-file text-left">
                                                     <label class="btn btn-default border border-info rounded">
-                                                        Parcourir <input type="file" name="identification/sequence" hidden>
+                                                        Parcourir <input type="file" name="identification/0/sequence" hidden>
                                                     </label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="custom-file text-left">
                                                     <label class="btn btn-default border border-info rounded">
-                                                        Parcourir <input type="file" name="identification/arbre" hidden>
+                                                        Parcourir <input type="file" name="identification/0/arbre" hidden>
                                                     </label>
                                                 </div>
                                             </td>

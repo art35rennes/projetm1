@@ -21,8 +21,8 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="586">
-                    <caret line="307" column="85" selection-start-line="307" selection-start-column="85" selection-end-line="307" selection-end-column="85" />
+                  <state relative-caret-position="544">
+                    <caret line="375" column="107" selection-start-line="375" selection-start-column="107" selection-end-line="375" selection-end-column="107" />
                     <folding>
                       <element signature="e#41#895#0#HTML" />
                       <element signature="e#30378#36955#0#HTML" />
@@ -420,12 +420,12 @@
       <workItem from="1550344632576" duration="9048000" />
       <workItem from="1550409017301" duration="4052000" />
       <workItem from="1550413742701" duration="7051000" />
-      <workItem from="1551090500519" duration="49554000" />
+      <workItem from="1551090500519" duration="50255000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="231209000" />
+    <option name="totallyTimeSpent" value="231910000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -625,8 +625,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="307" column="85" selection-start-line="307" selection-start-column="85" selection-end-line="307" selection-end-column="85" />
+        <state relative-caret-position="544">
+          <caret line="375" column="107" selection-start-line="375" selection-start-column="107" selection-end-line="375" selection-end-column="107" />
           <folding>
             <element signature="e#41#895#0#HTML" />
             <element signature="e#30378#36955#0#HTML" />
