@@ -15,6 +15,43 @@ class SoucheController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    //////////////////////////////////////////////////////////////////////////////////
+    //                                  Toolbox                                     //
+    //////////////////////////////////////////////////////////////////////////////////
+
+    /////////////////////////////////////Date/////////////////////////////////////////
+    function validateDate($date, $format = 'd/m/Y')
+    {
+        $d = DateTime::createFromFormat($format, $date);
+        return $d && $d->format($format) == $date;
+    }
+    public function dateDtoV($date){
+        return date( "d/m/Y", date_create_from_format("Y-m-d", $date));
+    }
+    public function dateVtoD($date){
+        if ($this->validateDate($date))
+            return date( "Y-m-d", date_create_from_format("d/m/Y", $date));
+        return view('souche_feedback', ['error' => true, 'message' => "Une des date que vous avez saisi n'est pas conforme"]);
+    }
+
+    /////////////////////////////////////Check////////////////////////////////////////
+    public function SandNN($data){
+        return (isset($data) && $data != 0);
+    }
+
+    ////////////////////////////////Gestion fichier///////////////////////////////////
+    public function ajoutFile($chemin, $nom, $fichier) {
+        $date = date("Y-m-d_H-i-s_");
+        if (!$fichier->isValid()) {
+            return view('souche_feedback', ['error' => true, 'message' => "Un des fichier que vous avez envoyé a rencontré une erreur"]);
+        }
+        else {
+            Storage::putFileAs($chemin, $fichier, $date.$nom.".".$fichier->extension());
+            return $chemin."/".$date.$nom.".".$fichier->extension();
+        }
+    }
+
+    ///////////////////////////////////Activite///////////////////////////////////////
     public function getActivite(){
         $in = DB::table("activite")->select()->get();
         $out = array();
@@ -26,6 +63,7 @@ class SoucheController extends BaseController
             DB::table("activite")->insert($activite);
     }
 
+    ///////////////////////////////////Partenaire/////////////////////////////////////
     public function getPartenaire(){
         $in = DB::table("partenaire")->select()->get();
         $out = array();
@@ -37,6 +75,7 @@ class SoucheController extends BaseController
             DB::table("partenaire")->insert($partenaire);
     }
 
+    ///////////////////////////////////Select All/////////////////////////////////////
     public function getData($id){
         foreach (['souche',
                      'identification',
@@ -83,6 +122,9 @@ class SoucheController extends BaseController
         return $souche;
     }
 
+    //////////////////////////////////////////////////////////////////////////////////
+    //                               visualisation                                  //
+    //////////////////////////////////////////////////////////////////////////////////
     public function show($id){
         $souche = $this->getData($id);
         return view('souche_home', ['souche' => $souche]);
@@ -96,20 +138,12 @@ class SoucheController extends BaseController
         dd($this->getData($id));
     }
 
+    //////////////////////////////////////////////////////////////////////////////////
+    //                                 creation                                     //
+    //////////////////////////////////////////////////////////////////////////////////
     public function ajout(){
         $souches = DB::table('souche')->select('ref')->get();
         return view('souche_ajout', ['souches'=> $souches]);
-    }
-
-    public function ajoutFile($chemin, $nom, $fichier) {
-        $date = date("Y-m-d_H-i-s_");
-        if (!$fichier->isValid()) {
-            return false;
-        }
-        else {
-            Storage::putFileAs($chemin, $fichier, $date.$nom.".".$fichier->extension());
-            return $chemin."/".$date.$nom.".".$fichier->extension();
-        }
     }
 
     public function ajoutPost(Request $request){
@@ -137,13 +171,9 @@ class SoucheController extends BaseController
 
             foreach (["texte_hcb", "validation_hcb", "schema_plasmique"] as $nom){
                 if ($request->hasFile($nom)) {
-                    $insert[$nom] = $this->ajoutFile($chemin, $nom,  $request->file($nom));
-                    if ($insert[$nom] == false)
-                        return view('souche_feedback', ['error' => true, 'message' => 'Une erreur est survenue avec le fichier '.$nom]);
-
+                    $insert[$nom] = $this->ajoutFile($chemin, $nom, $request->file($nom));
                 }
             }
-
         }else{
 
             $insert["origine"] = $request->post("origine");
@@ -160,113 +190,97 @@ class SoucheController extends BaseController
         }
     }
 
+    //////////////////////////////////////////////////////////////////////////////////
+    //                                mise a jour                                   //
+    //////////////////////////////////////////////////////////////////////////////////
 
     public function update($id, Request $request){
         $souche = $this->getData($id);
         $posts = $request->all();
         $type_hcb = null;
-        $out = [];
+        $data = [];
+        //alors je sais pas comment ça marche mais ça transforme un "/bla/bla = bla" en [bla][bla] = bla
+        //tant que ça marche ça me va
         foreach ($posts as $keys => $value) {
-            $key = explode("/", $keys);
-            $i=1;
+            $exploded = explode("/", $keys);
+            $temp = &$data;
+            foreach($exploded as $key) {
+                $temp = &$temp[$key];
+            }
+            $temp = $value;
+            unset($temp);
         }
-        dd($out);
+        if ($this->SandNN($data["activite"])){
 
-        /*foreach ($posts as $key => $value) {
-            $key = explode("/", $key);
-            switch ($key[0]){
-                case "brevet_soleau":
-                    switch ($key[1]){
-                        case "titre":
-
-                            break;
-                        case "type":
-
-                            break;
-                        case "date":
-
-                            break;
-                        case "activite":
-
-                            break;
-                    }
-                    break;
-                case "capacite_production":
-
-                    break;
-                case "caracterisation":
-
-                    break;
-                case "criblage":
-
-                    break;
-                case "description":
-
-                    break;
-                case "exclusivite":
-
-                    break;
-                case "oses":
-
-                    break;
-                case "oses_new":
-
-                    break;
-                case "fichier_caracterisation":
-
-                    break;
-                case "identification":
-
-                    break;
-                case "objectivation":
-
-                    break;
-                case "pasteur":
-
-                    break;
-                case "photo_souche":
-
-                    break;
-                case "production":
-
-                    break;
-                case "projet":
-
-                    break;
-                case "publication":
-
-                    break;
-                case "souche":
-                    switch ($key[1]){
-                        case "origine":
-                            DB::table("souche")->where("ref", "=", $id)->update(["origine" => $value]);
-                            break;
-                        case "annee_collecte":
-                            if (is_int($value))
-                                DB::table("souche")->where("ref", "=", $id)->update(["annee_collecte" => $value]);
-                            break;
-                        case "annee_creation":
-                            if (is_int($value))
-                                DB::table("souche")->where("ref", "=", $id)->update(["annee_creation" => $value]);
-                            break;
-                        case "hcb":
-                            switch ($key[2]){
-                                case "type" :
-                                    $type_hcb = $value;
-                                    break;
-                                case "doc":
-                                    DB::table("souche")->where("ref", "=", $id)
-                                        ->update([$type_hcb =>
-                                            $this->ajoutFile($id."/souche", $type_hcb, $request->file("souche/hcb/doc"))
-                                        ]);
-                                    break;
-                            }
-                            break;
-                    }
-                    break;
+        }
+        if ($this->SandNN($data["brevet_soleau"]) && $this->SandNN($data["brevet_soleau"]["titre"])){
+            $db = DB::table("brevet_soleau");
+            if (DB::table("brevet_soleau")->count()->where("titre", "=", $data["brevet_soleau"]["titre"]) == 1){
+                $db->where("titre", "=", $data["brevet_soleau"]["titre"]);
+                $update = [];
+                if ($this->SandNN($data["brevet_soleau"]["date"]) && $this->validateDate($data["brevet_soleau"]["date"])){
+                    $update["date"] = $this->dateVtoD($data["brevet_soleau"]["date"]);
+                }
+                if ($this->SandNN($data["brevet_soleau"]["scan"])){
+                    $update["scan"] = $this->ajoutFile($id."/brevet_soleau", "scan", $data["brevet_soleau"]["scan"]);
+                }
 
             }
-        }*/
+
+        }
+        if ($this->SandNN($data["capacite_production"])){
+
+        }
+        if ($this->SandNN($data["caracterisation"])){
+
+        }
+        if ($this->SandNN($data["criblage"])){
+
+        }
+        if ($this->SandNN($data["description"])){
+
+        }
+        if ($this->SandNN($data["exclusivite"])){
+
+        }
+        if ($this->SandNN($data["oses"])){
+
+        }
+        if ($this->SandNN($data["fichier_caracterisation"])){
+
+        }
+        if ($this->SandNN($data["identification"])){
+
+        }
+        if ($this->SandNN($data["objectivation"])){
+
+        }
+        if ($this->SandNN($data["pasteur"])){
+
+        }
+        if ($this->SandNN($data["photo_souche"])){
+
+        }
+        if ($this->SandNN($data["production"])){
+
+        }
+        if ($this->SandNN($data["projet"])){
+
+        }
+        if ($this->SandNN($data["publication"])){
+
+        }
+        if ($this->SandNN($data["souche"])){
+            $db = DB::table("souche")->where("ref", "=", $id);
+            if ($this->SandNN($data["souche"]["origine"])){
+                $db->update(["origine" => $data["souche"]["origine"]]);
+            }
+            if ($this->SandNN($data["souche"]["annee_collecte"]) && is_int($data["souche"]["annee_collecte"])){
+                $db->update(["annee_collecte" => $data["souche"]["annee_collecte"]]);
+            }
+        }
+
+        dd($data);
     }
 
     public function suppr($id){
