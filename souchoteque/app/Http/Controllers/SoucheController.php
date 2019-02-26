@@ -19,6 +19,113 @@ class SoucheController extends BaseController
     //                                  Toolbox                                     //
     //////////////////////////////////////////////////////////////////////////////////
 
+    //////////////////////////////////Dictionaire/////////////////////////////////////
+    public $dbFormat = [
+        "brevet_soleau" => [
+            "titre" => "string",
+            "date" => "date",
+            "scan" => "file",
+            "numero" => "int",
+            "inpi" => "file",
+            "activite" => "activite"
+        ],
+        "capacite_production" => [
+            "nom" => "string",
+            "type" => "PHA/EPS/Autre",
+            "fichier" => "file"
+        ],
+        "caracterisation" => [
+            "type" => "PHA/EPS/Autre",
+            "poids_moleculaire" => "float"
+        ],
+        "criblage" => [
+            "nom" => "string",
+            "condition" => "file",
+            "rapport" => "file",
+        ],
+        "description" => [
+            "texte" => "string",
+            "fichier" => "file",
+        ],
+        "exclusivite" => [
+            "id" => "int",
+            "date_debut" => "date",
+            "date_fin" => "date",
+            "activite" => "activite",
+            "partenaire" => "partenaire"
+        ],
+        "fichier caracterisation" => [
+            "nom" => "string",
+            "fichier" => "file",
+            "type" => "PHA/EPS/Autre"
+        ],
+        "identification" => [
+            "type" => "string",
+            "sequence" => "file",
+            "arbre" => "file",
+        ],
+        "objectivation" => [
+            "nom" => "string",
+            "protocole" => "file",
+            "resultat" => "file",
+        ],
+        "pasteur" => [
+            "titre" => "string",
+            "date_depot" => "date",
+            "numero" => "int",
+            "dossier_depot" => "file",
+            "scan_validation" => "file",
+            "photo_cryotube" => "file",
+            "stock" => "int",
+        ],
+        "photo_souche" => [
+            "fichier" => "file",
+            "description" => "string"
+        ],
+        "production" => [
+            "nom" => "string",
+            "date" => "date",
+            "lieu" => "string",
+            "protocole" => "file",
+            "rapport" => "file",
+            "projet" => "projet"
+        ],
+        "projet" => [
+            "nom" => "string",
+            "date" => "date",
+            "texte" => "file",
+            "activite" => "activite",
+            "partenaire" => "partenaire",
+        ],
+        "souche" => [
+            "origine" => "string",
+            "annee_collecte" => "int",
+            "annee_creation" => "int",
+            "description" => "file",
+            "texte_hcb" => "file",
+            "validation_hcb" => "file",
+            "schema_plasmique" => "file"
+        ]
+    ];
+
+    public $dbCle = [
+        "brevet" => "titre",
+        "capacite_production" => "nom",
+        "caracterisation" => "type",
+        "criblage" => "nom",
+        "description" => "texte",
+        "exclusivite" => "id",
+        "oses" => "nom",
+        "fichier_caracterisation" => "nom",
+        "identification" => "type",
+        "objectivation" => "nom",
+        "pasteur" => "titre",
+        "photo_souche" => "fichier",
+        "production" => "nom",
+        "projet" => "nom",
+        "publication" => "nom",
+    ];
+
     /////////////////////////////////////Date/////////////////////////////////////////
     function validateDate($date, $format = 'd/m/Y')
     {
@@ -39,16 +146,35 @@ class SoucheController extends BaseController
         return (isset($data) && $data != 0);
     }
 
-    ////////////////////////////////Gestion fichier///////////////////////////////////
+    ////////////////////////////////Gestion ajout/////////////////////////////////////
     public function ajoutFile($chemin, $nom, $fichier) {
         $date = date("Y-m-d_H-i-s_");
         if (!$fichier->isValid()) {
             return view('souche_feedback', ['error' => true, 'message' => "Un des fichier que vous avez envoyé a rencontré une erreur"]);
         }
         else {
-            Storage::putFileAs($chemin, $fichier, $date.$nom.".".$fichier->extension());
+            Storage::putFileAs("public/".$chemin, $fichier, $date.$nom.".".$fichier->extension());
             return $chemin."/".$date.$nom.".".$fichier->extension();
         }
+    }
+    public function ajoutString($text){
+        if (sizeof($text) < 255){
+            return $text;
+        }
+        return view('souche_feedback', ['error' => true, 'message' => "Un texte que vous avez saisi a une erreur"]);
+    }
+    public function ajoutDate($date){
+        if ($this->validateDate($date)){
+            return $this->dateVtoD($date);
+        }
+        return view('souche_feedback', ['error' => true, 'message' => "Une date que vous avez saisi a une erreur"]);
+
+    }
+    public function ajoutInt($nb){
+        if (is_int($nb)){
+            return $nb;
+        }
+        return view('souche_feedback', ['error' => true, 'message' => "Une année ou un nombre que vous avez saisi a une erreur"]);
     }
 
     ///////////////////////////////////Activite///////////////////////////////////////
@@ -195,7 +321,6 @@ class SoucheController extends BaseController
     //////////////////////////////////////////////////////////////////////////////////
 
     public function update($id, Request $request){
-        $souche = $this->getData($id);
         $posts = $request->all();
         $type_hcb = null;
         $data = [];
@@ -210,77 +335,79 @@ class SoucheController extends BaseController
             $temp = $value;
             unset($temp);
         }
-        if ($this->SandNN($data["activite"])){
 
-        }
-        if ($this->SandNN($data["brevet_soleau"]) && $this->SandNN($data["brevet_soleau"]["titre"])){
-            $db = DB::table("brevet_soleau");
-            if (DB::table("brevet_soleau")->count()->where("titre", "=", $data["brevet_soleau"]["titre"]) == 1){
-                $db->where("titre", "=", $data["brevet_soleau"]["titre"]);
-                $update = [];
-                if ($this->SandNN($data["brevet_soleau"]["date"]) && $this->validateDate($data["brevet_soleau"]["date"])){
-                    $update["date"] = $this->dateVtoD($data["brevet_soleau"]["date"]);
-                }
-                if ($this->SandNN($data["brevet_soleau"]["scan"])){
-                    $update["scan"] = $this->ajoutFile($id."/brevet_soleau", "scan", $data["brevet_soleau"]["scan"]);
-                }
+        foreach ($data as $table => $lines){
+            switch ($table) {
+                case "souche":
+                    $db = DB::table("souche")->where("ref", "=", $id);
+                    if ($this->SandNN($data[$table][$lines])){
+                        $db->update(["origine" => $data["souche"]["origine"]]);
+                    }
+                    if ($this->SandNN($data["souche"]["annee_collecte"]) && is_int($data["souche"]["annee_collecte"])){
+                        $db->update(["annee_collecte" => $data["souche"]["annee_collecte"]]);
+                    }
+                    break;
+                case "oses":
 
+                    break;
+                case "projet":
+
+                    break;
+                default :
+                    foreach ($data[$table] as $rows) {
+                        if (DB::table($table)
+                                ->where($this->dbCle[$table], "=", $data[$table][$this->dbCle[$table]])
+                                ->where("ref", "=", $id)
+                                ->count() == 1) {
+                            $update = [];
+                            foreach ($rows as $row => $value) {
+                                if ($value != null)
+                                    switch ($this->dbFormat[$table][$row]) {
+                                        case "file":
+                                            $update[$row] = $this->ajoutFile($id . "/" . $table, $row, $value);
+                                            break;
+                                        case "string":
+                                            $update[$row] = $this->ajoutString($value);
+                                            break;
+                                        case "date":
+                                            $update[$row] = $this->ajoutDate($value);
+                                            break;
+                                        case "int":
+                                            $update[$row] = $this->ajoutInt($value);
+                                            break;
+                                    }
+                            }
+                            DB::table($table)
+                                ->where($this->dbCle[$table], "=", $lines[$this->dbCle[$table]])
+                                ->where("ref", "=", $id)
+                                ->update($update);
+                        } else {
+                            $insert = [];
+                            foreach ($rows as $row => $value) {
+                                if ($value != null)
+                                    switch ($this->dbFormat[$table][$row]) {
+                                        case "file":
+                                            $insert[$row] = $this->ajoutFile($id . "/" . $table, $row, $value);
+                                            break;
+                                        case "string":
+                                            $insert[$row] = $this->ajoutString($value);
+                                            break;
+                                        case "date":
+                                            $insert[$row] = $this->ajoutDate($value);
+                                            break;
+                                        case "int":
+                                            $insert[$row] = $this->ajoutInt($value);
+                                            break;
+                                    }
+                            }
+                            DB::table($table)->insert($insert);
+                        }
+                    }
+                    break;
             }
-
         }
-        if ($this->SandNN($data["capacite_production"])){
-
-        }
-        if ($this->SandNN($data["caracterisation"])){
-
-        }
-        if ($this->SandNN($data["criblage"])){
-
-        }
-        if ($this->SandNN($data["description"])){
-
-        }
-        if ($this->SandNN($data["exclusivite"])){
-
-        }
-        if ($this->SandNN($data["oses"])){
-
-        }
-        if ($this->SandNN($data["fichier_caracterisation"])){
-
-        }
-        if ($this->SandNN($data["identification"])){
-
-        }
-        if ($this->SandNN($data["objectivation"])){
-
-        }
-        if ($this->SandNN($data["pasteur"])){
-
-        }
-        if ($this->SandNN($data["photo_souche"])){
-
-        }
-        if ($this->SandNN($data["production"])){
-
-        }
-        if ($this->SandNN($data["projet"])){
-
-        }
-        if ($this->SandNN($data["publication"])){
-
-        }
-        if ($this->SandNN($data["souche"])){
-            $db = DB::table("souche")->where("ref", "=", $id);
-            if ($this->SandNN($data["souche"]["origine"])){
-                $db->update(["origine" => $data["souche"]["origine"]]);
-            }
-            if ($this->SandNN($data["souche"]["annee_collecte"]) && is_int($data["souche"]["annee_collecte"])){
-                $db->update(["annee_collecte" => $data["souche"]["annee_collecte"]]);
-            }
-        }
-
         dd($data);
+
     }
 
     public function suppr($id){
