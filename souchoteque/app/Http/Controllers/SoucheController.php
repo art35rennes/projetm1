@@ -177,6 +177,20 @@ class SoucheController extends BaseController
         return view('souche_feedback', ['error' => true, 'message' => "Une année ou un nombre que vous avez saisi a une erreur"]);
     }
 
+    public function ajoutPartenaire($part){
+        if (DB::table("partenaire")->where("nom", "=", $part)->count() == 1)
+            return $part;
+        DB::table(partenaire)->insert(['nom' => $part]);
+        return $part;
+    }
+
+    public function ajoutActivite($act){
+        if (DB::table("activite")->where("nom", "=", $act)->count() == 1)
+            return $act;
+        DB::table(partenaire)->insert(['nom' => $act]);
+        return $act;
+    }
+
     ///////////////////////////////////Activite///////////////////////////////////////
     public function getActivite(){
         $in = DB::table("activite")->select()->get();
@@ -375,6 +389,13 @@ class SoucheController extends BaseController
                                         case "int":
                                             $update[$row] = $this->ajoutInt($value);
                                             break;
+                                        case "activite":
+                                            $update[$row] = $this->ajoutActivite($value);
+                                            break;
+                                        case "partenaire":
+                                            $update[$row] = $this->ajoutPartenaire($value);
+                                            break;
+
                                     }
                             }
                             DB::table($table)
@@ -397,6 +418,12 @@ class SoucheController extends BaseController
                                             break;
                                         case "int":
                                             $insert[$row] = $this->ajoutInt($value);
+                                            break;
+                                        case "activite":
+                                            $insert[$row] = $this->ajoutActivite($value);
+                                            break;
+                                        case "partenaire":
+                                            $insert[$row] = $this->ajoutPartenaire($value);
                                             break;
                                     }
                             }
