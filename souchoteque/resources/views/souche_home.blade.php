@@ -159,21 +159,6 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="input-group mb-3" id="hcb">
-                                                    <div class="input-group-prepend">
-                                                        <span class="input-group-text" id="">Dépot HCB&nbsp;</span>
-                                                    </div>
-                                                    <select class="form-control col-sm- showSelect" id="isHcb" disabled>
-                                                        <option @if($souche['souche'][0]->validation_hcb) selected @endif>Oui</option>
-                                                        <option @if(!$souche['souche'][0]->validation_hcb) selected @endif>Non</option>
-                                                    </select>
-                                                    <div class="input-group-append editZone">
-                                                        <span class="input-group-text">
-                                                            <i class="editButton fas fa-lock unlockEdit"></i>
-                                                        </span>
-                                                    </div>
-                                                </div>
-
                                                 @if($souche['souche'][0]->validation_hcb)
                                                     <a href="{{asset("/storage/".$souche['souche'][0]->validation_hcb)}}" class="font-italic"><i class="mt-3 fas fa-file-alt text-danger"></i> validation_hcb.pdf</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>&nbsp;&nbsp;&nbsp;&nbsp;
                                                 @endif
@@ -186,7 +171,7 @@
                                                         <select class="form-control" id="souche/hcb/type" name="souche/hcb/type">
                                                             <option value="texte_hcb">Texte HCB</option>
                                                             <option value="validation_hcb">Autorisation</option>
-                                                            <option value="shema_plasmique">Schéma plasmique</option>
+                                                            <option value="schema_plasmique">Schéma plasmique</option>
                                                         </select>
                                                     </div>
                                                     <div class="custom-file">
@@ -215,7 +200,7 @@
                                                     <div class="carousel-item @if($loop->index==0) active @endif">
                                                         <img src="/storage/{{$photo->fichier}}" class="d-block w-100">
                                                         <div class="carousel-caption d-none d-md-block">
-                                                            <p class="small">{{$photo->description}}</p>
+                                                            <p class="small bg-secondary">{{$photo->description}}</p>
                                                         </div>
                                                     </div>
                                                     @endforeach
@@ -316,10 +301,11 @@
                                                 <label class="custom-file-label" for="description/file"></label>
                                             </div>
                                             <div class="input-group-append">
-                                            <span class="input-group-text">
-                                                <i class="editButton fas fa-plus faForm"></i>
-                                            </span>
+                                                <span class="input-group-text">
+                                                    <i class="editButton fas fa-plus faForm"></i>
+                                                </span>
                                             </div>
+                                            <i class='fas fa-check faForm m-2'></i>
                                         </div>
                                     </div>
                                 </div>

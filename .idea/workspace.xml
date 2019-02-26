@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbd90ef4-95b8-4103-bd48-18525024d8be" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,12 +21,10 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="272">
-                    <caret line="215" column="75" selection-start-line="215" selection-start-column="75" selection-end-line="215" selection-end-column="75" />
+                  <state relative-caret-position="586">
+                    <caret line="307" column="85" selection-start-line="307" selection-start-column="85" selection-end-line="307" selection-end-column="85" />
                     <folding>
                       <element signature="e#41#895#0#HTML" />
-                      <element signature="e#19092#25050#0#HTML" />
-                      <element signature="e#24150#29309#0#HTML" />
                       <element signature="e#30378#36955#0#HTML" />
                       <element signature="e#37022#44317#0#HTML" />
                       <element signature="e#37915#38523#0#HTML" />
@@ -104,7 +101,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/souchoteque/public/js/souche.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-357">
+                <state relative-caret-position="-2579">
                   <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
                 </state>
               </provider>
@@ -160,7 +157,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>faForm</find>
       <find>&lt;i class=&quot;editButton fas fa-pen&quot;&gt;&lt;/i&gt;</find>
       <find>&lt;i class='fas fa-check checkPostRow'&gt;&lt;/i&gt;</find>
       <find>&lt;i class='fas fa-check checkPostRow d-none'&gt;&lt;/i&gt;</find>
@@ -190,6 +186,7 @@
       <find>/objectivation/0/nom&quot;&gt;</find>
       <find>/production/0/nom&quot;&gt;</find>
       <find>/criblage/0/nom&quot;&gt;</find>
+      <find>href=&quot;</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -423,12 +420,12 @@
       <workItem from="1550344632576" duration="9048000" />
       <workItem from="1550409017301" duration="4052000" />
       <workItem from="1550413742701" duration="7051000" />
-      <workItem from="1551090500519" duration="49145000" />
+      <workItem from="1551090500519" duration="49554000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230800000" />
+    <option name="totallyTimeSpent" value="231209000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -621,19 +618,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/public/js/souche.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-357">
+        <state relative-caret-position="-2579">
           <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="215" column="75" selection-start-line="215" selection-start-column="75" selection-end-line="215" selection-end-column="75" />
+        <state relative-caret-position="586">
+          <caret line="307" column="85" selection-start-line="307" selection-start-column="85" selection-end-line="307" selection-end-column="85" />
           <folding>
             <element signature="e#41#895#0#HTML" />
-            <element signature="e#19092#25050#0#HTML" />
-            <element signature="e#24150#29309#0#HTML" />
             <element signature="e#30378#36955#0#HTML" />
             <element signature="e#37022#44317#0#HTML" />
             <element signature="e#37915#38523#0#HTML" />
