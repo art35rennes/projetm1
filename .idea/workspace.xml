@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbd90ef4-95b8-4103-bd48-18525024d8be" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/souchoteque/public/js/souche.js" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/public/js/souche.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,51 +22,11 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="258">
-                    <caret line="52" column="67" selection-start-line="52" selection-start-column="67" selection-end-line="52" selection-end-column="67" />
-                    <caret line="71" column="131" selection-start-line="71" selection-start-column="131" selection-end-line="71" selection-end-column="131" />
-                    <caret line="129" column="147" selection-start-line="129" selection-start-column="147" selection-end-line="129" selection-end-column="147" />
-                    <caret line="177" column="123" selection-start-line="177" selection-start-column="123" selection-end-line="177" selection-end-column="123" />
-                    <caret line="180" column="118" selection-start-line="180" selection-start-column="118" selection-end-line="180" selection-end-column="118" />
-                    <caret line="215" column="87" selection-start-line="215" selection-start-column="87" selection-end-line="215" selection-end-column="87" />
-                    <caret line="265" column="96" selection-start-line="265" selection-start-column="96" selection-end-line="265" selection-end-column="96" />
-                    <caret line="279" column="87" selection-start-line="279" selection-start-column="87" selection-end-line="279" selection-end-column="87" />
-                    <caret line="352" column="96" selection-start-line="352" selection-start-column="96" selection-end-line="352" selection-end-column="96" />
-                    <caret line="356" column="93" selection-start-line="356" selection-start-column="93" selection-end-line="356" selection-end-column="93" />
-                    <caret line="437" column="108" selection-start-line="437" selection-start-column="108" selection-end-line="437" selection-end-column="108" />
-                    <caret line="453" column="110" selection-start-line="453" selection-start-column="110" selection-end-line="453" selection-end-column="110" />
-                    <caret line="537" column="96" selection-start-line="537" selection-start-column="96" selection-end-line="537" selection-end-column="96" />
-                    <caret line="543" column="96" selection-start-line="543" selection-start-column="96" selection-end-line="543" selection-end-column="96" />
-                    <caret line="626" column="98" selection-start-line="626" selection-start-column="98" selection-end-line="626" selection-end-column="98" />
-                    <caret line="762" column="97" selection-start-line="762" selection-start-column="97" selection-end-line="762" selection-end-column="97" />
-                    <caret line="837" column="118" selection-start-line="837" selection-start-column="118" selection-end-line="837" selection-end-column="118" />
-                    <caret line="885" column="106" selection-start-line="885" selection-start-column="106" selection-end-line="885" selection-end-column="106" />
-                    <caret line="913" column="106" selection-start-line="913" selection-start-column="106" selection-end-line="913" selection-end-column="106" />
-                    <caret line="941" column="106" selection-start-line="941" selection-start-column="106" selection-end-line="941" selection-end-column="106" />
-                    <caret line="975" column="102" selection-start-line="975" selection-start-column="102" selection-end-line="975" selection-end-column="102" />
-                    <caret line="1003" column="112" selection-start-line="1003" selection-start-column="112" selection-end-line="1003" selection-end-column="112" />
-                    <caret line="1004" column="111" selection-start-line="1004" selection-start-column="111" selection-end-line="1004" selection-end-column="111" />
-                    <caret line="1067" column="103" selection-start-line="1067" selection-start-column="103" selection-end-line="1067" selection-end-column="103" />
-                    <caret line="1071" column="101" selection-start-line="1071" selection-start-column="101" selection-end-line="1071" selection-end-column="101" />
-                    <caret line="1149" column="120" selection-start-line="1149" selection-start-column="120" selection-end-line="1149" selection-end-column="120" />
-                    <caret line="1153" column="117" selection-start-line="1153" selection-start-column="117" selection-end-line="1153" selection-end-column="117" />
-                    <caret line="1227" column="122" selection-start-line="1227" selection-start-column="122" selection-end-line="1227" selection-end-column="122" />
-                    <caret line="1254" column="106" selection-start-line="1254" selection-start-column="106" selection-end-line="1254" selection-end-column="106" />
-                    <caret line="1302" column="112" selection-start-line="1302" selection-start-column="112" selection-end-line="1302" selection-end-column="112" />
-                    <caret line="1303" column="111" selection-start-line="1303" selection-start-column="111" selection-end-line="1303" selection-end-column="111" />
-                    <caret line="1361" column="103" selection-start-line="1361" selection-start-column="103" selection-end-line="1361" selection-end-column="103" />
-                    <caret line="1365" column="103" selection-start-line="1365" selection-start-column="103" selection-end-line="1365" selection-end-column="103" />
-                    <caret line="1438" column="120" selection-start-line="1438" selection-start-column="120" selection-end-line="1438" selection-end-column="120" />
-                    <caret line="1442" column="117" selection-start-line="1442" selection-start-column="117" selection-end-line="1442" selection-end-column="117" />
-                    <caret line="1511" column="122" selection-start-line="1511" selection-start-column="122" selection-end-line="1511" selection-end-column="122" />
-                    <caret line="1538" column="106" selection-start-line="1538" selection-start-column="106" selection-end-line="1538" selection-end-column="106" />
-                    <caret line="1586" column="116" selection-start-line="1586" selection-start-column="116" selection-end-line="1586" selection-end-column="116" />
-                    <caret line="1587" column="115" selection-start-line="1587" selection-start-column="115" selection-end-line="1587" selection-end-column="115" />
-                    <caret line="1645" column="107" selection-start-line="1645" selection-start-column="107" selection-end-line="1645" selection-end-column="107" />
-                    <caret line="1649" column="107" selection-start-line="1649" selection-start-column="107" selection-end-line="1649" selection-end-column="107" />
-                    <caret line="1722" column="124" selection-start-line="1722" selection-start-column="124" selection-end-line="1722" selection-end-column="124" />
-                    <caret line="1726" column="121" selection-start-line="1726" selection-start-column="121" selection-end-line="1726" selection-end-column="121" />
+                  <state relative-caret-position="363">
+                    <caret line="578" column="166" selection-start-line="578" selection-start-column="166" selection-end-line="578" selection-end-column="166" />
                     <folding>
+                      <element signature="e#41#895#0#HTML" />
+                      <element signature="e#19092#25050#0#HTML" />
                       <element signature="e#37915#38523#0#HTML" />
                       <element signature="e#36947#36965#0#HTML" expanded="true" />
                       <element signature="e#37026#37044#0#HTML" expanded="true" />
@@ -94,7 +55,7 @@
     </window>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.61811024">
+    <splitter split-orientation="horizontal" split-proportion="0.9">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -109,7 +70,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/layout.blade.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="289">
@@ -127,11 +88,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/souchoteque/public/js/souche.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
-                  <caret line="134" column="31" selection-start-line="134" selection-start-column="31" selection-end-line="134" selection-end-column="31" />
+                <state relative-caret-position="498">
+                  <caret line="152" column="79" selection-start-line="152" selection-start-column="79" selection-end-line="152" selection-end-column="79" />
                 </state>
               </provider>
             </entry>
@@ -186,14 +147,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>id=&quot;checkCaracterisationPha&quot;</find>
-      <find>&lt;i class=&quot;editButton fas fa-times text-danger</find>
-      <find>&lt;i class=&quot;editButton fas fa-times text-danger&quot;&gt;&lt;/i&gt;</find>
-      <find>&lt;i class=&quot;editButton fas fa-times text-danger deleteCross&quot;&gt;&lt;/i&gt;</find>
-      <find>&lt;i class=&quot;editButton fas fa-times text-danger deleteCross ml-2&quot;&gt;&lt;/i&gt;</find>
-      <find>&lt;i class=&quot;editButton fas fa-edit&quot;&gt;&lt;/i&gt;</find>
-      <find>&lt;i class=&quot;editButton fas fa-lock unlockEdit&quot;&gt;&lt;/i&gt;</find>
-      <find>&lt;i class=&quot;editButton fas fa-edit unlockEdit&quot;&gt;&lt;/i&gt;</find>
       <find>&lt;i class=&quot;editButton fas fa-check&quot;&gt;&lt;/i&gt;</find>
       <find>&lt;i class=&quot;editButton fas fa-times deleteCross ml-2&quot;&gt;&lt;/i&gt;</find>
       <find>&lt;i class=&quot;editButton fas fa-plus&quot;&gt;&lt;/i&gt;</find>
@@ -216,6 +169,14 @@
       <find>href</find>
       <find>href=&quot;{{</find>
       <find>}}&quot; cl</find>
+      <find>&lt;i class=&quot;fas fa-file-alt text-danger&quot;&gt;</find>
+      <find>&lt;i class=&quot;fas fa-file-alt text-</find>
+      <find>&lt;i class=&quot;fas fa-file-alt text-.*&lt;/i&gt;</find>
+      <find>&lt;i class=&quot;fas fa-file-alt mr-2&quot;&gt;&lt;/i&gt;</find>
+      <find>&lt;i class=&quot;fas fa-file-alt mb-2&quot;&gt;</find>
+      <find>&lt;i class=&quot;fas fa-file-alt m</find>
+      <find>&lt;i class=&quot;fas fa-file-alt</find>
+      <find>editZone</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -231,10 +192,10 @@
         <option value="$PROJECT_DIR$/souchoteque/public/css/souche.css" />
         <option value="$PROJECT_DIR$/souchoteque/routes/web.php" />
         <option value="$PROJECT_DIR$/souchoteque/app/Http/Controllers/SoucheController.php" />
-        <option value="$PROJECT_DIR$/souchoteque/public/js/souche.js" />
         <option value="$PROJECT_DIR$/souchoteque/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/souchoteque/resources/views/layout.blade.php" />
         <option value="$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php" />
+        <option value="$PROJECT_DIR$/souchoteque/public/js/souche.js" />
       </list>
     </option>
   </component>
@@ -449,12 +410,12 @@
       <workItem from="1550344632576" duration="9048000" />
       <workItem from="1550409017301" duration="4052000" />
       <workItem from="1550413742701" duration="7051000" />
-      <workItem from="1551090500519" duration="33493000" />
+      <workItem from="1551090500519" duration="40382000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="215148000" />
+    <option name="totallyTimeSpent" value="222037000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -472,7 +433,7 @@
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="1" weight="0.1891348" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="0" visible="true" weight="0.32960895" />
+      <window_info anchor="bottom" id="Terminal" order="0" weight="0.32960895" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.3282123" />
       <window_info anchor="bottom" id="Version Control" order="3" />
@@ -628,13 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/souchoteque/public/js/souche.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="134" column="31" selection-start-line="134" selection-start-column="31" selection-end-line="134" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -654,51 +608,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="52" column="67" selection-start-line="52" selection-start-column="67" selection-end-line="52" selection-end-column="67" />
-          <caret line="71" column="131" selection-start-line="71" selection-start-column="131" selection-end-line="71" selection-end-column="131" />
-          <caret line="129" column="147" selection-start-line="129" selection-start-column="147" selection-end-line="129" selection-end-column="147" />
-          <caret line="177" column="123" selection-start-line="177" selection-start-column="123" selection-end-line="177" selection-end-column="123" />
-          <caret line="180" column="118" selection-start-line="180" selection-start-column="118" selection-end-line="180" selection-end-column="118" />
-          <caret line="215" column="87" selection-start-line="215" selection-start-column="87" selection-end-line="215" selection-end-column="87" />
-          <caret line="265" column="96" selection-start-line="265" selection-start-column="96" selection-end-line="265" selection-end-column="96" />
-          <caret line="279" column="87" selection-start-line="279" selection-start-column="87" selection-end-line="279" selection-end-column="87" />
-          <caret line="352" column="96" selection-start-line="352" selection-start-column="96" selection-end-line="352" selection-end-column="96" />
-          <caret line="356" column="93" selection-start-line="356" selection-start-column="93" selection-end-line="356" selection-end-column="93" />
-          <caret line="437" column="108" selection-start-line="437" selection-start-column="108" selection-end-line="437" selection-end-column="108" />
-          <caret line="453" column="110" selection-start-line="453" selection-start-column="110" selection-end-line="453" selection-end-column="110" />
-          <caret line="537" column="96" selection-start-line="537" selection-start-column="96" selection-end-line="537" selection-end-column="96" />
-          <caret line="543" column="96" selection-start-line="543" selection-start-column="96" selection-end-line="543" selection-end-column="96" />
-          <caret line="626" column="98" selection-start-line="626" selection-start-column="98" selection-end-line="626" selection-end-column="98" />
-          <caret line="762" column="97" selection-start-line="762" selection-start-column="97" selection-end-line="762" selection-end-column="97" />
-          <caret line="837" column="118" selection-start-line="837" selection-start-column="118" selection-end-line="837" selection-end-column="118" />
-          <caret line="885" column="106" selection-start-line="885" selection-start-column="106" selection-end-line="885" selection-end-column="106" />
-          <caret line="913" column="106" selection-start-line="913" selection-start-column="106" selection-end-line="913" selection-end-column="106" />
-          <caret line="941" column="106" selection-start-line="941" selection-start-column="106" selection-end-line="941" selection-end-column="106" />
-          <caret line="975" column="102" selection-start-line="975" selection-start-column="102" selection-end-line="975" selection-end-column="102" />
-          <caret line="1003" column="112" selection-start-line="1003" selection-start-column="112" selection-end-line="1003" selection-end-column="112" />
-          <caret line="1004" column="111" selection-start-line="1004" selection-start-column="111" selection-end-line="1004" selection-end-column="111" />
-          <caret line="1067" column="103" selection-start-line="1067" selection-start-column="103" selection-end-line="1067" selection-end-column="103" />
-          <caret line="1071" column="101" selection-start-line="1071" selection-start-column="101" selection-end-line="1071" selection-end-column="101" />
-          <caret line="1149" column="120" selection-start-line="1149" selection-start-column="120" selection-end-line="1149" selection-end-column="120" />
-          <caret line="1153" column="117" selection-start-line="1153" selection-start-column="117" selection-end-line="1153" selection-end-column="117" />
-          <caret line="1227" column="122" selection-start-line="1227" selection-start-column="122" selection-end-line="1227" selection-end-column="122" />
-          <caret line="1254" column="106" selection-start-line="1254" selection-start-column="106" selection-end-line="1254" selection-end-column="106" />
-          <caret line="1302" column="112" selection-start-line="1302" selection-start-column="112" selection-end-line="1302" selection-end-column="112" />
-          <caret line="1303" column="111" selection-start-line="1303" selection-start-column="111" selection-end-line="1303" selection-end-column="111" />
-          <caret line="1361" column="103" selection-start-line="1361" selection-start-column="103" selection-end-line="1361" selection-end-column="103" />
-          <caret line="1365" column="103" selection-start-line="1365" selection-start-column="103" selection-end-line="1365" selection-end-column="103" />
-          <caret line="1438" column="120" selection-start-line="1438" selection-start-column="120" selection-end-line="1438" selection-end-column="120" />
-          <caret line="1442" column="117" selection-start-line="1442" selection-start-column="117" selection-end-line="1442" selection-end-column="117" />
-          <caret line="1511" column="122" selection-start-line="1511" selection-start-column="122" selection-end-line="1511" selection-end-column="122" />
-          <caret line="1538" column="106" selection-start-line="1538" selection-start-column="106" selection-end-line="1538" selection-end-column="106" />
-          <caret line="1586" column="116" selection-start-line="1586" selection-start-column="116" selection-end-line="1586" selection-end-column="116" />
-          <caret line="1587" column="115" selection-start-line="1587" selection-start-column="115" selection-end-line="1587" selection-end-column="115" />
-          <caret line="1645" column="107" selection-start-line="1645" selection-start-column="107" selection-end-line="1645" selection-end-column="107" />
-          <caret line="1649" column="107" selection-start-line="1649" selection-start-column="107" selection-end-line="1649" selection-end-column="107" />
-          <caret line="1722" column="124" selection-start-line="1722" selection-start-column="124" selection-end-line="1722" selection-end-column="124" />
-          <caret line="1726" column="121" selection-start-line="1726" selection-start-column="121" selection-end-line="1726" selection-end-column="121" />
+        <state relative-caret-position="363">
+          <caret line="578" column="166" selection-start-line="578" selection-start-column="166" selection-end-line="578" selection-end-column="166" />
           <folding>
+            <element signature="e#41#895#0#HTML" />
+            <element signature="e#19092#25050#0#HTML" />
             <element signature="e#37915#38523#0#HTML" />
             <element signature="e#36947#36965#0#HTML" expanded="true" />
             <element signature="e#37026#37044#0#HTML" expanded="true" />
@@ -717,6 +631,13 @@
             <element signature="e#112368#112374#1#HTML" expanded="true" />
             <element signature="e#116152#116158#1#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/souchoteque/public/js/souche.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="152" column="79" selection-start-line="152" selection-start-column="79" selection-end-line="152" selection-end-column="79" />
         </state>
       </provider>
     </entry>

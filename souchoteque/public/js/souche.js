@@ -141,10 +141,19 @@ $('.fa-pen').click(function () {
             else {
                 if ($value.is("p")){
                     //console.log("p "+$value.text());
-                    $data.empty()
+                    $data.empty();
                     $data.append($lastdata.children().clone());
                     $data.children().children("input").val($value.text());
-                    $data.children().children("input").attr("name",$data.children().children("input").attr("name")+"/"+$data.parent().index());
+
+                    if ($data.children().children("input").attr("isKey")) {
+                        $data.children().children("input").attr("readonly", true)
+                    }
+
+                    $split = $data.children().children("input").attr("name").split("/",2);
+                    console.log($split.length)
+                    $name = ([$split[0],$data.parent().index(),$split[1]]).join("/");
+
+                    $data.children().children("input").attr("name",$name);
                     //console.log($data.children().children("input"));
                 }
                 else {
@@ -158,6 +167,9 @@ $('.fa-pen').click(function () {
                             //console.log('vide')
                             $data.empty()
                             $data.append($lastdata.children().clone());
+                            if ($data.children().children().children().attr("isKey")) {
+                                $data.children().children().children().attr("readonly", true)
+                            }
                             $data.children().children().children().attr("name",$data.children().children().children().attr("name")+"/"+$data.parent().index());
                             //console.log($lastdata.children());
                         }

@@ -69,7 +69,7 @@
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec nunc commodo, mollis ligula volutpat, eleifend mauris. Quisque et dui pretium, pharetra mauris nec, elementum ipsum. Pellentesque nulla mauris, sollicitudin in bibendum sed, convallis ac ex. Maecenas consequat lectus ac.
                             </p>
 
-                            @isset($souche['souche'][0])<a href="{{asset("/storage/".asset($souche['souche'][0]->description))}}" class="font-italic"><i class="fas fa-file-alt mb-2"></i> {{$souche['souche'][0]->description}}</a><i class="editButton fas fa-times deleteCross ml-2"></i>@endisset
+                            @isset($souche['souche'][0])<a href="{{asset("/storage/".asset($souche['souche'][0]->description))}}" class="font-italic"></i> {{$souche['souche'][0]->description}}</a><i class="editButton fas fa-times deleteCross ml-2"></i>@endisset
                             <p>
                                 <span class="h6">Stock Cryotubes:&nbsp;</span>
                                 <span class="badge badge-primary" title="Stock Polymaris">{{$souche['souche'][0]->stock}}</span>
@@ -109,9 +109,9 @@
                                                 </div>
                                                 @isset($souche['souche'][0])<input type="text" class="form-control" readonly value="{{$souche['souche'][0]->origine}}" name="souche/origine">@endisset
                                                 <div class="input-group-append editZone">
-                                                <span class="input-group-text">
-                                                    <i class="editButton fas fa-lock unlockEdit"></i>
-                                                </span>
+                                                    <span class="input-group-text">
+                                                        <i class="editButton fas fa-lock unlockEdit"></i>
+                                                    </span>
                                                 </div>
                                             </div>
 
@@ -121,13 +121,13 @@
                                                 </div>
                                                 @isset($souche['souche'][0])<input type="number" class="form-control" size="4" readonly value="{{$souche['souche'][0]->annee_collecte}}" name="souche/annee_collecte">@endisset
                                                 <div class="input-group-append  editZone">
-                                                <span class="input-group-text">
-                                                    <i class="editButton fas fa-lock unlockEdit"></i>
-                                                </span>
+                                                    <span class="input-group-text">
+                                                        <i class="editButton fas fa-lock unlockEdit"></i>
+                                                    </span>
                                                 </div>
                                             </div>
 
-                                            @isset($souche['souche'][0])<a href="{{asset("/storage/".asset($souche['souche'][0]->description))}}" class="font-italic"><i class="fas fa-file-alt" mb-3></i> {{$souche['souche'][0]->description}}</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>@endisset
+                                            @isset($souche['souche'][0])<a href="{{asset("/storage/".asset($souche['souche'][0]->description))}}" class="font-italic">{{$souche['souche'][0]->description}}</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>@endisset
 
                                             <hr>
 
@@ -153,9 +153,9 @@
                                                     </div>
                                                     @isset($souche['souche'][0])<input type="text" size="4" class="form-control" readonly value="{{$souche['souche'][0]->annee_creation}}" name="souche/annee_creation">@endisset
                                                     <div class="input-group-append editZone">
-                                                    <span class="input-group-text">
-                                                        <i class="editButton fas fa-lock unlockEdit"></i>
-                                                    </span>
+                                                        <span class="input-group-text">
+                                                            <i class="editButton fas fa-lock unlockEdit"></i>
+                                                        </span>
                                                     </div>
                                                 </div>
 
@@ -168,9 +168,9 @@
                                                         <option @if(!$souche['souche'][0]->validation_hcb) selected @endif>Non</option>
                                                     </select>
                                                     <div class="input-group-append editZone">
-                                                    <span class="input-group-text">
-                                                        <i class="editButton fas fa-lock unlockEdit"></i>
-                                                    </span>
+                                                        <span class="input-group-text">
+                                                            <i class="editButton fas fa-lock unlockEdit"></i>
+                                                        </span>
                                                     </div>
                                                 </div>
 
@@ -263,7 +263,7 @@
                                         <!-- Gauche -->
                                         <div class="col-xl-7">
                                             @foreach($souche['description'] as $file)
-                                            <p><a href="{{asset("/storage/".$file->fichier)}}" class="font-italic"><i class="fas fa-file-alt mt-3 mr-1"></i>{{$file->texte}}</a><i class="editButton fas fa-times deleteCross ml-2"></i></p>
+                                            <p><a href="{{asset("/storage/".$file->fichier)}}" class="font-italic"><{{$file->texte}}</a><i class="editButton fas fa-times deleteCross ml-2"></i></p>
                                             @endforeach
                                         </div>
                                         <!-- Droite -->
@@ -350,11 +350,11 @@
                                             <td><span>{{$loop->iteration}}</span></td>
                                             <td class="1"><p>{{$id->type}}</p></td>
                                             <td class="2">
-                                                <a href="{{asset("/storage/".$id->sequence)}}" class="font-italic"><i class="fas fa-file-alt mr-1"></i>{{$id->sequence}}</a>
+                                                <a href="{{asset("/storage/".$id->sequence)}}" class="font-italic">{{$id->sequence}}</a>
                                                 <i class="editButton fas fa-times deleteCross ml-2"></i>
                                             </td>
                                             <td class="3">
-                                                <a href="{{asset("/storage/".$id->arbre)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$id->arbre}}</a>
+                                                <a href="{{asset("/storage/".$id->arbre)}}" class="font-italic">{{$id->arbre}}</a>
                                                 <i class="editButton fas fa-times deleteCross ml-2"></i>
                                             </td>
                                             <td class="4">
@@ -369,7 +369,7 @@
                                             <td>&nbsp;</td>
                                             <td>
                                                 <div>
-                                                    <input type="text" class="form-control" list="dataIdentification" placeholder="Type..." name="identification/type">
+                                                    <input type="text" class="form-control" list="dataIdentification" placeholder="Type..." name="identification/type" isKey="true">
                                                     <datalist id="dataIdentification">
                                                     @foreach($souche['identification'] as $id)
                                                         <option>{{$id->type}}</option>
@@ -413,15 +413,17 @@
                             <div id="collapsePasteur" class="collapse" aria-labelledby="headingPasteur" data-parent="#accordionMenu">
                                 <div class="card-body">
                                     <p class="lead font-italic">Cliquer sur les lignes pour plus d'info</p>
-                                    <table class="table text-center table-hover">
+                                    <table class="table text-center table-hover table-sm">
                                         <tbody>
                                             <tr>
-                                                <th style="width: 10%;">#</th>
-                                                <th style="width: 20%;">Dépot</th>
-                                                <th style="width: 20%;">Numéro</th>
-                                                <th style="width: 30%;">Dossier</th>
-                                                <th style="width: 10%;">Stock</th>
-                                                <th style="width: 10%;">&nbsp;</th>
+                                                <th>#</th>
+                                                <th>Dépot</th>
+                                                <th>Titre</th>
+                                                <th>Numéro</th>
+                                                <th>Dossier</th>
+                                                <th>Validation</th>
+                                                <th>Stock</th>
+                                                <th>&nbsp;</th>
                                             </tr>
                                             <tr class="accordion-toggle"  data-toggle="collapse" data-target="#collapseRow1">
                                                 @foreach($souche['pasteur'] as $p)
@@ -432,11 +434,18 @@
                                                         <p>{{$p->date_depot}}</p>
                                                     </td>
                                                     <td>
+                                                        <p>{{$p->titre}}</p>
+                                                    </td>
+                                                    <td>
                                                         <p>{{$p->numero}}</p>
                                                     </td>
                                                     <td>
-                                                        <a href="{{asset("/storage/".$p->dossier_depot)}}" class="font-italic"><i class="fas fa-file-alt text-danger"></i> dépot.pdf</a>
-                                                        &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
+                                                        <a href="{{asset("/storage/".$p->dossier_depot)}}" class="font-italic"> dépot</a>
+                                                        <i class="editButton fas fa-times deleteCross ml-1"></i>
+                                                    </td>
+                                                    <td>
+                                                        <a href="{{asset("/storage/".$p->scan_validation)}}" class="font-italic"> validation</a>
+                                                        <i class="editButton fas fa-times deleteCross ml-1"></i>
                                                     </td>
                                                     <td>
                                                         <p>{{$p->stock}}</p>
@@ -449,12 +458,7 @@
                                                 <td colspan="2">
                                                     <img class="border-warning border" width="70%" src="https://via.placeholder.com/250">
                                                 </td>
-                                                <td colspan="2">
-                                                    <p>
-                                                        <a href="{{asset("/storage/".$p->scan_validation)}}" class="font-italic"><i class="fas fa-file-alt text-danger"></i> validation.pdf</a>
-                                                        &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
-                                                    </p>
-                                                </td>
+
                                             </tr>
                                             </tr>
                                             @endforeach
@@ -463,7 +467,12 @@
                                                 <td>&nbsp;</td>
                                                 <td>
                                                     <div>
-                                                        <input class="form-control" type="date" class="input-group" name="pasteur/date_depot">
+                                                        <input class="form-control" type="texte" class="input-group" name="pasteur/date_depot" placeholder="yyyy-mm-dd" pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))">
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div>
+                                                        <input class="form-control" type="texte" class="input-group" name="pasteur/titre" isKey="true">
                                                     </div>
                                                 </td>
                                                 <td>
@@ -475,6 +484,13 @@
                                                     <div class="custom-file text-left">
                                                         <label class="btn btn-default border border-light rounded">
                                                             Parcourir <input type="file" name="pasteur/dossier_depot" hidden>
+                                                        </label>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="custom-file text-left">
+                                                        <label class="btn btn-default border border-light rounded">
+                                                            Parcourir <input type="file" name="pasteur/scan_validation" hidden>
                                                         </label>
                                                     </div>
                                                 </td>
@@ -560,12 +576,12 @@
                                             </td>
                                             <td colspan="2">
                                                 <div>
-                                                    <input class="form-control form-control-sm" type="text" class="input-group" name="brevet_soleau/titre">
+                                                    <input class="form-control form-control-sm" type="text" class="input-group" name="brevet_soleau/titre" isKey="true">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control form-control-sm" type="text" class="input-group" name="brevet_soleau/date">
+                                                    <input class="form-control form-control-sm" type="text" class="input-group" name="brevet_soleau/date" placeholder="yyyy-mm-dd" pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))">
                                                 </div>
                                             </td>
                                             <td>
@@ -624,7 +640,7 @@
                                                 <td><span>{{$loop->index+1}}</span></td>
                                                 <td><p>{{$p->date}}</p></td>
                                                 <td colspan="2">
-                                                    <a href="{{asset("/storage/".$p->fichier)}}" class="font-italic"><i class="fas fa-file-alt text-danger"></i> {{$p->nom}}</a>
+                                                    <a href="{{asset("/storage/".$p->fichier)}}" class="font-italic"> {{$p->nom}}</a>
                                                     &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
                                                 </td>
                                                 <td>
@@ -760,7 +776,7 @@
                                             <td><p>{{$projet->partenaire}}</p></td>
                                             <td><p>{{$projet->activite}}</p></td>
                                             <td>
-                                                <a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$projet->texte}}</a>
+                                                <a href="{{asset("/storage/".$projet->texte)}}" class="font-italic">{{$projet->texte}}</a>
                                                 <i class="editButton fas fa-times deleteCross ml-2"></i>
                                             </td>
                                             <td>
@@ -835,7 +851,7 @@
                                     <ul class="list-inline">
                                         <li class="list-inline-item"><h6 class="font-italic">Projet associé :</h6></li>
                                         @foreach($souche['projet_souche'] as $projet)
-                                        <li class="list-inline-item"><a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$projet->nom}}</a><i class="editButton fas fa-times deleteCross ml-2"></i></li>
+                                        <li class="list-inline-item"><a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"></li>
                                         @endforeach
                                         <li class="list-inline-item editZone">
                                             <input class="form-control w-75 d-inline" type="text" list="dataProjet" name="eps/projet">
@@ -973,7 +989,7 @@
                                             @foreach($souche['fichier_caracterisation'] as $carac)
                                             @if($carac->type=="EPS")
                                                 <li class="m-1">
-                                                    <a href="{{asset("/storage/".$carac->fichier)}}" class="font-italic"><i class="fas fa-file-alt text-primary mr-1"></i>{{$carac->nom}}</a>
+                                                    <a href="{{asset("/storage/".$carac->fichier)}}" class="font-italic">{{$carac->nom}}</a>
                                                 </li>
                                             @endif
                                             @endforeach
@@ -1001,8 +1017,8 @@
                                         @if($objectivation->type=="EPS")
                                             <tr>
                                                 <td><p>{{$objectivation->nom}}</p></td>
-                                                <td><a href="{{asset("/storage/".$objectivation->protocole)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$objectivation->protocole}}</a></td>
-                                                <td><a href="{{asset("/storage/".$objectivation->resultat)}}" class="font-italic"><i class="fas fa-file-alt text-success mr-1"></i>{{$objectivation->resultat}}</a></td>
+                                                <td><a href="{{asset("/storage/".$objectivation->protocole)}}" class="font-italic">{{$objectivation->protocole}}</a></td>
+                                                <td><a href="{{asset("/storage/".$objectivation->resultat)}}" class="font-italic">{{$objectivation->resultat}}</a></td>
                                                 <td>
                                                     <i class="editButton fas fa-pen"></i>
                                                     <i class='fas fa-check checkPostRow'></i>
@@ -1065,11 +1081,11 @@
                                                 <td><p>{{$prod->date}}</p></td>
                                                 <td><p>{{$prod->lieu}}</p></td>
                                                 <td>
-                                                    <a href="{{asset("/storage/".$prod->protocole)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-2"></i>{{$prod->protocole}}</a>
+                                                    <a href="{{asset("/storage/".$prod->protocole)}}" class="font-italic">{{$prod->protocole}}</a>
                                                     <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                 </td>
                                                 <td>
-                                                    <a href="{{asset("/storage/".$prod->rapport)}}" class="font-italic"><i class="fas fa-file-alt text-success mr-2"></i>{{$prod->rapport}}</a>
+                                                    <a href="{{asset("/storage/".$prod->rapport)}}" class="font-italic">{{$prod->rapport}}</a>
                                                     <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                 </td>
                                                 <td>
@@ -1147,11 +1163,11 @@
                                                         <tr>
                                                             <td><p>{{$criblage->nom}}</p></td>
                                                             <td>
-                                                                <a href="{{asset("/storage/".$criblage->conditions)}}" class="font-italic"><i class="fas fa-file-alt mr-2"></i>{{$criblage->conditions}}</a>
+                                                                <a href="{{asset("/storage/".$criblage->conditions)}}" class="font-italic">{{$criblage->conditions}}</a>
                                                                 <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                             </td>
                                                             <td>
-                                                                <a href="{{asset("/storage/".$criblage->rapport)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-2"></i>{{$criblage->rapport}}</a>
+                                                                <a href="{{asset("/storage/".$criblage->rapport)}}" class="font-italic">{{$criblage->rapport}}</a>
                                                                 <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                             </td>
                                                             <td>
@@ -1225,7 +1241,7 @@
                                     <ul class="list-inline">
                                         <li class="list-inline-item"><h6 class="font-italic">Projet associé :</h6></li>
                                         @foreach($souche['projet_souche'] as $projet)
-                                            <li class="list-inline-item"><a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$projet->nom}}</a><i class="editButton fas fa-times deleteCross ml-2"></i></li>
+                                            <li class="list-inline-item"><a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"></li>
                                         @endforeach
                                         <li class="list-inline-item editZone">
                                             <input class="form-control w-75 d-inline" type="text" list="dataProjet" name="pha/projet">
@@ -1252,7 +1268,7 @@
                                             @foreach($souche['fichier_caracterisation'] as $carac)
                                                 @if($carac->type=="Pha")
                                                     <li class="m-1">
-                                                        <a href="{{asset("/storage/".$carac->fichier)}}" class="font-italic"><i class="fas fa-file-alt text-primary mr-1"></i>{{$carac->nom}}</a>
+                                                        <a href="{{asset("/storage/".$carac->fichier)}}" class="font-italic">{{$carac->nom}}</a>
                                                     </li>
                                                 @endif
                                             @endforeach
@@ -1300,8 +1316,8 @@
                                         @if($objectivation->type=="PHA")
                                             <tr>
                                                 <td><p>{{$objectivation->nom}}</p></td>
-                                                <td><a href="{{asset("/storage/".$objectivation->protocole)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$objectivation->protocole}}</a></td>
-                                                <td><a href="{{asset("/storage/".$objectivation->resultat)}}" class="font-italic"><i class="fas fa-file-alt text-success mr-1"></i>{{$objectivation->resultat}}</a></td>
+                                                <td><a href="{{asset("/storage/".$objectivation->protocole)}}" class="font-italic">{{$objectivation->protocole}}</a></td>
+                                                <td><a href="{{asset("/storage/".$objectivation->resultat)}}" class="font-italic">{{$objectivation->resultat}}</a></td>
                                                 <td>
                                                     <i class="editButton fas fa-pen"></i>
                                                     <i class='fas fa-check checkPostRow'></i>
@@ -1359,11 +1375,11 @@
                                                 <td><p>{{$prod->date}}</p></td>
                                                 <td><p>{{$prod->lieu}}</p></td>
                                                 <td>
-                                                    <a href="{{asset("/storage/".$prod->protocole)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-2"></i>{{$prod->protocole}}</a>
+                                                    <a href="{{asset("/storage/".$prod->protocole)}}" class="font-italic">{{$prod->protocole}}</a>
                                                     <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                 </td>
                                                 <td>
-                                                    <a href="{{asset("/storage/".$prod->protocole)}}" class="font-italic"><i class="fas fa-file-alt text-success mr-2"></i>{{$prod->rapport}}</a>
+                                                    <a href="{{asset("/storage/".$prod->protocole)}}" class="font-italic">{{$prod->rapport}}</a>
                                                     <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                 </td>
                                                 <td>
@@ -1436,11 +1452,11 @@
                                                         <tr>
                                                             <td><p>{{$criblage->nom}}</p></td>
                                                             <td>
-                                                                <a href="{{asset("/storage/".$criblage->conditions)}}" class="font-italic"><i class="fas fa-file-alt mr-2"></i>{{$criblage->conditions}}</a>
+                                                                <a href="{{asset("/storage/".$criblage->conditions)}}" class="font-italic">{{$criblage->conditions}}</a>
                                                                 <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                             </td>
                                                             <td>
-                                                                <a href="{{asset("/storage/".$criblage->rapport)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-2"></i>{{$criblage->rapport}}</a>
+                                                                <a href="{{asset("/storage/".$criblage->rapport)}}" class="font-italic">{{$criblage->rapport}}</a>
                                                                 <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                             </td>
                                                             <td>
@@ -1509,7 +1525,7 @@
                                     <ul class="list-inline">
                                         <li class="list-inline-item"><h6 class="font-italic">Projet associé :</h6></li>
                                         @foreach($souche['projet_souche'] as $projet)
-                                            <li class="list-inline-item"><a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$projet->nom}}</a><i class="editButton fas fa-times deleteCross ml-2"></i></li>
+                                            <li class="list-inline-item"><a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"></li>
                                         @endforeach
                                         <li class="list-inline-item editZone">
                                             <input class="form-control w-75 d-inline" type="text" list="dataProjet" name="autre/projet">
@@ -1536,7 +1552,7 @@
                                             @foreach($souche['fichier_caracterisation'] as $carac)
                                                 @if($carac->type=="Autre")
                                                     <li class="m-1">
-                                                        <a href="{{asset("/storage/".$carac->fichier)}}" class="font-italic"><i class="fas fa-file-alt text-primary mr-1"></i>{{$carac->nom}}</a>
+                                                        <a href="{{asset("/storage/".$carac->fichier)}}" class="font-italic">{{$carac->nom}}</a>
                                                     </li>
                                                 @endif
                                             @endforeach
@@ -1584,8 +1600,8 @@
                                             @if($objectivation->type=="Autre")
                                                 <tr>
                                                     <td><p>{{$objectivation->nom}}</p></td>
-                                                    <td><a href="{{asset("/storage/".$objectivation->protocole)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$objectivation->protocole}}</a></td>
-                                                    <td><a href="{{asset("/storage/".$objectivation->resultat)}}" class="font-italic"><i class="fas fa-file-alt text-success mr-1"></i>{{$objectivation->resultat}}</a></td>
+                                                    <td><a href="{{asset("/storage/".$objectivation->protocole)}}" class="font-italic">{{$objectivation->protocole}}</a></td>
+                                                    <td><a href="{{asset("/storage/".$objectivation->resultat)}}" class="font-italic">{{$objectivation->resultat}}</a></td>
                                                     <td>
                                                         <i class="editButton fas fa-pen"></i>
                                                         <i class='fas fa-check checkPostRow'></i>
@@ -1643,11 +1659,11 @@
                                                     <td><p>{{$prod->date}}</p></td>
                                                     <td><p>{{$prod->lieu}}</p></td>
                                                     <td>
-                                                        <a href="{{asset("/storage/".$prod->protocole)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-2"></i>{{$prod->protocole}}</a>
+                                                        <a href="{{asset("/storage/".$prod->protocole)}}" class="font-italic">{{$prod->protocole}}</a>
                                                         <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                     </td>
                                                     <td>
-                                                        <a href="{{asset("/storage/".$prod->protocole)}}" class="font-italic"><i class="fas fa-file-alt text-success mr-2"></i>{{$prod->rapport}}</a>
+                                                        <a href="{{asset("/storage/".$prod->protocole)}}" class="font-italic">{{$prod->rapport}}</a>
                                                         <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                     </td>
                                                     <td>
@@ -1720,11 +1736,11 @@
                                                             <tr>
                                                                 <td><p>{{$criblage->nom}}</p></td>
                                                                 <td>
-                                                                    <a href="{{asset("/storage/".$criblage->conditions)}}" class="font-italic"><i class="fas fa-file-alt mr-2"></i>{{$criblage->conditions}}</a>
+                                                                    <a href="{{asset("/storage/".$criblage->conditions)}}" class="font-italic">{{$criblage->conditions}}</a>
                                                                     <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                                 </td>
                                                                 <td>
-                                                                    <a href="{{asset("/storage/".$criblage->rapport)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-2"></i>{{$criblage->rapport}}</a>
+                                                                    <a href="{{asset("/storage/".$criblage->rapport)}}" class="font-italic">{{$criblage->rapport}}</a>
                                                                     <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                                 </td>
                                                                 <td>
