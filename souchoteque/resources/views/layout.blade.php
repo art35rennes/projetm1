@@ -30,7 +30,7 @@
                         Souches
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="ajout">Ajouter</a>
+                        <a class="dropdown-item" href="/souche/ajout">Ajouter</a>
                         <a class="dropdown-item disabled" href="#">Supprimer</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item disabled" href="#">Dernière mise à jour</a>
