@@ -69,7 +69,7 @@
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec nunc commodo, mollis ligula volutpat, eleifend mauris. Quisque et dui pretium, pharetra mauris nec, elementum ipsum. Pellentesque nulla mauris, sollicitudin in bibendum sed, convallis ac ex. Maecenas consequat lectus ac.
                             </p>
 
-                            @isset($souche['souche'][0])<a href="/storage/{{asset($souche['souche'][0]->description)}}" class="font-italic"><i class="fas fa-file-alt mb-2"></i> {{$souche['souche'][0]->description}}</a><i class="editButton fas fa-times deleteCross ml-2"></i>@endisset
+                            @isset($souche['souche'][0])<a href="{{asset("/storage/".asset($souche['souche'][0]->description))}}" class="font-italic"><i class="fas fa-file-alt mb-2"></i> {{$souche['souche'][0]->description}}</a><i class="editButton fas fa-times deleteCross ml-2"></i>@endisset
                             <p>
                                 <span class="h6">Stock Cryotubes:&nbsp;</span>
                                 <span class="badge badge-primary" title="Stock Polymaris">{{$souche['souche'][0]->stock}}</span>
@@ -127,7 +127,7 @@
                                                 </div>
                                             </div>
 
-                                            @isset($souche['souche'][0])<a href="/storage/{{asset($souche['souche'][0]->description)}}" class="font-italic"><i class="fas fa-file-alt" mb-3></i> {{$souche['souche'][0]->description}}</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>@endisset
+                                            @isset($souche['souche'][0])<a href="{{asset("/storage/".asset($souche['souche'][0]->description))}}" class="font-italic"><i class="fas fa-file-alt" mb-3></i> {{$souche['souche'][0]->description}}</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>@endisset
 
                                             <hr>
 
@@ -175,10 +175,10 @@
                                                 </div>
 
                                                 @if($souche['souche'][0]->validation_hcb)
-                                                    <a href="/storage/{{$souche['souche'][0]->validation_hcb}}" class="font-italic"><i class="mt-3 fas fa-file-alt text-danger"></i> validation_hcb.pdf</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+                                                    <a href="{{asset("/storage/".$souche['souche'][0]->validation_hcb)}}" class="font-italic"><i class="mt-3 fas fa-file-alt text-danger"></i> validation_hcb.pdf</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>&nbsp;&nbsp;&nbsp;&nbsp;
                                                 @endif
                                                 @if($souche['souche'][0]->texte_hcb)
-                                                    <a href="/storage/{{$souche['souche'][0]->texte_hcb}}" class="font-italic"><i class="mb-3 fas fa-file-alt text-danger"></i> texte_hcb.pdf</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
+                                                    <a href="{{asset("/storage/".$souche['souche'][0]->texte_hcb)}}" class="font-italic"><i class="mb-3 fas fa-file-alt text-danger"></i> texte_hcb.pdf</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
                                                 @endif
 
                                                 <div class="input-group mb-3 editZone" id="hcbAdd">
@@ -263,7 +263,7 @@
                                         <!-- Gauche -->
                                         <div class="col-xl-7">
                                             @foreach($souche['description'] as $file)
-                                            <p><a href="/storage/{{$file->fichier}}" class="font-italic"><i class="fas fa-file-alt mt-3 mr-1"></i>{{$file->texte}}</a><i class="editButton fas fa-times deleteCross ml-2"></i></p>
+                                            <p><a href="{{asset("/storage/".$file->fichier)}}" class="font-italic"><i class="fas fa-file-alt mt-3 mr-1"></i>{{$file->texte}}</a><i class="editButton fas fa-times deleteCross ml-2"></i></p>
                                             @endforeach
                                         </div>
                                         <!-- Droite -->
@@ -350,11 +350,11 @@
                                             <td><span>{{$loop->iteration}}</span></td>
                                             <td class="1"><p>{{$id->type}}</p></td>
                                             <td class="2">
-                                                <a href="/storage/{{$id->sequence}}" class="font-italic"><i class="fas fa-file-alt mr-1"></i>{{$id->sequence}}</a>
+                                                <a href="{{asset("/storage/".$id->sequence)}}" class="font-italic"><i class="fas fa-file-alt mr-1"></i>{{$id->sequence}}</a>
                                                 <i class="editButton fas fa-times deleteCross ml-2"></i>
                                             </td>
                                             <td class="3">
-                                                <a href="/storage/{{$id->arbre}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$id->arbre}}</a>
+                                                <a href="{{asset("/storage/".$id->arbre)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$id->arbre}}</a>
                                                 <i class="editButton fas fa-times deleteCross ml-2"></i>
                                             </td>
                                             <td class="4">
@@ -435,7 +435,7 @@
                                                         <p>{{$p->numero}}</p>
                                                     </td>
                                                     <td>
-                                                        <a href="/storage/{{$p->dossier_depot}}" class="font-italic"><i class="fas fa-file-alt text-danger"></i> dépot.pdf</a>
+                                                        <a href="{{asset("/storage/".$p->dossier_depot)}}" class="font-italic"><i class="fas fa-file-alt text-danger"></i> dépot.pdf</a>
                                                         &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
                                                     </td>
                                                     <td>
@@ -451,7 +451,7 @@
                                                 </td>
                                                 <td colspan="2">
                                                     <p>
-                                                        <a href="/storage/{{$p->scan_validation}}" class="font-italic"><i class="fas fa-file-alt text-danger"></i> validation.pdf</a>
+                                                        <a href="{{asset("/storage/".$p->scan_validation)}}" class="font-italic"><i class="fas fa-file-alt text-danger"></i> validation.pdf</a>
                                                         &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
                                                     </p>
                                                 </td>
@@ -535,13 +535,13 @@
                                             </td>
                                             <td>
                                                 @if($brevet->scan!="")
-                                                <a href="/storage/{{$brevet->scan}}" class="font-italic">{{$brevet->scan}}</a>
+                                                <a href="{{asset("/storage/".$brevet->scan)}}" class="font-italic">{{$brevet->scan}}</a>
                                                 <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                 @endif
                                             </td>
                                             <td>
                                                 @if($brevet->inpi!="")
-                                                <a href="/storage/{{$brevet->inpi}}" class="font-italic">{{$brevet->inpi}}</a>
+                                                <a href="{{asset("/storage/".$brevet->inpi)}}" class="font-italic">{{$brevet->inpi}}</a>
                                                 <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                 @endif
                                             </td>
@@ -624,7 +624,7 @@
                                                 <td><span>{{$loop->index+1}}</span></td>
                                                 <td><p>{{$p->date}}</p></td>
                                                 <td colspan="2">
-                                                    <a href="/storage/{{$p->fichier}}" class="font-italic"><i class="fas fa-file-alt text-danger"></i> {{$p->nom}}</a>
+                                                    <a href="{{asset("/storage/".$p->fichier)}}" class="font-italic"><i class="fas fa-file-alt text-danger"></i> {{$p->nom}}</a>
                                                     &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
                                                 </td>
                                                 <td>
@@ -760,7 +760,7 @@
                                             <td><p>{{$projet->partenaire}}</p></td>
                                             <td><p>{{$projet->activite}}</p></td>
                                             <td>
-                                                <a href="/storage/{{$projet->texte}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$projet->texte}}</a>
+                                                <a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$projet->texte}}</a>
                                                 <i class="editButton fas fa-times deleteCross ml-2"></i>
                                             </td>
                                             <td>
@@ -835,7 +835,7 @@
                                     <ul class="list-inline">
                                         <li class="list-inline-item"><h6 class="font-italic">Projet associé :</h6></li>
                                         @foreach($souche['projet_souche'] as $projet)
-                                        <li class="list-inline-item"><a href="/storage/{{$projet->texte}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$projet->nom}}</a><i class="editButton fas fa-times deleteCross ml-2"></i></li>
+                                        <li class="list-inline-item"><a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$projet->nom}}</a><i class="editButton fas fa-times deleteCross ml-2"></i></li>
                                         @endforeach
                                         <li class="list-inline-item editZone">
                                             <input class="form-control w-75 d-inline" type="text" list="dataProjet" name="eps/projet">
@@ -883,7 +883,7 @@
                                                     <ul class="list-unstyled mt-2">
                                                         @foreach($souche['caracterisation_oses'] as $oses)
                                                         @if($oses->type=="neutre")
-                                                        <li><p href="/storage/{{$oses->oses}}" class="d-inline">{{$oses->oses}}</p><i class="editButton fas fa-times deleteCross ml-2"></i></li>
+                                                        <li><p href="{{asset("/storage/".$oses->oses)}}" class="d-inline">{{$oses->oses}}</p><i class="editButton fas fa-times deleteCross ml-2"></i></li>
                                                         @endif
                                                         @endforeach
                                                     </ul>
@@ -911,7 +911,7 @@
                                                     <ul class="list-unstyled mt-3">
                                                         @foreach($souche['caracterisation_oses'] as $oses)
                                                         @if($oses->type=="acide")
-                                                        <li><p href="/storage/{{$oses->oses}}" class="d-inline">{{$oses->oses}}</p><i class="editButton fas fa-times deleteCross ml-2"></i></li>
+                                                        <li><p href="{{asset("/storage/".$oses->oses)}}" class="d-inline">{{$oses->oses}}</p><i class="editButton fas fa-times deleteCross ml-2"></i></li>
                                                         @endif
                                                         @endforeach
                                                     </ul>
@@ -939,7 +939,7 @@
                                                     <ul class="list-unstyled mt-3">
                                                         @foreach($souche['caracterisation_oses'] as $oses)
                                                         @if($oses->type=="amine")
-                                                        <li><p href="/storage/{{$oses->oses}}" class="d-inline">{{$oses->oses}}</p><i class="editButton fas fa-times deleteCross ml-2"></i></li>
+                                                        <li><p href="{{asset("/storage/".$oses->oses)}}" class="d-inline">{{$oses->oses}}</p><i class="editButton fas fa-times deleteCross ml-2"></i></li>
                                                         @endif
                                                         @endforeach
                                                     </ul>
@@ -973,7 +973,7 @@
                                             @foreach($souche['fichier_caracterisation'] as $carac)
                                             @if($carac->type=="EPS")
                                                 <li class="m-1">
-                                                    <a href="/storage/{{$carac->fichier}}" class="font-italic"><i class="fas fa-file-alt text-primary mr-1"></i>{{$carac->nom}}</a>
+                                                    <a href="{{asset("/storage/".$carac->fichier)}}" class="font-italic"><i class="fas fa-file-alt text-primary mr-1"></i>{{$carac->nom}}</a>
                                                 </li>
                                             @endif
                                             @endforeach
@@ -1001,8 +1001,8 @@
                                         @if($objectivation->type=="EPS")
                                             <tr>
                                                 <td><p>{{$objectivation->nom}}</p></td>
-                                                <td><a href="/storage/{{$objectivation->protocole}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$objectivation->protocole}}</a></td>
-                                                <td><a href="/storage/{{$objectivation->resultat}}" class="font-italic"><i class="fas fa-file-alt text-success mr-1"></i>{{$objectivation->resultat}}</a></td>
+                                                <td><a href="{{asset("/storage/".$objectivation->protocole)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$objectivation->protocole}}</a></td>
+                                                <td><a href="{{asset("/storage/".$objectivation->resultat)}}" class="font-italic"><i class="fas fa-file-alt text-success mr-1"></i>{{$objectivation->resultat}}</a></td>
                                                 <td>
                                                     <i class="editButton fas fa-pen"></i>
                                                     <i class='fas fa-check checkPostRow'></i>
@@ -1065,11 +1065,11 @@
                                                 <td><p>{{$prod->date}}</p></td>
                                                 <td><p>{{$prod->lieu}}</p></td>
                                                 <td>
-                                                    <a href="/storage/{{$prod->protocole}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-2"></i>{{$prod->protocole}}</a>
+                                                    <a href="{{asset("/storage/".$prod->protocole)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-2"></i>{{$prod->protocole}}</a>
                                                     <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                 </td>
                                                 <td>
-                                                    <a href="/storage/{{$prod->rapport}}" class="font-italic"><i class="fas fa-file-alt text-success mr-2"></i>{{$prod->rapport}}</a>
+                                                    <a href="{{asset("/storage/".$prod->rapport)}}" class="font-italic"><i class="fas fa-file-alt text-success mr-2"></i>{{$prod->rapport}}</a>
                                                     <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                 </td>
                                                 <td>
@@ -1147,11 +1147,11 @@
                                                         <tr>
                                                             <td><p>{{$criblage->nom}}</p></td>
                                                             <td>
-                                                                <a href="/storage/{{$criblage->conditions}}" class="font-italic"><i class="fas fa-file-alt mr-2"></i>{{$criblage->conditions}}</a>
+                                                                <a href="{{asset("/storage/".$criblage->conditions)}}" class="font-italic"><i class="fas fa-file-alt mr-2"></i>{{$criblage->conditions}}</a>
                                                                 <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                             </td>
                                                             <td>
-                                                                <a href="/storage/{{$criblage->rapport}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-2"></i>{{$criblage->rapport}}</a>
+                                                                <a href="{{asset("/storage/".$criblage->rapport)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-2"></i>{{$criblage->rapport}}</a>
                                                                 <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                             </td>
                                                             <td>
@@ -1225,7 +1225,7 @@
                                     <ul class="list-inline">
                                         <li class="list-inline-item"><h6 class="font-italic">Projet associé :</h6></li>
                                         @foreach($souche['projet_souche'] as $projet)
-                                            <li class="list-inline-item"><a href="/storage/{{$projet->texte}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$projet->nom}}</a><i class="editButton fas fa-times deleteCross ml-2"></i></li>
+                                            <li class="list-inline-item"><a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$projet->nom}}</a><i class="editButton fas fa-times deleteCross ml-2"></i></li>
                                         @endforeach
                                         <li class="list-inline-item editZone">
                                             <input class="form-control w-75 d-inline" type="text" list="dataProjet" name="pha/projet">
@@ -1252,7 +1252,7 @@
                                             @foreach($souche['fichier_caracterisation'] as $carac)
                                                 @if($carac->type=="Pha")
                                                     <li class="m-1">
-                                                        <a href="/storage/{{$carac->fichier}}" class="font-italic"><i class="fas fa-file-alt text-primary mr-1"></i>{{$carac->nom}}</a>
+                                                        <a href="{{asset("/storage/".$carac->fichier)}}" class="font-italic"><i class="fas fa-file-alt text-primary mr-1"></i>{{$carac->nom}}</a>
                                                     </li>
                                                 @endif
                                             @endforeach
@@ -1300,8 +1300,8 @@
                                         @if($objectivation->type=="PHA")
                                             <tr>
                                                 <td><p>{{$objectivation->nom}}</p></td>
-                                                <td><a href="/storage/{{$objectivation->protocole}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$objectivation->protocole}}</a></td>
-                                                <td><a href="/storage/{{$objectivation->resultat}}" class="font-italic"><i class="fas fa-file-alt text-success mr-1"></i>{{$objectivation->resultat}}</a></td>
+                                                <td><a href="{{asset("/storage/".$objectivation->protocole)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$objectivation->protocole}}</a></td>
+                                                <td><a href="{{asset("/storage/".$objectivation->resultat)}}" class="font-italic"><i class="fas fa-file-alt text-success mr-1"></i>{{$objectivation->resultat}}</a></td>
                                                 <td>
                                                     <i class="editButton fas fa-pen"></i>
                                                     <i class='fas fa-check checkPostRow'></i>
@@ -1359,11 +1359,11 @@
                                                 <td><p>{{$prod->date}}</p></td>
                                                 <td><p>{{$prod->lieu}}</p></td>
                                                 <td>
-                                                    <a href="/storage/{{$prod->protocole}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-2"></i>{{$prod->protocole}}</a>
+                                                    <a href="{{asset("/storage/".$prod->protocole)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-2"></i>{{$prod->protocole}}</a>
                                                     <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                 </td>
                                                 <td>
-                                                    <a href="/storage/{{$prod->protocole}}" class="font-italic"><i class="fas fa-file-alt text-success mr-2"></i>{{$prod->rapport}}</a>
+                                                    <a href="{{asset("/storage/".$prod->protocole)}}" class="font-italic"><i class="fas fa-file-alt text-success mr-2"></i>{{$prod->rapport}}</a>
                                                     <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                 </td>
                                                 <td>
@@ -1436,11 +1436,11 @@
                                                         <tr>
                                                             <td><p>{{$criblage->nom}}</p></td>
                                                             <td>
-                                                                <a href="/storage/{{$criblage->conditions}}" class="font-italic"><i class="fas fa-file-alt mr-2"></i>{{$criblage->conditions}}</a>
+                                                                <a href="{{asset("/storage/".$criblage->conditions)}}" class="font-italic"><i class="fas fa-file-alt mr-2"></i>{{$criblage->conditions}}</a>
                                                                 <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                             </td>
                                                             <td>
-                                                                <a href="/storage/{{$criblage->rapport}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-2"></i>{{$criblage->rapport}}</a>
+                                                                <a href="{{asset("/storage/".$criblage->rapport)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-2"></i>{{$criblage->rapport}}</a>
                                                                 <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                             </td>
                                                             <td>
@@ -1509,7 +1509,7 @@
                                     <ul class="list-inline">
                                         <li class="list-inline-item"><h6 class="font-italic">Projet associé :</h6></li>
                                         @foreach($souche['projet_souche'] as $projet)
-                                            <li class="list-inline-item"><a href="/storage/{{$projet->texte}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$projet->nom}}</a><i class="editButton fas fa-times deleteCross ml-2"></i></li>
+                                            <li class="list-inline-item"><a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$projet->nom}}</a><i class="editButton fas fa-times deleteCross ml-2"></i></li>
                                         @endforeach
                                         <li class="list-inline-item editZone">
                                             <input class="form-control w-75 d-inline" type="text" list="dataProjet" name="autre/projet">
@@ -1536,7 +1536,7 @@
                                             @foreach($souche['fichier_caracterisation'] as $carac)
                                                 @if($carac->type=="Autre")
                                                     <li class="m-1">
-                                                        <a href="/storage/{{$carac->fichier}}" class="font-italic"><i class="fas fa-file-alt text-primary mr-1"></i>{{$carac->nom}}</a>
+                                                        <a href="{{asset("/storage/".$carac->fichier)}}" class="font-italic"><i class="fas fa-file-alt text-primary mr-1"></i>{{$carac->nom}}</a>
                                                     </li>
                                                 @endif
                                             @endforeach
@@ -1584,8 +1584,8 @@
                                             @if($objectivation->type=="Autre")
                                                 <tr>
                                                     <td><p>{{$objectivation->nom}}</p></td>
-                                                    <td><a href="/storage/{{$objectivation->protocole}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$objectivation->protocole}}</a></td>
-                                                    <td><a href="/storage/{{$objectivation->resultat}}" class="font-italic"><i class="fas fa-file-alt text-success mr-1"></i>{{$objectivation->resultat}}</a></td>
+                                                    <td><a href="{{asset("/storage/".$objectivation->protocole)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$objectivation->protocole}}</a></td>
+                                                    <td><a href="{{asset("/storage/".$objectivation->resultat)}}" class="font-italic"><i class="fas fa-file-alt text-success mr-1"></i>{{$objectivation->resultat}}</a></td>
                                                     <td>
                                                         <i class="editButton fas fa-pen"></i>
                                                         <i class='fas fa-check checkPostRow'></i>
@@ -1643,11 +1643,11 @@
                                                     <td><p>{{$prod->date}}</p></td>
                                                     <td><p>{{$prod->lieu}}</p></td>
                                                     <td>
-                                                        <a href="/storage/{{$prod->protocole}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-2"></i>{{$prod->protocole}}</a>
+                                                        <a href="{{asset("/storage/".$prod->protocole)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-2"></i>{{$prod->protocole}}</a>
                                                         <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                     </td>
                                                     <td>
-                                                        <a href="/storage/{{$prod->protocole}}" class="font-italic"><i class="fas fa-file-alt text-success mr-2"></i>{{$prod->rapport}}</a>
+                                                        <a href="{{asset("/storage/".$prod->protocole)}}" class="font-italic"><i class="fas fa-file-alt text-success mr-2"></i>{{$prod->rapport}}</a>
                                                         <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                     </td>
                                                     <td>
@@ -1720,11 +1720,11 @@
                                                             <tr>
                                                                 <td><p>{{$criblage->nom}}</p></td>
                                                                 <td>
-                                                                    <a href="/storage/{{$criblage->conditions}}" class="font-italic"><i class="fas fa-file-alt mr-2"></i>{{$criblage->conditions}}</a>
+                                                                    <a href="{{asset("/storage/".$criblage->conditions)}}" class="font-italic"><i class="fas fa-file-alt mr-2"></i>{{$criblage->conditions}}</a>
                                                                     <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                                 </td>
                                                                 <td>
-                                                                    <a href="/storage/{{$criblage->rapport}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-2"></i>{{$criblage->rapport}}</a>
+                                                                    <a href="{{asset("/storage/".$criblage->rapport)}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-2"></i>{{$criblage->rapport}}</a>
                                                                     <i class="editButton fas fa-times deleteCross ml-2"></i>
                                                                 </td>
                                                                 <td>

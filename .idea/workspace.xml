@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbd90ef4-95b8-4103-bd48-18525024d8be" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/souchoteque/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/souchoteque/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/resources/views/layout.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,12 +21,51 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="2040">
-                    <caret line="129" column="89" selection-start-line="129" selection-start-column="89" selection-end-line="129" selection-end-column="89" />
+                  <state relative-caret-position="258">
+                    <caret line="52" column="67" selection-start-line="52" selection-start-column="67" selection-end-line="52" selection-end-column="67" />
+                    <caret line="71" column="131" selection-start-line="71" selection-start-column="131" selection-end-line="71" selection-end-column="131" />
+                    <caret line="129" column="147" selection-start-line="129" selection-start-column="147" selection-end-line="129" selection-end-column="147" />
+                    <caret line="177" column="123" selection-start-line="177" selection-start-column="123" selection-end-line="177" selection-end-column="123" />
+                    <caret line="180" column="118" selection-start-line="180" selection-start-column="118" selection-end-line="180" selection-end-column="118" />
+                    <caret line="215" column="87" selection-start-line="215" selection-start-column="87" selection-end-line="215" selection-end-column="87" />
+                    <caret line="265" column="96" selection-start-line="265" selection-start-column="96" selection-end-line="265" selection-end-column="96" />
+                    <caret line="279" column="87" selection-start-line="279" selection-start-column="87" selection-end-line="279" selection-end-column="87" />
+                    <caret line="352" column="96" selection-start-line="352" selection-start-column="96" selection-end-line="352" selection-end-column="96" />
+                    <caret line="356" column="93" selection-start-line="356" selection-start-column="93" selection-end-line="356" selection-end-column="93" />
+                    <caret line="437" column="108" selection-start-line="437" selection-start-column="108" selection-end-line="437" selection-end-column="108" />
+                    <caret line="453" column="110" selection-start-line="453" selection-start-column="110" selection-end-line="453" selection-end-column="110" />
+                    <caret line="537" column="96" selection-start-line="537" selection-start-column="96" selection-end-line="537" selection-end-column="96" />
+                    <caret line="543" column="96" selection-start-line="543" selection-start-column="96" selection-end-line="543" selection-end-column="96" />
+                    <caret line="626" column="98" selection-start-line="626" selection-start-column="98" selection-end-line="626" selection-end-column="98" />
+                    <caret line="762" column="97" selection-start-line="762" selection-start-column="97" selection-end-line="762" selection-end-column="97" />
+                    <caret line="837" column="118" selection-start-line="837" selection-start-column="118" selection-end-line="837" selection-end-column="118" />
+                    <caret line="885" column="106" selection-start-line="885" selection-start-column="106" selection-end-line="885" selection-end-column="106" />
+                    <caret line="913" column="106" selection-start-line="913" selection-start-column="106" selection-end-line="913" selection-end-column="106" />
+                    <caret line="941" column="106" selection-start-line="941" selection-start-column="106" selection-end-line="941" selection-end-column="106" />
+                    <caret line="975" column="102" selection-start-line="975" selection-start-column="102" selection-end-line="975" selection-end-column="102" />
+                    <caret line="1003" column="112" selection-start-line="1003" selection-start-column="112" selection-end-line="1003" selection-end-column="112" />
+                    <caret line="1004" column="111" selection-start-line="1004" selection-start-column="111" selection-end-line="1004" selection-end-column="111" />
+                    <caret line="1067" column="103" selection-start-line="1067" selection-start-column="103" selection-end-line="1067" selection-end-column="103" />
+                    <caret line="1071" column="101" selection-start-line="1071" selection-start-column="101" selection-end-line="1071" selection-end-column="101" />
+                    <caret line="1149" column="120" selection-start-line="1149" selection-start-column="120" selection-end-line="1149" selection-end-column="120" />
+                    <caret line="1153" column="117" selection-start-line="1153" selection-start-column="117" selection-end-line="1153" selection-end-column="117" />
+                    <caret line="1227" column="122" selection-start-line="1227" selection-start-column="122" selection-end-line="1227" selection-end-column="122" />
+                    <caret line="1254" column="106" selection-start-line="1254" selection-start-column="106" selection-end-line="1254" selection-end-column="106" />
+                    <caret line="1302" column="112" selection-start-line="1302" selection-start-column="112" selection-end-line="1302" selection-end-column="112" />
+                    <caret line="1303" column="111" selection-start-line="1303" selection-start-column="111" selection-end-line="1303" selection-end-column="111" />
+                    <caret line="1361" column="103" selection-start-line="1361" selection-start-column="103" selection-end-line="1361" selection-end-column="103" />
+                    <caret line="1365" column="103" selection-start-line="1365" selection-start-column="103" selection-end-line="1365" selection-end-column="103" />
+                    <caret line="1438" column="120" selection-start-line="1438" selection-start-column="120" selection-end-line="1438" selection-end-column="120" />
+                    <caret line="1442" column="117" selection-start-line="1442" selection-start-column="117" selection-end-line="1442" selection-end-column="117" />
+                    <caret line="1511" column="122" selection-start-line="1511" selection-start-column="122" selection-end-line="1511" selection-end-column="122" />
+                    <caret line="1538" column="106" selection-start-line="1538" selection-start-column="106" selection-end-line="1538" selection-end-column="106" />
+                    <caret line="1586" column="116" selection-start-line="1586" selection-start-column="116" selection-end-line="1586" selection-end-column="116" />
+                    <caret line="1587" column="115" selection-start-line="1587" selection-start-column="115" selection-end-line="1587" selection-end-column="115" />
+                    <caret line="1645" column="107" selection-start-line="1645" selection-start-column="107" selection-end-line="1645" selection-end-column="107" />
+                    <caret line="1649" column="107" selection-start-line="1649" selection-start-column="107" selection-end-line="1649" selection-end-column="107" />
+                    <caret line="1722" column="124" selection-start-line="1722" selection-start-column="124" selection-end-line="1722" selection-end-column="124" />
+                    <caret line="1726" column="121" selection-start-line="1726" selection-start-column="121" selection-end-line="1726" selection-end-column="121" />
                     <folding>
-                      <element signature="e#19092#25050#0#HTML" />
-                      <element signature="e#30378#36955#0#HTML" />
-                      <element signature="e#37022#44317#0#HTML" />
                       <element signature="e#37915#38523#0#HTML" />
                       <element signature="e#36947#36965#0#HTML" expanded="true" />
                       <element signature="e#37026#37044#0#HTML" expanded="true" />
@@ -39,34 +75,13 @@
                       <element signature="e#37348#37367#0#HTML" expanded="true" />
                       <element signature="e#37427#37446#0#HTML" expanded="true" />
                       <element signature="e#37505#37523#0#HTML" expanded="true" />
-                      <element signature="e#0#128830#0#Blade" />
-                      <element signature="e#44388#47921#0#HTML" />
                       <element signature="e#47992#52740#0#HTML" />
-                      <element signature="e#52806#58016#0#HTML" />
                       <element signature="e#58246#58674#0#HTML" />
-                      <element signature="e#58969#60719#0#HTML" />
-                      <element signature="e#0#109221#0#Blade" />
-                      <element signature="e#61478#63856#0#HTML" />
-                      <element signature="e#63913#67688#0#HTML" />
-                      <element signature="e#67745#71517#0#HTML" />
-                      <element signature="e#71012#72103#0#HTML" />
-                      <element signature="e#0#147749#0#Blade" />
-                      <element signature="e#80455#85059#0#HTML" />
                       <element signature="e#86415#86820#0#HTML" />
-                      <element signature="e#86669#88132#0#HTML" />
-                      <element signature="e#88361#89770#0#HTML" />
-                      <element signature="e#92263#95839#0#HTML" />
                       <element signature="e#92378#92384#1#HTML" expanded="true" />
-                      <element signature="e#104561#109961#0#HTML" />
                       <element signature="e#96108#96114#1#HTML" expanded="true" />
-                      <element signature="e#101424#106427#0#HTML" />
                       <element signature="e#107587#108000#0#HTML" />
-                      <element signature="e#108284#109747#0#HTML" />
-                      <element signature="e#109978#113560#0#HTML" />
-                      <element signature="e#110377#111255#0#HTML" />
-                      <element signature="e#113795#117419#0#HTML" />
                       <element signature="e#112368#112374#1#HTML" expanded="true" />
-                      <element signature="e#117609#123208#0#HTML" />
                       <element signature="e#116152#116158#1#HTML" expanded="true" />
                     </folding>
                   </state>
@@ -106,8 +121,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/souchoteque/app/Http/Controllers/SoucheController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="753">
-                  <caret line="162" selection-start-line="162" selection-end-line="162" />
+                <state relative-caret-position="1314">
+                  <caret line="195" selection-start-line="195" selection-end-line="195" />
                 </state>
               </provider>
             </entry>
@@ -171,8 +186,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>CriblagePha</find>
-      <find>ProductionInduPha</find>
       <find>id=&quot;checkCaracterisationPha&quot;</find>
       <find>&lt;i class=&quot;editButton fas fa-times text-danger</find>
       <find>&lt;i class=&quot;editButton fas fa-times text-danger&quot;&gt;&lt;/i&gt;</find>
@@ -201,6 +214,8 @@
       <find>&lt;input</find>
       <find>@foreach</find>
       <find>href</find>
+      <find>href=&quot;{{</find>
+      <find>}}&quot; cl</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -434,12 +449,12 @@
       <workItem from="1550344632576" duration="9048000" />
       <workItem from="1550409017301" duration="4052000" />
       <workItem from="1550413742701" duration="7051000" />
-      <workItem from="1551090500519" duration="33223000" />
+      <workItem from="1551090500519" duration="33493000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214878000" />
+    <option name="totallyTimeSpent" value="215148000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -608,8 +623,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/app/Http/Controllers/SoucheController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="753">
-          <caret line="162" selection-start-line="162" selection-end-line="162" />
+        <state relative-caret-position="1314">
+          <caret line="195" selection-start-line="195" selection-end-line="195" />
         </state>
       </provider>
     </entry>
@@ -639,12 +654,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="129" column="89" selection-start-line="129" selection-start-column="89" selection-end-line="129" selection-end-column="89" />
+        <state relative-caret-position="258">
+          <caret line="52" column="67" selection-start-line="52" selection-start-column="67" selection-end-line="52" selection-end-column="67" />
+          <caret line="71" column="131" selection-start-line="71" selection-start-column="131" selection-end-line="71" selection-end-column="131" />
+          <caret line="129" column="147" selection-start-line="129" selection-start-column="147" selection-end-line="129" selection-end-column="147" />
+          <caret line="177" column="123" selection-start-line="177" selection-start-column="123" selection-end-line="177" selection-end-column="123" />
+          <caret line="180" column="118" selection-start-line="180" selection-start-column="118" selection-end-line="180" selection-end-column="118" />
+          <caret line="215" column="87" selection-start-line="215" selection-start-column="87" selection-end-line="215" selection-end-column="87" />
+          <caret line="265" column="96" selection-start-line="265" selection-start-column="96" selection-end-line="265" selection-end-column="96" />
+          <caret line="279" column="87" selection-start-line="279" selection-start-column="87" selection-end-line="279" selection-end-column="87" />
+          <caret line="352" column="96" selection-start-line="352" selection-start-column="96" selection-end-line="352" selection-end-column="96" />
+          <caret line="356" column="93" selection-start-line="356" selection-start-column="93" selection-end-line="356" selection-end-column="93" />
+          <caret line="437" column="108" selection-start-line="437" selection-start-column="108" selection-end-line="437" selection-end-column="108" />
+          <caret line="453" column="110" selection-start-line="453" selection-start-column="110" selection-end-line="453" selection-end-column="110" />
+          <caret line="537" column="96" selection-start-line="537" selection-start-column="96" selection-end-line="537" selection-end-column="96" />
+          <caret line="543" column="96" selection-start-line="543" selection-start-column="96" selection-end-line="543" selection-end-column="96" />
+          <caret line="626" column="98" selection-start-line="626" selection-start-column="98" selection-end-line="626" selection-end-column="98" />
+          <caret line="762" column="97" selection-start-line="762" selection-start-column="97" selection-end-line="762" selection-end-column="97" />
+          <caret line="837" column="118" selection-start-line="837" selection-start-column="118" selection-end-line="837" selection-end-column="118" />
+          <caret line="885" column="106" selection-start-line="885" selection-start-column="106" selection-end-line="885" selection-end-column="106" />
+          <caret line="913" column="106" selection-start-line="913" selection-start-column="106" selection-end-line="913" selection-end-column="106" />
+          <caret line="941" column="106" selection-start-line="941" selection-start-column="106" selection-end-line="941" selection-end-column="106" />
+          <caret line="975" column="102" selection-start-line="975" selection-start-column="102" selection-end-line="975" selection-end-column="102" />
+          <caret line="1003" column="112" selection-start-line="1003" selection-start-column="112" selection-end-line="1003" selection-end-column="112" />
+          <caret line="1004" column="111" selection-start-line="1004" selection-start-column="111" selection-end-line="1004" selection-end-column="111" />
+          <caret line="1067" column="103" selection-start-line="1067" selection-start-column="103" selection-end-line="1067" selection-end-column="103" />
+          <caret line="1071" column="101" selection-start-line="1071" selection-start-column="101" selection-end-line="1071" selection-end-column="101" />
+          <caret line="1149" column="120" selection-start-line="1149" selection-start-column="120" selection-end-line="1149" selection-end-column="120" />
+          <caret line="1153" column="117" selection-start-line="1153" selection-start-column="117" selection-end-line="1153" selection-end-column="117" />
+          <caret line="1227" column="122" selection-start-line="1227" selection-start-column="122" selection-end-line="1227" selection-end-column="122" />
+          <caret line="1254" column="106" selection-start-line="1254" selection-start-column="106" selection-end-line="1254" selection-end-column="106" />
+          <caret line="1302" column="112" selection-start-line="1302" selection-start-column="112" selection-end-line="1302" selection-end-column="112" />
+          <caret line="1303" column="111" selection-start-line="1303" selection-start-column="111" selection-end-line="1303" selection-end-column="111" />
+          <caret line="1361" column="103" selection-start-line="1361" selection-start-column="103" selection-end-line="1361" selection-end-column="103" />
+          <caret line="1365" column="103" selection-start-line="1365" selection-start-column="103" selection-end-line="1365" selection-end-column="103" />
+          <caret line="1438" column="120" selection-start-line="1438" selection-start-column="120" selection-end-line="1438" selection-end-column="120" />
+          <caret line="1442" column="117" selection-start-line="1442" selection-start-column="117" selection-end-line="1442" selection-end-column="117" />
+          <caret line="1511" column="122" selection-start-line="1511" selection-start-column="122" selection-end-line="1511" selection-end-column="122" />
+          <caret line="1538" column="106" selection-start-line="1538" selection-start-column="106" selection-end-line="1538" selection-end-column="106" />
+          <caret line="1586" column="116" selection-start-line="1586" selection-start-column="116" selection-end-line="1586" selection-end-column="116" />
+          <caret line="1587" column="115" selection-start-line="1587" selection-start-column="115" selection-end-line="1587" selection-end-column="115" />
+          <caret line="1645" column="107" selection-start-line="1645" selection-start-column="107" selection-end-line="1645" selection-end-column="107" />
+          <caret line="1649" column="107" selection-start-line="1649" selection-start-column="107" selection-end-line="1649" selection-end-column="107" />
+          <caret line="1722" column="124" selection-start-line="1722" selection-start-column="124" selection-end-line="1722" selection-end-column="124" />
+          <caret line="1726" column="121" selection-start-line="1726" selection-start-column="121" selection-end-line="1726" selection-end-column="121" />
           <folding>
-            <element signature="e#19092#25050#0#HTML" />
-            <element signature="e#30378#36955#0#HTML" />
-            <element signature="e#37022#44317#0#HTML" />
             <element signature="e#37915#38523#0#HTML" />
             <element signature="e#36947#36965#0#HTML" expanded="true" />
             <element signature="e#37026#37044#0#HTML" expanded="true" />
@@ -654,34 +708,13 @@
             <element signature="e#37348#37367#0#HTML" expanded="true" />
             <element signature="e#37427#37446#0#HTML" expanded="true" />
             <element signature="e#37505#37523#0#HTML" expanded="true" />
-            <element signature="e#0#128830#0#Blade" />
-            <element signature="e#44388#47921#0#HTML" />
             <element signature="e#47992#52740#0#HTML" />
-            <element signature="e#52806#58016#0#HTML" />
             <element signature="e#58246#58674#0#HTML" />
-            <element signature="e#58969#60719#0#HTML" />
-            <element signature="e#0#109221#0#Blade" />
-            <element signature="e#61478#63856#0#HTML" />
-            <element signature="e#63913#67688#0#HTML" />
-            <element signature="e#67745#71517#0#HTML" />
-            <element signature="e#71012#72103#0#HTML" />
-            <element signature="e#0#147749#0#Blade" />
-            <element signature="e#80455#85059#0#HTML" />
             <element signature="e#86415#86820#0#HTML" />
-            <element signature="e#86669#88132#0#HTML" />
-            <element signature="e#88361#89770#0#HTML" />
-            <element signature="e#92263#95839#0#HTML" />
             <element signature="e#92378#92384#1#HTML" expanded="true" />
-            <element signature="e#104561#109961#0#HTML" />
             <element signature="e#96108#96114#1#HTML" expanded="true" />
-            <element signature="e#101424#106427#0#HTML" />
             <element signature="e#107587#108000#0#HTML" />
-            <element signature="e#108284#109747#0#HTML" />
-            <element signature="e#109978#113560#0#HTML" />
-            <element signature="e#110377#111255#0#HTML" />
-            <element signature="e#113795#117419#0#HTML" />
             <element signature="e#112368#112374#1#HTML" expanded="true" />
-            <element signature="e#117609#123208#0#HTML" />
             <element signature="e#116152#116158#1#HTML" expanded="true" />
           </folding>
         </state>
