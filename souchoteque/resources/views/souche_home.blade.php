@@ -369,7 +369,7 @@
                                             <td>&nbsp;</td>
                                             <td>
                                                 <div>
-                                                    <input type="text" class="form-control" list="dataIdentification" placeholder="Type..." name="identification/type" isKey="true">
+                                                    <input type="text" class="form-control border border-info" list="dataIdentification" placeholder="Type..." name="identification/type" isKey="true">
                                                     <datalist id="dataIdentification">
                                                     @foreach($souche['identification'] as $id)
                                                         <option>{{$id->type}}</option>
@@ -379,14 +379,14 @@
                                             </td>
                                             <td>
                                                 <div class="custom-file text-left">
-                                                    <label class="btn btn-default border border-light rounded">
+                                                    <label class="btn btn-default border border-info rounded">
                                                         Parcourir <input type="file" name="identification/sequence" hidden>
                                                     </label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="custom-file text-left">
-                                                    <label class="btn btn-default border border-light rounded">
+                                                    <label class="btn btn-default border border-info rounded">
                                                         Parcourir <input type="file" name="identification/arbre" hidden>
                                                     </label>
                                                 </div>
@@ -467,22 +467,22 @@
                                                 <td>&nbsp;</td>
                                                 <td>
                                                     <div>
-                                                        <input class="form-control" type="texte" class="input-group" name="pasteur/0/date_depot" placeholder="yyyy-mm-dd" pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))">
+                                                        <input type="texte" class="form-control border border-info" name="pasteur/0/date_depot" placeholder="yyyy-mm-dd" pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))">
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div>
-                                                        <input class="form-control" type="texte" class="input-group" name="pasteur/0/titre" isKey="true">
+                                                        <input type="texte" class="form-control border border-info" name="pasteur/0/titre" isKey="true">
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div>
-                                                        <input class="form-control" type="text" class="input-group" name="pasteur/0/numero">
+                                                        <input type="text" class="form-control input-group border border-info" name="pasteur/0/numero">
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="custom-file text-left">
-                                                        <label class="btn btn-default border border-light rounded">
+                                                        <label class="btn btn-default border border-info rounded">
                                                             Parcourir <input type="file" name="pasteur/0/dossier_depot" hidden>
                                                         </label>
                                                     </div>
@@ -496,7 +496,7 @@
                                                 </td>
                                                 <td>
                                                     <div>
-                                                        <input class="form-control" type="text" class="input-group" name="pasteur/0/stock">
+                                                        <input type="text" class="form-control border border-info" name="pasteur/0/stock">
                                                     </div>
                                                 </td>
                                                 <td>
@@ -571,12 +571,12 @@
                                         <tr class="editZone">
                                             <td>
                                                 <div>
-                                                    <input class="form-control form-control-sm" type="text" class="input-group" name="brevet_soleau/0/numero">
+                                                    <input type="text" class="form-control form-control-sm border border-info" name="brevet_soleau/0/numero">
                                                 </div>
                                             </td>
                                             <td colspan="2">
                                                 <div>
-                                                    <input class="form-control form-control-sm" type="text" class="input-group" name="brevet_soleau/0/titre" isKey="true">
+                                                    <input type="text" class="form-control form-control-sm input-group border border-info" name="brevet_soleau/0/titre" isKey="true" placeholder="Titre">
                                                 </div>
                                             </td>
                                             <td class="d-none">
@@ -584,12 +584,12 @@
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control form-control-sm" type="text" class="input-group" name="brevet_soleau/0/date" placeholder="yyyy-mm-dd" pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))">
+                                                    <input type="text" class="form-control form-control-sm input-group border border-info" name="brevet_soleau/0/date" placeholder="yyyy-mm-dd" pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control form-control-sm" type="text" class="input-group" list="dataSecteur" name="brevet_soleau/0/activite">
+                                                    <input type="text" class="form-control form-control-sm input-group border border-info" list="dataSecteur" name="brevet_soleau/0/activite">
                                                     <datalist id="dataSecteur">
                                                         <option>Cosmétique</option>
                                                         <option>Médicale</option>
@@ -656,17 +656,17 @@
                                             <td>&nbsp;</td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="date" name="publication/0/date">
+                                                    <input class="form-control border border-info" type="date" name="publication/0/date">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="texte" name="publication/0/nom">
+                                                    <input class="form-control border border-info" placeholder="Nom" type="texte" name="publication/0/nom">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="text-left">
-                                                    <label class="btn btn-default border border-light rounded">
+                                                    <label class="btn btn-default border border-info rounded">
                                                         Parcourir <input type="file" name="publication/0/fichier" hidden>
                                                     </label>
                                                 </div>
@@ -717,17 +717,17 @@
                                             <td>&nbsp;</td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" name="exclusivite/0/date_debut">
+                                                    <input class="form-control border border-info" placeholder="yyyy-mm-dd" pattern="" type="text" name="exclusivite/0/date_debut">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" name="exclusivite/0/date_fin">
+                                                    <input class="form-control border border-info" placeholder="yyyy-mm-dd" pattern="" type="text" name="exclusivite/0/date_fin">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" list="dataPart" name="exclusivite/0/partenaire">
+                                                    <input class="form-control border border-info" type="text" list="dataPart" name="exclusivite/0/partenaire">
                                                     <datalist id="dataPart">
                                                         <option>EDF</option>
                                                         <option>L'oréal</option>
@@ -736,7 +736,7 @@
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" class="input-group" list="dataSecteur" name="exclusivite/0/activite">
+                                                    <input class="form-control border border-info" type="text" class="input-group" list="dataSecteur" name="exclusivite/0/activite">
                                                     <datalist id="dataSecteur">
                                                         <option>Cosmétique</option>
                                                         <option>Médicale</option>
@@ -793,12 +793,12 @@
                                             <td>&nbsp;</td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" name="projet/0/date">
+                                                    <input class="form-control border border-info" placeholder="yyyy-mm-dd" pattern="" type="text" name="projet/0/date">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" list="dataPart" name="projet/0/partenaire">
+                                                    <input class="form-control border border-info" type="text" list="dataPart" name="projet/0/partenaire">
                                                     <datalist id="dataPart">
                                                         <option>EDF</option>
                                                         <option>L'oréal</option>
@@ -807,7 +807,7 @@
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" class="input-group" list="dataSecteur" name="projet/0/ativite">
+                                                    <input class="form-control border border-info" type="text" class="input-group" list="dataSecteur" name="projet/0/ativite">
                                                     <datalist id="dataSecteur">
                                                         <option>Cosmétique</option>
                                                         <option>Médicale</option>
@@ -816,7 +816,7 @@
                                             </td>
                                             <td>
                                                 <div class="custom-file text-left">
-                                                    <label class="btn btn-default border border-light rounded">
+                                                    <label class="btn btn-default border border-info rounded">
                                                         Parcourir <input type="file" name="projet/0/texte" hidden>
                                                     </label>
                                                 </div>
@@ -854,7 +854,7 @@
                                     <ul class="list-inline">
                                         <li class="list-inline-item"><h6 class="font-italic">Projet associé :</h6></li>
                                         @foreach($souche['projet_souche'] as $projet)
-                                        <li class="list-inline-item"><a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"></li>
+                                            <li class="list-inline-item"><a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"></a></li>
                                         @endforeach
                                         <li class="list-inline-item editZone">
                                             <input class="form-control w-75 d-inline" type="text" list="dataProjet" name="eps/projet">
@@ -1244,7 +1244,7 @@
                                     <ul class="list-inline">
                                         <li class="list-inline-item"><h6 class="font-italic">Projet associé :</h6></li>
                                         @foreach($souche['projet_souche'] as $projet)
-                                            <li class="list-inline-item"><a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"></li>
+                                            <li class="list-inline-item"><a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"></a></li>
                                         @endforeach
                                         <li class="list-inline-item editZone">
                                             <input class="form-control w-75 d-inline" type="text" list="dataProjet" name="pha/projet">
@@ -1528,7 +1528,7 @@
                                     <ul class="list-inline">
                                         <li class="list-inline-item"><h6 class="font-italic">Projet associé :</h6></li>
                                         @foreach($souche['projet_souche'] as $projet)
-                                            <li class="list-inline-item"><a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"></li>
+                                            <li class="list-inline-item"><a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"></a></li>
                                         @endforeach
                                         <li class="list-inline-item editZone">
                                             <input class="form-control w-75 d-inline" type="text" list="dataProjet" name="autre/projet">

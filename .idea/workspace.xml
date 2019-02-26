@@ -21,8 +21,8 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="16473">
-                    <caret line="1771" column="119" selection-start-line="1771" selection-start-column="119" selection-end-line="1771" selection-end-column="119" />
+                  <state relative-caret-position="354">
+                    <caret line="1513" column="33" selection-start-line="1513" selection-start-column="33" selection-end-line="1513" selection-end-column="33" />
                     <folding>
                       <element signature="e#41#895#0#HTML" />
                       <element signature="e#1724#5152#0#HTML" />
@@ -43,10 +43,13 @@
                       <element signature="e#44388#47921#0#HTML" />
                       <element signature="e#47992#52740#0#HTML" />
                       <element signature="e#52806#58016#0#HTML" />
-                      <element signature="e#58246#58674#0#HTML" />
+                      <element signature="e#57491#86118#0#HTML" />
+                      <element signature="e#58969#60719#0#HTML" />
+                      <element signature="e#86165#106070#0#HTML" />
                       <element signature="e#86415#86820#0#HTML" />
                       <element signature="e#92378#92384#1#HTML" expanded="true" />
                       <element signature="e#96108#96114#1#HTML" expanded="true" />
+                      <element signature="e#105946#126049#0#HTML" />
                       <element signature="e#107587#108000#0#HTML" />
                       <element signature="e#112368#112374#1#HTML" expanded="true" />
                       <element signature="e#116152#116158#1#HTML" expanded="true" />
@@ -97,8 +100,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/souchoteque/public/js/souche.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="532">
-                  <caret line="174" column="161" selection-start-line="174" selection-start-column="161" selection-end-line="174" selection-end-column="161" />
+                <state relative-caret-position="68">
+                  <caret line="4" selection-start-line="4" selection-end-line="4" />
                 </state>
               </provider>
             </entry>
@@ -200,8 +203,8 @@
         <option value="$PROJECT_DIR$/souchoteque/app/Http/Controllers/SoucheController.php" />
         <option value="$PROJECT_DIR$/souchoteque/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/souchoteque/resources/views/layout.blade.php" />
-        <option value="$PROJECT_DIR$/souchoteque/public/js/souche.js" />
         <option value="$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php" />
+        <option value="$PROJECT_DIR$/souchoteque/public/js/souche.js" />
       </list>
     </option>
   </component>
@@ -366,13 +369,13 @@
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.spelling" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Users\Arthur\Documents\GitHub\projetm1\souchoteque\resources\views" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Users\Arthur\Documents\GitHub\projetm1\souchoteque\public\ressources" />
       <recent name="D:\Users\Arthur\Documents\GitHub\projetm1\souchoteque\resources\views" />
       <recent name="D:\Users\Arthur\Documents\GitHub\projetm1\.old" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Users\Arthur\Documents\GitHub\projetm1\souchoteque\resources\views" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -416,12 +419,12 @@
       <workItem from="1550344632576" duration="9048000" />
       <workItem from="1550409017301" duration="4052000" />
       <workItem from="1550413742701" duration="7051000" />
-      <workItem from="1551090500519" duration="43691000" />
+      <workItem from="1551090500519" duration="45745000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="225346000" />
+    <option name="totallyTimeSpent" value="227400000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -614,15 +617,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/public/js/souche.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="174" column="161" selection-start-line="174" selection-start-column="161" selection-end-line="174" selection-end-column="161" />
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16473">
-          <caret line="1771" column="119" selection-start-line="1771" selection-start-column="119" selection-end-line="1771" selection-end-column="119" />
+        <state relative-caret-position="354">
+          <caret line="1513" column="33" selection-start-line="1513" selection-start-column="33" selection-end-line="1513" selection-end-column="33" />
           <folding>
             <element signature="e#41#895#0#HTML" />
             <element signature="e#1724#5152#0#HTML" />
@@ -643,10 +646,13 @@
             <element signature="e#44388#47921#0#HTML" />
             <element signature="e#47992#52740#0#HTML" />
             <element signature="e#52806#58016#0#HTML" />
-            <element signature="e#58246#58674#0#HTML" />
+            <element signature="e#57491#86118#0#HTML" />
+            <element signature="e#58969#60719#0#HTML" />
+            <element signature="e#86165#106070#0#HTML" />
             <element signature="e#86415#86820#0#HTML" />
             <element signature="e#92378#92384#1#HTML" expanded="true" />
             <element signature="e#96108#96114#1#HTML" expanded="true" />
+            <element signature="e#105946#126049#0#HTML" />
             <element signature="e#107587#108000#0#HTML" />
             <element signature="e#112368#112374#1#HTML" expanded="true" />
             <element signature="e#116152#116158#1#HTML" expanded="true" />
