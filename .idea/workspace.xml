@@ -21,10 +21,10 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="678">
-                    <caret line="719" column="182" selection-start-line="719" selection-start-column="182" selection-end-line="719" selection-end-column="182" />
-                    <caret line="724" column="182" selection-start-line="724" selection-start-column="182" selection-end-line="724" selection-end-column="182" />
-                    <caret line="801" column="182" selection-start-line="801" selection-start-column="182" selection-end-line="801" selection-end-column="182" />
+                  <state relative-caret-position="216">
+                    <caret line="1120" column="131" selection-start-line="1120" selection-start-column="131" selection-end-line="1120" selection-end-column="131" />
+                    <caret line="1409" column="131" selection-start-line="1409" selection-start-column="131" selection-end-line="1409" selection-end-column="131" />
+                    <caret line="1656" column="76" selection-start-line="1656" selection-start-column="76" selection-end-line="1656" selection-end-column="76" />
                     <folding>
                       <element signature="e#41#895#0#HTML" />
                       <element signature="e#1724#5152#0#HTML" />
@@ -43,15 +43,23 @@
                       <element signature="e#37427#37446#0#HTML" expanded="true" />
                       <element signature="e#37505#37523#0#HTML" expanded="true" />
                       <element signature="e#44388#47921#0#HTML" />
-                      <element signature="e#57491#86118#0#HTML" />
+                      <element signature="e#47992#52740#0#HTML" />
+                      <element signature="e#52806#58016#0#HTML" />
                       <element signature="e#58969#60719#0#HTML" />
-                      <element signature="e#86165#106070#0#HTML" />
+                      <element signature="e#0#109221#0#Blade" />
+                      <element signature="e#80455#85059#0#HTML" />
                       <element signature="e#86415#86820#0#HTML" />
+                      <element signature="e#86669#88132#0#HTML" />
+                      <element signature="e#88361#89770#0#HTML" />
                       <element signature="e#92378#92384#1#HTML" expanded="true" />
                       <element signature="e#96108#96114#1#HTML" expanded="true" />
-                      <element signature="e#105946#126049#0#HTML" />
+                      <element signature="e#101424#106427#0#HTML" />
                       <element signature="e#107587#108000#0#HTML" />
+                      <element signature="e#108284#109747#0#HTML" />
+                      <element signature="e#109978#113560#0#HTML" />
+                      <element signature="e#113795#117419#0#HTML" />
                       <element signature="e#112368#112374#1#HTML" expanded="true" />
+                      <element signature="e#117609#123208#0#HTML" />
                       <element signature="e#116152#116158#1#HTML" expanded="true" />
                     </folding>
                   </state>
@@ -100,8 +108,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/souchoteque/public/js/souche.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="68">
-                  <caret line="4" selection-start-line="4" selection-end-line="4" />
+                <state relative-caret-position="-357">
+                  <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
                 </state>
               </provider>
             </entry>
@@ -156,8 +164,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&lt;i class=&quot;editButton fas fa-times deleteCross ml-2&quot;&gt;&lt;/i&gt;</find>
-      <find>&lt;i class=&quot;editButton fas fa-plus&quot;&gt;&lt;/i&gt;</find>
       <find>&lt;i class=&quot;editButton fas fa-times deleteCross ml-2 faForm&quot;&gt;&lt;/i&gt;</find>
       <find>faForm</find>
       <find>&lt;i class=&quot;editButton fas fa-pen&quot;&gt;&lt;/i&gt;</find>
@@ -186,6 +192,8 @@
       <find>&lt;i class=&quot;fas fa-file-alt</find>
       <find>editZone</find>
       <find>pattern=&quot;&quot;</find>
+      <find>/objectivation/0/nom&quot;&gt;</find>
+      <find>/production/0/nom&quot;&gt;</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -419,12 +427,12 @@
       <workItem from="1550344632576" duration="9048000" />
       <workItem from="1550409017301" duration="4052000" />
       <workItem from="1550413742701" duration="7051000" />
-      <workItem from="1551090500519" duration="46109000" />
+      <workItem from="1551090500519" duration="47659000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227764000" />
+    <option name="totallyTimeSpent" value="229314000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -617,17 +625,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/public/js/souche.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="-357">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="678">
-          <caret line="719" column="182" selection-start-line="719" selection-start-column="182" selection-end-line="719" selection-end-column="182" />
-          <caret line="724" column="182" selection-start-line="724" selection-start-column="182" selection-end-line="724" selection-end-column="182" />
-          <caret line="801" column="182" selection-start-line="801" selection-start-column="182" selection-end-line="801" selection-end-column="182" />
+        <state relative-caret-position="216">
+          <caret line="1120" column="131" selection-start-line="1120" selection-start-column="131" selection-end-line="1120" selection-end-column="131" />
+          <caret line="1409" column="131" selection-start-line="1409" selection-start-column="131" selection-end-line="1409" selection-end-column="131" />
+          <caret line="1656" column="76" selection-start-line="1656" selection-start-column="76" selection-end-line="1656" selection-end-column="76" />
           <folding>
             <element signature="e#41#895#0#HTML" />
             <element signature="e#1724#5152#0#HTML" />
@@ -646,15 +654,23 @@
             <element signature="e#37427#37446#0#HTML" expanded="true" />
             <element signature="e#37505#37523#0#HTML" expanded="true" />
             <element signature="e#44388#47921#0#HTML" />
-            <element signature="e#57491#86118#0#HTML" />
+            <element signature="e#47992#52740#0#HTML" />
+            <element signature="e#52806#58016#0#HTML" />
             <element signature="e#58969#60719#0#HTML" />
-            <element signature="e#86165#106070#0#HTML" />
+            <element signature="e#0#109221#0#Blade" />
+            <element signature="e#80455#85059#0#HTML" />
             <element signature="e#86415#86820#0#HTML" />
+            <element signature="e#86669#88132#0#HTML" />
+            <element signature="e#88361#89770#0#HTML" />
             <element signature="e#92378#92384#1#HTML" expanded="true" />
             <element signature="e#96108#96114#1#HTML" expanded="true" />
-            <element signature="e#105946#126049#0#HTML" />
+            <element signature="e#101424#106427#0#HTML" />
             <element signature="e#107587#108000#0#HTML" />
+            <element signature="e#108284#109747#0#HTML" />
+            <element signature="e#109978#113560#0#HTML" />
+            <element signature="e#113795#117419#0#HTML" />
             <element signature="e#112368#112374#1#HTML" expanded="true" />
+            <element signature="e#117609#123208#0#HTML" />
             <element signature="e#116152#116158#1#HTML" expanded="true" />
           </folding>
         </state>

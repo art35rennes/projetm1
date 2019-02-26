@@ -641,7 +641,8 @@
                                         @foreach($souche['publication'] as $p)
                                             <tr>
                                                 <td><span>{{$loop->index+1}}</span></td>
-                                                <td><p>{{$p->date}}</p></td>
+                                                <td><p>{{$p->date}}</p>
+                                                <td class="d-none"><p>{{$p->nom}}</p></td>
                                                 <td colspan="2">
                                                     <a href="{{asset("/storage/".$p->fichier)}}" class="font-italic"> {{$p->nom}}</a>
                                                     &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
@@ -661,7 +662,7 @@
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control border border-info" placeholder="Nom" type="texte" name="publication/0/nom">
+                                                    <input class="form-control border border-info" placeholder="Nom" type="texte" name="publication/0/nom" isKey="true">
                                                 </div>
                                             </td>
                                             <td>
@@ -693,16 +694,16 @@
                                 <div class="card-body">
                                     <table class="table">
                                         <tr>
-                                            <th style="width: 2.5%">#</th>
-                                            <th style="width: 20%">Début</th>
-                                            <th style="width: 20%">Fin</th>
-                                            <th style="width: 25%">Partenaire</th>
-                                            <th style="width: 25%">Secteur</th>
-                                            <th style="width: 2.5%">&nbsp;</th>
+                                            <th>#</th>
+                                            <th>Début</th>
+                                            <th>Fin</th>
+                                            <th>Partenaire</th>
+                                            <th>Secteur</th>
+                                            <th>&nbsp;</th>
                                         </tr>
                                         @foreach($souche['exclusivite'] as $exclu)
                                         <tr>
-                                            <td><span>{{$exclu->id}}</span></td>
+                                            <td><p>{{$exclu->id}}</p></td>
                                             <td><p>{{$exclu->date_debut}}</p></td>
                                             <td><p>{{$exclu->date_fin}}</p></td>
                                             <td><p>{{$exclu->partenaire}}</p></td>
@@ -714,7 +715,11 @@
                                         </tr>
                                         @endforeach
                                         <tr class="editZone">
-                                            <td>&nbsp;</td>
+                                            <td>
+                                                <div>
+                                                    <input class="form-control border border-info" type="text" name="exclusivite/0/id" isKey="true">
+                                                </div>
+                                            </td>
                                             <td>
                                                 <div>
                                                     <input class="form-control border border-info" placeholder="yyyy-mm-dd" pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))" type="text" name="exclusivite/0/date_debut">
@@ -1044,7 +1049,7 @@
                                         <tr class="editZone">
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" name="eps/objectivation/0/nom">
+                                                    <input class="form-control" type="text" name="eps/objectivation/0/nom" isKey="true">
                                                 </div>
                                             </td>
                                             <td>
@@ -1113,7 +1118,7 @@
                                         <tr class="editZone">
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" name="eps/production/0/nom">
+                                                    <input class="form-control" type="text" name="eps/production/0/nom" isKey="true">
                                                 </div>
                                             </td>
                                             <td>
@@ -1195,7 +1200,7 @@
                                                     <tr class="editZone">
                                                         <td>
                                                             <div>
-                                                                <input class="form-control" type="text" name="eps/criblage/0/nom">
+                                                                <input class="form-control" type="text" name="eps/criblage/0/nom" isKey="true">
                                                             </div>
                                                         </td>
                                                         <td>
@@ -1338,7 +1343,7 @@
                                         <tr class="editZone">
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" name="pha/objectivation/0/protocole">
+                                                    <input class="form-control" type="text" name="pha/objectivation/0/nom" isKey="true">
                                                 </div>
                                             </td>
                                             <td>
@@ -1402,7 +1407,7 @@
                                         <tr class="editZone">
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" name="pha/production/0/nom">
+                                                    <input class="form-control" type="text" name="pha/production/0/nom" isKey="true">
                                                 </div>
                                             </td>
                                             <td>
@@ -1479,7 +1484,7 @@
                                                     <tr class="editZone">
                                                         <td>
                                                             <div>
-                                                                <input class="form-control" type="text" name="pha/criblage/0/nom">
+                                                                <input class="form-control" type="text" name="pha/criblage/0/nom" isKey="true">
                                                             </div>
                                                         </td>
                                                         <td>
@@ -1622,7 +1627,7 @@
                                         <tr class="editZone">
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" name="autre/objectivation/0/protocole">
+                                                    <input class="form-control" type="text" name="autre/objectivation/0/nom" isKey="true">
                                                 </div>
                                             </td>
                                             <td>
@@ -1686,7 +1691,7 @@
                                         <tr class="editZone">
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" name="autre/production/0/nom">
+                                                    <input class="form-control" type="text" name="autre/production/0/nom" isKey="true">
                                                 </div>
                                             </td>
                                             <td>
@@ -1763,7 +1768,7 @@
                                                     <tr class="editZone">
                                                         <td>
                                                             <div>
-                                                                <input class="form-control" type="text" name="autre/criblage/0/nom">
+                                                                <input class="form-control" type="text" name="autre/criblage/0/nom" isKey="true">
                                                             </div>
                                                         </td>
                                                         <td>
