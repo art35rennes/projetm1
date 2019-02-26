@@ -69,7 +69,7 @@
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec nunc commodo, mollis ligula volutpat, eleifend mauris. Quisque et dui pretium, pharetra mauris nec, elementum ipsum. Pellentesque nulla mauris, sollicitudin in bibendum sed, convallis ac ex. Maecenas consequat lectus ac.
                             </p>
 
-                            @isset($souche['souche'][0])<a href="{{asset("/storage/".asset($souche['souche'][0]->description))}}" class="font-italic"></i> {{$souche['souche'][0]->description}}</a><i class="editButton fas fa-times deleteCross ml-2"></i>@endisset
+                            @isset($souche['souche'][0])<a href="{{asset("/storage/".$souche['souche'][0]->description)}}" class="font-italic"></i> {{$souche['souche'][0]->description}}</a><i class="editButton fas fa-times deleteCross ml-2"></i>@endisset
                             <p>
                                 <span class="h6">Stock Cryotubes:&nbsp;</span>
                                 <span class="badge badge-primary" title="Stock Polymaris">{{$souche['souche'][0]->stock}}</span>
@@ -127,7 +127,7 @@
                                                 </div>
                                             </div>
 
-                                            @isset($souche['souche'][0])<a href="{{asset("/storage/".asset($souche['souche'][0]->description))}}" class="font-italic">{{$souche['souche'][0]->description}}</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>@endisset
+                                            @isset($souche['souche'][0])<a href="{{asset("/storage/".($souche['souche'][0]->description)}}" class="font-italic">{{$souche['souche'][0]->description}}</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>@endisset
 
                                             <hr>
 
@@ -240,7 +240,7 @@
                                                         <i class="editButton fas fa-plus faForm"></i>
                                                     </span>
                                                 </div>
-                                                <textarea class="input-group border border-info border-top-0" name="photo_souche/description" placeholder="description..."></textarea>
+                                                <textarea class="input-group border border-info border-top-0" name="photo_souche/description" placeholder="description photo..."></textarea>
                                             </div>
                                         </div>
                                     </div>
