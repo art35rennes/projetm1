@@ -149,11 +149,12 @@ $('.fa-pen').click(function () {
                         $data.children().children("input").attr("readonly", true)
                     }
 
-                    console.log($data.children().children("input").attr("name"))
-                    $split = $data.children().children("input").attr("name").split("/",2);
-                    console.log($split.length)
-                    $name = ([$split[0],$data.parent().index(),$split[1]]).join("/");
 
+                    /*$split = $data.children().children("input").attr("name").split("/",2);
+                    console.log($split.length)
+                    $name = ([$split[0],$data.parent().index(),$split[1]]).join("/");*/
+
+                    $name = $data.children().children("input").attr("name").replace("/0/","/"+$data.parent().index()+"/");
                     $data.children().children("input").attr("name",$name);
                     //console.log($data.children().children("input"));
                 }
@@ -171,8 +172,9 @@ $('.fa-pen').click(function () {
                             if ($data.children().children().children().attr("isKey")) {
                                 $data.children().children().children().attr("readonly", true)
                             }
-                            $data.children().children().children().attr("name",$data.children().children().children().attr("name")+"/"+$data.parent().index());
-                            //console.log($lastdata.children());
+                            //$data.children().children().children().attr("name",$data.children().children().children().attr("name")+"/"+$data.parent().index());
+                            $name = $data.children().children().children().attr("name").replace("/0/","/"+$data.parent().index()+"/");
+                            $data.children().children().children().attr("name",$name);
                         }
                     }
                 }

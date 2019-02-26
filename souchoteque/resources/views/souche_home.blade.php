@@ -402,7 +402,7 @@
                         </div>
 
                         <!-- Pasteur -->
-                        <div class="card border border-info">
+                        <div class="card border border-success">
                             <div class="card-header" id="headingPasteur">
                                 <h2 class="mb-0">
                                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapsePasteur" aria-expanded="false" aria-controls="collapsePasteur">
@@ -467,36 +467,36 @@
                                                 <td>&nbsp;</td>
                                                 <td>
                                                     <div>
-                                                        <input class="form-control" type="texte" class="input-group" name="pasteur/date_depot" placeholder="yyyy-mm-dd" pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))">
+                                                        <input class="form-control" type="texte" class="input-group" name="pasteur/0/date_depot" placeholder="yyyy-mm-dd" pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))">
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div>
-                                                        <input class="form-control" type="texte" class="input-group" name="pasteur/titre" isKey="true">
+                                                        <input class="form-control" type="texte" class="input-group" name="pasteur/0/titre" isKey="true">
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div>
-                                                        <input class="form-control" type="text" class="input-group" name="pasteur/numero">
+                                                        <input class="form-control" type="text" class="input-group" name="pasteur/0/numero">
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="custom-file text-left">
                                                         <label class="btn btn-default border border-light rounded">
-                                                            Parcourir <input type="file" name="pasteur/dossier_depot" hidden>
+                                                            Parcourir <input type="file" name="pasteur/0/dossier_depot" hidden>
                                                         </label>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="custom-file text-left">
                                                         <label class="btn btn-default border border-light rounded">
-                                                            Parcourir <input type="file" name="pasteur/scan_validation" hidden>
+                                                            Parcourir <input type="file" name="pasteur/0/scan_validation" hidden>
                                                         </label>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div>
-                                                        <input class="form-control" type="text" class="input-group" name="pasteur/stock">
+                                                        <input class="form-control" type="text" class="input-group" name="pasteur/0/stock">
                                                     </div>
                                                 </td>
                                                 <td>
@@ -571,12 +571,12 @@
                                         <tr class="editZone">
                                             <td>
                                                 <div>
-                                                    <input class="form-control form-control-sm" type="text" class="input-group" name="brevet_soleau/numero">
+                                                    <input class="form-control form-control-sm" type="text" class="input-group" name="brevet_soleau/0/numero">
                                                 </div>
                                             </td>
                                             <td colspan="2">
                                                 <div>
-                                                    <input class="form-control form-control-sm" type="text" class="input-group" name="brevet_soleau/titre" isKey="true">
+                                                    <input class="form-control form-control-sm" type="text" class="input-group" name="brevet_soleau/0/titre" isKey="true">
                                                 </div>
                                             </td>
                                             <td class="d-none">
@@ -584,12 +584,12 @@
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control form-control-sm" type="text" class="input-group" name="brevet_soleau/date" placeholder="yyyy-mm-dd" pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))">
+                                                    <input class="form-control form-control-sm" type="text" class="input-group" name="brevet_soleau/0/date" placeholder="yyyy-mm-dd" pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control form-control-sm" type="text" class="input-group" list="dataSecteur" name="brevet_soleau/activite">
+                                                    <input class="form-control form-control-sm" type="text" class="input-group" list="dataSecteur" name="brevet_soleau/0/activite">
                                                     <datalist id="dataSecteur">
                                                         <option>Cosmétique</option>
                                                         <option>Médicale</option>
@@ -599,14 +599,14 @@
                                             <td>
                                                 <div class="custom-file text-left form-control-sm">
                                                     <label class="btn btn-default border border-light rounded">
-                                                        Parcourir <input type="file" name="brevet_soleau/scan" hidden>
+                                                        Parcourir <input type="file" name="brevet_soleau/0/scan" hidden>
                                                     </label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="custom-file text-left form-control-sm">
                                                     <label class="btn btn-default border border-light rounded">
-                                                        Parcourir <input type="file" name="brevet_soleau/inpi" hidden>
+                                                        Parcourir <input type="file" name="brevet_soleau/0/inpi" hidden>
                                                     </label>
                                                 </div>
                                             </td>
@@ -656,18 +656,18 @@
                                             <td>&nbsp;</td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="date" name="publication/date">
+                                                    <input class="form-control" type="date" name="publication/0/date">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="texte" name="publication/nom">
+                                                    <input class="form-control" type="texte" name="publication/0/nom">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="text-left">
                                                     <label class="btn btn-default border border-light rounded">
-                                                        Parcourir <input type="file" name="publication/fichier" hidden>
+                                                        Parcourir <input type="file" name="publication/0/fichier" hidden>
                                                     </label>
                                                 </div>
                                             </td>
@@ -717,17 +717,17 @@
                                             <td>&nbsp;</td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" name="exclusivite/date_debut">
+                                                    <input class="form-control" type="text" name="exclusivite/0/date_debut">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" name="exclusivite/date_fin">
+                                                    <input class="form-control" type="text" name="exclusivite/0/date_fin">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" list="dataPart" name="exclusivite/partenaire">
+                                                    <input class="form-control" type="text" list="dataPart" name="exclusivite/0/partenaire">
                                                     <datalist id="dataPart">
                                                         <option>EDF</option>
                                                         <option>L'oréal</option>
@@ -736,7 +736,7 @@
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" class="input-group" list="dataSecteur" name="exclusivite/activite">
+                                                    <input class="form-control" type="text" class="input-group" list="dataSecteur" name="exclusivite/0/activite">
                                                     <datalist id="dataSecteur">
                                                         <option>Cosmétique</option>
                                                         <option>Médicale</option>
@@ -793,12 +793,12 @@
                                             <td>&nbsp;</td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" name="projet/date">
+                                                    <input class="form-control" type="text" name="projet/0/date">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" list="dataPart" name="projet/partenaire">
+                                                    <input class="form-control" type="text" list="dataPart" name="projet/0/partenaire">
                                                     <datalist id="dataPart">
                                                         <option>EDF</option>
                                                         <option>L'oréal</option>
@@ -807,7 +807,7 @@
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" class="input-group" list="dataSecteur" name="projet/ativite">
+                                                    <input class="form-control" type="text" class="input-group" list="dataSecteur" name="projet/0/ativite">
                                                     <datalist id="dataSecteur">
                                                         <option>Cosmétique</option>
                                                         <option>Médicale</option>
@@ -817,7 +817,7 @@
                                             <td>
                                                 <div class="custom-file text-left">
                                                     <label class="btn btn-default border border-light rounded">
-                                                        Parcourir <input type="file" name="projet/texte" hidden>
+                                                        Parcourir <input type="file" name="projet/0/texte" hidden>
                                                     </label>
                                                 </div>
                                             </td>
