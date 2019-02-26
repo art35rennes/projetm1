@@ -1037,20 +1037,20 @@
                                         <tr class="editZone">
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" name="objectivation/nom">
+                                                    <input class="form-control" type="text" name="eps/objectivation/0/nom">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="custom-file">
                                                     <label class="btn btn-default border border-light rounded">
-                                                        Parcourir <input type="file" name="objectivation/protocole" hidden>
+                                                        Parcourir <input type="file" name="eps/objectivation/0/protocole" hidden>
                                                     </label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="custom-file">
                                                     <label class="btn btn-default border border-light rounded">
-                                                        Parcourir <input type="file" name="objectivation/resultat" hidden>
+                                                        Parcourir <input type="file" name="eps/objectivation/0/resultat" hidden>
                                                     </label>
                                                 </div>
                                             </td>
@@ -1106,17 +1106,17 @@
                                         <tr class="editZone">
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" name="production/nom">
+                                                    <input class="form-control" type="text" name="eps/production/0/nom">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="date" name="production/date">
+                                                    <input class="form-control" type="date" name="eps/production/0/date">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" list="dataLieu" name="production/lieu">
+                                                    <input class="form-control" type="text" list="dataLieu" name="eps/production/0/lieu">
                                                     <datalist id="dataLieu">
                                                         @foreach($souche['production'] as $prod)
                                                             <option>{{$prod->lieu}}</option>
@@ -1127,14 +1127,14 @@
                                             <td class="editZone">
                                                 <div class="custom-file">
                                                     <label class="btn btn-default border border-light rounded">
-                                                        Parcourir <input type="file" name="production/protocole" hidden>
+                                                        Parcourir <input type="file" name="eps/production/0/protocole" hidden>
                                                     </label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="custom-file">
                                                     <label class="btn btn-default border border-light rounded">
-                                                        Parcourir <input type="file" name="production/rapport" hidden>
+                                                        Parcourir <input type="file" name="eps/production/0/rapport" hidden>
                                                     </label>
                                                 </div>
                                             </td>
@@ -1188,20 +1188,20 @@
                                                     <tr class="editZone">
                                                         <td>
                                                             <div>
-                                                                <input class="form-control" type="text" name="criblage/nom">
+                                                                <input class="form-control" type="text" name="eps/criblage/0/nom">
                                                             </div>
                                                         </td>
                                                         <td>
                                                             <div class="custom-file">
                                                                 <label class="btn btn-default border border-light rounded">
-                                                                    Parcourir <input type="file" name="criblage/condition" hidden>
+                                                                    Parcourir <input type="file" name="eps/criblage/0/condition" hidden>
                                                                 </label>
                                                             </div>
                                                         </td>
                                                         <td>
                                                             <div class="custom-file">
                                                                 <label class="btn btn-default border border-light rounded">
-                                                                    Parcourir <input type="file" name="criblage/rapport" hidden>
+                                                                    Parcourir <input type="file" name="eps/criblage/0/rapport" hidden>
                                                                 </label>
                                                             </div>
                                                         </td>
@@ -1331,20 +1331,20 @@
                                         <tr class="editZone">
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" name="pha/objectivation/protocole">
+                                                    <input class="form-control" type="text" name="pha/objectivation/0/protocole">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="custom-file">
                                                     <label class="btn btn-default border border-light rounded">
-                                                        Parcourir <input type="file" name="pha/objectivation/protocole" hidden>
+                                                        Parcourir <input type="file" name="pha/objectivation/0/protocole" hidden>
                                                     </label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="custom-file">
                                                     <label class="btn btn-default border border-light rounded">
-                                                        Parcourir <input type="file" name="pha/objectivation/resultat" hidden>
+                                                        Parcourir <input type="file" name="pha/objectivation/0/resultat" hidden>
                                                     </label>
                                                 </div>
                                             </td>
@@ -1395,17 +1395,17 @@
                                         <tr class="editZone">
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" name="pha/production/nom">
+                                                    <input class="form-control" type="text" name="pha/production/0/nom">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="date" name="pha/production/date">
+                                                    <input class="form-control" type="date" name="pha/production/0/date">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" list="dataLieu" name="pha/production/lieu">
+                                                    <input class="form-control" type="text" list="dataLieu" name="pha/production/0/lieu">
                                                     <datalist id="dataLieu">
                                                         @foreach($souche['production'] as $prod)
                                                             <option>{{$prod->lieu}}</option>
@@ -1416,14 +1416,14 @@
                                             <td class="editZone">
                                                 <div class="custom-file">
                                                     <label class="btn btn-default border border-light rounded">
-                                                        Parcourir <input type="file" name="pha/production/protocole" hidden>
+                                                        Parcourir <input type="file" name="pha/production/0/protocole" hidden>
                                                     </label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="custom-file">
                                                     <label class="btn btn-default border border-light rounded">
-                                                        Parcourir <input type="file" name="pha/production/rapport" hidden>
+                                                        Parcourir <input type="file" name="pha/production/0/rapport" hidden>
                                                     </label>
                                                 </div>
                                             </td>
@@ -1472,20 +1472,20 @@
                                                     <tr class="editZone">
                                                         <td>
                                                             <div>
-                                                                <input class="form-control" type="text" name="pha/criblage/nom">
+                                                                <input class="form-control" type="text" name="pha/criblage/0/nom">
                                                             </div>
                                                         </td>
                                                         <td>
                                                             <div class="custom-file">
                                                                 <label class="btn btn-default border border-light rounded">
-                                                                    Parcourir <input type="file" name="pha/criblage/condition" hidden>
+                                                                    Parcourir <input type="file" name="pha/criblage/0/condition" hidden>
                                                                 </label>
                                                             </div>
                                                         </td>
                                                         <td>
                                                             <div class="custom-file">
                                                                 <label class="btn btn-default border border-light rounded">
-                                                                    Parcourir <input type="file" name="pha/criblage/rapport" hidden>
+                                                                    Parcourir <input type="file" name="pha/criblage/0/rapport" hidden>
                                                                 </label>
                                                             </div>
                                                         </td>
@@ -1615,20 +1615,20 @@
                                         <tr class="editZone">
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" name="autre/objectivation/protocole">
+                                                    <input class="form-control" type="text" name="autre/objectivation/0/protocole">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="custom-file">
                                                     <label class="btn btn-default border border-light rounded">
-                                                        Parcourir <input type="file" name="autre/objectivation/protocole" hidden>
+                                                        Parcourir <input type="file" name="autre/objectivation/0/protocole" hidden>
                                                     </label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="custom-file">
                                                     <label class="btn btn-default border border-light rounded">
-                                                        Parcourir <input type="file" name="autre/objectivation/resultat" hidden>
+                                                        Parcourir <input type="file" name="autre/objectivation/0/resultat" hidden>
                                                     </label>
                                                 </div>
                                             </td>
@@ -1679,17 +1679,17 @@
                                         <tr class="editZone">
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" name="autre/production/nom">
+                                                    <input class="form-control" type="text" name="autre/production/0/nom">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="date" name="autre/production/date">
+                                                    <input class="form-control" type="date" name="autre/production/0/date">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" list="dataLieu" name="autre/production/lieu">
+                                                    <input class="form-control" type="text" list="dataLieu" name="autre/production/0/lieu">
                                                     <datalist id="dataLieu">
                                                         @foreach($souche['production'] as $prod)
                                                             <option>{{$prod->lieu}}</option>
@@ -1700,14 +1700,14 @@
                                             <td class="editZone">
                                                 <div class="custom-file">
                                                     <label class="btn btn-default border border-light rounded">
-                                                        Parcourir <input type="file" name="autre/production/protocole" hidden>
+                                                        Parcourir <input type="file" name="autre/production/0/protocole" hidden>
                                                     </label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="custom-file">
                                                     <label class="btn btn-default border border-light rounded">
-                                                        Parcourir <input type="file" name="autre/production/rapport" hidden>
+                                                        Parcourir <input type="file" name="autre/production/0/rapport" hidden>
                                                     </label>
                                                 </div>
                                             </td>
@@ -1756,20 +1756,20 @@
                                                     <tr class="editZone">
                                                         <td>
                                                             <div>
-                                                                <input class="form-control" type="text" name="autre/criblage/nom">
+                                                                <input class="form-control" type="text" name="autre/criblage/0/nom">
                                                             </div>
                                                         </td>
                                                         <td>
                                                             <div class="custom-file">
                                                                 <label class="btn btn-default border border-light rounded">
-                                                                    Parcourir <input type="file" name="autre/criblage/condition" hidden>
+                                                                    Parcourir <input type="file" name="autre/criblage/0/condition" hidden>
                                                                 </label>
                                                             </div>
                                                         </td>
                                                         <td>
                                                             <div class="custom-file">
                                                                 <label class="btn btn-default border border-light rounded">
-                                                                    Parcourir <input type="file" name="autre/criblage/rapport" hidden>
+                                                                    Parcourir <input type="file" name="autre/criblage/0/rapport" hidden>
                                                                 </label>
                                                             </div>
                                                         </td>
