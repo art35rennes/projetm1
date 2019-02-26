@@ -165,108 +165,19 @@ class SoucheController extends BaseController
         $souche = $this->getData($id);
         $posts = $request->all();
         $type_hcb = null;
-        $out = [];
+        $data = [];
+        //alors je sais pas comment ça marche mais ça transforme un "/bla/bla = bla" en [bla][bla] = bla
+        //tant que ça marche ça me vas
         foreach ($posts as $keys => $value) {
-            $key = explode("/", $keys);
-            $i=1;
-        }
-        dd($out);
-
-        /*foreach ($posts as $key => $value) {
-            $key = explode("/", $key);
-            switch ($key[0]){
-                case "brevet_soleau":
-                    switch ($key[1]){
-                        case "titre":
-
-                            break;
-                        case "type":
-
-                            break;
-                        case "date":
-
-                            break;
-                        case "activite":
-
-                            break;
-                    }
-                    break;
-                case "capacite_production":
-
-                    break;
-                case "caracterisation":
-
-                    break;
-                case "criblage":
-
-                    break;
-                case "description":
-
-                    break;
-                case "exclusivite":
-
-                    break;
-                case "oses":
-
-                    break;
-                case "oses_new":
-
-                    break;
-                case "fichier_caracterisation":
-
-                    break;
-                case "identification":
-
-                    break;
-                case "objectivation":
-
-                    break;
-                case "pasteur":
-
-                    break;
-                case "photo_souche":
-
-                    break;
-                case "production":
-
-                    break;
-                case "projet":
-
-                    break;
-                case "publication":
-
-                    break;
-                case "souche":
-                    switch ($key[1]){
-                        case "origine":
-                            DB::table("souche")->where("ref", "=", $id)->update(["origine" => $value]);
-                            break;
-                        case "annee_collecte":
-                            if (is_int($value))
-                                DB::table("souche")->where("ref", "=", $id)->update(["annee_collecte" => $value]);
-                            break;
-                        case "annee_creation":
-                            if (is_int($value))
-                                DB::table("souche")->where("ref", "=", $id)->update(["annee_creation" => $value]);
-                            break;
-                        case "hcb":
-                            switch ($key[2]){
-                                case "type" :
-                                    $type_hcb = $value;
-                                    break;
-                                case "doc":
-                                    DB::table("souche")->where("ref", "=", $id)
-                                        ->update([$type_hcb =>
-                                            $this->ajoutFile($id."/souche", $type_hcb, $request->file("souche/hcb/doc"))
-                                        ]);
-                                    break;
-                            }
-                            break;
-                    }
-                    break;
-
+            $exploded = explode("/", $keys);
+            $temp = &$data;
+            foreach($exploded as $key) {
+                $temp = &$temp[$key];
             }
-        }*/
+            $temp = $value;
+            unset($temp);
+        }
+        dd($data);
     }
 
     public function suppr($id){
