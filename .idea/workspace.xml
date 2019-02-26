@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbd90ef4-95b8-4103-bd48-18525024d8be" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/souchoteque/public/js/souche.js" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/public/js/souche.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php" afterDir="false" />
     </list>
@@ -22,11 +23,14 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="363">
-                    <caret line="578" column="166" selection-start-line="578" selection-start-column="166" selection-end-line="578" selection-end-column="166" />
+                  <state relative-caret-position="510">
+                    <caret line="232" column="121" selection-start-line="232" selection-start-column="121" selection-end-line="232" selection-end-column="121" />
                     <folding>
                       <element signature="e#41#895#0#HTML" />
                       <element signature="e#19092#25050#0#HTML" />
+                      <element signature="e#24150#29309#0#HTML" />
+                      <element signature="e#30378#36955#0#HTML" />
+                      <element signature="e#37022#44317#0#HTML" />
                       <element signature="e#37915#38523#0#HTML" />
                       <element signature="e#36947#36965#0#HTML" expanded="true" />
                       <element signature="e#37026#37044#0#HTML" expanded="true" />
@@ -36,7 +40,9 @@
                       <element signature="e#37348#37367#0#HTML" expanded="true" />
                       <element signature="e#37427#37446#0#HTML" expanded="true" />
                       <element signature="e#37505#37523#0#HTML" expanded="true" />
+                      <element signature="e#44388#47921#0#HTML" />
                       <element signature="e#47992#52740#0#HTML" />
+                      <element signature="e#52806#58016#0#HTML" />
                       <element signature="e#58246#58674#0#HTML" />
                       <element signature="e#86415#86820#0#HTML" />
                       <element signature="e#92378#92384#1#HTML" expanded="true" />
@@ -82,8 +88,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/souchoteque/app/Http/Controllers/SoucheController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1314">
-                  <caret line="195" selection-start-line="195" selection-end-line="195" />
+                <state relative-caret-position="3456">
+                  <caret line="321" selection-start-line="321" selection-end-line="321" />
                 </state>
               </provider>
             </entry>
@@ -91,8 +97,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/souchoteque/public/js/souche.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="498">
-                  <caret line="152" column="79" selection-start-line="152" selection-start-column="79" selection-end-line="152" selection-end-column="79" />
+                <state relative-caret-position="566">
+                  <caret line="156" column="74" selection-start-line="156" selection-start-column="74" selection-end-line="156" selection-end-column="74" />
                 </state>
               </provider>
             </entry>
@@ -194,8 +200,8 @@
         <option value="$PROJECT_DIR$/souchoteque/app/Http/Controllers/SoucheController.php" />
         <option value="$PROJECT_DIR$/souchoteque/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/souchoteque/resources/views/layout.blade.php" />
-        <option value="$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php" />
         <option value="$PROJECT_DIR$/souchoteque/public/js/souche.js" />
+        <option value="$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php" />
       </list>
     </option>
   </component>
@@ -410,12 +416,12 @@
       <workItem from="1550344632576" duration="9048000" />
       <workItem from="1550409017301" duration="4052000" />
       <workItem from="1550413742701" duration="7051000" />
-      <workItem from="1551090500519" duration="40382000" />
+      <workItem from="1551090500519" duration="42500000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="222037000" />
+    <option name="totallyTimeSpent" value="224155000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -584,8 +590,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/app/Http/Controllers/SoucheController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1314">
-          <caret line="195" selection-start-line="195" selection-end-line="195" />
+        <state relative-caret-position="3456">
+          <caret line="321" selection-start-line="321" selection-end-line="321" />
         </state>
       </provider>
     </entry>
@@ -606,13 +612,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/souchoteque/public/js/souche.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="566">
+          <caret line="156" column="74" selection-start-line="156" selection-start-column="74" selection-end-line="156" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="578" column="166" selection-start-line="578" selection-start-column="166" selection-end-line="578" selection-end-column="166" />
+        <state relative-caret-position="510">
+          <caret line="232" column="121" selection-start-line="232" selection-start-column="121" selection-end-line="232" selection-end-column="121" />
           <folding>
             <element signature="e#41#895#0#HTML" />
             <element signature="e#19092#25050#0#HTML" />
+            <element signature="e#24150#29309#0#HTML" />
+            <element signature="e#30378#36955#0#HTML" />
+            <element signature="e#37022#44317#0#HTML" />
             <element signature="e#37915#38523#0#HTML" />
             <element signature="e#36947#36965#0#HTML" expanded="true" />
             <element signature="e#37026#37044#0#HTML" expanded="true" />
@@ -622,7 +638,9 @@
             <element signature="e#37348#37367#0#HTML" expanded="true" />
             <element signature="e#37427#37446#0#HTML" expanded="true" />
             <element signature="e#37505#37523#0#HTML" expanded="true" />
+            <element signature="e#44388#47921#0#HTML" />
             <element signature="e#47992#52740#0#HTML" />
+            <element signature="e#52806#58016#0#HTML" />
             <element signature="e#58246#58674#0#HTML" />
             <element signature="e#86415#86820#0#HTML" />
             <element signature="e#92378#92384#1#HTML" expanded="true" />
@@ -631,13 +649,6 @@
             <element signature="e#112368#112374#1#HTML" expanded="true" />
             <element signature="e#116152#116158#1#HTML" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/souchoteque/public/js/souche.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="498">
-          <caret line="152" column="79" selection-start-line="152" selection-start-column="79" selection-end-line="152" selection-end-column="79" />
         </state>
       </provider>
     </entry>

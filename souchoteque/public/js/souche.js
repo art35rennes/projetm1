@@ -149,6 +149,7 @@ $('.fa-pen').click(function () {
                         $data.children().children("input").attr("readonly", true)
                     }
 
+                    console.log($data.children().children("input").attr("name"))
                     $split = $data.children().children("input").attr("name").split("/",2);
                     console.log($split.length)
                     $name = ([$split[0],$data.parent().index(),$split[1]]).join("/");

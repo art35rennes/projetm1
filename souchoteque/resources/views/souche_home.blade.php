@@ -230,7 +230,7 @@
                                                 </a>
                                             </div>
 
-                                            <div class="input-group mb-3 mt-1 editZone">
+                                            <div class="input-group mb-3 mt-1 editZone border border-info border-bottom-0">
                                                 <div class="custom-file">
                                                     <input type="file" class="custom-file-input" id="description/image" name="photo_souche/fichier">
                                                     <label class="custom-file-label" for="photo_souche/fichier" data-browse="A">Ajouter une image</label>
@@ -240,7 +240,7 @@
                                                         <i class="editButton fas fa-plus faForm"></i>
                                                     </span>
                                                 </div>
-                                                <textarea class="input-group" name="photo_souche/description" placeholder="description..."></textarea>
+                                                <textarea class="input-group border border-info border-top-0" name="photo_souche/description" placeholder="description..."></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -263,7 +263,7 @@
                                         <!-- Gauche -->
                                         <div class="col-xl-7">
                                             @foreach($souche['description'] as $file)
-                                            <p><a href="{{asset("/storage/".$file->fichier)}}" class="font-italic"><{{$file->texte}}</a><i class="editButton fas fa-times deleteCross ml-2"></i></p>
+                                            <p><a href="{{asset("/storage/".$file->fichier)}}" class="font-italic">{{$file->texte}}</a><i class="editButton fas fa-times deleteCross ml-2"></i></p>
                                             @endforeach
                                         </div>
                                         <!-- Droite -->
@@ -541,7 +541,7 @@
                                                 <p>{{$brevet->titre}}</p>
                                             </td>
                                             <td>
-                                                <p>@if($brevet->inpi==null) Brevet @else Soleau @endif</p>
+                                                <span>@if($brevet->inpi==null) Brevet @else Soleau @endif</span>
                                             </td>
                                             <td>
                                                 <p>{{$brevet->date}}</p>
@@ -578,6 +578,9 @@
                                                 <div>
                                                     <input class="form-control form-control-sm" type="text" class="input-group" name="brevet_soleau/titre" isKey="true">
                                                 </div>
+                                            </td>
+                                            <td class="d-none">
+
                                             </td>
                                             <td>
                                                 <div>
