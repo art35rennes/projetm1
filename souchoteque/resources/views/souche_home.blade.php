@@ -41,22 +41,18 @@
                 <div class="col-xl-4">
                     <br>
                     <div class="card" >
-                        <div id="carouselSouche" class="carousel slide border-warning border" data-ride="carousel">
+                        <div id="carouselSouche" class="carousel slide" data-ride="carousel">
                             <ol class="carousel-indicators">
-                                <li data-target="#carouselSouche" data-slide-to="0" class="active"></li>
-                                <li data-target="#carouselSouche" data-slide-to="1"></li>
-                                <li data-target="#carouselSouche" data-slide-to="2"></li>
+                            @foreach($souche['photo_souche'] as $photo)
+                                <li data-target="#carouselSouche" data-slide-to="{{$loop->index}}" @if($loop->index==0) class="active" @endif></li>
+                            @endforeach
                             </ol>
                             <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="https://via.placeholder.com/250" class="d-block w-100" alt="...">
+                            @foreach($souche['photo_souche'] as $photo)
+                                <div class="carousel-item @if($loop->index==0) active @endif">
+                                    <img src="{{$photo->fichier}}" class="d-block w-100">
                                 </div>
-                                <div class="carousel-item">
-                                    <img src="https://via.placeholder.com/350" class="d-block w-100" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://via.placeholder.com/450" class="d-block w-100" alt="...">
-                                </div>
+                            @endforeach
                             </div>
                             <a class="carousel-control-prev" href="#carouselSouche" role="button" data-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -73,7 +69,7 @@
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec nunc commodo, mollis ligula volutpat, eleifend mauris. Quisque et dui pretium, pharetra mauris nec, elementum ipsum. Pellentesque nulla mauris, sollicitudin in bibendum sed, convallis ac ex. Maecenas consequat lectus ac.
                             </p>
 
-                            @isset($souche['souche'][0])<a href="{{asset('souches/'.$souche['souche'][0]->description)}}" class="font-italic"><i class="fas fa-file-alt mb-2"></i> {{$souche['souche'][0]->description}}</a><i class="editButton fas fa-times deleteCross ml-2"></i>@endisset
+                            @isset($souche['souche'][0])<a href="{{asset($souche['souche'][0]->description)}}" class="font-italic"><i class="fas fa-file-alt mb-2"></i> {{$souche['souche'][0]->description}}</a><i class="editButton fas fa-times deleteCross ml-2"></i>@endisset
                             <p>
                                 <span class="h6">Stock Cryotubes:&nbsp;</span>
                                 <span class="badge badge-primary" title="Stock Polymaris">{{$souche['souche'][0]->stock}}</span>
@@ -208,34 +204,21 @@
 
                                         <!-- Colonne droite-->
                                         <div class="col-md-5">
-                                            <div id="carouselLieu" class="carousel slide border border-warning" data-ride="carousel">
+                                            <div id="carouselLieu" class="carousel slide" data-ride="carousel">
                                                 <ol class="carousel-indicators">
-                                                    <li data-target="#carouselLieu" data-slide-to="0" class="active"></li>
-                                                    <li data-target="#carouselLieu" data-slide-to="1"></li>
-                                                    <li data-target="#carouselLieu" data-slide-to="2"></li>
+                                                    @foreach($souche['photo_souche'] as $photo)
+                                                    <li data-target="#carouselLieu" data-slide-to="{{$loop->index}}" @if($loop->index==0) class="active" @endif></li>
+                                                    @endforeach
                                                 </ol>
                                                 <div class="carousel-inner">
-                                                    <div class="carousel-item active">
-                                                        <img src="https://via.placeholder.com/250" class="d-block w-100">
+                                                    @foreach($souche['photo_souche'] as $photo)
+                                                    <div class="carousel-item @if($loop->index==0) active @endif">
+                                                        <img src="{{$photo->fichier}}" class="d-block w-100">
                                                         <div class="carousel-caption d-none d-md-block">
-                                                            <h5>File name 1</h5>
-                                                            <p>Description 1</p>
+                                                            <p class="small">{{$photo->description}}</p>
                                                         </div>
                                                     </div>
-                                                    <div class="carousel-item">
-                                                        <img src="https://via.placeholder.com/300" class="d-block w-100">
-                                                        <div class="carousel-caption d-none d-md-block">
-                                                            <h5>File Name 2</h5>
-                                                            <p>Description 2</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="carousel-item">
-                                                        <img src="https://via.placeholder.com/400" class="d-block w-100">
-                                                        <div class="carousel-caption d-none d-md-block">
-                                                            <h5>File name 3</h5>
-                                                            <p>Description 3</p>
-                                                        </div>
-                                                    </div>
+                                                    @endforeach
                                                 </div>
                                                 <a class="carousel-control-prev" href="#carouselLieu" role="button" data-slide="prev">
                                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -253,10 +236,11 @@
                                                     <label class="custom-file-label" for="photo_souche/fichier" data-browse="A">Ajouter une image</label>
                                                 </div>
                                                 <div class="input-group-append">
-                                                <span class="input-group-text">
-                                                    <i class="editButton fas fa-plus faForm"></i>
-                                                </span>
+                                                    <span class="input-group-text">
+                                                        <i class="editButton fas fa-plus faForm"></i>
+                                                    </span>
                                                 </div>
+                                                <textarea class="input-group" name="photo_souche/description" placeholder="description..."></textarea>
                                             </div>
                                         </div>
                                     </div>
@@ -510,7 +494,7 @@
                         </div>
 
                         <!-- Brevets -->
-                        <div class="card border border-info">
+                        <div class="card">
                             <div class="card-header" id="headingBrevets">
                                 <h2 class="mb-0">
                                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseBrevets" aria-expanded="false" aria-controls="collapseBrevets">
@@ -632,14 +616,14 @@
                                         <tr>
                                             <th>#</th>
                                             <th>Date</th>
-                                            <th>Document</th>
+                                            <th colspan="2">Document</th>
                                             <th>&nbsp;</th>
                                         </tr>
                                         @foreach($souche['publication'] as $p)
                                             <tr>
                                                 <td><span>{{$loop->index+1}}</span></td>
                                                 <td><p>{{$p->date}}</p></td>
-                                                <td>
+                                                <td colspan="2">
                                                     <a href="{{$p->fichier}}" class="font-italic"><i class="fas fa-file-alt text-danger"></i> {{$p->nom}}</a>
                                                     &nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>
                                                 </td>
@@ -654,6 +638,11 @@
                                             <td>
                                                 <div>
                                                     <input class="form-control" type="date" name="publication/date">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <input class="form-control" type="texte" name="publication/nom">
                                                 </div>
                                             </td>
                                             <td>
@@ -849,7 +838,7 @@
                                         <li class="list-inline-item"><a href="{{$projet->texte}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$projet->nom}}</a><i class="editButton fas fa-times deleteCross ml-2"></i></li>
                                         @endforeach
                                         <li class="list-inline-item editZone">
-                                            <input class="form-control w-75 d-inline" type="text" list="dataProjet" name="projet">
+                                            <input class="form-control w-75 d-inline" type="text" list="dataProjet" name="eps/projet">
                                             <datalist id="dataProjet">
                                             @foreach($souche['projet'] as $projet)
                                                 <option>{{$projet->nom}}</option>
@@ -877,13 +866,13 @@
                                                         <button type="button" class="btn btn-default btn-sm dropdown-toggle editZone" data-toggle="dropdown">Ajouter...</button>
                                                         <ul class="dropdown-menu p-3 pre-scrollable">
                                                             <li>
-                                                                <input class="form-control w-75" type="text" placeholder="Ajouter Oses..." name="oses_new/neutre">
+                                                                <input class="form-control w-75" type="text" placeholder="Ajouter Oses..." name="eps/oses_new/neutre">
                                                             </li>
                                                             @foreach($souche['oses'] as $oses)
                                                             @if($oses->type == "neutre")
                                                             <li>
                                                                 <label class="p-1">{{$oses->nom}}</label>
-                                                                <input type="checkbox" name="oses/neutre">
+                                                                <input type="checkbox" name="eps/oses/neutre">
                                                             </li>
                                                             @endif
                                                             @endforeach
@@ -905,13 +894,13 @@
                                                         <button type="button" class="btn btn-default btn-sm dropdown-toggle editZone" data-toggle="dropdown">Ajouter...</button>
                                                         <ul class="dropdown-menu p-3 pre-scrollable">
                                                             <li>
-                                                                <input class="form-control w-75" type="text" name="oses_new/acide">
+                                                                <input class="form-control w-75" type="text" name="eps/oses_new/acide">
                                                             </li>
                                                             @foreach($souche['oses'] as $oses)
                                                             @if($oses->type == "acide")
                                                             <li>
                                                                 <label class="p-1">{{$oses->nom}}</label>
-                                                                <input type="checkbox" name="oses/acide">
+                                                                <input type="checkbox" name="eps/oses/acide">
                                                             </li>
                                                             @endif
                                                             @endforeach
@@ -933,13 +922,13 @@
                                                         <button type="button" class="btn btn-default btn-sm dropdown-toggle editZone" data-toggle="dropdown">Ajouter...</button>
                                                         <ul class="dropdown-menu p-3 pre-scrollable">
                                                             <li>
-                                                                <input class="form-control w-75" type="text" name="oses_new/amine">
+                                                                <input class="form-control w-75" type="text" name="eps/oses_new/amine">
                                                             </li>
                                                             @foreach($souche['oses'] as $oses)
                                                             @if($oses->type == "amine")
                                                             <li>
                                                                 <label class="p-1">{{$oses->nom}}</label>
-                                                                <input type="checkbox" name="oses/amine">
+                                                                <input type="checkbox" name="eps/oses/amine">
                                                             </li>
                                                             @endif
                                                             @endforeach
@@ -956,9 +945,9 @@
                                                     </ul>
                                                 </div>
 
-                                                <div class="input-group col-8 text-left editZone">
-                                                    <div class="input-group-prepend">
-                                                        <input type="text" list="dataCaracterisation" placeholder="Type..." class="form-control" id="fichier_caracterisation/type" name="fichier_caracterisation/type">
+                                                <div class="input-group col-8 text-left editZone mb-2">
+                                                    <div class="row">
+                                                        <input type="text" list="dataCaracterisation" placeholder="Type..." class="form-control col-4" id="eps/fichier_caracterisation/type" name="eps/fichier_caracterisation/type">
                                                         <datalist id="dataCaracterisation">
                                                             <option>Ratio monosaccharidiques</option>
                                                             <option>RMN</option>
@@ -970,18 +959,13 @@
                                                                 @if($carac->type=="EPS")<option>{{$carac->nom}}</option> @endif
                                                             @endforeach
                                                         </datalist>
-                                                    </div>
-                                                    <div class="custom-file">
-                                                        <input type="file" class="custom-file-input" id="fichier_caracterisation.fichier" name="fichier_caracterisation/fichier">
-                                                        <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter un fichier </label>
-                                                    </div>
-                                                    <div class="input-group-append">
-                                                        <span class="input-group-text">
-                                                            <i class="editButton fas fa-plus faForm"></i>
-                                                        </span>
+                                                        <input type="text" placeholder="Nom" class="form-control col-3" id="eps/fichier_caracterisation/nom" name="eps/fichier_caracterisation/nom">
+                                                        <label class="btn btn-default border border-light rounded col-3">
+                                                            Parcourir <input type="file" name="eps/fichier_caracterisation/fichier" hidden>
+                                                        </label>
+                                                        <i class="m-2 editButton fas fa-plus faForm"></i>
                                                     </div>
                                                 </div>
-                                                <br>
                                             </div>
                                         </div>
                                         <div class="col-md-3">
@@ -1244,7 +1228,7 @@
                                             <li class="list-inline-item"><a href="{{$projet->texte}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$projet->nom}}</a><i class="editButton fas fa-times deleteCross ml-2"></i></li>
                                         @endforeach
                                         <li class="list-inline-item editZone">
-                                            <input class="form-control w-75 d-inline" type="text" list="dataProjet" name="projet">
+                                            <input class="form-control w-75 d-inline" type="text" list="dataProjet" name="pha/projet">
                                             <datalist id="dataProjet">
                                                 @foreach($souche['projet'] as $projet)
                                                     <option>{{$projet->nom}}</option>
@@ -1258,7 +1242,7 @@
 
                             <!-- Carac -->
                             @foreach($souche['caracterisation'] as $carac)
-                            @if($carac->type=="Pha")
+                            @if($carac->type=="PHA")
                                 <div class="CaracterisationPha p-3 d-block">
                                     <h4>Caractérisation n°{{$loop->iteration}}</h4>
                                     <hr class="w-50" align="left">
@@ -1274,9 +1258,9 @@
                                             @endforeach
                                         </ul>
                                     </div>
-                                    <div class="input-group col-8 text-left editZone">
-                                        <div class="input-group-prepend">
-                                            <input type="text" list="dataCaracterisation" placeholder="Type..." class="form-control" id="fichier_caracterisation/nom">
+                                    <div class="input-group col-8 text-left editZone mb-2">
+                                        <div class="row">
+                                            <input type="text" list="dataCaracterisation" placeholder="Type..." class="form-control col-4" id="pha/fichier_caracterisation/type" name="pha/fichier_caracterisation/type">
                                             <datalist id="dataCaracterisation">
                                                 <option>Ratio monosaccharidiques</option>
                                                 <option>RMN</option>
@@ -1285,18 +1269,14 @@
                                                 <option>Spectre HPLC</option>
                                                 <option>Spectre HPSec</option>
                                                 @foreach($souche['fichier_caracterisation'] as $carac)
-                                                    @if($carac->type=="Pha")<option>{{$carac->nom}}</option> @endif
+                                                    @if($carac->type=="EPS")<option>{{$carac->nom}}</option> @endif
                                                 @endforeach
                                             </datalist>
-                                        </div>
-                                        <div class="custom-file">
-                                            <input type="file" class="custom-file-input" id="fichier_caracterisation.fichier" name="fichier_caracterisation/fichier">
-                                            <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter un fichier </label>
-                                        </div>
-                                        <div class="input-group-append">
-                                                <span class="input-group-text">
-                                                    <i class="editButton fas fa-plus faForm"></i>
-                                                </span>
+                                            <input type="text" placeholder="Nom" class="form-control col-3" id="pha/fichier_caracterisation/nom" name="pha/fichier_caracterisation/nom">
+                                            <label class="btn btn-default border border-light rounded col-3">
+                                                Parcourir <input type="file" name="pha/fichier_caracterisation/fichier" hidden>
+                                            </label>
+                                            <i class="m-2 editButton fas fa-plus faForm"></i>
                                         </div>
                                     </div>
                                 </div>
@@ -1305,57 +1285,57 @@
 
                             <!-- Objecti -->
                             @isset($souche['objectivation'])
-                                    <div class="ObjectivationPha p-3 d-block">
-                                        <h4>Objectivation</h4>
-                                        <hr class="w-50" align="left">
+                                <div class="ObjectivationPha p-3 d-block">
+                                    <h4>Objectivation</h4>
+                                    <hr class="w-50" align="left">
 
-                                        <table class="table">
+                                    <table class="table">
+                                        <tr>
+                                            <th>Essaie</th>
+                                            <th>Protocole</th>
+                                            <th>Résultat</th>
+                                            <th>&nbsp;</th>
+                                        </tr>
+                                        @foreach($souche['objectivation'] as $objectivation)
+                                        @if($objectivation->type=="PHA")
                                             <tr>
-                                                <th>Essaie</th>
-                                                <th>Protocole</th>
-                                                <th>Résultat</th>
-                                                <th>&nbsp;</th>
-                                            </tr>
-                                            @foreach($souche['objectivation'] as $objectivation)
-                                            @if($objectivation->type=="PHA")
-                                                <tr>
-                                                    <td><p>{{$objectivation->nom}}</p></td>
-                                                    <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$objectivation->protocole}}</a></td>
-                                                    <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-success mr-1"></i>{{$objectivation->resultat}}</a></td>
-                                                    <td>
-                                                        <i class="editButton fas fa-pen"></i>
-                                                        <i class='fas fa-check checkPostRow'></i>
-                                                    </td>
-                                                </tr>
-                                            @endif
-                                            @endforeach
-                                            <tr class="editZone">
+                                                <td><p>{{$objectivation->nom}}</p></td>
+                                                <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$objectivation->protocole}}</a></td>
+                                                <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-success mr-1"></i>{{$objectivation->resultat}}</a></td>
                                                 <td>
-                                                    <div>
-                                                        <input class="form-control" type="text" name="objectivation/protocole">
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-file">
-                                                        <label class="btn btn-default border border-light rounded">
-                                                            Parcourir <input type="file" name="objectivation/protocole" hidden>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-file">
-                                                        <label class="btn btn-default border border-light rounded">
-                                                            Parcourir <input type="file" name="objectivation/resultat" hidden>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <i class="editButton fas fa-check faForm"></i>
+                                                    <i class="editButton fas fa-pen"></i>
+                                                    <i class='fas fa-check checkPostRow'></i>
                                                 </td>
                                             </tr>
-                                        </table>
-                                    </div>
-                                @endisset
+                                        @endif
+                                        @endforeach
+                                        <tr class="editZone">
+                                            <td>
+                                                <div>
+                                                    <input class="form-control" type="text" name="pha/objectivation/protocole">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="custom-file">
+                                                    <label class="btn btn-default border border-light rounded">
+                                                        Parcourir <input type="file" name="pha/objectivation/protocole" hidden>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="custom-file">
+                                                    <label class="btn btn-default border border-light rounded">
+                                                        Parcourir <input type="file" name="pha/objectivation/resultat" hidden>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <i class="editButton fas fa-check faForm"></i>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            @endisset
 
                             <!-- Production -->
                             @isset($souche['production'])
@@ -1396,17 +1376,17 @@
                                         <tr class="editZone">
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" name="production/nom">
+                                                    <input class="form-control" type="text" name="pha/production/nom">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="date" name="production/date">
+                                                    <input class="form-control" type="date" name="pha/production/date">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control" type="text" list="dataLieu" name="production/lieu">
+                                                    <input class="form-control" type="text" list="dataLieu" name="pha/production/lieu">
                                                     <datalist id="dataLieu">
                                                         @foreach($souche['production'] as $prod)
                                                             <option>{{$prod->lieu}}</option>
@@ -1417,14 +1397,14 @@
                                             <td class="editZone">
                                                 <div class="custom-file">
                                                     <label class="btn btn-default border border-light rounded">
-                                                        Parcourir <input type="file" name="production/protocole" hidden>
+                                                        Parcourir <input type="file" name="pha/production/protocole" hidden>
                                                     </label>
                                                 </div>
                                             </td>
                                             <td>
                                                 <div class="custom-file">
                                                     <label class="btn btn-default border border-light rounded">
-                                                        Parcourir <input type="file" name="production/rapport" hidden>
+                                                        Parcourir <input type="file" name="pha/production/rapport" hidden>
                                                     </label>
                                                 </div>
                                             </td>
@@ -1473,20 +1453,20 @@
                                                     <tr class="editZone">
                                                         <td>
                                                             <div>
-                                                                <input class="form-control" type="text" name="criblage/nom">
+                                                                <input class="form-control" type="text" name="pha/criblage/nom">
                                                             </div>
                                                         </td>
                                                         <td>
                                                             <div class="custom-file">
                                                                 <label class="btn btn-default border border-light rounded">
-                                                                    Parcourir <input type="file" name="criblage/condition" hidden>
+                                                                    Parcourir <input type="file" name="pha/criblage/condition" hidden>
                                                                 </label>
                                                             </div>
                                                         </td>
                                                         <td>
                                                             <div class="custom-file">
                                                                 <label class="btn btn-default border border-light rounded">
-                                                                    Parcourir <input type="file" name="criblage/rapport" hidden>
+                                                                    Parcourir <input type="file" name="pha/criblage/rapport" hidden>
                                                                 </label>
                                                             </div>
                                                         </td>
@@ -1532,7 +1512,7 @@
                                             <li class="list-inline-item"><a href="{{$projet->texte}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$projet->nom}}</a><i class="editButton fas fa-times deleteCross ml-2"></i></li>
                                         @endforeach
                                         <li class="list-inline-item editZone">
-                                            <input class="form-control w-75 d-inline" type="text" list="dataProjet" name="projet">
+                                            <input class="form-control w-75 d-inline" type="text" list="dataProjet" name="autre/projet">
                                             <datalist id="dataProjet">
                                                 @foreach($souche['projet'] as $projet)
                                                     <option>{{$projet->nom}}</option>
@@ -1544,255 +1524,251 @@
                                     <hr class="w-50" align="left">
                                 </div>
 
-                                <!-- Carac -->
-                                @foreach($souche['caracterisation'] as $carac)
-                                    @if($carac->type=="Autre")
-                                        <div class="CaracterisationAutre p-3 d-block">
-                                            <h4>Caractérisation n°{{$loop->iteration}}</h4>
-                                            <hr class="w-50" align="left">
-                                            <h6>Poid moléculaire: <span class="font-weight-light">{{$carac->poids_moleculaire }}</span></h6>
-                                            <div class="col-md-3">
-                                                <ul class="list-unstyled ">
-                                                    @foreach($souche['fichier_caracterisation'] as $carac)
-                                                        @if($carac->type=="Autre")
-                                                            <li class="m-1">
-                                                                <a href="{{$carac->ref}}/caracterisation/{{$carac->fichier}}" class="font-italic"><i class="fas fa-file-alt text-primary mr-1"></i>{{$carac->nom}}</a>
-                                                            </li>
-                                                        @endif
-                                                    @endforeach
-                                                </ul>
-                                            </div>
-                                            <div class="input-group col-8 text-left editZone">
-                                                <div class="input-group-prepend">
-                                                    <input type="text" list="dataCaracterisation" placeholder="Type..." class="form-control" id="fichier_caracterisation/nom">
-                                                    <datalist id="dataCaracterisation">
-                                                        <option>Ratio monosaccharidiques</option>
-                                                        <option>RMN</option>
-                                                        <option>Spectre RMN</option>
-                                                        <option>Substituants</option>
-                                                        <option>Spectre HPLC</option>
-                                                        <option>Spectre HPSec</option>
-                                                        @foreach($souche['fichier_caracterisation'] as $carac)
-                                                            @if($carac->type=="Autre")<option>{{$carac->nom}}</option> @endif
+                            <!-- Carac -->
+                            @foreach($souche['caracterisation'] as $carac)
+                            @if($carac->type=="Autre")
+                                <div class="CaracterisationAutre p-3 d-block">
+                                    <h4>Caractérisation n°{{$loop->iteration}}</h4>
+                                    <hr class="w-50" align="left">
+                                    <h6>Poid moléculaire: <span class="font-weight-light">{{$carac->poids_moleculaire }}</span></h6>
+                                    <div class="col-md-3">
+                                        <ul class="list-unstyled ">
+                                            @foreach($souche['fichier_caracterisation'] as $carac)
+                                                @if($carac->type=="Autre")
+                                                    <li class="m-1">
+                                                        <a href="{{$carac->ref}}/caracterisation/{{$carac->fichier}}" class="font-italic"><i class="fas fa-file-alt text-primary mr-1"></i>{{$carac->nom}}</a>
+                                                    </li>
+                                                @endif
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                    <div class="input-group col-8 text-left editZone mb-2">
+                                        <div class="row">
+                                            <input type="text" list="dataCaracterisation" placeholder="Type..." class="form-control col-4" id="autre/fichier_caracterisation/type" name="autre/fichier_caracterisation/type">
+                                            <datalist id="dataCaracterisation">
+                                                <option>Ratio monosaccharidiques</option>
+                                                <option>RMN</option>
+                                                <option>Spectre RMN</option>
+                                                <option>Substituants</option>
+                                                <option>Spectre HPLC</option>
+                                                <option>Spectre HPSec</option>
+                                                @foreach($souche['fichier_caracterisation'] as $carac)
+                                                    @if($carac->type=="EPS")<option>{{$carac->nom}}</option> @endif
+                                                @endforeach
+                                            </datalist>
+                                            <input type="text" placeholder="Nom" class="form-control col-3" id="autre/fichier_caracterisation/nom" name="autre/fichier_caracterisation/nom">
+                                            <label class="btn btn-default border border-light rounded col-3">
+                                                Parcourir <input type="file" name="autre/fichier_caracterisation/fichier" hidden>
+                                            </label>
+                                            <i class="m-2 editButton fas fa-plus faForm"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endif
+                            @endforeach
+
+                            <!-- Objecti -->
+                            @isset($souche['objectivation'])
+                                <div class="ObjectivationAutre p-3 d-block">
+                                    <h4>Objectivation</h4>
+                                    <hr class="w-50" align="left">
+
+                                    <table class="table">
+                                        <tr>
+                                            <th>Essaie</th>
+                                            <th>Protocole</th>
+                                            <th>Résultat</th>
+                                            <th>&nbsp;</th>
+                                        </tr>
+                                        @foreach($souche['objectivation'] as $objectivation)
+                                            @if($objectivation->type=="Autre")
+                                                <tr>
+                                                    <td><p>{{$objectivation->nom}}</p></td>
+                                                    <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$objectivation->protocole}}</a></td>
+                                                    <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-success mr-1"></i>{{$objectivation->resultat}}</a></td>
+                                                    <td>
+                                                        <i class="editButton fas fa-pen"></i>
+                                                        <i class='fas fa-check checkPostRow'></i>
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                        @endforeach
+                                        <tr class="editZone">
+                                            <td>
+                                                <div>
+                                                    <input class="form-control" type="text" name="autre/objectivation/protocole">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="custom-file">
+                                                    <label class="btn btn-default border border-light rounded">
+                                                        Parcourir <input type="file" name="autre/objectivation/protocole" hidden>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="custom-file">
+                                                    <label class="btn btn-default border border-light rounded">
+                                                        Parcourir <input type="file" name="autre/objectivation/resultat" hidden>
+                                                    </label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <i class="editButton fas fa-check faForm"></i>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            @endisset
+
+                            <!-- Production -->
+                            @isset($souche['production'])
+                                <div class="ProductionInduAutre p-3 d-block">
+                                    <h4>Projet industriel</h4>
+                                    <hr class="w-50" align="left">
+
+                                    <table class="table">
+                                        <tr>
+                                            <th>Production</th>
+                                            <th>Date</th>
+                                            <th>Lieu</th>
+                                            <th>Protocole</th>
+                                            <th>Résultat</th>
+                                            <th>&nbsp;</th>
+                                        </tr>
+                                        @foreach($souche['production'] as $prod)
+                                            @if($prod->type=="Autre")
+                                                <tr>
+                                                    <td><p>{{$prod->nom}}</p></td>
+                                                    <td><p>{{$prod->date}}</p></td>
+                                                    <td><p>{{$prod->lieu}}</p></td>
+                                                    <td>
+                                                        <a href="{{$prod->ref}}/production/{{$prod->protocole}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-2"></i>{{$prod->protocole}}</a>
+                                                        <i class="editButton fas fa-times deleteCross ml-2"></i>
+                                                    </td>
+                                                    <td>
+                                                        <a href="{{$prod->ref}}/production/{{$prod->protocole}}" class="font-italic"><i class="fas fa-file-alt text-success mr-2"></i>{{$prod->rapport}}</a>
+                                                        <i class="editButton fas fa-times deleteCross ml-2"></i>
+                                                    </td>
+                                                    <td>
+                                                        <i class="editButton fas fa-pen"></i>
+                                                        <i class='fas fa-check checkPostRow'></i>
+                                                    </td>
+                                                </tr>
+                                            @endif
+                                        @endforeach
+                                        <tr class="editZone">
+                                            <td>
+                                                <div>
+                                                    <input class="form-control" type="text" name="autre/production/nom">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <input class="form-control" type="date" name="autre/production/date">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <input class="form-control" type="text" list="dataLieu" name="autre/production/lieu">
+                                                    <datalist id="dataLieu">
+                                                        @foreach($souche['production'] as $prod)
+                                                            <option>{{$prod->lieu}}</option>
                                                         @endforeach
                                                     </datalist>
                                                 </div>
+                                            </td>
+                                            <td class="editZone">
                                                 <div class="custom-file">
-                                                    <input type="file" class="custom-file-input" id="fichier_caracterisation.fichier" name="fichier_caracterisation/fichier">
-                                                    <label class="custom-file-label" for="fileDescription" data-browse="A">Ajouter un fichier </label>
+                                                    <label class="btn btn-default border border-light rounded">
+                                                        Parcourir <input type="file" name="autre/production/protocole" hidden>
+                                                    </label>
                                                 </div>
-                                                <div class="input-group-append">
-                                                <span class="input-group-text">
-                                                    <i class="editButton fas fa-plus faForm"></i>
-                                                </span>
+                                            </td>
+                                            <td>
+                                                <div class="custom-file">
+                                                    <label class="btn btn-default border border-light rounded">
+                                                        Parcourir <input type="file" name="autre/production/rapport" hidden>
+                                                    </label>
                                                 </div>
-                                            </div>
-                                        </div>
-                                    @endif
-                                @endforeach
-
-                            <!-- Objecti -->
-                                @isset($souche['objectivation'])
-                                    <div class="ObjectivationAutre p-3 d-block">
-                                        <h4>Objectivation</h4>
-                                        <hr class="w-50" align="left">
-
-                                        <table class="table">
-                                            <tr>
-                                                <th>Essaie</th>
-                                                <th>Protocole</th>
-                                                <th>Résultat</th>
-                                                <th>&nbsp;</th>
-                                            </tr>
-                                            @foreach($souche['objectivation'] as $objectivation)
-                                                @if($objectivation->type=="Autre")
-                                                    <tr>
-                                                        <td><p>{{$objectivation->nom}}</p></td>
-                                                        <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-danger mr-1"></i>{{$objectivation->protocole}}</a></td>
-                                                        <td><a href="#" class="font-italic"><i class="fas fa-file-alt text-success mr-1"></i>{{$objectivation->resultat}}</a></td>
-                                                        <td>
-                                                            <i class="editButton fas fa-pen"></i>
-                                                            <i class='fas fa-check checkPostRow'></i>
-                                                        </td>
-                                                    </tr>
-                                                @endif
-                                            @endforeach
-                                            <tr class="editZone">
-                                                <td>
-                                                    <div>
-                                                        <input class="form-control" type="text" name="objectivation/protocole">
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-file">
-                                                        <label class="btn btn-default border border-light rounded">
-                                                            Parcourir <input type="file" name="objectivation/protocole" hidden>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-file">
-                                                        <label class="btn btn-default border border-light rounded">
-                                                            Parcourir <input type="file" name="objectivation/resultat" hidden>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <i class="editButton fas fa-check faForm"></i>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                @endisset
-
-                            <!-- Production -->
-                                @isset($souche['production'])
-                                    <div class="ProductionInduAutre p-3 d-block">
-                                        <h4>Projet industriel</h4>
-                                        <hr class="w-50" align="left">
-
-                                        <table class="table">
-                                            <tr>
-                                                <th>Production</th>
-                                                <th>Date</th>
-                                                <th>Lieu</th>
-                                                <th>Protocole</th>
-                                                <th>Résultat</th>
-                                                <th>&nbsp;</th>
-                                            </tr>
-                                            @foreach($souche['production'] as $prod)
-                                                @if($prod->type=="Autre")
-                                                    <tr>
-                                                        <td><p>{{$prod->nom}}</p></td>
-                                                        <td><p>{{$prod->date}}</p></td>
-                                                        <td><p>{{$prod->lieu}}</p></td>
-                                                        <td>
-                                                            <a href="{{$prod->ref}}/production/{{$prod->protocole}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-2"></i>{{$prod->protocole}}</a>
-                                                            <i class="editButton fas fa-times deleteCross ml-2"></i>
-                                                        </td>
-                                                        <td>
-                                                            <a href="{{$prod->ref}}/production/{{$prod->protocole}}" class="font-italic"><i class="fas fa-file-alt text-success mr-2"></i>{{$prod->rapport}}</a>
-                                                            <i class="editButton fas fa-times deleteCross ml-2"></i>
-                                                        </td>
-                                                        <td>
-                                                            <i class="editButton fas fa-pen"></i>
-                                                            <i class='fas fa-check checkPostRow'></i>
-                                                        </td>
-                                                    </tr>
-                                                @endif
-                                            @endforeach
-                                            <tr class="editZone">
-                                                <td>
-                                                    <div>
-                                                        <input class="form-control" type="text" name="production/nom">
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div>
-                                                        <input class="form-control" type="date" name="production/date">
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div>
-                                                        <input class="form-control" type="text" list="dataLieu" name="production/lieu">
-                                                        <datalist id="dataLieu">
-                                                            @foreach($souche['production'] as $prod)
-                                                                <option>{{$prod->lieu}}</option>
-                                                            @endforeach
-                                                        </datalist>
-                                                    </div>
-                                                </td>
-                                                <td class="editZone">
-                                                    <div class="custom-file">
-                                                        <label class="btn btn-default border border-light rounded">
-                                                            Parcourir <input type="file" name="production/protocole" hidden>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="custom-file">
-                                                        <label class="btn btn-default border border-light rounded">
-                                                            Parcourir <input type="file" name="production/rapport" hidden>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <i class="editButton fas fa-check faForm"></i>
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </div>
-                                @endisset
+                                            </td>
+                                            <td>
+                                                <i class="editButton fas fa-check faForm"></i>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            @endisset
 
                             <!-- Criblage -->
-                                @isset($souche['production'])
-                                    <div class="CriblageAutre p-3 d-block">
-                                        <h4>Criblage</h4>
-                                        <hr class="w-50" align="left">
-                                        <div class="row">
-                                            <div class="col-md-9">
-                                                <div>
-                                                    <table class="table text-center">
-                                                        <tbody>
-                                                        <tr>
-                                                            <th>#</th>
-                                                            <th>Condition</th>
-                                                            <th>Rapport</th>
-                                                        </tr>
-                                                        @foreach($souche['criblage'] as $criblage)
-                                                            @if($criblage->type=="Autre")
-                                                                <tr>
-                                                                    <td><p>{{$criblage->nom}}</p></td>
-                                                                    <td>
-                                                                        <a href="{{$criblage->ref}}/condition/{{$criblage->conditions}}" class="font-italic"><i class="fas fa-file-alt mr-2"></i>{{$criblage->conditions}}</a>
-                                                                        <i class="editButton fas fa-times deleteCross ml-2"></i>
-                                                                    </td>
-                                                                    <td>
-                                                                        <a href="{{$criblage->ref}}/condition/{{$criblage->rapport}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-2"></i>{{$criblage->rapport}}</a>
-                                                                        <i class="editButton fas fa-times deleteCross ml-2"></i>
-                                                                    </td>
-                                                                    <td>
-                                                                        <i class="editButton fas fa-pen"></i>
-                                                                        <i class='fas fa-check checkPostRow'></i>
-                                                                    </td>
-                                                                </tr>
-                                                            @endif
-                                                        @endforeach
-                                                        <tr class="editZone">
-                                                            <td>
-                                                                <div>
-                                                                    <input class="form-control" type="text" name="criblage/nom">
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="custom-file">
-                                                                    <label class="btn btn-default border border-light rounded">
-                                                                        Parcourir <input type="file" name="criblage/condition" hidden>
-                                                                    </label>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <div class="custom-file">
-                                                                    <label class="btn btn-default border border-light rounded">
-                                                                        Parcourir <input type="file" name="criblage/rapport" hidden>
-                                                                    </label>
-                                                                </div>
-                                                            </td>
-                                                            <td>
-                                                                <i class="editButton fas fa-check faForm"></i>
-                                                            </td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                    <br>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-
+                            @isset($souche['production'])
+                                <div class="CriblageAutre p-3 d-block">
+                                    <h4>Criblage</h4>
+                                    <hr class="w-50" align="left">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <div>
+                                                <table class="table text-center">
+                                                    <tbody>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>Condition</th>
+                                                        <th>Rapport</th>
+                                                    </tr>
+                                                    @foreach($souche['criblage'] as $criblage)
+                                                        @if($criblage->type=="Autre")
+                                                            <tr>
+                                                                <td><p>{{$criblage->nom}}</p></td>
+                                                                <td>
+                                                                    <a href="{{$criblage->ref}}/condition/{{$criblage->conditions}}" class="font-italic"><i class="fas fa-file-alt mr-2"></i>{{$criblage->conditions}}</a>
+                                                                    <i class="editButton fas fa-times deleteCross ml-2"></i>
+                                                                </td>
+                                                                <td>
+                                                                    <a href="{{$criblage->ref}}/condition/{{$criblage->rapport}}" class="font-italic"><i class="fas fa-file-alt text-danger mr-2"></i>{{$criblage->rapport}}</a>
+                                                                    <i class="editButton fas fa-times deleteCross ml-2"></i>
+                                                                </td>
+                                                                <td>
+                                                                    <i class="editButton fas fa-pen"></i>
+                                                                    <i class='fas fa-check checkPostRow'></i>
+                                                                </td>
+                                                            </tr>
+                                                        @endif
+                                                    @endforeach
+                                                    <tr class="editZone">
+                                                        <td>
+                                                            <div>
+                                                                <input class="form-control" type="text" name="autre/criblage/nom">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="custom-file">
+                                                                <label class="btn btn-default border border-light rounded">
+                                                                    Parcourir <input type="file" name="autre/criblage/condition" hidden>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="custom-file">
+                                                                <label class="btn btn-default border border-light rounded">
+                                                                    Parcourir <input type="file" name="autre/criblage/rapport" hidden>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <i class="editButton fas fa-check faForm"></i>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                                <br>
                                             </div>
                                         </div>
+                                        <div class="col-md-3">
+
+                                        </div>
                                     </div>
-                                @endisset
+                                </div>
+                            @endisset
 
                             </div>
                         </div>

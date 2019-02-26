@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>Maquette souchothèque</title>
+    <title>Polymaris - Souchothèque</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" type="text/css" href="{{asset('css/souche.css')}}"/>
@@ -30,14 +30,14 @@
                         Souches
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="ajout_souche_v2.php">Ajouter</a>
-                        <a class="dropdown-item" href="#">Supprimer</a>
+                        <a class="dropdown-item" href="ajout">Ajouter</a>
+                        <a class="dropdown-item disabled" href="#">Supprimer</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Dernière mise à jour</a>
+                        <a class="dropdown-item disabled" href="#">Dernière mise à jour</a>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Gestion des comptes</a>
+                    <a class="nav-link disabled" href="#">Gestion des comptes</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
