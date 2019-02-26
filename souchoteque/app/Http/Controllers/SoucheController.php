@@ -9,7 +9,6 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use phpDocumentor\Reflection\Types\Array_;
 
 class SoucheController extends BaseController
 {
@@ -97,6 +96,11 @@ class SoucheController extends BaseController
             "activite" => "activite",
             "partenaire" => "partenaire",
         ],
+        "publication" => [
+            "nom" => "string",
+            "date" => "date",
+            "fichier" => "file"
+        ],
         "souche" => [
             "origine" => "string",
             "annee_collecte" => "int",
@@ -106,10 +110,11 @@ class SoucheController extends BaseController
             "validation_hcb" => "file",
             "schema_plasmique" => "file"
         ]
+
     ];
 
     public $dbCle = [
-        "brevet" => "titre",
+        "brevet_soleau" => "titre",
         "capacite_production" => "nom",
         "caracterisation" => "type",
         "criblage" => "nom",
@@ -127,10 +132,10 @@ class SoucheController extends BaseController
     ];
 
     /////////////////////////////////////Date/////////////////////////////////////////
-    function validateDate($date, $format = 'd/m/Y')
+    function validateDate($date)
     {
-        $d = DateTime::createFromFormat($format, $date);
-        return $d && $d->format($format) == $date;
+        $date = explode("-", $date);
+        return checkdate($date[1], $date[2], $date[1]);
     }
     public function dateDtoV($date){
         return date( "d/m/Y", date_create_from_format("Y-m-d", $date));
@@ -139,11 +144,6 @@ class SoucheController extends BaseController
         if ($this->validateDate($date))
             return date( "Y-m-d", date_create_from_format("d/m/Y", $date));
         return view('souche_feedback', ['error' => true, 'message' => "Une des date que vous avez saisi n'est pas conforme"]);
-    }
-
-    /////////////////////////////////////Check////////////////////////////////////////
-    public function SandNN($data){
-        return (isset($data) && $data != 0);
     }
 
     ////////////////////////////////Gestion ajout/////////////////////////////////////
@@ -165,7 +165,7 @@ class SoucheController extends BaseController
     }
     public function ajoutDate($date){
         if ($this->validateDate($date)){
-            return $this->dateVtoD($date);
+            return $date;
         }
         return view('souche_feedback', ['error' => true, 'message' => "Une date que vous avez saisi a une erreur"]);
 
@@ -358,18 +358,38 @@ class SoucheController extends BaseController
             unset($temp);
         }
 
-        dd($data);
+        //dd($data);
 
         foreach ($data as $table => $lines){
             switch ($table) {
                 case "souche":
-                    /*$db = DB::table("souche")->where("ref", "=", $id);
-                    if ($this->SandNN($data[$table][$lines])){
+                    $db = DB::table("souche")->where("ref", "=", $id);
+                    if (isset($data["souche"]["origine"])){
                         $db->update(["origine" => $data["souche"]["origine"]]);
                     }
-                    if ($this->SandNN($data["souche"]["annee_collecte"]) && is_int($data["souche"]["annee_collecte"])){
+                    if (isset($data["souche"]["annee_collecte"]) && is_int($data["souche"]["annee_collecte"])){
                         $db->update(["annee_collecte" => $data["souche"]["annee_collecte"]]);
-                    }*/
+                    }
+                    if (isset($data["souche"]["annee_creation"]) && is_int($data["souche"]["annee_creation"])){
+                        $db->update(["annee_creation" => $data["souche"]["annee_creation"]]);
+                    }
+                    if (isset($data["souche"]["description"]))
+                        $db->update(["description" => $this->ajoutFile($id."/souche", "description", $data["souche"]["description"])]);
+
+                    if (isset($data["souche"]["hcb"]["doc"]))
+                        $db->update([$data["souche"]["hcb"]["type"] => $this->ajoutFile($id."/souche",
+                            $data["souche"]["hcb"]["type"],
+                            $data["souche"]["hcb"]["doc"])]);
+
+                    break;
+                case "description":
+
+                    break;
+                case "photo_souche":
+                    DB::table("photo_souche")->insert([
+                        "fichier" => $this->ajoutFile($id."/souche", "", $data["photo_souche"]["fichier"]),
+                        "description" => $data["photo_souche"]["description"]
+                    ]);
                     break;
                 case "oses":
 
@@ -377,73 +397,84 @@ class SoucheController extends BaseController
                 case "projet":
 
                     break;
+                case "eps":
+
+                    break;
+                case "pha":
+
+                    break;
+                case "autre":
+
+                    break;
                 default :
                     foreach ($data[$table] as $rows) {
-                        if (DB::table($table)
-                                ->where($this->dbCle[$table], "=", $rows[$this->dbCle[$table]])
-                                ->where("ref", "=", $id)
-                                ->count() == 1) {
-                            $update = [];
-                            foreach ($rows as $row => $value) {
-                                if ($value != null)
-                                    switch ($this->dbFormat[$table][$row]) {
-                                        case "file":
-                                            $update[$row] = $this->ajoutFile($id . "/" . $table, $row, $value);
-                                            break;
-                                        case "string":
-                                            $update[$row] = $this->ajoutString($value);
-                                            break;
-                                        case "date":
-                                            $update[$row] = $this->ajoutDate($value);
-                                            break;
-                                        case "int":
-                                            $update[$row] = $this->ajoutInt($value);
-                                            break;
-                                        case "activite":
-                                            $update[$row] = $this->ajoutActivite($value);
-                                            break;
-                                        case "partenaire":
-                                            $update[$row] = $this->ajoutPartenaire($value);
-                                            break;
-                                        case "type":
-                                            $update[$row] = $this->ajoutType($value);
-                                            break;
+                        if ($rows != null) {
+                            if (DB::table($table)
+                                    ->where($this->dbCle[$table], "=", $rows[$this->dbCle[$table]])
+                                    ->where("ref", "=", $id)
+                                    ->count() == 1) {
+                                $update = [];
+                                foreach ($rows as $row => $value) {
+                                    if ($value != null)
+                                        switch ($this->dbFormat[$table][$row]) {
+                                            case "file":
+                                                $update[$row] = $this->ajoutFile($id . "/" . $table, $rows[$this->dbCle[$table]]."_".$row, $value);
+                                                break;
+                                            case "string":
+                                                $update[$row] = $this->ajoutString($value);
+                                                break;
+                                            case "date":
+                                                $update[$row] = $this->ajoutDate($value);
+                                                break;
+                                            case "int":
+                                                $update[$row] = $this->ajoutInt($value);
+                                                break;
+                                            case "activite":
+                                                $update[$row] = $this->ajoutActivite($value);
+                                                break;
+                                            case "partenaire":
+                                                $update[$row] = $this->ajoutPartenaire($value);
+                                                break;
+                                            case "type":
+                                                $update[$row] = $this->ajoutType($value);
+                                                break;
 
-                                    }
+                                        }
+                                }
+                                DB::table($table)
+                                    ->where($this->dbCle[$table], "=", $rows[$this->dbCle[$table]])
+                                    ->where("ref", "=", $id)
+                                    ->update($update);
+                            } else {
+                                $insert = [];
+                                foreach ($rows as $row => $value) {
+                                    if ($value != null)
+                                        switch ($this->dbFormat[$table][$row]) {
+                                            case "file":
+                                                $insert[$row] = $this->ajoutFile($id . "/" . $table, $rows[$this->dbCle[$table]]."_".$row, $value);
+                                                break;
+                                            case "string":
+                                                $insert[$row] = $this->ajoutString($value);
+                                                break;
+                                            case "date":
+                                                $insert[$row] = $this->ajoutDate($value);
+                                                break;
+                                            case "int":
+                                                $insert[$row] = $this->ajoutInt($value);
+                                                break;
+                                            case "activite":
+                                                $insert[$row] = $this->ajoutActivite($value);
+                                                break;
+                                            case "partenaire":
+                                                $insert[$row] = $this->ajoutPartenaire($value);
+                                                break;
+                                            case "type":
+                                                $insert[$row] = $this->ajoutType($value);
+                                                break;
+                                        }
+                                }
+                                DB::table($table)->insert($insert);
                             }
-                            DB::table($table)
-                                ->where($this->dbCle[$table], "=", $lines[$this->dbCle[$table]])
-                                ->where("ref", "=", $id)
-                                ->update($update);
-                        } else {
-                            $insert = [];
-                            foreach ($rows as $row => $value) {
-                                if ($value != null)
-                                    switch ($this->dbFormat[$table][$row]) {
-                                        case "file":
-                                            $insert[$row] = $this->ajoutFile($id . "/" . $table, $row, $value);
-                                            break;
-                                        case "string":
-                                            $insert[$row] = $this->ajoutString($value);
-                                            break;
-                                        case "date":
-                                            $insert[$row] = $this->ajoutDate($value);
-                                            break;
-                                        case "int":
-                                            $insert[$row] = $this->ajoutInt($value);
-                                            break;
-                                        case "activite":
-                                            $insert[$row] = $this->ajoutActivite($value);
-                                            break;
-                                        case "partenaire":
-                                            $insert[$row] = $this->ajoutPartenaire($value);
-                                            break;
-                                        case "type":
-                                            $insert[$row] = $this->ajoutType($value);
-                                            break;
-                                    }
-                            }
-                            DB::table($table)->insert($insert);
                         }
                     }
                     break;
