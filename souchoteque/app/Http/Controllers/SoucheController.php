@@ -19,6 +19,49 @@ class SoucheController extends BaseController
     //                                  Toolbox                                     //
     //////////////////////////////////////////////////////////////////////////////////
 
+    //////////////////////////////////Dictionaire/////////////////////////////////////
+    public $dbFormat = [[
+        "brevet_soleau" => [
+            "titre" => "string",
+            "date" => "date",
+            "scan" => "file",
+            "numero" => "int",
+            "inpi" => "file",
+            "activite" => "activite"
+        ],
+        "capacite_production" => [
+            "nom" => "string",
+            "type" => "PHA/EPS/Autre",
+            "fichier" => "file"
+        ],
+        "caracterisation" => [
+            "type" => "PHA/EPS/Autre",
+            "poids_moleculaire" => "float"
+        ],
+        "criblage" => [
+            "nom" => "string",
+            "condition" => "file",
+            "rapport" => "file",
+        ],
+        "description" => [
+            "texte" => "string",
+            "fichier" => "file",
+        ],
+        "exclusivite" => [
+            "id" => "int",
+            "date_debut" => "date",
+            "date_fin" => "date",
+            "activite" => "activite",
+            "partenaire" => "partenaire"
+        ],
+        "fichier caracterisation" => [
+            "nom" => "string",
+            "fichier" => "file",
+            "type" => "PHA/EPS/Autre"
+        ],
+        "identification" =>
+    ]];
+
     /////////////////////////////////////Date/////////////////////////////////////////
     function validateDate($date, $format = 'd/m/Y')
     {
@@ -46,7 +89,7 @@ class SoucheController extends BaseController
             return view('souche_feedback', ['error' => true, 'message' => "Un des fichier que vous avez envoyé a rencontré une erreur"]);
         }
         else {
-            Storage::putFileAs($chemin, $fichier, $date.$nom.".".$fichier->extension());
+            Storage::putFileAs("public/".$chemin, $fichier, $date.$nom.".".$fichier->extension());
             return $chemin."/".$date.$nom.".".$fichier->extension();
         }
     }
@@ -221,10 +264,10 @@ class SoucheController extends BaseController
                 if ($this->SandNN($data["brevet_soleau"]["date"]) && $this->validateDate($data["brevet_soleau"]["date"])){
                     $update["date"] = $this->dateVtoD($data["brevet_soleau"]["date"]);
                 }
-                if ($this->SandNN($data["brevet_soleau"]["scan"])){
-                    $update["scan"] = $this->ajoutFile($id."/brevet_soleau", "scan", $data["brevet_soleau"]["scan"]);
-                }
-
+                foreach (["scan", "inpi"] as $nom)
+                    if ($this->SandNN($data["brevet_soleau"][$nom])){
+                        $update[$nom] = $this->ajoutFile($id."/brevet_soleau", $nom, $data["brevet_soleau"][$nom]);
+                    }
             }
 
         }
