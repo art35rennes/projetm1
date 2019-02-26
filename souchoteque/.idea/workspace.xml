@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eab5d6e8-9b8f-466d-93da-9c0479ef1f5b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SoucheController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SoucheController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,10 +18,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SoucheController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="738">
-              <caret line="94" column="5" lean-forward="true" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
+            <state relative-caret-position="370">
+              <caret line="406" column="13" lean-forward="true" selection-start-line="406" selection-start-column="13" selection-end-line="406" selection-end-column="13" />
               <folding>
                 <element signature="e#40#85#0#PHP" expanded="true" />
+                <element signature="e#886#3253#1#PHP" />
               </folding>
             </state>
           </provider>
@@ -306,12 +306,12 @@
       <workItem from="1550236904818" duration="49000" />
       <workItem from="1550236997910" duration="1247000" />
       <workItem from="1551096629267" duration="439000" />
-      <workItem from="1551104708165" duration="26571000" />
+      <workItem from="1551104708165" duration="32479000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74753000" />
+    <option name="totallyTimeSpent" value="80661000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -550,10 +550,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SoucheController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="94" column="5" lean-forward="true" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
+        <state relative-caret-position="370">
+          <caret line="406" column="13" lean-forward="true" selection-start-line="406" selection-start-column="13" selection-end-line="406" selection-end-column="13" />
           <folding>
             <element signature="e#40#85#0#PHP" expanded="true" />
+            <element signature="e#886#3253#1#PHP" />
           </folding>
         </state>
       </provider>
