@@ -127,7 +127,7 @@
                                                 </div>
                                             </div>
 
-                                            @isset($souche['souche'][0])<a href="{{asset("/storage/".($souche['souche'][0]->description)}}" class="font-italic">{{$souche['souche'][0]->description}}</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>@endisset
+                                            @isset($souche['souche'][0])<a href="{{asset("/storage/".$souche['souche'][0]->description)}}" class="font-italic">{{$souche['souche'][0]->description}}</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>@endisset
 
                                             <hr>
 
