@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use phpDocumentor\Reflection\Types\Array_;
 
 class SoucheController extends BaseController
 {
@@ -122,7 +123,7 @@ class SoucheController extends BaseController
         if (!$request->hasFile("description")) {
             return view('souche_feedback', ['error' => true, 'message' => 'Veuillez ajouter une description']);
         }else{
-            $insert["description"] = $this->ajoutFile($chemin, $request->file("description"), "description");
+            $insert["description"] = $this->ajoutFile($chemin, "description", $request->file("description"));
             if ($insert["description"] == null)
                 return view('souche_feedback', ['error' => true, 'message' => 'Veuillez ajouter une description']);
         }
@@ -136,7 +137,7 @@ class SoucheController extends BaseController
 
             foreach (["texte_hcb", "validation_hcb", "schema_plasmique"] as $nom){
                 if ($request->hasFile($nom)) {
-                    $insert[$nom] = $this->ajoutFile($chemin, $request->file($nom), $nom);
+                    $insert[$nom] = $this->ajoutFile($chemin, $nom,  $request->file($nom));
                     if ($insert[$nom] == false)
                         return view('souche_feedback', ['error' => true, 'message' => 'Une erreur est survenue avec le fichier '.$nom]);
 
@@ -159,12 +160,19 @@ class SoucheController extends BaseController
         }
     }
 
+
     public function update($id, Request $request){
         $souche = $this->getData($id);
         $posts = $request->all();
         $type_hcb = null;
+        $out = [];
+        foreach ($posts as $keys => $value) {
+            $key = explode("/", $keys);
+            $i=1;
+        }
+        dd($out);
 
-        foreach ($posts as $key => $value) {
+        /*foreach ($posts as $key => $value) {
             $key = explode("/", $key);
             switch ($key[0]){
                 case "brevet_soleau":
@@ -258,8 +266,7 @@ class SoucheController extends BaseController
                     break;
 
             }
-        }
-        dd($posts);
+        }*/
     }
 
     public function suppr($id){
