@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eab5d6e8-9b8f-466d-93da-9c0479ef1f5b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SoucheController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SoucheController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,11 +19,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SoucheController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="360" column="18" selection-start-line="360" selection-start-column="18" selection-end-line="360" selection-end-column="18" />
+            <state relative-caret-position="444">
+              <caret line="390" column="77" selection-start-line="390" selection-start-column="77" selection-end-line="390" selection-end-column="77" />
               <folding>
                 <element signature="e#40#85#0#PHP" expanded="true" />
-                <element signature="e#886#3253#1#PHP" />
+                <element signature="e#842#3404#0#PHP" />
                 <element signature="e#3428#3569#0#PHP" />
               </folding>
             </state>
@@ -41,6 +42,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>$id</find>
+      <find>SandNN</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -231,23 +233,6 @@
               <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
-            <path>
-              <item name="souchoteque" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="storage" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="433" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-            <path>
-              <item name="souchoteque" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
-              <item name="storage" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="433" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="souche" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -307,12 +292,12 @@
       <workItem from="1550236904818" duration="49000" />
       <workItem from="1550236997910" duration="1247000" />
       <workItem from="1551096629267" duration="439000" />
-      <workItem from="1551104708165" duration="34438000" />
+      <workItem from="1551104708165" duration="40369000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82620000" />
+    <option name="totallyTimeSpent" value="88551000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -327,7 +312,7 @@
     <frame x="0" y="23" width="1440" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49429658" visible="true" weight="0.2160229" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49429658" visible="true" weight="0.2160229" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.50570345" side_tool="true" weight="0.26037195" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -342,7 +327,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3299363" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3299363" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.3299363" />
       <window_info anchor="bottom" id="Thumbnails" order="12" visible="true" weight="0.3299363" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -551,11 +536,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SoucheController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="360" column="18" selection-start-line="360" selection-start-column="18" selection-end-line="360" selection-end-column="18" />
+        <state relative-caret-position="444">
+          <caret line="390" column="77" selection-start-line="390" selection-start-column="77" selection-end-line="390" selection-end-column="77" />
           <folding>
             <element signature="e#40#85#0#PHP" expanded="true" />
-            <element signature="e#886#3253#1#PHP" />
+            <element signature="e#842#3404#0#PHP" />
             <element signature="e#3428#3569#0#PHP" />
           </folding>
         </state>
