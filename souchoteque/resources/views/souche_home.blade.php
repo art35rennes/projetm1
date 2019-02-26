@@ -717,12 +717,12 @@
                                             <td>&nbsp;</td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control border border-info" placeholder="yyyy-mm-dd" pattern="" type="text" name="exclusivite/0/date_debut">
+                                                    <input class="form-control border border-info" placeholder="yyyy-mm-dd" pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))" type="text" name="exclusivite/0/date_debut">
                                                 </div>
                                             </td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control border border-info" placeholder="yyyy-mm-dd" pattern="" type="text" name="exclusivite/0/date_fin">
+                                                    <input class="form-control border border-info" placeholder="yyyy-mm-dd" pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))" type="text" name="exclusivite/0/date_fin">
                                                 </div>
                                             </td>
                                             <td>
@@ -765,16 +765,18 @@
                                 <div class="card-body">
                                     <table class="table">
                                         <tr>
-                                            <th style="width: 2.5%">#</th>
-                                            <th style="width: 20%">Date</th>
-                                            <th style="width: 20%">Partenaire</th>
-                                            <th style="width: 25%">Secteur</th>
-                                            <th style="width: 25%">Document</th>
-                                            <th style="width: 2.5%">&nbsp;</th>
+                                            <th>#</th>
+                                            <th>Nom</th>
+                                            <th>Date</th>
+                                            <th>Partenaire</th>
+                                            <th>Secteur</th>
+                                            <th>Document</th>
+                                            <th>&nbsp;</th>
                                         </tr>
                                         @foreach($souche['projet_souche'] as $projet)
                                         <tr>
                                             <td><span>{{$loop->iteration}}</span></td>
+                                            <td><p>{{$projet->nom}}</p></td>
                                             <td><p>{{$projet->date}}</p></td>
                                             <td><p>{{$projet->partenaire}}</p></td>
                                             <td><p>{{$projet->activite}}</p></td>
@@ -793,7 +795,12 @@
                                             <td>&nbsp;</td>
                                             <td>
                                                 <div>
-                                                    <input class="form-control border border-info" placeholder="yyyy-mm-dd" pattern="" type="text" name="projet/0/date">
+                                                    <input class="form-control border border-info" type="text" name="projet/0/nom" isKey="true">
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div>
+                                                    <input class="form-control border border-info" placeholder="yyyy-mm-dd" pattern="([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))" type="text" name="projet/0/date">
                                                 </div>
                                             </td>
                                             <td>

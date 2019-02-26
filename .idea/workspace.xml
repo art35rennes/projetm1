@@ -21,8 +21,10 @@
             <file pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="354">
-                    <caret line="1513" column="33" selection-start-line="1513" selection-start-column="33" selection-end-line="1513" selection-end-column="33" />
+                  <state relative-caret-position="678">
+                    <caret line="719" column="182" selection-start-line="719" selection-start-column="182" selection-end-line="719" selection-end-column="182" />
+                    <caret line="724" column="182" selection-start-line="724" selection-start-column="182" selection-end-line="724" selection-end-column="182" />
+                    <caret line="801" column="182" selection-start-line="801" selection-start-column="182" selection-end-line="801" selection-end-column="182" />
                     <folding>
                       <element signature="e#41#895#0#HTML" />
                       <element signature="e#1724#5152#0#HTML" />
@@ -41,8 +43,6 @@
                       <element signature="e#37427#37446#0#HTML" expanded="true" />
                       <element signature="e#37505#37523#0#HTML" expanded="true" />
                       <element signature="e#44388#47921#0#HTML" />
-                      <element signature="e#47992#52740#0#HTML" />
-                      <element signature="e#52806#58016#0#HTML" />
                       <element signature="e#57491#86118#0#HTML" />
                       <element signature="e#58969#60719#0#HTML" />
                       <element signature="e#86165#106070#0#HTML" />
@@ -115,7 +115,7 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/.old/front/fiche.html">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state>
+                    <state relative-caret-position="2">
                       <caret line="66" selection-start-line="66" selection-end-line="66" />
                       <folding>
                         <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
@@ -131,7 +131,7 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/souchoteque/routes/web.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="107">
+                    <state relative-caret-position="110">
                       <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
                       <folding>
                         <element signature="e#7#389#0#PHP" expanded="true" />
@@ -156,7 +156,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>&lt;i class=&quot;editButton fas fa-check&quot;&gt;&lt;/i&gt;</find>
       <find>&lt;i class=&quot;editButton fas fa-times deleteCross ml-2&quot;&gt;&lt;/i&gt;</find>
       <find>&lt;i class=&quot;editButton fas fa-plus&quot;&gt;&lt;/i&gt;</find>
       <find>&lt;i class=&quot;editButton fas fa-times deleteCross ml-2 faForm&quot;&gt;&lt;/i&gt;</find>
@@ -186,6 +185,7 @@
       <find>&lt;i class=&quot;fas fa-file-alt m</find>
       <find>&lt;i class=&quot;fas fa-file-alt</find>
       <find>editZone</find>
+      <find>pattern=&quot;&quot;</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -203,8 +203,8 @@
         <option value="$PROJECT_DIR$/souchoteque/app/Http/Controllers/SoucheController.php" />
         <option value="$PROJECT_DIR$/souchoteque/resources/views/home.blade.php" />
         <option value="$PROJECT_DIR$/souchoteque/resources/views/layout.blade.php" />
-        <option value="$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php" />
         <option value="$PROJECT_DIR$/souchoteque/public/js/souche.js" />
+        <option value="$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php" />
       </list>
     </option>
   </component>
@@ -419,12 +419,12 @@
       <workItem from="1550344632576" duration="9048000" />
       <workItem from="1550409017301" duration="4052000" />
       <workItem from="1550413742701" duration="7051000" />
-      <workItem from="1551090500519" duration="45745000" />
+      <workItem from="1551090500519" duration="46109000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="227400000" />
+    <option name="totallyTimeSpent" value="227764000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -570,7 +570,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.old/front/fiche.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="2">
           <caret line="66" selection-start-line="66" selection-end-line="66" />
           <folding>
             <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
@@ -580,7 +580,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
+        <state relative-caret-position="110">
           <caret line="31" column="43" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
           <folding>
             <element signature="e#7#389#0#PHP" expanded="true" />
@@ -624,8 +624,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche_home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="1513" column="33" selection-start-line="1513" selection-start-column="33" selection-end-line="1513" selection-end-column="33" />
+        <state relative-caret-position="678">
+          <caret line="719" column="182" selection-start-line="719" selection-start-column="182" selection-end-line="719" selection-end-column="182" />
+          <caret line="724" column="182" selection-start-line="724" selection-start-column="182" selection-end-line="724" selection-end-column="182" />
+          <caret line="801" column="182" selection-start-line="801" selection-start-column="182" selection-end-line="801" selection-end-column="182" />
           <folding>
             <element signature="e#41#895#0#HTML" />
             <element signature="e#1724#5152#0#HTML" />
@@ -644,8 +646,6 @@
             <element signature="e#37427#37446#0#HTML" expanded="true" />
             <element signature="e#37505#37523#0#HTML" expanded="true" />
             <element signature="e#44388#47921#0#HTML" />
-            <element signature="e#47992#52740#0#HTML" />
-            <element signature="e#52806#58016#0#HTML" />
             <element signature="e#57491#86118#0#HTML" />
             <element signature="e#58969#60719#0#HTML" />
             <element signature="e#86165#106070#0#HTML" />
