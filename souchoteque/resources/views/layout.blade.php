@@ -12,10 +12,10 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/home">
+        <!--a class="navbar-brand" href="/home">
             <img src="{{asset('ressources/favicon.ico')}}" width="30" height="30" alt="chevron">
             Souchotèque
-        </a>
+        </a-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -41,8 +41,8 @@
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Référence souche" aria-label="Rechercher">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+                <input class="form-control mr-sm-2" disabled type="search" placeholder="Référence souche" aria-label="Rechercher">
+                <button class="btn btn-outline-success my-2 my-sm-0" disabled type="submit">Rechercher</button>
             </form>
         </div>
     </nav>
@@ -74,7 +74,7 @@
                 <!-- Grid column -->
                 <div class="col-md-3 mb-3">
                     <h6 class="text-uppercase font-weight-bold">
-                        <a href="#!">Gestion des comptes</a>
+                        <a href="" class="text-dark">Gestion des comptes</a>
                     </h6>
                 </div>
                 <!-- Grid column -->
@@ -82,15 +82,14 @@
                 <!-- Grid column -->
                 <div class="col-md-3 mb-3">
                     <h6 class="text-uppercase font-weight-bold">
-                        <a href="#!">Historique</a>
+                        <a href="" class="text-dark">Historique</a>
                     </h6>
                 </div>
-                <!-- Grid column -->
 
                 <!-- Grid column -->
                 <div class="col-md-3 mb-3">
                     <h6 class="text-uppercase font-weight-bold">
-                        <a href="#!">FAQ</a>
+                        <a href="" class="text-dark">FAQ</a>
                     </h6>
                 </div>
                 <!-- Grid column -->
@@ -104,9 +103,7 @@
 
                 <!-- Grid column -->
                 <div class="col-md-8 col-12 mt-5">
-                    <p style="line-height: 1.7rem">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-                        aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
+                    <p style="line-height: 1.7rem">Work in progress, be cool ;)</p>
                 </div>
                 <!-- Grid column -->
 

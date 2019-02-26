@@ -5,7 +5,7 @@
 
     <div class="container">
         <form class="form-inline">
-            <div class="input-group input-group-sm mt-3 font-weight-lighter">
+            <!--div class="input-group input-group-sm mt-3 font-weight-lighter">
 
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="">Numéro&nbsp;</span>
@@ -76,7 +76,7 @@
                 <div class="input-group-append">
                     <button class="btn btn-outline-secondary" type="button" id="">Filtrer</button>
                 </div>
-            </div>
+            </div-->
         </form>
     </div>
 
