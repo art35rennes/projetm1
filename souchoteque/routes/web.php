@@ -33,3 +33,6 @@ Route::post('/souche/{ref}/maj', 'SoucheController@update');
 
 //Delete
 Route::post('/souche/{ref}/suppr', 'SoucheController@suppr');
+
+//TestArea
+Route::get('/poc', 'SoucheController@poc');
