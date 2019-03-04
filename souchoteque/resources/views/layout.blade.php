@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" type="text/css" href="{{asset('css/souche.css')}}"/>
     <link rel="icon" href="{{asset('ressources/favicon.ico')}}">
-
+    @yield("customCss")
 </head>
 
 <body>
@@ -39,6 +39,9 @@
                 <li class="nav-item">
                     <a class="nav-link disabled" href="#">Gestion des comptes</a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/poc">POC<span class="sr-only"></span></a>
+                </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" disabled type="search" placeholder="Référence souche" aria-label="Rechercher">
@@ -52,6 +55,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
 
     @yield('customJs')
 

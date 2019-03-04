@@ -518,4 +518,8 @@ class SoucheController extends BaseController
             ->where('ref', "=", $id)
             ->update(['desactive' => 1]);
     }
+
+    public function poc(){
+        return view('poc');
+    }
 }
