@@ -3,68 +3,76 @@
     <br>
     <div class="container bg-light pb-3">
         <h4 class="display-4">Ajout d'une souche</h4>
-        <form method="post" action="/souche/ajout" enctype="multipart/form-data">
+        <form class="row" method="post" action="/souche/ajout" enctype="multipart/form-data">
 
             {{ csrf_field() }}
+            <div class="col-7">
 
-            <div class="form-group" id="refDiv">
-                <label for="ref">Référence de la souche</label>
+                <!--Reference souche-->
+                <h6 class="mt-2" for="ref">Référence de la souche</h6>
                 <input class="form-control is-invalid" placeholder="Référence" type="text" name="ref" id="ref" autocomplete="off" required/>
                 <div id="refFeedback" class="invalid-feedback">
                     Cette souche existe déjà
                 </div>
+
+                <!--Stock souche-->
                 <div class="form-group">
-                    <label class="custom-label" for="annee_creation">Stock</label>
+                    <h6 class="custom-label mt-2" for="annee_creation">Stock</h6>
                     <input type="number" class="form-control" name="stock" id="stock" value="0" required/>
                 </div>
+
+                <!--Description souche-->
+                <h6>Description</h6>
                 <div class="form-group">
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" name="description" id="description"/>
-                        <label for="description" class="custom-file-label">Description</label>
+                        <label for="description" class="custom-file-label">Ajouter un fichier</label>
                     </div>
                 </div>
-                Description
-            </div>
-            <div class="custom-control custom-switch">
-                <input type="checkbox" class="custom-control-input" name="isOGM" id="isOGM">
-                <label class="custom-control-label" for="isOGM">OGM ?</label>
-            </div>
-            <br>
-            <div class="form-group" id="OGM">
-                <div class="form-group">
-                    <label class="custom-label" for="annee_creation">Année de la création</label>
-                    <input type="number" name="annee_creation" class="form-control" id="annee_creation"/>
+
+                <h6>OGM</h6>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" name="isOGM" id="isOGM">
+                    <label class="custom-control-label" for="isOGM">La souche est OGM ?</label>
                 </div>
-                <div class="form-group">
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" name="texte_hcb" id="texte_hcb">
-                        <label for="texte_hcb" class="custom-file-label">Texte HCB</label>
+                <br>
+                <div class="form-group" id="OGM">
+                    <div class="form-group">
+                        <h7 class="custom-label" for="annee_creation">Année de la création</h7>
+                        <input type="number" name="annee_creation" placeholder="YYYY" pattern="^^[0-9]{4}$" class="form-control" id="annee_creation"/>
+                    </div>
+                    <div class="form-group">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" name="texte_hcb" id="texte_hcb">
+                            <label for="texte_hcb" class="custom-file-label">Texte HCB</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" name="validation_hcb" id="validation_hcb">
+                            <label for="validation_hcb" class="custom-file-label">Validation HCB</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" name="schema_plasmique" id="schema_plasmique">
+                            <label for="schema_plasmique" class="custom-file-label">Schema plasmique</label>
+                        </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" name="validation_hcb" id="validation_hcb">
-                        <label for="validation_hcb" class="custom-file-label">Validation HCB</label>
+
+                <div class="form-group" id="notOGM">
+                    <div class="form-group">
+                        <h6 for="origine">Origine de la collecte</h6>
+                        <input type="text" class="form-control" name="origine" id="origine"/>
+                    </div>
+                    <div class="form-group">
+                        <h6 class="custom-label" for="annee_creation">Année de la collecte</h6>
+                        <input type="number" class="form-control" placeholder="YYYY" pattern="^^[0-9]{4}$" name="annee_collecte" id="annee_collecte"/>
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" name="schema_plasmique" id="schema_plasmique">
-                        <label for="schema_plasmique" class="custom-file-label">Schema plasmique</label>
-                    </div>
-                </div>
+                <input type="submit" value="Ajouter" id="ajout" disabled="disabled" class="btn btn-primary">
             </div>
-            <div class="form-group" id="notOGM">
-                <div class="form-group">
-                    <label for="origine">Origine de la collecte</label>
-                    <input type="text" class="form-control" name="origine" id="origine"/>
-                </div>
-                <div class="form-group">
-                    <label class="custom-label" for="annee_creation">Année de la collecte</label>
-                    <input type="number" class="form-control" name="annee_collecte" id="annee_collecte"/>
-                </div>
-            </div>
-            <input type="submit" value="Ajouter" id="ajout" disabled="disabled" class="btn btn-primary">
 
         </form>
     </div>
@@ -79,10 +87,10 @@
         ];
         $("#ref").keyup(function () {
             if (refs.indexOf($("#ref").val()) != -1) {
-                $("#ref").attr("class", "form-control is-invalid");
+                $("#ref").toggleClass("is-invalid");
                 $("#ajout").attr('disabled', 'disabled');
             } else {
-                $("#ref").attr("class", "form-control");
+                $("#ref").toggleClass("is-invalid");
                 $("#ajout").removeAttr('disabled')
             }
         });

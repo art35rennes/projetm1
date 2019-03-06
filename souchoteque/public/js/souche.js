@@ -1,7 +1,6 @@
-function submitMaj(){
-    $("#majForm").submit();
-}
-
+//..................................//
+//..........Initialisation..........//
+//..................................//
 $(".editButton").hide();
 $(".editZone").hide();
 
@@ -10,15 +9,25 @@ $("#editMode").click( function(){
     $(".editZone").toggle();
 });
 
-//Delete file
+$(document).ready(function() {
+    $('#example').DataTable();
+} );
+
+//..................................//
+//...........Delete entry...........//
+//..................................//
 $("i.deleteCross").click(function (){
    var $link = $(this).prev().attr("href");
    $.post( window.location.pathname+"/suppr", { "file": $link, "_token":$('#_token').val()} );
 });
 
-//Unlock Edit
+
+
+//..................................//
+//............Edit mode.............//
+//..................................//
 $('i.unlockEdit').click(function () {
-   
+
     var $input = $(this).parent().parent().prev();
     $(this).toggleClass('fa-lock');
     $(this).toggleClass('fa-unlock');
@@ -42,7 +51,11 @@ $('i.unlockEdit').click(function () {
     }
 });
 
-//OGM
+
+
+//..................................//
+//...........OGM Display............//
+//..................................//
 if($('#isOgm').val()=="Oui"){
     $('#ogmPlus').show();
 }
@@ -70,7 +83,16 @@ $('.showSelect').change(function () {
     }
 });
 
-//Edit Tab
+
+
+//..................................//
+//............Edit mode.............//
+//..................................//
+
+function submitMaj(){
+    $("#majForm").submit();
+}
+
 $('.fa-pen').click(function () {
     if($(this).parent().is('td')){
         var $data = $(this).parent();
