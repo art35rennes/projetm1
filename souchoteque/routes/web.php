@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@show');
 
 //Add
 Route::get('/souche/ajout', 'SoucheController@ajout');
+Route::get('/user/ajout', 'UserController@ajout');
 Route::post('/souche/ajout', 'SoucheController@ajoutPost');
 
 //View

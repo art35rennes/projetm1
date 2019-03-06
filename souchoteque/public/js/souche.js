@@ -9,9 +9,7 @@ $("#editMode").click( function(){
     $(".editZone").toggle();
 });
 
-$(document).ready(function() {
-    $('#example').DataTable();
-} );
+
 
 //..................................//
 //...........Delete entry...........//
