@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Storage;
 class UserController extends Controller
 {
    public function ajout(){
-       return view("user_ajout");
+       return view("user/user_ajout");
    }
 }

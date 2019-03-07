@@ -132,7 +132,7 @@ class SoucheController extends BaseController
     ];
 
     function feedback($error, $message){
-        return view('souche_feedback', ['error' => true, 'message' => "Une des date que vous avez saisi n'est pas conforme", 'date' => date("d/m/Y H:m:s")]);
+        return view('souche/souche_feedback', ['error' => true, 'message' => "Une des date que vous avez saisi n'est pas conforme", 'date' => date("d/m/Y H:m:s")]);
     }
 
     /////////////////////////////////////Date/////////////////////////////////////////
@@ -147,14 +147,14 @@ class SoucheController extends BaseController
     public function dateVtoD($date){
         if ($this->validateDate($date))
             return date( "Y-m-d", date_create_from_format("d/m/Y", $date));
-        return view('souche_feedback', ['error' => true, 'message' => "Une des date que vous avez saisi n'est pas conforme"]);
+        return view('souche/souche_feedback', ['error' => true, 'message' => "Une des date que vous avez saisi n'est pas conforme"]);
     }
 
     ////////////////////////////////Gestion ajout/////////////////////////////////////
     public function ajoutFile($chemin, $nom, $fichier) {
         $date = date("Y-m-d_H-i-s_");
         if (!$fichier->isValid()) {
-            return view('souche_feedback', ['error' => true, 'message' => "Un des fichier que vous avez envoyé a rencontré une erreur"]);
+            return view('souche/souche_feedback', ['error' => true, 'message' => "Un des fichier que vous avez envoyé a rencontré une erreur"]);
         }
         else {
             Storage::putFileAs("public/".$chemin, $fichier, $date.$nom.".".$fichier->extension());
@@ -165,20 +165,20 @@ class SoucheController extends BaseController
         if (sizeof($text) < 255){
             return $text;
         }
-        return view('souche_feedback', ['error' => true, 'message' => "Un texte que vous avez saisi a une erreur"]);
+        return view('souche/souche_feedback', ['error' => true, 'message' => "Un texte que vous avez saisi a une erreur"]);
     }
     public function ajoutDate($date){
         if ($this->validateDate($date)){
             return $date;
         }
-        return view('souche_feedback', ['error' => true, 'message' => "Une date que vous avez saisi a une erreur"]);
+        return view('souche/souche_feedback', ['error' => true, 'message' => "Une date que vous avez saisi a une erreur"]);
 
     }
     public function ajoutInt($nb){
         if (is_int($nb)){
             return $nb;
         }
-        return view('souche_feedback', ['error' => true, 'message' => "Une année ou un nombre que vous avez saisi a une erreur"]);
+        return view('souche/souche_feedback', ['error' => true, 'message' => "Une année ou un nombre que vous avez saisi a une erreur"]);
     }
 
     public function ajoutPartenaire($part){
@@ -199,7 +199,7 @@ class SoucheController extends BaseController
         if (in_array($type, ['PHA', 'EPS', 'Autre'])){
             return $type;
         }
-        return view('souche_feedback', ['error' => true, 'message' => "Un type (PHA, EPS, Autre) que vous avez saisi a une erreur"]);
+        return view('souche/souche_feedback', ['error' => true, 'message' => "Un type (PHA, EPS, Autre) que vous avez saisi a une erreur"]);
 
     }
 
@@ -279,7 +279,7 @@ class SoucheController extends BaseController
     //////////////////////////////////////////////////////////////////////////////////
     public function show($id){
         $souche = $this->getData($id);
-        return view('souche_home', ['souche' => $souche]);
+        return view('souche/souche_home', ['souche' => $souche]);
     }
 
     public function dump($id){
@@ -295,7 +295,7 @@ class SoucheController extends BaseController
     //////////////////////////////////////////////////////////////////////////////////
     public function ajout(){
         $souches = DB::table('souche')->select('ref')->get();
-        return view('souche_ajout', ['souches'=> $souches]);
+        return view('souche/souche_ajout', ['souches'=> $souches]);
     }
 
     public function ajoutPost(Request $request){
@@ -307,11 +307,11 @@ class SoucheController extends BaseController
 
         //--------------Description----------------
         if (!$request->hasFile("description")) {
-            return view('souche_feedback', ['error' => true, 'message' => 'Veuillez ajouter une description']);
+            return view('souche/souche_feedback', ['error' => true, 'message' => 'Veuillez ajouter une description']);
         }else{
             $insert["description"] = $this->ajoutFile($chemin, "description", $request->file("description"));
             if ($insert["description"] == null)
-                return view('souche_feedback', ['error' => true, 'message' => 'Veuillez ajouter une description']);
+                return view('souche/souche_feedback', ['error' => true, 'message' => 'Veuillez ajouter une description']);
         }
 
         //------------------Stock------------------
@@ -336,9 +336,9 @@ class SoucheController extends BaseController
         $insert = DB::table("souche")->insert($insert);
 
         if ($insert == true){
-            return view('souche_feedback', ['error' => false, 'message' => 'Ajout de la souche réussi']);
+            return view('souche/souche_feedback', ['error' => false, 'message' => 'Ajout de la souche réussi']);
         }else{
-            return view('souche_feedback', ['error' => true, 'message' => 'Ajout de la souche raté']);
+            return view('souche/souche_feedback', ['error' => true, 'message' => 'Ajout de la souche raté']);
         }
     }
 
