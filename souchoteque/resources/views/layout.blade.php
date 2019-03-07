@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
         <!--a class="navbar-brand" href="/home">
             <img src="{{asset('ressources/favicon.ico')}}" width="30" height="30" alt="chevron">
             Souchotèque
@@ -42,11 +42,9 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/user/ajout">Ajouter un utilisateur</a>
-                        <a class="dropdown-item disabled" href="#">Ajouter une accréditation</a>
+                        <a class="dropdown-item" href="/user/accreditation">Gérer les accréditation</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item disabled" href="#">Liste des utilisateurs</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item disabled" href="#">Liste des accréditations</a>
                     </div>
                 </li>
                 <li class="nav-item active">
@@ -88,7 +86,7 @@
                 <!-- Grid column -->
                 <div class="col-md-3 mb-3">
                     <h6 class="text-uppercase font-weight-bold">
-                        <a href="" class="text-dark">Gestion des comptes</a>
+                        <a href="/user/ajout">Gestion des comptes</a>
                     </h6>
                 </div>
                 <!-- Grid column -->

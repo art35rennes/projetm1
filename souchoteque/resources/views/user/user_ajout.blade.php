@@ -32,11 +32,20 @@
             <div class="mt-3 pt-3 row">
                 <div class="form-group col-md-4 mt-2">
                     <h6 for="inputState">Accréditation</h6>
-                    <select id="inputState" class="form-control">
+                    <select id="inputState" class="form-control mb-3">
                         <option selected>Administrateur</option>
                         <option>Laborantin</option>
                         <option>Technicien de production</option>
                         <option>Stagiaire</option>
+                    </select>
+
+                    <h6 for="exampleFormControlSelect1">Niveau d'accréditation</h6>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
                     </select>
                 </div>
                 <dl class="row col-md-8">

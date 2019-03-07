@@ -15,6 +15,18 @@
                     Cette souche existe déjà
                 </div>
 
+                <!--Accreditation-->
+                <div class="form-group">
+                    <h6 for="exampleFormControlSelect1">Niveau d'accréditation requis</h6>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+
                 <!--Stock souche-->
                 <div class="form-group">
                     <h6 class="custom-label mt-2" for="annee_creation">Stock</h6>

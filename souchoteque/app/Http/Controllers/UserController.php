@@ -15,4 +15,8 @@ class UserController extends Controller
    public function ajout(){
        return view("user/user_ajout");
    }
+
+   public function accreditation(){
+       return view("user/user_accreditation");
+   }
 }
