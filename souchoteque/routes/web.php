@@ -21,8 +21,6 @@ Route::get('/home', 'HomeController@show');
 
 //Add
 Route::get('/souche/ajout', 'SoucheController@ajout');
-Route::get('/user/ajout', 'UserController@ajout');
-Route::get('/user/accreditation', 'UserController@accreditation');
 Route::post('/souche/ajout', 'SoucheController@ajoutPost');
 
 //View
@@ -38,3 +36,8 @@ Route::post('/souche/{ref}/suppr', 'SoucheController@suppr');
 
 //TestArea
 Route::get('/poc', 'SoucheController@poc');
+
+//User
+Route::get('/user/ajout', 'UserController@ajoutView');
+Route::get('/user/accreditation', 'UserController@accreditation');
+Route::post('/user/ajout', 'UserController@ajout');

@@ -12,8 +12,16 @@ use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
-   public function ajout(){
+   public function ajoutView(){
        return view("user/user_ajout");
+   }
+
+   public function Profil($user){
+
+   }
+
+   public function maj($user){
+       
    }
 
    public function accreditation(){
