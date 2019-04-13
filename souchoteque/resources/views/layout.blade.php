@@ -44,13 +44,17 @@
                         <a class="dropdown-item" href="/user/ajout">Ajouter un utilisateur</a>
                         <a class="dropdown-item" href="/user/accreditation">Gérer les accréditation</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item disabled" href="#">Liste des utilisateurs</a>
+                        <a class="dropdown-item" href="/user/liste">Liste des utilisateurs</a>
                     </div>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="/poc">POC<span class="sr-only"></span></a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/logout">Logout<span class="sr-only"></span></a>
+                </li>
             </ul>
+
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" disabled type="search" placeholder="Référence souche" aria-label="Rechercher">
                 <button class="btn btn-outline-success my-2 my-sm-0" disabled type="submit">Rechercher</button>
