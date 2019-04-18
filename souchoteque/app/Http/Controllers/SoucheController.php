@@ -109,6 +109,12 @@ class SoucheController extends BaseController
             "texte_hcb" => "file",
             "validation_hcb" => "file",
             "schema_plasmique" => "file"
+        ],
+        "accreditation" => [
+            "id" => "int",
+            "nom" => "string",
+            "niveau" => "string",
+            "souche" => "int",
         ]
 
     ];
@@ -129,6 +135,7 @@ class SoucheController extends BaseController
         "production" => "nom",
         "projet" => "nom",
         "publication" => "nom",
+        "accreditation" => "id",
     ];
 
     function feedback($error, $message){
