@@ -16,12 +16,12 @@ class UserController extends Controller
        return view("user/user_ajout");
    }
 
-   public function Profil($user){
+   public function profil($user){
 
    }
 
    public function maj($user){
-       
+
    }
 
    public function accreditation(){
