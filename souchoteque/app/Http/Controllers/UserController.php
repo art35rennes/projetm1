@@ -28,7 +28,7 @@ class UserController extends Controller
         //alors je sais pas comment ça marche mais ça transforme un "/bla/bla = bla" en [bla][bla] = bla
         //tant que ça marche ça me va
         foreach ($posts as $keys => $value) {
-            $exploded = explode("/", $keys);
+            $exploded = explode("-", $keys);
             $temp = &$data;
             foreach($exploded as $key) {
                 $temp = &$temp[$key];
@@ -136,8 +136,6 @@ class UserController extends Controller
     }
     public function accreditation(){
        $accred = $this->getAccreditation();
-
-       //dd($accred);
        return view("user/user_accreditation", ['accreditations' => $accred]);
     }
 
@@ -155,5 +153,28 @@ class UserController extends Controller
        ]);
 
        return redirect()->back();
+    }
+
+    public function deleteAccreditation(Request $request){
+        $data = $this->postData($request);
+
+        DB::table("accreditation")->delete($data["id_accred"]);
+
+        return redirect()->back();
+    }
+
+    public function majAccreditation(Request $request){
+        $data = $this->postData($request);
+
+        foreach($data["accreditation"] as $accred){
+            $accred["niveau"]="";
+            foreach ($accred as $value){
+                $accred["niveau"] .= $value;
+            }
+            dd($accred);
+            DB::table("accreditation")->update();
+        }
+
+        return redirect()->back();
     }
 }

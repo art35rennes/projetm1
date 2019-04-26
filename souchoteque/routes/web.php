@@ -47,6 +47,8 @@ Route::group(['middleware' => ['auth']], function() {
         Route::get('/user/logout', 'UserController@logOut');
 
         Route::post('/user/accreditation/ajout', 'UserController@ajoutAccreditation');
+        Route::post('/user/accreditation/delete', 'UserController@deleteAccreditation');
+        Route::post('/user/accreditation/maj', 'UserController@majAccreditation');
 });
 
 //AuthController
