@@ -285,8 +285,7 @@ class SoucheController extends BaseController
     //                               visualisation                                  //
     //////////////////////////////////////////////////////////////////////////////////
     public function show($id){
-        $souche = $this->getData($id);
-        return view('souche/souche_home', ['souche' => $souche]);
+        return view('souche/souche_home', ['souche' => $this->getData($id)]);
     }
 
     public function dump($id){
