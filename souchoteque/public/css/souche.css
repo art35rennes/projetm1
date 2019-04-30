@@ -1,12 +1,15 @@
-.editButton, .checkPostRow{
-    cursor: pointer;
-}
-.fa-times:hover, .fa-lock:hover{
+.fa-times:hover, .fa-lock:hover, .fa-trash:hover{
     color: red;
+    cursor: pointer;
 }
 .fa-check:hover, .fa-plus:hover, .fa-unlock:hover{
     color: green;
+    cursor: pointer;
 }
 td>.fa-pen:hover{
     color: orange;
+    cursor: pointer;
+}
+.nav-link::first-letter{
+    text-transform: uppercase;
 }
