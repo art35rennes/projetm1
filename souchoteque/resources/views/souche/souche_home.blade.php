@@ -40,9 +40,9 @@
             <i class="fas fa-pen"></i>
             <small class="form-text text-muted editZone">N'oubliez pas d'enregistrer les modifications</small>
         </div>
-        <form>
-            <button class="btn float-right m-2 btn-warning editZone">Annuler les modifications</button>
-            <button class="btn float-right m-2 btn-success editZone">Valider les modifications</button><br>
+        <form action="/souche/{{$souche['souche'][0]->ref}}/update" method="post" id="formSouche">
+            <button class="btn float-right m-2 btn-warning editZone" id="annulBtn">Annuler les modifications</button>
+            <button class="btn float-right m-2 btn-success editZone" id="updateBtn">Valider les modifications</button><br>
 
             <div class="mt-5 m-3">
             <ul class="nav nav-pills mb-3 text-center" id="pills-tab" role="tablist">

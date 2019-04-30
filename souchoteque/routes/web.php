@@ -31,6 +31,7 @@ Route::group(['middleware' => ['auth']], function() {
 
         //Update
         Route::post('/souche/{ref}/maj', 'SoucheController@update');
+        Route::post('/souche/{ref}/update', 'SoucheController@update');
 
         //Delete
         Route::post('/souche/{ref}/suppr', 'SoucheController@suppr');
