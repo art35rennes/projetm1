@@ -5,7 +5,7 @@ var identification = function(type, sequence, arbre, isNew){
     this.new = isNew;
 };
 
-function getFileinput(n){
+function getFileInput(n){
 
 }
 
@@ -59,13 +59,15 @@ $("#updateBtn").click(function(){
            default:
        }
     });
-    $datas.push({'_token' : $('#formSouche:last-of-type(input)').val()})
+    $datas.unshift({'_token' : $('input[name=_token]').val()})
     console.log($datas);
+    console.log($("#ref")[0].innerHTML);
 
-    var post_url = $("#formSouche").attr("action"); //get form action url
-    var request_method = $("#formSouche").attr("method"); //get form GET/POST method
-    var form_data = new FormData($datas);
+    var post_url = '/souche/'+($("#ref")[0].innerHTML)+"/update"; //get form action url
+    var request_method = 'POST'; //get form GET/POST method
+    var form_data = JSON.stringify($datas);
     $.ajax({
+        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
         url : post_url,
         type: request_method,
         data : form_data,

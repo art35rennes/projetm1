@@ -161,7 +161,7 @@ $(document).ready( function () {
             placement: 'bottom',
 
         })
-    })
+    });
 
     //..................................//
     //...........Data Table.............//
@@ -220,76 +220,5 @@ $(document).ready( function () {
     //............Edit mode.............//
     //..................................//
 
-    function submitMaj() {
-        //$("#majForm").submit();
-    }
-
-    $('.fa-pen').click(function () {
-        if ($(this).parent().is('td')) {
-            var $data = $(this).parent();
-            var $lastrow = $(this).parent().parent().next();
-
-            while ($lastrow[0].className != "editZone") {
-                $lastrow = $lastrow.next();
-            }
-            var $lastdata = $lastrow.children(":last-child");
-
-            while ($data.is('td')) {
-                var $value = $data.children(":first-child");
-
-                if ($value.is("a")) {
-                    //console.log('a');
-                } else {
-                    if ($value.is("p")) {
-                        //console.log("p "+$value.text());
-                        $data.empty();
-                        $data.append($lastdata.children().clone());
-                        $data.children().children("input").val($value.text());
-
-                        if ($data.children().children("input").attr("isKey")) {
-                            $data.children().children("input").attr("readonly", true)
-                        }
-
-
-                        /*$split = $data.children().children("input").attr("name").split("/",2);
-                        console.log($split.length)
-                        $name = ([$split[0],$data.parent().index(),$split[1]]).join("/");*/
-
-                        $name = $data.children().children("input").attr("name").replace("/0/", "/" + $data.parent().index() + "/");
-                        $data.children().children("input").attr("name", $name);
-                        //console.log($data.children().children("input"));
-                    } else {
-                        if ($value.is("i")) {
-                            //console.log("i");
-                            $value.toggle();
-                            $value.next().toggle()
-                        } else {
-                            if (!$($value).is(':parent')) {
-                                //console.log('vide')
-                                $data.empty()
-                                $data.append($lastdata.children().clone());
-                                if ($data.children().children().children().attr("isKey")) {
-                                    $data.children().children().children().attr("readonly", true)
-                                }
-                                //$data.children().children().children().attr("name",$data.children().children().children().attr("name")+"/"+$data.parent().index());
-                                $name = $data.children().children().children().attr("name").replace("/0/", "/" + $data.parent().index() + "/");
-                                $data.children().children().children().attr("name", $name);
-                            }
-                        }
-                    }
-                }
-                $data = $data.prev();
-                $lastdata = $lastdata.prev();
-            }
-        }
-    });
-
-    $(".checkPostRow").hide();
-    $(".checkPostRow").click(function () {
-        submitMaj();
-    });
-    $('.faForm').click(function () {
-        submitMaj();
-    });
 });
 
