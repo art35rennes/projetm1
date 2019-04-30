@@ -29,11 +29,10 @@ Route::group(['middleware' => ['auth']], function() {
     //View
         Route::get('/souche/{ref}', 'SoucheController@show');
         Route::get('/souche/{ref}/dump', 'SoucheController@dump');
-        Route::post('/souche/{ref}/update', 'SoucheAjaxController@update');
 
         //Update
         Route::post('/souche/{ref}/maj', 'SoucheController@update');
-        Route::post('/souche/{ref}/update', 'SoucheController@update');
+        Route::post('/souche/{ref}/update', 'SoucheAjaxController@update');
 
         //Delete
         Route::post('/souche/{ref}/suppr', 'SoucheController@suppr');
