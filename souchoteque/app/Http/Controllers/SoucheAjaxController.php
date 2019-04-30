@@ -16,77 +16,41 @@ class SoucheAjaxController
         foreach ($data as $ligne){
             $data_insert = null;
 
-            switch($ligne["table"]){
-                case "activite" :
+            switch($ligne["onglet"]){
+                case "#pills-description" :
 
                     break;
-                case "brevet_soleau" :
+                case "#pills-identification" :
 
                     break;
-                case "capacite_production" :
+                case "#pills-pasteur" :
 
                     break;
-                case "caracterisation" :
+                case "#pills-brevet_soleau" :
 
                     break;
-                case "caracterisation_oses":
+                case "#pills-publication":
 
                     break;
-                case "criblage" :
+                case "#pills-exclisivite" :
 
                     break;
-                case "description" :
+                case "#pills-projet" :
 
                     break;
-                case "exclusivite" :
+                case "#pills-eps" :
 
                     break;
-                case "fichier_caracterisation" :
+                case "#pills-pha" :
 
                     break;
-                case "identification" :
-
-                    break;
-                case "objectivation" :
-
-                    break;
-                case "oses" :
-
-                    break;
-                case "partenaire" :
-
-                    break;
-                case "pasteur" :
-
-                    break;
-                case "photo_souche" :
-
-                    break;
-                case "production" :
-
-                    break;
-                case "projet" :
-
-                    break;
-                case "publication" :
-
-                    break;
-                case "projet" :
-
-                    break;
-                case "publication" :
-
-                    break;
-                case "souche" :
-
-                    break;
-                case "souche_projet" :
+                case "#pills-autre" :
 
                     break;
                 default :
                     break;
             }
-            if ($ligne["insert"]){
+            if ($ligne["new"]){
                 //TODO : insert
             }else{
                 //TODO : update
