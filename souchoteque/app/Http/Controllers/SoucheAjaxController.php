@@ -13,6 +13,8 @@ class SoucheAjaxController
 {
     public function update($id, Request $request){
         $data = $request->input('data');
+        dd($data);
+        return;
         foreach ($data as $ligne){
             $data_insert = null;
 
