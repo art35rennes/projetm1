@@ -23,11 +23,13 @@ Route::group(['middleware' => ['auth']], function() {
         //Add
         Route::get('/souche/ajout', 'SoucheController@ajout');
         Route::post('/souche/ajout', 'SoucheController@ajoutPost');
+        Route::post('/souche/ajout', 'SoucheController@ajoutPost');
 
-        //View
+
+    //View
         Route::get('/souche/{ref}', 'SoucheController@show');
         Route::get('/souche/{ref}/dump', 'SoucheController@dump');
-        Route::get('/souche/{ref}/dd', 'SoucheController@dd');
+        Route::post('/souche/{ref}/majajax', 'SoucheAjaxController@update');
 
         //Update
         Route::post('/souche/{ref}/maj', 'SoucheController@update');

@@ -116,7 +116,6 @@ class SoucheController extends BaseController
             "niveau" => "string",
             "souche" => "int",
         ]
-
     ];
 
     public $dbCle = [
@@ -356,8 +355,7 @@ class SoucheController extends BaseController
         $posts = $request->all();
         $type_hcb = null;
         $data = [];
-        //alors je sais pas comment ça marche mais ça transforme un "/bla/bla = bla" en [bla][bla] = bla
-        //tant que ça marche ça me va
+
         foreach ($posts as $keys => $value) {
             $exploded = explode("/", $keys);
             $temp = &$data;
@@ -368,7 +366,6 @@ class SoucheController extends BaseController
             unset($temp);
         }
 
-        //dd($data);
 
         foreach ($data as $table => $lines){
             switch ($table) {
@@ -399,7 +396,7 @@ class SoucheController extends BaseController
                             "texte" => $data["description"]["texte"],
                             "ref" => $id
                         ]);
-                        break;
+                    break;
                 case "photo_souche":
                     if (isset($data["photo_souche"]["fichier"]) && isset($data["photo_souche"]["description"]))
                     DB::table("photo_souche")->insert([
@@ -424,22 +421,20 @@ class SoucheController extends BaseController
 
                     break;
                 default :
-                    echo "default ";
-                    echo $table."<br>";
                     if (isset($data[$table]) && sizeof($data[$table])>1)
-                        echo $table;
                         foreach ($data[$table] as $rows) {
-                            if ($rows != null) {
+                            if ($rows != null && $rows != ""){
                                 if (DB::table($table)
                                         ->where($this->dbCle[$table], "=", $rows[$this->dbCle[$table]])
                                         ->where("ref", "=", $id)
                                         ->count() == 1) {
                                     $update = [];
                                     foreach ($rows as $row => $value) {
-                                        if ($value != null) {
+                                        if ($value != null && $value != "") {
                                             switch ($this->dbFormat[$table][$row]) {
                                                 case "file":
-                                                    $update[$row] = $this->ajoutFile($id . "/" . $table, $rows[$this->dbCle[$table]] . "_" . $row, $value);
+                                                    if ($value["size"] > 0)
+                                                        $update[$row] = $this->ajoutFile($id . "/" . $table, $rows[$this->dbCle[$table]] . "_" . $row, $value);
                                                     break;
                                                 case "string":
                                                     $update[$row] = $this->ajoutString($value);
@@ -470,12 +465,12 @@ class SoucheController extends BaseController
                                 } else {
                                     $insert["ref"] = $id;
                                     foreach ($rows as $row => $value) {
-                                        echo $row." -> ".$value;
-                                        if ($value != null) {
+                                        if ($value != null && $value != "") {
                                             switch ($this->dbFormat[$table][$row]) {
                                                 case "file":
                                                     echo "file ";
-                                                    $insert[$row] = $this->ajoutFile($id . "/" . $table, $rows[$this->dbCle[$table]] . "_" . $row, $value);
+                                                    if ($value["size"] > 0)
+                                                        $insert[$row] = $this->ajoutFile($id . "/" . $table, $rows[$this->dbCle[$table]] . "_" . $row, $value);
                                                     break;
                                                 case "string":
                                                     echo "string ";
@@ -508,7 +503,7 @@ class SoucheController extends BaseController
                                             }
                                         }
                                     }
-                                     DB::table($table)->insert($insert);
+                                    DB::table($table)->insert($insert);
                                 }
                             }
                         }
@@ -518,6 +513,8 @@ class SoucheController extends BaseController
         //var_dump($data);
 
     }
+
+
 
     public function suppr($id){
         DB::table('souche')
