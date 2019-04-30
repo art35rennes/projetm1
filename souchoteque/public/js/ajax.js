@@ -1,18 +1,13 @@
-$("#formSouche").submit(function(event){
-    event.preventDefault(); //prevent default action
-
-});
-
-var Obj = function(name) {
-    this.name = name
-}
-var c = new Obj("hello");
 var identification = function(type, sequence, arbre, isNew){
     this.type = type;
     this.sequence = sequence;
     this.arbre = arbre;
     this.new = isNew;
 };
+
+function getFileinput(n){
+
+}
 
 $("#updateBtn").click(function(){
     $datas = [];
@@ -29,7 +24,11 @@ $("#updateBtn").click(function(){
                console.log('iden');
                $(this).each(function () {
                   if ($(this).is('tr') && !$(this).children(':first-child').is('th')){
-                      $datas.push(new identification(null,null,null,false));
+                      $datas.push(new identification(
+                          $(this).find('input:first-child').val(),
+                          getFileInput(1),
+                          0?[]:null,
+                          !!$(this).hasClass('editZone')));
                   }
                });
                break;
@@ -60,11 +59,12 @@ $("#updateBtn").click(function(){
            default:
        }
     });
+    $datas.push({'_token' : $('#formSouche:last-of-type(input)').val()})
     console.log($datas);
 
-    var post_url = $(this).attr("action"); //get form action url
-    var request_method = $(this).attr("method"); //get form GET/POST method
-    var form_data = JSON.stringify($datas);
+    var post_url = $("#formSouche").attr("action"); //get form action url
+    var request_method = $("#formSouche").attr("method"); //get form GET/POST method
+    var form_data = new FormData($datas);
     $.ajax({
         url : post_url,
         type: request_method,

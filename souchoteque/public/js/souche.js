@@ -221,7 +221,7 @@ $(document).ready( function () {
     //..................................//
 
     function submitMaj() {
-        $("#majForm").submit();
+        //$("#majForm").submit();
     }
 
     $('.fa-pen').click(function () {

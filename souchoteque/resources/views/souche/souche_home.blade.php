@@ -45,71 +45,72 @@
             <button class="btn float-right m-2 btn-success editZone" id="updateBtn">Valider les modifications</button><br>
 
             <div class="mt-5 m-3">
-            <ul class="nav nav-pills mb-3 text-center" id="pills-tab" role="tablist">
-                <li class="nav-item m-2">
-                    <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-description" role="tab"
-                       aria-controls="pills-description" aria-selected="true">description</a>
-                </li>
-                <li class="nav-item m-2">
-                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-identification" role="tab"
-                       aria-controls="pills-identification" aria-selected="false">identification</a>
-                </li>
-                <li class="nav-item m-2">
-                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-pasteur" role="tab"
-                       aria-controls="pills-pasteur" aria-selected="false">pasteur</a>
-                </li>
-                <li class="nav-item m-2">
-                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-brevet" role="tab"
-                       aria-controls="pills-brevet" aria-selected="false">brevets & Lettres Soleaux</a>
-                </li>
-                <li class="nav-item m-2">
-                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-publication" role="tab"
-                       aria-controls="pills-publication" aria-selected="false">publications</a>
-                </li>
-                <li class="nav-item m-2">
-                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-exclisivite" role="tab"
-                       aria-controls="pills-exclisivite" aria-selected="false">exclisivitées</a>
-                </li>
-                <li class="nav-item m-2">
-                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-projet" role="tab"
-                       aria-controls="pills-projet" aria-selected="false">projets</a>
-                </li>
-                <li class="nav-item m-2">
-                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-eps" role="tab"
-                       aria-controls="pills-eps" aria-selected="false">eps</a>
-                </li>
-                <li class="nav-item m-2">
-                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-pha" role="tab"
-                       aria-controls="pills-pha" aria-selected="false">pha</a>
-                </li>
-                <li class="nav-item m-2">
-                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-autre" role="tab"
-                       aria-controls="pills-autre" aria-selected="false">autre</a>
-                </li>
-            </ul>
-            <div class="tab-content pt-2 pl-1" id="pills-tabContent">
+                <ul class="nav nav-pills mb-3 text-center" id="pills-tab" role="tablist">
+                    <li class="nav-item m-2">
+                        <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-description" role="tab"
+                           aria-controls="pills-description" aria-selected="true">description</a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-identification" role="tab"
+                           aria-controls="pills-identification" aria-selected="false">identification</a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-pasteur" role="tab"
+                           aria-controls="pills-pasteur" aria-selected="false">pasteur</a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-brevet" role="tab"
+                           aria-controls="pills-brevet" aria-selected="false">brevets & Lettres Soleaux</a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-publication" role="tab"
+                           aria-controls="pills-publication" aria-selected="false">publications</a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-exclisivite" role="tab"
+                           aria-controls="pills-exclisivite" aria-selected="false">exclisivitées</a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-projet" role="tab"
+                           aria-controls="pills-projet" aria-selected="false">projets</a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-eps" role="tab"
+                           aria-controls="pills-eps" aria-selected="false">eps</a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-pha" role="tab"
+                           aria-controls="pills-pha" aria-selected="false">pha</a>
+                    </li>
+                    <li class="nav-item m-2">
+                        <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-autre" role="tab"
+                           aria-controls="pills-autre" aria-selected="false">autre</a>
+                    </li>
+                </ul>
+                <div class="tab-content pt-2 pl-1" id="pills-tabContent">
 
-                @include('souche.pills.description')
+                    @include('souche.pills.description')
 
-                @include('souche.pills.identification')
+                    @include('souche.pills.identification')
 
-                @include('souche.pills.pasteur')
+                    @include('souche.pills.pasteur')
 
-                @include('souche.pills.brevet')
+                    @include('souche.pills.brevet')
 
-                @include('souche.pills.publication')
+                    @include('souche.pills.publication')
 
-                @include('souche.pills.exclusivite')
+                    @include('souche.pills.exclusivite')
 
-                @include('souche.pills.projet')
+                    @include('souche.pills.projet')
 
-                @include('souche.pills.eps')
+                    @include('souche.pills.eps')
 
-                @include('souche.pills.pha')
+                    @include('souche.pills.pha')
 
-                @include('souche.pills.autre')
+                    @include('souche.pills.autre')
+                </div>
             </div>
-        </div>
+            @csrf
         </form>
 
     </div>
