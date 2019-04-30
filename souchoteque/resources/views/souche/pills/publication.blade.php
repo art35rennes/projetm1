@@ -9,7 +9,9 @@
         <tbody>
         @foreach($souche['publication'] as $p)
             <tr>
-                <td class="tabDate">{{$p->date}}</td>
+                <td>
+                    <span class="tabDate" id="publication/{{$loop->iteration}}/date">{{$p->date}}</span>
+                </td>
                 <td>
                     @if($p->fichier != "")
                         <a class="tabFile font-italic mr-2" id="publication/{{$loop->iteration}}/fichier" href="{{asset("/storage/".$p->fichier)}}">{{$p->fichier}}</a>
