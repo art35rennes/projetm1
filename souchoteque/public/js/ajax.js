@@ -1,20 +1,86 @@
-var identification = function(type, sequence, arbre, isNew){
+//..................................//
+//.............Objects..............//
+//..................................//
+
+var identification = function(type, sequence, arbre, isNew, oldKey=null){
     this.type = type;
     this.sequence = sequence;
     this.arbre = arbre;
     this.new = isNew;
+    this.oldKey = oldKey;
 };
 
-function getFileInput(n){
+var pasteur = function(date, titre, numero, dossier, validation, stock, photo, isNew, oldKey=null){
+    this.date = date;
+    this.titre = titre;
+    this.numero = numero;
+    this.dossier = dossier;
+    this.validation = validation;
+    this.stock = stock;
+    this.photo = photo;
+    this.new = isNew;
+    this.oldKey = oldKey;
+};
 
+var brevet = function(numero, titre, demande, secteur, texte, inpi, isNew, oldKey=null){
+    this.numero = numero;
+    this.titre = titre;
+    this.demande = demande;
+    this.secteur = secteur;
+    this.texte = texte;
+    this.inpi = inpi;
+    this.new = isNew;
+    this.oldKey = oldKey;
+};
+
+var publication = function(date, publication, isNew, oldKey=null){
+    this.date = date;
+    this.publication = publication;
+    this.new = isNew;
+    this.oldKey = oldKey;
+};
+
+var exclusivite = function(debut, fin, partenaire, secteur, isNew, oldKey=null){
+    this.debut = debut;
+    this.fin = fin;
+    this.partenaire = partenaire;
+    this.secteur = secteur;
+    this.new = isNew;
+    this.oldKey = oldKey;
+};
+
+var projet = function(nom, date, partenaire, secteur, document, isNew, oldKey=null){
+    this.nom = nom;
+    this.date = date;
+    this.partenaire = partenaire;
+    this.secteur = secteur;
+    this.document = document;
+    this.new = isNew;
+    this.oldKey = oldKey;
+};
+
+//..................................//
+//.............Get Files............//
+//..................................//
+function getFileInput(parent ,n){
+    $file = parent.children().eq(n).find(':first-child');
+    if ($file.is('label')){
+        //console.log($file.find('input').prop('files'));
+        return typeof($file.find('input').prop('files')[0])!=="undefined"?$file.find('input').prop('files')[0]:null;
+    }
+    else{
+        return null;
+    }
 }
+
+//..................................//
+//.............Ajax Post............//
+//..................................//
 
 $("#updateBtn").click(function(){
     $datas = [];
 
-    console.log("get");
     $id = $(".nav-link.active").attr('href');
-    console.log($id);
     $($id).find("tr").each(function () {
        switch ($id) {
            case '#pills-description':
@@ -23,29 +89,112 @@ $("#updateBtn").click(function(){
            case '#pills-identification':
                console.log('iden');
                $(this).each(function () {
-                  if ($(this).is('tr') && !$(this).children(':first-child').is('th')){
+                  if ($(this).is('tr') &&
+                      !$(this).children(':first-child').is('th') &&
+                      $(this).find('input').eq(0).val() !== ""){
+
                       $datas.push(new identification(
-                          $(this).find('input:first-child').val(),
-                          getFileInput(1),
-                          0?[]:null,
-                          !!$(this).hasClass('editZone')));
+                          $(this).find('input').eq(0).val(),
+                          getFileInput($(this),1),
+                          getFileInput($(this),2),
+                          $(this).hasClass('editZone')
+                      ));
                   }
                });
                break;
            case '#pills-pasteur':
                console.log('pasteur');
+               $(this).each(function () {
+                   //console.log($(this).find('input').eq(5));
+                   if ($(this).is('tr') &&
+                       !$(this).children(':first-child').is('th') &&
+                       $(this).find('input').eq(1).val() !== ""){
+
+                       $datas.push(new pasteur(
+                           $(this).find('input').eq(0).val(),
+                           $(this).find('input').eq(1).val(),
+                           $(this).find('input').eq(2).val(),
+                           getFileInput($(this),4),
+                           getFileInput($(this),5),
+                           $(this).find('input').eq(3).val(),
+                           getFileInput($(this),6),
+                           $(this).hasClass('editZone')
+                       ));
+                   }
+               });
                break;
            case '#pills-brevet':
                console.log('brevet');
+               $(this).each(function () {
+                   //console.log($(this).find('input').eq(5));
+                   if ($(this).is('tr') &&
+                       !$(this).children(':first-child').is('th') &&
+                       $(this).find('input').eq(1).val() !== ""){
+
+                       $datas.push(new brevet(
+                           $(this).find('input').eq(0).val(),
+                           $(this).find('input').eq(1).val(),
+                           $(this).find('input').eq(2).val(),
+                           $(this).find('input').eq(3).val(),
+                           getFileInput($(this),4),
+                           getFileInput($(this),5),
+                           $(this).hasClass('editZone')
+                       ));
+                   }
+               });
                break;
            case '#pills-publication':
                console.log('publication');
+               $(this).each(function () {
+                   //console.log($(this).find('input').eq(5));
+                   if ($(this).is('tr') &&
+                       !$(this).children(':first-child').is('th') &&
+                       $(this).find('input').eq(1).val() !== ""){
+
+                       $datas.push(new publication(
+                           $(this).find('input').eq(0).val(),
+                           getFileInput($(this),1),
+                           $(this).hasClass('editZone')
+                       ));
+                   }
+               });
                break;
            case '#pills-exclisivite':
                console.log('exclu');
+               $(this).each(function () {
+                   //console.log($(this).find('input').eq(5));
+                   if ($(this).is('tr') &&
+                       !$(this).children(':first-child').is('th') &&
+                       $(this).find('input').eq(1).val() !== ""){
+
+                       $datas.push(new exclusivite(
+                           $(this).find('input').eq(0).val(),
+                           $(this).find('input').eq(1).val(),
+                           $(this).find('input').eq(2).val(),
+                           $(this).find('input').eq(3).val(),
+                           $(this).hasClass('editZone')
+                       ));
+                   }
+               });
                break;
            case '#pills-projet':
                console.log('projet');
+               $(this).each(function () {
+                   //console.log($(this).find('input').eq(5));
+                   if ($(this).is('tr') &&
+                       !$(this).children(':first-child').is('th') &&
+                       $(this).find('input').eq(1).val() !== ""){
+
+                       $datas.push(new projet(
+                           $(this).find('input').eq(0).val(),
+                           $(this).find('input').eq(1).val(),
+                           $(this).find('input').eq(2).val(),
+                           $(this).find('input').eq(3).val(),
+                           getFileInput($(this),4),
+                           $(this).hasClass('editZone')
+                       ));
+                   }
+               });
                break;
            case '#pills-eps':
                console.log('eps');
@@ -61,7 +210,6 @@ $("#updateBtn").click(function(){
     });
     $datas.unshift({'_token' : $('input[name=_token]').val()})
     console.log($datas);
-    console.log($("#ref")[0].innerHTML);
 
     var post_url = '/souche/'+($("#ref")[0].innerHTML)+"/update"; //get form action url
     var request_method = 'POST'; //get form GET/POST method

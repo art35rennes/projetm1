@@ -5,9 +5,9 @@
                 <th>Date de dépot</th>
                 <th>Titre</th>
                 <th>Numéro</th>
+                <th>Stock</th>
                 <th>Dossier Pasteur</th>
                 <th>Validation Pasteur</th>
-                <th>Stock</th>
                 <th>Photo</th>
             </tr>
         </thead>
@@ -24,6 +24,9 @@
                     <span class="tabNum" id="pasteur/{{$loop->iteration}}/numero">{{$p->numero}}</span>
                 </td>
                 <td>
+                    <span class="tabNum" id="pasteur/{{$loop->iteration}}/stock">{{$p->stock}}</span>
+                </td>
+                <td>
                     @if($p->dossier_depot != "")
                     <a class="font-italic tabFile mr-2" id="pasteur/{{$loop->iteration}}/dossier_depot" href="{{asset("/storage/".$p->dossier_depot)}}">dépot</a>
                     @else
@@ -37,9 +40,7 @@
                     <span class="tabNull" id="pasteur/{{$loop->iteration}}/scan_validation"></span>
                     @endif
                 </td>
-                <td>
-                    <span class="tabNum" id="pasteur/{{$loop->iteration}}/stock">{{$p->stock}}</span>
-                </td>
+
                 <td>
                     @if($p->photo_cryotube != "")
                     <a class="tabFile mr-2" id="pasteur/{{$loop->iteration}}/photo_cryotube" data-toggle="tooltip" title="<img src='{{asset("/storage/".$p->photo_cryotube)}}'>">
