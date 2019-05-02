@@ -8,6 +8,7 @@ var identification = function(type, sequence, arbre, isNew, oldKey=null){
     this.arbre = arbre;
     this.new = isNew;
     this.oldKey = oldKey;
+    this.onglet = "identification";
 };
 
 var pasteur = function(date, titre, numero, dossier, validation, stock, photo, isNew, oldKey=null){
@@ -20,6 +21,7 @@ var pasteur = function(date, titre, numero, dossier, validation, stock, photo, i
     this.photo = photo;
     this.new = isNew;
     this.oldKey = oldKey;
+    this.onglet = "pasteur";
 };
 
 var brevet = function(numero, titre, demande, secteur, texte, inpi, isNew, oldKey=null){
@@ -31,6 +33,7 @@ var brevet = function(numero, titre, demande, secteur, texte, inpi, isNew, oldKe
     this.inpi = inpi;
     this.new = isNew;
     this.oldKey = oldKey;
+    this.onglet = "brevet";
 };
 
 var publication = function(date, publication, isNew, oldKey=null){
@@ -38,6 +41,7 @@ var publication = function(date, publication, isNew, oldKey=null){
     this.publication = publication;
     this.new = isNew;
     this.oldKey = oldKey;
+    this.onglet = "publication";
 };
 
 var exclusivite = function(debut, fin, partenaire, secteur, isNew, oldKey=null){
@@ -47,6 +51,7 @@ var exclusivite = function(debut, fin, partenaire, secteur, isNew, oldKey=null){
     this.secteur = secteur;
     this.new = isNew;
     this.oldKey = oldKey;
+    this.onglet = "exclusivite";
 };
 
 var projet = function(nom, date, partenaire, secteur, document, isNew, oldKey=null){
@@ -57,6 +62,7 @@ var projet = function(nom, date, partenaire, secteur, document, isNew, oldKey=nu
     this.document = document;
     this.new = isNew;
     this.oldKey = oldKey;
+    this.onglet = "projet";
 };
 
 //..................................//
