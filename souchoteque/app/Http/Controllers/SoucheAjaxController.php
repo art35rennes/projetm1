@@ -22,8 +22,10 @@ class SoucheAjaxController
 
 
         $data = $request->json()->all();
-
-        return "test";
+        ob_start();
+        var_dump($data);
+        $result = ob_get_clean();
+        return $result;
         if (file_exists('/Users/Shared/soucheAjaxResult.html')) {
             unlink('/Users/Shared/soucheAjaxResult.html');
         }
