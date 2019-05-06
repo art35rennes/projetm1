@@ -123,11 +123,10 @@ function sendAjax($datas, $url, $id='#server-results') {
 
     var post_url = $url; //get form action url
     var request_method = 'POST'; //get form GET/POST method
-    //var form_data = JSON.stringify($datas);
+    var form_data = JSON.stringify($datas);
 
-    var form_data = new FormData($('#form-identification'));
-
-    console.log($('#form-identification'));
+    /*var form_data = new FormData($('#form-identification'));
+    console.log($('#form-identification'));*/
     $.ajax({
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
         url: post_url,
@@ -157,7 +156,7 @@ $("#updateBtn").click(function(){
                     console.log('identification');
 
                     //on parse le tableau de l'onglet
-                    /*$(this).each(function () {
+                    $(this).each(function () {
                         if ($(this).is('tr') &&
                             !$(this).children(':first-child').is('th') &&
                             $(this).find('input').eq(0).val() !== "") {
@@ -170,7 +169,7 @@ $("#updateBtn").click(function(){
                                 $(this).hasClass('editZone')
                             ));
                         }
-                    });*/
+                    });
                     break;
                 case '#pills-pasteur':
                     console.log('pasteur');
