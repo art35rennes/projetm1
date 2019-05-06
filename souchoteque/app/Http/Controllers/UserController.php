@@ -15,6 +15,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Support\Facades\Log;
+
 
 class UserController extends Controller
 {
@@ -25,7 +27,7 @@ class UserController extends Controller
     private function postData(Request $request){
         $posts = $request->all();
         $data = [];
-        //alors je sais pas comment ça marche mais ça transforme un "/bla/bla = bla" en [bla][bla] = bla
+        //alors je sais pas comment ça marche mais ça transforme un "bla-bla = bla" en bla["bla"] = "bla"
         //tant que ça marche ça me va
         foreach ($posts as $keys => $value) {
             $exploded = explode("-", $keys);
@@ -38,31 +40,6 @@ class UserController extends Controller
         }
         return $data;
     }
-
-    private $dbFormat = [
-        "accreditation" => [
-            "id" => "int",
-            "nom" => "string",
-            "niveau" => "string",
-            "souche" => "int",
-        ],
-        "users" =>[
-            "id" => "int",
-            "name" => "string",
-            "email" => "string",
-            "email_verified_at" => "int",
-            "password" => "string",
-            "remenber_token" => "string",
-            "created_at" => "int",
-            "updated_at" => "int",
-            "accreditation" => "int",
-        ],
-
-    ];
-    private $dbCle = [
-        "accreditation" => "id",
-        "users" => "id",
-    ];
 
     ////////////////////////////
     ////////////USER////////////
@@ -89,16 +66,27 @@ class UserController extends Controller
     }
 
     public function ajout(Request $request){
-       $data = $this->postData($request);
+        Log::info($request->input("password"));
+        Log::info($request->input("password-confirm"));
 
-       User::create([
-           'name' => $data['name'],
-           'email' => $data['email'],
-           'password' => Hash::make($data['password']),
-           'accreditation' => $data['souche'],
+        if (strcmp($request->input("password"), $request->input("password-confirm")) != 0)
+            return Log::info('les deux mots de passe ne correspondent pas');
+        if (strlen($request->input("password")) <= 6)
+            return Log::info('Le mot de passe doit faire plus de 6 caractères');
+        foreach (DB::table("users")->select("email")->get() as $mails){
+            foreach ($mails as $mail)
+                if (strcmp($mail, $request->input("email")) == 0)
+                    return Log::info('Ce mail correspond déjà à un utilisateur');
+        }
+//$request->input("email")
+        DB::table("users")->insert([
+           'name' => $request->input("name"),
+           'email' => $request->input('email'),
+           'password' => Hash::make($request->input('password')),
+           'accreditation' => $request->input('souche'),
        ]);
 
-       return redirect()->back();
+       return redirect()->back()->with(['erreur' => 'test']);
 }
 
     public function logOut(){
@@ -140,25 +128,22 @@ class UserController extends Controller
     }
 
     public function ajoutAccreditation(Request $request){
-       $data = $this->postData($request);
 
-       $data["niveau"] = "";
-       foreach($data["accreditation"] as $value){
-           $data["niveau"] .= $value;
+       $niveau = "";
+       foreach($request->input("accreditation") as $value){
+           $niveau .= $value;
        }
        DB::table("accreditation")->insert([
-           "nom" => $data["nom"],
-           "niveau" => dechex(bindec($data["niveau"])),
-           "souche" => $data["souche"],
+           "nom" => $request->input("nom"),
+           "niveau" => dechex(bindec($niveau)),
+           "souche" => $request->input("souche"),
        ]);
 
        return redirect()->back();
     }
 
     public function deleteAccreditation(Request $request){
-        $data = $this->postData($request);
-
-        DB::table("accreditation")->delete($data["id_accred"]);
+        DB::table("accreditation")->delete($request->input("id_accred"));
 
         return redirect()->back();
     }

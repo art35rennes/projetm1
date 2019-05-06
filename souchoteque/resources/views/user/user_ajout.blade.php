@@ -5,6 +5,12 @@
 
 @section('body')
     <div class="container bg-light">
+        @if (isset($erreur))
+            <div class="alert alert-primary" role="alert">
+                {{ $erreur }}
+            </div>
+        @endif
+
         <form class="m-3" method="POST" action="/user/ajout">
             @csrf
 
@@ -21,7 +27,7 @@
                 </div>
                 <div class="form-group col-md-4">
                     <h6 for="password">Mot de passe</h6>
-                    <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" placeholder="Mot de passe" required>
+                    <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" id="insert-password" placeholder="Mot de passe" required>
                     @if ($errors->has('password'))
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $errors->first('password') }}</strong>
@@ -30,7 +36,7 @@
                 </div>
                 <div class="form-group col-md-4">
                     <h6 for="password-confirm">Confirmer le mot de passe</h6>
-                    <input type="password" class="form-control" name="password-confirm" placeholder="Mot de passe" required>
+                    <input type="password" class="form-control" name="password-confirm" id="insert-password-confirm" placeholder="Mot de passe" required>
                 </div>
             </div>
 
@@ -57,22 +63,9 @@
                     </select>
 
                 </div>
-                <dl class="row col-md-8">
-                    <dt class="col-sm-4 text-danger">Administrateur</dt>
-                    <dd class="col-sm-8">A description list is perfect for defining terms.</dd>
-
-                    <dt class="col-sm-4 text-info">Laborantin</dt>
-                    <dd class="col-sm-8">Donec id elit non mi porta gravida at eget metus.</dd>
-
-                    <dt class="col-sm-4 text-primary">Technicien de production</dt>
-                    <dd class="col-sm-8">Etiam porta sem malesuada magna mollis euismod.</dd>
-
-                    <dt class="col-sm-4 text-secondary text-truncate">Stagiaire</dt>
-                    <dd class="col-sm-8">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</dd>
-                </dl>
             </div>
 
-            <button type="submit" class="btn btn-primary mb-3">Ajouter</button>
+            <button type="submit" id="insert-submit" class="btn btn-primary mb-3">Ajouter</button>
         </form>
     </div>
 @endsection
