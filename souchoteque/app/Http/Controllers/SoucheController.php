@@ -524,6 +524,7 @@ class SoucheController extends BaseController
 
     public function poc(){
         $souche = $this->getData('432');
-        return view('souche/old_souche_home', ['souche' => $souche]);
+        //return view('souche/old_souche_home', ['souche' => $souche]);
+        return view('poc', ['souche' => $souche]);
     }
 }

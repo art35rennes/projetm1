@@ -91,20 +91,25 @@ var cryotube = function(reference, n) {
 //function pour input dans tableau
 function getFileInput(parent ,n){
     $file = parent.children().eq(n).find(':first-child');
+
     if ($file.is('label')){
-        //console.log($file.find('input').prop('files'));
-        return typeof($file.find('input').prop('files')[0])!=="undefined"?$file.find('input').prop('files')[0]:null;
+        //td don't have file
+        console.log($file.find('input').attr('id'));
+
+        return typeof($file.find('input').prop('files')[0])!=="undefined"?
+            $file.find('input').prop('files')[0]:null;
     }
     else{
+        //td have already a file
         return null;
     }
 }
 
 //function pour input simple
-function getFileInputById($el){
+/*function getFileInputById($el){
     console.log($el);
     return typeof($('#'+$el).prop('files')[0])!=="undefined"?$el.prop('files')[0]:null;
-}
+}*/
 
 //..................................//
 //.............Ajax Post............//
@@ -112,12 +117,17 @@ function getFileInputById($el){
 
 function sendAjax($datas, $url, $id='#server-results') {
 
+    //ajout du token CSRF
     $datas.unshift({'_token': $('input[name=_token]').val()})
-    console.log($datas);
+    //console.log($datas);
 
     var post_url = $url; //get form action url
     var request_method = 'POST'; //get form GET/POST method
-    var form_data = JSON.stringify($datas);
+    //var form_data = JSON.stringify($datas);
+
+    var form_data = new FormData($('#form-identification'));
+
+    console.log($('#form-identification'));
     $.ajax({
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
         url: post_url,
@@ -136,18 +146,23 @@ function sendAjax($datas, $url, $id='#server-results') {
 $("#updateBtn").click(function(){
     $datas = [];
 
+    //on recupere l'onglet actif
     $id = $(".nav-link.active").attr('href');
+
     //console.log($id);
     if ($id != '#pills-description') {
         $($id).find("tr").each(function () {
             switch ($id) {
                 case '#pills-identification':
-                    console.log('iden');
-                    $(this).each(function () {
+                    console.log('identification');
+
+                    //on parse le tableau de l'onglet
+                    /*$(this).each(function () {
                         if ($(this).is('tr') &&
                             !$(this).children(':first-child').is('th') &&
                             $(this).find('input').eq(0).val() !== "") {
 
+                            //on initialise l'objet pour l'inserer dans datas
                             $datas.push(new identification(
                                 $(this).find('input').eq(0).val(),
                                 getFileInput($(this), 1),
@@ -155,7 +170,7 @@ $("#updateBtn").click(function(){
                                 $(this).hasClass('editZone')
                             ));
                         }
-                    });
+                    });*/
                     break;
                 case '#pills-pasteur':
                     console.log('pasteur');

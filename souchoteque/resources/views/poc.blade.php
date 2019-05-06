@@ -1,37 +1,16 @@
 @extends('layout')
-@section('customCss')
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
-@endsection
-
 @section('body')
-    <div class="container">
-        <table id="example" class="display" style="width:100%">
-            <thead>
-            <tr>
-                <th></th>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Salary</th>
-            </tr>
-            </thead>
-            <tfoot>
-            <tr>
-                <th></th>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Salary</th>
-            </tr>
-            </tfoot>
-        </table>
-    </div>
+    <form id="fileinfo" enctype="multipart/form-data" method="post" name="fileinfo">
+        <label>File to stash:</label>
+        <input type="file" name="file" required />
+    </form>
+    <input type="button" value="Stash the file!">
+    <div id="output"></div>
+
+    <button id="uploadBTN">Go !</button>
 
 @endsection
 
 @section('customJs')
     <script type="text/javascript" src="{{ URL::asset('js/poc.js') }}"></script>
-
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
-
 @endsection

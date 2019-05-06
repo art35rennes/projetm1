@@ -86,6 +86,7 @@
                        aria-controls="pills-autre" aria-selected="false">autre</a>
                 </li>
             </ul>
+
             <div class="tab-content pt-2 pl-1" id="pills-tabContent">
 
                 @include('souche.pills.description')
