@@ -93,8 +93,7 @@ function getFileInput(parent ,n){
     $file = parent.children().eq(n).find(':first-child');
     if ($file.is('label')){
         //console.log($file.find('input').prop('files'));
-        return typeof($file.find('input').prop('files')[0])!=="undefined"?
-            new FormData($file.find('input')):null;
+        return typeof($file.find('input').prop('files')[0])!=="undefined"?$file.find('input').prop('files')[0]:null;
     }
     else{
         return null;
@@ -103,6 +102,7 @@ function getFileInput(parent ,n){
 
 //function pour input simple
 function getFileInputById($el){
+    console.log($el);
     return typeof($('#'+$el).prop('files')[0])!=="undefined"?$el.prop('files')[0]:null;
 }
 

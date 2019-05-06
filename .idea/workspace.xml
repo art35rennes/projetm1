@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbd90ef4-95b8-4103-bd48-18525024d8be" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/souchoteque/public/css/souche.css" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/public/css/souche.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/souchoteque/public/js/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/public/js/ajax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/souchoteque/public/js/souche.js" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/public/js/souche.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/souchoteque/resources/views/souche/pills/description.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/resources/views/souche/pills/description.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/souchoteque/resources/views/souche/souche_home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/resources/views/souche/souche_home.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +29,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/souchoteque/public/js/ajax.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="527">
-                  <caret line="97" column="5" lean-forward="true" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+                <state relative-caret-position="595">
+                  <caret line="104" column="4" selection-start-line="104" selection-start-column="4" selection-end-line="104" selection-end-column="21" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                     <element signature="e#226#628#0" />
@@ -46,7 +41,6 @@
                     <element signature="e#1841#2031#0" />
                     <element signature="e#2117#2330#0" />
                     <element signature="e#2371#2422#0" />
-                    <element signature="n#!!block;n#getFileInput#1" />
                     <element signature="n#!!block;n#sendAjax#0" />
                     <element signature="e#4222#4864#0" />
                     <element signature="e#4876#5818#0" />
@@ -412,12 +406,12 @@
       <workItem from="1556609050980" duration="17876000" />
       <workItem from="1556871744270" duration="10406000" />
       <workItem from="1556972996017" duration="1047000" />
-      <workItem from="1557128802718" duration="5102000" />
+      <workItem from="1557128802718" duration="5381000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="413889000" />
+    <option name="totallyTimeSpent" value="414168000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -803,8 +797,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/public/js/ajax.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="97" column="5" lean-forward="true" selection-start-line="97" selection-start-column="5" selection-end-line="97" selection-end-column="5" />
+        <state relative-caret-position="595">
+          <caret line="104" column="4" selection-start-line="104" selection-start-column="4" selection-end-line="104" selection-end-column="21" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#226#628#0" />
@@ -815,7 +809,6 @@
             <element signature="e#1841#2031#0" />
             <element signature="e#2117#2330#0" />
             <element signature="e#2371#2422#0" />
-            <element signature="n#!!block;n#getFileInput#1" />
             <element signature="n#!!block;n#sendAjax#0" />
             <element signature="e#4222#4864#0" />
             <element signature="e#4876#5818#0" />
