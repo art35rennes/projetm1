@@ -112,6 +112,10 @@
         @csrf
 
     </div>
+
+    <div class="container" id="server-results">
+
+    </div>
 @endsection
 
 @section('customJs')

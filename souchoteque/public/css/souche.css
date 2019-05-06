@@ -1,8 +1,8 @@
-.fa-times:hover, .fa-lock:hover, .fa-trash:hover{
+.fa-times:hover, .fa-lock:hover, .fa-trash:hover, .fa-minus:hover{
     color: red;
     cursor: pointer;
 }
-.fa-check:hover, .fa-plus:hover, .fa-unlock:hover{
+.fa-check:hover, .fa-plus:hover, .fa-unlock:hover, fa-plus:hover{
     color: green;
     cursor: pointer;
 }

@@ -9,6 +9,7 @@ $(document).ready( function () {
                     return $("<input>", {
                         class: this.className,
                         name: this.id,
+                        id: this.id,
                         value: this.innerHTML,
                         type: $(this).hasClass('inputText') ?
                             "text" : $(this).hasClass('inputDate') ?
@@ -41,6 +42,7 @@ $(document).ready( function () {
                     return $("<select>", {
                         class: this.className,
                         name: this.id,
+                        id: this.id,
                         value: this.innerHTML,
                     });
                 });
@@ -57,8 +59,8 @@ $(document).ready( function () {
         $(".inputYn").each(function () {
             if ($(this).is('select')) {
                 $(this).addClass("form-control");
-                $oui = "<option>Oui</option>";
-                $non = "<option>Non</option>";
+                $oui = "<option value='1'>Oui</option>";
+                $non = "<option value='0'>Non</option>";
                 $(this).append($oui);
                 $(this).append($non);
                 $(this).children().each(function () {
