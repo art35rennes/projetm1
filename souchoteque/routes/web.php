@@ -40,13 +40,19 @@ Route::group(['middleware' => ['auth']], function() {
         //TestArea
         Route::get('/poc', 'SoucheController@poc');
 
-    //UserController
+        //UserController
         Route::get('/user/ajout', 'UserController@ajoutView');
         Route::get('/user/accreditation', 'UserController@accreditation');
         Route::get('/user/liste', "UserController@showUser");
+        Route::get('/user/profil/{id}', "UserController@profilUser");
 
         Route::post('/user/ajout', 'UserController@ajout');
+        Route::post('/user/maj', 'UserController@majUser');
+        Route::get('/user/suppr/{id}', 'UserController@deleteUser');
         Route::get('/user/logout', 'UserController@logOut');
+
+        Route::get('/user/recoverpassword/{id}', 'UserController@recoverPasswordView');
+        Route::post('/user/recoverpassword/{id}', 'UserController@recoverPassword');
 
         Route::post('/user/accreditation/ajout', 'UserController@ajoutAccreditation');
         Route::post('/user/accreditation/delete', 'UserController@deleteAccreditation');

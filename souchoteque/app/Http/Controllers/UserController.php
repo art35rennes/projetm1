@@ -20,26 +20,6 @@ use Illuminate\Support\Facades\Log;
 
 class UserController extends Controller
 {
-    ////////////////////////////
-    /////////TOOL BOX///////////
-    ////////////////////////////
-
-    private function postData(Request $request){
-        $posts = $request->all();
-        $data = [];
-        //alors je sais pas comment ça marche mais ça transforme un "bla-bla = bla" en bla["bla"] = "bla"
-        //tant que ça marche ça me va
-        foreach ($posts as $keys => $value) {
-            $exploded = explode("-", $keys);
-            $temp = &$data;
-            foreach($exploded as $key) {
-                $temp = &$temp[$key];
-            }
-            $temp = $value;
-            unset($temp);
-        }
-        return $data;
-    }
 
     ////////////////////////////
     ////////////USER////////////
@@ -60,14 +40,17 @@ class UserController extends Controller
         return $users;
     }
 
+    public function deleteUser($id){
+        DB::table("users")->where("id", $id)->delete();
+        return redirect()->back();
+    }
+
     public function ajoutView(){
        $accred = $this->getAccreditation();
        return view("user/user_ajout", ['accreditations' => $accred]);
     }
 
     public function ajout(Request $request){
-        Log::info($request->input("password"));
-        Log::info($request->input("password-confirm"));
 
         if (strcmp($request->input("password"), $request->input("password-confirm")) != 0)
             return Log::info('les deux mots de passe ne correspondent pas');
@@ -78,7 +61,6 @@ class UserController extends Controller
                 if (strcmp($mail, $request->input("email")) == 0)
                     return Log::info('Ce mail correspond déjà à un utilisateur');
         }
-//$request->input("email")
         DB::table("users")->insert([
            'name' => $request->input("name"),
            'email' => $request->input('email'),
@@ -86,8 +68,12 @@ class UserController extends Controller
            'accreditation' => $request->input('souche'),
        ]);
 
-       return redirect()->back()->with(['erreur' => 'test']);
-}
+       return redirect()->back();
+    }
+
+    public function profile(){
+
+    }
 
     public function logOut(){
        Auth::logout();
@@ -95,13 +81,29 @@ class UserController extends Controller
     }
 
     public function showUser(){
-       $users = $this->getUsers();
-       $accred = $this->getAccreditation();
+        return view("user/user_liste", ["users" => $this->getUsers(), "accreditations" => $this->getAccreditation()]);
+    }
 
-       return view("user/user_liste", [
-           "users" => $users,
-           "accreditations" => $accred,
-           ]);
+    public function profilUser($id){
+        //TODO : if ($id == User->id)
+        return view("user/user_profil", ["userss" => $this->getUsers($id), "accreditations" => $this->getAccreditation()]);
+    }
+
+    public function majUser(Request $request){
+        foreach ($request->input("user") as $id => $data){
+            DB::table("users")->where("id", $id)->update($data);
+        }
+        return redirect()->back();
+    }
+
+    public function recoverPasswordView($id){
+        return view("user/user_password", ["users" => $this->getUsers($id)]);
+    }
+    public function recoverPassword($id, Request $request){
+        if (strcmp($request->input("password"), $request->input("password-confirm")) != 0)
+            return Log::info('les deux mots de passe ne correspondent pas');
+        DB::table("users")->where("id", $id)->update(["password" => Hash::make($request->input('password'))]);
+        return view("user/user_liste", ["users" => $this->getUsers(), "accreditations" => $this->getAccreditation()]);
     }
 
     ////////////////////////////
@@ -109,57 +111,32 @@ class UserController extends Controller
     ////////////////////////////
     private function getAccreditation($id=null){
        if($id!=null){
-           $accred['accreditation'] = DB::table('accreditation')
-           ->select()
-           ->where('id', "=", $id)
-           ->get();
+           $accred['accreditation'] = DB::table('accreditation')->select()->where('id', "=", $id)->get();
+       }else{
+           $accred['accreditation'] = DB::table('accreditation')->select()->get();
        }
-       else{
-           $accred['accreditation'] = DB::table('accreditation')
-           ->select()
-           ->get();
-       }
-
        return $accred;
     }
+
     public function accreditation(){
-       $accred = $this->getAccreditation();
-       return view("user/user_accreditation", ['accreditations' => $accred]);
+       return view("user/user_accreditation", ['accreditations' => $this->getAccreditation()]);
     }
 
     public function ajoutAccreditation(Request $request){
-
-       $niveau = "";
-       foreach($request->input("accreditation") as $value){
-           $niveau .= $value;
-       }
-       DB::table("accreditation")->insert([
-           "nom" => $request->input("nom"),
-           "niveau" => dechex(bindec($niveau)),
-           "souche" => $request->input("souche"),
-       ]);
-
+       DB::table("accreditation")->insert($request->input("accreditation"));
        return redirect()->back();
     }
 
     public function deleteAccreditation(Request $request){
-        DB::table("accreditation")->delete($request->input("id_accred"));
-
+        if ($request->input("id_accred") != 1)
+            DB::table("accreditation")->where("id", $request->input("id_accred"))->delete();
         return redirect()->back();
     }
 
     public function majAccreditation(Request $request){
-        $data = $this->postData($request);
-
-        foreach($data["accreditation"] as $accred){
-            $accred["niveau"]="";
-            foreach ($accred as $value){
-                $accred["niveau"] .= $value;
-            }
-            dd($accred);
-            DB::table("accreditation")->update();
+        foreach($request->input("accreditation") as $numero => $droit){
+            DB::table("accreditation")->where("id", $numero)->update($droit);
         }
-
         return redirect()->back();
     }
 }
