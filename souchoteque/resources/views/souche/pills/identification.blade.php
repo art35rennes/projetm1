@@ -1,6 +1,5 @@
 <div class="tab-pane fade p-3" id="pills-identification" role="tabpanel" aria-labelledby="pills-identification-tab">
     <form id="form-identification" enctype="multipart/form-data">
-        @csrf
         <table id="identification" class="table table-bordered bg-white" style="width:100%">
             <thead>
                 <tr>

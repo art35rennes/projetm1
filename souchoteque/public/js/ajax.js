@@ -87,10 +87,11 @@ var cryotube = function(reference, n) {
 //..................................//
 //.............Get Files............//
 //..................................//
-
 $dataFile = {};
+
 //function pour input dans tableau
 function getFileInput(parent ,n){
+
     $file = parent.children().eq(n).find(':first-child');
 
     if ($file.is('label')){
@@ -101,7 +102,7 @@ function getFileInput(parent ,n){
             //console.log(document.getElementsByName($file.find('input').attr('name'))[0]['files'][0]);
             var myFile = document.getElementsByName($file.find('input').attr('name'))[0]['files'][0];
             var reader = new FileReader();
-            reader.onload = function(event) {
+            reader.onloadend = function(event) {
                 $dataFile = {
                     name : myFile.name,
                     size : myFile.size,
@@ -110,9 +111,13 @@ function getFileInput(parent ,n){
                     data : reader.result
                 };
                 //console.log($dataFile);
+
             };
             reader.readAsDataURL(myFile);
-            setTimeout(null,100);
+            /*while(reader.readyState !== 2){
+                setTimeout(null, 10);
+            }*/
+
             return $dataFile;
         }
         else{
@@ -145,16 +150,6 @@ function sendAjax($datas, $url, $id='#server-results') {
     var request_method = 'POST'; //get form GET/POST method
     var form_data = JSON.stringify($datas);
 
-    /*var reader = new FileReader();
-    console.log(reader.readAsText($('#identification-2-sequence').prop('files')[0]));
-    console.log(reader.result);
-
-    var form_data = new FormData();
-    form_data.append('_token', $('input[name=_token]').val());
-    //console.log($('#identification-2-sequence'));
-    form_data.append('file',$('#identification-2-sequence').files[0]);
-    //console.log($('#form-identification'));*/
-
     $.ajax({
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
         url: post_url,
@@ -185,7 +180,7 @@ $("#updateBtn").click(function(){
                     //console.log('identification');
 
                     //on parse le tableau de l'onglet
-                    $(this).each(async function () {
+                    $(this).each(function () {
                         if ($(this).is('tr') &&
                             !$(this).children(':first-child').is('th') &&
                             $(this).find('input').eq(0).val() !== "") {
