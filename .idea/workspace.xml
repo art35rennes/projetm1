@@ -5,7 +5,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/souchoteque/app/Http/Controllers/SoucheAjaxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/app/Http/Controllers/SoucheAjaxController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/souchoteque/public/js/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/public/js/ajax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/souchoteque/resources/views/souche/pills/identification.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/resources/views/souche/pills/identification.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,41 +28,39 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/souchoteque/public/js/ajax.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="91" column="34" lean-forward="true" selection-start-line="91" selection-start-column="34" selection-end-line="91" selection-end-column="34" />
+                <state relative-caret-position="442">
+                  <caret line="133" column="37" selection-start-line="133" selection-start-column="37" selection-end-line="133" selection-end-column="37" />
                   <folding>
-                    <element signature="n#!!doc" expanded="true" />
                     <element signature="e#226#628#0" />
-                    <element signature="e#702#865#0" />
-                    <element signature="e#966#1228#0" />
-                    <element signature="e#1318#1549#0" />
-                    <element signature="e#1617#1759#0" />
-                    <element signature="e#1841#2031#0" />
-                    <element signature="e#2117#2330#0" />
-                    <element signature="e#2371#2422#0" />
-                    <element signature="e#4876#5818#0" />
-                    <element signature="e#5830#6717#0" />
-                    <element signature="e#6729#7393#0" />
-                    <element signature="e#7405#8197#0" />
-                    <element signature="e#8209#9044#0" />
-                    <element signature="e#9056#9131#0" />
-                    <element signature="e#9143#9218#0" />
-                    <element signature="e#9230#9309#0" />
-                    <element signature="e#9972#10765#0" />
-                    <element signature="e#9497#9730#0" />
+                    <element signature="e#967#1229#0" />
+                    <element signature="e#1319#1550#0" />
+                    <element signature="e#1618#1760#0" />
+                    <element signature="e#1842#2032#0" />
+                    <element signature="e#2118#2331#0" />
+                    <element signature="e#2372#2423#0" />
+                    <element signature="e#8338#9379#0" />
+                    <element signature="e#9396#10376#0" />
+                    <element signature="e#10393#11129#0" />
+                    <element signature="e#11146#12019#0" />
+                    <element signature="e#12036#12958#0" />
+                    <element signature="e#12975#13060#0" />
+                    <element signature="e#13077#13162#0" />
+                    <element signature="e#13179#13268#0" />
+                    <element signature="e#12839#13632#0" />
+                    <element signature="e#13744#13977#0" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/souchoteque/app/Http/Controllers/SoucheAjaxController.php">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
+                <state relative-caret-position="-34">
+                  <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
                   <folding>
                     <element signature="e#123#168#0#PHP" expanded="true" />
                   </folding>
@@ -80,13 +77,8 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche/souche_home.blade.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="-496">
+                    <state relative-caret-position="17">
                       <caret line="1" selection-start-line="1" selection-end-line="4" selection-end-column="11" />
-                      <folding>
-                        <element signature="e#326#1180#0#HTML" />
-                        <element signature="e#1540#1931#0#HTML" />
-                        <element signature="e#2209#5007#0#HTML" />
-                      </folding>
                     </state>
                   </provider>
                 </entry>
@@ -95,7 +87,7 @@
                 <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche/pills/description.blade.php">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="2074">
-                      <caret line="122" column="24" lean-forward="true" selection-start-line="122" selection-start-column="24" selection-end-line="122" selection-end-column="24" />
+                      <caret line="122" column="24" selection-start-line="122" selection-start-column="24" selection-end-line="122" selection-end-column="24" />
                     </state>
                   </provider>
                 </entry>
@@ -112,7 +104,7 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/layout.blade.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state>
+                    <state relative-caret-position="561">
                       <caret line="33" column="60" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
                     </state>
                   </provider>
@@ -143,7 +135,7 @@
               <file pinned="false" current-in-tab="false">
                 <entry file="file://$PROJECT_DIR$/souchoteque/routes/web.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="612">
+                    <state relative-caret-position="459">
                       <caret line="36" column="16" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
                       <folding>
                         <element signature="e#7#389#0#PHP" expanded="true" />
@@ -196,10 +188,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>name=&quot;accreditation/{{$accreditation-&gt;id}}/</find>
-      <find>selected</find>
-      <find>+</find>
-      <find>&gt;L&lt;</find>
       <find>select</find>
       <find>&lt;select</find>
       <find>&lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; value=&quot;&quot; id=&quot;defaultCheck1&quot;&gt;</find>
@@ -226,6 +214,10 @@
       <find>updateBtn</find>
       <find>/{</find>
       <find>}/</find>
+      <find>“</find>
+      <find>”</find>
+      <find>‘</find>
+      <find>’</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -281,8 +273,8 @@
         <option value="$PROJECT_DIR$/souchoteque/resources/views/poc.blade.php" />
         <option value="$PROJECT_DIR$/souchoteque/public/js/poc.js" />
         <option value="$PROJECT_DIR$/souchoteque/resources/views/souche/pills/identification.blade.php" />
-        <option value="$PROJECT_DIR$/souchoteque/public/js/ajax.js" />
         <option value="$PROJECT_DIR$/souchoteque/app/Http/Controllers/SoucheAjaxController.php" />
+        <option value="$PROJECT_DIR$/souchoteque/public/js/ajax.js" />
       </list>
     </option>
   </component>
@@ -520,12 +512,13 @@
       <workItem from="1556609050980" duration="17876000" />
       <workItem from="1556871744270" duration="10406000" />
       <workItem from="1556972996017" duration="1047000" />
-      <workItem from="1557128802718" duration="33408000" />
+      <workItem from="1557128802718" duration="35890000" />
+      <workItem from="1557219291350" duration="9492000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="442195000" />
+    <option name="totallyTimeSpent" value="454169000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -760,79 +753,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/souchoteque/public/js/souche.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/souchoteque/public/css/souche.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="65" selection-start-column="65" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/souchoteque/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="16" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
-          <folding>
-            <element signature="e#7#389#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/app/Http/Controllers/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/souchoteque/app/Http/Controllers/SoucheController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="527" column="48" selection-start-line="527" selection-start-column="48" selection-end-line="527" selection-end-column="48" />
-          <folding>
-            <element signature="e#40#85#0#PHP" expanded="true" />
-            <element signature="e#842#3638#0#PHP" />
-            <element signature="e#3661#4204#0#PHP" />
-            <element signature="e#4211#4418#0#PHP" />
-            <element signature="e#4511#4644#0#PHP" />
-            <element signature="e#4649#4759#0#PHP" />
-            <element signature="e#4764#5052#0#PHP" />
-            <element signature="e#5145#5625#0#PHP" />
-            <element signature="e#5630#5865#0#PHP" />
-            <element signature="e#5870#6111#0#PHP" />
-            <element signature="e#6116#6350#0#PHP" />
-            <element signature="e#6356#6583#0#PHP" />
-            <element signature="e#6589#6807#0#PHP" />
-            <element signature="e#6813#7085#0#PHP" />
-            <element signature="e#10605#10765#0#PHP" />
-            <element signature="e#10771#12464#0#PHP" />
-            <element signature="e#12732#21328#0#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche/pills/description.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2074">
-          <caret line="122" column="24" lean-forward="true" selection-start-line="122" selection-start-column="24" selection-end-line="122" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche/souche_home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-496">
-          <caret line="1" selection-start-line="1" selection-end-line="4" selection-end-column="11" />
-          <folding>
-            <element signature="e#326#1180#0#HTML" />
-            <element signature="e#1540#1931#0#HTML" />
-            <element signature="e#2209#5007#0#HTML" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -847,13 +771,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/souchoteque/public/ajax/data/objects.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="11" selection-end-line="65" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/public/js/poc.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
@@ -862,13 +779,6 @@
             <element signature="e#173#2620#0" />
             <element signature="e#3301#5748#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="33" column="60" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -903,6 +813,41 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/souchoteque/public/js/souche.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="34" selection-start-line="41" selection-start-column="34" selection-end-line="41" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche/souche_home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="4" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche/pills/description.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2074">
+          <caret line="122" column="24" selection-start-line="122" selection-start-column="24" selection-end-line="122" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="33" column="60" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/souchoteque/public/ajax/data/objects.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="11" selection-end-line="65" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche/pills/identification.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -910,40 +855,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/souchoteque/public/js/ajax.js">
+    <entry file="file://$PROJECT_DIR$/souchoteque/public/css/souche.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="91" column="34" lean-forward="true" selection-start-line="91" selection-start-column="34" selection-end-line="91" selection-end-column="34" />
+        <state>
+          <caret column="65" selection-start-column="65" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/souchoteque/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="36" column="16" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#226#628#0" />
-            <element signature="e#702#865#0" />
-            <element signature="e#966#1228#0" />
-            <element signature="e#1318#1549#0" />
-            <element signature="e#1617#1759#0" />
-            <element signature="e#1841#2031#0" />
-            <element signature="e#2117#2330#0" />
-            <element signature="e#2371#2422#0" />
-            <element signature="e#4876#5818#0" />
-            <element signature="e#5830#6717#0" />
-            <element signature="e#6729#7393#0" />
-            <element signature="e#7405#8197#0" />
-            <element signature="e#8209#9044#0" />
-            <element signature="e#9056#9131#0" />
-            <element signature="e#9143#9218#0" />
-            <element signature="e#9230#9309#0" />
-            <element signature="e#9972#10765#0" />
-            <element signature="e#9497#9730#0" />
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/souchoteque/app/Http/Controllers/SoucheController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="527" column="48" selection-start-line="527" selection-start-column="48" selection-end-line="527" selection-end-column="48" />
+          <folding>
+            <element signature="e#40#85#0#PHP" expanded="true" />
+            <element signature="e#842#3638#0#PHP" />
+            <element signature="e#3661#4204#0#PHP" />
+            <element signature="e#4211#4418#0#PHP" />
+            <element signature="e#4511#4644#0#PHP" />
+            <element signature="e#4649#4759#0#PHP" />
+            <element signature="e#4764#5052#0#PHP" />
+            <element signature="e#5145#5625#0#PHP" />
+            <element signature="e#5630#5865#0#PHP" />
+            <element signature="e#5870#6111#0#PHP" />
+            <element signature="e#6116#6350#0#PHP" />
+            <element signature="e#6356#6583#0#PHP" />
+            <element signature="e#6589#6807#0#PHP" />
+            <element signature="e#6813#7085#0#PHP" />
+            <element signature="e#10605#10765#0#PHP" />
+            <element signature="e#10771#12464#0#PHP" />
+            <element signature="e#12732#21328#0#PHP" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/app/Http/Controllers/SoucheAjaxController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="28" column="56" selection-start-line="28" selection-start-column="56" selection-end-line="28" selection-end-column="56" />
+        <state relative-caret-position="-34">
+          <caret line="27" column="8" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="8" />
           <folding>
             <element signature="e#123#168#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/souchoteque/public/js/ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="133" column="37" selection-start-line="133" selection-start-column="37" selection-end-line="133" selection-end-column="37" />
+          <folding>
+            <element signature="e#226#628#0" />
+            <element signature="e#967#1229#0" />
+            <element signature="e#1319#1550#0" />
+            <element signature="e#1618#1760#0" />
+            <element signature="e#1842#2032#0" />
+            <element signature="e#2118#2331#0" />
+            <element signature="e#2372#2423#0" />
+            <element signature="e#8338#9379#0" />
+            <element signature="e#9396#10376#0" />
+            <element signature="e#10393#11129#0" />
+            <element signature="e#11146#12019#0" />
+            <element signature="e#12036#12958#0" />
+            <element signature="e#12975#13060#0" />
+            <element signature="e#13077#13162#0" />
+            <element signature="e#13179#13268#0" />
+            <element signature="e#12839#13632#0" />
+            <element signature="e#13744#13977#0" />
           </folding>
         </state>
       </provider>
