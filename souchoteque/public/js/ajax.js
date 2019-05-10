@@ -1,23 +1,3 @@
-// Modify JSON.stringify to allow recursive and single-level arrays
-(function(){
-    // Convert array to object
-    var convArrToObj = function(array){
-        var thisEleObj = new Object();
-        if(typeof array == "object"){
-            for(var i in array){
-                var thisEle = convArrToObj(array[i]);
-                thisEleObj[i] = thisEle;
-            }
-        }else {
-            thisEleObj = array;
-        }
-        return thisEleObj;
-    };
-    var oldJSONStringify = JSON.stringify;
-    JSON.stringify = function(input){
-        return oldJSONStringify(convArrToObj(input));
-    };
-})();
 //..................................//
 //.............Objects..............//
 //..................................//
@@ -147,23 +127,22 @@ function getFileInput(parent ,n){
 //.............Ajax Post............//
 //..................................//
 function sendAjax($datas, $url, $id='#server-results') {
-
+    
     //ajout du token CSRF
     $datas.unshift({'_token': $('input[name=_token]').val()})
     console.log($datas);
 
     var post_url = $url; //get form action url
     var request_method = 'POST'; //get form GET/POST method
-    var form_data = JSON.stringify($datas);
+    var form_data = JSON.stringify($datas, null, 2);
 
-    console.log((form_data));
     console.log((form_data));
 
     $.ajax({
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
         url: post_url,
         type: request_method,
-        data: form_data,
+        data: $datas,
         contentType: false,
         cache: false,
         processData: false
