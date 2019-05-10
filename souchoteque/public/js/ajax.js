@@ -89,7 +89,7 @@ var cryotube = function(reference, n) {
 //..................................//
 
 //function pour input dans tableau
-function getFileInput(parent ,n){
+/*function getFileInput(parent ,n){
     return new Promise((resolve) =>
     {
         $file = parent.children().eq(n).find(':first-child');
@@ -103,7 +103,7 @@ function getFileInput(parent ,n){
                 var myFile = document.getElementsByName($file.find('input').attr('name'))[0]['files'][0];
                 var reader = new FileReader();
                 reader.onloadend = function (event) {
-                    resolve(new Object({
+                    return (new Object({
                         name: myFile.name,
                         size: myFile.size,
                         lastModified: myFile.lastModified,
@@ -116,6 +116,64 @@ function getFileInput(parent ,n){
         }
     })
 }
+*/
+
+$datas = [];
+function getFileInput(parent ,n, name){
+
+    $file = parent.children().eq(n).find(':first-child');
+
+    if ($file.is('label')) {
+        //td don't have file
+        //console.log($file.find('input').attr('name'));
+
+        if (typeof ($file.find('input').prop('files')[0]) !== "undefined") {
+            //console.log(document.getElementsByName($file.find('input').attr('name'))[0]['files'][0]);
+            let myFile = document.getElementsByName($file.find('input').attr('name'))[0]['files'][0];
+            let reader = new FileReader();
+            reader.onloadend = function (event) {
+                $datas[$datas.length - 1][name] = (new Object({
+                    name: myFile.name,
+                    size: myFile.size,
+                    lastModified: myFile.lastModified,
+                    type: myFile.type,
+                    data: reader.result,
+                    state: reader.readyState
+                }));
+            };
+            reader.readAsDataURL(myFile);
+        }
+    }
+
+}
+
+function checkReadyState(){
+    var min = 2;
+    $datas.forEach(function (data) {
+        switch ((typeof data).toString()) {
+            case 'description':
+                break;
+            case 'identification':
+                if (data.sequence.state < min){
+                    min = data.sequence.state < min;
+                }
+                break;
+            case 'pasteur':
+                break;
+            case 'brevet':
+                break;
+            case 'publication':
+                break;
+            case 'exclusivite':
+                break;
+            case 'projet':
+                break;
+            case 'cryotube':
+                break;
+        }
+    });
+    return min;
+}
 
 //function pour input simple
 /*function getFileInputById($el){
@@ -126,7 +184,7 @@ function getFileInput(parent ,n){
 //..................................//
 //.............Ajax Post............//
 //..................................//
-function sendAjax($datas, $url, $id='#server-results') {
+function sendAjax($url, $id='#server-results') {
     
     //ajout du token CSRF
     $datas.unshift({'_token': $('input[name=_token]').val()})
@@ -136,13 +194,13 @@ function sendAjax($datas, $url, $id='#server-results') {
     var request_method = 'POST'; //get form GET/POST method
     var form_data = JSON.stringify($datas, null, 2);
 
-    console.log((form_data));
+    //console.log((form_data));
 
     $.ajax({
         headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
         url: post_url,
         type: request_method,
-        data: $datas,
+        data: form_data,
         contentType: false,
         cache: false,
         processData: false
@@ -182,16 +240,20 @@ $("#updateBtn").click(function(){
                                 $(this).hasClass('editZone')
                             ));
 
-                            getFileInput($(this), 1).then(
+                            getFileInput($(this), 1, 'sequence');
+                            console.log($datas);
+                            getFileInput($(this), 2, 'arbre');
+                            /*getFileInput($(this), 1).then(
                                 function(resolve){
-                                    //console.log(resolve);
+                                    console.log(resolve);
                                     $datas[$datas.length - 1].sequence = resolve;
-                                });
-                            getFileInput($(this), 2).then(
+
+                                });*/
+                            /*getFileInput($(this), 2).then(
                                 function(resolve){
-                                    //console.log(resolve);
+                                    console.log(resolve);
                                     $datas[$datas.length - 1].arbre = resolve;
-                                });
+                                });*/
                         }
                     });
                     break;
@@ -318,7 +380,15 @@ $("#updateBtn").click(function(){
         ));
     }
 
-    sendAjax($datas, '/souche/' + ($("#ref")[0].innerHTML) + "/update");
+    $interval = setInterval(
+        function() {
+                if (checkReadyState() === 2){
+                    clearInterval($interval);
+                    sendAjax( '/souche/' + ($("#ref")[0].innerHTML) + "/update");
+                }
+            },
+        100
+    );
 });
 
 $(".cryoBtn").click(function () {
