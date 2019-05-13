@@ -121,8 +121,14 @@ var cryotube = function(reference, n) {
 $datas = [];
 function getFileInput(parent ,n, name){
 
-    $file = parent.children().eq(n).find(':first-child');
+    if (!parent.is('input')){
+        $file = parent.children().eq(n).find(':first-child');
+    }
+    else{
+        $file = parent.parent();
+    }
 
+    //console.log($file);
     if ($file.is('label')) {
         //td don't have file
         //console.log($file.find('input').attr('name'));
@@ -154,21 +160,41 @@ function checkReadyState(){
             case 'description':
                 break;
             case 'identification':
-                if (data.sequence.state < min){
+                if (data.sequence != null && data.sequence.state < min){
                     min = data.sequence.state < min;
+                }
+                if (data.arbre != null && data.arbre.state < min){
+                    min = data.arbre.state < min;
                 }
                 break;
             case 'pasteur':
+                if (data.dossier != null && data.dossier.state < min){
+                    min = data.dossier.state < min;
+                }
+                if (data.validation != null && data.validation.state < min){
+                    min = data.validation.state < min;
+                }
+                if (data.photo != null && data.photo.state < min){
+                    min = data.photo.state < min;
+                }
                 break;
             case 'brevet':
+                if (data.texte != null && data.texte.state < min){
+                    min = data.texte.state < min;
+                }
+                if (data.inpi != null && data.inpi.state < min){
+                    min = data.inpi.state < min;
+                }
                 break;
             case 'publication':
-                break;
-            case 'exclusivite':
+                if (data.publication != null && data.publication.state < min){
+                    min = data.publication.state < min;
+                }
                 break;
             case 'projet':
-                break;
-            case 'cryotube':
+                if (data.document != null && data.document.state < min){
+                    min = data.document.state < min;
+                }
                 break;
         }
     });
@@ -237,23 +263,11 @@ $("#updateBtn").click(function(){
                                 $(this).find('input').eq(0).val(),
                                 null,
                                 null,
-                                $(this).hasClass('editZone')
+                                $(this).hasClass('editZone'),
+                                $(this).find('input').eq(0).attr('oldKey')
                             ));
-
                             getFileInput($(this), 1, 'sequence');
-                            console.log($datas);
                             getFileInput($(this), 2, 'arbre');
-                            /*getFileInput($(this), 1).then(
-                                function(resolve){
-                                    console.log(resolve);
-                                    $datas[$datas.length - 1].sequence = resolve;
-
-                                });*/
-                            /*getFileInput($(this), 2).then(
-                                function(resolve){
-                                    console.log(resolve);
-                                    $datas[$datas.length - 1].arbre = resolve;
-                                });*/
                         }
                     });
                     break;
@@ -269,12 +283,15 @@ $("#updateBtn").click(function(){
                                 $(this).find('input').eq(0).val(),
                                 $(this).find('input').eq(1).val(),
                                 $(this).find('input').eq(2).val(),
-                                getFileInput($(this), 4),
-                                getFileInput($(this), 5),
+                                null,
+                                null,
                                 $(this).find('input').eq(3).val(),
-                                getFileInput($(this), 6),
+                                null,
                                 $(this).hasClass('editZone')
                             ));
+                            getFileInput($(this), 4, 'dossier');
+                            getFileInput($(this), 5, 'validation');
+                            getFileInput($(this), 6, 'photo');
                         }
                     });
                     break;
@@ -291,10 +308,12 @@ $("#updateBtn").click(function(){
                                 $(this).find('input').eq(1).val(),
                                 $(this).find('input').eq(2).val(),
                                 $(this).find('input').eq(3).val(),
-                                getFileInput($(this), 4),
-                                getFileInput($(this), 5),
+                                null,
+                                null,
                                 $(this).hasClass('editZone')
                             ));
+                            getFileInput($(this), 4, 'texte');
+                            getFileInput($(this), 5, 'inpi');
                         }
                     });
                     break;
@@ -308,9 +327,10 @@ $("#updateBtn").click(function(){
 
                             $datas.push(new publication(
                                 $(this).find('input').eq(0).val(),
-                                getFileInput($(this), 1),
+                                null,
                                 $(this).hasClass('editZone')
                             ));
+                            getFileInput($(this), 1, 'publication');
                         }
                     });
                     break;
@@ -345,9 +365,10 @@ $("#updateBtn").click(function(){
                                 $(this).find('input').eq(1).val(),
                                 $(this).find('input').eq(2).val(),
                                 $(this).find('input').eq(3).val(),
-                                getFileInput($(this), 4),
+                                null,
                                 $(this).hasClass('editZone')
                             ));
+                            getFileInput($(this), 4, 'document');
                         }
                     });
                     break;
@@ -367,16 +388,16 @@ $("#updateBtn").click(function(){
     else{
         console.log('desc');
         $datas.push(new description(
-            document.getElementsByName('photo_souche/description').values(),
-            getFileInputById('photo_souche/fichier'),
-            document.getElementsByName('description/texte').values(),
-            getFileInputById('description/file'),
-            document.getElementsByName('souche/origine').values(),
-            document.getElementsByName('souche/annee_collecte').values(),
-            document.getElementsByName('isOgm').values(),
-            $('#isOgm').val()?document.getElementsByName('souche/annee_creation').values():null,
-            $('#isOgm').val()?document.getElementsByName('souche/hcb/type').values():null,
-            $('#isOgm').val()?getFileInputById('souche/hcb/doc'):null
+            $('#photo_souche-description').val(),
+            getFileInput($('#photo_souche-fichier'), 0, 'photo'),
+            $('#description-texte').val(),
+            getFileInput($('#description-file'), 0, 'description'),
+            $('#souche-origine').val(),
+            $('#souche-annee_collecte').val(),
+            $('#isOgm').val(),
+            $('#isOgm').val()?$('#souche-annee_creation').val():null,
+            $('#isOgm').val()?$('[name=souche-hcb-type]:checked').val():null,
+            $('#isOgm').val()?getFileInput($('#souche-hcb-doc'),0,'fichier'):null
         ));
     }
 

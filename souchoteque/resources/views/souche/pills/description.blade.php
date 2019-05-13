@@ -32,11 +32,11 @@
             <div class="editZone">
                 <h6>Ajouter une photo :</h6>
                 <div class="form-group">
-                    <label for="photo_souche/description">Description:</label>
-                    <textarea class="form-control" id="photo_souche/description" rows="3" name="photo_souche/description"></textarea>
+                    <label for="photo_souche-description">Description:</label>
+                    <textarea class="form-control" id="photo_souche-description" rows="3" name="photo_souche-description"></textarea>
                 </div>
                 <label class="btn btn-light">
-                    Ajouter une image <input type="file" name="photo_souche/fichier" id="photo_souche/fichier" hidden>
+                    Ajouter une image <input type="file" name="photo_souche-fichier" id="photo_souche-fichier" hidden>
                 </label>
             </div>
 
@@ -71,7 +71,7 @@
                 <div class="input-group mb-3 mt-3 editZone">
                     <h6>Ajouter un fichier:</h6>
                     <div class="input-group">
-                        <input type="text" list="dataDescription" placeholder="Nom..." class="form-control" name="description/texte" id="description/texte">
+                        <input type="text" list="dataDescription" placeholder="Nom..." class="form-control" name="description-texte" id="description-texte">
                         <datalist id="dataDescription">
                             <option>Photo sur boite</option>
                             <option>Photo microscopie</option>
@@ -85,19 +85,19 @@
                         </datalist>
                     </div>
                     <label class="btn btn-light mt-2">
-                        Ajouter un fichier <input type="file" name="description/file" id="description/file" hidden>
+                        Ajouter un fichier <input type="file" name="description-file" id="description-file" hidden>
                     </label>
                 </div>
             </div>
         </div>
         <div class="col-4 border-left">
 
-            <h6>Lieu de collecte : <span class="font-weight-normal inputText" id="souche/origine">@isset($souche['souche'][0]){{$souche['souche'][0]->origine}}@endisset</span></h6>
-            <h6>Année de collecte : <span class="font-weight-normal inputDate" id="souche/annee_collecte">@isset($souche['souche'][0]){{$souche['souche'][0]->annee_collecte}}@endisset</span></h6>
+            <h6>Lieu de collecte : <span class="font-weight-normal inputText" id="souche-origine">@isset($souche['souche'][0]){{$souche['souche'][0]->origine}}@endisset</span></h6>
+            <h6>Année de collecte : <span class="font-weight-normal inputDate" id="souche-annee_collecte">@isset($souche['souche'][0]){{$souche['souche'][0]->annee_collecte}}@endisset</span></h6>
             <hr>
 
             <h6>Souche OGM : <span class="font-weight-normal inputYn" id="isOgm">@if($souche['souche'][0]->annee_creation) Oui @else Non @endif </span></h6>
-            <h6>Année de création : <span class="font-weight-normal inputDate" id="souche/annee_creation">@isset($souche['souche'][0]){{$souche['souche'][0]->annee_creation}}@endisset</span></h6>
+            <h6>Année de création : <span class="font-weight-normal inputDate" id="souche-annee_creation">@isset($souche['souche'][0]){{$souche['souche'][0]->annee_creation}}@endisset</span></h6>
             @isset($souche['souche'][0]->validation_hcb)
             <a href="{{asset("/storage/".$souche['souche'][0]->validation_hcb)}}" class="font-italic"><i class="mt-3 fas fa-file-alt text-danger"></i> validation_hcb.pdf</a>&nbsp;&nbsp;<i class="editButton fas fa-times deleteCross ml-2"></i>&nbsp;&nbsp;&nbsp;&nbsp;
             @endisset
@@ -108,19 +108,19 @@
             <div class="editZone mt-3">
                 <h6>Ajouter un fichier</h6>
                 <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="souche/hcb/type1" name="souche/hcb/type" value="texte_hcb">
-                    <label class="custom-control-label" for="souche/hcb/type1">Texte HCB</label>
+                    <input type="radio" class="custom-control-input" id="souche-hcb-type1" name="souche-hcb-type" value="texte_hcb">
+                    <label class="custom-control-label" for="souche-hcb-type1">Texte HCB</label>
                 </div>
                 <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="souche/hcb/type2" name="souche/hcb/type" value="validation_hcb">
-                    <label class="custom-control-label" for="souche/hcb/type2">Autorisation HCB</label>
+                    <input type="radio" class="custom-control-input" id="souche-hcb-type2" name="souche-hcb-type" value="validation_hcb">
+                    <label class="custom-control-label" for="souche-hcb-type2">Autorisation HCB</label>
                 </div>
                 <div class="custom-control custom-radio">
-                    <input type="radio" class="custom-control-input" id="souche/hcb/type3" name="souche/hcb/type" value="shema_plasmique">
-                    <label class="custom-control-label" for="souche/hcb/type3">Schéma plasmique</label>
+                    <input type="radio" class="custom-control-input" id="souche-hcb-type3" name="souche-hcb-type" value="shema_plasmique">
+                    <label class="custom-control-label" for="souche-hcb-type3">Schéma plasmique</label>
                 </div>
                 <label class="btn btn-light mt-2">
-                    Ajouter un fichier <input type="file" name="souche/hcb/doc" id="souche/hcb/doc" hidden>
+                    Ajouter un fichier <input type="file" name="souche-hcb-doc" id="souche-hcb-doc" hidden>
                 </label>
             </div>
         </div>

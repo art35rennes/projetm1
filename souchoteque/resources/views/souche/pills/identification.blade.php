@@ -41,7 +41,7 @@
                     </td>
                     <td>
                         <label class="btn btn-light">
-                            Ajouter un fichier <input type="file" name="identification/0/arbre" hidden>
+                            Ajouter un fichier <input type="file" name="identification/0/sequence" hidden>
                         </label>
                     </td>
                     <td>

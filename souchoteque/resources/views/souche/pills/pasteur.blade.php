@@ -65,6 +65,9 @@
                     <input class="form-control" type="number" name="pasteur/0/numero">
                 </td>
                 <td>
+                    <input class="form-control" type="number" name="pasteur/0/stock">
+                </td>
+                <td>
                     <label class="btn btn-light">
                         Ajouter un fichier <input type="file" name="pasteur/0/dossier_depot" hidden>
                     </label>
@@ -73,9 +76,6 @@
                     <label class="btn btn-light">
                         Ajouter un fichier <input type="file" name="pasteur/0/scan_validation" hidden>
                     </label>
-                </td>
-                <td>
-                    <input class="form-control" type="number" name="pasteur/0/stock">
                 </td>
                 <td>
                     <label class="btn btn-light">

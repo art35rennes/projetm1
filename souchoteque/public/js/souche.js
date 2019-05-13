@@ -214,6 +214,12 @@ $(document).ready( function () {
     //............Edit mode.............//
     //..................................//
 
+    $(".tabText .tabDate .tabNum").on('keydown',function () {
+        console.log('clic');
+        if (!$(this.hasAttribute('oldKey'))) {
+            $(this).attr('oldKey', $(this).val());
+        }
+    });
     //..................................//
     //...........OGM Display............//
     //..................................//
