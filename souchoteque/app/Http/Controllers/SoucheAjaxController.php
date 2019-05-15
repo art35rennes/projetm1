@@ -22,30 +22,14 @@ class SoucheAjaxController
 
 
         $data = $request->json()->all();
-        ob_start();
         var_dump($data);
-        $result = ob_get_clean();
-        return var_dump($data);
-        //return $result;
-        //return $data[2]['sequence']?$data[2]['sequence']:'TBD';
-
-        if (file_exists('/Users/Shared/soucheAjaxResult.html')) {
-            unlink('/Users/Shared/soucheAjaxResult.html');
-        }
-        $fp = fopen('/Users/Shared/soucheAjaxResult.html', 'w');
-        fwrite($fp, date("H:m:s\n"));
-        ob_start();
-        var_dump($data);
-        $result = ob_get_clean();
-        fwrite($fp, $result);
-        fclose($fp);
-
+        //return;
         foreach ($data as $ligne){
             $insert = null;
             $table = null;
             if (!isset($ligne["_token"])) {
 
-                switch ($ligne["onglet"]) {
+                switch ($ligne[0]["onglet"]) {
                     case "description" :
 
                         break;
@@ -142,14 +126,14 @@ class SoucheAjaxController
     public function ajoutPartenaire($part){
         if (DB::table("partenaire")->where("nom", "=", $part)->count() == 1)
             return $part;
-        DB::table(partenaire)->insert(['nom' => $part]);
+        DB::table("partenaire")->insert(['nom' => $part]);
         return $part;
     }
 
     public function ajoutActivite($act){
         if (DB::table("activite")->where("nom", "=", $act)->count() == 1)
             return $act;
-        DB::table(partenaire)->insert(['nom' => $act]);
+        DB::table("partenaire")->insert(['nom' => $act]);
         return $act;
     }
 
@@ -161,7 +145,7 @@ class SoucheAjaxController
 
     }
 
-    public function erreur($message){
+    public function erreur($message, $error = true){
         // TODO : feedback error
     }
 

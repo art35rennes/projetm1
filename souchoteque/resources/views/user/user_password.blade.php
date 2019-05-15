@@ -9,12 +9,16 @@
         @foreach($users as $user)
             @foreach($user as $us)
                 <form method="post" action="/user/recoverpassword/{{$us->id}}">
-                    <h5>Utilisateur aillant perdu son mot de passe : {{$us->name}}</h5>
-                    <h6 for="password">Nouveau mot de passe</h6>
-                    <input type="password" name="password"/>
-                    <h6 for="password-confirm">Confirmer le mot de passe</h6>
-                    <input type="password" name="password-confirm"/>
-                    <button type="submit" class="btn btn-success">Valider</button>
+                    <h4>Utilisateur aillant perdu son mot de passe : {{$us->name}}</h4>
+                    <div class="form-group">
+                        <label for="password">Nouveau mot de passe</label>
+                        <input type="password" class="form-control" id="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="password-confirm">Confirmez le mot de passe</label>
+                        <input type="password" class="form-control" id="password-confirm">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sauvegarder</button>
                     @csrf
                 </form>
             @endforeach
