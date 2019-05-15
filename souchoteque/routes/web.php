@@ -35,7 +35,8 @@ Route::group(['middleware' => ['auth']], function() {
         Route::post('/souche/{ref}/update', 'SoucheAjaxController@update');
 
         //Delete
-        Route::post('/souche/{ref}/suppr', 'SoucheController@suppr');
+        Route::post('/souche/{ref}/suppr', 'SoucheAjaxController@suppr');
+        Route::post('/souche/{ref}/suppr/file', 'SoucheAjaxController@supprFile');
 
         //TestArea
         Route::get('/poc', 'SoucheController@poc');

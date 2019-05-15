@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eab5d6e8-9b8f-466d-93da-9c0479ef1f5b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/feedback.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SoucheAjaxController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SoucheAjaxController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/user_password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/user_password.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/user_profil.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/user_profil.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -21,26 +16,54 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SoucheAjaxController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+            <state relative-caret-position="437">
+              <caret line="161" column="20" selection-start-line="161" selection-start-column="16" selection-end-line="161" selection-end-column="20" />
               <folding>
-                <element signature="e#40#85#0#PHP" expanded="true" />
+                <element signature="e#6#88#0#PHP" expanded="true" />
+                <element signature="e#123#168#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SoucheAjaxController.php">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SoucheController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="201">
-              <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+            <state relative-caret-position="355">
+              <caret line="518" selection-start-line="518" selection-end-line="522" selection-end-column="5" />
               <folding>
-                <element signature="e#6#88#0#PHP" expanded="true" />
-                <element signature="e#123#168#0#PHP" expanded="true" />
+                <element signature="e#40#85#0#PHP" expanded="true" />
+                <element signature="e#871#1073#1#PHP" />
+                <element signature="e#1108#1212#1#PHP" />
+                <element signature="e#1243#1327#1#PHP" />
+                <element signature="e#1351#1461#1#PHP" />
+                <element signature="e#1488#1565#1#PHP" />
+                <element signature="e#1592#1779#1#PHP" />
+                <element signature="e#1818#1931#1#PHP" />
+                <element signature="e#1961#2069#1#PHP" />
+                <element signature="e#2098#2209#1#PHP" />
+                <element signature="e#2232#2493#1#PHP" />
+                <element signature="e#2521#2603#1#PHP" />
+                <element signature="e#2629#2834#1#PHP" />
+                <element signature="e#2856#3039#1#PHP" />
+                <element signature="e#3066#3170#1#PHP" />
+                <element signature="e#3192#3469#1#PHP" />
+                <element signature="e#3498#3632#1#PHP" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/web.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="38" column="79" selection-start-line="38" selection-start-column="79" selection-end-line="38" selection-end-column="79" />
+              <folding>
+                <element signature="e#7#389#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -96,10 +119,10 @@
         <option value="$PROJECT_DIR$/resources/views/user/user_liste.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/user_profile.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/user_password.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/user/user_profil.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/feedback.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/SoucheAjaxController.php" />
       </list>
     </option>
@@ -404,12 +427,12 @@
       <workItem from="1554063161589" duration="111000" />
       <workItem from="1554063306767" duration="72000" />
       <workItem from="1555593379809" duration="56848000" />
-      <workItem from="1557918755741" duration="1961000" />
+      <workItem from="1557918755741" duration="5167000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158346000" />
+    <option name="totallyTimeSpent" value="161552000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -424,7 +447,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49429658" visible="true" weight="0.1769341" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49429658" visible="true" weight="0.1769341" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.50570345" side_tool="true" weight="0.26037195" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -439,7 +462,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3299363" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.25241545" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.25241545" />
       <window_info anchor="bottom" id="Thumbnails" order="12" visible="true" weight="0.3299363" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -595,32 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SoucheController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="353" column="30" selection-start-line="353" selection-start-column="27" selection-end-line="353" selection-end-column="30" />
-          <folding>
-            <element signature="e#40#85#0#PHP" expanded="true" />
-            <element signature="e#871#1073#1#PHP" />
-            <element signature="e#1108#1212#1#PHP" />
-            <element signature="e#1243#1327#1#PHP" />
-            <element signature="e#1351#1461#1#PHP" />
-            <element signature="e#1488#1565#1#PHP" />
-            <element signature="e#1592#1779#1#PHP" />
-            <element signature="e#1818#1931#1#PHP" />
-            <element signature="e#1961#2069#1#PHP" />
-            <element signature="e#2098#2209#1#PHP" />
-            <element signature="e#2232#2493#1#PHP" />
-            <element signature="e#2521#2603#1#PHP" />
-            <element signature="e#2629#2834#1#PHP" />
-            <element signature="e#2856#3039#1#PHP" />
-            <element signature="e#3066#3170#1#PHP" />
-            <element signature="e#3192#3469#1#PHP" />
-            <element signature="e#3498#3632#1#PHP" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/user/user_liste.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="489">
@@ -666,16 +663,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="64" column="13" selection-start-line="64" selection-end-line="65" />
-          <folding>
-            <element signature="e#7#389#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/feedback.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -687,16 +674,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
           <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
-          <folding>
-            <element signature="e#40#85#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -714,10 +691,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="38" column="79" selection-start-line="38" selection-start-column="79" selection-end-line="38" selection-end-column="79" />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SoucheController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="355">
+          <caret line="518" selection-start-line="518" selection-end-line="522" selection-end-column="5" />
+          <folding>
+            <element signature="e#40#85#0#PHP" expanded="true" />
+            <element signature="e#871#1073#1#PHP" />
+            <element signature="e#1108#1212#1#PHP" />
+            <element signature="e#1243#1327#1#PHP" />
+            <element signature="e#1351#1461#1#PHP" />
+            <element signature="e#1488#1565#1#PHP" />
+            <element signature="e#1592#1779#1#PHP" />
+            <element signature="e#1818#1931#1#PHP" />
+            <element signature="e#1961#2069#1#PHP" />
+            <element signature="e#2098#2209#1#PHP" />
+            <element signature="e#2232#2493#1#PHP" />
+            <element signature="e#2521#2603#1#PHP" />
+            <element signature="e#2629#2834#1#PHP" />
+            <element signature="e#2856#3039#1#PHP" />
+            <element signature="e#3066#3170#1#PHP" />
+            <element signature="e#3192#3469#1#PHP" />
+            <element signature="e#3498#3632#1#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-738">
+          <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
+          <folding>
+            <element signature="e#40#85#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SoucheAjaxController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="201">
-          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+        <state relative-caret-position="437">
+          <caret line="161" column="20" selection-start-line="161" selection-start-column="16" selection-end-line="161" selection-end-column="20" />
           <folding>
             <element signature="e#6#88#0#PHP" expanded="true" />
             <element signature="e#123#168#0#PHP" expanded="true" />

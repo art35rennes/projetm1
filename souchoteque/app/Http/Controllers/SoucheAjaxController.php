@@ -20,75 +20,64 @@ class SoucheAjaxController
 {
     public function update($id, Request $request){
 
-
         $data = $request->json()->all();
+        $table = $data[1]["onglet"];
+        $update = null;
+        $insert = null;
         return var_export($data);
+        switch ($table){
+            case "description" :
 
-        foreach ($data as $ligne){
-            $insert = null;
-            $table = null;
-            if (!isset($ligne["_token"])) {
+                break;
+            case "identification" :
+                $base = DB::table("identification")->select()->where("ref", "=", $id)->get();
+                for($i = 1; $i<count($data); $i++) {
+                    if ($data[$i]["new"] == false){
+                        $insert[$i-1]["ref"] = $id;
+                        $insert[$i-1]["type"] = $this->ajoutString($data[$i]["type"]);
+                        $insert[$i-1]["arbre"] = $this->ajoutFile($id."/".$table, "arbre", $data[$i]["arbre"]);
+                        $insert[$i-1]["sequence"] = $this->ajoutFile($id."/".$table, "sequence", $data[$i]["sequence"]);
+                    }else{
 
-                switch ($ligne[0]["onglet"]) {
-                    case "description" :
-
-                        break;
-                    case "identification" :
-                        if (isset($ligne["type"]) && $ligne["type"] != null){
-                            $table = "identification";
-                            $insert["type"] = $this->ajoutString($ligne["type"]);
-                            $insert["arbre"] = $this->ajoutFile($id."/".$table, "arbre", $ligne["arbre"]);
-                            $insert["sequence"] = $this->ajoutFile($id."/".$table, "sequence", $ligne["sequence"]);
-                        }
-                        break;
-                    case "pasteur" :
-                        if (isset($ligne["titre"]) && $ligne["titre"] != null){
-                            $table = "pasteur";
-                            $insert["date"] = $this->ajoutDate($ligne["date"]);
-                            $insert["titre"] = $this->ajoutString($ligne["titre"]);
-                            $insert["numero"] = $this->ajoutInt($ligne["numero"]);
-                            $insert["validation"] = $this->ajoutFile($id."/".$table, "validation", $ligne["validation"]);
-                            $insert["stock"] = $this->ajoutInt($ligne["stock"]);
-                            $insert["photo"] = $this->ajoutFile($id."/".$table, "photo", $ligne["photo"]);
-
-                        }
-                        break;
-                    case "brevet" :
-                        if (isset($ligne["titre"]) && $ligne["titre"] != null){
-                            $table = "brevet_soleau";
-                        }
-                        break;
-                    case "publication":
-                        if (isset($ligne["nom"]) && $ligne["nom"] != null){
-                            $table = "brevet_soleau";
-                        }
-                        break;
-                    case "exclusivite" :
-
-                        break;
-                    case "projet" :
-
-                        break;
-                    case "eps" :
-
-                        break;
-                    case "pha" :
-
-                        break;
-                    case "autre" :
-
-                        break;
-                    default :
-                        break;
-                }
-                if ($table != null) {
-                    if (isset($ligne["oldKey"])) {
-                        //TODO : update key
-                    } elseif ($ligne["new"]) {
-                        //TODO : insert
-                    } else {
-                        //TODO : update
                     }
+                }
+                break;
+            case "pasteur" :
+
+                break;
+            case "brevet" :
+
+                break;
+            case "publication":
+
+                break;
+            case "exclusivite" :
+
+                break;
+            case "projet" :
+
+                break;
+            case "eps" :
+
+                break;
+            case "pha" :
+
+                break;
+            case "autre" :
+
+                break;
+            default :
+                break;
+        }
+        if (!isset($ligne["_token"])) {
+
+            if ($table != null) {
+                if (isset($ligne["oldKey"])) {
+                    //TODO : update key
+                } elseif ($ligne["new"]) {
+                    //TODO : insert
+                } else {
+                    //TODO : update
                 }
             }
         }
@@ -161,5 +150,15 @@ class SoucheAjaxController
         if ($this->validateDate($date))
             return date( "Y-m-d", date_create_from_format("d/m/Y", $date));
         $this->erreur("Une des date que vous avez saisi n'est pas conforme");
+    }
+
+    public function suppr($id){
+        DB::table('souche')
+            ->where('ref', "=", $id)
+            ->update(['desactive' => 1]);
+    }
+
+    public function supprFile($id, Request $request){
+        return "vtff";
     }
 }
