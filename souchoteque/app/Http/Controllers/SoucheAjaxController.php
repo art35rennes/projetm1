@@ -22,8 +22,8 @@ class SoucheAjaxController
 
 
         $data = $request->json()->all();
-        var_dump($data);
-        //return;
+        return var_export($data);
+
         foreach ($data as $ligne){
             $insert = null;
             $table = null;
