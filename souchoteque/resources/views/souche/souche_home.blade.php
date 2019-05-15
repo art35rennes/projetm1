@@ -4,7 +4,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
 @endsection
 @section('body')
-    <div class="collapse" id="collapseExample">
+    <!--div class="collapse" id="collapseExample">
         <div class="card card-body">
             <ul>
                 @foreach($souche as $S => $s)
@@ -29,7 +29,7 @@
     </div>
     <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
         Souche Tab
-    </button>
+    </button-->
 
     <div class="container-fluid w-75">
         <h4 class="display-4">Souche : <span id="ref" class="text-secondary">{{$souche['souche'][0]->ref}}</span></h4>
@@ -87,6 +87,8 @@
                 </li>
             </ul>
 
+            <div class="container m-3" id="server-results">
+            </div>
             <div class="tab-content pt-2 pl-1" id="pills-tabContent">
 
                 @include('souche.pills.description')
@@ -111,10 +113,6 @@
             </div>
         </div>
         @csrf
-
-    </div>
-
-    <div class="container" id="server-results">
 
     </div>
 @endsection

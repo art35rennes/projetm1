@@ -1,7 +1,34 @@
+function alerteInfo(type, text, text2="") {
+    let html;
+    switch (type) {
+        case 'info':
+            html = "<div class=\"alert alert-info alert-dismissible fade show\" role=\"alert\">\n" +
+                "  <strong>Réponse du serveur: </strong>"+text+"\n" +
+                "  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n" +
+                "    <span aria-hidden=\"true\">&times;</span>\n" +
+                "  </button>\n" +
+                "</div>";
+            return html;
+        case 'warning':
+            break;
+        case 'alert':
+            break
+        default:
+            html = "<div class=\"alert alert-light alert-dismissible fade show\" role=\"alert\">\n" +
+                "  <strong>Réponse du serveur: </strong> <pre>"+text+"</pre>\n" +
+                "  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n" +
+                "    <span aria-hidden=\"true\">&times;</span>\n" +
+                "  </button>\n" +
+                "</div>";
+            return html;
+    }
+}
+
 //..................................//
 //.............Objects..............//
 //..................................//
 
+//Onglet
 var description = function(textarea, photo, nom, description, collecte, annee, ogm, creation, type, fichier){
     this.textarea = photo===null?null:textarea;
     this.photo = textarea===""?null:photo;
@@ -84,47 +111,74 @@ var cryotube = function(reference, n) {
     this.n = n;
 };
 
+//EPS, PHA, Autre
+var objectivation = function(type, nom, protocole, resultat, isNew, oldKey=null){
+    this.type = type;
+    this.nom = nom;
+    this.protocole = protocole;
+    this.resultat = resultat;
+    this.new = isNew;
+    this.oldKey = oldKey;
+    this.onglet = "publication";
+};
+
+var industriel = function(type, production, date, lieu, protocole, resultat, isNew, oldKey=null){
+    this.type = type;
+    this.production = production;
+    this.date = date;
+    this.lieu = lieu;
+    this.protocole = protocole;
+    this.resultat = resultat;
+    this.new = isNew;
+    this.oldKey = oldKey;
+    this.onglet = "publication";
+};
+
+var criblage = function(type, nom, condition, rapport, isNew, oldKey=null){
+    this.type = type;
+    this.nom = nom;
+    this.condition = condition;
+    this.rapport = rapport;
+    this.new = isNew;
+    this.oldKey = oldKey;
+    this.onglet = "criblage";
+};
+
+var oses = function(type, nom, isNew){
+    this.type = type;
+    this.nom = nom;
+    this.isNew = isNew;
+    this.onglet = 'oses';
+};
+
+var caracterisation = function(poid, nom, fichier){
+    this.poid = poid;
+    this.nom = nom;
+    this.fichier = fichier;
+    this.onglet = "caracterisation";
+};
+
+var projetLiee = function(reference) {
+    this.reference = reference;
+    this.onglet = 'projet associe';
+};
+
 //..................................//
 //.............Get Files............//
 //..................................//
 
 //function pour input dans tableau
-/*function getFileInput(parent ,n){
-    return new Promise((resolve) =>
-    {
-        $file = parent.children().eq(n).find(':first-child');
-
-        if ($file.is('label')) {
-            //td don't have file
-            //console.log($file.find('input').attr('name'));
-
-            if (typeof ($file.find('input').prop('files')[0]) !== "undefined") {
-                //console.log(document.getElementsByName($file.find('input').attr('name'))[0]['files'][0]);
-                var myFile = document.getElementsByName($file.find('input').attr('name'))[0]['files'][0];
-                var reader = new FileReader();
-                reader.onloadend = function (event) {
-                    return (new Object({
-                        name: myFile.name,
-                        size: myFile.size,
-                        lastModified: myFile.lastModified,
-                        type: myFile.type,
-                        data: reader.result
-                    }));
-                };
-                reader.readAsDataURL(myFile);
-            }
-        }
-    })
-}
-*/
 
 $datas = [];
-function getFileInput(parent ,n, name){
+function getFileInput(parent ,n, name, index=($datas.length-1)){
 
+    //console.log(index);
     if (!parent.is('input')){
+        //console.log('is not input');
         $file = parent.children().eq(n).find(':first-child');
     }
     else{
+        //console.log('is input');
         $file = parent.parent();
     }
 
@@ -138,7 +192,13 @@ function getFileInput(parent ,n, name){
             let myFile = document.getElementsByName($file.find('input').attr('name'))[0]['files'][0];
             let reader = new FileReader();
             reader.onloadend = function (event) {
-                $datas[$datas.length - 1][name] = (new Object({
+                //console.log($datas);
+                if(typeof $datas[0]._token != 'undefined'){
+                    console.log('index ++');
+                    index++;
+                }
+                console.log('index: '+index+', name: '+name);
+                $datas[index][name] = (new Object({
                     name: myFile.name,
                     size: myFile.size,
                     lastModified: myFile.lastModified,
@@ -147,6 +207,7 @@ function getFileInput(parent ,n, name){
                     state: reader.readyState
                 }));
             };
+            //console.log(myFile);
             reader.readAsDataURL(myFile);
         }
     }
@@ -201,39 +262,37 @@ function checkReadyState(){
     return min;
 }
 
-//function pour input simple
-/*function getFileInputById($el){
-    console.log($el);
-    return typeof($('#'+$el).prop('files')[0])!=="undefined"?$el.prop('files')[0]:null;
-}*/
-
 //..................................//
 //.............Ajax Post............//
 //..................................//
 function sendAjax($url, $id='#server-results') {
-    
-    //ajout du token CSRF
-    $datas.unshift({'_token': $('input[name=_token]').val()})
-    console.log($datas);
+    if ($datas.length > 0) {
+        //ajout du token CSRF
+        $datas.unshift({'_token': $('input[name=_token]').val()})
+        console.log($datas);
 
-    var post_url = $url; //get form action url
-    var request_method = 'POST'; //get form GET/POST method
-    var form_data = JSON.stringify($datas, null, 2);
+        var post_url = $url; //get form action url
+        var request_method = 'POST'; //get form GET/POST method
+        var form_data = JSON.stringify($datas, null, 2);
 
-    //console.log((form_data));
+        //console.log((form_data));
 
-    $.ajax({
-        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-        url: post_url,
-        type: request_method,
-        data: form_data,
-        contentType: false,
-        cache: false,
-        processData: false
-    }).done(function (response) { //
-        //console.log(response);
-        $($id).html(response);
-    });
+        $.ajax({
+            headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+            url: post_url,
+            type: request_method,
+            data: form_data,
+            contentType: false,
+            cache: false,
+            processData: false
+        }).done(function (response) {
+            $($id).html(alerteInfo(null,response));
+        });
+    }
+    else {
+        $($id).html(alerteInfo('info',"Aucune donnée à envoyer.",));
+    }
+
 }
 //......................................//
 //.............Ajax Request.............//
@@ -246,158 +305,369 @@ $("#updateBtn").click(function(){
 
     //console.log($id);
     if ($id != '#pills-description') {
-        $($id).find("tr").each(function () {
-            switch ($id) {
-                case '#pills-identification':
-                    //console.log('identification');
+        let tabEPA;
+        switch($id) {
+            case '#pills-eps':
+                console.log('eps');
+                //caracterisation
+                if ($('#autre-poid_moleculaire').is('input')) {
+                    $datas.push(new caracterisation(
+                        $('#eps-poid_moleculaire').val(),
+                        $('[name=eps-fichier_caracterisation-type]').val(),
+                        null,
+                    ));
+                    getFileInput($('[name=eps-fichier_caracterisation-fichier]'), 0, 'fichier', $datas.length-1)
+                }
 
-                    //on parse le tableau de l'onglet
-                    $(this).each(function () {
-                        if ($(this).is('tr') &&
-                            !$(this).children(':first-child').is('th') &&
-                            $(this).find('input').eq(0).val() !== "") {
+                //oses
+                let osesTab = ["neutre", "acide", "amine"];
+                osesTab.forEach(function(item, index){
+                    $($id).find(".oses").eq(index).find('tr').each(function () {
+                        $(this).each(function () {
+                            if ($(this).is('tr') && !$(this).find(':first-child').hasClass('dataTables_empty') &&
+                                !$(this).children(':first-child').is('th') &&
+                                $(this).find('input').eq(0).val() !== "") {
 
-                            //console.log(getFileInput($(this), 1));
-                            //on initialise l'objet pour l'inserer dans datas
-                            $datas.push(new identification(
-                                $(this).find('input').eq(0).val(),
-                                null,
-                                null,
-                                $(this).hasClass('editZone'),
-                                $(this).find('input').eq(0).attr('oldKey')
-                            ));
-                            getFileInput($(this), 1, 'sequence');
-                            getFileInput($(this), 2, 'arbre');
-                        }
+                                //console.log(getFileInput($(this), 1));
+                                //on initialise l'objet pour l'inserer dans datas
+                                $datas.push(new oses(
+                                    item,
+                                    $(this).find('input').eq(0).val(),
+                                    $(this).hasClass('editZone'),
+                                ));
+                            }
+                        });
                     });
-                    break;
-                case '#pills-pasteur':
-                    console.log('pasteur');
-                    $(this).each(function () {
-                        //console.log($(this).find('input').eq(5));
-                        if ($(this).is('tr') &&
-                            !$(this).children(':first-child').is('th') &&
-                            $(this).find('input').eq(1).val() !== "") {
+                });
 
-                            $datas.push(new pasteur(
-                                $(this).find('input').eq(0).val(),
-                                $(this).find('input').eq(1).val(),
-                                $(this).find('input').eq(2).val(),
-                                null,
-                                null,
-                                $(this).find('input').eq(3).val(),
-                                null,
-                                $(this).hasClass('editZone')
-                            ));
-                            getFileInput($(this), 4, 'dossier');
-                            getFileInput($(this), 5, 'validation');
-                            getFileInput($(this), 6, 'photo');
-                        }
+                //Tab
+                tabEPA = [".ObjectivationEps", ".ProductionInduEps", ".CriblageEps"];
+                tabEPA.forEach(function (item) {
+                    $($id).find(item).find('.tabEps').eq(0).find('tr').each(function () {
+                        $(this).each(function () {
+                            if ($(this).is('tr') && !$(this).find(':first-child').hasClass('dataTables_empty') &&
+                                !$(this).children(':first-child').is('th') &&
+                                $(this).find('input').eq(0).val() !== "") {
+
+                                switch (item) {
+                                    case ".ObjectivationEps":
+                                        $datas.push(new objectivation(
+                                            'eps',
+                                            $(this).find('input').eq(0).val(),
+                                            null,
+                                            null,
+                                            $(this).hasClass('editZone'),
+                                        ));
+                                        getFileInput($(this), 1, 'protocole', $datas.length-1);
+                                        getFileInput($(this), 2, 'resultat', $datas.length-1);
+                                        break;
+                                    case ".ProductionInduEps":
+                                        $datas.push(new industriel(
+                                            'eps',
+                                            $(this).find('input').eq(0).val(),
+                                            $(this).find('input').eq(1).val(),
+                                            $(this).find('input').eq(2).val(),
+                                            null,
+                                            null,
+                                            $(this).hasClass('editZone'),
+                                        ));
+                                        getFileInput($(this), 3, 'protocole', $datas.length-1);
+                                        getFileInput($(this), 4, 'resultat', $datas.length-1);
+                                        break;
+                                    case ".CriblageEps":
+                                        $datas.push(new criblage(
+                                            'eps',
+                                            $(this).find('input').eq(0).val(),
+                                            null,
+                                            null,
+                                            $(this).hasClass('editZone'),
+                                        ));
+                                        getFileInput($(this), 1, 'condition', $datas.length-1);
+                                        getFileInput($(this), 2, 'rapport', $datas.length-1);
+                                        break;
+                                }
+
+                            }
+                        });
                     });
-                    break;
-                case '#pills-brevet':
-                    console.log('brevet');
-                    $(this).each(function () {
-                        //console.log($(this).find('input').eq(5));
-                        if ($(this).is('tr') &&
-                            !$(this).children(':first-child').is('th') &&
-                            $(this).find('input').eq(1).val() !== "") {
+                });
 
-                            $datas.push(new brevet(
-                                $(this).find('input').eq(0).val(),
-                                $(this).find('input').eq(1).val(),
-                                $(this).find('input').eq(2).val(),
-                                $(this).find('input').eq(3).val(),
-                                null,
-                                null,
-                                $(this).hasClass('editZone')
-                            ));
-                            getFileInput($(this), 4, 'texte');
-                            getFileInput($(this), 5, 'inpi');
-                        }
+
+
+                break;
+            case '#pills-pha':
+                console.log('pha');
+                //caracterisation
+                if ($('#autre-poid_moleculaire').is('input')) {
+                    $datas.push(new caracterisation(
+                        $('#pha-poid_moleculaire').val(),
+                        $('[name=pha-fichier_caracterisation-type]').val(),
+                        null,
+                    ));
+                    getFileInput($('[name=pha-fichier_caracterisation-fichier]'), 0, 'fichier', $datas.length-1)
+                }
+
+
+                //Tab
+                tabEPA = [".ObjectivationPha", ".ProductionInduPha", ".CriblagePha"];
+                tabEPA.forEach(function (item) {
+                    $($id).find(item).find('.tabPha').eq(0).find('tr').each(function () {
+                        $(this).each(function () {
+                            if ($(this).is('tr') && !$(this).find(':first-child').hasClass('dataTables_empty') &&
+                                !$(this).children(':first-child').is('th') &&
+                                $(this).find('input').eq(0).val() !== "") {
+
+                                switch (item) {
+                                    case ".ObjectivationPha":
+                                        $datas.push(new objectivation(
+                                            'pha',
+                                            $(this).find('input').eq(0).val(),
+                                            null,
+                                            null,
+                                            $(this).hasClass('editZone'),
+                                        ));
+                                        getFileInput($(this), 1, 'protocole', $datas.length-1);
+                                        getFileInput($(this), 2, 'resultat', $datas.length-1);
+                                        break;
+                                    case ".ProductionInduPha":
+                                        $datas.push(new industriel(
+                                            'pha',
+                                            $(this).find('input').eq(0).val(),
+                                            $(this).find('input').eq(1).val(),
+                                            $(this).find('input').eq(2).val(),
+                                            null,
+                                            null,
+                                            $(this).hasClass('editZone'),
+                                        ));
+                                        getFileInput($(this), 3, 'protocole', $datas.length-1);
+                                        getFileInput($(this), 4, 'resultat', $datas.length-1);
+                                        break;
+                                    case ".CriblagePha":
+                                        $datas.push(new criblage(
+                                            'pha',
+                                            $(this).find('input').eq(0).val(),
+                                            null,
+                                            null,
+                                            $(this).hasClass('editZone'),
+                                        ));
+                                        getFileInput($(this), 1, 'condition', $datas.length-1);
+                                        getFileInput($(this), 2, 'rapport', $datas.length-1);
+                                        break;
+                                }
+
+                            }
+                        });
                     });
-                    break;
-                case '#pills-publication':
-                    console.log('publication');
-                    $(this).each(function () {
-                        //console.log($(this).find('input').eq(5));
-                        if ($(this).is('tr') &&
-                            !$(this).children(':first-child').is('th') &&
-                            $(this).find('input').eq(1).val() !== "") {
+                });
+                break;
+            case '#pills-autre':
+                console.log('autre');
+                //caracterisation
+                if ($('#autre-poid_moleculaire').is('input')) {
+                    $datas.push(new caracterisation(
+                        $('#autre-poid_moleculaire').val(),
+                        $('[name=autre-fichier_caracterisation-type]').val(),
+                        null,
+                    ));
+                    getFileInput($('[name=autre-fichier_caracterisation-fichier]'), 0, 'fichier', $datas.length-1)
+                }
 
-                            $datas.push(new publication(
-                                $(this).find('input').eq(0).val(),
-                                null,
-                                $(this).hasClass('editZone')
-                            ));
-                            getFileInput($(this), 1, 'publication');
-                        }
+                //Tab
+                tabEPA = [".ObjectivationAutre", ".ProductionInduAutre", ".CriblageAutre"];
+                tabEPA.forEach(function (item) {
+                    $($id).find(item).find('.tabAutre').eq(0).find('tr').each(function () {
+                        $(this).each(function () {
+                            if ($(this).is('tr') && !$(this).find(':first-child').hasClass('dataTables_empty') &&
+                                !$(this).children(':first-child').is('th') &&
+                                $(this).find('input').eq(0).val() !== "") {
+
+                                switch (item) {
+                                    case ".ObjectivationAutre":
+                                        $datas.push(new objectivation(
+                                            'autre',
+                                            $(this).find('input').eq(0).val(),
+                                            null,
+                                            null,
+                                            $(this).hasClass('editZone'),
+                                        ));
+                                        getFileInput($(this), 1, 'protocole', $datas.length-1);
+                                        getFileInput($(this), 2, 'resultat', $datas.length-1);
+                                        break;
+                                    case ".ProductionInduAutre":
+                                        $datas.push(new industriel(
+                                            'autre',
+                                            $(this).find('input').eq(0).val(),
+                                            $(this).find('input').eq(1).val(),
+                                            $(this).find('input').eq(2).val(),
+                                            null,
+                                            null,
+                                            $(this).hasClass('editZone'),
+                                        ));
+                                        getFileInput($(this), 3, 'protocole', $datas.length-1);
+                                        getFileInput($(this), 4, 'resultat', $datas.length-1);
+                                        break;
+                                    case ".CriblageAutre":
+                                        $datas.push(new criblage(
+                                            'autre',
+                                            $(this).find('input').eq(0).val(),
+                                            null,
+                                            null,
+                                            $(this).hasClass('editZone'),
+                                        ));
+                                        getFileInput($(this), 1, 'condition', $datas.length-1);
+                                        getFileInput($(this), 2, 'rapport', $datas.length-1);
+                                        break;
+                                }
+
+                            }
+                        });
                     });
-                    break;
-                case '#pills-exclisivite':
-                    console.log('exclu');
-                    $(this).each(function () {
-                        //console.log($(this).find('input').eq(5));
-                        if ($(this).is('tr') &&
-                            !$(this).children(':first-child').is('th') &&
-                            $(this).find('input').eq(1).val() !== "") {
+                });
+                break;
+            default:
+                $($id).find("tr").each(function () {
+                    switch ($id) {
+                        case '#pills-identification':
+                            //console.log('identification');
 
-                            $datas.push(new exclusivite(
-                                $(this).find('input').eq(0).val(),
-                                $(this).find('input').eq(1).val(),
-                                $(this).find('input').eq(2).val(),
-                                $(this).find('input').eq(3).val(),
-                                $(this).hasClass('editZone')
-                            ));
-                        }
-                    });
-                    break;
-                case '#pills-projet':
-                    console.log('projet');
-                    $(this).each(function () {
-                        //console.log($(this).find('input').eq(5));
-                        if ($(this).is('tr') &&
-                            !$(this).children(':first-child').is('th') &&
-                            $(this).find('input').eq(1).val() !== "") {
+                            //on parse le tableau de l'onglet
+                            $(this).each(function () {
+                                if ($(this).is('tr') && !$(this).find(':first-child').hasClass('dataTables_empty') &&
+                                    !$(this).children(':first-child').is('th') &&
+                                    $(this).find('input').eq(0).val() !== "") {
 
-                            $datas.push(new projet(
-                                $(this).find('input').eq(0).val(),
-                                $(this).find('input').eq(1).val(),
-                                $(this).find('input').eq(2).val(),
-                                $(this).find('input').eq(3).val(),
-                                null,
-                                $(this).hasClass('editZone')
-                            ));
-                            getFileInput($(this), 4, 'document');
-                        }
-                    });
-                    break;
-                case '#pills-eps':
-                    console.log('eps');
-                    break;
-                case '#pills-pha':
-                    console.log('pha');
-                    break;
-                case '#pills-autre':
-                    console.log('autre');
-                    break;
+                                    //console.log(getFileInput($(this), 1));
+                                    //on initialise l'objet pour l'inserer dans datas
+                                    $datas.push(new identification(
+                                        $(this).find('input').eq(0).val(),
+                                        null,
+                                        null,
+                                        $(this).hasClass('editZone'),
+                                        $(this).find('input').eq(0).attr('oldKey')
+                                    ));
+                                    getFileInput($(this), 1, 'sequence', $datas.length-1);
+                                    getFileInput($(this), 2, 'arbre', $datas.length-1);
+                                }
+                            });
+                            break;
+                        case '#pills-pasteur':
+                            console.log('pasteur');
+                            $(this).each(function () {
+                                //console.log($(this).find('input').eq(5));
+                                if ($(this).is('tr') && !$(this).find(':first-child').hasClass('dataTables_empty') &&
+                                    !$(this).children(':first-child').is('th') &&
+                                    $(this).find('input').eq(1).val() !== "") {
 
-            }
-        });
+                                    $datas.push(new pasteur(
+                                        $(this).find('input').eq(0).val(),
+                                        $(this).find('input').eq(1).val(),
+                                        $(this).find('input').eq(2).val(),
+                                        null,
+                                        null,
+                                        $(this).find('input').eq(3).val(),
+                                        null,
+                                        $(this).hasClass('editZone')
+                                    ));
+                                    getFileInput($(this), 4, 'dossier', $datas.length-1);
+                                    getFileInput($(this), 5, 'validation', $datas.length-1);
+                                    getFileInput($(this), 6, 'photo', $datas.length-1);
+                                }
+                            });
+                            break;
+                        case '#pills-brevet':
+                            console.log('brevet');
+                            $(this).each(function () {
+                                //console.log($(this).find('input').eq(5));
+                                if ($(this).is('tr') && !$(this).find(':first-child').hasClass('dataTables_empty') &&
+                                    !$(this).children(':first-child').is('th') &&
+                                    $(this).find('input').eq(1).val() !== "") {
+
+                                    $datas.push(new brevet(
+                                        $(this).find('input').eq(0).val(),
+                                        $(this).find('input').eq(1).val(),
+                                        $(this).find('input').eq(2).val(),
+                                        $(this).find('input').eq(3).val(),
+                                        null,
+                                        null,
+                                        $(this).hasClass('editZone')
+                                    ));
+                                    getFileInput($(this), 4, 'texte', $datas.length-1);
+                                    getFileInput($(this), 5, 'inpi', $datas.length-1);
+                                }
+                            });
+                            break;
+                        case '#pills-publication':
+                            console.log('publication');
+                            $(this).each(function () {
+                                //console.log($(this).find('input').eq(5));
+                                if ($(this).is('tr') && !$(this).find(':first-child').hasClass('dataTables_empty') &&
+                                    !$(this).children(':first-child').is('th') &&
+                                    $(this).find('input').eq(1).val() !== "") {
+
+                                    $datas.push(new publication(
+                                        $(this).find('input').eq(0).val(),
+                                        null,
+                                        $(this).hasClass('editZone')
+                                    ));
+                                    getFileInput($(this), 1, 'publication', $datas.length-1);
+                                }
+                            });
+                            break;
+                        case '#pills-exclisivite':
+                            console.log('exclu');
+                            $(this).each(function () {
+                                //console.log($(this).find('input').eq(5));
+                                if ($(this).is('tr') && !$(this).find(':first-child').hasClass('dataTables_empty') &&
+                                    !$(this).children(':first-child').is('th') &&
+                                    $(this).find('input').eq(1).val() !== "") {
+
+                                    $datas.push(new exclusivite(
+                                        $(this).find('input').eq(0).val(),
+                                        $(this).find('input').eq(1).val(),
+                                        $(this).find('input').eq(2).val(),
+                                        $(this).find('input').eq(3).val(),
+                                        $(this).hasClass('editZone')
+                                    ));
+                                }
+                            });
+                            break;
+                        case '#pills-projet':
+                            console.log('projet');
+                            $(this).each(function () {
+                                //console.log($(this).find('input').eq(5));
+                                if ($(this).is('tr') && !$(this).find(':first-child').hasClass('dataTables_empty') &&
+                                    !$(this).children(':first-child').is('th') &&
+                                    $(this).find('input').eq(1).val() !== "") {
+
+                                    $datas.push(new projet(
+                                        $(this).find('input').eq(0).val(),
+                                        $(this).find('input').eq(1).val(),
+                                        $(this).find('input').eq(2).val(),
+                                        $(this).find('input').eq(3).val(),
+                                        null,
+                                        $(this).hasClass('editZone')
+                                    ));
+                                    getFileInput($(this), 4, 'document', $datas.length-1);
+                                }
+                            });
+                            break;
+                    }
+                });
+        }
     }
     else{
         console.log('desc');
         $datas.push(new description(
             $('#photo_souche-description').val(),
-            getFileInput($('#photo_souche-fichier'), 0, 'photo'),
+            getFileInput($('#photo_souche-fichier'), 0, 'photo', $datas.length-1),
             $('#description-texte').val(),
-            getFileInput($('#description-file'), 0, 'description'),
+            getFileInput($('#description-file'), 0, 'description', $datas.length-1),
             $('#souche-origine').val(),
             $('#souche-annee_collecte').val(),
             $('#isOgm').val(),
             $('#isOgm').val()?$('#souche-annee_creation').val():null,
             $('#isOgm').val()?$('[name=souche-hcb-type]:checked').val():null,
-            $('#isOgm').val()?getFileInput($('#souche-hcb-doc'),0,'fichier'):null
+            $('#isOgm').val()?getFileInput($('#souche-hcb-doc'),0,'fichier', $datas.length-1):null
         ));
     }
 

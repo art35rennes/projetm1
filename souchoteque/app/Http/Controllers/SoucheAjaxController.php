@@ -25,7 +25,7 @@ class SoucheAjaxController
         ob_start();
         var_dump($data);
         $result = ob_get_clean();
-        return var_dump($data);
+        return var_export($data);
         //return $result;
         //return $data[2]['sequence']?$data[2]['sequence']:'TBD';
 

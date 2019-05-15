@@ -4,10 +4,13 @@
         <ul class="list-inline">
             <li class="list-inline-item"><h6 class="font-italic">Projet associé :</h6></li>
             @foreach($souche['projet_souche'] as $projet)
-                <li class="list-inline-item"><a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"></a></li>
+                <li class="list-inline-item">
+                    <a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"></a>
+                    <i class="editButton fas fa-times deleteCross ml-2"></i>
+                </li>
             @endforeach
             <li class="list-inline-item editZone">
-                <input class="form-control w-75 d-inline" type="text" list="dataProjet" name="autre/projet">
+                <input class="form-control w-75 d-inline" type="text" list="dataProjet" name="autre-projet">
                 <datalist id="dataProjet">
                     @foreach($souche['projet'] as $projet)
                         <option>{{$projet->nom}}</option>
@@ -25,7 +28,7 @@
                 <div class="CaracterisationAutre p-3 d-block">
                     <h4>Caractérisation</h4>
                     <hr class="w-50" align="left">
-                    <h6>Poid moléculaire: <span class="font-weight-light">{{$carac->poids_moleculaire }}</span></h6>
+                    <h6>Poid moléculaire: <span class="font-weight-light inputDate" id="autre-poid_moleculaire">{{$carac->poids_moleculaire }}</span></h6>
 
                     <div class="row">
                         <ul class="col-auto ml-3 list-unstyled">
@@ -37,7 +40,7 @@
                         </ul>
                         <div class="editZone mt-2 col-auto">
                             <h6>Ajout fichier de caractérisation:</h6>
-                            <input type="text" list="dataCaracterisation" class="form-control" name="autre/fichier_caracterisation/type">
+                            <input type="text" list="dataCaracterisation" class="form-control" name="autre-fichier_caracterisation-type">
                             <datalist id="dataCaracterisation">
                                 <option>Ratio monosaccharidiques</option>
                                 <option>RMN</option>
@@ -50,7 +53,7 @@
                                 @endforeach
                             </datalist>
                             <label class="btn btn-light m-2">
-                                Ajouter un fichier <input type="file" name="autre/fichier_caracterisation/fichier" hidden>
+                                Ajouter un fichier <input type="file" name="autre-fichier_caracterisation-fichier" hidden>
                             </label>
                         </div>
                     </div>
@@ -76,19 +79,19 @@
                     @foreach($souche['objectivation'] as $objectivation)
                         @if($objectivation->type=="AUTRE")
                             <tr>
-                                <td><span class="tabText" id="autre/objectivation/{{$loop->iteration}}/nom">{{$objectivation->nom}}</span></td>
+                                <td><span class="tabText" id="autre-objectivation-{{$loop->iteration}}-nom">{{$objectivation->nom}}</span></td>
                                 <td>
                                     @if($objectivation->protocole != "")
-                                        <a class="tabFile font-italic mr-2" id="autre/objectivation/{{$loop->iteration}}/protocole" href="{{asset("/storage/".$objectivation->protocole)}}">{{$objectivation->protocole}}</a>
+                                        <a class="tabFile font-italic mr-2" id="autre-objectivation-{{$loop->iteration}}-protocole" href="{{asset("/storage/".$objectivation->protocole)}}">{{$objectivation->protocole}}</a>
                                     @else
-                                        <span class="tabNull" id="autre/objectivation/{{$loop->iteration}}/protocole"></span>
+                                        <span class="tabNull" id="autre-objectivation-{{$loop->iteration}}-protocole"></span>
                                     @endif
                                 </td>
                                 <td>
                                     @if($objectivation->resultat != "")
-                                        <a class="tabFile font-italic mr-2" id="autre/objectivation/{{$loop->iteration}}/resultat" href="{{asset("/storage/".$objectivation->resultat)}}">{{$objectivation->protocole}}</a>
+                                        <a class="tabFile font-italic mr-2" id="autre-objectivation-{{$loop->iteration}}-resultat" href="{{asset("/storage/".$objectivation->resultat)}}">{{$objectivation->protocole}}</a>
                                     @else
-                                        <span class="tabNull" id="autre/objectivation/{{$loop->iteration}}/resultat"></span>
+                                        <span class="tabNull" id="autre-objectivation-{{$loop->iteration}}-resultat"></span>
                                     @endif
                                 </td>
                             </tr>
@@ -98,16 +101,16 @@
                     <tfoot>
                     <tr class="editZone">
                         <td>
-                            <input type="text" class="form-control" name="autre/objectivation/0/nom">
+                            <input type="text" class="form-control" name="autre-objectivation-0-nom">
                         </td>
                         <td>
                             <label class="btn btn-light m-2">
-                                Ajouter un fichier <input type="file" name="autre/objectivation/0/fichier" hidden>
+                                Ajouter un fichier <input type="file" name="autre-objectivation-0-fichier" hidden>
                             </label>
                         </td>
                         <td>
                             <label class="btn btn-light m-2">
-                                Ajouter un fichier <input type="file" name="autre/objectivation/0/fichier" hidden>
+                                Ajouter un fichier <input type="file" name="autre-objectivation-0-fichier" hidden>
                             </label>
                         </td>
                     </tr>
@@ -141,16 +144,16 @@
                                 <td><span class="tabText">{{$prod->lieu}}</span></td>
                                 <td>
                                     @if($prod->protocole != "")
-                                        <a class="tabFile font-italic mr-2" id="autre/production/{{$loop->iteration}}/protocole" href="{{asset("/storage/".$prod->protocole)}}">{{$prod->protocole}}</a>
+                                        <a class="tabFile font-italic mr-2" id="autre-production-{{$loop->iteration}}-protocole" href="{{asset("/storage/".$prod->protocole)}}">{{$prod->protocole}}</a>
                                     @else
-                                        <span class="tabNull" id="autre/production/{{$loop->iteration}}/protocole"></span>
+                                        <span class="tabNull" id="autre-production-{{$loop->iteration}}-protocole"></span>
                                     @endif
                                 </td>
                                 <td>
                                     @if($prod->rapport != "")
-                                        <a class="tabFile font-italic mr-2" id="autre/production/{{$loop->iteration}}/resultat" href="{{asset("/storage/".$prod->rapport)}}">{{$prod->rapport}}</a>
+                                        <a class="tabFile font-italic mr-2" id="autre-production-{{$loop->iteration}}-resultat" href="{{asset("/storage/".$prod->rapport)}}">{{$prod->rapport}}</a>
                                     @else
-                                        <span class="tabNull" id="autre/production/{{$loop->iteration}}/resultat"></span>
+                                        <span class="tabNull" id="autre-production-{{$loop->iteration}}-resultat"></span>
                                     @endif
                                 </td>
                             </tr>
@@ -160,22 +163,22 @@
                     <tfoot>
                     <tr class="editZone">
                         <td>
-                            <input type="text" class="form-control" name="autre/production/0/nom">
+                            <input type="text" class="form-control" name="autre-production-0-nom">
                         </td>
                         <td>
-                            <input type="date" class="form-control" name="autre/production/0/date">
+                            <input type="date" class="form-control" name="autre-production-0-date">
                         </td>
                         <td>
-                            <input type="text" class="form-control" name="autre/production/0/lieu">
+                            <input type="text" class="form-control" name="autre-production-0-lieu">
                         </td>
                         <td>
                             <label class="btn btn-light m-2">
-                                Ajouter un fichier <input type="file" name="autre/production/0/protocole" hidden>
+                                Ajouter un fichier <input type="file" name="autre-production-0-protocole" hidden>
                             </label>
                         </td>
                         <td>
                             <label class="btn btn-light m-2">
-                                Ajouter un fichier <input type="file" name="autre/production/0/resultat" hidden>
+                                Ajouter un fichier <input type="file" name="autre-production-0-resultat" hidden>
                             </label>
                         </td>
                     </tr>
@@ -204,16 +207,16 @@
                                 <td><span class="tabText">{{$criblage->nom}}</span></td>
                                 <td>
                                     @if($criblage->conditions != "")
-                                        <a class="tabFile font-italic mr-2" id="autre/criblage/{{$loop->iteration}}/condition" href="{{asset("/storage/".$criblage->conditions)}}">{{$criblage->conditions}}</a>
+                                        <a class="tabFile font-italic mr-2" id="autre-criblage-{{$loop->iteration}}-condition" href="{{asset("/storage/".$criblage->conditions)}}">{{$criblage->conditions}}</a>
                                     @else
-                                        <span class="tabNull" id="autre/criblage/{{$loop->iteration}}/condition"></span>
+                                        <span class="tabNull" id="autre-criblage-{{$loop->iteration}}-condition"></span>
                                     @endif
                                 </td>
                                 <td>
                                     @if($criblage->rapport != "")
-                                        <a class="tabFile font-italic mr-2" id="autre/criblage/{{$loop->iteration}}/rapport" href="{{asset("/storage/".$criblage->rapport)}}">{{$criblage->rapport}}</a>
+                                        <a class="tabFile font-italic mr-2" id="autre-criblage-{{$loop->iteration}}-rapport" href="{{asset("/storage/".$criblage->rapport)}}">{{$criblage->rapport}}</a>
                                     @else
-                                        <span class="tabNull" id="autre/criblage/{{$loop->iteration}}/rapport"></span>
+                                        <span class="tabNull" id="autre-criblage-{{$loop->iteration}}-rapport"></span>
                                     @endif
                                 </td>
                             </tr>
@@ -223,16 +226,16 @@
                     <tfoot>
                     <tr class="editZone">
                         <td>
-                            <input type="text" class="form-control" name="autre/criblage/0/nom">
+                            <input type="text" class="form-control" name="autre-criblage-0-nom">
                         </td>
                         <td>
                             <label class="btn btn-light m-2">
-                                Ajouter un fichier <input type="file" name="autre/criblage/0/condition" hidden>
+                                Ajouter un fichier <input type="file" name="autre-criblage-0-condition" hidden>
                             </label>
                         </td>
                         <td>
                             <label class="btn btn-light m-2">
-                                Ajouter un fichier <input type="file" name="autre/criblage/0/rapport " hidden>
+                                Ajouter un fichier <input type="file" name="autre-criblage-0-rapport " hidden>
                             </label>
                         </td>
                     </tr>
