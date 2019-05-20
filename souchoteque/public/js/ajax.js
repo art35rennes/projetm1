@@ -85,7 +85,8 @@ var publication = function(date, publication, isNew, oldKey=null){
     this.onglet = "publication";
 };
 
-var exclusivite = function(debut, fin, partenaire, secteur, isNew, oldKey=null){
+var exclusivite = function(id, debut, fin, partenaire, secteur, isNew, oldKey=null){
+    this.id = id;
     this.debut = debut;
     this.fin = fin;
     this.partenaire = partenaire;
@@ -119,7 +120,7 @@ var objectivation = function(type, nom, protocole, resultat, isNew, oldKey=null)
     this.resultat = resultat;
     this.new = isNew;
     this.oldKey = oldKey;
-    this.onglet = "publication";
+    this.onglet = "objectivation";
 };
 
 var industriel = function(type, production, date, lieu, protocole, resultat, isNew, oldKey=null){
@@ -131,7 +132,7 @@ var industriel = function(type, production, date, lieu, protocole, resultat, isN
     this.resultat = resultat;
     this.new = isNew;
     this.oldKey = oldKey;
-    this.onglet = "publication";
+    this.onglet = "industriel";
 };
 
 var criblage = function(type, nom, condition, rapport, isNew, oldKey=null){
@@ -626,6 +627,7 @@ $("#updateBtn").click(function(){
                                         $(this).find('input').eq(1).val(),
                                         $(this).find('input').eq(2).val(),
                                         $(this).find('input').eq(3).val(),
+                                        $(this).find('input').eq(4).val(),
                                         $(this).hasClass('editZone')
                                     ));
                                 }

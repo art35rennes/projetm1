@@ -14,7 +14,7 @@
                 </td>
                 <td>
                     @if($p->fichier != "")
-                        <a class="tabFile font-italic mr-2" id="publication/{{$loop->iteration}}/fichier" href="{{asset("/storage/".$p->fichier)}}">{{$p->fichier}}</a>
+                        <a class="tabFile font-italic mr-2" id="publication/{{$loop->iteration}}/fichier" href="{{asset("/storage/".$p->fichier)}}">{{$p->nom}}</a>
                     @else
                         <span class="tabNull" id="publication/{{$loop->iteration}}/fichier"></span>
                     @endif
