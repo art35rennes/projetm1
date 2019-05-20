@@ -152,11 +152,12 @@ var oses = function(type, nom, isNew){
     this.onglet = 'oses';
 };
 
-var caracterisation = function(poid, nom, fichier){
+var caracterisation = function(poid, nom, fichier, type=null){
     this.poid = poid;
     this.nom = nom;
     this.fichier = fichier;
     this.onglet = "caracterisation";
+    this.type = type;
 };
 
 var projetLiee = function(reference) {
@@ -316,6 +317,7 @@ $("#updateBtn").click(function(){
                         $('#eps-poid_moleculaire').val(),
                         $('[name=eps-fichier_caracterisation-type]').val(),
                         null,
+                        'eps'
                     ));
                     getFileInput($('[name=eps-fichier_caracterisation-fichier]'), 0, 'fichier', $datas.length-1)
                 }
@@ -404,6 +406,7 @@ $("#updateBtn").click(function(){
                         $('#pha-poid_moleculaire').val(),
                         $('[name=pha-fichier_caracterisation-type]').val(),
                         null,
+                        'pha'
                     ));
                     getFileInput($('[name=pha-fichier_caracterisation-fichier]'), 0, 'fichier', $datas.length-1)
                 }
@@ -469,6 +472,7 @@ $("#updateBtn").click(function(){
                         $('#autre-poid_moleculaire').val(),
                         $('[name=autre-fichier_caracterisation-type]').val(),
                         null,
+                        'autre'
                     ));
                     getFileInput($('[name=autre-fichier_caracterisation-fichier]'), 0, 'fichier', $datas.length-1)
                 }
