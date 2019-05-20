@@ -690,5 +690,17 @@ $(".cryoBtn").click(function () {
         $(this).hasClass('fa-minus')?-1:1
     ));
 
-    sendAjax($datas, '/souche/' + ($("#ref")[0].innerHTML) + "/update/cryotube");
+    sendAjax('/souche/' + ($("#ref")[0].innerHTML) + "/update/cryotube");
+});
+
+//..................................//
+//...........Delete entry...........//
+//..................................//
+$(".fa-trash").click(function () {
+    console.log('poubelle');
+    $datas = [];
+    $datas.push({
+        'href': $(this).prev().attr("href")
+    });
+    sendAjax('/suppr/file');
 });

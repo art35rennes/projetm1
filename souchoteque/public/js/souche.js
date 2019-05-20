@@ -202,15 +202,6 @@ $(document).ready( function () {
     });
 
     //..................................//
-    //...........Delete entry...........//
-    //..................................//
-    $("i.deleteCross").click(function () {
-        var $link = $(this).prev().attr("href");
-        $.post(window.location.pathname + "/suppr", {"file": $link, "_token": $('#_token').val()});
-    });
-
-
-    //..................................//
     //............Edit mode.............//
     //..................................//
 
