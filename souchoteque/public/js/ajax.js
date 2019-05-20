@@ -311,7 +311,7 @@ $("#updateBtn").click(function(){
             case '#pills-eps':
                 console.log('eps');
                 //caracterisation
-                if ($('#autre-poid_moleculaire').is('input')) {
+                if ($('#eps-poid_moleculaire').is('input')) {
                     $datas.push(new caracterisation(
                         $('#eps-poid_moleculaire').val(),
                         $('[name=eps-fichier_caracterisation-type]').val(),
@@ -399,7 +399,7 @@ $("#updateBtn").click(function(){
             case '#pills-pha':
                 console.log('pha');
                 //caracterisation
-                if ($('#autre-poid_moleculaire').is('input')) {
+                if ($('#pha-poid_moleculaire').is('input')) {
                     $datas.push(new caracterisation(
                         $('#pha-poid_moleculaire').val(),
                         $('[name=pha-fichier_caracterisation-type]').val(),
