@@ -8,9 +8,31 @@
         @foreach($userss as $users)
             @foreach($users as $user)
                 <h4 class="display-4 mb-3">Profil de {{$user->name}}</h4>
-                <form method="post" action="/user/maj" id="majForm">
+                <form method="post" action="/user/profil" id="majForm">
                     @csrf
-
+                    <input type="number" hidden="true" name="id" value="{{$user->id}}">
+                    <div class="form-group">
+                        <label for="user[name]">Nom d'utilisateur</label>
+                        <input type="text" class="form-control" name="user[name]" value="{{$user->name}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="user[email]">Adresse email</label>
+                        <input type="email" class="form-control" name="user[email]" value="{{$user->email}}" aria-describedby="emailHelp">
+                    </div>
+                    <h4>Changer de mot de passe</h4>
+                    <div class="form-group">
+                        <label for="password-old">Ancien mot de passe</label>
+                        <input type="password" class="form-control" name="password-old">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Nouveau mot de passe</label>
+                        <input type="password" class="form-control" name="password">
+                    </div>
+                    <div class="form-group">
+                        <label for="password-confirm">Confirmez le mot de passe</label>
+                        <input type="password" class="form-control" name="password-confirm">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sauvegarder</button>
                 </form>
             @endforeach
         @endforeach
