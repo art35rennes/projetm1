@@ -18,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SoucheAjaxController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="147" column="17" selection-start-line="147" selection-start-column="17" selection-end-line="147" selection-end-column="17" />
+            <state relative-caret-position="121">
+              <caret line="252" column="97" selection-start-line="252" selection-start-column="97" selection-end-line="252" selection-end-column="97" />
               <folding>
                 <element signature="e#6#88#0#PHP" expanded="true" />
                 <element signature="e#123#148#0#PHP" expanded="true" />
@@ -29,10 +29,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-05-21.log">
+          <provider selected="true" editor-type-id="LogFileEditorProvider">
+            <state relative-caret-position="-3573">
+              <caret line="3" column="126" selection-start-line="3" selection-start-column="126" selection-end-line="3" selection-end-column="126" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SoucheController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="166" column="19" selection-start-line="166" selection-end-line="167" />
+            <state relative-caret-position="630">
+              <caret line="122" column="15" selection-start-line="122" selection-start-column="15" selection-end-line="122" selection-end-column="15" />
               <folding>
                 <element signature="e#40#85#0#PHP" expanded="true" />
                 <element signature="e#871#1073#1#PHP" />
@@ -57,18 +66,9 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-05-16.log">
-          <provider selected="true" editor-type-id="LogFileEditorProvider">
-            <state relative-caret-position="-3667">
-              <caret line="1384" column="101" selection-start-line="1384" selection-start-column="101" selection-end-line="1384" selection-end-column="101" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="585">
+            <state relative-caret-position="450">
               <caret line="39" selection-start-line="39" selection-end-line="39" />
               <folding>
                 <element signature="e#7#389#0#PHP" expanded="true" />
@@ -96,6 +96,7 @@
       <find>postData</find>
       <find>.fa</find>
       <find>register</find>
+      <find>updateOrInsert</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -229,7 +230,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/var-dumper" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1440" />
     <option name="height" value="900" />
   </component>
@@ -239,6 +240,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -322,6 +324,23 @@
               <item name="souchoteque" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="storage" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="432" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="souchoteque" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="storage" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="public" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="432" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="identification" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="souchoteque" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="storage" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="framework" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
@@ -334,7 +353,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -404,12 +422,13 @@
       <workItem from="1554063161589" duration="111000" />
       <workItem from="1554063306767" duration="72000" />
       <workItem from="1555593379809" duration="56848000" />
-      <workItem from="1557918755741" duration="19406000" />
+      <workItem from="1557918755741" duration="34709000" />
+      <workItem from="1558422842539" duration="7576000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175791000" />
+    <option name="totallyTimeSpent" value="198670000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -421,10 +440,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49429658" visible="true" weight="0.1769341" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49429658" visible="true" weight="0.1790831" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.50570345" side_tool="true" weight="0.26037195" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -434,12 +453,12 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" visible="true" weight="0.32971016" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32971016" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3299363" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.25241545" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.25120774" />
       <window_info anchor="bottom" id="Thumbnails" order="12" visible="true" weight="0.3299363" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -451,26 +470,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/database.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-236">
-          <caret line="50" column="10" selection-start-line="50" selection-start-column="10" selection-end-line="50" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/app.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Exceptions/Handler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="29" column="34" selection-start-line="29" selection-start-column="34" selection-end-line="29" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/AjoutSouche.js" />
     <entry file="file://$PROJECT_DIR$/app/Providers/SoucheServiceProvider.php" />
     <entry file="file://$PROJECT_DIR$/bootstrap/cache/services.php">
@@ -677,16 +676,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="585">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="e#7#389#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-05-16.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
         <state relative-caret-position="-3667">
@@ -694,10 +683,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/storage/app/public/432/identification/2019-05-17_13-18-50_arbre.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/app/public/432/identification/2019-05-20_11-51-16_sequence.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-05-20.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="7290">
+          <caret line="486" column="60" selection-start-line="486" selection-start-column="60" selection-end-line="486" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="e#7#389#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-05-21.log">
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="-3573">
+          <caret line="3" column="126" selection-start-line="3" selection-start-column="126" selection-end-line="3" selection-end-column="126" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SoucheController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="166" column="19" selection-start-line="166" selection-end-line="167" />
+        <state relative-caret-position="630">
+          <caret line="122" column="15" selection-start-line="122" selection-start-column="15" selection-end-line="122" selection-end-column="15" />
           <folding>
             <element signature="e#40#85#0#PHP" expanded="true" />
             <element signature="e#871#1073#1#PHP" />
@@ -722,8 +741,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SoucheAjaxController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="147" column="17" selection-start-line="147" selection-start-column="17" selection-end-line="147" selection-end-column="17" />
+        <state relative-caret-position="121">
+          <caret line="252" column="97" selection-start-line="252" selection-start-column="97" selection-end-line="252" selection-end-column="97" />
           <folding>
             <element signature="e#6#88#0#PHP" expanded="true" />
             <element signature="e#123#148#0#PHP" expanded="true" />
