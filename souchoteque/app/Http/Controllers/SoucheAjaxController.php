@@ -249,7 +249,9 @@ class SoucheAjaxController
     public function ajoutFile($chemin, $nom, $fichier) {
         $name = explode('.',$fichier["name"]);
         $dest = "public/".$chemin."/".date("Y-m-d_H-i-s_").$nom.".".end($name);
-        Storage::disk('local')->put($dest, base64_decode(explode(',', $fichier["data"])[1]));
+        try{
+            Storage::disk('local')->put($dest, base64_decode(explode(',', $fichier["data"])[1]));
+        }catch(Exception $e){}
         return $dest;
 
     }
