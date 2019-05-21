@@ -20,137 +20,236 @@ use Illuminate\Support\Facades\Storage;
 
 class SoucheAjaxController
 {
+
+    public $erreur = array();
+
+    //Fonction principale de mise à jour des données
     public function update($id, Request $request){
 
-        $data = $request->json()->all();
+        $datas = $request->json()->all();
+        //return var_export($datas);
+
         $update = null;
-        //return var_export($data);
-        switch ($data[1]["onglet"]){
-            case "description" :
+        foreach ($datas as $data){
+            //return var_export($data);
+            if (isset($data["onglet"])) {
+                switch ($data["onglet"]) {
+                    case "description":
+                        return var_export($datas);
+                        //TODO
+                        break;
+                    case "identification":
+                        if ($data["oldKey"] == null) {
+                            unset($update);
+                            $update["ref"] = $id;
+                            $update["type"] = $this->ajoutString($data["type"]);
+                            if ($data["arbre"] != null)
+                                $update["arbre"] = $this->ajoutFile($id . "/identification", "arbre", $data["arbre"]);
+                            elseif ($data["new"])
+                                $update["arbre"] = "";
 
-                break;
-            case "identification" :
-                for($i = 1; $i<count($data); $i++) {
-                    if ($data[$i]["oldKey"] == null) {
+                            if ($data["sequence"] != null)
+                                $update["sequence"] = $this->ajoutFile($id . "/identification", "sequence", $data["sequence"]);
+                            elseif ($data["new"])
+                                $update["sequence"] = "";
+                            $this->updateDatabase(
+                                "identification",
+                                ['ref' => $id, 'type' => $update["type"]],
+                                $update
+                            );
+                        } else {
+                            //TODO
+                        }
+                        break;
+                    case "pasteur":
+                        if ($data["oldKey"] == null) {
+                            unset($update);
+                            $update["ref"] = $id;
+                            $update["date_depot"] = $this->ajoutDate($data["date"]);
+                            $update["titre"] = $this->ajoutString($data["titre"]);
+                            $update["numero"] = $this->ajoutInt($data["numero"]);
+
+                            if ($data["dossier"] != null)
+                                $update["dossier_depot"] = $this->ajoutFile($id . "/pasteur", "dossier", $data["dossier"]);
+                            elseif ($data["new"])
+                                $update["dossier_depot"] = "";
+
+                            if ($data["validation"] != null)
+                                $update["scan_validation"] = $this->ajoutFile($id . "/pasteur", "validation", $data["validation"]);
+                            elseif ($data["new"])
+                                $update["scan_validation"] = "";
+
+                            $update["stock"] = $this->ajoutInt($data["stock"]);
+
+                            if ($data["photo"] != null)
+                                $update["photo_cryotube"] = $this->ajoutFile($id . "/pasteur", "photo", $data["photo"]);
+                            elseif ($data["new"])
+                                $update["photo_cryotube"] = "";
+
+                            $this->updateDatabase("pasteur",
+                                ['ref' => $id, 'titre' => $update["titre"]],
+                                $update
+                            );
+                            return;
+                        } else {
+                            //TODO
+                        }
+                        break;
+                    case "brevet":
+                        if ($data["oldKey"] == null) {
+                            unset($update);
+                            $update["ref"] = $id;
+                            $update["numero"] = $this->ajoutInt($data["numero"]);
+                            $update["titre"] = $this->ajoutString($data["titre"]);
+                            $update["date"] = $this->ajoutDate($data["demande"]);
+                            $update["activite"] = $this->ajoutActivite($data["secteur"]);
+
+                            if ($data["texte"] != null)
+                                $update["scan"] = $this->ajoutFile($id . "/brevet", "texte", $data["texte"]);
+                            elseif ($data["new"])
+                                $update["scan"] = "";
+
+                            if ($data["inpi"] != null)
+                                $update["inpi"] = $this->ajoutFile($id . "/brevet", "inpi", $data["inpi"]);
+                            elseif ($data["new"])
+                                $update["inpi"] = "";
+
+
+                            $this->updateDatabase("brevet_soleau",
+                                ['ref' => $id, 'titre' => $update["titre"]],
+                                $update
+                            );
+                        } else {
+                            //TODO
+                        }
+                        break;
+                    case "publication":
+                        //TODO
+                        break;
+                    case "exclusivite":
+                        if ($data["oldKey"] == null) {
+                            unset($update);
+                            $update["date_debut"] = $this->ajoutDate($data["debut"]);
+                            $update["date_fin"] = $this->ajoutDate($data["fin"]);
+
+                            $update["activite"] = $this->ajoutActivite($data["secteur"]);
+                            $update["partenaire"] = $this->ajoutPartenaire($data["partenaire"]);
+
+                            $this->updateDatabase("brevet",
+                                ['ref' => $id, 'titre' => $update["titre"]],
+                                $update
+                            );
+                        } else {
+                            //TODO
+                        }
+                        break;
+                    case "oses":
+                        $this->updateDatabase("oses",
+                            ['nom' => $data["nom"], "type" => $data["type"]],
+                            ['nom' => $data["nom"], "type" => $data["type"]]
+                        );
+                        $this->updateDatabase("caracterisation_oses",
+                            [],
+                            []
+                        );
+                        break;
+                    case "caracterisation" :
+                        //TODO
+                        return var_export($data);
+                        break;
+                    case "objectivation":
                         unset($update);
                         $update["ref"] = $id;
-                        $update["type"] = $this->ajoutString($data[$i]["type"]);
-                        if ($data[$i]["arbre"] != null)
-                            $update["arbre"] = $this->ajoutFile($id . "/identification", "arbre", $data[$i]["arbre"]);
-                        elseif ($data[$i]["new"])
-                            $update["arbre"] = "";
+                        $update["nom"] = $this->ajoutString($data["nom"]);
+                        $update["type"] = $data["type"];
 
-                        if ($data[$i]["sequence"] != null)
-                            $update["sequence"] = $this->ajoutFile($id . "/identification", "sequence", $data[$i]["sequence"]);
-                        elseif ($data[$i]["new"])
-                            $update["sequence"] = "";
-                        DB::table("identification")->updateOrInsert(
-                            ['ref' => $id, 'type' => $update["type"]],
+                        if ($data["protocole"] != null)
+                            $update["protocole"] = $this->ajoutFile($id . "/objectivation", $update["nom"]."_protocole", $data["protocole"]);
+                        elseif ($data["new"])
+                            $update["protocole"] = "";
+
+                        if ($data["resultat"] != null)
+                            $update["resultat"] = $this->ajoutFile($id . "/objectivation", $update["nom"]."_resultat", $data["resultat"]);
+                        elseif ($data["new"])
+                            $update["resultat"] = "";
+                        $this->updateDatabase("objectivation",
+                            ['ref' => $id, 'nom' => $update["nom"]],
                             $update
                         );
-                    }else{
-                        //TODO
-                    }
-                }
-                break;
-            case "pasteur" :
-                for($i = 1; $i<count($data); $i++) {
-                    if ($data[$i]["oldKey"] == null) {
-                        unset($update);
+                        break;
+                    case "industriel" :
                         $update["ref"] = $id;
-                        $update["date_depot"] = $this->ajoutDate($data[$i]["date"]);
-                        $update["titre"] = $this->ajoutString($data[$i]["titre"]);
-                        $update["numero"] = $this->ajoutInt($data[$i]["numero"]);
-
-                        if ($data[$i]["dossier"] != null)
-                            $update["dossier_depot"] = $this->ajoutFile($id . "/pasteur", "dossier", $data[$i]["dossier"]);
-                        elseif ($data[$i]["new"])
-                            $update["dossier_depot"] = "";
-
-                        if ($data[$i]["validation"] != null)
-                            $update["scan_validation"] = $this->ajoutFile($id . "/pasteur", "validation", $data[$i]["validation"]);
-                        elseif ($data[$i]["new"])
-                            $update["scan_validation"] = "";
-
-                        $update["stock"] = $this->ajoutInt($data[$i]["stock"]);
-
-                        if ($data[$i]["photo"] != null)
-                            $update["photo_cryotube"] = $this->ajoutFile($id . "/pasteur", "photo", $data[$i]["photo"]);
-                        elseif ($data[$i]["new"])
-                            $update["photo_cryotube"] = "";
-
-                        DB::table("pasteur")->updateOrInsert(
-                            ['ref' => $id, 'titre' => $update["titre"]],
+                        $update["type"] = $data["type"];
+                        $update["nom"] = $this->ajoutString($data["nom"]);
+                        $update["date"] = $this->ajoutDate($data["date"]);
+                        $update["lieu"] = $this->ajoutString($data["lieu"]);
+                        if ($data["protocole"] != null)
+                            $update["protocole"] = $this->ajoutFile($id . "/industriel", $update["nom"]."_protocole", $data["protocole"]);
+                        elseif ($data["new"])
+                            $update["protocole"] = "";
+                        if ($data["resultat"] != null)
+                            $update["rapport"] = $this->ajoutFile($id . "/industriel", $update["nom"]."_rapport", $data["resultat"]);
+                        elseif ($data["new"])
+                            $update["rapport"] = "";
+                        //$update["projet"] =
+                        $this->updateDatabase("objectivation",
+                            ['nom' => $update["nom"], 'ref' => $id],
                             $update
                         );
-                    }else{
-                        //TODO
-                    }
-                }
-                break;
-            case "brevet" :
-                for($i = 1; $i<count($data); $i++) {
-                    if ($data[$i]["oldKey"] == null) {
-                        unset($update);
+                        break;
+                    case "caracterisation":
+                        $this->updateDatabase("caracterisation",
+                            ["ref" => $id, "type" => $data['type']],
+                            ["ref" => $id, "type" => $data['type'], "poids_moleculaire" => $data["poid"]]
+                        );
+                        if ($data["fichier"] != null){
+                            $update["nom"] = $this->ajoutString($data["nom"]);
+                            $update["ref"] = $id;
+                            $update["type"] = $data["type"];
+                            $update["fichier"] = $this->ajoutFile($id . "/caracterisation", $update["type"]."_".$update["nom"], $data["fichier"]);
+                            $this->updateDatabase("fichier_caracterisation",
+                                ["nom" => $update["nom"], "ref" => $id, "type" => $update["type"]],
+                                [$update]
+                            );
+                        }
+                        break;
+                    case "criblage":
                         $update["ref"] = $id;
-                        $update["numero"] = $this->ajoutInt($data[$i]["numero"]);
-                        $update["titre"] = $this->ajoutString($data[$i]["titre"]);
-                        $update["date"] = $this->ajoutDate($data[$i]["demande"]);
-                        $update["activite"] = $this->ajoutActivite($data[$i]["secteur"]);
-                        if ($data[$i]["texte"] != null)
-                            $update["scan"] = $this->ajoutFile($id . "/brevet", "texte", $data[$i]["texte"]);
-                        elseif ($data[$i]["new"])
-                            $update["scan"] = "";
-
-                        if ($data[$i]["inpi"] != null)
-                            $update["inpi"] = $this->ajoutFile($id . "/brevet", "inpi", $data[$i]["inpi"]);
-                        elseif ($data[$i]["new"])
-                            $update["inpi"] = "";
-
-
-                        DB::table("brevet")->updateOrInsert(
-                            ['ref' => $id, 'titre' => $update["titre"]],
+                        $update["type"] = $data["type"];
+                        $update["nom"] = $this->ajoutString($data["nom"]);
+                        if ($data["protocole"] != null)
+                            $update["conditions"] = $this->ajoutFile($id . "/criblage", $update["nom"]."_condition", $data["condition"]);
+                        elseif ($data["new"])
+                            $update["conditions"] = "";
+                        if ($data["rapport"] != null)
+                            $update["rapport"] = $this->ajoutFile($id . "/criblage", $update["nom"]."_rapport", $data["rapport"]);
+                        elseif ($data["new"])
+                            $update["rapport"] = "";
+                        $this->updateDatabase("criblage",
+                            ['nom' => $update["nom"], 'ref' => $id],
                             $update
                         );
-                    }else{
+                        break;
+                    default:
+                        return var_export($datas);
                         //TODO
-                    }
+                        break;
                 }
-                break;
-            case "publication":
-
-                break;
-            case "exclusivite" :
-                return var_export($data);
-
-                break;
-            case "projet" :
-
-                break;
-            case "eps" :
-
-                break;
-            case "pha" :
-
-                break;
-            case "autre" :
-
-                break;
-            default :
-                break;
+            }
         }
-
+        if (count($this->erreur) > 0)
+            die(json_encode(["alert" => "danger"],$this->erreur));
+        else
+            die(json_encode(["alert" => "success"],"Les modifications ont bien été enregistré"));
 
     }
+
+    //CONTROLE DE DONNEE
+
     public function ajoutFile($chemin, $nom, $fichier) {
-        //mkdir("./storage/".$chemin."/", "777");
         $name = explode('.',$fichier["name"]);
         $dest = "public/".$chemin."/".date("Y-m-d_H-i-s_").$nom.".".end($name);
         Storage::disk('local')->put($dest, base64_decode(explode(',', $fichier["data"])[1]));
-        //TODO : try
-        //$fp = fopen("storage/".$chemin."/".$dest, "w");
-        //fwrite($fp, base64_decode(explode(',', $fichier["data"])[1]));
-        //fclose($fp);
         return $dest;
 
     }
@@ -158,20 +257,21 @@ class SoucheAjaxController
         if (sizeof($text) < 255){
             return $text;
         }
-        $this->erreur("Un texte que vous avez saisi a une erreur");
+        $this->erreur("Le champ où vous avez saisi \"".$text."\" contient une erreur");
+        return "";
     }
     public function ajoutDate($date){
         if ($this->validateDate($date)){
             return $date;
         }
-        $this->erreur("Une date que vous avez saisi a une erreur");
-
+        $this->erreur("Le champ où vous avez saisi \"".$date."\" contient une erreur");
+        return "";
     }
     public function ajoutInt($nb){
         if (is_int((int)$nb)){
             return $nb;
         }
-        $this->erreur("Une année ou un nombre que vous avez saisi a une erreur");
+        $this->erreur("Le champ où vous avez saisi \"".$nb."\" contient une erreur");
     }
 
     public function ajoutPartenaire($part){
@@ -184,7 +284,7 @@ class SoucheAjaxController
     public function ajoutActivite($act){
         if (DB::table("activite")->where("nom", "=", $act)->count() == 1)
             return $act;
-        DB::table("partenaire")->insert(['nom' => $act]);
+        DB::table("activite")->insert(['nom' => $act]);
         return $act;
     }
 
@@ -194,10 +294,6 @@ class SoucheAjaxController
         }
         $this->erreur("Un type (PHA, EPS, Autre) que vous avez saisi a une erreur");
 
-    }
-
-    public function erreur($message, $error = true){
-        // TODO : feedback error
     }
 
     function validateDate($date)
@@ -214,16 +310,13 @@ class SoucheAjaxController
         $this->erreur("Une des date que vous avez saisi n'est pas conforme");
     }
 
-    public function isUpdate($fromTable, $update){
-        sort ($update);
-        foreach ($fromTable as $ligne){
-            sort ($ligne);
-            if ($ligne != $update)
-                return true;
-        }
-        return false;
+    //Gestion des erreurs
+
+    public function erreur($message, $error = true){
+        $this->erreur[] = $message;
     }
 
+    //DELETE
     public function suppr($id, Request $request){
 
     }
@@ -236,5 +329,49 @@ class SoucheAjaxController
 
     public function supprFile($id, Request $request){
         return "vtff";
+    }
+
+    //Ajout en base et archivage des modifications
+
+    public function updateDatabase($table, $cle, $data, $oldcle = null){
+
+        //Si gestion d'une ancienne cle
+        if ($oldcle != null){
+            $dataBase = json_decode(json_encode(DB::table($table)->where($oldcle)->select()->get()),true);
+            DB::table("historique")->insert([
+                "user" => 0,
+                "cle" => json_encode($cle),
+                "table" => $table,
+                "old_value" => json_encode($dataBase)
+            ]);
+            DB::table($table)->updateOrInsert($oldcle, $cle);
+        }
+
+        //Selectionne l'élément déjà en base et le compare pour savoir si il y a eu une modif
+
+        $dataBase = json_decode(json_encode(DB::table($table)->where($cle)->select()->get()),true);
+        if (count($dataBase) != 0) {//si update
+            $dataBase = $dataBase[0];
+            $ischanged = false;
+            foreach ($data as $key => $value) {
+                if (strcmp($dataBase[$key], (string)$value) != 0) {
+                    $ischanged = true;
+                }
+            }
+            //Si pas de changement c'est pas la peine de continuer
+            if (!$ischanged)
+                return;
+
+            DB::table("historique")->insert([
+                "user" => 0,
+                "cle" => json_encode($cle),
+                "table" => $table,
+                "old_value" => json_encode($dataBase)
+            ]);
+        }
+
+        DB::table($table)->updateOrInsert($cle, $data);
+
+        $this->erreur();
     }
 }
