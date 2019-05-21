@@ -3,6 +3,7 @@
         <thead>
             <tr>
                 <th>Date</th>
+                <th>Nom</th>
                 <th>Publication</th>
             </tr>
         </thead>
@@ -11,6 +12,11 @@
             <tr>
                 <td>
                     <span class="tabDate" id="publication/{{$loop->iteration}}/date">{{$p->date}}</span>
+                </td>
+                <td>
+                    @if($p->fichier != "")
+                        <span class="tabText">{{$p->nom}}</span>
+                    @endif
                 </td>
                 <td>
                     @if($p->fichier != "")
@@ -26,6 +32,9 @@
         <tr class="editZone">
             <td>
                 <input type="date" class="form-control" name="publication/0/date">
+            </td>
+            <td>
+                <input type="text" class="form-control" name="publication/0/nom">
             </td>
             <td>
                 <label class="btn btn-light">

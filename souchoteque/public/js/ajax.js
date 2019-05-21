@@ -77,7 +77,8 @@ var brevet = function(numero, titre, demande, secteur, texte, inpi, isNew, oldKe
     this.onglet = "brevet";
 };
 
-var publication = function(date, publication, isNew, oldKey=null){
+var publication = function(nom, date, publication, isNew, oldKey=null){
+    this.nom = nom;
     this.date = date;
     this.publication = publication;
     this.new = isNew;
@@ -607,14 +608,15 @@ $("#updateBtn").click(function(){
                                 //console.log($(this).find('input').eq(5));
                                 if ($(this).is('tr') && !$(this).find(':first-child').hasClass('dataTables_empty') &&
                                     !$(this).children(':first-child').is('th') &&
-                                    $(this).find('input').eq(1).val() !== "") {
+                                    $(this).find('input').eq(2).val() !== "") {
 
                                     $datas.push(new publication(
+                                        $(this).find('input').eq(1).val(),
                                         $(this).find('input').eq(0).val(),
                                         null,
                                         $(this).hasClass('editZone')
                                     ));
-                                    getFileInput($(this), 1, 'publication', $datas.length-1);
+                                    getFileInput($(this), 2, 'publication', $datas.length-1);
                                 }
                             });
                             break;
