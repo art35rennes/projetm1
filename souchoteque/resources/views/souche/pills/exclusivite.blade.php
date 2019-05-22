@@ -2,7 +2,7 @@
     <table id="exclisivite" class="table table-bordered bg-white" style="width:100%">
         <thead>
         <tr>
-            <th class="d-none">id</th>
+            <th>Id</th>
             <th>Début</th>
             <th>Fin</th>
             <th>Partenaire</th>
@@ -12,7 +12,7 @@
         <tbody>
         @foreach($souche['exclusivite'] as $exclu)
             <tr>
-                <td class="d-none"><span id="exclusivite/{{$loop->iteration}}/id">{{$exclu->id}}</span></td>
+                <td><span class="tabNum"  id="exclusivite/{{$loop->iteration}}/id">{{$exclu->id}}</span></td>
                 <td><span class="tabDate" id="exclusivite/{{$loop->iteration}}/date_debut">{{$exclu->date_debut}}</span></td>
                 <td><span class="tabDate" id="exclusivite/{{$loop->iteration}}/date_fin">{{$exclu->date_fin}}</span></td>
                 <td><span class="tabText" id="exclusivite/{{$loop->iteration}}/partenaire" list="dataPart">{{$exclu->partenaire}}</span></td>
