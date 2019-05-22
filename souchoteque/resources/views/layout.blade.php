@@ -52,7 +52,10 @@
                     <a class="nav-link" href="/poc">POC<span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/user/logout">Logout<span class="sr-only"></span></a>
+                    <a class="nav-link" href="/user/logout">Déconexion<span class="sr-only"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/logout">Déconexion<span class="sr-only"></span></a>
                 </li>
             </ul>
 

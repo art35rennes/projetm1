@@ -114,7 +114,9 @@ $(document).ready( function () {
             if ($(this).next().is("i")){
                 $(this).next().remove();
             }else{
-                $fa = "<i class='fas fa-trash'></i>";
+                $fa = "<i class='fas fa-trash' onclick='fileDelete(\""+
+                    $(this).attr('href')
+                    +"\")'></i>";
                 $(this).after($fa);
             }
         });

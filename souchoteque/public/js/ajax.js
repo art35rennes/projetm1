@@ -3,7 +3,7 @@ function alerteInfo(type, text, text2="") {
     switch (type) {
         case 'info':
             html = "<div class=\"alert alert-info alert-dismissible fade show\" role=\"alert\">\n" +
-                "  <strong>Réponse du serveur: </strong>"+text+"\n" +
+                "  <strong>Réponse du serveur: </strong>"+text+"\n<hr>"+text2+"\n" +
                 "  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n" +
                 "    <span aria-hidden=\"true\">&times;</span>\n" +
                 "  </button>\n" +
@@ -704,11 +704,19 @@ $(".cryoBtn").click(function () {
 //..................................//
 //...........Delete entry...........//
 //..................................//
-$(".fa-trash").click(function () {
-    console.log('poubelle');
-    $datas = [];
-    $datas.push({
-        'href': $(this).prev().attr("href")
-    });
-    sendAjax('/suppr/file');
-});
+function fileDelete($href){
+    $.post("/souche/"+($("#ref")[0].innerHTML)+"/suppr/file",      // send HTTP POST request to a page and get the answer
+        {
+            _token: $('input[name=_token]').val(),       // send data
+            href:$href
+        },
+        function(data, status){ //retreive response
+            //console.log("Data: " + data + "\nStatus: " + status);
+            if(status === "success"){
+                window.location.reload()
+            }
+            else{
+                alerteInfo('info', status, data);
+            }
+        });
+}
