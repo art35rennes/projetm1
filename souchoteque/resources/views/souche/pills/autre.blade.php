@@ -73,6 +73,7 @@
                         <th>Nom</th>
                         <th>Protocole</th>
                         <th>Resultat</th>
+                        <th class="editZone"></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -94,6 +95,9 @@
                                         <span class="tabNull" id="autre-objectivation-{{$loop->iteration}}-resultat"></span>
                                     @endif
                                 </td>
+                                <td>
+                                    <i class="editZone fas fa-times" onclick="deleteTabEntry('objectivation', '{{$objectivation->nom}}', 'autre')"></i>
+                                </td>
                             </tr>
                         @endif
                     @endforeach
@@ -113,6 +117,7 @@
                                 Ajouter un fichier <input type="file" name="autre-objectivation-0-fichier" hidden>
                             </label>
                         </td>
+                        <td class="editZone"></td>
                     </tr>
                     </tfoot>
                 </table>
@@ -133,6 +138,7 @@
                         <th>Lieu</th>
                         <th>Protocole</th>
                         <th>Résultat</th>
+                        <th class="editZone"></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -155,6 +161,9 @@
                                     @else
                                         <span class="tabNull" id="autre-production-{{$loop->iteration}}-resultat"></span>
                                     @endif
+                                </td>
+                                <td>
+                                    <i class="editZone fas fa-times" onclick="deleteTabEntry('production', '{{$prod->nom}}', 'autre')"></i>
                                 </td>
                             </tr>
                         @endif
@@ -181,6 +190,7 @@
                                 Ajouter un fichier <input type="file" name="autre-production-0-resultat" hidden>
                             </label>
                         </td>
+                        <td class="editZone"></td>
                     </tr>
                     </tfoot>
                 </table>
@@ -198,6 +208,7 @@
                         <th>Nom</th>
                         <th>Condition</th>
                         <th>Rapport</th>
+                        <th class="editZone"></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -219,6 +230,9 @@
                                         <span class="tabNull" id="autre-criblage-{{$loop->iteration}}-rapport"></span>
                                     @endif
                                 </td>
+                                <td>
+                                    <i class="editZone fas fa-times" onclick="deleteTabEntry('criblage', '{{$criblage->nom}}', 'autre')"></i>
+                                </td>
                             </tr>
                         @endif
                     @endforeach
@@ -238,6 +252,7 @@
                                 Ajouter un fichier <input type="file" name="autre-criblage-0-rapport " hidden>
                             </label>
                         </td>
+                        <td class="editZone"></td>
                     </tr>
                     </tfoot>
                 </table>

@@ -5,6 +5,7 @@
                 <th>Date</th>
                 <th>Nom</th>
                 <th>Publication</th>
+                <th class="editZone"></th>
             </tr>
         </thead>
         <tbody>
@@ -25,6 +26,9 @@
                         <span class="tabNull" id="publication/{{$loop->iteration}}/fichier"></span>
                     @endif
                 </td>
+                <td class="editZone">
+                    <i class="editZone fas fa-times" onclick="deleteTabEntry('publication', '{{$p->nom}}')"></i>
+                </td>
             </tr>
         @endforeach
         </tbody>
@@ -41,6 +45,7 @@
                     Ajouter un fichier <input type="file" name="publication/0/fichier" hidden>
                 </label>
             </td>
+            <td class="editZone"></td>
         </tr>
         </tfoot>
     </table>

@@ -9,6 +9,7 @@
                 <th>Dossier Pasteur</th>
                 <th>Validation Pasteur</th>
                 <th>Photo</th>
+                <th class="editZone"></th>
             </tr>
         </thead>
         <tbody>
@@ -50,6 +51,9 @@
                     <span class="tabNull" id="pasteur/{{$loop->iteration}}/photo_cryotube"></span>
                     @endif
                 </td>
+                <td class="editZone">
+                    <i class="editZone fas fa-times" onclick="deleteTabEntry('pasteur', '{{$p->titre}}')"></i>
+                </td>
             </tr>
         @endforeach
         </tbody>
@@ -82,6 +86,7 @@
                         Ajouter un fichier <input type="file" name="pasteur/0/photo_cryotube" hidden>
                     </label>
                 </td>
+                <td class="editZone"></td>
             </tr>
         </tfoot>
     </table>

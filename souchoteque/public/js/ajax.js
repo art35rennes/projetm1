@@ -721,3 +721,23 @@ function fileDelete($href){
             }
         });
 }
+
+function deleteTabEntry(table, key, onglet=null){
+    console.log(table, key, onglet);
+    $.post("/souche/"+($("#ref")[0].innerHTML)+"/suppr",      // send HTTP POST request to a page and get the answer
+        {
+            _token: $('input[name=_token]').val(),       // send data
+            table:table,
+            key:key,
+            onglet:onglet
+        },
+        function(data, status){ //retreive response
+            //console.log("Data: " + data + "\nStatus: " + status);
+            if(status === "success"){
+                window.location.reload()
+            }
+            else{
+                alerteInfo('info', status, data);
+            }
+        });
+}

@@ -7,6 +7,7 @@
             <th>Partenaire</th>
             <th>Secteur</th>
             <th>Document</th>
+            <th class="editZone"></th>
         </tr>
         </thead>
         <tbody>
@@ -22,6 +23,9 @@
                     @else
                         <span class="tabNull" id="projet/{{$loop->iteration}}/text"></span>
                     @endif
+                </td>
+                <td class="editZone">
+                    <i class="editZone fas fa-times" onclick="deleteTabEntry('projet', '{{$projet->nom}}')"></i>
                 </td>
             </tr>
         @endforeach
@@ -55,6 +59,7 @@
                     Ajouter un fichier <input type="file" name="projet/0/texte" hidden>
                 </label>
             </td>
+            <td class="editZone"></td>
         </tr>
         </tfoot>
     </table>

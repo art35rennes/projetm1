@@ -7,6 +7,7 @@
             <th>Fin</th>
             <th>Partenaire</th>
             <th>Secteur</th>
+            <th class="editZone"></th>
         </tr>
         </thead>
         <tbody>
@@ -17,11 +18,15 @@
                 <td><span class="tabDate" id="exclusivite/{{$loop->iteration}}/date_fin">{{$exclu->date_fin}}</span></td>
                 <td><span class="tabText" id="exclusivite/{{$loop->iteration}}/partenaire" list="dataPart">{{$exclu->partenaire}}</span></td>
                 <td><span class="tabText" id="exclusivite/{{$loop->iteration}}/activite" list="dataSecteur">{{$exclu->activite}}</span></td>
+                <td class="editZone">
+                    <i class="editZone fas fa-times" onclick="deleteTabEntry('exclusivite', '{{$exclu->id}}')"></i>
+                </td>
             </tr>
         @endforeach
         </tbody>
         <tfoot>
         <tr class="editZone">
+            <td></td>
             <td>
                 <input type="date" class="form-control" name="exclusivite/0/date_debut">
             </td>
@@ -44,6 +49,7 @@
                     @endforeach
                 </datalist>
             </td>
+            <td class="editZone"></td>
         </tr>
         </tfoot>
     </table>

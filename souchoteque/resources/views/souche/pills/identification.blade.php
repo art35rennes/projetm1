@@ -6,6 +6,7 @@
                     <th>Type</th>
                     <th>Sequence</th>
                     <th>Arbre Phylogénétique</th>
+                    <th class="editZone"></th>
                 </tr>
             </thead>
             <tbody>
@@ -25,6 +26,9 @@
                     @else
                         <span class="tabNull" id="identification-{{$loop->iteration}}-arbre"></span>
                     @endif
+                    </td>
+                    <td class="editZone">
+                        <i class="editZone fas fa-times" onclick="deleteTabEntry('identification', '{{$id->type}}')"></i>
                     </td>
                 </tr>
             @endforeach
@@ -49,6 +53,7 @@
                             Ajouter un fichier <input type="file" name="identification/0/arbre" hidden>
                         </label>
                     </td>
+                    <td class="editZone"></td>
                 </tr>
             </tfoot>
         </table>

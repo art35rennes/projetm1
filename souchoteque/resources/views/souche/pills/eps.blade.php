@@ -35,6 +35,7 @@
                             <thead>
                             <tr>
                                 <th>Oses Neutre</th>
+                                <th class="editZone"></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -42,6 +43,9 @@
                                 @if($oses->type == "neutre")
                                     <tr>
                                         <td><span class="tabText" id="oses-neutre-{{$oses->nom}}">{{$oses->nom}}</span></td>
+                                        <td>
+                                            <i class="editZone fas fa-times" onclick="deleteTabEntry('oses', '{{$oses->nom}}', 'eps')"></i>
+                                        </td>
                                     </tr>
                                 @endif
                             @endforeach
@@ -58,6 +62,7 @@
                                         @endforeach
                                     </datalist>
                                 </td>
+                                <td class="editZone"></td>
                             </tr>
                             </tfoot>
                         </table>
@@ -66,6 +71,7 @@
                             <thead>
                             <tr>
                                 <th>Oses acide</th>
+                                <th class="editZone"></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -73,6 +79,9 @@
                                 @if($oses->type == "acide")
                                     <tr>
                                         <td><span class="tabText" id="oses-acide-{{$oses->nom}}">{{$oses->nom}}</span></td>
+                                        <td>
+                                            <i class="editZone fas fa-times" onclick="deleteTabEntry('oses', '{{$oses->nom}}', 'eps')"></i>
+                                        </td>
                                     </tr>
                                 @endif
                             @endforeach
@@ -89,6 +98,7 @@
                                         @endforeach
                                     </datalist>
                                 </td>
+                                <td class="editZone"></td>
                             </tr>
                             </tfoot>
                         </table>
@@ -97,6 +107,7 @@
                             <thead>
                             <tr>
                                 <th>Osamines</th>
+                                <th class="editZone"></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -104,6 +115,9 @@
                                 @if($oses->type == "amine")
                                     <tr>
                                         <td><span class="tabText" id="oses-amine-{{$oses->nom}}">{{$oses->nom}}</span></td>
+                                        <td>
+                                            <i class="editZone fas fa-times" onclick="deleteTabEntry('oses', '{{$oses->nom}}', 'eps')"></i>
+                                        </td>
                                     </tr>
                                 @endif
                             @endforeach
@@ -120,6 +134,7 @@
                                         @endforeach
                                     </datalist>
                                 </td>
+                                <td class="editZone"></td>
                             </tr>
                             </tfoot>
                         </table>
@@ -165,6 +180,7 @@
                         <th>Nom</th>
                         <th>Protocole</th>
                         <th>Resultat</th>
+                        <th class="editZone"></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -187,6 +203,9 @@
                                         <span class="tabNull" id="eps-objectivation-{{$loop->iteration}}-resultat"></span>
                                     @endif
                                 </td>
+                                <td>
+                                    <i class="editZone fas fa-times" onclick="deleteTabEntry('objectivation', '{{$objectivation->nom}}', 'eps')"></i>
+                                </td>
                             </tr>
                         @endif
                     @endforeach
@@ -207,6 +226,7 @@
                                 Ajouter un fichier <input type="file" name="eps-objectivation-0-fichier" hidden>
                             </label>
                         </td>
+                        <td class="editZone"></td>
                     </tr>
                     </tfoot>
                 </table>
@@ -227,6 +247,7 @@
                         <th>Lieu</th>
                         <th>Protocole</th>
                         <th>Résultat</th>
+                        <th class="editZone"></th>
                     </tr>
                     </thead>
                     <tbody>
@@ -250,6 +271,9 @@
                                     @else
                                         <span class="tabNull" id="eps-production-{{$loop->iteration}}-resultat"></span>
                                     @endif
+                                </td>
+                                <td>
+                                    <i class="editZone fas fa-times" onclick="deleteTabEntry('production', '{{$prod->nom}}', 'eps')"></i>
                                 </td>
                             </tr>
                         @endif
@@ -277,6 +301,7 @@
                                 Ajouter un fichier <input type="file" name="eps-production-0-resultat" hidden>
                             </label>
                         </td>
+                        <td class="editZone"></td>
                     </tr>
                     </tfoot>
                 </table>
@@ -294,10 +319,11 @@
                         <th>Nom</th>
                         <th>Condition</th>
                         <th>Rapport</th>
+                        <th class="editZone"></th>
                     </tr>
                     </thead>
                     <tbody>
-                    @isset($souche['production'])
+                    @isset($souche['criblage'])
                     @foreach($souche['criblage'] as $criblage)
                         @if($criblage->type=="EPS")
                             <tr>
@@ -315,6 +341,9 @@
                                     @else
                                         <span class="tabNull" id="eps-criblage-{{$loop->iteration}}-rapport"></span>
                                     @endif
+                                </td>
+                                <td>
+                                    <i class="editZone fas fa-times" onclick="deleteTabEntry('criblage', '{{$criblage->nom}}', 'eps')"></i>
                                 </td>
                             </tr>
                         @endif
@@ -336,6 +365,7 @@
                                 Ajouter un fichier <input type="file" name="eps-criblage-0-rapport " hidden>
                             </label>
                         </td>
+                        <td class="editZone"></td>
                     </tr>
                     </tfoot>
                 </table>
