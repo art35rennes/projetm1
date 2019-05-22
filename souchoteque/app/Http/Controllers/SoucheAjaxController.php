@@ -250,9 +250,9 @@ class SoucheAjaxController
 
     public function ajoutFile($chemin, $nom, $fichier) {
         $name = explode('.',$fichier["name"]);
-        $dest = "public/".$chemin."/".date("Y-m-d_H-i-s_").$nom.".".end($name);
+        $dest = $chemin."/".date("Y-m-d_H-i-s_").$nom.".".end($name);
         try{
-            Storage::disk('local')->put($dest, base64_decode(explode(',', $fichier["data"])[1]));
+            Storage::disk('local')->put("public/".$dest, base64_decode(explode(',', $fichier["data"])[1]));
         }catch(Exception $e){}
         return $dest;
 
@@ -332,7 +332,13 @@ class SoucheAjaxController
     }
 
     public function supprFile($id, Request $request){
-        return "vtff";
+        $url = explode("/",$request->input("href"));
+        $size = count($url);
+        $file = explode("_", $url[$size-1]);
+        $colonne = explode(".", $file[count($file)-1])[0];
+        $table = $url[$size-2];
+        $souche = $id;
+        DB::table($table)->where([[$colonne, "like", "%".$url[$size-1]."%"],["ref", "=", $souche]])->update([$colonne => ""]);
     }
 
     //Ajout en base et archivage des modifications

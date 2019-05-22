@@ -711,9 +711,10 @@ function fileDelete($href){
             href:$href
         },
         function(data, status){ //retreive response
-            //console.log("Data: " + data + "\nStatus: " + status);
+            console.log("Data: " + data + "\nStatus: " + status);
             if(status === "success"){
-                window.location.reload()
+                alerteInfo('info', status, data);
+                //window.location.reload()
             }
             else{
                 alerteInfo('info', status, data);
