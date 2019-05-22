@@ -26,7 +26,11 @@
                     <td>{{$modif->date}}</td>
                     <td>{{$modif->type}}</td>
                     <td>{{$modif->name}}</td>
-                    <td>{{$modif->old_value}}</td>
+                    <td>
+                        <pre>
+                            {{$modif->old_value}}
+                        </pre>
+                    </td>
                     <td><i class="fas fa-history"></i></td>
                 </tr>
             @endforeach
