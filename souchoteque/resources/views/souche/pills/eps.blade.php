@@ -169,7 +169,6 @@
         @endforeach
 
         <!-- Objecti -->
-
             <div class="ObjectivationEps p-3 d-block">
                 <h4>Objectivation</h4>
                 <hr class="w-50" align="left">
@@ -184,7 +183,6 @@
                     </tr>
                     </thead>
                     <tbody>
-                    @isset($souche['objectivation'])
                     @foreach($souche['objectivation'] as $objectivation)
                         @if($objectivation->type=="EPS")
                             <tr>
@@ -209,7 +207,6 @@
                             </tr>
                         @endif
                     @endforeach
-                    @endisset
                     </tbody>
                     <tfoot>
                     <tr class="editZone">

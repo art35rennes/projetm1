@@ -18,7 +18,7 @@ class HistoriqueController extends Controller
         $historique = DB::table('historique')->join('users', 'historique.user', '=', 'users.id')
             ->select('historique.date', 'historique.type', 'historique.cle', 'historique.old_value', 'users.name')
             ->orderBy("historique.date")->limit(500)->get();
-        var_dump($historique);
+        //var_dump($historique);
         return view('historique', ['historique' => $historique]);
     }
 

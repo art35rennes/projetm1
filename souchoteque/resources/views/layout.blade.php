@@ -32,9 +32,9 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/souche/ajout">Ajouter</a>
-                        <a class="dropdown-item disabled" href="#">Supprimer</a>
+                        <a class="dropdown-item" href="#">Supprimer</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item disabled" href="#">Dernière mise à jour</a>
+                        <a class="dropdown-item" href="/historique/">Dernière mise à jour</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -52,10 +52,7 @@
                     <a class="nav-link" href="/poc">POC<span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/user/logout">Déconexion<span class="sr-only"></span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/user/logout">Déconexion<span class="sr-only"></span></a>
+                    <a class="nav-link" href="/user/logout">Déconnexion<span class="sr-only"></span></a>
                 </li>
             </ul>
 

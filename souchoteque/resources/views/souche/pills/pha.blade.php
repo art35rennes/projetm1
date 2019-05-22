@@ -62,7 +62,6 @@
         @endforeach
 
     <!-- Objecti -->
-        @isset($souche['objectivation'])
             <div class="ObjectivationPha p-3 d-block">
                 <h4>Objectivation</h4>
                 <hr class="w-50" align="left">
@@ -122,7 +121,6 @@
                     </tfoot>
                 </table>
             </div>
-        @endisset
 
     <!-- Production -->
         @isset($souche['production'])
