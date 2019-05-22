@@ -152,6 +152,7 @@ class SoucheAjaxController
                             [],
                             []
                         );
+                        //TODO
                         break;
                     case "caracterisation" :
                         //TODO
@@ -240,7 +241,7 @@ class SoucheAjaxController
         if (count($this->erreur) > 0)
             die(json_encode(["alert" => "danger"],$this->erreur));
         else
-            die(json_encode(["alert" => "success"],"Les modifications ont bien été enregistré"));
+            die(json_encode([["alert" => "success"],"Les modifications ont bien été enregistré"]));
 
     }
 
@@ -373,7 +374,5 @@ class SoucheAjaxController
         }
 
         DB::table($table)->updateOrInsert($cle, $data);
-
-        $this->erreur();
     }
 }
