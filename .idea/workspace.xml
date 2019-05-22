@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fbd90ef4-95b8-4103-bd48-18525024d8be" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Arthur.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Arthur.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/souchoteque/app/Http/Controllers/SoucheController.php" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/app/Http/Controllers/SoucheController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/souchoteque/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/app/Http/Middleware/Authenticate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/souchoteque/public/js/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/public/js/ajax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/souchoteque/resources/views/souche/pills/exclusivite.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/resources/views/souche/pills/exclusivite.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/souchoteque/resources/views/souche/pills/publication.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/resources/views/souche/pills/publication.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="fbd90ef4-95b8-4103-bd48-18525024d8be" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +17,7 @@
     <option name="OUTPUT_DIRECTORY" value="C:\Users\Arthur\Desktop" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.55331993">
+    <splitter split-orientation="horizontal" split-proportion="0.5425889">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
@@ -49,8 +42,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/souchoteque/public/js/ajax.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="527">
-                  <caret line="618" column="59" selection-start-line="618" selection-start-column="59" selection-end-line="618" selection-end-column="59" />
+                <state relative-caret-position="-267">
+                  <caret line="628" column="75" lean-forward="true" selection-start-line="628" selection-start-column="75" selection-end-line="628" selection-end-column="75" />
                   <folding>
                     <element signature="n#!!block;n#alerteInfo#0" />
                     <element signature="e#237#244#1" expanded="true" />
@@ -90,7 +83,7 @@
                     <element signature="e#21724#23084#0" />
                     <element signature="e#23109#24575#0" />
                     <element signature="e#24600#25921#0" />
-                    <element signature="e#26955#28018#0" />
+                    <element signature="e#25946#26930#0" />
                     <element signature="e#28043#29234#0" />
                     <element signature="e#30327#30552#0" />
                     <element signature="e#30706#30854#0" />
@@ -123,7 +116,7 @@
         </leaf>
       </split-first>
       <split-second>
-        <splitter split-orientation="vertical" split-proportion="0.62650603">
+        <splitter split-orientation="vertical" split-proportion="0.9">
           <split-first>
             <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
               <file pinned="false" current-in-tab="false">
@@ -140,22 +133,25 @@
                 </entry>
               </file>
               <file pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche/pills/exclusivite.blade.php">
+                <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche/pills/eps.blade.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="68">
-                      <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+                    <state relative-caret-position="187">
+                      <caret line="30" column="105" selection-start-line="30" selection-start-column="105" selection-end-line="30" selection-end-column="105" />
                       <folding>
-                        <element signature="n#tr#0;n#tfoot#0;n#table#0;n#div#0;n#!!top" />
+                        <element signature="n#div#0;n#div#0;n#!!top" />
+                        <element signature="n#div#1;n#div#1;n#div#0;n#!!top" />
+                        <element signature="n#div#2;n#div#1;n#div#0;n#!!top" />
+                        <element signature="n#div#3;n#div#1;n#div#0;n#!!top" />
                       </folding>
                     </state>
                   </provider>
                 </entry>
               </file>
               <file pinned="false" current-in-tab="false">
-                <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche/pills/publication.blade.php">
+                <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche/pills/autre.blade.php">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="204">
-                      <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+                    <state relative-caret-position="408">
+                      <caret line="30" column="94" selection-start-line="30" selection-start-column="94" selection-end-line="30" selection-end-column="94" />
                     </state>
                   </provider>
                 </entry>
@@ -168,6 +164,18 @@
                       <folding>
                         <element signature="n#nav#0;n#body#0;n#html#0;n#!!top" />
                         <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche/pills/pha.blade.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="391">
+                      <caret line="42" column="129" selection-start-line="42" selection-start-column="129" selection-end-line="42" selection-end-column="129" />
+                      <folding>
+                        <element signature="n#div#0;n#div#0;n#!!top" />
                       </folding>
                     </state>
                   </provider>
@@ -344,8 +352,8 @@
         <option value="$PROJECT_DIR$/souchoteque/app/Http/Controllers/SoucheController.php" />
         <option value="$PROJECT_DIR$/souchoteque/app/Http/Middleware/Authenticate.php" />
         <option value="$PROJECT_DIR$/souchoteque/resources/views/souche/pills/publication.blade.php" />
-        <option value="$PROJECT_DIR$/souchoteque/public/js/ajax.js" />
         <option value="$PROJECT_DIR$/souchoteque/resources/views/souche/pills/exclusivite.blade.php" />
+        <option value="$PROJECT_DIR$/souchoteque/public/js/ajax.js" />
       </list>
     </option>
   </component>
@@ -628,12 +636,12 @@
       <workItem from="1557128802718" duration="35890000" />
       <workItem from="1557219291350" duration="31278000" />
       <workItem from="1557748186917" duration="35967000" />
-      <workItem from="1558343812222" duration="11173000" />
+      <workItem from="1558343812222" duration="13120000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="523095000" />
+    <option name="totallyTimeSpent" value="525042000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -922,27 +930,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche/pills/autre.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="94" selection-start-line="30" selection-start-column="94" selection-end-line="30" selection-end-column="94" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche/pills/pha.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="129" selection-start-line="42" selection-start-column="129" selection-end-line="42" selection-end-column="129" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche/pills/eps.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="30" column="105" selection-start-line="30" selection-start-column="105" selection-end-line="30" selection-end-column="105" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/app/Http/Controllers/SoucheController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
@@ -1004,6 +991,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/souchoteque/app/Http/Middleware/Authenticate.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche/pills/exclusivite.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="84" selection-start-line="18" selection-start-column="84" selection-end-line="18" selection-end-column="84" />
+          <folding>
+            <element signature="n#tr#0;n#tfoot#0;n#table#0;n#div#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche/pills/publication.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche/souche_home.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1015,24 +1026,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/souchoteque/app/Http/Middleware/Authenticate.php">
+    <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche/pills/autre.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="408">
+          <caret line="30" column="94" selection-start-line="30" selection-start-column="94" selection-end-line="30" selection-end-column="94" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche/pills/publication.blade.php">
+    <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche/pills/pha.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="36" column="33" selection-start-line="36" selection-start-column="33" selection-end-line="36" selection-end-column="33" />
+        <state relative-caret-position="391">
+          <caret line="42" column="129" selection-start-line="42" selection-start-column="129" selection-end-line="42" selection-end-column="129" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche/pills/eps.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="30" column="105" selection-start-line="30" selection-start-column="105" selection-end-line="30" selection-end-column="105" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#!!top" />
+            <element signature="n#div#1;n#div#1;n#div#0;n#!!top" />
+            <element signature="n#div#2;n#div#1;n#div#0;n#!!top" />
+            <element signature="n#div#3;n#div#1;n#div#0;n#!!top" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/public/js/ajax.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="618" column="59" selection-start-line="618" selection-start-column="59" selection-end-line="618" selection-end-column="59" />
+        <state relative-caret-position="-267">
+          <caret line="628" column="75" lean-forward="true" selection-start-line="628" selection-start-column="75" selection-end-line="628" selection-end-column="75" />
           <folding>
             <element signature="n#!!block;n#alerteInfo#0" />
             <element signature="e#237#244#1" expanded="true" />
@@ -1072,20 +1099,10 @@
             <element signature="e#21724#23084#0" />
             <element signature="e#23109#24575#0" />
             <element signature="e#24600#25921#0" />
-            <element signature="e#26955#28018#0" />
+            <element signature="e#25946#26930#0" />
             <element signature="e#28043#29234#0" />
             <element signature="e#30327#30552#0" />
             <element signature="e#30706#30854#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/souche/pills/exclusivite.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
-          <folding>
-            <element signature="n#tr#0;n#tfoot#0;n#table#0;n#div#0;n#!!top" />
           </folding>
         </state>
       </provider>
