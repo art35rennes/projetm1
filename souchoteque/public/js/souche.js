@@ -178,6 +178,9 @@ $(document).ready( function () {
             "search":"Rechercher",
             "emptyTable":"Aucune donnée à afficher",
         },
+        "columnDefs": [
+            { targets: 'editZone', orderable: false }
+        ]
     });
 
     $('.tabEps, .tabPha, .tabAutre').each(function () {
@@ -188,6 +191,9 @@ $(document).ready( function () {
                "search":"Rechercher",
                "emptyTable":"Aucune donnée à afficher",
            },
+           "columnDefs": [
+               { targets: 'editZone', orderable: false }
+           ]
        });
     });
 
@@ -200,6 +206,9 @@ $(document).ready( function () {
                "search":"Rechercher",
                "emptyTable":"Aucune donnée à afficher",
            },
+           "columnDefs": [
+               { targets: 'editZone', orderable: false }
+           ]
        });
     });
 

@@ -9,6 +9,7 @@
                 <th>Secteur</th>
                 <th>Texte</th>
                 <th>INPI</th>
+                <th class="editZone"></th>
             </tr>
         </thead>
         <tbody>
@@ -43,6 +44,9 @@
                         <span class="tabNull" id="brevet_soleau/{{$loop->iteration}}/inpi"></span>
                     @endif
                 </td>
+                <td class="editZone">
+                    <i class="editZone fas fa-times" onclick="deleteTabEntry('brevet', '{{$brevet->titre}}')"></i>
+                </td>
             </tr>
         @endforeach
         </tbody>
@@ -71,6 +75,7 @@
                         Ajouter un fichier <input type="file" name="brevet_soleau/0/inpi" hidden>
                     </label>
                 </td>
+                <td class="editZone"></td>
             </tr>
         </tfoot>
     </table>
