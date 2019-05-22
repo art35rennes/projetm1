@@ -13,6 +13,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -342,7 +343,7 @@ class SoucheAjaxController
         if ($oldcle != null){
             $dataBase = json_decode(json_encode(DB::table($table)->where($oldcle)->select()->get()),true);
             DB::table("historique")->insert([
-                "user" => 0,
+                "user" => Auth::id(),
                 "cle" => json_encode($cle),
                 "table" => $table,
                 "old_value" => json_encode($dataBase)
@@ -366,7 +367,7 @@ class SoucheAjaxController
                 return;
 
             DB::table("historique")->insert([
-                "user" => 0,
+                "user" => Auth::id(),
                 "cle" => json_encode($cle),
                 "table" => $table,
                 "old_value" => json_encode($dataBase)

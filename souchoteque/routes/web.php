@@ -27,7 +27,7 @@ Route::group(['middleware' => ['auth']], function() {
 
 
         //historique
-        Route::get('/historique/', "HistoriqueControlleur@show");
+        Route::get('/historique/', "HistoriqueController@show");
 
     //View
         Route::get('/souche/{ref}', 'SoucheController@show');
