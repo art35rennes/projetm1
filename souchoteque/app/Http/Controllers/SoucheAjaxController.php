@@ -258,7 +258,7 @@ class SoucheAjaxController
 
     }
     public function ajoutString($text){
-        if (sizeof($text) < 255){
+        if (strlen($text) < 255){
             return $text;
         }
         $this->erreur("Le champ où vous avez saisi \"".$text."\" contient une erreur");
@@ -322,7 +322,18 @@ class SoucheAjaxController
 
     //DELETE
     public function suppr($id, Request $request){
+        $table = $request->input("table");
+        $key = $request->input("key");
+        $onglet = $request->input("onglet");
+        if ($onglet == null){
+            DB::table($table)->where([["ref"],[""]]);
+        }else{
 
+        }
+        var_export($table);
+        var_export($key);
+        var_export($onglet);
+        return;
     }
 
     public function supprSouche($id){

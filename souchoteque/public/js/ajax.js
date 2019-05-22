@@ -715,6 +715,7 @@ function fileDelete($href){
             if(status === "success"){
                 alerteInfo('info', status, data);
                 //window.location.reload()
+                //TODO : décommenter
             }
             else{
                 alerteInfo('info', status, data);
@@ -732,9 +733,10 @@ function deleteTabEntry(table, key, onglet=null){
             onglet:onglet
         },
         function(data, status){ //retreive response
-            //console.log("Data: " + data + "\nStatus: " + status);
+            console.log("Data: " + data + "\nStatus: " + status);
             if(status === "success"){
-                window.location.reload()
+                //window.location.reload()
+                //TODO : décommenter
             }
             else{
                 alerteInfo('info', status, data);
