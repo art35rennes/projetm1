@@ -49,7 +49,7 @@ Route::group(['middleware' => ['auth']], function() {
         Route::post('/user/profil', "UserController@profilUser");
 
 
-    Route::post('/user/ajout', 'UserController@ajout');
+        Route::post('/user/ajout', 'UserController@ajout');
         Route::post('/user/maj', 'UserController@majUser');
         Route::get('/user/suppr/{id}', 'UserController@deleteUser');
         Route::get('/user/logout', 'UserController@logOut');
