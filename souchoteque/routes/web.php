@@ -26,6 +26,9 @@ Route::group(['middleware' => ['auth']], function() {
         Route::post('/souche/ajout', 'SoucheController@ajoutPost');
 
 
+        //historique
+        Route::get('/historique/', "HistoriqueControlleur@show");
+
     //View
         Route::get('/souche/{ref}', 'SoucheController@show');
         Route::get('/souche/{ref}/dump', 'SoucheController@dump');
