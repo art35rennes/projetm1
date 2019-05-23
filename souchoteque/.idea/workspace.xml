@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eab5d6e8-9b8f-466d-93da-9c0479ef1f5b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/user_liste.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/user_liste.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/user_password.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/user_password.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/user/user_profil.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/user_profil.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,7 +42,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="154">
@@ -49,6 +50,47 @@
               <folding>
                 <element signature="e#40#85#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/user/user_accreditation.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-3341" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/user/user_ajout.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-288" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/user/user_liste.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="36" column="53" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/user/user_password.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/user/user_profil.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="143">
+              <caret line="19" column="95" lean-forward="true" selection-start-line="19" selection-start-column="95" selection-end-line="19" selection-end-column="95" />
             </state>
           </provider>
         </entry>
@@ -87,6 +129,7 @@
       <find>.fa</find>
       <find>register</find>
       <find>updateOrInsert</find>
+      <find>$user</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -113,10 +156,7 @@
         <option value="$PROJECT_DIR$/resources/views/user/user_ajout.blade.php" />
         <option value="$PROJECT_DIR$/storage/logs/laravel-2019-05-06.log" />
         <option value="$PROJECT_DIR$/resources/views/user/user_accreditation.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/user/user_liste.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/user/user_profile.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/user/user_password.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/user/user_profil.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/feedback.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/historique.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
@@ -126,6 +166,9 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/SoucheController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/resources/views/user/user_liste.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/user/user_password.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/user/user_profil.blade.php" />
       </list>
     </option>
   </component>
@@ -314,6 +357,13 @@
             <path>
               <item name="souchoteque" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
               <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="resources" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="views" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="user" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="souchoteque" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="storage" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
@@ -412,12 +462,12 @@
       <workItem from="1557918755741" duration="34709000" />
       <workItem from="1558422842539" duration="13446000" />
       <workItem from="1558513093586" duration="8108000" />
-      <workItem from="1558599958642" duration="3873000" />
+      <workItem from="1558599958642" duration="4116000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216521000" />
+    <option name="totallyTimeSpent" value="216764000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -459,31 +509,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-05-16.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="-3667">
-          <caret line="1384" column="101" selection-start-line="1384" selection-start-column="101" selection-end-line="1384" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/432/identification/2019-05-17_13-18-50_arbre.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/app/public/432/identification/2019-05-20_11-51-16_sequence.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/logs/laravel-2019-05-20.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="7290">
-          <caret line="486" column="60" selection-start-line="486" selection-start-column="60" selection-end-line="486" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-474" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -697,6 +722,37 @@
             <element signature="e#40#85#0#PHP" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/user_liste.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="36" column="53" selection-start-line="36" selection-start-column="53" selection-end-line="36" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/user_password.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/user_profil.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="143">
+          <caret line="19" column="95" lean-forward="true" selection-start-line="19" selection-start-column="95" selection-end-line="19" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/user_ajout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-288" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/user/user_accreditation.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3341" />
       </provider>
     </entry>
   </component>
