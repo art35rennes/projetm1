@@ -1,5 +1,20 @@
 <div class="tab-pane fade show active p-3" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
-    <div class="row">
+
+    @if(1)
+    <div>
+        <div class="custom-control custom-checkbox text-sm-right mt-2">
+            <input type="checkbox" class="custom-control-input editMode" id="editModeDescription">
+            <label class="custom-control-label" for="editModeDescription">Mode Edition</label>
+            <i class="fas fa-pen"></i>
+            <small class="form-text text-muted editZone">N'oubliez pas d'enregistrer les modifications</small>
+        </div>
+        <button class="btn float-right m-2 btn-warning editZone annulBtn">Annuler les modifications</button>
+        <button class="btn float-right m-2 btn-success editZone updateBtn">Valider les modifications</button><br>
+    </div>
+    <br>
+    @endif
+
+    <div class="mt-5 row">
         <div class="col-4 pt-2">
 
             <div id="carouselSouche" class="carousel slide mb-2" data-ride="carousel">

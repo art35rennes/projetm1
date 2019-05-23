@@ -2,6 +2,77 @@ $(document).ready( function () {
     //..................................//
     //..........Initialisation..........//
     //..................................//
+
+    $(".editButton").hide();
+    $(".editZone").hide();
+
+
+    $droit = {
+        souche: $('[name=souche]').val(),
+        identification: $('[name=identification]').val(),
+        eps: $('[name=eps]').val(),
+        pha: $('[name=pha]').val(),
+        autre: $('[name=autre]').val(),
+        pasteur: $('[name=pasteur]').val(),
+        brevet: $('[name=brevet]').val(),
+        exclusivite: $('[name=exclusivite]').val(),
+        publication: $('[name=publication]').val(),
+        utilisateur: $('[name=utilisateur]').val(),
+        description: $('[name=description]').val(),
+        projet: $('[name=projet]').val(),
+        cryotube: $('[name=cryotube]').val(),
+    };
+    $('#userData').remove();
+
+    //..................................//
+    //...........Data Table.............//
+    //..................................//
+
+    $('#identification, #pasteur, #brevet, #publication, #exclisivite, #projet').DataTable({
+        "paging":   false,
+        "info":     false,
+        "language":{
+            "search":"Rechercher",
+            "emptyTable":"Aucune donnée à afficher",
+        },
+        "columnDefs": [
+            { targets: 'editZone', orderable: false }
+        ]
+    });
+
+    $('.tabEps, .tabPha, .tabAutre').each(function () {
+       $(this).DataTable({
+           "paging":   false,
+           "info":     false,
+           "language":{
+               "search":"Rechercher",
+               "emptyTable":"Aucune donnée à afficher",
+           },
+           "columnDefs": [
+               { targets: 'editZone', orderable: false }
+           ]
+       });
+    });
+
+    $('.oses').each(function () {
+       $(this).DataTable({
+           "paging": false,
+           "info": false,
+           "searching": false,
+           "language":{
+               "search":"Rechercher",
+               "emptyTable":"Aucune donnée à afficher",
+           },
+           "columnDefs": [
+               { targets: 'editZone', orderable: false }
+           ]
+       });
+    });
+
+    //..................................//
+    //............Edit mode.............//
+    //..................................//
+
     function convertSpan() {
         $(".inputText, .inputDate").each(function () {
             if ($(this).is("span")) {
@@ -149,14 +220,225 @@ $(document).ready( function () {
         });
     }
 
-    $(".editButton").hide();
-    $(".editZone").hide();
+    $(".editMode").click(function () {
+        $id = $(".nav-link.active").attr('href');
+        //console.log($id);
+        switch ($id) {
+            case "#pills-description":
+                if ($droit.description >= 2 && 0){
+                    $(".editButton").toggle();
+                    $(".editZone").toggle();
+                    if ($droit.description > 2){
+                        convertSpan();
+                        convertTr();
+                    }
+                }
+                break;
+            case "#pills-identification":
+                if ($droit.identification >= 2){
+                    $(".editButton").toggle();
+                    $(".editZone").toggle();
+                    if ($droit.identification > 2){
+                        convertSpan();
+                        convertTr();
+                    }
+                }
+                break;
+            case "#pills-pasteur":
+                if ($droit.pasteur >= 2){
+                    $(".editButton").toggle();
+                    $(".editZone").toggle();
+                    if ($droit.pasteur > 2){
+                        convertSpan();
+                        convertTr();
+                    }
+                }
+                break;
+            case "#pills-brevet":
+                if ($droit.brevet >= 2){
+                    $(".editButton").toggle();
+                    $(".editZone").toggle();
+                    if ($droit.brevet > 2){
+                        convertSpan();
+                        convertTr();
+                    }
+                }
+                break;
+            case "#pills-publication":
+                if ($droit.publication >= 2){
+                    $(".editButton").toggle();
+                    $(".editZone").toggle();
+                    if ($droit.publication > 2){
+                        convertSpan();
+                        convertTr();
+                    }
+                }
+                break;
+            case "#pills-exclisivite":
+                if ($droit.exclusivite >= 2){
+                    $(".editButton").toggle();
+                    $(".editZone").toggle();
+                    if ($droit.exclusivite > 2){
+                        convertSpan();
+                        convertTr();
+                    }
+                }
+                break;
+            case "#pills-projet":
+                if ($droit.projets >= 2 && 0){
+                    $(".editButton").toggle();
+                    $(".editZone").toggle();
+                    if ($droit.projets > 2){
+                        convertSpan();
+                        convertTr();
+                    }
+                }
+                break;
+            case "#pills-eps":
+                if ($droit.eps >= 2){
+                    $(".editButton").toggle();
+                    $(".editZone").toggle();
+                    if ($droit.eps > 2){
+                        convertSpan();
+                        convertTr();
+                    }
+                }
+                break;
+            case "#pills-autre":
+                if ($droit.autre >= 2){
+                    $(".editButton").toggle();
+                    $(".editZone").toggle();
+                    if ($droit.autre > 2){
+                        convertSpan();
+                        convertTr();
+                    }
+                }
+                break;
+            case "#pills-pha":
+                if ($droit.pha >= 2){
+                    $(".editButton").toggle();
+                    $(".editZone").toggle();
+                    if ($droit.pha > 2){
+                        convertSpan();
+                        convertTr();
+                    }
+                }
+                break;
+        }
+    });
 
-    $("#editMode").click(function () {
-        $(".editButton").toggle();
-        $(".editZone").toggle();
-        convertSpan();
-        convertTr();
+    $(".nav-link").click(function () {
+        $state = 0;
+        $(".editZone").each(function () {
+            $(this).is(':visible')?$state=1:null;
+        });
+        if ($state){
+            $id = $(".nav-link.active").attr('href');
+            //console.log($id);
+            switch ($id) {
+                case "#pills-description":
+                    if ($droit.description >= 2 && 0) {
+                        $(".editButton").hide();
+                        $(".editZone").hide();
+                        if ($droit.description > 2) {
+                            convertSpan();
+                            convertTr();
+                        }
+                    }
+                    break;
+                case "#pills-identification":
+                    if ($droit.identification >= 2) {
+                        $(".editButton").hide();
+                        $(".editZone").hide();
+                        if ($droit.identification > 2) {
+                            convertSpan();
+                            convertTr();
+                        }
+                    }
+                    break;
+                case "#pills-pasteur":
+                    if ($droit.pasteur >= 2) {
+                        $(".editButton").hide();
+                        $(".editZone").hide();
+                        if ($droit.pasteur > 2) {
+                            convertSpan();
+                            convertTr();
+                        }
+                    }
+                    break;
+                case "#pills-brevet":
+                    if ($droit.brevet >= 2) {
+                        $(".editButton").hide();
+                        $(".editZone").hide();
+                        if ($droit.brevet > 2) {
+                            convertSpan();
+                            convertTr();
+                        }
+                    }
+                    break;
+                case "#pills-publication":
+                    if ($droit.publication >= 2) {
+                        $(".editButton").hide();
+                        $(".editZone").hide();
+                        if ($droit.publication > 2) {
+                            convertSpan();
+                            convertTr();
+                        }
+                    }
+                    break;
+                case "#pills-exclisivite":
+                    if ($droit.exclusivite >= 2) {
+                        $(".editButton").hide();
+                        $(".editZone").hide();
+                        if ($droit.exclusivite > 2) {
+                            convertSpan();
+                            convertTr();
+                        }
+                    }
+                    break;
+                case "#pills-projet":
+                    if ($droit.projets >= 2 && 0) {
+                        $(".editButton").hide();
+                        $(".editZone").hide();
+                        if ($droit.projets > 2) {
+                            convertSpan();
+                            convertTr();
+                        }
+                    }
+                    break;
+                case "#pills-eps":
+                    if ($droit.eps >= 2) {
+                        $(".editButton").hide();
+                        $(".editZone").hide();
+                        if ($droit.eps > 2) {
+                            convertSpan();
+                            convertTr();
+                        }
+                    }
+                    break;
+                case "#pills-autre":
+                    if ($droit.autre >= 2) {
+                        $(".editButton").hide();
+                        $(".editZone").hide();
+                        if ($droit.autre > 2) {
+                            convertSpan();
+                            convertTr();
+                        }
+                    }
+                    break;
+                case "#pills-pha":
+                    if ($droit.pha >= 2) {
+                        $(".editButton").hide();
+                        $(".editZone").hide();
+                        if ($droit.pha > 2) {
+                            convertSpan();
+                            convertTr();
+                        }
+                    }
+                    break;
+            }
+            $('.editMode').prop('checked', false);
+        }
     });
 
     $(function () {
@@ -167,61 +449,13 @@ $(document).ready( function () {
         })
     });
 
-    //..................................//
-    //...........Data Table.............//
-    //..................................//
-
-    $('#identification, #pasteur, #brevet, #publication, #exclisivite, #projet').DataTable({
-        "paging":   false,
-        "info":     false,
-        "language":{
-            "search":"Rechercher",
-            "emptyTable":"Aucune donnée à afficher",
-        },
-        "columnDefs": [
-            { targets: 'editZone', orderable: false }
-        ]
-    });
-
-    $('.tabEps, .tabPha, .tabAutre').each(function () {
-       $(this).DataTable({
-           "paging":   false,
-           "info":     false,
-           "language":{
-               "search":"Rechercher",
-               "emptyTable":"Aucune donnée à afficher",
-           },
-           "columnDefs": [
-               { targets: 'editZone', orderable: false }
-           ]
-       });
-    });
-
-    $('.oses').each(function () {
-       $(this).DataTable({
-           "paging": false,
-           "info": false,
-           "searching": false,
-           "language":{
-               "search":"Rechercher",
-               "emptyTable":"Aucune donnée à afficher",
-           },
-           "columnDefs": [
-               { targets: 'editZone', orderable: false }
-           ]
-       });
-    });
-
-    //..................................//
-    //............Edit mode.............//
-    //..................................//
-
     $(".tabText .tabDate .tabNum").on('keydown',function () {
         console.log('clic');
         if (!$(this.hasAttribute('oldKey'))) {
             $(this).attr('oldKey', $(this).val());
         }
     });
+
     //..................................//
     //...........OGM Display............//
     //..................................//

@@ -1,4 +1,19 @@
 <div class="tab-pane fade" id="pills-exclisivite" role="tabpanel" aria-labelledby="pills-exclisivite-tab">
+
+    @if($user->exclusivite > 1)
+    <div>
+        <div class="custom-control custom-checkbox text-sm-right mt-2">
+            <input type="checkbox" class="custom-control-input editMode" id="editModeExclusivite">
+            <label class="custom-control-label" for="editModeExclusivite">Mode Edition</label>
+            <i class="fas fa-pen"></i>
+            <small class="form-text text-muted editZone">N'oubliez pas d'enregistrer les modifications</small>
+        </div>
+        <button class="btn float-right m-2 btn-warning editZone annulBtn" id="">Annuler les modifications</button>
+        <button class="btn float-right m-2 btn-success editZone updateBtn" id="">Valider les modifications</button><br>
+    </div>
+    <br>
+    @endif
+
     <table id="exclisivite" class="table table-bordered bg-white" style="width:100%">
         <thead>
         <tr>

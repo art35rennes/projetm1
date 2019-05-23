@@ -300,7 +300,7 @@ function sendAjax($url, $id='#server-results') {
 //......................................//
 //.............Ajax Request.............//
 //......................................//
-$("#updateBtn").click(function(){
+$(".updateBtn").click(function(){
     $datas = [];
 
     //on recupere l'onglet actif
