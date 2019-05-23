@@ -7,6 +7,7 @@
 @endsection
 
 @section('body')
+    @if($user->utilisateur >= 3)
     <div class="container w-75">
         <h4 class="display-4 mb-3">Historique des modifications</h4>
 
@@ -36,6 +37,12 @@
         </table>
 
     </div>
+    @else
+    <div class="container m-5">
+        <h4 class="display-4">Vous n'êtes pas authorisé à acceder à cette page.</h4>
+    </div>
+    @endif
+
 @endsection
 
 @section('customJs')

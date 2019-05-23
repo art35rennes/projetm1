@@ -4,6 +4,7 @@
 @endsection
 
 @section('body')
+    @if($user->utilisateur >= 2)
     <div class="container bg-light">
         @if (isset($erreur))
             <div class="alert alert-primary" role="alert">
@@ -68,6 +69,11 @@
             <button type="submit" id="insert-submit" class="btn btn-primary mb-3">Ajouter</button>
         </form>
     </div>
+    @else
+        <div class="container m-5">
+            <h4 class="display-4">Vous n'êtes pas authorisé à acceder à cette page.</h4>
+        </div>
+    @endif
 @endsection
 
 @section('customJs')

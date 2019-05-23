@@ -1,4 +1,19 @@
 <div class="tab-pane fade p-3" id="pills-eps" role="tabpanel" aria-labelledby="pills-eps-tab">
+
+    @if($user->eps > 1)
+    <div>
+        <div class="custom-control custom-checkbox text-sm-right mt-2">
+            <input type="checkbox" class="custom-control-input editMode" id="editModeEps">
+            <label class="custom-control-label" for="editModeEps">Mode Edition</label>
+            <i class="fas fa-pen"></i>
+            <small class="form-text text-muted editZone">N'oubliez pas d'enregistrer les modifications</small>
+        </div>
+        <button class="btn float-right m-2 btn-warning editZone annulBtn" id="">Annuler les modifications</button>
+        <button class="btn float-right m-2 btn-success editZone updateBtn" id="">Valider les modifications</button><br>
+    </div>
+    <br>
+    @endif
+
     <!--Projet-->
     <div class="p-3 d-block" id="ProjetEps">
         <ul class="list-inline">

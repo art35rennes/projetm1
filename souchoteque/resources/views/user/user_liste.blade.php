@@ -4,6 +4,7 @@
 @endsection
 
 @section('body')
+    @if($user->utilisateur >= 1)
     <div class="container">
         <h4 class="display-4">Liste des comptes utilisateur</h4>
         <form method="post" action="/user/maj" id="majForm">
@@ -14,9 +15,11 @@
                     <td>Nom</td>
                     <td>Mail</td>
                     <td>Accréditation</td>
+                    @if($user->utilisateur == 3)
                     <td></td>
                     <td></td>
                     <td></td>
+                    @endif
                 </tr>
                 </thead>
                 <tbody>
@@ -31,16 +34,22 @@
                                 @endforeach
                             </select>
                         </td>
-                        <td><i class="fas fa-pen "></i><i class="fas fa-check faForm"></i>
-                        </td>
+                        @if($user->utilisateur == 3)
+                        <td><i class="fas fa-pen "></i><i class="fas fa-check faForm"></i></td>
                         <td><a href="/user/recoverpassword/{{$u->id}}"><i class="fas fa-key"></i></a></td>
                         <td><a href="/user/suppr/{{$u->id}}"><i class="fas fa-trash"></i></a></td>
+                        @endif
                     </tr>
                 @endforeach
                 </tbody>
             </table>
         </form>
     </div>
+    @else
+        <div class="container m-5">
+            <h4 class="display-4">Vous n'êtes pas authorisé à acceder à cette page.</h4>
+        </div>
+    @endif
 @endsection
 
 @section('customJs')
