@@ -7,6 +7,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\View;
 
@@ -15,8 +16,14 @@ class HomeController extends Controller
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     public function show(){
         $souches = DB::table('home')->select('*')->get();
+
+        $user = DB::table("users")->where("id", "=", Auth::id() )->select("*")->get();
+        $accreditation = null;
+        foreach ($user as $u){
+            $accreditation = DB::table("accreditation")->where("id", "=", $u->accreditation)->select("*")->get();
+        }
         //var_dump($souches);
-        return view('home', ['souches' => $souches]);
+        return view('home', ['souches' => $souches, 'user' => $user, 'accreditation' => $accreditation]);
     }
     /**
      * Create a new controller instance.

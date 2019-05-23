@@ -97,7 +97,13 @@ class SoucheController extends BaseController
     //                               visualisation                                  //
     //////////////////////////////////////////////////////////////////////////////////
     public function show($id){
-        return view('souche/souche_home', ['souche' => $this->getData($id)]);
+        $user = DB::table("users")->where("id", "=", Auth::id() )->select("*")->get();
+        $accreditation = null;
+        foreach ($user as $u){
+            $accreditation = DB::table("accreditation")->where("id", "=", $u->accreditation)->select("*")->get();
+        }
+
+        return view('souche/souche_home', ['souche' => $this->getData($id), 'user' => $user, 'accreditation' => $accreditation]);
     }
 
     public function dump($id){
