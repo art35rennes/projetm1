@@ -104,7 +104,7 @@ class SoucheController extends BaseController
             ->where("users.id", "=", Auth::id() )
             ->select("*")->get();
 
-        return view('souche/souche_home', ['souche' => $this->getData($id), 'user' => $user]);
+        return view('souche/souche_home', ['souche' => $this->getData($id), 'user' => $user[0]]);
     }
 
     public function dump($id){

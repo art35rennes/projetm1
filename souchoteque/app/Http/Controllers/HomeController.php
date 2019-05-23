@@ -22,8 +22,8 @@ class HomeController extends Controller
             ->where("users.id", "=", Auth::id() )
             ->select("*")->get();
 
-        //var_dump($souches);
-        return view('home', ['souches' => $souches, 'user' => $user]);
+        var_export($user);
+        return view('home', ['souches' => $souches, 'user' => $user[0]]);
     }
     /**
      * Create a new controller instance.
