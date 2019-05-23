@@ -15,11 +15,15 @@ class HistoriqueController extends Controller
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     public function show(){
         //echo asset('storage/file.txt');
+        $user = DB::table("users")
+            ->Join("accreditation", 'users.accreditation', '=', 'accreditation.id')
+            ->where("users.id", "=", Auth::id() )
+            ->select("*")->get();
         $historique = DB::table('historique')->join('users', 'historique.user', '=', 'users.id')
             ->select('historique.date', 'historique.type', 'historique.cle', 'historique.old_value', 'users.name')
             ->orderBy("historique.date")->limit(500)->get();
         //var_dump($historique);
-        return view('historique', ['historique' => $historique]);
+        return view('historique', ['historique' => $historique, "user" => $user[0]]);
     }
 
 }
