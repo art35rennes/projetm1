@@ -89,24 +89,29 @@
                 <!-- Grid column -->
 
                 <!-- Grid column -->
+                @if($user->utilisateur != 0)
                 <div class="col-md-3 mb-3">
                     <h6 class="text-uppercase font-weight-bold">
-                        <a href="/user/ajout">Gestion des comptes</a>
+                        <a href="/user/liste">Gestion des comptes</a>
                     </h6>
                 </div>
+                @endif
+                <!-- Grid column -->
+
+                <!-- Grid column -->
+                @if($user->utilisateur != 0)
+                <div class="col-md-3 mb-3">
+                    <h6 class="text-uppercase font-weight-bold">
+                        <a href="/historique">Historique</a>
+                    </h6>
+                </div>
+                @endif
                 <!-- Grid column -->
 
                 <!-- Grid column -->
                 <div class="col-md-3 mb-3">
                     <h6 class="text-uppercase font-weight-bold">
-                        <a href="" class="text-dark">Historique</a>
-                    </h6>
-                </div>
-
-                <!-- Grid column -->
-                <div class="col-md-3 mb-3">
-                    <h6 class="text-uppercase font-weight-bold">
-                        <a href="" class="text-dark">FAQ</a>
+                        <a href="#!">FAQ</a>
                     </h6>
                 </div>
                 <!-- Grid column -->
@@ -120,7 +125,9 @@
 
                 <!-- Grid column -->
                 <div class="col-md-8 col-12 mt-5">
-                    <p style="line-height: 1.7rem">Work in progress, be cool ;)</p>
+                    <p style="line-height: 1.7rem">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+                        aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
                 </div>
                 <!-- Grid column -->
 
@@ -129,10 +136,10 @@
             <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
 
 
-                <!-- Grid column -->
+            <!-- Grid column -->
 
-            </div>
-            <!-- Grid row-->
+        </div>
+        <!-- Grid row-->
 
         </div>
         <!-- Footer Links -->

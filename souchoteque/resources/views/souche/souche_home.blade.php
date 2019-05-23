@@ -49,42 +49,60 @@
                     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-description" role="tab"
                        aria-controls="pills-description" aria-selected="true">description</a>
                 </li>
+                @if($user->identification > 0)
                 <li class="nav-item m-2">
                     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-identification" role="tab"
                        aria-controls="pills-identification" aria-selected="false">identification</a>
                 </li>
+                @endif
+                @if($user->pasteur > 0)
                 <li class="nav-item m-2">
                     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-pasteur" role="tab"
                        aria-controls="pills-pasteur" aria-selected="false">pasteur</a>
                 </li>
+                @endif
+                @if($user->brevet > 0)
                 <li class="nav-item m-2">
                     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-brevet" role="tab"
                        aria-controls="pills-brevet" aria-selected="false">brevets & Lettres Soleaux</a>
                 </li>
+                @endif
+                @if($user->publication > 0)
                 <li class="nav-item m-2">
                     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-publication" role="tab"
                        aria-controls="pills-publication" aria-selected="false">publications</a>
                 </li>
+                @endif
+                @if($user->exclusivite > 0)
                 <li class="nav-item m-2">
                     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-exclisivite" role="tab"
-                       aria-controls="pills-exclisivite" aria-selected="false">exclisivitées</a>
+                       aria-controls="pills-exclisivite" aria-selected="false">exclusivitées</a>
                 </li>
+                @endif
+
                 <li class="nav-item m-2">
                     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-projet" role="tab"
                        aria-controls="pills-projet" aria-selected="false">projets</a>
                 </li>
+                
+                @if($user->eps > 0)
                 <li class="nav-item m-2">
                     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-eps" role="tab"
                        aria-controls="pills-eps" aria-selected="false">eps</a>
                 </li>
+                @endif
+                @if($user->pha > 0)
                 <li class="nav-item m-2">
                     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-pha" role="tab"
                        aria-controls="pills-pha" aria-selected="false">pha</a>
                 </li>
+                @endif
+                @if($user->autre > 0)
                 <li class="nav-item m-2">
                     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-autre" role="tab"
                        aria-controls="pills-autre" aria-selected="false">autre</a>
                 </li>
+                @endif
             </ul>
 
             <div class="container m-3" id="server-results">

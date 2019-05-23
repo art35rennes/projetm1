@@ -27,11 +27,9 @@
                     <td>{{$modif->type}}</td>
                     <td>{{$modif->name}}</td>
                     <td>
-                        <pre>
-                            {{$modif->old_value}}
-                        </pre>
+                        {{$modif->old_value}}
                     </td>
-                    <td><i class="fas fa-history"></i></td>
+                    <td><i class="fas fa-history" onclick="restoreEntry('{{$modif->date}}')"></i></td>
                 </tr>
             @endforeach
             </tbody>
@@ -41,6 +39,7 @@
 @endsection
 
 @section('customJs')
+    <script type="text/javascript" src="{{ URL::asset('js/ajax.js') }}"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
     <script>
         $('#log').DataTable({
