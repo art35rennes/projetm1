@@ -13,3 +13,8 @@ td>.fa-pen:hover{
 .nav-link::first-letter{
     text-transform: uppercase;
 }
+
+.fa-history:hover{
+    cursor: pointer;
+    color: darkmagenta;
+}

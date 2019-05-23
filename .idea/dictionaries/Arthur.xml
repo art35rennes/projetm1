@@ -4,6 +4,7 @@
       <w>acide</w>
       <w>actif</w>
       <w>activite</w>
+      <w>afficher</w>
       <w>ajout</w>
       <w>alerte</w>
       <w>annee</w>
@@ -26,7 +27,9 @@
       <w>indu</w>
       <w>industriel</w>
       <w>liee</w>
+      <w>liste</w>
       <w>moleculaire</w>
+      <w>méthode</w>
       <w>neutre</w>
       <w>numero</w>
       <w>objectivation</w>
@@ -34,12 +37,15 @@
       <w>origine</w>
       <w>partenaire</w>
       <w>poid</w>
+      <w>profil</w>
       <w>projet</w>
       <w>protocole</w>
+      <w>rechercher</w>
       <w>recupere</w>
       <w>resultat</w>
       <w>secteur</w>
       <w>souche</w>
+      <w>suppr</w>
       <w>texte</w>
     </words>
   </dictionary>

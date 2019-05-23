@@ -278,7 +278,7 @@ function sendAjax($url, $id='#server-results') {
         var request_method = 'POST'; //get form GET/POST method
         var form_data = JSON.stringify($datas, null, 2);
 
-        //console.log((form_data));
+        console.log((form_data));
 
         $.ajax({
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
@@ -731,6 +731,29 @@ function deleteTabEntry(table, key, onglet=null){
             table:table,
             key:key,
             onglet:onglet
+        },
+        function(data, status){ //retreive response
+            console.log("Data: " + data + "\nStatus: " + status);
+            if(status === "success"){
+                //window.location.reload()
+                //TODO : décommenter
+            }
+            else{
+                alerteInfo('info', status, data);
+            }
+        });
+}
+
+//..................................//
+//...........Restore entry..........//
+//..................................//
+
+function restoreEntry(date) {
+    console.log(date);
+    $.post("/historique/restore",      // send HTTP POST request to a page and get the answer
+        {
+            _token: $('input[name=_token]').val(),       // send data
+            table:date,
         },
         function(data, status){ //retreive response
             console.log("Data: " + data + "\nStatus: " + status);

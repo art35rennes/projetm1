@@ -14,7 +14,7 @@ class HistoriqueController extends Controller
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     public function show(){
-        echo asset('storage/file.txt');
+        //echo asset('storage/file.txt');
         $historique = DB::table('historique')->join('users', 'historique.user', '=', 'users.id')
             ->select('historique.date', 'historique.type', 'historique.cle', 'historique.old_value', 'users.name')
             ->orderBy("historique.date")->limit(500)->get();
