@@ -63,7 +63,7 @@ class UserController extends Controller
             ->Join("accreditation", 'users.accreditation', '=', 'accreditation.id')
             ->where("users.id", "=", Auth::id() )
             ->select("*")->get();
-       return view("user/user_ajout", ['accreditations' => $accred, "user" => $user]);
+       return view("user/user_ajout", ['accreditations' => $accred, "user" => $user[0]]);
     }
 
     public function ajout(Request $request){
@@ -97,7 +97,7 @@ class UserController extends Controller
             ->Join("accreditation", 'users.accreditation', '=', 'accreditation.id')
             ->where("users.id", "=", Auth::id() )
             ->select("*")->get();
-        return view("user/user_liste", ["users" => $this->getUsers(), "user" => $user, "accreditations" => $this->getAccreditation()]);
+        return view("user/user_liste", ["users" => $this->getUsers(), "user" => $user[0], "accreditations" => $this->getAccreditation()]);
     }
 
     public function profilUserView($id){
@@ -106,7 +106,7 @@ class UserController extends Controller
             ->Join("accreditation", 'users.accreditation', '=', 'accreditation.id')
             ->where("users.id", "=", Auth::id() )
             ->select("*")->get();
-        return view("user/user_profil", ["userss" => $this->getUsers($id), "user" => $user, "accreditations" => $this->getAccreditation()]);
+        return view("user/user_profil", ["userss" => $this->getUsers($id), "user" => $user[0], "accreditations" => $this->getAccreditation()]);
     }
     public function profilUser(Request $request){
         //TODO : if ($id == User->id)
@@ -121,7 +121,7 @@ class UserController extends Controller
             ->where("users.id", "=", Auth::id() )
             ->select("*")->get();
 
-        return view("user/user_profil", ["userss" => $this->getUsers($request->input("id")),"user" => $user, "accreditations" => $this->getAccreditation()]);
+        return view("user/user_profil", ["userss" => $this->getUsers($request->input("id")),"user" => $user[0], "accreditations" => $this->getAccreditation()]);
     }
 
     public function majUser(Request $request){
@@ -136,7 +136,7 @@ class UserController extends Controller
             ->Join("accreditation", 'users.accreditation', '=', 'accreditation.id')
             ->where("users.id", "=", Auth::id() )
             ->select("*")->get();
-        return view("user/user_password", ["users" => $this->getUsers($id), "user" => $user]);
+        return view("user/user_password", ["users" => $this->getUsers($id), "user" => $user[0]]);
     }
     public function recoverPassword($id, Request $request){
         if (strcmp($request->input("password"), $request->input("password-confirm")) != 0 && strlen($request->input("password")) <= 6)
@@ -148,7 +148,7 @@ class UserController extends Controller
             ->where("users.id", "=", Auth::id() )
             ->select("*")->get();
 
-        return view("user/user_liste", ["users" => $this->getUsers(), "user" => $user, "accreditations" => $this->getAccreditation()]);
+        return view("user/user_liste", ["users" => $this->getUsers(), "user" => $user[0], "accreditations" => $this->getAccreditation()]);
     }
 
     ////////////////////////////
@@ -168,7 +168,7 @@ class UserController extends Controller
             ->Join("accreditation", 'users.accreditation', '=', 'accreditation.id')
             ->where("users.id", "=", Auth::id() )
             ->select("*")->get();
-       return view("user/user_accreditation", ['accreditations' => $this->getAccreditation(), "user" => $user]);
+       return view("user/user_accreditation", ['accreditations' => $this->getAccreditation(), "user" => $user[0]]);
     }
 
     public function ajoutAccreditation(Request $request){

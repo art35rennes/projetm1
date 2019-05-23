@@ -120,7 +120,11 @@ class SoucheController extends BaseController
     //////////////////////////////////////////////////////////////////////////////////
     public function ajout(){
         $souches = DB::table('souche')->select('ref')->get();
-        return view('souche/souche_ajout', ['souches'=> $souches]);
+        $user = DB::table("users")
+            ->Join("accreditation", 'users.accreditation', '=', 'accreditation.id')
+            ->where("users.id", "=", Auth::id() )
+            ->select("*")->get();
+        return view('souche/souche_ajout', ['souches'=> $souches, "user" => $user[0]]);
     }
 
     public function ajoutPost(Request $request){
