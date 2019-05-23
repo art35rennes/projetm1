@@ -22,7 +22,7 @@ class HomeController extends Controller
             ->where("users.id", "=", Auth::id() )
             ->select("*")->get();
 
-        var_export($user);
+        //var_export($user[0]);
         return view('home', ['souches' => $souches, 'user' => $user[0]]);
     }
     /**

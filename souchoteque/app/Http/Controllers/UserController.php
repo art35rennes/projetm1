@@ -59,7 +59,11 @@ class UserController extends Controller
 
     public function ajoutView(){
        $accred = $this->getAccreditation();
-       return view("user/user_ajout", ['accreditations' => $accred]);
+        $user = DB::table("users")
+            ->Join("accreditation", 'users.accreditation', '=', 'accreditation.id')
+            ->where("users.id", "=", Auth::id() )
+            ->select("*")->get();
+       return view("user/user_ajout", ['accreditations' => $accred, "user" => $user]);
     }
 
     public function ajout(Request $request){
@@ -89,12 +93,20 @@ class UserController extends Controller
     }
 
     public function showUser(){
-        return view("user/user_liste", ["users" => $this->getUsers(), "accreditations" => $this->getAccreditation()]);
+        $user = DB::table("users")
+            ->Join("accreditation", 'users.accreditation', '=', 'accreditation.id')
+            ->where("users.id", "=", Auth::id() )
+            ->select("*")->get();
+        return view("user/user_liste", ["users" => $this->getUsers(), "user" => $user, "accreditations" => $this->getAccreditation()]);
     }
 
     public function profilUserView($id){
         //TODO : if ($id == User->id)
-        return view("user/user_profil", ["userss" => $this->getUsers($id), "accreditations" => $this->getAccreditation()]);
+        $user = DB::table("users")
+            ->Join("accreditation", 'users.accreditation', '=', 'accreditation.id')
+            ->where("users.id", "=", Auth::id() )
+            ->select("*")->get();
+        return view("user/user_profil", ["userss" => $this->getUsers($id), "user" => $user, "accreditations" => $this->getAccreditation()]);
     }
     public function profilUser(Request $request){
         //TODO : if ($id == User->id)
@@ -104,7 +116,12 @@ class UserController extends Controller
             strcmp($request->input("password"), $request->input("password-confirm")) == 0)
             DB::table("users")->where("id", $request->input("id"))->update(["password" => Hash::make($request->input('password'))]);
 
-        return view("user/user_profil", ["userss" => $this->getUsers($request->input("id")), "accreditations" => $this->getAccreditation()]);
+        $user = DB::table("users")
+            ->Join("accreditation", 'users.accreditation', '=', 'accreditation.id')
+            ->where("users.id", "=", Auth::id() )
+            ->select("*")->get();
+
+        return view("user/user_profil", ["userss" => $this->getUsers($request->input("id")),"user" => $user, "accreditations" => $this->getAccreditation()]);
     }
 
     public function majUser(Request $request){
@@ -115,13 +132,23 @@ class UserController extends Controller
     }
 
     public function recoverPasswordView($id){
-        return view("user/user_password", ["users" => $this->getUsers($id)]);
+        $user = DB::table("users")
+            ->Join("accreditation", 'users.accreditation', '=', 'accreditation.id')
+            ->where("users.id", "=", Auth::id() )
+            ->select("*")->get();
+        return view("user/user_password", ["users" => $this->getUsers($id), "user" => $user]);
     }
     public function recoverPassword($id, Request $request){
         if (strcmp($request->input("password"), $request->input("password-confirm")) != 0 && strlen($request->input("password")) <= 6)
             return $this->error(true,'les deux mots de passe ne correspondent pas');
         DB::table("users")->where("id", $id)->update(["password" => Hash::make($request->input('password'))]);
-        return view("user/user_liste", ["users" => $this->getUsers(), "accreditations" => $this->getAccreditation()]);
+
+        $user = DB::table("users")
+            ->Join("accreditation", 'users.accreditation', '=', 'accreditation.id')
+            ->where("users.id", "=", Auth::id() )
+            ->select("*")->get();
+
+        return view("user/user_liste", ["users" => $this->getUsers(), "user" => $user, "accreditations" => $this->getAccreditation()]);
     }
 
     ////////////////////////////
@@ -137,7 +164,11 @@ class UserController extends Controller
     }
 
     public function accreditation(){
-       return view("user/user_accreditation", ['accreditations' => $this->getAccreditation()]);
+        $user = DB::table("users")
+            ->Join("accreditation", 'users.accreditation', '=', 'accreditation.id')
+            ->where("users.id", "=", Auth::id() )
+            ->select("*")->get();
+       return view("user/user_accreditation", ['accreditations' => $this->getAccreditation(), "user" => $user]);
     }
 
     public function ajoutAccreditation(Request $request){
