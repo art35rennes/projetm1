@@ -2,20 +2,21 @@
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <title>Maquette souchothèque</title>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Polymaris - Souchothèque</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link rel="stylesheet" type="text/css" href="{{asset('css/souche.css')}}"/>
     <link rel="icon" href="{{asset('ressources/favicon.ico')}}">
-
+    @yield("customCss")
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="/home">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
+        <!--a class="navbar-brand" href="/home">
             <img src="{{asset('ressources/favicon.ico')}}" width="30" height="30" alt="chevron">
             Souchotèque
-        </a>
+        </a-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -30,19 +31,34 @@
                         Souches
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="ajout_souche_v2.php">Ajouter</a>
+                        <a class="dropdown-item" href="/souche/ajout">Ajouter</a>
                         <a class="dropdown-item" href="#">Supprimer</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Dernière mise à jour</a>
+                        <a class="dropdown-item" href="/historique/">Dernière mise à jour</a>
                     </div>
                 </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Gestion utilisateurs
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/user/ajout">Ajouter un utilisateur</a>
+                        <a class="dropdown-item" href="/user/accreditation">Gérer les accréditation</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/user/liste">Liste des utilisateurs</a>
+                    </div>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/poc">POC<span class="sr-only"></span></a>
+                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Gestion des comptes</a>
+                    <a class="nav-link" href="/user/logout">Déconnexion<span class="sr-only"></span></a>
                 </li>
             </ul>
+
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Référence souche" aria-label="Rechercher">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+                <input class="form-control mr-sm-2" disabled type="search" placeholder="Référence souche" aria-label="Rechercher">
+                <button class="btn btn-outline-success my-2 my-sm-0" disabled type="submit">Rechercher</button>
             </form>
         </div>
     </nav>
@@ -52,6 +68,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
 
     @yield('customJs')
 
@@ -72,19 +89,23 @@
                 <!-- Grid column -->
 
                 <!-- Grid column -->
+                @if($user->utilisateur != 0)
                 <div class="col-md-3 mb-3">
                     <h6 class="text-uppercase font-weight-bold">
-                        <a href="#!">Gestion des comptes</a>
+                        <a href="/user/liste">Gestion des comptes</a>
                     </h6>
                 </div>
+                @endif
                 <!-- Grid column -->
 
                 <!-- Grid column -->
+                @if($user->utilisateur != 0)
                 <div class="col-md-3 mb-3">
                     <h6 class="text-uppercase font-weight-bold">
-                        <a href="#!">Historique</a>
+                        <a href="/historique">Historique</a>
                     </h6>
                 </div>
+                @endif
                 <!-- Grid column -->
 
                 <!-- Grid column -->
@@ -115,10 +136,10 @@
             <hr class="clearfix d-md-none rgba-white-light" style="margin: 10% 15% 5%;">
 
 
-                <!-- Grid column -->
+            <!-- Grid column -->
 
-            </div>
-            <!-- Grid row-->
+        </div>
+        <!-- Grid row-->
 
         </div>
         <!-- Footer Links -->

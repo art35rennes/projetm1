@@ -1,0 +1,61 @@
+<div class="tab-pane fade p-3" id="pills-identification" role="tabpanel" aria-labelledby="pills-identification-tab">
+    <form id="form-identification" enctype="multipart/form-data">
+        <table id="identification" class="table table-bordered bg-white" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Sequence</th>
+                    <th>Arbre Phylogénétique</th>
+                    <th class="editZone"></th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach($souche['identification'] as $id)
+                <tr>
+                    <td><span class="tabText" id="identification-{{$loop->iteration}}-type">{{$id->type}}</span></td>
+                    <td>
+                    @if($id->sequence != "")
+                        <a class="tabFile font-italic mr-2" id="identification-{{$loop->iteration}}-sequence" href="{{asset("/storage/".$id->sequence)}}">{{$id->sequence}}</a>
+                    @else
+                        <span class="tabNull" id="identification-{{$loop->iteration}}-sequence"></span>
+                    @endif
+                    </td>
+                    <td>
+                    @if($id->arbre != "")
+                        <a class="tabFile font-italic mr-2" id="identification-{{$loop->iteration}}-arbre" href="{{asset("/storage/".$id->arbre)}}">{{$id->arbre}}</a>
+                    @else
+                        <span class="tabNull" id="identification-{{$loop->iteration}}-arbre"></span>
+                    @endif
+                    </td>
+                    <td class="editZone">
+                        <i class="editZone fas fa-times" onclick="deleteTabEntry('identification', '{{$id->type}}')"></i>
+                    </td>
+                </tr>
+            @endforeach
+            </tbody>
+            <tfoot>
+                <tr class="editZone">
+                    <td>
+                        <input type="text" class="form-control" list="dataIdentification" placeholder="Type..." name="identification/0/type" isKey="true">
+                        <datalist id="dataIdentification">
+                            @foreach($souche['identification'] as $id)
+                                <option>{{$id->type}}</option>
+                            @endforeach
+                        </datalist>
+                    </td>
+                    <td>
+                        <label class="btn btn-light">
+                            Ajouter un fichier <input type="file" name="identification/0/sequence" hidden>
+                        </label>
+                    </td>
+                    <td>
+                        <label class="btn btn-light">
+                            Ajouter un fichier <input type="file" name="identification/0/arbre" hidden>
+                        </label>
+                    </td>
+                    <td class="editZone"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+</div>

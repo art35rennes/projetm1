@@ -1,223 +1,234 @@
-function submitMaj(){
-    $("#majForm").submit();
-}
-
-
-//$(".editButton").hide();
-//$(".editZone").hide();
-
-$("#editMode").click( function(){
-    $(".editButton").toggle();
-    $(".editZone").toggle();
-});
-
-//Toggle EPS
-$("#checkCaracterisationEps").click(function(){
-    $(".CaracterisationEps").toggle();
-})
-
-$("#checkObjectivationEps").click(function(){
-    $(".ObjectivationEps").toggle();
-})
-
-$("#checkProductionInduEps").click(function(){
-    $(".ProductionInduEps").toggle();
-})
-
-$("#checkCriblageEps").click(function(){
-    $(".CriblageEps").toggle();
-})
-
-//Toggle PHA
-$("#checkCaracterisationPha").click(function(){
-    $(".CaracterisationPha").toggle();
-})
-
-$("#checkObjectivationPha").click(function(){
-    $(".ObjectivationPha").toggle();
-})
-
-$("#checkProductionInduPha").click(function(){
-    $(".ProductionInduPha").toggle();
-})
-
-$("#checkCriblagePha").click(function(){
-    $(".CriblagePha").toggle();
-})
-
-//Toggle Autre
-$("#checkCaracterisationAutre").click(function(){
-    $(".CaracterisationAutre").toggle();
-})
-
-$("#checkObjectivationAutre").click(function(){
-    $(".ObjectivationAutre").toggle();
-})
-
-$("#checkProductionInduAutre").click(function(){
-    $(".ProductionInduAutre").toggle();
-})
-
-$("#checkCriblageAutre").click(function(){
-    $(".CriblageAutre").toggle();
-})
-
-//Delete file
-$("i.deleteCross").click(function (){
-   var $link = $(this).prev().attr("href");
-   $.post( window.location.pathname+"/suppr", { "file": $link, "_token":$('#_token').val()} );
-});
-
-//Unlock Edit
-$('i.unlockEdit').click(function () {
-   
-    var $input = $(this).parent().parent().prev();
-    $(this).toggleClass('fa-lock');
-    $(this).toggleClass('fa-unlock');
-
-    if($input.is('input')){
-        if ($input.prop('readonly')){
-            $input.prop('readonly', false);
-        }
-        else{
-            $input.prop('readonly', true);
-            submitMaj();
-        }
-    }
-    else {
-        if ($input.prop('disabled')) {
-            $input.prop('disabled', false);
-        } else {
-            $input.prop('disabled', true);
-            submitMaj();
-        }
-    }
-});
-
-//OGM
-if($('#isOgm').val()=="Oui"){
-    $('#ogmPlus').show();
-}
-else{
-    $('#ogmPlus').hide();
-}
-if($('#isHcb').val()=="Oui"){
-    $('#hcbAdd').show();
-}
-else{
-    $('#hcbAdd').hide();
-}
-
-$('.showSelect').change(function () {
-    var $div = $(this).parent().next();
-    while (!$div.is('div')){
-        $div.next();
-    }
-
-    if(!$(this).prop('selectedIndex')){
-        $div.show();
-    }
-    else{
-        $div.hide();
-    }
-});
-
-//Edit Tab
-$('.fa-pen').click(function () {
-    if($(this).parent().is('td')){
-        var $data = $(this).parent();
-        var $lastrow = $(this).parent().parent().next();
-
-        while($lastrow[0].className != "editZone"){
-            $lastrow=$lastrow.next();
-        }
-        var $lastdata = $lastrow.children(":last-child");
-
-        while ($data.is('td')){
-            var $value = $data.children(":first-child");
-
-            if($value.is("a")){
-                //console.log('a');
+$(document).ready( function () {
+    //..................................//
+    //..........Initialisation..........//
+    //..................................//
+    function convertSpan() {
+        $(".inputText, .inputDate").each(function () {
+            if ($(this).is("span")) {
+                $(this).replaceWith(function () {
+                    return $("<input>", {
+                        class: this.className,
+                        name: this.id,
+                        id: this.id,
+                        value: this.innerHTML,
+                        type: $(this).hasClass('inputText') ?
+                            "text" : $(this).hasClass('inputDate') ?
+                                "number" : null
+                    });
+                });
+            } else {
+                $(this).replaceWith(function () {
+                    return $("<span>", {
+                        class: this.className,
+                        id: this.name,
+                        innerHTML: this.value
+                    });
+                });
             }
-            else {
-                if ($value.is("p")){
-                    console.log("p "+$value.text());
-                    $data.empty()
-                    $data.append($lastdata.children().clone());
-                    $data.children().children("input").val($value.text());
-                    console.log($data.children().children("input"));
-                }
-                else {
-                    if ($value.is("i")){
-                        //console.log("i");
-                        $value.toggle();
-                        $value.next().toggle()
-                    }
-                    else{
-                        if (!$($value).is(':parent')){
-                            //console.log('vide')
-                            $data.empty()
-                            $data.append($lastdata.children().clone());
-                            //console.log($lastdata.children());
-                        }
-                    }
-                }
-            }
-            $data=$data.prev();
-            $lastdata=$lastdata.prev();
-        }
-    }
-});
-
-$(".checkPostRow").hide();
-$(".checkPostRow").click(function () {
-    submitMaj();
-});
-$('.faForm').click(function () {
-    submitMaj();
-});
-/*$('.checkPostRow').click(function () {
-    //console.log("post row");
-
-    var $lastrow = $(this).parent().parent().next();
-
-    while($lastrow[0].className != "editZone"){
-        $lastrow=$lastrow.next();
-    }
-    var $lastdata = $lastrow.children(":last-child");
-
-    var $form = new FormData();
-    var $data=$(this).parent();
-
-    while ($data.is("td")){
-        var $value = $data.children(":first-child");
-
-        if (!$value.is("span") && !$value.is("i") && !$value.is("a")){
-
-            $value=$value.children(":first-child");
-            if(!$value.is("input")){
-                $value=$value.children(":first-child");
-            }
-            //console.log($value.attr('name')+"  "+$value.attr('type'));
-            //console.log($value);
-
-            if($value.attr('type')=="file"){
-                $form.append($value.attr('name'), $value[0].files[0]);
+        });
+        $(".inputText, .inputDate").each(function () {
+            if ($(this).is("span")) {
+                $(this).removeClass("form-control");
+                $(this).html($(this).attr('innerhtml'));
             }
             else{
-                $form.append($value.attr('name'), $value.val());
+                $(this).addClass("form-control");
             }
+        });
+
+        $(".inputYn").each(function () {
+            if ($(this).is("span")) {
+                $(this).replaceWith(function () {
+                    return $("<select>", {
+                        class: this.className,
+                        name: this.id,
+                        id: this.id,
+                        value: this.innerHTML,
+                    });
+                });
+            } else {
+                $(this).replaceWith(function () {
+                    return $("<span>", {
+                        class: this.className,
+                        id: this.name,
+                        innerHTML: this.value
+                    });
+                });
+            }
+        });
+        $(".inputYn").each(function () {
+            if ($(this).is('select')) {
+                $(this).addClass("form-control");
+                $oui = "<option value='1'>Oui</option>";
+                $non = "<option value='0'>Non</option>";
+                $(this).append($oui);
+                $(this).append($non);
+                $(this).children().each(function () {
+                    $(this).val() == "Oui" ? $(this).attr("selected", true) : null;
+                    $(this).val() == "Non" ? null : $(this).attr("selected", true);
+                });
+            } else {
+                $(this).removeClass("form-control");
+                $(this).html($(this).attr('innerhtml'));
+            }
+        });
+    }
+
+    function convertTr(){
+        $(".tabText, .tabDate, .tabNum").each(function () {
+            if ($(this).is("span")) {
+                $(this).replaceWith(function () {
+                    return $("<input>", {
+                        class: this.className,
+                        name: this.id,
+                        value: this.innerHTML,
+                        type:$(this).hasClass('tabText') ?
+                            "text" : $(this).hasClass('tabDate') ?
+                                "date" : $(this).hasClass('tabNum') ?
+                                    "number":null,
+                        list: this.list,
+                    });
+                });
+            } else {
+                $(this).replaceWith(function () {
+                    return $("<span>", {
+                        class: this.className,
+                        id: this.name,
+                        innerHTML: this.value,
+                        list: this.list,
+                    });
+                });
+            }
+        });
+        $(".tabText, .tabDate, .tabNum").each(function () {
+            if ($(this).is("span")) {
+                $(this).removeClass("form-control");
+                $(this).html($(this).attr('innerhtml'));
+            }
+            else{
+                $(this).addClass("form-control");
+            }
+        });
+
+        $(".tabFile").each(function () {
+            if ($(this).next().is("i")){
+                $(this).next().remove();
+            }else{
+                $fa = "<i class='fas fa-trash' onclick='fileDelete(\""+
+                    $(this).attr('href')
+                    +"\")'></i>";
+                $(this).after($fa);
+            }
+        });
+
+        $(".tabNull").each(function () {
+            if ($(this).is("span")){
+                $(this).replaceWith(function () {
+                    return $("<label>", {
+                        class: this.className,
+                        id: this.id,
+                    });
+                });
+            }else{
+                $(this).replaceWith(function () {
+                    return $("<span>", {
+                        class: this.className,
+                        id: this.id,
+                    });
+                });
+            }
+        });
+        $(".tabNull").each(function () {
+            if ($(this).is("span")){
+                $(this).removeClass(['btn','btn-light'])
+            }else{
+                $(this).addClass(['btn','btn-light'])
+                $file = "Ajouter un fichier <input type='file' name='"+ $(this).attr('id') +"' hidden>";
+                $(this).append($file);
+            }
+        });
+    }
+
+    $(".editButton").hide();
+    $(".editZone").hide();
+
+    $("#editMode").click(function () {
+        $(".editButton").toggle();
+        $(".editZone").toggle();
+        convertSpan();
+        convertTr();
+    });
+
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip({
+            html: true,
+            placement: 'bottom',
+
+        })
+    });
+
+    //..................................//
+    //...........Data Table.............//
+    //..................................//
+
+    $('#identification, #pasteur, #brevet, #publication, #exclisivite, #projet').DataTable({
+        "paging":   false,
+        "info":     false,
+        "language":{
+            "search":"Rechercher",
+            "emptyTable":"Aucune donnée à afficher",
+        },
+        "columnDefs": [
+            { targets: 'editZone', orderable: false }
+        ]
+    });
+
+    $('.tabEps, .tabPha, .tabAutre').each(function () {
+       $(this).DataTable({
+           "paging":   false,
+           "info":     false,
+           "language":{
+               "search":"Rechercher",
+               "emptyTable":"Aucune donnée à afficher",
+           },
+           "columnDefs": [
+               { targets: 'editZone', orderable: false }
+           ]
+       });
+    });
+
+    $('.oses').each(function () {
+       $(this).DataTable({
+           "paging": false,
+           "info": false,
+           "searching": false,
+           "language":{
+               "search":"Rechercher",
+               "emptyTable":"Aucune donnée à afficher",
+           },
+           "columnDefs": [
+               { targets: 'editZone', orderable: false }
+           ]
+       });
+    });
+
+    //..................................//
+    //............Edit mode.............//
+    //..................................//
+
+    $(".tabText .tabDate .tabNum").on('keydown',function () {
+        console.log('clic');
+        if (!$(this.hasAttribute('oldKey'))) {
+            $(this).attr('oldKey', $(this).val());
         }
+    });
+    //..................................//
+    //...........OGM Display............//
+    //..................................//
 
-        $data=$data.prev();
-        $lastdata=$lastdata.prev();
-    }
-    var $dataPost = {"_token":$('#_token').val()};
+    //..................................//
+    //............Edit mode.............//
+    //..................................//
 
-    //console.log($form);
-    for (var $i=0; $i<$form.size;$i++){
-        $dataPost.append($form[$i]);
-    }
+});
 
-    $.post( window.location.pathname+"/maj",  $dataPost);
-});*/
