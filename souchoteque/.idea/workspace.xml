@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eab5d6e8-9b8f-466d-93da-9c0479ef1f5b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SoucheController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SoucheController.php" afterDir="false" />
     </list>
@@ -40,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SoucheController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="105" column="126" selection-start-line="105" selection-start-column="126" selection-end-line="105" selection-end-column="126" />
+            <state relative-caret-position="194">
+              <caret line="103" column="41" selection-start-line="103" selection-start-column="41" selection-end-line="103" selection-end-column="41" />
               <folding>
                 <element signature="e#40#85#0#PHP" expanded="true" />
               </folding>
@@ -52,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="15" column="62" lean-forward="true" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
+            <state relative-caret-position="180">
+              <caret line="19" selection-start-line="19" selection-end-line="22" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -408,12 +407,12 @@
       <workItem from="1557918755741" duration="34709000" />
       <workItem from="1558422842539" duration="13446000" />
       <workItem from="1558513093586" duration="8108000" />
-      <workItem from="1558599958642" duration="2007000" />
+      <workItem from="1558599958642" duration="2562000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214655000" />
+    <option name="totallyTimeSpent" value="215210000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -680,15 +679,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="15" column="62" lean-forward="true" selection-start-line="15" selection-start-column="62" selection-end-line="15" selection-end-column="62" />
+        <state relative-caret-position="180">
+          <caret line="19" selection-start-line="19" selection-end-line="22" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/SoucheController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="105" column="126" selection-start-line="105" selection-start-column="126" selection-end-line="105" selection-end-column="126" />
+        <state relative-caret-position="194">
+          <caret line="103" column="41" selection-start-line="103" selection-start-column="41" selection-end-line="103" selection-end-column="41" />
           <folding>
             <element signature="e#40#85#0#PHP" expanded="true" />
           </folding>

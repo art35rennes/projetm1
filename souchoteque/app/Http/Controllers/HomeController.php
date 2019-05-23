@@ -17,13 +17,13 @@ class HomeController extends Controller
     public function show(){
         $souches = DB::table('home')->select('*')->get();
 
-        $user = DB::table("users")->where("id", "=", Auth::id() )->select("*")->get();
-        $accreditation = null;
-        foreach ($user as $u){
-            $accreditation = DB::table("accreditation")->where("id", "=", $u->accreditation)->select("*")->get();
-        }
+        $user = DB::table("users")
+            ->Join("accreditation", 'users.accreditation', '=', 'accreditation.id')
+            ->where("users.id", "=", Auth::id() )
+            ->select("*")->get();
+
         //var_dump($souches);
-        return view('home', ['souches' => $souches, 'user' => $user, 'accreditation' => $accreditation]);
+        return view('home', ['souches' => $souches, 'user' => $user]);
     }
     /**
      * Create a new controller instance.

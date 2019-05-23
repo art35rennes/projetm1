@@ -6,9 +6,11 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+
 
 class SoucheController extends BaseController
 {
@@ -97,13 +99,12 @@ class SoucheController extends BaseController
     //                               visualisation                                  //
     //////////////////////////////////////////////////////////////////////////////////
     public function show($id){
-        $user = DB::table("users")->where("id", "=", Auth::id() )->select("*")->get();
-        $accreditation = null;
-        foreach ($user as $u){
-            $accreditation = DB::table("accreditation")->where("id", "=", $u->accreditation)->select("*")->get();
-        }
+        $user = DB::table("users")
+            ->Join("accreditation", 'users.accreditation', '=', 'accreditation.id')
+            ->where("users.id", "=", Auth::id() )
+            ->select("*")->get();
 
-        return view('souche/souche_home', ['souche' => $this->getData($id), 'user' => $user, 'accreditation' => $accreditation]);
+        return view('souche/souche_home', ['souche' => $this->getData($id), 'user' => $user]);
     }
 
     public function dump($id){
