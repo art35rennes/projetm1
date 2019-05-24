@@ -44,7 +44,7 @@ Route::group(['middleware' => ['auth']], function() {
         Route::post('/souche/{ref}/suppr/file', 'SoucheAjaxController@supprFile');
 
         //Cryotube
-        Route::get('/cryotube', 'CryotubeController.show');
+        Route::get('/cryotube', 'CryotubeController@show');
 
 
         //UserController
