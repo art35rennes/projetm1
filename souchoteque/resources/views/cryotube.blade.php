@@ -1,34 +1,75 @@
 @extends('layout')
 
+@section('customCss')
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+@endsection
+
 @section('body')
 
-    <table class="table table-bordered" id="cryotube">
-        <thead>
+    <div class="container w-75 mt-3">
+        <table class="table table-bordered" id="cryotube">
+            <thead>
             <th>Souche</th>
             <th>Pasteur</th>
             <th>Stock</th>
-            <th></th>
-            <th></th>
-        </thead>
-        <tbody>
-        @foreach($data as $key => $souche)
-            <tr>
-                <td>
-                    <h4>
-                        <span class="badge @if($souche[notogm]) badge-info @else badge-warning @endif font-weight-normal">{{$souche->ref}}</span>
-                    </h4>
-                </td>
-                <td>@if($souche->pasteur){{$souche->pasteur}}@else - @endif</td>
-                <td>{{$souche->stock}}</td>
-                <td>
-                    <i class="fas fa-minus"></i>
-                </td>
-                <td>
-                    <i class="fas fa-plus"></i>
-                </td>
-            </tr>
-        @endforeach
-        </tbody>
-    </table>
+            <th class="edit"></th>
+            </thead>
+            <tbody>
+            @foreach($data as $key => $souche)
+                <tr>
+                    <td class="text-center">
+                        <h4>
+                            <a href="souche/{{$key}}" class="badge @if($souche['notogm']) badge-info @else badge-warning @endif font-weight-normal">{{$key}}</a>
+                        </h4>
+                    </td>
+                    <td class="text-right font-italic">Polymaris</td>
+                    <td class="text-right">{{$souche['stock']}}</td>
+                    <td class="text-center">
+                        <i class="fas fa-minus" onclick='cryoStock()'></i>
+                        <i class="fas fa-plus ml-2" onclick='cryoStock()'></i>
+                    </td>
+                </tr>
+                @isset($souche['pasteur'])
+                    @foreach($souche['pasteur'] as $pasteur)
+                        <tr class="text-center">
+                            <td>
+                                <h4>
+                                    <span class="badge @if($souche['notogm']) badge-info @else badge-warning @endif font-weight-normal">{{$key}}</span>
+                                </h4>
+                            </td>
+                            <td class="text-right">{{$pasteur['numero']}}</td>
+                            <td class="text-right">{{$pasteur['stock']}}</td>
+                            <td class="text-center">
+                                <i class="fas fa-minus" onclick='cryoStock()'></i>
+                                <i class="fas fa-plus ml-2" onclick='cryoStock()'></i>
+                            </td>
+                        </tr>
+                    @endforeach
+                @endisset
+            @endforeach
+            </tbody>
+        </table>
+    </div>
 
+
+@endsection
+
+@section('customJs')
+    <script type="text/javascript" src="{{ URL::asset('js/ajax.js') }}"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+    <script>
+        var table = $('#cryotube').DataTable( {
+            "paging": false,
+            "info": false,
+            "searching": true,
+            "language":{
+                "search":"Rechercher",
+                "emptyTable":"Aucune souche à afficher. Vous êtes pas <a href='/faq'>habilité</a> ou aucune donnée n'a été <a href='/faq'>référencé</a>",
+            },
+            "columnDefs": [
+                { targets: 'edit', orderable: false }
+            ]
+        } );
+    </script>
 @endsection

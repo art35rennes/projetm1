@@ -62,7 +62,7 @@
                     <span class="float-right editZone">
                         <i class="fas fa-minus mr-1 cryoBtn"></i>
                         <i class="fas fa-plus ml-1 cryoBtn"></i>
-                        <input type="hidden" class="cryoRef" value="0">
+                        <input type="hidden" class="cryoRef" value="Polymaris">
                     </span>
                 </li>
                 @foreach($souche['pasteur'] as $p)

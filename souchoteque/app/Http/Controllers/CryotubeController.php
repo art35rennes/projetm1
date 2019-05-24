@@ -29,9 +29,8 @@ class CryotubeController extends Controller
             foreach (DB::table("pasteur")->where("ref", "=", $souche->ref)->select("numero", "stock")->get() as $pasteur)
                 $data[$souche->ref]["pasteur"][] = json_decode(json_encode($pasteur),true);
         }
-
-            var_dump($data);
-        //return view('cryotube', ["user" => $user[0], "data" => $data]);
+        //var_dump($data);
+        return view('cryotube', ["user" => $user[0], "data" => $data]);
     }
 
     public function update($ref, Request $request){
