@@ -30,7 +30,7 @@ class CryotubeController extends Controller
                 $data[$souche->ref]["pasteur"][] = json_decode(json_encode($pasteur),true);
         }
 
-            var_dump($data);
+            //var_dump($data);
         return view('cryotube', ["user" => $user[0], "data" => $data]);
     }
 

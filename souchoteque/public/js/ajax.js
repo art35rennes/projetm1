@@ -697,7 +697,7 @@ $(".cryoBtn").click(function () {
         $(this).parent().find('.cryoRef').val(),
         $(this).hasClass('fa-minus')?-1:1
     ));
-
+    console.log($datas);
     sendAjax('/souche/' + ($("#ref")[0].innerHTML) + "/update/cryotube");
 });
 
