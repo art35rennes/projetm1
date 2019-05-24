@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fbd90ef4-95b8-4103-bd48-18525024d8be" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/souchoteque/public/js/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/public/js/ajax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/souchoteque/resources/views/cryotube.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/resources/views/cryotube.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/souchoteque/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/souchoteque/resources/views/layout.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/souchoteque/public/js/ajax.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="707" column="57" selection-start-line="707" selection-start-column="57" selection-end-line="707" selection-end-column="57" />
+            <state relative-caret-position="510">
+              <caret line="713" column="68" selection-start-line="713" selection-start-column="68" selection-end-line="713" selection-end-column="68" />
               <folding>
                 <element signature="n#!!block;n#alerteInfo#0" />
                 <element signature="e#243#250#1" expanded="true" />
@@ -124,7 +123,7 @@
         <entry file="file://$PROJECT_DIR$/souchoteque/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="586">
-              <caret line="69" column="18" lean-forward="true" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
+              <caret line="71" column="18" lean-forward="true" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
               <folding>
                 <element signature="e#7#389#0#PHP" expanded="true" />
               </folding>
@@ -150,11 +149,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/layout.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="36" column="68" selection-start-line="36" selection-start-column="68" selection-end-line="36" selection-end-column="68" />
+            <state relative-caret-position="187">
+              <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -253,13 +252,13 @@
         <option value="$PROJECT_DIR$/souchoteque/routes/web.php" />
         <option value="$PROJECT_DIR$/souchoteque/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/souchoteque/resources/views/home.blade.php" />
-        <option value="$PROJECT_DIR$/souchoteque/resources/views/layout.blade.php" />
         <option value="$PROJECT_DIR$/souchoteque/resources/views/user/user_accreditation.blade.php" />
         <option value="$PROJECT_DIR$/souchoteque/public/js/souche.js" />
         <option value="$PROJECT_DIR$/souchoteque/app/Http/Controllers/CryotubeController.php" />
         <option value="$PROJECT_DIR$/souchoteque/resources/views/souche/pills/description.blade.php" />
         <option value="$PROJECT_DIR$/souchoteque/resources/views/cryotube.blade.php" />
         <option value="$PROJECT_DIR$/souchoteque/public/js/ajax.js" />
+        <option value="$PROJECT_DIR$/souchoteque/resources/views/layout.blade.php" />
       </list>
     </option>
   </component>
@@ -640,12 +639,12 @@
       <workItem from="1557128802718" duration="35890000" />
       <workItem from="1557219291350" duration="31278000" />
       <workItem from="1557748186917" duration="35967000" />
-      <workItem from="1558343812222" duration="68482000" />
+      <workItem from="1558343812222" duration="68732000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="580404000" />
+    <option name="totallyTimeSpent" value="580654000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -662,7 +661,7 @@
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="2" visible="true" weight="0.20523138" />
+      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.20523138" />
       <window_info anchor="bottom" id="Inspection Results" weight="0.32931727" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.95950156" />
       <window_info anchor="bottom" id="Database Changes" order="1" />
@@ -984,17 +983,10 @@
     <entry file="file://$PROJECT_DIR$/souchoteque/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="586">
-          <caret line="69" column="18" lean-forward="true" selection-start-line="69" selection-start-column="18" selection-end-line="69" selection-end-column="18" />
+          <caret line="71" column="18" lean-forward="true" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
           <folding>
             <element signature="e#7#389#0#PHP" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="36" column="68" selection-start-line="36" selection-start-column="68" selection-end-line="36" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -1089,8 +1081,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/public/js/ajax.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="707" column="57" selection-start-line="707" selection-start-column="57" selection-end-line="707" selection-end-column="57" />
+        <state relative-caret-position="510">
+          <caret line="713" column="68" selection-start-line="713" selection-start-column="68" selection-end-line="713" selection-end-column="68" />
           <folding>
             <element signature="n#!!block;n#alerteInfo#0" />
             <element signature="e#243#250#1" expanded="true" />
@@ -1117,6 +1109,13 @@
             <element signature="n#!!block;n#deleteTabEntry#0" />
             <element signature="n#!!block;n#restoreEntry#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/souchoteque/resources/views/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
         </state>
       </provider>
     </entry>
