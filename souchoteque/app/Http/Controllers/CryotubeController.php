@@ -31,7 +31,20 @@ class CryotubeController extends Controller
         }
 
             var_dump($data);
-        return view('cryotube', ["user" => $user[0], "data" => $data]);
+        //return view('cryotube', ["user" => $user[0], "data" => $data]);
     }
 
+    public function update($ref, Request $request){
+        if ((int)$request->input("reference") == 0) {
+            if ($request->input("n") == "Polymaris")
+                DB::table("souche")->where([["ref", "=", $ref]])->increment("stock");
+            else
+                DB::table("souche")->where([["ref", "=", $ref]])->decrement("stock");
+        }else {
+            if ((int)$request->input("n") == 1)
+                DB::table("pasteur")->where([["ref", "=", $ref], ["numero", "=", $request->input("reference")]])->increment("stock");
+            else
+                DB::table("pasteur")->where([["ref", "=", $ref], ["numero", "=", $request->input("reference")]])->decrement("stock");
+        }
+    }
 }

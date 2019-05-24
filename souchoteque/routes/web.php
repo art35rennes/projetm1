@@ -38,13 +38,15 @@ Route::group(['middleware' => ['auth']], function() {
         Route::post('/souche/{ref}/maj', 'SoucheController@update');
         Route::post('/souche/{ref}/update', 'SoucheAjaxController@update');
 
-        //Delete
+
+    //Delete
         Route::post('/souche/{ref}/suppr', 'SoucheAjaxController@suppr');
         Route::post('/souche/{ref}/supprSouche', 'SoucheAjaxController@supprSouche');
         Route::post('/souche/{ref}/suppr/file', 'SoucheAjaxController@supprFile');
 
         //Cryotube
         Route::get('/cryotube', 'CryotubeController@show');
+        Route::post('/souche/{ref}/update/cryotube', 'CryotubeController@update');
 
 
         //UserController
