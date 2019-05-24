@@ -27,7 +27,11 @@
             @foreach ($souches as $souche)
                 @if($souche->accreditation >= $user->souche)
                 <tr>
-                    <td><h4><a href="souche/{{$souche->ref}}" class="badge @if($souche->notogm) badge-info @else badge-warning @endif font-weight-normal">{{$souche->ref}}</a></h4></td>
+                    <td>
+                        <h4>
+                            <a href="souche/{{$souche->ref}}" class="badge @if($souche->notogm) badge-info @else badge-warning @endif font-weight-normal">{{$souche->ref}}</a>
+                        </h4>
+                    </td>
                     <td class="font-italic @if(!$souche->identification) bg-danger text-white @endif">{{$souche->identification}}</td>
                     <td class="font-italic @if(!$souche->EPS) bg-danger text-white @endif">{{$souche->EPS}}</td>
                     <td class="font-italic @if(!$souche->PHA) bg-danger text-white @endif">{{$souche->PHA}}</td>
