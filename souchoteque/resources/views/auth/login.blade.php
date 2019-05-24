@@ -1,11 +1,11 @@
 @extends('layout')
 
 @section('body')
-<div class="container">
+<div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Connexion') }}</div>
+                <div class="card-header">{{ __('Connexion') }} <span class="text-muted ml-3 pl-3 ">Souchoteque - Polymaris Biotechnology</span></div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">

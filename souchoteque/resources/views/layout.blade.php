@@ -11,9 +11,8 @@
     @yield("customCss")
 </head>
 
-@auth
-
 <body>
+    @auth
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
         <a class="navbar-brand font-italic pr-2 border-right" href="/home">
             <img src="{{asset('ressources/image/logo.jpg')}}" width="40" height="40" >
@@ -67,10 +66,10 @@
             <span class="navbar-text font-weight-light font-italic h4 pl-2 border-left">Polymaris Biotechnology</span>
         </div>
     </nav>
+    @endauth
 
     @yield('body')
 
-@endauth
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -79,6 +78,7 @@
 
     @yield('customJs')
 
+    @auth
     <footer class="page-footer font-small indigo">
 
         <!-- Footer Links -->
@@ -152,6 +152,7 @@
         <!-- Copyright -->
 
     </footer>
+    @endauth
 </body>
 
 
