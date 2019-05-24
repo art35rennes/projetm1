@@ -272,13 +272,13 @@ function sendAjax($url, $id='#server-results') {
     if ($datas.length > 0) {
         //ajout du token CSRF
         $datas.unshift({'_token': $('input[name=_token]').val()})
-        console.log($datas);
+        //console.log($datas);
 
         var post_url = $url; //get form action url
         var request_method = 'POST'; //get form GET/POST method
         var form_data = JSON.stringify($datas, null, 2);
 
-        console.log((form_data));
+        //console.log((form_data));
 
         $.ajax({
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
@@ -701,17 +701,18 @@ $(".cryoBtn").click(function () {
     sendAjax('/souche/' + ($("#ref")[0].innerHTML) + "/update/cryotube");
 });
 
-function cryoStock(ref, numero, n) {
+$('.cryoStock').click(function () {
+
     $datas = [];
 
-    console.log($(this));
+    console.log($(this).parent().parent().find('.numero')[0].innerHTML);
     $datas.push(new cryotube(
-        $(this).parent().find('.cryoRef').val(),
+        $(this).parent().parent().find('.numero')[0].innerHTML,
         $(this).hasClass('fa-minus')?-1:1
     ));
     console.log($datas);
-    //sendAjax('/souche/' + $(this).parent() + "/update/cryotube");
-}
+    sendAjax('/souche/' + $(this).parent().parent().find('.reference')[0].innerHTML + "/update/cryotube");
+});
 
 //..................................//
 //...........Delete entry...........//
