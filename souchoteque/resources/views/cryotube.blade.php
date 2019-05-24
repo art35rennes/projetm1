@@ -20,14 +20,14 @@
                 <tr>
                     <td class="text-center">
                         <h4>
-                            <a href="souche/{{$key}}" class="badge @if($souche['notogm']) badge-info @else badge-warning @endif font-weight-normal">{{$key}}</a>
+                            <a href="souche/{{$key}}" class="reference badge @if($souche['notogm']) badge-info @else badge-warning @endif font-weight-normal">{{$key}}</a>
                         </h4>
                     </td>
-                    <td class="text-right font-italic">Polymaris</td>
+                    <td class="text-right font-italic"><span class="numero">Polymaris</span></td>
                     <td class="text-right">{{$souche['stock']}}</td>
                     <td class="text-center">
-                        <i class="fas fa-minus" onclick='cryoStock()'></i>
-                        <i class="fas fa-plus ml-2" onclick='cryoStock()'></i>
+                        <i class="cryoStock fas fa-minus"></i>
+                        <i class="cryoStock fas fa-plus ml-2"></i>
                     </td>
                 </tr>
                 @isset($souche['pasteur'])
@@ -35,14 +35,14 @@
                         <tr class="text-center">
                             <td>
                                 <h4>
-                                    <span class="badge @if($souche['notogm']) badge-info @else badge-warning @endif font-weight-normal">{{$key}}</span>
+                                    <span class="reference badge @if($souche['notogm']) badge-info @else badge-warning @endif font-weight-normal">{{$key}}</span>
                                 </h4>
                             </td>
-                            <td class="text-right">{{$pasteur['numero']}}</td>
+                            <td class="text-right"><span class="numero">{{$pasteur['numero']}}</span></td>
                             <td class="text-right">{{$pasteur['stock']}}</td>
                             <td class="text-center">
-                                <i class="fas fa-minus" onclick='cryoStock()'></i>
-                                <i class="fas fa-plus ml-2" onclick='cryoStock()'></i>
+                                <i class="cryoStock fas fa-minus"></i>
+                                <i class="cryoStock fas fa-plus ml-2"></i>
                             </td>
                         </tr>
                     @endforeach
