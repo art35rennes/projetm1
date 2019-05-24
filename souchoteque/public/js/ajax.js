@@ -701,6 +701,18 @@ $(".cryoBtn").click(function () {
     sendAjax('/souche/' + ($("#ref")[0].innerHTML) + "/update/cryotube");
 });
 
+function cryoStock(ref, numero, n) {
+    $datas = [];
+
+    console.log($(this));
+    $datas.push(new cryotube(
+        $(this).parent().find('.cryoRef').val(),
+        $(this).hasClass('fa-minus')?-1:1
+    ));
+    console.log($datas);
+    //sendAjax('/souche/' + $(this).parent() + "/update/cryotube");
+}
+
 //..................................//
 //...........Delete entry...........//
 //..................................//

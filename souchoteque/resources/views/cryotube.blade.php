@@ -14,7 +14,6 @@
             <th>Pasteur</th>
             <th>Stock</th>
             <th class="edit"></th>
-            <th class="edit"></th>
             </thead>
             <tbody>
             @foreach($data as $key => $souche)
@@ -27,10 +26,8 @@
                     <td class="text-right font-italic">Polymaris</td>
                     <td class="text-right">{{$souche['stock']}}</td>
                     <td class="text-center">
-                        <i class="fas fa-minus"></i>
-                    </td>
-                    <td class="text-center">
-                        <i class="fas fa-plus"></i>
+                        <i class="fas fa-minus" onclick='cryoStock()'></i>
+                        <i class="fas fa-plus ml-2" onclick='cryoStock()'></i>
                     </td>
                 </tr>
                 @isset($souche['pasteur'])
@@ -44,10 +41,8 @@
                             <td class="text-right">{{$pasteur['numero']}}</td>
                             <td class="text-right">{{$pasteur['stock']}}</td>
                             <td class="text-center">
-                                <i class="fas fa-minus"></i>
-                            </td>
-                            <td class="text-center">
-                                <i class="fas fa-plus"></i>
+                                <i class="fas fa-minus" onclick='cryoStock()'></i>
+                                <i class="fas fa-plus ml-2" onclick='cryoStock()'></i>
                             </td>
                         </tr>
                     @endforeach
@@ -61,6 +56,7 @@
 @endsection
 
 @section('customJs')
+    <script type="text/javascript" src="{{ URL::asset('js/ajax.js') }}"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
     <script>
         var table = $('#cryotube').DataTable( {
