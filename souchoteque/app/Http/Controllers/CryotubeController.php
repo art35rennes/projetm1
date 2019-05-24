@@ -24,6 +24,8 @@ class CryotubeController extends Controller
         $data = array();
         foreach ($souches as $souche){
             $data[$souche->ref]["stock"] = $souche->stock;
+            $data[$souche->ref]["notogm"] = $souche->notogm;
+
             foreach (DB::table("pasteur")->where("ref", "=", $souche->ref)->select("numero", "stock")->get() as $pasteur)
                 $data[$souche->ref]["pasteur"][] = json_decode(json_encode($pasteur),true);
         }
