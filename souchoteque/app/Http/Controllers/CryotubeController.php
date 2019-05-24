@@ -20,8 +20,16 @@ class CryotubeController extends Controller
             ->where("users.id", "=", Auth::id() )
             ->select("*")->get();
 
-            //var_dump($historique);
-        return view('cryotube', ["user" => $user[0]]);
+        $souches = DB::table("souche")->select("ref", "stock", DB::raw("isnull(annee_creation) AS notogm"))->get();
+        $data = array();
+        foreach ($souches as $souche){
+            $data[$souche->ref]["stock"] = $souche->stock;
+            foreach (DB::table("pasteur")->where("ref", "=", $souche->ref)->select("numero", "stock")->get() as $pasteur)
+                $data[$souche->ref]["pasteur"][] = json_decode(json_encode($pasteur),true);
+        }
+
+            var_dump($data);
+        return view('cryotube', ["user" => $user[0], "data" => $data]);
     }
 
 }
