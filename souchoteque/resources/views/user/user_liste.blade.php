@@ -6,7 +6,7 @@
 @section('body')
     @if($user->utilisateur >= 1)
     <div class="container">
-        <h4 class="display-4">Liste des comptes utilisateur</h4>
+        <h4 class="display-4">Liste des comptes utilisateurs</h4>
         <form method="post" action="/user/maj" id="majForm">
             @csrf
             <table class="table">

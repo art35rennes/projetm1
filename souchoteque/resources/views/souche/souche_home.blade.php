@@ -9,32 +9,6 @@
         <input type="hidden" value="{{$value}}" name="{{$key}}">
         @endforeach
     </div>
-    <!--div class="collapse" id="collapseExample">
-        <div class="card card-body">
-            <ul>
-                @foreach($souche as $S => $s)
-                    <li>
-                        {{$S}}
-                        <ul>
-                            @foreach($s as $data => $d)
-                                <li>
-                                    {{$data}}
-                                    <ul>
-                                        @foreach($d as $key => $value)
-                                            <li>{{$key}} : {{$value}}</li>
-                                        @endforeach
-                                    </ul>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </li>
-                @endforeach
-            </ul>
-        </div>
-    </div>
-    <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        Souche Tab
-    </button-->
 
     <div class="container-fluid w-75">
         <h4 class="display-4">Souche : <span id="ref" class="text-secondary">{{$souche['souche'][0]->ref}}</span></h4>
@@ -84,19 +58,19 @@
                 @if($user->eps > 0)
                 <li class="nav-item m-2">
                     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-eps" role="tab"
-                       aria-controls="pills-eps" aria-selected="false">eps</a>
+                       aria-controls="pills-eps" aria-selected="false">EPS</a>
                 </li>
                 @endif
                 @if($user->pha > 0)
                 <li class="nav-item m-2">
                     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-pha" role="tab"
-                       aria-controls="pills-pha" aria-selected="false">pha</a>
+                       aria-controls="pills-pha" aria-selected="false">PHA</a>
                 </li>
                 @endif
                 @if($user->autre > 0)
                 <li class="nav-item m-2">
                     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-autre" role="tab"
-                       aria-controls="pills-autre" aria-selected="false">autre</a>
+                       aria-controls="pills-autre" aria-selected="false">autres</a>
                 </li>
                 @endif
             </ul>
