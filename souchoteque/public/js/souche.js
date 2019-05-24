@@ -340,7 +340,7 @@ $(document).ready( function () {
             //console.log($id);
             switch ($id) {
                 case "#pills-description":
-                    if ($droit.description >= 2 && 0) {
+                    if ($droit.description >= 2) {
                         $(".editButton").hide();
                         $(".editZone").hide();
                         if ($droit.description > 2) {
@@ -400,7 +400,7 @@ $(document).ready( function () {
                     }
                     break;
                 case "#pills-projet":
-                    if ($droit.projets >= 2 && 0) {
+                    if ($droit.projets >= 2) {
                         $(".editButton").hide();
                         $(".editZone").hide();
                         if ($droit.projets > 2) {
