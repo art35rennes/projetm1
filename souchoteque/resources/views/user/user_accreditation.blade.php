@@ -13,7 +13,7 @@
                 <tr>
                     <th colspan="2"></th>
                     <th colspan="3" class="text-center">Synthèse</th>
-                    <th colspan="6"></th>
+                    <th colspan="11"></th>
                 </tr>
                 <tr>
                     <th>Nom</th>
@@ -25,10 +25,10 @@
                     <th>Brevet</th>
                     <th>Exclusivité</th>
                     <th>Publication</th>
-                    <th>Utilisateur</th>
                     <th>Cryotube</th>
                     <th>Description</th>
                     <th>Projet</th>
+                    <th>Utilisateur</th>
                     <th>Accréditation</th>
                     <th></th>
                     <th></th>
@@ -103,14 +103,14 @@
                         </select>
                     </td>
                     <td>
-                        <select disabled class="selectLaw" name="accreditation[{{$accreditation->id}}][brevet]" class="custom-select-sm text-center">
+                        <select disabled class="selectLaw" name="accreditation[{{$accreditation->id}}][cryotube]" class="custom-select-sm text-center">
                             <option @if ($accreditation->brevet == 0) selected @endif value="0">-</option>
                             <option @if ($accreditation->brevet == 1) selected @endif value="1">l</option>
                             <option @if ($accreditation->brevet == 3) selected @endif value="3">l+a+e</option>
                         </select>
                     </td>
                     <td>
-                        <select disabled class="selectLaw" name="accreditation[{{$accreditation->id}}][exclusivite]" class="custom-select-sm text-center">
+                        <select disabled class="selectLaw" name="accreditation[{{$accreditation->id}}][description]" class="custom-select-sm text-center">
                             <option @if ($accreditation->exclusivite == 0) selected @endif value="0">-</option>
                             <option @if ($accreditation->exclusivite == 1) selected @endif value="1">l</option>
                             <option @if ($accreditation->exclusivite == 2) selected @endif value="2">l+a</option>
@@ -118,7 +118,7 @@
                         </select>
                     </td>
                     <td>
-                        <select disabled class="selectLaw" name="accreditation[{{$accreditation->id}}][publication]" class="custom-select-sm text-center">
+                        <select disabled class="selectLaw" name="accreditation[{{$accreditation->id}}][projet]" class="custom-select-sm text-center">
                             <option @if ($accreditation->publication == 0) selected @endif value="0">-</option>
                             <option @if ($accreditation->publication == 1) selected @endif value="1">l</option>
                             <option @if ($accreditation->publication == 2) selected @endif value="2">l+a</option>

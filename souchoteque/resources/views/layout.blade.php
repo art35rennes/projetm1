@@ -33,6 +33,9 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/souche/ajout">Ajouter</a>
+                        @if($user->cryotube > 0)
+                            <a class="dropdown-item" href="/cryotube">Gestion Cryotube</a>
+                        @endif
                         @if($user->utilisateur == 3)
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/historique/">Dernière mise à jour</a>

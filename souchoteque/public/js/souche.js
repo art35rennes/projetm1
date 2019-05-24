@@ -18,8 +18,10 @@ $(document).ready( function () {
         exclusivite: $('[name=exclusivite]').val(),
         publication: $('[name=publication]').val(),
         utilisateur: $('[name=utilisateur]').val(),
-        description: $('[name=description]').val(),
-        projet: $('[name=projet]').val(),
+        //description: $('[name=description]').val(),
+        description: 3,
+        //projet: $('[name=projet]').val(),
+        projet: 3,
         cryotube: $('[name=cryotube]').val(),
     };
     $('#userData').remove();
@@ -225,7 +227,8 @@ $(document).ready( function () {
         //console.log($id);
         switch ($id) {
             case "#pills-description":
-                if ($droit.description >= 2 && 0){
+                //console.log($droit.description);
+                if ($droit.description >= 2){
                     $(".editButton").toggle();
                     $(".editZone").toggle();
                     if ($droit.description > 2){
@@ -285,7 +288,7 @@ $(document).ready( function () {
                 }
                 break;
             case "#pills-projet":
-                if ($droit.projets >= 2 && 0){
+                if ($droit.projets >= 2){
                     $(".editButton").toggle();
                     $(".editZone").toggle();
                     if ($droit.projets > 2){

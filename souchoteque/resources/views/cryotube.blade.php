@@ -11,11 +11,11 @@
             <th></th>
         </thead>
         <tbody>
-        @foreach($souches as $souche)
+        @foreach($data as $key => $souche)
             <tr>
                 <td>
                     <h4>
-                        <span class="badge @if($souche->notogm) badge-info @else badge-warning @endif font-weight-normal">{{$souche->ref}}</span>
+                        <span class="badge @if($souche[notogm]) badge-info @else badge-warning @endif font-weight-normal">{{$souche->ref}}</span>
                     </h4>
                 </td>
                 <td>@if($souche->pasteur){{$souche->pasteur}}@else - @endif</td>
