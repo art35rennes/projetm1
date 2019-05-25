@@ -26,7 +26,10 @@
         <tbody>
         @foreach($souche['identification'] as $id)
             <tr>
-                <td><span class="tabText" id="identification-{{$loop->iteration}}-type">{{$id->type}}</span></td>
+                <td>
+                    <span class="tabText" id="identification-{{$loop->iteration}}-type">{{$id->type}}</span>
+                    <input type="hidden" value="isKey">
+                </td>
                 <td>
                 @if($id->sequence != "")
                     <a class="tabFile font-italic mr-2" id="identification-{{$loop->iteration}}-sequence" href="{{asset("/storage/".$id->sequence)}}">{{$id->sequence}}</a>

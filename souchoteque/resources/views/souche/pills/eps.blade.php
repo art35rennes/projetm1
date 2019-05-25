@@ -57,7 +57,10 @@
                             @foreach($souche['caracterisation_oses'] as $oses)
                                 @if($oses->type == "neutre")
                                     <tr>
-                                        <td><span class="tabText" id="oses-neutre-{{$oses->nom}}">{{$oses->nom}}</span></td>
+                                        <td>
+                                            <span class="tabText" id="oses-neutre-{{$oses->nom}}">{{$oses->nom}}</span>
+                                            <input type="hidden" value="isKey">
+                                        </td>
                                         @if($user->eps == 3)
                                         <td>
                                             <i class="editZone fas fa-times" onclick="deleteTabEntry('oses', '{{$oses->nom}}', 'eps')"></i>
@@ -95,7 +98,10 @@
                             @foreach($souche['caracterisation_oses'] as $oses)
                                 @if($oses->type == "acide")
                                     <tr>
-                                        <td><span class="tabText" id="oses-acide-{{$oses->nom}}">{{$oses->nom}}</span></td>
+                                        <td>
+                                            <span class="tabText" id="oses-acide-{{$oses->nom}}">{{$oses->nom}}</span>
+                                            <input type="hidden" value="isKey">
+                                        </td>
                                         @if($user->eps == 3)
                                         <td>
                                             <i class="editZone fas fa-times" onclick="deleteTabEntry('oses', '{{$oses->nom}}', 'eps')"></i>
@@ -133,7 +139,10 @@
                             @foreach($souche['caracterisation_oses'] as $oses)
                                 @if($oses->type == "amine")
                                     <tr>
-                                        <td><span class="tabText" id="oses-amine-{{$oses->nom}}">{{$oses->nom}}</span></td>
+                                        <td>
+                                            <span class="tabText" id="oses-amine-{{$oses->nom}}">{{$oses->nom}}</span>
+                                            <input type="hidden" value="isKey">
+                                        </td>
                                         @if($user->eps == 3)
                                         <td>
                                             <i class="editZone fas fa-times" onclick="deleteTabEntry('oses', '{{$oses->nom}}', 'eps')"></i>
@@ -209,7 +218,10 @@
                     @foreach($souche['objectivation'] as $objectivation)
                         @if($objectivation->type=="EPS")
                             <tr>
-                                <td><span class="tabText" id="eps-objectivation-{{$loop->iteration}}-nom">{{$objectivation->nom}}</span></td>
+                                <td>
+                                    <span class="tabText" id="eps-objectivation-{{$loop->iteration}}-nom">{{$objectivation->nom}}</span>
+                                    <input type="hidden" value="isKey">
+                                </td>
                                 <td>
                                     @if($objectivation->protocole != "")
                                         <a class="tabFile font-italic mr-2" id="eps-objectivation-{{$loop->iteration}}-protocole" href="{{asset("/storage/".$objectivation->protocole)}}">{{$objectivation->protocole}}</a>
@@ -277,7 +289,10 @@
                     @foreach($souche['production'] as $prod)
                         @if($prod->type=="EPS")
                             <tr>
-                                <td><span class="tabText">{{$prod->nom}}</span></td>
+                                <td>
+                                    <span class="tabText">{{$prod->nom}}</span>
+                                    <input type="hidden" value="isKey">
+                                </td>
                                 <td><span class="tabDate">{{$prod->date}}</span></td>
                                 <td><span class="tabText">{{$prod->lieu}}</span></td>
                                 <td>
@@ -351,7 +366,10 @@
                     @foreach($souche['criblage'] as $criblage)
                         @if($criblage->type=="EPS")
                             <tr>
-                                <td><span class="tabText">{{$criblage->nom}}</span></td>
+                                <td>
+                                    <span class="tabText">{{$criblage->nom}}</span>
+                                    <input type="hidden" value="isKey">
+                                </td>
                                 <td>
                                     @if($criblage->conditions != "")
                                         <a class="tabFile font-italic mr-2" id="eps-criblage-{{$loop->iteration}}-condition" href="{{asset("/storage/".$criblage->conditions)}}">{{$criblage->conditions}}</a>

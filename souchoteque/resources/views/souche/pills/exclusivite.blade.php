@@ -28,7 +28,10 @@
         <tbody>
         @foreach($souche['exclusivite'] as $exclu)
             <tr>
-                <td><span class="tabNum"  id="exclusivite/{{$loop->iteration}}/id">{{$exclu->id}}</span></td>
+                <td>
+                    <span class="tabNum"  id="exclusivite/{{$loop->iteration}}/id">{{$exclu->id}}</span>
+                    <input type="hidden" value="isKey">
+                </td>
                 <td><span class="tabDate" id="exclusivite/{{$loop->iteration}}/date_debut">{{$exclu->date_debut}}</span></td>
                 <td><span class="tabDate" id="exclusivite/{{$loop->iteration}}/date_fin">{{$exclu->date_fin}}</span></td>
                 <td><span class="tabText" id="exclusivite/{{$loop->iteration}}/partenaire" list="dataPart">{{$exclu->partenaire}}</span></td>

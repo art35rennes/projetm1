@@ -84,7 +84,7 @@ $(document).ready( function () {
                         value: this.innerHTML,
                         type: $(this).hasClass('inputText') ?
                             "text" : $(this).hasClass('inputDate') ?
-                                "number" : null
+                                "number" : null,
                     });
                 });
             } else {
@@ -122,7 +122,7 @@ $(document).ready( function () {
                     return $("<span>", {
                         class: this.className,
                         id: this.name,
-                        innerHTML: this.value
+                        innerHTML: this.options[this.selectedIndex].text
                     });
                 });
             }
@@ -135,8 +135,8 @@ $(document).ready( function () {
                 $(this).append($oui);
                 $(this).append($non);
                 $(this).children().each(function () {
-                    $(this).val() == "Oui" ? $(this).attr("selected", true) : null;
-                    $(this).val() == "Non" ? null : $(this).attr("selected", true);
+                    $(this).val() == 1 ? $(this).attr("selected", true) : null;
+                    $(this).val() == 0 ? null : $(this).attr("selected", true);
                 });
             } else {
                 $(this).removeClass("form-control");
@@ -148,6 +148,7 @@ $(document).ready( function () {
     function convertTr(){
         $(".tabText, .tabDate, .tabNum").each(function () {
             if ($(this).is("span")) {
+                console.log($(this).next().is('input')&&$(this).next().val()=="isKey"?true:false);
                 $(this).replaceWith(function () {
                     return $("<input>", {
                         class: this.className,
@@ -175,9 +176,11 @@ $(document).ready( function () {
             if ($(this).is("span")) {
                 $(this).removeClass("form-control");
                 $(this).html($(this).attr('innerhtml'));
+                //$(this).removeAttribute('disabled');
             }
             else{
                 $(this).addClass("form-control");
+                $(this).next().is('input')&&$(this).next().val()=="isKey"?$(this).attr('disabled','disabled'):null;
             }
         });
 

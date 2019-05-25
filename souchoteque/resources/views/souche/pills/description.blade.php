@@ -124,16 +124,29 @@
 
             <h6>Souche OGM : <span class="font-weight-normal inputYn" id="isOgm">@if($souche['souche'][0]->annee_creation) Oui @else Non @endif </span></h6>
             <h6>Année de création : <span class="font-weight-normal inputDate" id="souche-annee_creation">@isset($souche['souche'][0]){{$souche['souche'][0]->annee_creation}}@endisset</span></h6>
-            @isset($souche['souche'][0]->validation_hcb)
-            <i class="mt-3 fas fa-file-alt text-danger mr-2"></i>
-            <a href="{{asset("/storage/".$souche['souche'][0]->validation_hcb)}}" class="font-italic">Validation HCB</a>
-            @if($user->description == 3) <i class='fas fa-trash ml-2' onclick='fileDelete("{{asset('/storage/'.$souche['souche'][0]->validation_hcb)}}")'></i> @endif
-            @endisset
-            @isset($souche['souche'][0]->texte_hcb)
-            <i class="mb-3 fas fa-file-alt text-danger"></i>
-            <a href="{{asset("/storage/".$souche['souche'][0]->texte_hcb)}}" class="font-italic">Texte HCB</a>
-            @if($user->description == 3) <i class='fas fa-trash ml-2' onclick='fileDelete("{{asset('/storage/'.$souche['souche'][0]->texte_hcb)}}")'></i> @endif
-            @endisset
+            <ul>
+                @isset($souche['souche'][0]->validation_hcb)
+                <li>
+                    <i class="mt-3 fas fa-file-alt text-danger mr-2"></i>
+                    <a href="{{asset("/storage/".$souche['souche'][0]->validation_hcb)}}" class="font-italic">Validation HCB</a>
+                    @if($user->description == 3) <i class='fas fa-trash ml-2 editButton' onclick='fileDelete("{{asset('/storage/'.$souche['souche'][0]->validation_hcb)}}")'></i> @endif
+                </li>
+                @endisset
+                @isset($souche['souche'][0]->texte_hcb)
+                <li>
+                    <i class="fas fa-file-alt text-danger mr-2"></i>
+                    <a href="{{asset("/storage/".$souche['souche'][0]->texte_hcb)}}" class="font-italic">Texte HCB</a>
+                    @if($user->description == 3) <i class='fas fa-trash ml-2 editButton' onclick='fileDelete("{{asset('/storage/'.$souche['souche'][0]->texte_hcb)}}")'></i> @endif
+                </li>
+                @endisset
+                @isset($souche['souche'][0]->schema_plasmique)
+                    <li>
+                        <i class="mb-3 fas fa-file-alt text-danger mr-2"></i>
+                        <a href="{{asset("/storage/".$souche['souche'][0]->schema_plasmique)}}" class="font-italic">Schéma plasmique</a>
+                        @if($user->description == 3) <i class='fas fa-trash ml-2 editButton' onclick='fileDelete("{{asset('/storage/'.$souche['souche'][0]->schema_plasmique)}}")'></i> @endif
+                    </li>
+                @endisset
+            </ul>
 
             @if($user->description > 1)
             <div class="editZone mt-3">

@@ -96,7 +96,10 @@
                     @foreach($souche['objectivation'] as $objectivation)
                         @if($objectivation->type=="PHA")
                             <tr>
-                                <td><span class="tabText" id="pha-objectivation-{{$loop->iteration}}-nom">{{$objectivation->nom}}</span></td>
+                                <td>
+                                    <span class="tabText" id="pha-objectivation-{{$loop->iteration}}-nom">{{$objectivation->nom}}</span>
+                                    <input type="hidden" value="isKey">
+                                </td>
                                 <td>
                                     @if($objectivation->protocole != "")
                                         <a class="tabFile font-italic mr-2" id="pha-objectivation-{{$loop->iteration}}-protocole" href="{{asset("/storage/".$objectivation->protocole)}}">{{$objectivation->protocole}}</a>
@@ -162,7 +165,10 @@
                     @foreach($souche['production'] as $prod)
                         @if($prod->type=="PHA")
                             <tr>
-                                <td><span class="tabText">{{$prod->nom}}</span></td>
+                                <td>
+                                    <span class="tabText">{{$prod->nom}}</span>
+                                    <input type="hidden" value="isKey">
+                                </td>
                                 <td><span class="tabDate">{{$prod->date}}</span></td>
                                 <td><span class="tabText">{{$prod->lieu}}</span></td>
                                 <td>
@@ -234,7 +240,10 @@
                     @foreach($souche['criblage'] as $criblage)
                         @if($criblage->type=="PHA")
                             <tr>
-                                <td><span class="tabText">{{$criblage->nom}}</span></td>
+                                <td>
+                                    <span class="tabText">{{$criblage->nom}}</span>
+                                    <input type="hidden" value="isKey">
+                                </td>
                                 <td>
                                     @if($criblage->conditions != "")
                                         <a class="tabFile font-italic mr-2" id="pha-criblage-{{$loop->iteration}}-condition" href="{{asset("/storage/".$criblage->conditions)}}">{{$criblage->conditions}}</a>

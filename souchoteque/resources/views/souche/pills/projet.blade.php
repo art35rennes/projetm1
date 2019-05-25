@@ -28,7 +28,10 @@
         <tbody>
         @foreach($souche['projet_souche'] as $projet)
             <tr>
-                <td><span class="tabText" id="projet/{{$loop->iteration}}/nom">{{$projet->nom}}</span></td>
+                <td>
+                    <span class="tabText" id="projet/{{$loop->iteration}}/nom">{{$projet->nom}}</span>
+                    <input type="hidden" value="isKey">
+                </td>
                 <td><span class="tabDate" id="projet/{{$loop->iteration}}/date">{{$projet->date}}</span></td>
                 <td><span class="tabText" id="projet/{{$loop->iteration}}/partenaire">{{$projet->partenaire}}</span></td>
                 <td><span class="tabText" id="projet/{{$loop->iteration}}/activite">{{$projet->activite}}</span></td>

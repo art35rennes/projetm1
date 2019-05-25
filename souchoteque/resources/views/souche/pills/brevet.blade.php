@@ -37,6 +37,7 @@
                 </td>
                 <td>
                     <span class="tabText" id="brevet_soleau/{{$loop->iteration}}/titre">{{$brevet->titre}}</span>
+                    <input type="hidden" value="isKey">
                 </td>
                 <td>
                     <span>@if($brevet->inpi==null) Brevet @else Soleau @endif</span>

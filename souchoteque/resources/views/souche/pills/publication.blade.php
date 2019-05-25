@@ -30,9 +30,8 @@
                     <span class="tabDate" id="publication/{{$loop->iteration}}/date">{{$p->date}}</span>
                 </td>
                 <td>
-                    @if($p->fichier != "")
-                        <span class="tabText">{{$p->nom}}</span>
-                    @endif
+                    <span class="tabText">{{$p->nom}}</span>
+                    <input type="hidden" value="isKey">
                 </td>
                 <td>
                     @if($p->fichier != "")

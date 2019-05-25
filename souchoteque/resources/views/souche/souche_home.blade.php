@@ -4,12 +4,14 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
 @endsection
 @section('body')
+    @auth
     <div class="d-none" id="userData">
         @foreach($user as $key => $value)
         <input type="hidden" value="{{$value}}" name="{{$key}}">
         @endforeach
     </div>
 
+    @if($souche['souche'][0]->acreditation <= $user->souche)
     <div class="container-fluid w-75">
         <h4 class="display-4">Souche : <span id="ref" class="text-secondary">{{$souche['souche'][0]->ref}}</span></h4>
 
@@ -119,6 +121,10 @@
         @csrf
 
     </div>
+    @else
+        <h4 class="display-4">Vous n'êtes pas autorisé à acceder à cette souche.</h4>
+    @endif
+    @endauth
 @endsection
 
 @section('customJs')
