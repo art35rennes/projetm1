@@ -5,7 +5,7 @@
 
 @section('body')
     @if($user->utilisateur == 3)
-    <div class="container-fluid">
+    <div class="container-fluid w-75">
         <h4 class="display-4 mb-3">Gestion des accréditations</h4>
         <form method="post" action="/user/accreditation/maj" id="majForm">
             <table class="table table-sm text-center table-responsive">
@@ -104,25 +104,25 @@
                     </td>
                     <td>
                         <select disabled class="selectLaw" name="accreditation[{{$accreditation->id}}][cryotube]" class="custom-select-sm text-center">
-                            <option @if ($accreditation->brevet == 0) selected @endif value="0">-</option>
-                            <option @if ($accreditation->brevet == 1) selected @endif value="1">l</option>
-                            <option @if ($accreditation->brevet == 3) selected @endif value="3">l+a+e</option>
+                            <option @if ($accreditation->cryotube == 0) selected @endif value="0">-</option>
+                            <option @if ($accreditation->cryotube == 1) selected @endif value="1">l</option>
+                            <option @if ($accreditation->cryotube == 3) selected @endif value="3">l+a+e</option>
                         </select>
                     </td>
                     <td>
                         <select disabled class="selectLaw" name="accreditation[{{$accreditation->id}}][description]" class="custom-select-sm text-center">
-                            <option @if ($accreditation->exclusivite == 0) selected @endif value="0">-</option>
-                            <option @if ($accreditation->exclusivite == 1) selected @endif value="1">l</option>
-                            <option @if ($accreditation->exclusivite == 2) selected @endif value="2">l+a</option>
-                            <option @if ($accreditation->exclusivite == 3) selected @endif value="3">l+a+e</option>
+                            <option @if ($accreditation->description == 0) selected @endif value="0">-</option>
+                            <option @if ($accreditation->description == 1) selected @endif value="1">l</option>
+                            <option @if ($accreditation->description == 2) selected @endif value="2">l+a</option>
+                            <option @if ($accreditation->description == 3) selected @endif value="3">l+a+e</option>
                         </select>
                     </td>
                     <td>
                         <select disabled class="selectLaw" name="accreditation[{{$accreditation->id}}][projet]" class="custom-select-sm text-center">
-                            <option @if ($accreditation->publication == 0) selected @endif value="0">-</option>
-                            <option @if ($accreditation->publication == 1) selected @endif value="1">l</option>
-                            <option @if ($accreditation->publication == 2) selected @endif value="2">l+a</option>
-                            <option @if ($accreditation->publication == 3) selected @endif value="3">l+a+e</option>
+                            <option @if ($accreditation->projet == 0) selected @endif value="0">-</option>
+                            <option @if ($accreditation->projet == 1) selected @endif value="1">l</option>
+                            <option @if ($accreditation->projet == 2) selected @endif value="2">l+a</option>
+                            <option @if ($accreditation->projet == 3) selected @endif value="3">l+a+e</option>
                         </select>
                     </td>
                     <td>
