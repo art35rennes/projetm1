@@ -5,7 +5,7 @@
 
 @section('body')
     @if($user->utilisateur >= 2)
-    <div class="container bg-light">
+    <div class="container">
         @if (isset($erreur))
             <div class="alert alert-primary" role="alert">
                 {{ $erreur }}

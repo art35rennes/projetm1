@@ -1,7 +1,7 @@
 @extends('layout')
 @section('body')
     <br>
-    <div class="container bg-light pb-3">
+    <div class="container pb-3">
         <h4 class="display-4">Ajout d'une souche</h4>
         <form class="row" method="post" action="/souche/ajout" enctype="multipart/form-data">
 
