@@ -1,6 +1,6 @@
 <div class="tab-pane fade p-3" id="pills-brevet" role="tabpanel" aria-labelledby="pills-brevet-tab">
 
-    @if($user->brevet > 1)
+    @if($user->brevet > 0)
         <div>
             <div class="custom-control custom-checkbox text-sm-right mt-2">
                 <input type="checkbox" class="custom-control-input editMode" id="editModeBrevet">
@@ -24,7 +24,9 @@
                 <th>Secteur</th>
                 <th>Texte</th>
                 <th>INPI</th>
+                @if($user->autre == 3)
                 <th class="editZone"></th>
+                @endif
             </tr>
         </thead>
         <tbody>
@@ -59,9 +61,11 @@
                         <span class="tabNull" id="brevet_soleau/{{$loop->iteration}}/inpi"></span>
                     @endif
                 </td>
+                @if($user->autre == 3)
                 <td class="editZone">
                     <i class="editZone fas fa-times" onclick="deleteTabEntry('brevet', '{{$brevet->titre}}')"></i>
                 </td>
+                @endif
             </tr>
         @endforeach
         </tbody>
@@ -90,7 +94,9 @@
                         Ajouter un fichier <input type="file" name="brevet_soleau/0/inpi" hidden>
                     </label>
                 </td>
+                @if($user->autre == 3)
                 <td class="editZone"></td>
+                @endif
             </tr>
         </tfoot>
     </table>

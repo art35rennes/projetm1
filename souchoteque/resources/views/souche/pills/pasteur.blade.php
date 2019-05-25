@@ -1,6 +1,6 @@
 <div class="tab-pane fade p-3" id="pills-pasteur" role="tabpanel" aria-labelledby="pills-pasteur-tab">
 
-    @if($user->pasteur > 1)
+    @if($user->pasteur > 0)
         {{$user->pasteur}}
     <div>
         <div class="custom-control custom-checkbox text-sm-right mt-2">
@@ -25,7 +25,7 @@
                 <th>Dossier Pasteur</th>
                 <th>Validation Pasteur</th>
                 <th>Photo</th>
-                <th class="editZone"></th>
+                @if($user->pasteur == 3) <th class="editZone"></th> @endif
             </tr>
         </thead>
         <tbody>
@@ -67,9 +67,11 @@
                     <span class="tabNull" id="pasteur/{{$loop->iteration}}/photo_cryotube"></span>
                     @endif
                 </td>
+                @if($user->pasteur == 3)
                 <td class="editZone">
                     <i class="editZone fas fa-times" onclick="deleteTabEntry('pasteur', '{{$p->titre}}')"></i>
                 </td>
+                @endif
             </tr>
         @endforeach
         </tbody>
@@ -102,7 +104,7 @@
                         Ajouter un fichier <input type="file" name="pasteur/0/photo_cryotube" hidden>
                     </label>
                 </td>
-                <td class="editZone"></td>
+                @if($user->pasteur == 3) <td class="editZone"></td> @endif
             </tr>
         </tfoot>
     </table>

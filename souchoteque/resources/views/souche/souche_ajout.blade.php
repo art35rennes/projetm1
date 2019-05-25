@@ -9,14 +9,16 @@
             <div class="col-7">
 
                 <!--Reference souche-->
-                <h6 class="mt-2" for="ref">Référence de la souche</h6>
-                <input class="form-control is-invalid" placeholder="Référence" type="text" name="ref" id="ref" autocomplete="off" required/>
-                <div id="refFeedback" class="invalid-feedback">
-                    Cette souche existe déjà
+                <div class="form-group m-1">
+                    <h6 class="mt-2" for="ref">Référence de la souche</h6>
+                    <input class="form-control" placeholder="Référence" type="text" name="ref" id="ref" autocomplete="off" required/>
+                    <div id="refFeedback" class="invalid-feedback">
+                        Cette souche existe déjà
+                    </div>
                 </div>
 
                 <!--Accreditation-->
-                <div class="form-group">
+                <div class="form-group m-1">
                     <h6 for="exampleFormControlSelect1">Niveau d'accréditation requis</h6>
                     <select class="form-control" id="exampleFormControlSelect1">
                         <option>1</option>
@@ -28,7 +30,7 @@
                 </div>
 
                 <!--Stock souche-->
-                <div class="form-group">
+                <div class="form-group m-1">
                     <h6 class="custom-label mt-2" for="annee_creation">Stock</h6>
                     <input type="number" class="form-control" name="stock" id="stock" value="0" required/>
                 </div>
@@ -83,7 +85,7 @@
                         <input type="number" class="form-control" placeholder="YYYY" pattern="^^[0-9]{4}$" name="annee_collecte" id="annee_collecte"/>
                     </div>
                 </div>
-                <input type="submit" value="Ajouter" id="ajout" disabled="disabled" class="btn btn-primary">
+                <input type="submit" value="Ajouter" id="ajout" class="btn btn-primary">
             </div>
 
         </form>
@@ -98,11 +100,11 @@
             @endforeach()
         ];
         $("#ref").keyup(function () {
-            if (refs.indexOf($("#ref").val()) != -1) {
-                $("#ref").toggleClass("is-invalid");
+            if (refs.indexOf($("#ref").val()) != -1 && $('#ref').val() != "") {
+                $("#ref").addClass("is-invalid");
                 $("#ajout").attr('disabled', 'disabled');
             } else {
-                $("#ref").toggleClass("is-invalid");
+                $("#ref").removeClass("is-invalid");
                 $("#ajout").removeAttr('disabled')
             }
         });

@@ -1,6 +1,6 @@
 <div class="tab-pane fade" id="pills-pha" role="tabpanel" aria-labelledby="pills-pha-tab">
 
-    @if($user->pha > 1)
+    @if($user->pha > 0)
     <div>
         <div class="custom-control custom-checkbox text-sm-right mt-2">
             <input type="checkbox" class="custom-control-input editMode" id="editModePha">
@@ -21,7 +21,7 @@
             @foreach($souche['projet_souche'] as $projet)
                 <li class="list-inline-item">
                     <a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"></a>
-                    <i class="editButton fas fa-times deleteCross ml-2"></i>
+                    @if($user->pha == 3) <i class="editButton fas fa-times deleteCross ml-2"></i> @endif
                 </li>
             @endforeach
             <li class="list-inline-item editZone">
@@ -53,6 +53,7 @@
                                 @endif
                             @endforeach
                         </ul>
+                        @if($user->pha > 1)
                         <div class="editZone mt-2 col-auto">
                             <h6>Ajout fichier de caractérisation:</h6>
                             <input type="text" list="dataCaracterisation" class="form-control" name="pha-fichier_caracterisation-type">
@@ -71,6 +72,7 @@
                                 Ajouter un fichier <input type="file" name="pha-fichier_caracterisation-fichier" hidden>
                             </label>
                         </div>
+                        @endif
                     </div>
                 </div>
             @endif
@@ -87,7 +89,7 @@
                         <th>Nom</th>
                         <th>Protocole</th>
                         <th>Resultat</th>
-                        <th class="editZone"></th>
+                        @if($user->pha == 3) <th class="editZone"></th> @endif
                     </tr>
                     </thead>
                     <tbody>
@@ -109,9 +111,11 @@
                                         <span class="tabNull" id="pha-objectivation-{{$loop->iteration}}-resultat"></span>
                                     @endif
                                 </td>
+                                @if($user->pha == 3)
                                 <td class="editZone">
                                     <i class="editZone fas fa-times" onclick="deleteTabEntry('objectivation', '{{$objectivation->nom}}', 'pha')"></i>
                                 </td>
+                                @endif
                             </tr>
                         @endif
                     @endforeach
@@ -131,7 +135,7 @@
                                 Ajouter un fichier <input type="file" name="pha-objectivation-0-fichier" hidden>
                             </label>
                         </td>
-                        <td class="editZone"></td>
+                        @if($user->pha == 3) <td class="editZone"></td> @endif
                     </tr>
                     </tfoot>
                 </table>
@@ -151,7 +155,7 @@
                         <th>Lieu</th>
                         <th>Protocole</th>
                         <th>Résultat</th>
-                        <th class="editZone"></th>
+                        @if($user->pha == 3) <th class="editZone"></th> @endif
                     </tr>
                     </thead>
                     <tbody>
@@ -175,9 +179,11 @@
                                         <span class="tabNull" id="pha-production-{{$loop->iteration}}-resultat"></span>
                                     @endif
                                 </td>
+                                @if($user->pha == 3)
                                 <td class="editZone">
                                     <i class="editZone fas fa-times" onclick="deleteTabEntry('production', '{{$prod->nom}}', 'pha')"></i>
                                 </td>
+                                @endif
                             </tr>
                         @endif
                     @endforeach
@@ -203,7 +209,7 @@
                                 Ajouter un fichier <input type="file" name="pha-production-0-resultat" hidden>
                             </label>
                         </td>
-                        <th class="editZone"></th>
+                        @if($user->pha == 3) <th class="editZone"></th> @endif
                     </tr>
                     </tfoot>
                 </table>
@@ -221,7 +227,7 @@
                         <th>Nom</th>
                         <th>Condition</th>
                         <th>Rapport</th>
-                        <th class="editZone"></th>
+                        @if($user->pha == 3) <th class="editZone"></th> @endif
                     </tr>
                     </thead>
                     <tbody>
@@ -243,9 +249,11 @@
                                         <span class="tabNull" id="pha-criblage-{{$loop->iteration}}-rapport"></span>
                                     @endif
                                 </td>
+                                @if($user->pha == 3)
                                 <td class="editZone">
                                     <i class="editZone fas fa-times" onclick="deleteTabEntry('criblage', '{{$criblage->nom}}', 'pha')"></i>
                                 </td>
+                                @endif
                             </tr>
                         @endif
                     @endforeach
@@ -265,7 +273,7 @@
                                 Ajouter un fichier <input type="file" name="pha-criblage-0-rapport " hidden>
                             </label>
                         </td>
-                        <td class="editZone"></td>
+                        @if($user->pha == 3) <td class="editZone"></td> @endif
                     </tr>
                     </tfoot>
                 </table>

@@ -1,6 +1,6 @@
 <div class="tab-pane fade" id="pills-exclisivite" role="tabpanel" aria-labelledby="pills-exclisivite-tab">
 
-    @if($user->exclusivite > 1)
+    @if($user->exclusivite > 0)
     <div>
         <div class="custom-control custom-checkbox text-sm-right mt-2">
             <input type="checkbox" class="custom-control-input editMode" id="editModeExclusivite">
@@ -22,7 +22,7 @@
             <th>Fin</th>
             <th>Partenaire</th>
             <th>Secteur</th>
-            <th class="editZone"></th>
+            @if($user->eps == 3) <th class="editZone"></th> @endif
         </tr>
         </thead>
         <tbody>
@@ -33,9 +33,11 @@
                 <td><span class="tabDate" id="exclusivite/{{$loop->iteration}}/date_fin">{{$exclu->date_fin}}</span></td>
                 <td><span class="tabText" id="exclusivite/{{$loop->iteration}}/partenaire" list="dataPart">{{$exclu->partenaire}}</span></td>
                 <td><span class="tabText" id="exclusivite/{{$loop->iteration}}/activite" list="dataSecteur">{{$exclu->activite}}</span></td>
+                @if($user->eps == 3)
                 <td class="editZone">
                     <i class="editZone fas fa-times" onclick="deleteTabEntry('exclusivite', '{{$exclu->id}}')"></i>
                 </td>
+                @endif
             </tr>
         @endforeach
         </tbody>
@@ -64,7 +66,7 @@
                     @endforeach
                 </datalist>
             </td>
-            <td class="editZone"></td>
+            @if($user->eps == 3) <td class="editZone"></td> @endif
         </tr>
         </tfoot>
     </table>

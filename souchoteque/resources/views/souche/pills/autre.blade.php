@@ -1,6 +1,6 @@
 <div class="tab-pane fade" id="pills-autre" role="tabpanel" aria-labelledby="pills-autre-tab">
 
-    @if($user->autre > 1)
+    @if($user->autre > 0)
         <div>
             <div class="custom-control custom-checkbox text-sm-right mt-2">
                 <input type="checkbox" class="custom-control-input editMode" id="editModeAutre">
@@ -21,7 +21,7 @@
             @foreach($souche['projet_souche'] as $projet)
                 <li class="list-inline-item">
                     <a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"></a>
-                    <i class="editButton fas fa-times deleteCross ml-2"></i>
+                    @if($user->autre == 3) <i class="editButton fas fa-times deleteCross ml-2"></i> @endif
                 </li>
             @endforeach
             <li class="list-inline-item editZone">
@@ -88,7 +88,9 @@
                         <th>Nom</th>
                         <th>Protocole</th>
                         <th>Resultat</th>
+                        @if($user->autre == 3)
                         <th class="editZone"></th>
+                        @endif
                     </tr>
                     </thead>
                     <tbody>
@@ -110,9 +112,11 @@
                                         <span class="tabNull" id="autre-objectivation-{{$loop->iteration}}-resultat"></span>
                                     @endif
                                 </td>
+                                @if($user->autre == 3)
                                 <td>
                                     <i class="editZone fas fa-times" onclick="deleteTabEntry('objectivation', '{{$objectivation->nom}}', 'autre')"></i>
                                 </td>
+                                @endif
                             </tr>
                         @endif
                     @endforeach
@@ -132,7 +136,9 @@
                                 Ajouter un fichier <input type="file" name="autre-objectivation-0-fichier" hidden>
                             </label>
                         </td>
+                        @if($user->autre == 3)
                         <td class="editZone"></td>
+                        @endif
                     </tr>
                     </tfoot>
                 </table>
@@ -153,7 +159,9 @@
                         <th>Lieu</th>
                         <th>Protocole</th>
                         <th>Résultat</th>
+                        @if($user->autre == 3)
                         <th class="editZone"></th>
+                        @endif
                     </tr>
                     </thead>
                     <tbody>
@@ -177,9 +185,11 @@
                                         <span class="tabNull" id="autre-production-{{$loop->iteration}}-resultat"></span>
                                     @endif
                                 </td>
+                                @if($user->autre == 3)
                                 <td>
                                     <i class="editZone fas fa-times" onclick="deleteTabEntry('production', '{{$prod->nom}}', 'autre')"></i>
                                 </td>
+                                @endif
                             </tr>
                         @endif
                     @endforeach
@@ -205,7 +215,9 @@
                                 Ajouter un fichier <input type="file" name="autre-production-0-resultat" hidden>
                             </label>
                         </td>
+                        @if($user->autre == 3)
                         <td class="editZone"></td>
+                        @endif
                     </tr>
                     </tfoot>
                 </table>
@@ -223,7 +235,9 @@
                         <th>Nom</th>
                         <th>Condition</th>
                         <th>Rapport</th>
+                        @if($user->autre == 3)
                         <th class="editZone"></th>
+                        @endif
                     </tr>
                     </thead>
                     <tbody>
@@ -245,9 +259,11 @@
                                         <span class="tabNull" id="autre-criblage-{{$loop->iteration}}-rapport"></span>
                                     @endif
                                 </td>
+                                @if($user->autre == 3)
                                 <td>
                                     <i class="editZone fas fa-times" onclick="deleteTabEntry('criblage', '{{$criblage->nom}}', 'autre')"></i>
                                 </td>
+                                @endif
                             </tr>
                         @endif
                     @endforeach
@@ -267,7 +283,9 @@
                                 Ajouter un fichier <input type="file" name="autre-criblage-0-rapport " hidden>
                             </label>
                         </td>
+                        @if($user->autre == 3)
                         <td class="editZone"></td>
+                        @endif
                     </tr>
                     </tfoot>
                 </table>

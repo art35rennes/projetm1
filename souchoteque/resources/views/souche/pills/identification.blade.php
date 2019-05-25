@@ -1,6 +1,6 @@
 <div class="tab-pane fade p-3" id="pills-identification" role="tabpanel" aria-labelledby="pills-identification-tab">
 
-    @if($user->identification > 1)
+    @if($user->identification > 0)
     <div>
         <div class="custom-control custom-checkbox text-sm-right mt-2">
             <input type="checkbox" class="custom-control-input editMode" id="editModeIdentification">
@@ -20,7 +20,7 @@
                 <th>Type</th>
                 <th>Sequence</th>
                 <th>Arbre Phylogénétique</th>
-                <th class="editZone"></th>
+                @if($user->identification == 3) <th class="editZone"></th> @endif
             </tr>
         </thead>
         <tbody>
@@ -41,9 +41,11 @@
                     <span class="tabNull" id="identification-{{$loop->iteration}}-arbre"></span>
                 @endif
                 </td>
+                @if($user->identification == 3)
                 <td class="editZone">
                     <i class="editZone fas fa-times" onclick="deleteTabEntry('identification', '{{$id->type}}')"></i>
                 </td>
+                @endif
             </tr>
         @endforeach
         </tbody>
@@ -67,7 +69,7 @@
                         Ajouter un fichier <input type="file" name="identification/0/arbre" hidden>
                     </label>
                 </td>
-                <td class="editZone"></td>
+                @if($user->identification == 3) <td class="editZone"></td> @endif
             </tr>
         </tfoot>
     </table>

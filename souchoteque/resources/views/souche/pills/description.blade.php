@@ -1,6 +1,6 @@
 <div class="tab-pane fade show active p-3" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
 
-    @if(1)
+    @if($user->description > 0)
     <div>
         <div class="custom-control custom-checkbox text-sm-right mt-2">
             <input type="checkbox" class="custom-control-input editMode" id="editModeDescription">
@@ -44,6 +44,7 @@
                     <span class="sr-only">Suivant</span>
                 </a>
             </div>
+            @if($user->description > 1)
             <div class="editZone">
                 <h6>Ajouter une photo :</h6>
                 <div class="form-group">
@@ -54,28 +55,35 @@
                     Ajouter une image <input type="file" name="photo_souche-fichier" id="photo_souche-fichier" hidden>
                 </label>
             </div>
+            @endif
 
+            @if($user->cryotube > 0)
             <h5 class="mt-2">Stock Cryotube :</h5>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
                     <span class="badge badge-primary badge-pill mr-1">{{$souche['souche'][0]->stock}}</span>Polymaris
+                    @if($user->cryotube == 3)
                     <span class="float-right editZone">
                         <i class="fas fa-minus mr-1 cryoBtn"></i>
                         <i class="fas fa-plus ml-1 cryoBtn"></i>
                         <input type="hidden" class="cryoRef" value="Polymaris">
                     </span>
+                    @endif
                 </li>
                 @foreach($souche['pasteur'] as $p)
                 <li class="list-group-item">
                     <span class="badge badge-primary badge-pill mr-1">{{$p->stock}}</span>Pasteur n°{{$p->numero}}
+                    @if($user->cryotube == 3)
                     <span class="float-right editZone">
                         <i class="fas fa-minus mr-1 cryoBtn"></i>
                         <i class="fas fa-plus ml-1 cryoBtn"></i>
                         <input type="hidden" class="cryoRef" value="{{$p->numero}}">
                     </span>
+                    @endif
                 </li>
                 @endforeach
             </ul>
+            @endif
         </div>
         <div class="col-4">
             <div class="col-xl-7">
@@ -83,7 +91,7 @@
                 @foreach($souche['description'] as $file)
                 <p>
                     <a href="{{asset("/storage/".$file->fichier)}}" class="font-italic">{{$file->texte}}</a>
-                    <i class='editButton fas fa-trash ml-2' onclick='fileDelete("{{asset('/storage/'.$file->fichier)}}")'></i>
+                    @if($user->description == 3) <i class='editButton fas fa-trash ml-2' onclick='fileDelete("{{asset('/storage/'.$file->fichier)}}")'></i> @endif
                 </p>
                 @endforeach
                 <div class="input-group mb-3 mt-3 editZone">
@@ -119,14 +127,15 @@
             @isset($souche['souche'][0]->validation_hcb)
             <i class="mt-3 fas fa-file-alt text-danger mr-2"></i>
             <a href="{{asset("/storage/".$souche['souche'][0]->validation_hcb)}}" class="font-italic">Validation HCB</a>
-            <i class='fas fa-trash ml-2' onclick='fileDelete("{{asset('/storage/'.$souche['souche'][0]->validation_hcb)}}")'></i>
+            @if($user->description == 3) <i class='fas fa-trash ml-2' onclick='fileDelete("{{asset('/storage/'.$souche['souche'][0]->validation_hcb)}}")'></i> @endif
             @endisset
             @isset($souche['souche'][0]->texte_hcb)
             <i class="mb-3 fas fa-file-alt text-danger"></i>
             <a href="{{asset("/storage/".$souche['souche'][0]->texte_hcb)}}" class="font-italic">Texte HCB</a>
-            <i class='fas fa-trash ml-2' onclick='fileDelete("{{asset('/storage/'.$souche['souche'][0]->texte_hcb)}}")'></i>
+            @if($user->description == 3) <i class='fas fa-trash ml-2' onclick='fileDelete("{{asset('/storage/'.$souche['souche'][0]->texte_hcb)}}")'></i> @endif
             @endisset
 
+            @if($user->description > 1)
             <div class="editZone mt-3">
                 <h6>Ajouter un fichier</h6>
                 <div class="custom-control custom-radio">
@@ -145,6 +154,7 @@
                     Ajouter un fichier <input type="file" name="souche-hcb-doc" id="souche-hcb-doc" hidden>
                 </label>
             </div>
+            @endif
         </div>
     </div>
 </div>

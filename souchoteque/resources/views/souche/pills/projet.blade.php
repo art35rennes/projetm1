@@ -1,6 +1,6 @@
 <div class="tab-pane fade" id="pills-projet" role="tabpanel" aria-labelledby="pills-projet-tab">
 
-    @if(1)
+    @if($user->projet > 0)
     <div>
         <div class="custom-control custom-checkbox text-sm-right mt-2">
             <input type="checkbox" class="custom-control-input editMode" id="editModeProjet">
@@ -22,7 +22,7 @@
             <th>Partenaire</th>
             <th>Secteur</th>
             <th>Document</th>
-            <th class="editZone"></th>
+            @if($user->projet == 3) <th class="editZone"></th> @endif
         </tr>
         </thead>
         <tbody>
@@ -39,9 +39,11 @@
                         <span class="tabNull" id="projet/{{$loop->iteration}}/text"></span>
                     @endif
                 </td>
+                @if($user->projet == 3)
                 <td class="editZone">
                     <i class="editZone fas fa-times" onclick="deleteTabEntry('projet', '{{$projet->nom}}')"></i>
                 </td>
+                @endif
             </tr>
         @endforeach
         </tbody>
@@ -74,7 +76,7 @@
                     Ajouter un fichier <input type="file" name="projet/0/texte" hidden>
                 </label>
             </td>
-            <td class="editZone"></td>
+            @if($user->projet == 3) <td class="editZone"></td> @endif
         </tr>
         </tfoot>
     </table>

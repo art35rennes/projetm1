@@ -18,10 +18,8 @@ $(document).ready( function () {
         exclusivite: $('[name=exclusivite]').val(),
         publication: $('[name=publication]').val(),
         utilisateur: $('[name=utilisateur]').val(),
-        //description: $('[name=description]').val(),
-        description: 3,
-        //projet: $('[name=projet]').val(),
-        projet: 3,
+        description: $('[name=description]').val(),
+        projet: $('[name=projet]').val(),
         cryotube: $('[name=cryotube]').val(),
     };
     $('#userData').remove();
@@ -224,7 +222,7 @@ $(document).ready( function () {
 
     $(".editMode").click(function () {
         $id = $(".nav-link.active").attr('href');
-        //console.log($id);
+        console.log($id);
         switch ($id) {
             case "#pills-description":
                 //console.log($droit.description);
@@ -288,10 +286,11 @@ $(document).ready( function () {
                 }
                 break;
             case "#pills-projet":
-                if ($droit.projets >= 2){
+                console.log('cc');
+                if ($droit.projet >= 2){
                     $(".editButton").toggle();
                     $(".editZone").toggle();
-                    if ($droit.projets > 2){
+                    if ($droit.projet > 2){
                         convertSpan();
                         convertTr();
                     }
@@ -400,10 +399,10 @@ $(document).ready( function () {
                     }
                     break;
                 case "#pills-projet":
-                    if ($droit.projets >= 2) {
+                    if ($droit.projet >= 2) {
                         $(".editButton").hide();
                         $(".editZone").hide();
-                        if ($droit.projets > 2) {
+                        if ($droit.projet > 2) {
                             convertSpan();
                             convertTr();
                         }

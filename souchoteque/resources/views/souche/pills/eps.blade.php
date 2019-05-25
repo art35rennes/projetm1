@@ -1,6 +1,6 @@
 <div class="tab-pane fade p-3" id="pills-eps" role="tabpanel" aria-labelledby="pills-eps-tab">
 
-    @if($user->eps > 1)
+    @if($user->eps > 0)
     <div>
         <div class="custom-control custom-checkbox text-sm-right mt-2">
             <input type="checkbox" class="custom-control-input editMode" id="editModeEps">
@@ -21,7 +21,7 @@
             @foreach($souche['projet_souche'] as $projet)
                 <li class="list-inline-item">
                     <a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"></a>
-                    <i class="editButton fas fa-times deleteCross ml-2"></i>
+                    @if($user->eps == 3) <i class="editButton fas fa-times deleteCross ml-2"></i> @endif
                 </li>
             @endforeach
             <li class="list-inline-item editZone">
@@ -50,7 +50,7 @@
                             <thead>
                             <tr>
                                 <th>Oses Neutre</th>
-                                <th class="editZone"></th>
+                                @if($user->eps == 3) <th class="editZone"></th> @endif
                             </tr>
                             </thead>
                             <tbody>
@@ -58,9 +58,11 @@
                                 @if($oses->type == "neutre")
                                     <tr>
                                         <td><span class="tabText" id="oses-neutre-{{$oses->nom}}">{{$oses->nom}}</span></td>
+                                        @if($user->eps == 3)
                                         <td>
                                             <i class="editZone fas fa-times" onclick="deleteTabEntry('oses', '{{$oses->nom}}', 'eps')"></i>
                                         </td>
+                                        @endif
                                     </tr>
                                 @endif
                             @endforeach
@@ -77,7 +79,7 @@
                                         @endforeach
                                     </datalist>
                                 </td>
-                                <td class="editZone"></td>
+                                @if($user->eps == 3) <td class="editZone"></td> @endif
                             </tr>
                             </tfoot>
                         </table>
@@ -86,7 +88,7 @@
                             <thead>
                             <tr>
                                 <th>Oses acide</th>
-                                <th class="editZone"></th>
+                                @if($user->eps == 3) <th class="editZone"></th> @endif
                             </tr>
                             </thead>
                             <tbody>
@@ -94,9 +96,11 @@
                                 @if($oses->type == "acide")
                                     <tr>
                                         <td><span class="tabText" id="oses-acide-{{$oses->nom}}">{{$oses->nom}}</span></td>
+                                        @if($user->eps == 3)
                                         <td>
                                             <i class="editZone fas fa-times" onclick="deleteTabEntry('oses', '{{$oses->nom}}', 'eps')"></i>
                                         </td>
+                                        @endif
                                     </tr>
                                 @endif
                             @endforeach
@@ -113,7 +117,7 @@
                                         @endforeach
                                     </datalist>
                                 </td>
-                                <td class="editZone"></td>
+                                @if($user->eps == 3) <td class="editZone"></td> @endif
                             </tr>
                             </tfoot>
                         </table>
@@ -122,7 +126,7 @@
                             <thead>
                             <tr>
                                 <th>Osamines</th>
-                                <th class="editZone"></th>
+                                @if($user->eps == 3) <th class="editZone"></th> @endif
                             </tr>
                             </thead>
                             <tbody>
@@ -130,9 +134,11 @@
                                 @if($oses->type == "amine")
                                     <tr>
                                         <td><span class="tabText" id="oses-amine-{{$oses->nom}}">{{$oses->nom}}</span></td>
+                                        @if($user->eps == 3)
                                         <td>
                                             <i class="editZone fas fa-times" onclick="deleteTabEntry('oses', '{{$oses->nom}}', 'eps')"></i>
                                         </td>
+                                        @endif
                                     </tr>
                                 @endif
                             @endforeach
@@ -149,7 +155,7 @@
                                         @endforeach
                                     </datalist>
                                 </td>
-                                <td class="editZone"></td>
+                                @if($user->eps == 3) <td class="editZone"></td> @endif
                             </tr>
                             </tfoot>
                         </table>
@@ -161,6 +167,7 @@
                             @endforeach
                         </ul>
                     </div>
+                    @if($user->eps > 1)
                     <div class="editZone mt-2">
                         <h6>Ajout fichier de caractérisation:</h6>
                         <input type="text" list="dataCaracterisation" class="form-control w-25" name="eps-fichier_caracterisation-type">
@@ -179,6 +186,7 @@
                             Ajouter un fichier <input type="file" name="eps-fichier_caracterisation-fichier" hidden>
                         </label>
                     </div>
+                    @endif
                 </div>
             @endif
         @endforeach
@@ -194,7 +202,7 @@
                         <th>Nom</th>
                         <th>Protocole</th>
                         <th>Resultat</th>
-                        <th class="editZone"></th>
+                        @if($user->eps == 3) <th class="editZone"></th> @endif
                     </tr>
                     </thead>
                     <tbody>
@@ -216,9 +224,11 @@
                                         <span class="tabNull" id="eps-objectivation-{{$loop->iteration}}-resultat"></span>
                                     @endif
                                 </td>
+                                @if($user->eps == 3)
                                 <td>
                                     <i class="editZone fas fa-times" onclick="deleteTabEntry('objectivation', '{{$objectivation->nom}}', 'eps')"></i>
                                 </td>
+                                @endif
                             </tr>
                         @endif
                     @endforeach
@@ -238,7 +248,7 @@
                                 Ajouter un fichier <input type="file" name="eps-objectivation-0-fichier" hidden>
                             </label>
                         </td>
-                        <td class="editZone"></td>
+                        @if($user->eps == 3) <td class="editZone"></td> @endif
                     </tr>
                     </tfoot>
                 </table>
@@ -259,7 +269,7 @@
                         <th>Lieu</th>
                         <th>Protocole</th>
                         <th>Résultat</th>
-                        <th class="editZone"></th>
+                        @if($user->eps == 3) <th class="editZone"></th> @endif
                     </tr>
                     </thead>
                     <tbody>
@@ -284,9 +294,11 @@
                                         <span class="tabNull" id="eps-production-{{$loop->iteration}}-resultat"></span>
                                     @endif
                                 </td>
+                                @if($user->eps == 3)
                                 <td>
                                     <i class="editZone fas fa-times" onclick="deleteTabEntry('production', '{{$prod->nom}}', 'eps')"></i>
                                 </td>
+                                @endif
                             </tr>
                         @endif
                     @endforeach
@@ -313,7 +325,7 @@
                                 Ajouter un fichier <input type="file" name="eps-production-0-resultat" hidden>
                             </label>
                         </td>
-                        <td class="editZone"></td>
+                        @if($user->eps == 3) <td class="editZone"></td> @endif
                     </tr>
                     </tfoot>
                 </table>
@@ -331,7 +343,7 @@
                         <th>Nom</th>
                         <th>Condition</th>
                         <th>Rapport</th>
-                        <th class="editZone"></th>
+                        @if($user->eps == 3) <th class="editZone"></th> @endif
                     </tr>
                     </thead>
                     <tbody>
@@ -354,9 +366,11 @@
                                         <span class="tabNull" id="eps-criblage-{{$loop->iteration}}-rapport"></span>
                                     @endif
                                 </td>
+                                @if($user->eps == 3)
                                 <td>
                                     <i class="editZone fas fa-times" onclick="deleteTabEntry('criblage', '{{$criblage->nom}}', 'eps')"></i>
                                 </td>
+                                @endif
                             </tr>
                         @endif
                     @endforeach
@@ -377,7 +391,7 @@
                                 Ajouter un fichier <input type="file" name="eps-criblage-0-rapport " hidden>
                             </label>
                         </td>
-                        <td class="editZone"></td>
+                        @if($user->eps == 3) <td class="editZone"></td> @endif
                     </tr>
                     </tfoot>
                 </table>

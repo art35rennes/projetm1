@@ -20,7 +20,7 @@
                 <th>Date</th>
                 <th>Nom</th>
                 <th>Publication</th>
-                <th class="editZone"></th>
+                @if($user->projet == 3) <th class="editZone"></th> @endif
             </tr>
         </thead>
         <tbody>
@@ -41,9 +41,11 @@
                         <span class="tabNull" id="publication/{{$loop->iteration}}/fichier"></span>
                     @endif
                 </td>
+                @if($user->projet == 3)
                 <td class="editZone">
                     <i class="editZone fas fa-times" onclick="deleteTabEntry('publication', '{{$p->nom}}')"></i>
                 </td>
+                @endif
             </tr>
         @endforeach
         </tbody>
@@ -60,7 +62,7 @@
                     Ajouter un fichier <input type="file" name="publication/0/fichier" hidden>
                 </label>
             </td>
-            <td class="editZone"></td>
+            @if($user->projet == 3) <td class="editZone"></td> @endif
         </tr>
         </tfoot>
     </table>
