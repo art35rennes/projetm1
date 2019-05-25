@@ -77,6 +77,7 @@
                 </td>
                 <td>
                     <input class="form-control" type="text" name="brevet_soleau/0/titre">
+                    <input type="hidden" value="isKey">
                 </td>
                 <td>&nbsp;</td>
                 <td>

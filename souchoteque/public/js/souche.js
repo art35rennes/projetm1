@@ -148,7 +148,7 @@ $(document).ready( function () {
     function convertTr(){
         $(".tabText, .tabDate, .tabNum").each(function () {
             if ($(this).is("span")) {
-                console.log($(this).next().is('input')&&$(this).next().val()=="isKey"?true:false);
+                //console.log($(this).next().is('input')&&$(this).next().val()=="isKey"?true:false);
                 $(this).replaceWith(function () {
                     return $("<input>", {
                         class: this.className,
@@ -225,7 +225,7 @@ $(document).ready( function () {
 
     $(".editMode").click(function () {
         $id = $(".nav-link.active").attr('href');
-        console.log($id);
+        //console.log($id);
         switch ($id) {
             case "#pills-description":
                 //console.log($droit.description);
@@ -461,13 +461,33 @@ $(document).ready( function () {
         }
     });
 
+    $('input').on('keyup',function (){
+       if ($(this).parent().parent().hasClass('editZone')){
+           $key = $(this).parent().parent().find('input[type=hidden]').prev();
+           $isEmpty = -1;
+           $(this).parent().parent().find('input').each(function () {
+              $(this).val().length!=0?$isEmpty++:
+                  $(this).val()!=""?$isEmpty++:null;
+           });
+           if($isEmpty==0 || $key.val()!=""){
+               $key.removeAttr('required');
+               $key.removeClass('is-invalid');
+           }else{
+               $key.attr('required', 'required');
+               $key.addClass('is-invalid');
+           }
+       }
+    });
+
+    $('.annulBtn').click(function () {
+        window.location.reload()
+    })
+
     //..................................//
     //...........OGM Display............//
     //..................................//
 
-    //..................................//
-    //............Edit mode.............//
-    //..................................//
+
 
 });
 

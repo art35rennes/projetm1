@@ -20,8 +20,8 @@
             <li class="list-inline-item"><h6 class="font-italic">Projet associé :</h6></li>
             @foreach($souche['projet_souche'] as $projet)
                 <li class="list-inline-item">
-                    <a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"></a>
-                    @if($user->autre == 3) <i class="editButton fas fa-times deleteCross ml-2"></i> @endif
+                    <a href="{{asset("/storage/".$projet->texte)}}" class="font-italic">{{$projet->nom}}</a>
+                    @if($user->autre == 3) <!--i class="editButton fas fa-times deleteCross ml-2"></i--> @endif
                 </li>
             @endforeach
             <li class="list-inline-item editZone">
@@ -128,6 +128,7 @@
                     <tr class="editZone">
                         <td>
                             <input type="text" class="form-control" name="autre-objectivation-0-nom">
+                            <input type="hidden" value="isKey">
                         </td>
                         <td>
                             <label class="btn btn-light m-2">
@@ -204,6 +205,7 @@
                     <tr class="editZone">
                         <td>
                             <input type="text" class="form-control" name="autre-production-0-nom">
+                            <input type="hidden" value="isKey">
                         </td>
                         <td>
                             <input type="date" class="form-control" name="autre-production-0-date">
@@ -281,6 +283,7 @@
                     <tr class="editZone">
                         <td>
                             <input type="text" class="form-control" name="autre-criblage-0-nom">
+                            <input type="hidden" value="isKey">
                         </td>
                         <td>
                             <label class="btn btn-light m-2">

@@ -82,6 +82,7 @@
                 </td>
                 <td>
                     <input class="form-control" type="text" name="pasteur-0-titre">
+                    <input type="hidden" value="isKey">
                 </td>
                 <td>
                     <input class="form-control" type="number" name="pasteur-0-numero">

@@ -56,6 +56,7 @@
             <tr class="editZone">
                 <td>
                     <input type="text" class="form-control" list="dataIdentification" placeholder="Type..." name="identification/0/type" isKey="true">
+                    <input type="hidden" value="isKey">
                     <datalist id="dataIdentification">
                         @foreach($souche['identification'] as $id)
                             <option>{{$id->type}}</option>

@@ -55,6 +55,7 @@
             </td>
             <td>
                 <input type="text" class="form-control" name="publication/0/nom">
+                <input type="hidden" value="isKey">
             </td>
             <td>
                 <label class="btn btn-light">

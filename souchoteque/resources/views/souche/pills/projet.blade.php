@@ -53,7 +53,8 @@
         <tfoot>
         <tr class="editZone">
             <td>
-                <input type="date" class="form-control" name="projet/0/nom">
+                <input type="text" class="form-control" name="projet/0/nom">
+                <input type="hidden" value="isKey">
             </td>
             <td>
                 <input type="date" class="form-control" name="projet/0/date">

@@ -20,9 +20,8 @@
             <li class="list-inline-item"><h6 class="font-italic">Projet associé :</h6></li>
             @foreach($souche['projet_souche'] as $projet)
                 <li class="list-inline-item">
-                    <a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"></a>
-                    @if($user->pha == 3) <i class="editButton fas fa-times deleteCross ml-2"></i> @endif
-                </li>
+                    <a href="{{asset("/storage/".$projet->texte)}}" class="font-italic">{{$projet->nom}}</a>
+                    @if($user->pha == 3) <!--i class="editButton fas fa-times deleteCross ml-2"></i--> @endif
             @endforeach
             <li class="list-inline-item editZone">
                 <input class="form-control w-75 d-inline" type="text" list="dataProjet" name="pha-projet">
@@ -127,6 +126,7 @@
                     <tr class="editZone">
                         <td>
                             <input type="text" class="form-control" name="pha-objectivation-0-nom">
+                            <input type="hidden" value="isKey">
                         </td>
                         <td>
                             <label class="btn btn-light m-2">
@@ -198,6 +198,7 @@
                     <tr class="editZone">
                         <td>
                             <input type="text" class="form-control" name="pha-production-0-nom">
+                            <input type="hidden" value="isKey">
                         </td>
                         <td>
                             <input type="date" class="form-control" name="pha-production-0-date">
@@ -271,6 +272,7 @@
                     <tr class="editZone">
                         <td>
                             <input type="text" class="form-control" name="pha-criblage-0-nom">
+                            <input type="hidden" value="isKey">
                         </td>
                         <td>
                             <label class="btn btn-light m-2">
