@@ -37,6 +37,7 @@ Route::group(['middleware' => ['auth']], function() {
         //Update
         Route::post('/souche/{ref}/maj', 'SoucheController@update');
         Route::post('/souche/{ref}/update', 'SoucheAjaxController@update');
+        Route::post('/blade/generate/row', 'HtmlController@generateRow');
 
 
     //Delete

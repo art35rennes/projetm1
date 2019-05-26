@@ -12,7 +12,17 @@ function alerteInfo(type, text, text2="") {
         case 'warning':
             break;
         case 'alert':
-            break
+            break;
+        case 'success':
+            updateData();
+            html = "<div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">\n" +
+                "  <strong>Réponse du serveur: </strong>"+text+"\n" +
+                "  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n" +
+                "    <span aria-hidden=\"true\">&times;</span>\n" +
+                "  </button>\n" +
+                "</div>";
+            return html;
+            break;
         default:
             html = "<div class=\"alert alert-light alert-dismissible fade show\" role=\"alert\">\n" +
                 "  <strong>Réponse du serveur: </strong> <pre>"+text+"</pre>\n" +
@@ -289,7 +299,9 @@ function sendAjax($url, $id='#server-results') {
             cache: false,
             processData: false
         }).done(function (response) {
-            $($id).html(alerteInfo(null,response));
+            $json = JSON.parse(response);
+            console.log($json);
+            $($id).html(alerteInfo($json[0].alert,$json[1]));
         });
     }
     else {
@@ -714,6 +726,110 @@ $('.cryoStock').click(function () {
     sendAjax('/souche/' + $(this).parent().parent().find('.reference')[0].innerHTML + "/update/cryotube");
 });
 
+//.......................................//
+//.............Ajax Response.............//
+//.......................................//
+
+function updateData() {
+    console.log($datas);
+    $id = $(".nav-link.active").attr('href');
+
+    $.each($datas, function () {
+        //console.log($(this)[0].onglet);
+        let $data = $(this)[0];
+
+        if ($data.new) {
+            console.log('new');
+            console.log(JSON.stringify($data));
+            $.post("/blade/generate/row",
+                {
+                    _token: $('input[name=_token]').val(),
+                    data:JSON.stringify($data),
+                    n:$($id).find('tbody').children().length+1
+                },
+                function(data, status){ //retreive response
+                    console.log("Data: " + (data) + "\nStatus: " + status);
+                    if(status === "success"){
+                        $('#identification').find('tbody').append(JSON.parse(data));
+                    }
+                    else{
+                        alerteInfo('info', status, data);
+                    }
+                });
+        }else{
+            console.log('notNew');
+        }
+
+       /*switch ($data.onglet) {
+           case 'description':
+               console.log(0);
+               break;
+           case 'identification':
+               if ($data.new) {
+                   console.log('new');
+                   console.log(JSON.stringify($data));
+                   $.post("/blade/generate/row",
+                       {
+                           _token: $('input[name=_token]').val(),
+                           data:JSON.stringify($data),
+                       },
+                       function(data, status){ //retreive response
+                           console.log("Data: " + data + "\nStatus: " + status);
+                           if(status === "success"){
+                               $('#identification').find('tbody').append(data);
+                           }
+                           else{
+                               alerteInfo('info', status, data);
+                           }
+                       });
+               }else{
+                   console.log('notNew');
+               }
+               //console.log(1);
+               break;
+           case 'pasteur':
+               console.log(2);
+               break;
+           case 'publication':
+               console.log(3);
+               break;
+           case 'exclusivite':
+               console.log(4);
+               break;
+           case 'projet':
+               console.log(5);
+               break;
+           case 'cryotube':
+               console.log(6);
+               break;
+           case 'objectivation':
+               console.log(7);
+               break;
+           case 'industriel':
+               console.log(8);
+               break;
+           case 'criblage':
+               console.log(9);
+               break;
+           case 'oses':
+               console.log(10);
+               break;
+           case 'caracterisation':
+               console.log(11);
+               break;
+           case 'projetLiee':
+               console.log(12);
+               break;
+           case undefined:
+               console.log(13);
+               break;
+           default:
+               console.log('defaut');
+               //window.location.reload();
+       }*/
+    });
+}
+
 //..................................//
 //...........Delete entry...........//
 //..................................//
@@ -726,7 +842,7 @@ function fileDelete($href){
         function(data, status){ //retreive response
             console.log("Data: " + data + "\nStatus: " + status);
             if(status === "success"){
-                alerteInfo('info', status, data);
+                alerteInfo(data[0].alert, status, data);
                 //window.location.reload()
                 //TODO : décommenter
             }
