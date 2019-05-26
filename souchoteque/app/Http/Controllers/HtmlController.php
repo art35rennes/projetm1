@@ -30,18 +30,26 @@ class HtmlController
     }
     //Generate table row for Ajax response
     public function generateRow(Request $request){
-        $data = json_decode($request->input('data'));
-        $n = json_decode($request->input('n'));
-        $html = "<tr>#</tr>";
 
-        $row="";
 
+        $id = json_decode($request->input('id'));
         $user = DB::table("users")
             ->Join("accreditation", 'users.accreditation', '=', 'accreditation.id')
             ->where("users.id", "=", Auth::id() )
             ->select("*")->get();
 
+        $html = view('souche.pills.identification', ['souche' => SoucheController::getData($id), 'user' => $user[0]]);
+        return json_encode(var_export($html));
+
         //TODO Revoir file path ( CRTL+F sur Storage::url )
+
+        /*
+         *
+         * $data = json_decode($request->input('data'));
+        $n = json_decode($request->input('n'));
+        $html = "<tr>#</tr>";
+
+        $row="";
 
         switch ($data->onglet){
             case 'description':
@@ -98,8 +106,10 @@ class HtmlController
                 break;
             default:
                 break;
-        }
+        }*/
         //return json_encode($data);
-        return json_encode($row);
+        //return json_encode($row);
+
+
     }
 }

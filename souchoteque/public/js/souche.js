@@ -23,6 +23,18 @@ $(document).ready( function () {
         cryotube: $('[name=cryotube]').val(),
     };
     $('#userData').remove();
+    
+    $(function() {
+        $('a[data-toggle="pill"]').on('click', function(e) {
+            //console.log('store');
+            window.localStorage.setItem('activeTab', $(e.target).attr('href'));
+        });
+        var activeTab = window.localStorage.getItem('activeTab');
+        if (activeTab) {
+            $('a[href="' + activeTab + '"]').tab('show');
+            window.localStorage.removeItem("activeTab");
+        }
+    });
 
     //..................................//
     //...........Data Table.............//

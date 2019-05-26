@@ -49,7 +49,7 @@ class SoucheController extends BaseController
     }
 
     ///////////////////////////////////Select All/////////////////////////////////////
-    public function getData($id){
+    static public function getData($id){
         foreach (['souche',
                      'identification',
                      'pasteur',

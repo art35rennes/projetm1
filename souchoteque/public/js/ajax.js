@@ -731,7 +731,9 @@ $('.cryoStock').click(function () {
 //.......................................//
 
 function updateData() {
-    console.log($datas);
+
+    window.location.reload();
+    /*console.log($datas);
     $id = $(".nav-link.active").attr('href');
 
     $.each($datas, function () {
@@ -740,17 +742,15 @@ function updateData() {
 
         if ($data.new) {
             console.log('new');
-            console.log(JSON.stringify($data));
             $.post("/blade/generate/row",
                 {
                     _token: $('input[name=_token]').val(),
-                    data:JSON.stringify($data),
-                    n:$($id).find('tbody').children().length+1
+                    id:$("#ref")[0].innerHTML,
                 },
                 function(data, status){ //retreive response
                     console.log("Data: " + (data) + "\nStatus: " + status);
                     if(status === "success"){
-                        $('#identification').find('tbody').append(JSON.parse(data));
+                        $('#identification').html((data));
                     }
                     else{
                         alerteInfo('info', status, data);
@@ -759,8 +759,7 @@ function updateData() {
         }else{
             console.log('notNew');
         }
-
-       /*switch ($data.onglet) {
+     switch ($data.onglet) {
            case 'description':
                console.log(0);
                break;
@@ -826,8 +825,8 @@ function updateData() {
            default:
                console.log('defaut');
                //window.location.reload();
-       }*/
-    });
+       }
+    });*/
 }
 
 //..................................//
