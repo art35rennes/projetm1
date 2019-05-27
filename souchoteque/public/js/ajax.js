@@ -375,8 +375,8 @@ $(".updateBtn").click(function(){
                                             null,
                                             $(this).hasClass('editZone'),
                                         ));
-                                        getFileInput($(this), 1, 'protocole', $datas.length-1);
-                                        getFileInput($(this), 2, 'resultat', $datas.length-1);
+                                        getFileInput($(this), 2, 'protocole', $datas.length-1);
+                                        getFileInput($(this), 3, 'resultat', $datas.length-1);
                                         break;
                                     case ".ProductionInduEps":
                                         $datas.push(new industriel(
@@ -388,8 +388,8 @@ $(".updateBtn").click(function(){
                                             null,
                                             $(this).hasClass('editZone'),
                                         ));
-                                        getFileInput($(this), 3, 'protocole', $datas.length-1);
-                                        getFileInput($(this), 4, 'resultat', $datas.length-1);
+                                        getFileInput($(this), 4, 'protocole', $datas.length-1);
+                                        getFileInput($(this), 5, 'resultat', $datas.length-1);
                                         break;
                                     case ".CriblageEps":
                                         $datas.push(new criblage(
@@ -399,8 +399,8 @@ $(".updateBtn").click(function(){
                                             null,
                                             $(this).hasClass('editZone'),
                                         ));
-                                        getFileInput($(this), 1, 'condition', $datas.length-1);
-                                        getFileInput($(this), 2, 'rapport', $datas.length-1);
+                                        getFileInput($(this), 2, 'condition', $datas.length-1);
+                                        getFileInput($(this), 3, 'rapport', $datas.length-1);
                                         break;
                                 }
 
@@ -444,8 +444,8 @@ $(".updateBtn").click(function(){
                                             null,
                                             $(this).hasClass('editZone'),
                                         ));
-                                        getFileInput($(this), 1, 'protocole', $datas.length-1);
-                                        getFileInput($(this), 2, 'resultat', $datas.length-1);
+                                        getFileInput($(this), 2, 'protocole', $datas.length-1);
+                                        getFileInput($(this), 3, 'resultat', $datas.length-1);
                                         break;
                                     case ".ProductionInduPha":
                                         $datas.push(new industriel(
@@ -457,8 +457,8 @@ $(".updateBtn").click(function(){
                                             null,
                                             $(this).hasClass('editZone'),
                                         ));
-                                        getFileInput($(this), 3, 'protocole', $datas.length-1);
-                                        getFileInput($(this), 4, 'resultat', $datas.length-1);
+                                        getFileInput($(this), 4, 'protocole', $datas.length-1);
+                                        getFileInput($(this), 5, 'resultat', $datas.length-1);
                                         break;
                                     case ".CriblagePha":
                                         $datas.push(new criblage(
@@ -468,8 +468,8 @@ $(".updateBtn").click(function(){
                                             null,
                                             $(this).hasClass('editZone'),
                                         ));
-                                        getFileInput($(this), 1, 'condition', $datas.length-1);
-                                        getFileInput($(this), 2, 'rapport', $datas.length-1);
+                                        getFileInput($(this), 2, 'condition', $datas.length-1);
+                                        getFileInput($(this), 3, 'rapport', $datas.length-1);
                                         break;
                                 }
 
@@ -509,8 +509,8 @@ $(".updateBtn").click(function(){
                                             null,
                                             $(this).hasClass('editZone'),
                                         ));
-                                        getFileInput($(this), 1, 'protocole', $datas.length-1);
-                                        getFileInput($(this), 2, 'resultat', $datas.length-1);
+                                        getFileInput($(this), 2, 'protocole', $datas.length-1);
+                                        getFileInput($(this), 3, 'resultat', $datas.length-1);
                                         break;
                                     case ".ProductionInduAutre":
                                         $datas.push(new industriel(
@@ -522,8 +522,8 @@ $(".updateBtn").click(function(){
                                             null,
                                             $(this).hasClass('editZone'),
                                         ));
-                                        getFileInput($(this), 3, 'protocole', $datas.length-1);
-                                        getFileInput($(this), 4, 'resultat', $datas.length-1);
+                                        getFileInput($(this), 4, 'protocole', $datas.length-1);
+                                        getFileInput($(this), 5, 'resultat', $datas.length-1);
                                         break;
                                     case ".CriblageAutre":
                                         $datas.push(new criblage(
@@ -533,8 +533,8 @@ $(".updateBtn").click(function(){
                                             null,
                                             $(this).hasClass('editZone'),
                                         ));
-                                        getFileInput($(this), 1, 'condition', $datas.length-1);
-                                        getFileInput($(this), 2, 'rapport', $datas.length-1);
+                                        getFileInput($(this), 2, 'condition', $datas.length-1);
+                                        getFileInput($(this), 3, 'rapport', $datas.length-1);
                                         break;
                                 }
 
@@ -587,9 +587,9 @@ $(".updateBtn").click(function(){
                                         null,
                                         $(this).hasClass('editZone')
                                     ));
-                                    getFileInput($(this), 4, 'dossier', $datas.length-1);
-                                    getFileInput($(this), 5, 'validation', $datas.length-1);
-                                    getFileInput($(this), 6, 'photo', $datas.length-1);
+                                    getFileInput($(this), 5, 'dossier', $datas.length-1);
+                                    getFileInput($(this), 6, 'validation', $datas.length-1);
+                                    getFileInput($(this), 7, 'photo', $datas.length-1);
                                 }
                             });
                             break;
@@ -610,8 +610,8 @@ $(".updateBtn").click(function(){
                                         null,
                                         $(this).hasClass('editZone')
                                     ));
-                                    getFileInput($(this), 4, 'texte', $datas.length-1);
-                                    getFileInput($(this), 5, 'inpi', $datas.length-1);
+                                    getFileInput($(this), 5, 'texte', $datas.length-1);
+                                    getFileInput($(this), 6, 'inpi', $datas.length-1);
                                 }
                             });
                             break;
@@ -629,7 +629,7 @@ $(".updateBtn").click(function(){
                                         null,
                                         $(this).hasClass('editZone')
                                     ));
-                                    getFileInput($(this), 2, 'publication', $datas.length-1);
+                                    getFileInput($(this), 3, 'publication', $datas.length-1);
                                 }
                             });
                             break;
@@ -668,7 +668,7 @@ $(".updateBtn").click(function(){
                                         null,
                                         $(this).hasClass('editZone')
                                     ));
-                                    getFileInput($(this), 4, 'document', $datas.length-1);
+                                    getFileInput($(this), 5, 'document', $datas.length-1);
                                 }
                             });
                             break;
