@@ -848,6 +848,7 @@ function fileDelete($href){
                 //TODO : décommenter
             }
             else{
+                window.location.reload()
                 alerteInfo('info', status, data);
             }
         });
@@ -869,6 +870,7 @@ function deleteTabEntry(table, key, onglet=null){
                 //TODO : décommenter
             }
             else{
+                window.location.reload()
                 alerteInfo('info', status, data);
             }
         });
