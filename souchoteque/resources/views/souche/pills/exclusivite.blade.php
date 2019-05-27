@@ -1,6 +1,6 @@
 <div class="tab-pane fade" id="pills-exclisivite" role="tabpanel" aria-labelledby="pills-exclisivite-tab">
 
-    @if($user->exclusivite > 0)
+    @if($user->exclusivite > 1)
     <div>
         <div class="custom-control custom-checkbox text-sm-right mt-2">
             <input type="checkbox" class="custom-control-input editMode" id="editModeExclusivite">

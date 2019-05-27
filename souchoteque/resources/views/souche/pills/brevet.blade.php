@@ -1,6 +1,6 @@
 <div class="tab-pane fade p-3" id="pills-brevet" role="tabpanel" aria-labelledby="pills-brevet-tab">
 
-    @if($user->brevet > 0)
+    @if($user->brevet > 1)
         <div>
             <div class="custom-control custom-checkbox text-sm-right mt-2">
                 <input type="checkbox" class="custom-control-input editMode" id="editModeBrevet">

@@ -1,6 +1,6 @@
 <div class="tab-pane fade" id="pills-pha" role="tabpanel" aria-labelledby="pills-pha-tab">
 
-    @if($user->pha > 0)
+    @if($user->pha > 1)
     <div>
         <div class="custom-control custom-checkbox text-sm-right mt-2">
             <input type="checkbox" class="custom-control-input editMode" id="editModePha">

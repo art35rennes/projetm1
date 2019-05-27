@@ -1,6 +1,6 @@
 <div class="tab-pane fade show active p-3" id="pills-description" role="tabpanel" aria-labelledby="pills-description-tab">
 
-    @if($user->description > 0)
+    @if($user->description > 1)
     <div>
         <div class="custom-control custom-checkbox text-sm-right mt-2">
             <input type="checkbox" class="custom-control-input editMode" id="editModeDescription">

@@ -1,6 +1,6 @@
 <div class="tab-pane fade p-3" id="pills-pasteur" role="tabpanel" aria-labelledby="pills-pasteur-tab">
 
-    @if($user->pasteur > 0)
+    @if($user->pasteur > 1)
     <div>
         <div class="custom-control custom-checkbox text-sm-right mt-2">
             <input type="checkbox" class="custom-control-input editMode" id="editModePasteur">
