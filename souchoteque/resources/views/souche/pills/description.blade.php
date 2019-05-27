@@ -26,8 +26,8 @@
                 <div class="carousel-inner">
                     @foreach($souche['photo_souche'] as $photo)
                         <div class="carousel-item @if($loop->index==0) active @endif">
-                            <img src="@if(file_exists("/storage/{{$photo->fichier}}")) /storage/{{$photo->fichier}} @else https://via.placeholder.com/600 @endif" class="d-block w-100">
-                            @if(!file_exists("/storage/{{$photo->fichier}}"))
+                            <img src="@if(file_exists(asset('/storage/'.$photo->fichier))) {{asset('/storage/'.$photo->fichier)}} @else https://via.placeholder.com/600 @endif" class="d-block w-100">
+                            @if(!file_exists(asset('/storage/'.$photo->fichier)))
                             <div class="carousel-caption d-none d-md-block">
                                 <p class="bg-light text-danger font-weight-bold text-sm-center">Could not find file</p>
                             </div>
