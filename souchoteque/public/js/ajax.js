@@ -734,7 +734,7 @@ $('.cryoStock').click(function () {
 
 function updateData() {
 
-    //window.location.reload();
+    window.location.reload();
     /*console.log($datas);
     $id = $(".nav-link.active").attr('href');
 
@@ -826,7 +826,7 @@ function updateData() {
                break;
            default:
                console.log('defaut');
-               //window.location.reload();
+               window.location.reload();
        }
     });*/
 }
@@ -844,7 +844,7 @@ function fileDelete($href){
             console.log("Data: " + data + "\nStatus: " + status);
             if(status === "success"){
                 alerteInfo(data[0].alert, status, data);
-                //window.location.reload()
+                window.location.reload()
                 //TODO : décommenter
             }
             else{
@@ -865,7 +865,7 @@ function deleteTabEntry(table, key, onglet=null){
         function(data, status){ //retreive response
             console.log("Data: " + data + "\nStatus: " + status);
             if(status === "success"){
-                //window.location.reload()
+                window.location.reload()
                 //TODO : décommenter
             }
             else{
@@ -888,7 +888,7 @@ function restoreEntry(date) {
         function(data, status){ //retreive response
             console.log("Data: " + data + "\nStatus: " + status);
             if(status === "success"){
-                //window.location.reload()
+                window.location.reload()
                 //TODO : décommenter
             }
             else{
