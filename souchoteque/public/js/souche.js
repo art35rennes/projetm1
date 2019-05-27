@@ -23,7 +23,7 @@ $(document).ready( function () {
         cryotube: $('[name=cryotube]').val(),
     };
     $('#userData').remove();
-    
+
     $(function() {
         $('a[data-toggle="pill"]').on('click', function(e) {
             //console.log('store');

@@ -9,7 +9,7 @@
 
     <div class="container mt-5 w-75">
 
-        <table id="homeTable" class="table table-sm table-bordered  text-center">
+        <table id="homeTable" class="table table-sm table-bordered table-responsive text-center">
             <thead>
             <tr>
                 <th>Numéro&nbsp;de&nbsp;souche</th>

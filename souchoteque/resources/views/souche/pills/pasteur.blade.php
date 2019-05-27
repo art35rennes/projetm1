@@ -14,7 +14,7 @@
     <br>
     @endif
 
-    <table id="pasteur" class="table table-bordered bg-white" style="width:100%">
+    <table id="pasteur" class="table table-bordered bg-white table-responsive" style="width:100%">
         <thead>
             <tr>
                 <th>Date de dépot</th>

@@ -14,7 +14,7 @@
         <br>
     @endif
 
-    <table id="brevet" class="table table-bordered bg-white" style="width:100%">
+    <table id="brevet" class="table table-bordered bg-white table-responsive" style="width:100%">
         <thead>
             <tr>
                 <th>Numero</th>
