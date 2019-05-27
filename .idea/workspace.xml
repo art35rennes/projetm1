@@ -66,8 +66,8 @@
               <file pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/souchoteque/public/js/ajax.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="445">
-                      <caret line="518" column="70" selection-start-line="518" selection-start-column="70" selection-end-line="518" selection-end-column="70" />
+                    <state relative-caret-position="328">
+                      <caret line="208" column="16" selection-start-line="208" selection-start-column="16" selection-end-line="208" selection-end-column="46" />
                       <folding>
                         <element signature="n#!!block;n#alerteInfo#0" />
                         <element signature="e#243#250#1" expanded="true" />
@@ -87,10 +87,12 @@
                         <element signature="e#5048#5143#0" />
                         <element signature="e#5207#5339#0" />
                         <element signature="e#5379#5450#0" />
-                        <element signature="n#!!block;n#getFileInput#0" />
                         <element signature="n#!!block;n#checkReadyState#0" />
                         <element signature="n#!!block;n#sendAjax#0" />
+                        <element signature="e#10288#14987#0" />
                         <element signature="e#10978#11904#0" />
+                        <element signature="e#15000#18631#0" />
+                        <element signature="e#18644#22308#0" />
                         <element signature="e#22442#23802#0" />
                         <element signature="e#23827#25293#0" />
                         <element signature="e#25318#26639#0" />
@@ -148,7 +150,7 @@
                 <entry file="file://$PROJECT_DIR$/souchoteque/public/js/ajax.js">
                   <provider selected="true" editor-type-id="text-editor">
                     <state relative-caret-position="5528">
-                      <caret line="594" column="45" selection-start-line="594" selection-start-column="45" selection-end-line="594" selection-end-column="45" />
+                      <caret line="595" column="45" selection-start-line="595" selection-start-column="45" selection-end-line="595" selection-end-column="45" />
                       <folding>
                         <element signature="n#!!block;n#alerteInfo#0" />
                         <element signature="e#243#250#1" expanded="true" />
@@ -714,12 +716,12 @@
       <workItem from="1557219291350" duration="31278000" />
       <workItem from="1557748186917" duration="35967000" />
       <workItem from="1558343812222" duration="69332000" />
-      <workItem from="1558788444666" duration="36862000" />
+      <workItem from="1558788444666" duration="37122000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="618116000" />
+    <option name="totallyTimeSpent" value="618376000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1164,8 +1166,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/souchoteque/public/js/ajax.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="518" column="70" selection-start-line="518" selection-start-column="70" selection-end-line="518" selection-end-column="70" />
+        <state relative-caret-position="328">
+          <caret line="208" column="16" selection-start-line="208" selection-start-column="16" selection-end-line="208" selection-end-column="46" />
           <folding>
             <element signature="n#!!block;n#alerteInfo#0" />
             <element signature="e#243#250#1" expanded="true" />
@@ -1185,10 +1187,12 @@
             <element signature="e#5048#5143#0" />
             <element signature="e#5207#5339#0" />
             <element signature="e#5379#5450#0" />
-            <element signature="n#!!block;n#getFileInput#0" />
             <element signature="n#!!block;n#checkReadyState#0" />
             <element signature="n#!!block;n#sendAjax#0" />
+            <element signature="e#10288#14987#0" />
             <element signature="e#10978#11904#0" />
+            <element signature="e#15000#18631#0" />
+            <element signature="e#18644#22308#0" />
             <element signature="e#22442#23802#0" />
             <element signature="e#23827#25293#0" />
             <element signature="e#25318#26639#0" />

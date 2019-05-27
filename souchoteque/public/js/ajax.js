@@ -206,7 +206,8 @@ function getFileInput(parent ,n, name, index=($datas.length-1)){
             let reader = new FileReader();
             reader.onloadend = function (event) {
                 //console.log($datas);
-                if(typeof $datas[0]._token != 'undefined'){
+                //console.log($datas[0]._token);
+                if(typeof $datas[0]._token !== undefined){
                     console.log('index ++');
                     index++;
                 }
