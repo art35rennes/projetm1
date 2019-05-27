@@ -207,7 +207,7 @@ function getFileInput(parent ,n, name, index=($datas.length-1)){
             reader.onloadend = function (event) {
                 //console.log($datas);
                 //console.log($datas[0]._token);
-                if(typeof $datas[0]._token !== undefined){
+                if(typeof $datas[0]._token !== 'undefined'){
                     console.log('index ++');
                     index++;
                 }
@@ -310,6 +310,7 @@ function sendAjax($url, $id='#server-results') {
     }
 
 }
+
 //......................................//
 //.............Ajax Request.............//
 //......................................//
