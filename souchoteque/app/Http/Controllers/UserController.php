@@ -188,8 +188,4 @@ class UserController extends Controller
         }
         return redirect()->back();
     }
-
-    public function faq(){
-        return view('faq');
-    }
 }

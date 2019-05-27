@@ -4,44 +4,16 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
 @endsection
 @section('body')
-    <!--div class="collapse" id="collapseExample">
-        <div class="card card-body">
-            <ul>
-                @foreach($souche as $S => $s)
-                    <li>
-                        {{$S}}
-                        <ul>
-                            @foreach($s as $data => $d)
-                                <li>
-                                    {{$data}}
-                                    <ul>
-                                        @foreach($d as $key => $value)
-                                            <li>{{$key}} : {{$value}}</li>
-                                        @endforeach
-                                    </ul>
-                                </li>
-                            @endforeach
-                        </ul>
-                    </li>
-                @endforeach
-            </ul>
-        </div>
+    @auth
+    <div class="d-none" id="userData">
+        @foreach($user as $key => $value)
+        <input type="hidden" value="{{$value}}" name="{{$key}}">
+        @endforeach
     </div>
-    <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        Souche Tab
-    </button-->
 
+    @if($souche['souche'][0]->acreditation <= $user->souche)
     <div class="container-fluid w-75">
         <h4 class="display-4">Souche : <span id="ref" class="text-secondary">{{$souche['souche'][0]->ref}}</span></h4>
-
-        <div class="custom-control custom-checkbox text-sm-right mt-2">
-            <input type="checkbox" class="custom-control-input" id="editMode">
-            <label class="custom-control-label" for="editMode">Mode Edition</label>
-            <i class="fas fa-pen"></i>
-            <small class="form-text text-muted editZone">N'oubliez pas d'enregistrer les modifications</small>
-        </div>
-        <button class="btn float-right m-2 btn-warning editZone" id="annulBtn">Annuler les modifications</button>
-        <button class="btn float-right m-2 btn-success editZone" id="updateBtn">Valider les modifications</button><br>
 
         <div class="mt-5 m-3">
             <ul class="nav nav-pills mb-3 text-center" id="pills-tab" role="tablist">
@@ -84,23 +56,23 @@
                     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-projet" role="tab"
                        aria-controls="pills-projet" aria-selected="false">projets</a>
                 </li>
-                
+
                 @if($user->eps > 0)
                 <li class="nav-item m-2">
                     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-eps" role="tab"
-                       aria-controls="pills-eps" aria-selected="false">eps</a>
+                       aria-controls="pills-eps" aria-selected="false">EPS</a>
                 </li>
                 @endif
                 @if($user->pha > 0)
                 <li class="nav-item m-2">
                     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-pha" role="tab"
-                       aria-controls="pills-pha" aria-selected="false">pha</a>
+                       aria-controls="pills-pha" aria-selected="false">PHA</a>
                 </li>
                 @endif
                 @if($user->autre > 0)
                 <li class="nav-item m-2">
                     <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-autre" role="tab"
-                       aria-controls="pills-autre" aria-selected="false">autre</a>
+                       aria-controls="pills-autre" aria-selected="false">autres</a>
                 </li>
                 @endif
             </ul>
@@ -111,28 +83,48 @@
 
                 @include('souche.pills.description')
 
+                @if($user->identification > 0)
                 @include('souche.pills.identification')
+                @endif
 
+                @if($user->pasteur > 0)
                 @include('souche.pills.pasteur')
+                @endif
 
+                @if($user->brevet > 0)
                 @include('souche.pills.brevet')
+                @endif
 
+                @if($user->publication > 0)
                 @include('souche.pills.publication')
+                @endif
 
+                @if($user->exclusivite > 0)
                 @include('souche.pills.exclusivite')
+                @endif
 
                 @include('souche.pills.projet')
 
+                @if($user->eps > 0)
                 @include('souche.pills.eps')
+                @endif
 
+                @if($user->pha > 0)
                 @include('souche.pills.pha')
+                @endif
 
+                @if($user->autre > 0)
                 @include('souche.pills.autre')
+                @endif
             </div>
         </div>
         @csrf
 
     </div>
+    @else
+        <h4 class="display-4">Vous n'êtes pas autorisé à acceder à cette souche.</h4>
+    @endif
+    @endauth
 @endsection
 
 @section('customJs')

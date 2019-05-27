@@ -4,15 +4,16 @@
 @endsection
 
 @section('body')
-    <div class="container-fluid w-75 bg-light">
+    @if($user->utilisateur == 3)
+    <div class="container-fluid w-75">
         <h4 class="display-4 mb-3">Gestion des accréditations</h4>
         <form method="post" action="/user/accreditation/maj" id="majForm">
-            <table class="table table-sm text-center">
+            <table class="table table-sm text-center table-responsive">
                 <thead>
                 <tr>
                     <th colspan="2"></th>
                     <th colspan="3" class="text-center">Synthèse</th>
-                    <th colspan="6"></th>
+                    <th colspan="11"></th>
                 </tr>
                 <tr>
                     <th>Nom</th>
@@ -24,8 +25,12 @@
                     <th>Brevet</th>
                     <th>Exclusivité</th>
                     <th>Publication</th>
+                    <th>Cryotube</th>
+                    <th>Description</th>
+                    <th>Projet</th>
                     <th>Utilisateur</th>
                     <th>Accréditation</th>
+                    <th></th>
                     <th></th>
                 </tr>
                 </thead>
@@ -98,6 +103,29 @@
                         </select>
                     </td>
                     <td>
+                        <select disabled class="selectLaw" name="accreditation[{{$accreditation->id}}][cryotube]" class="custom-select-sm text-center">
+                            <option @if ($accreditation->cryotube == 0) selected @endif value="0">-</option>
+                            <option @if ($accreditation->cryotube == 1) selected @endif value="1">l</option>
+                            <option @if ($accreditation->cryotube == 3) selected @endif value="3">l+a+e</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select disabled class="selectLaw" name="accreditation[{{$accreditation->id}}][description]" class="custom-select-sm text-center">
+                            <option @if ($accreditation->description == 0) selected @endif value="0">-</option>
+                            <option @if ($accreditation->description == 1) selected @endif value="1">l</option>
+                            <option @if ($accreditation->description == 2) selected @endif value="2">l+a</option>
+                            <option @if ($accreditation->description == 3) selected @endif value="3">l+a+e</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select disabled class="selectLaw" name="accreditation[{{$accreditation->id}}][projet]" class="custom-select-sm text-center">
+                            <option @if ($accreditation->projet == 0) selected @endif value="0">-</option>
+                            <option @if ($accreditation->projet == 1) selected @endif value="1">l</option>
+                            <option @if ($accreditation->projet == 2) selected @endif value="2">l+a</option>
+                            <option @if ($accreditation->projet == 3) selected @endif value="3">l+a+e</option>
+                        </select>
+                    </td>
+                    <td>
                         <select disabled class="selectLaw" name="accreditation[{{$accreditation->id}}][utilisateur]" class="custom-select-sm text-center">
                             <option @if ($accreditation->utilisateur == 0) selected @endif value="0">-</option>
                             <option @if ($accreditation->utilisateur == 1) selected @endif value="1">l</option>
@@ -146,14 +174,14 @@
                 </div>
                 <div class="form-group col-md-3 p-2">
                     <h6 for="accreditation[souche]">Niveau d'accréditation souche</h6>
-                    <input class="form-control" name="accreditation[souche]" placeholder="1" required>
+                    <input type="number" class="form-control" name="accreditation[souche]" value="0" required>
                 </div>
             </div>
             <!--Droits-->
             <div class="form-group p-2">
                 <h6 for="">Liste des droits:</h6>
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-auto">
                         <div class="form-check form-inline">
                             <select name="accreditation[identification]" class="custom-select-sm mr-2">
                                 <option value="0">-</option>
@@ -192,7 +220,7 @@
                         </div>
                     </div>
 
-                    <div class="col-3">
+                    <div class="col-auto">
                         <div class="form-check">
                             <select name="accreditation[pasteur]" class="custom-select-sm mr-2">
                                 <option value="0">-</option>
@@ -229,6 +257,9 @@
                             </select>
                             <label class="form-check-label" for="accreditation[publication]">Publication</label>
                         </div>
+                    </div>
+
+                    <div class="col-auto">
                         <div class="form-check">
                             <select name="accreditation[utilisateur]" class="custom-select-sm mr-2">
                                 <option value="0">-</option>
@@ -237,6 +268,33 @@
                                 <option value="3">lecture + ajout + edition</option>
                             </select>
                             <label class="form-check-label" for="accreditation[utilisateur]">Gestion utilisateur</label>
+                        </div>
+                        <div class="form-check">
+                            <select name="accreditation[description]" class="custom-select-sm mr-2">
+                                <option value="0">-</option>
+                                <option value="1">lecture</option>
+                                <option value="2">lecture + ajout</option>
+                                <option value="3">lecture + ajout + edition</option>
+                            </select>
+                            <label class="form-check-label" for="accreditation[description]">Description</label>
+                        </div>
+                        <div class="form-check">
+                            <select name="accreditation[projet]" class="custom-select-sm mr-2">
+                                <option value="0">-</option>
+                                <option value="1">lecture</option>
+                                <option value="2">lecture + ajout</option>
+                                <option value="3">lecture + ajout + edition</option>
+                            </select>
+                            <label class="form-check-label" for="accreditation[projet]">Projet</label>
+                        </div>
+                        <div class="form-check">
+                            <select name="accreditation[cryotube]" class="custom-select-sm mr-2">
+                                <option value="0">-</option>
+                                <option value="1">lecture</option>
+                                <option value="2">lecture + ajout</option>
+                                <option value="3">lecture + ajout + edition</option>
+                            </select>
+                            <label class="form-check-label" for="accreditation[cryotube]">Cryotube</label>
                         </div>
                     </div>
                 </div>
@@ -248,6 +306,11 @@
 
 
     </div>
+    @else
+        <div class="container m-5">
+            <h4 class="display-4">Vous n'êtes pas authorisé à acceder à cette page.</h4>
+        </div>
+    @endif
 @endsection
 
 @section('customJs')

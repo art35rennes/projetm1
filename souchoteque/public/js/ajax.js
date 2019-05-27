@@ -12,7 +12,17 @@ function alerteInfo(type, text, text2="") {
         case 'warning':
             break;
         case 'alert':
-            break
+            break;
+        case 'success':
+            updateData();
+            html = "<div class=\"alert alert-success alert-dismissible fade show\" role=\"alert\">\n" +
+                "  <strong>Réponse du serveur: </strong>"+text+"\n" +
+                "  <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-label=\"Close\">\n" +
+                "    <span aria-hidden=\"true\">&times;</span>\n" +
+                "  </button>\n" +
+                "</div>";
+            return html;
+            break;
         default:
             html = "<div class=\"alert alert-light alert-dismissible fade show\" role=\"alert\">\n" +
                 "  <strong>Réponse du serveur: </strong> <pre>"+text+"</pre>\n" +
@@ -196,7 +206,8 @@ function getFileInput(parent ,n, name, index=($datas.length-1)){
             let reader = new FileReader();
             reader.onloadend = function (event) {
                 //console.log($datas);
-                if(typeof $datas[0]._token != 'undefined'){
+                //console.log($datas[0]._token);
+                if(typeof $datas[0]._token !== 'undefined'){
                     console.log('index ++');
                     index++;
                 }
@@ -278,7 +289,7 @@ function sendAjax($url, $id='#server-results') {
         var request_method = 'POST'; //get form GET/POST method
         var form_data = JSON.stringify($datas, null, 2);
 
-        console.log((form_data));
+        //console.log((form_data));
 
         $.ajax({
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
@@ -289,7 +300,9 @@ function sendAjax($url, $id='#server-results') {
             cache: false,
             processData: false
         }).done(function (response) {
-            $($id).html(alerteInfo(null,response));
+            $json = JSON.parse(response);
+            console.log($json);
+            $($id).html(alerteInfo($json[0].alert,$json[1]));
         });
     }
     else {
@@ -297,10 +310,11 @@ function sendAjax($url, $id='#server-results') {
     }
 
 }
+
 //......................................//
 //.............Ajax Request.............//
 //......................................//
-$("#updateBtn").click(function(){
+$(".updateBtn").click(function(){
     $datas = [];
 
     //on recupere l'onglet actif
@@ -362,21 +376,21 @@ $("#updateBtn").click(function(){
                                             null,
                                             $(this).hasClass('editZone'),
                                         ));
-                                        getFileInput($(this), 1, 'protocole', $datas.length-1);
-                                        getFileInput($(this), 2, 'resultat', $datas.length-1);
+                                        getFileInput($(this), 2, 'protocole', $datas.length-1);
+                                        getFileInput($(this), 3, 'resultat', $datas.length-1);
                                         break;
                                     case ".ProductionInduEps":
                                         $datas.push(new industriel(
                                             'eps',
                                             $(this).find('input').eq(0).val(),
-                                            $(this).find('input').eq(1).val(),
                                             $(this).find('input').eq(2).val(),
+                                            $(this).find('input').eq(3).val(),
                                             null,
                                             null,
                                             $(this).hasClass('editZone'),
                                         ));
-                                        getFileInput($(this), 3, 'protocole', $datas.length-1);
-                                        getFileInput($(this), 4, 'resultat', $datas.length-1);
+                                        getFileInput($(this), 4, 'protocole', $datas.length-1);
+                                        getFileInput($(this), 5, 'resultat', $datas.length-1);
                                         break;
                                     case ".CriblageEps":
                                         $datas.push(new criblage(
@@ -386,8 +400,8 @@ $("#updateBtn").click(function(){
                                             null,
                                             $(this).hasClass('editZone'),
                                         ));
-                                        getFileInput($(this), 1, 'condition', $datas.length-1);
-                                        getFileInput($(this), 2, 'rapport', $datas.length-1);
+                                        getFileInput($(this), 2, 'condition', $datas.length-1);
+                                        getFileInput($(this), 3, 'rapport', $datas.length-1);
                                         break;
                                 }
 
@@ -431,21 +445,21 @@ $("#updateBtn").click(function(){
                                             null,
                                             $(this).hasClass('editZone'),
                                         ));
-                                        getFileInput($(this), 1, 'protocole', $datas.length-1);
-                                        getFileInput($(this), 2, 'resultat', $datas.length-1);
+                                        getFileInput($(this), 2, 'protocole', $datas.length-1);
+                                        getFileInput($(this), 3, 'resultat', $datas.length-1);
                                         break;
                                     case ".ProductionInduPha":
                                         $datas.push(new industriel(
                                             'pha',
                                             $(this).find('input').eq(0).val(),
-                                            $(this).find('input').eq(1).val(),
                                             $(this).find('input').eq(2).val(),
+                                            $(this).find('input').eq(3).val(),
                                             null,
                                             null,
                                             $(this).hasClass('editZone'),
                                         ));
-                                        getFileInput($(this), 3, 'protocole', $datas.length-1);
-                                        getFileInput($(this), 4, 'resultat', $datas.length-1);
+                                        getFileInput($(this), 4, 'protocole', $datas.length-1);
+                                        getFileInput($(this), 5, 'resultat', $datas.length-1);
                                         break;
                                     case ".CriblagePha":
                                         $datas.push(new criblage(
@@ -455,8 +469,8 @@ $("#updateBtn").click(function(){
                                             null,
                                             $(this).hasClass('editZone'),
                                         ));
-                                        getFileInput($(this), 1, 'condition', $datas.length-1);
-                                        getFileInput($(this), 2, 'rapport', $datas.length-1);
+                                        getFileInput($(this), 2, 'condition', $datas.length-1);
+                                        getFileInput($(this), 3, 'rapport', $datas.length-1);
                                         break;
                                 }
 
@@ -496,21 +510,21 @@ $("#updateBtn").click(function(){
                                             null,
                                             $(this).hasClass('editZone'),
                                         ));
-                                        getFileInput($(this), 1, 'protocole', $datas.length-1);
-                                        getFileInput($(this), 2, 'resultat', $datas.length-1);
+                                        getFileInput($(this), 2, 'protocole', $datas.length-1);
+                                        getFileInput($(this), 3, 'resultat', $datas.length-1);
                                         break;
                                     case ".ProductionInduAutre":
                                         $datas.push(new industriel(
                                             'autre',
                                             $(this).find('input').eq(0).val(),
-                                            $(this).find('input').eq(1).val(),
                                             $(this).find('input').eq(2).val(),
+                                            $(this).find('input').eq(3).val(),
                                             null,
                                             null,
                                             $(this).hasClass('editZone'),
                                         ));
-                                        getFileInput($(this), 3, 'protocole', $datas.length-1);
-                                        getFileInput($(this), 4, 'resultat', $datas.length-1);
+                                        getFileInput($(this), 4, 'protocole', $datas.length-1);
+                                        getFileInput($(this), 5, 'resultat', $datas.length-1);
                                         break;
                                     case ".CriblageAutre":
                                         $datas.push(new criblage(
@@ -520,8 +534,8 @@ $("#updateBtn").click(function(){
                                             null,
                                             $(this).hasClass('editZone'),
                                         ));
-                                        getFileInput($(this), 1, 'condition', $datas.length-1);
-                                        getFileInput($(this), 2, 'rapport', $datas.length-1);
+                                        getFileInput($(this), 2, 'condition', $datas.length-1);
+                                        getFileInput($(this), 3, 'rapport', $datas.length-1);
                                         break;
                                 }
 
@@ -567,16 +581,16 @@ $("#updateBtn").click(function(){
                                     $datas.push(new pasteur(
                                         $(this).find('input').eq(0).val(),
                                         $(this).find('input').eq(1).val(),
-                                        $(this).find('input').eq(2).val(),
-                                        null,
-                                        null,
                                         $(this).find('input').eq(3).val(),
+                                        null,
+                                        null,
+                                        $(this).find('input').eq(4).val(),
                                         null,
                                         $(this).hasClass('editZone')
                                     ));
-                                    getFileInput($(this), 4, 'dossier', $datas.length-1);
-                                    getFileInput($(this), 5, 'validation', $datas.length-1);
-                                    getFileInput($(this), 6, 'photo', $datas.length-1);
+                                    getFileInput($(this), 5, 'dossier', $datas.length-1);
+                                    getFileInput($(this), 6, 'validation', $datas.length-1);
+                                    getFileInput($(this), 7, 'photo', $datas.length-1);
                                 }
                             });
                             break;
@@ -591,14 +605,14 @@ $("#updateBtn").click(function(){
                                     $datas.push(new brevet(
                                         $(this).find('input').eq(0).val(),
                                         $(this).find('input').eq(1).val(),
-                                        $(this).find('input').eq(2).val(),
                                         $(this).find('input').eq(3).val(),
+                                        $(this).find('input').eq(4).val(),
                                         null,
                                         null,
                                         $(this).hasClass('editZone')
                                     ));
-                                    getFileInput($(this), 4, 'texte', $datas.length-1);
-                                    getFileInput($(this), 5, 'inpi', $datas.length-1);
+                                    getFileInput($(this), 5, 'texte', $datas.length-1);
+                                    getFileInput($(this), 6, 'inpi', $datas.length-1);
                                 }
                             });
                             break;
@@ -616,7 +630,7 @@ $("#updateBtn").click(function(){
                                         null,
                                         $(this).hasClass('editZone')
                                     ));
-                                    getFileInput($(this), 2, 'publication', $datas.length-1);
+                                    getFileInput($(this), 3, 'publication', $datas.length-1);
                                 }
                             });
                             break;
@@ -630,10 +644,10 @@ $("#updateBtn").click(function(){
 
                                     $datas.push(new exclusivite(
                                         $(this).find('input').eq(0).val(),
-                                        $(this).find('input').eq(1).val(),
                                         $(this).find('input').eq(2).val(),
                                         $(this).find('input').eq(3).val(),
                                         $(this).find('input').eq(4).val(),
+                                        $(this).find('input').eq(5).val(),
                                         $(this).hasClass('editZone')
                                     ));
                                 }
@@ -649,13 +663,13 @@ $("#updateBtn").click(function(){
 
                                     $datas.push(new projet(
                                         $(this).find('input').eq(0).val(),
-                                        $(this).find('input').eq(1).val(),
                                         $(this).find('input').eq(2).val(),
                                         $(this).find('input').eq(3).val(),
+                                        $(this).find('input').eq(4).val(),
                                         null,
                                         $(this).hasClass('editZone')
                                     ));
-                                    getFileInput($(this), 4, 'document', $datas.length-1);
+                                    getFileInput($(this), 5, 'document', $datas.length-1);
                                 }
                             });
                             break;
@@ -697,9 +711,125 @@ $(".cryoBtn").click(function () {
         $(this).parent().find('.cryoRef').val(),
         $(this).hasClass('fa-minus')?-1:1
     ));
-
+    console.log($datas);
     sendAjax('/souche/' + ($("#ref")[0].innerHTML) + "/update/cryotube");
 });
+
+$('.cryoStock').click(function () {
+
+    $datas = [];
+
+    console.log($(this).parent().parent().find('.numero')[0].innerHTML);
+    $datas.push(new cryotube(
+        $(this).parent().parent().find('.numero')[0].innerHTML,
+        $(this).hasClass('fa-minus')?-1:1
+    ));
+    console.log($datas);
+    sendAjax('/souche/' + $(this).parent().parent().find('.reference')[0].innerHTML + "/update/cryotube");
+});
+
+//.......................................//
+//.............Ajax Response.............//
+//.......................................//
+
+function updateData() {
+
+    window.location.reload();
+    /*console.log($datas);
+    $id = $(".nav-link.active").attr('href');
+
+    $.each($datas, function () {
+        //console.log($(this)[0].onglet);
+        let $data = $(this)[0];
+
+        if ($data.new) {
+            console.log('new');
+            $.post("/blade/generate/row",
+                {
+                    _token: $('input[name=_token]').val(),
+                    id:$("#ref")[0].innerHTML,
+                },
+                function(data, status){ //retreive response
+                    console.log("Data: " + (data) + "\nStatus: " + status);
+                    if(status === "success"){
+                        $('#identification').html((data));
+                    }
+                    else{
+                        alerteInfo('info', status, data);
+                    }
+                });
+        }else{
+            console.log('notNew');
+        }
+     switch ($data.onglet) {
+           case 'description':
+               console.log(0);
+               break;
+           case 'identification':
+               if ($data.new) {
+                   console.log('new');
+                   console.log(JSON.stringify($data));
+                   $.post("/blade/generate/row",
+                       {
+                           _token: $('input[name=_token]').val(),
+                           data:JSON.stringify($data),
+                       },
+                       function(data, status){ //retreive response
+                           console.log("Data: " + data + "\nStatus: " + status);
+                           if(status === "success"){
+                               $('#identification').find('tbody').append(data);
+                           }
+                           else{
+                               alerteInfo('info', status, data);
+                           }
+                       });
+               }else{
+                   console.log('notNew');
+               }
+               //console.log(1);
+               break;
+           case 'pasteur':
+               console.log(2);
+               break;
+           case 'publication':
+               console.log(3);
+               break;
+           case 'exclusivite':
+               console.log(4);
+               break;
+           case 'projet':
+               console.log(5);
+               break;
+           case 'cryotube':
+               console.log(6);
+               break;
+           case 'objectivation':
+               console.log(7);
+               break;
+           case 'industriel':
+               console.log(8);
+               break;
+           case 'criblage':
+               console.log(9);
+               break;
+           case 'oses':
+               console.log(10);
+               break;
+           case 'caracterisation':
+               console.log(11);
+               break;
+           case 'projetLiee':
+               console.log(12);
+               break;
+           case undefined:
+               console.log(13);
+               break;
+           default:
+               console.log('defaut');
+               window.location.reload();
+       }
+    });*/
+}
 
 //..................................//
 //...........Delete entry...........//
@@ -713,11 +843,12 @@ function fileDelete($href){
         function(data, status){ //retreive response
             console.log("Data: " + data + "\nStatus: " + status);
             if(status === "success"){
-                alerteInfo('info', status, data);
-                //window.location.reload()
+                //alerteInfo(data[0].alert, status, data);
+                window.location.reload()
                 //TODO : décommenter
             }
             else{
+                window.location.reload()
                 alerteInfo('info', status, data);
             }
         });
@@ -735,10 +866,11 @@ function deleteTabEntry(table, key, onglet=null){
         function(data, status){ //retreive response
             console.log("Data: " + data + "\nStatus: " + status);
             if(status === "success"){
-                //window.location.reload()
+                window.location.reload()
                 //TODO : décommenter
             }
             else{
+                window.location.reload()
                 alerteInfo('info', status, data);
             }
         });
@@ -758,7 +890,7 @@ function restoreEntry(date) {
         function(data, status){ //retreive response
             console.log("Data: " + data + "\nStatus: " + status);
             if(status === "success"){
-                //window.location.reload()
+                window.location.reload()
                 //TODO : décommenter
             }
             else{

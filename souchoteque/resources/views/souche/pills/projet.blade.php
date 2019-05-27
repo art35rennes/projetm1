@@ -1,4 +1,19 @@
 <div class="tab-pane fade" id="pills-projet" role="tabpanel" aria-labelledby="pills-projet-tab">
+
+    @if($user->projet > 1)
+    <div>
+        <div class="custom-control custom-checkbox text-sm-right mt-2">
+            <input type="checkbox" class="custom-control-input editMode" id="editModeProjet">
+            <label class="custom-control-label" for="editModeProjet">Mode Edition</label>
+            <i class="fas fa-pen"></i>
+            <small class="form-text text-muted editZone">N'oubliez pas d'enregistrer les modifications</small>
+        </div>
+        <button class="btn float-right m-2 btn-warning editZone annulBtn" id="">Annuler les modifications</button>
+        <button class="btn float-right m-2 btn-success editZone updateBtn" id="">Valider les modifications</button><br>
+    </div>
+    <br>
+    @endif
+
     <table id="projet" class="table table-bordered bg-white" style="width:100%">
         <thead>
         <tr>
@@ -7,13 +22,16 @@
             <th>Partenaire</th>
             <th>Secteur</th>
             <th>Document</th>
-            <th class="editZone"></th>
+            @if($user->projet == 3) <th class="editZone"></th> @endif
         </tr>
         </thead>
         <tbody>
         @foreach($souche['projet_souche'] as $projet)
             <tr>
-                <td><span class="tabText" id="projet/{{$loop->iteration}}/nom">{{$projet->nom}}</span></td>
+                <td>
+                    <span class="tabText" id="projet/{{$loop->iteration}}/nom">{{$projet->nom}}</span>
+                    <input type="hidden" value="isKey">
+                </td>
                 <td><span class="tabDate" id="projet/{{$loop->iteration}}/date">{{$projet->date}}</span></td>
                 <td><span class="tabText" id="projet/{{$loop->iteration}}/partenaire">{{$projet->partenaire}}</span></td>
                 <td><span class="tabText" id="projet/{{$loop->iteration}}/activite">{{$projet->activite}}</span></td>
@@ -24,16 +42,19 @@
                         <span class="tabNull" id="projet/{{$loop->iteration}}/text"></span>
                     @endif
                 </td>
+                @if($user->projet == 3)
                 <td class="editZone">
                     <i class="editZone fas fa-times" onclick="deleteTabEntry('projet', '{{$projet->nom}}')"></i>
                 </td>
+                @endif
             </tr>
         @endforeach
         </tbody>
         <tfoot>
         <tr class="editZone">
             <td>
-                <input type="date" class="form-control" name="projet/0/nom">
+                <input type="text" class="form-control" name="projet/0/nom">
+                <input type="hidden" value="isKey">
             </td>
             <td>
                 <input type="date" class="form-control" name="projet/0/date">
@@ -59,7 +80,7 @@
                     Ajouter un fichier <input type="file" name="projet/0/texte" hidden>
                 </label>
             </td>
-            <td class="editZone"></td>
+            @if($user->projet == 3) <td class="editZone"></td> @endif
         </tr>
         </tfoot>
     </table>

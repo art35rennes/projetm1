@@ -1,12 +1,27 @@
 <div class="tab-pane fade" id="pills-autre" role="tabpanel" aria-labelledby="pills-autre-tab">
+
+    @if($user->autre > 1)
+        <div>
+            <div class="custom-control custom-checkbox text-sm-right mt-2">
+                <input type="checkbox" class="custom-control-input editMode" id="editModeAutre">
+                <label class="custom-control-label" for="editModeAutre">Mode Edition</label>
+                <i class="fas fa-pen"></i>
+                <small class="form-text text-muted editZone">N'oubliez pas d'enregistrer les modifications</small>
+            </div>
+            <button class="btn float-right m-2 btn-warning editZone annulBtn" id="">Annuler les modifications</button>
+            <button class="btn float-right m-2 btn-success editZone updateBtn" id="">Valider les modifications</button><br>
+        </div>
+        <br>
+@endif
+
     <!--Projet-->
     <div class="p-3 d-block" id="ProjetAutre">
         <ul class="list-inline">
             <li class="list-inline-item"><h6 class="font-italic">Projet associé :</h6></li>
             @foreach($souche['projet_souche'] as $projet)
                 <li class="list-inline-item">
-                    <a href="{{asset("/storage/".$projet->texte)}}" class="font-italic"></a>
-                    <i class="editButton fas fa-times deleteCross ml-2"></i>
+                    <a href="{{asset("/storage/".$projet->texte)}}" class="font-italic">{{$projet->nom}}</a>
+                    @if($user->autre == 3) <!--i class="editButton fas fa-times deleteCross ml-2"></i--> @endif
                 </li>
             @endforeach
             <li class="list-inline-item editZone">
@@ -73,14 +88,19 @@
                         <th>Nom</th>
                         <th>Protocole</th>
                         <th>Resultat</th>
+                        @if($user->autre == 3)
                         <th class="editZone"></th>
+                        @endif
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($souche['objectivation'] as $objectivation)
                         @if($objectivation->type=="AUTRE")
                             <tr>
-                                <td><span class="tabText" id="autre-objectivation-{{$loop->iteration}}-nom">{{$objectivation->nom}}</span></td>
+                                <td>
+                                    <span class="tabText" id="autre-objectivation-{{$loop->iteration}}-nom">{{$objectivation->nom}}</span>
+                                    <input type="hidden" value="isKey">
+                                </td>
                                 <td>
                                     @if($objectivation->protocole != "")
                                         <a class="tabFile font-italic mr-2" id="autre-objectivation-{{$loop->iteration}}-protocole" href="{{asset("/storage/".$objectivation->protocole)}}">{{$objectivation->protocole}}</a>
@@ -95,9 +115,11 @@
                                         <span class="tabNull" id="autre-objectivation-{{$loop->iteration}}-resultat"></span>
                                     @endif
                                 </td>
+                                @if($user->autre == 3)
                                 <td>
                                     <i class="editZone fas fa-times" onclick="deleteTabEntry('objectivation', '{{$objectivation->nom}}', 'autre')"></i>
                                 </td>
+                                @endif
                             </tr>
                         @endif
                     @endforeach
@@ -106,6 +128,7 @@
                     <tr class="editZone">
                         <td>
                             <input type="text" class="form-control" name="autre-objectivation-0-nom">
+                            <input type="hidden" value="isKey">
                         </td>
                         <td>
                             <label class="btn btn-light m-2">
@@ -117,7 +140,9 @@
                                 Ajouter un fichier <input type="file" name="autre-objectivation-0-fichier" hidden>
                             </label>
                         </td>
+                        @if($user->autre == 3)
                         <td class="editZone"></td>
+                        @endif
                     </tr>
                     </tfoot>
                 </table>
@@ -138,14 +163,19 @@
                         <th>Lieu</th>
                         <th>Protocole</th>
                         <th>Résultat</th>
+                        @if($user->autre == 3)
                         <th class="editZone"></th>
+                        @endif
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($souche['production'] as $prod)
                         @if($prod->type=="AUTRE")
                             <tr>
-                                <td><span class="tabText">{{$prod->nom}}</span></td>
+                                <td>
+                                    <span class="tabText">{{$prod->nom}}</span>
+                                    <input type="hidden" value="isKey">
+                                </td>
                                 <td><span class="tabDate">{{$prod->date}}</span></td>
                                 <td><span class="tabText">{{$prod->lieu}}</span></td>
                                 <td>
@@ -162,9 +192,11 @@
                                         <span class="tabNull" id="autre-production-{{$loop->iteration}}-resultat"></span>
                                     @endif
                                 </td>
+                                @if($user->autre == 3)
                                 <td>
                                     <i class="editZone fas fa-times" onclick="deleteTabEntry('production', '{{$prod->nom}}', 'autre')"></i>
                                 </td>
+                                @endif
                             </tr>
                         @endif
                     @endforeach
@@ -173,6 +205,7 @@
                     <tr class="editZone">
                         <td>
                             <input type="text" class="form-control" name="autre-production-0-nom">
+                            <input type="hidden" value="isKey">
                         </td>
                         <td>
                             <input type="date" class="form-control" name="autre-production-0-date">
@@ -190,7 +223,9 @@
                                 Ajouter un fichier <input type="file" name="autre-production-0-resultat" hidden>
                             </label>
                         </td>
+                        @if($user->autre == 3)
                         <td class="editZone"></td>
+                        @endif
                     </tr>
                     </tfoot>
                 </table>
@@ -208,14 +243,19 @@
                         <th>Nom</th>
                         <th>Condition</th>
                         <th>Rapport</th>
+                        @if($user->autre == 3)
                         <th class="editZone"></th>
+                        @endif
                     </tr>
                     </thead>
                     <tbody>
                     @foreach($souche['criblage'] as $criblage)
                         @if($criblage->type=="AUTRE")
                             <tr>
-                                <td><span class="tabText">{{$criblage->nom}}</span></td>
+                                <td>
+                                    <span class="tabText">{{$criblage->nom}}</span>
+                                    <input type="hidden" value="isKey">
+                                </td>
                                 <td>
                                     @if($criblage->conditions != "")
                                         <a class="tabFile font-italic mr-2" id="autre-criblage-{{$loop->iteration}}-condition" href="{{asset("/storage/".$criblage->conditions)}}">{{$criblage->conditions}}</a>
@@ -230,9 +270,11 @@
                                         <span class="tabNull" id="autre-criblage-{{$loop->iteration}}-rapport"></span>
                                     @endif
                                 </td>
+                                @if($user->autre == 3)
                                 <td>
                                     <i class="editZone fas fa-times" onclick="deleteTabEntry('criblage', '{{$criblage->nom}}', 'autre')"></i>
                                 </td>
+                                @endif
                             </tr>
                         @endif
                     @endforeach
@@ -241,6 +283,7 @@
                     <tr class="editZone">
                         <td>
                             <input type="text" class="form-control" name="autre-criblage-0-nom">
+                            <input type="hidden" value="isKey">
                         </td>
                         <td>
                             <label class="btn btn-light m-2">
@@ -252,7 +295,9 @@
                                 Ajouter un fichier <input type="file" name="autre-criblage-0-rapport " hidden>
                             </label>
                         </td>
+                        @if($user->autre == 3)
                         <td class="editZone"></td>
+                        @endif
                     </tr>
                     </tfoot>
                 </table>

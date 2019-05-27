@@ -37,14 +37,18 @@ Route::group(['middleware' => ['auth']], function() {
         //Update
         Route::post('/souche/{ref}/maj', 'SoucheController@update');
         Route::post('/souche/{ref}/update', 'SoucheAjaxController@update');
+        Route::post('/blade/generate/row', 'HtmlController@generateRow');
 
-        //Delete
+
+    //Delete
         Route::post('/souche/{ref}/suppr', 'SoucheAjaxController@suppr');
         Route::post('/souche/{ref}/supprSouche', 'SoucheAjaxController@supprSouche');
         Route::post('/souche/{ref}/suppr/file', 'SoucheAjaxController@supprFile');
 
-        //TestArea
-        Route::get('/poc', 'SoucheController@poc');
+        //Cryotube
+        Route::get('/cryotube', 'CryotubeController@show');
+        Route::post('/souche/{ref}/update/cryotube', 'CryotubeController@update');
+
 
         //UserController
         Route::get('/user/ajout', 'UserController@ajoutView');
@@ -66,7 +70,8 @@ Route::group(['middleware' => ['auth']], function() {
         Route::post('/user/accreditation/delete', 'UserController@deleteAccreditation');
         Route::post('/user/accreditation/maj', 'UserController@majAccreditation');
 
-    Route::get('/user/logout', 'UserController@faq');
+        //TestArea
+        Route::get('/poc', 'SoucheController@poc');
 });
 
 //AuthController

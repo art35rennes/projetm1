@@ -12,11 +12,12 @@
 </head>
 
 <body>
+    @auth
     <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
-        <!--a class="navbar-brand" href="/home">
-            <img src="{{asset('ressources/favicon.ico')}}" width="30" height="30" alt="chevron">
-            Souchotèque
-        </a-->
+        <a class="navbar-brand font-italic pr-2 border-right" href="/home">
+            <img src="{{asset('ressources/image/logo.jpg')}}" width="40" height="40" >
+            Souchothèque
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -32,38 +33,46 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="/souche/ajout">Ajouter</a>
-                        <a class="dropdown-item" href="#">Supprimer</a>
+                        @if($user->cryotube > 0)
+                            <a class="dropdown-item" href="/cryotube">Gestion Cryotube</a>
+                        @endif
+                        @if($user->utilisateur == 3)
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="/historique/">Dernière mise à jour</a>
+                        @endif
                     </div>
                 </li>
+                @if($user->utilisateur >= 1)
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Gestion utilisateurs
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @if($user->utilisateur >= 2)
                         <a class="dropdown-item" href="/user/ajout">Ajouter un utilisateur</a>
+                        @endif
+                        @if($user->utilisateur == 3)
                         <a class="dropdown-item" href="/user/accreditation">Gérer les accréditation</a>
                         <div class="dropdown-divider"></div>
+                        @endif
                         <a class="dropdown-item" href="/user/liste">Liste des utilisateurs</a>
                     </div>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/poc">POC<span class="sr-only"></span></a>
+                @endif
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/profil/{{$user->id}}">Mon profil<span class="sr-only"></span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/user/logout">Déconnexion<span class="sr-only"></span></a>
                 </li>
             </ul>
-
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" disabled type="search" placeholder="Référence souche" aria-label="Rechercher">
-                <button class="btn btn-outline-success my-2 my-sm-0" disabled type="submit">Rechercher</button>
-            </form>
+            <span class="navbar-text font-weight-light font-italic h4 pl-2 border-left">Polymaris Biotechnology</span>
         </div>
     </nav>
+    @endauth
 
     @yield('body')
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
@@ -72,6 +81,7 @@
 
     @yield('customJs')
 
+    @auth
     <footer class="page-footer font-small indigo">
 
         <!-- Footer Links -->
@@ -123,13 +133,7 @@
             <!-- Grid row-->
             <div class="row d-flex text-center justify-content-center mb-md-0 mb-4">
 
-                <!-- Grid column -->
-                <div class="col-md-8 col-12 mt-5">
-                    <p style="line-height: 1.7rem">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
-                        aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-                        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur.</p>
-                </div>
-                <!-- Grid column -->
+
 
             </div>
             <!-- Grid row-->
@@ -151,6 +155,7 @@
         <!-- Copyright -->
 
     </footer>
+    @endauth
 </body>
 
 
