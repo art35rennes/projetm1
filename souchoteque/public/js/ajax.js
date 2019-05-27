@@ -282,7 +282,7 @@ function sendAjax($url, $id='#server-results') {
     if ($datas.length > 0) {
         //ajout du token CSRF
         $datas.unshift({'_token': $('input[name=_token]').val()})
-        //console.log($datas);
+        console.log($datas);
 
         var post_url = $url; //get form action url
         var request_method = 'POST'; //get form GET/POST method
@@ -579,10 +579,10 @@ $(".updateBtn").click(function(){
                                     $datas.push(new pasteur(
                                         $(this).find('input').eq(0).val(),
                                         $(this).find('input').eq(1).val(),
-                                        $(this).find('input').eq(2).val(),
-                                        null,
-                                        null,
                                         $(this).find('input').eq(3).val(),
+                                        null,
+                                        null,
+                                        $(this).find('input').eq(4).val(),
                                         null,
                                         $(this).hasClass('editZone')
                                     ));
@@ -603,8 +603,8 @@ $(".updateBtn").click(function(){
                                     $datas.push(new brevet(
                                         $(this).find('input').eq(0).val(),
                                         $(this).find('input').eq(1).val(),
-                                        $(this).find('input').eq(2).val(),
                                         $(this).find('input').eq(3).val(),
+                                        $(this).find('input').eq(4).val(),
                                         null,
                                         null,
                                         $(this).hasClass('editZone')
@@ -642,10 +642,10 @@ $(".updateBtn").click(function(){
 
                                     $datas.push(new exclusivite(
                                         $(this).find('input').eq(0).val(),
-                                        $(this).find('input').eq(1).val(),
                                         $(this).find('input').eq(2).val(),
                                         $(this).find('input').eq(3).val(),
                                         $(this).find('input').eq(4).val(),
+                                        $(this).find('input').eq(5).val(),
                                         $(this).hasClass('editZone')
                                     ));
                                 }
@@ -661,9 +661,9 @@ $(".updateBtn").click(function(){
 
                                     $datas.push(new projet(
                                         $(this).find('input').eq(0).val(),
-                                        $(this).find('input').eq(1).val(),
                                         $(this).find('input').eq(2).val(),
                                         $(this).find('input').eq(3).val(),
+                                        $(this).find('input').eq(4).val(),
                                         null,
                                         $(this).hasClass('editZone')
                                     ));
