@@ -381,8 +381,8 @@ $(".updateBtn").click(function(){
                                         $datas.push(new industriel(
                                             'eps',
                                             $(this).find('input').eq(0).val(),
-                                            $(this).find('input').eq(1).val(),
                                             $(this).find('input').eq(2).val(),
+                                            $(this).find('input').eq(3).val(),
                                             null,
                                             null,
                                             $(this).hasClass('editZone'),
@@ -450,8 +450,8 @@ $(".updateBtn").click(function(){
                                         $datas.push(new industriel(
                                             'pha',
                                             $(this).find('input').eq(0).val(),
-                                            $(this).find('input').eq(1).val(),
                                             $(this).find('input').eq(2).val(),
+                                            $(this).find('input').eq(3).val(),
                                             null,
                                             null,
                                             $(this).hasClass('editZone'),
@@ -515,8 +515,8 @@ $(".updateBtn").click(function(){
                                         $datas.push(new industriel(
                                             'autre',
                                             $(this).find('input').eq(0).val(),
-                                            $(this).find('input').eq(1).val(),
                                             $(this).find('input').eq(2).val(),
+                                            $(this).find('input').eq(3).val(),
                                             null,
                                             null,
                                             $(this).hasClass('editZone'),
