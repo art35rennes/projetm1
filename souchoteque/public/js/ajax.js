@@ -843,7 +843,7 @@ function fileDelete($href){
         function(data, status){ //retreive response
             console.log("Data: " + data + "\nStatus: " + status);
             if(status === "success"){
-                alerteInfo(data[0].alert, status, data);
+                //alerteInfo(data[0].alert, status, data);
                 window.location.reload()
                 //TODO : décommenter
             }
