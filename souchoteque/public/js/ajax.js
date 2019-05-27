@@ -733,7 +733,7 @@ $('.cryoStock').click(function () {
 
 function updateData() {
 
-    window.location.reload();
+    //window.location.reload();
     /*console.log($datas);
     $id = $(".nav-link.active").attr('href');
 
