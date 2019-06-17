@@ -8,6 +8,7 @@
 @section('body')
 
     <div class="container w-75 mt-3">
+        @csrf
         <table class="table table-bordered" id="cryotube">
             <thead>
             <th>Souche</th>

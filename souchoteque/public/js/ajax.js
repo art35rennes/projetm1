@@ -207,7 +207,7 @@ function getFileInput(parent ,n, name, index=($datas.length-1)){
             reader.onloadend = function (event) {
                 //console.log($datas);
                 //console.log($datas[0]._token);
-                if(typeof $datas[0]._token !== 'undefined'){
+                if(typeof $datas[0]._token !== 'undefined' || index < 0){
                     console.log('index ++');
                     index++;
                 }
@@ -578,6 +578,17 @@ $(".updateBtn").click(function(){
                                     !$(this).children(':first-child').is('th') &&
                                     $(this).find('input').eq(1).val() !== "") {
 
+                                    console.log("Start");
+                                    console.log($(this).find('input').eq(0).val());
+                                    console.log($(this).find('input').eq(1).val());
+                                    console.log($(this).find('input').eq(2).val());
+                                    console.log($(this).find('input').eq(3).val());
+                                    console.log($(this).find('input').eq(4).val());
+                                    console.log($(this).find('input').eq(5).val());
+                                    console.log($(this).find('input').eq(6).val());
+                                    console.log($(this).find('input').eq(7).val());
+                                    console.log("End");
+
                                     $datas.push(new pasteur(
                                         $(this).find('input').eq(0).val(),
                                         $(this).find('input').eq(1).val(),
@@ -734,7 +745,7 @@ $('.cryoStock').click(function () {
 
 function updateData() {
 
-    window.location.reload();
+    //window.location.reload(); //TODO uncomment
     /*console.log($datas);
     $id = $(".nav-link.active").attr('href');
 
